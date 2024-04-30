@@ -1,15 +1,15 @@
 ElmPhoneCalleeScript:
 	readvar VAR_SPECIALPHONECALL
 	ifequal SPECIALCALL_POKERUS, .pokerus
-	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
+	checkevent EVENT_SHOWED_TOGETIC_TO_ELM
 	iftrue .discovery
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	checkevent EVENT_GOT_TOGEPI_FROM_ELMS_AIDE
 	iffalse .next
-	checkevent EVENT_TOGEPI_HATCHED
-	iftrue .egghatched
+	checkevent EVENT_TOGEPI_EVOLVED
+	iftrue .togepievolved
 .next
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
-	iftrue .eggunhatched
+	checkevent EVENT_GOT_TOGEPI_FROM_ELMS_AIDE
+	iftrue .togepistatus
 	checkevent EVENT_ELMS_AIDE_IN_LAB
 	iftrue .assistant
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
@@ -37,23 +37,23 @@ ElmPhoneCalleeScript:
 	farwritetext ElmPhoneAssistantText
 	end
 
-.eggunhatched
-	farwritetext ElmPhoneHowIsTheEggText
+.togepistatus
+	farwritetext ElmPhoneHowIsTogepiText
 	end
 
-.egghatched
-	farwritetext ElmPhoneEggHatchedText
-	setevent EVENT_TOLD_ELM_ABOUT_TOGEPI_OVER_THE_PHONE
+.togepievolved
+	farwritetext ElmPhoneTogepiEvolvedText
+	setevent EVENT_TOLD_ELM_ABOUT_TOGETIC_OVER_THE_PHONE
 	end
 
 .discovery
 	random 2
 	ifequal 0, .nextdiscovery
-	farwritetext ElmPhoneDiscoveredHatchTimeText
+	farwritetext ElmPhoneDiscoveredHappinessText
 	end
 
 .nextdiscovery
-	farwritetext ElmPhoneInvestigatingEggMovesText
+	farwritetext ElmPhoneInvestigatingHappinessMovesText
 	end
 
 .pokerus
