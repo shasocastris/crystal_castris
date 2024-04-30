@@ -310,6 +310,28 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
+	ld a, [wCurPartySpecies]
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(TOGETIC)
+	if HIGH(TOGETIC) == 0
+		or h
+	else
+		jr nz, .nottogetic
+		if HIGH(TOGETIC) == 1
+			dec h
+		else
+			ld a, h
+			cp HIGH(TOGETIC)
+		endc
+	endc
+	jr nz, .nottogetic
+	; set the event flag for evolving togepi
+	ld de, EVENT_TOGEPI_EVOLVED
+	ld b, SET_FLAG
+	call EventFlagAction
+
+.nottogetic
 	ld a, [wTempSpecies]
 	call GetPokemonIndexFromID
 	ld a, l
