@@ -63,9 +63,6 @@ EvolveAfterBattle_MasterLoop:
 
 	ld b, a
 
-	cp EVOLVE_TRADE
-	jr z, .trade
-
 	ld a, [wLinkMode]
 	and a
 	jmp nz, .dont_evolve_check
@@ -92,9 +89,6 @@ EvolveAfterBattle_MasterLoop:
 	cp c
 	jmp c, .skip_evolution_species_parameter
 
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
-
 	push hl
 	ld de, wTempMonAttack
 	ld hl, wTempMonDefense
@@ -118,9 +112,6 @@ EvolveAfterBattle_MasterLoop:
 	cp HAPPINESS_TO_EVOLVE
 	jmp c, .skip_evolution_species_parameter
 
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
-
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
 	jmp z, .proceed
@@ -137,39 +128,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jmp nc, .skip_half_species_parameter ; NITE_F or EVE_F >= NITE_F
-	jr .proceed
-
-.trade
-	ld a, [wLinkMode]
-	and a
-	jmp z, .skip_evolution_species_parameter
-
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter
-
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
-	inc a
-	jr z, .proceed
-	dec a
-
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jmp z, .skip_half_species_parameter
-
-	ld a, [wTempMonItem]
-	cp b
-	jmp nz, .skip_half_species_parameter
-
-	xor a
-	ld [wTempMonItem], a
 	jr .proceed
 
 .item
@@ -200,8 +158,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempMonLevel]
 	cp b
 	jmp c, .skip_evolution_species
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species
 
 .proceed
 	ld a, [wTempMonLevel]
@@ -428,18 +384,6 @@ CancelEvolution:
 	call PrintText
 	call ClearTilemap
 	jmp EvolveAfterBattle_MasterLoop
-
-IsMonHoldingEverstone:
-	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
-	call GetItemIndexFromID
-	cphl16 EVERSTONE
-	pop hl
-	ret
 
 CongratulationsYourPokemonText:
 	text_far _CongratulationsYourPokemonText
@@ -670,8 +614,6 @@ SkipEvolutions::
 	and a
 	ret z
 	cp EVOLVE_STAT
-	jr z, .inc_hl
-	cp EVOLVE_TRADE
 	jr z, .inc_hl
 	cp EVOLVE_ITEM
 	jr nz, .no_extra_skip

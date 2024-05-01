@@ -7,7 +7,7 @@
 	db ROCK, GROUND ; type
 	db 255 ; catch rate
 	db 86 ; base exp
-	dw NO_ITEM, EVERSTONE ; items
+	dw NO_ITEM, MIST_STONE ; items
 	db GENDER_F50 ; gender ratio
 	db 15 ; step cycles to hatch
 	INCBIN "gfx/pokemon/geodude/front.dimensions"

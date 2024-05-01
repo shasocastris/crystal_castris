@@ -101,7 +101,7 @@
 	const MIRACLEBERRY ; 005D
 	const PEARL        ; 005E
 	const BIG_PEARL    ; 005F
-	const EVERSTONE    ; 0060
+	const MIST_STONE   ; 0060
 	const SPELL_TAG    ; 0061
 	const RAGECANDYBAR ; 0062
 	const MIRACLE_SEED ; 0063

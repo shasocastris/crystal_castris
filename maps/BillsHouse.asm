@@ -61,7 +61,7 @@ BillsGrandpa:
 	setevent EVENT_SHOWED_LICKITUNG_TO_BILLS_GRANDPA
 	sjump .ShowedLickitung
 
-.GotEverstone:
+.GotMoonstone:
 	writetext BillsGrandpaOddishText
 	promptbutton
 	writetext BillsGrandpaAskToSeeMonText
@@ -139,12 +139,12 @@ BillsGrandpa:
 	sjump .ShowedPichu
 
 .ShowedLickitung:
-	checkevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
-	iftrue .GotEverstone
+	checkevent EVENT_GOT_MOON_STONE_FROM_BILLS_GRANDPA
+	iftrue .GotMoonstone
 	scall .ReceiveItem
-	verbosegiveitem EVERSTONE
+	verbosegiveitem MOON_STONE
 	iffalse .BagFull
-	setevent EVENT_GOT_EVERSTONE_FROM_BILLS_GRANDPA
+	setevent EVENT_GOT_MOON_STONE_FROM_BILLS_GRANDPA
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	closetext
 	end
