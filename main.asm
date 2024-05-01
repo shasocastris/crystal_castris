@@ -648,7 +648,6 @@ INCLUDE "data/battle_tower/unknown.asm"
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
-INCLUDE "engine/events/odd_egg.asm"
 
 
 SECTION "Newbox", ROMX
