@@ -35,13 +35,12 @@ DayCareMan:
 	ld hl, wDayCareMan
 	set DAYCAREMAN_HAS_MON_F, [hl]
 	call DayCare_DepositPokemonText
-	jmp DayCare_InitBreeding
 
 .AskWithdrawMon:
-	farcall GetBreedMon1LevelGrowth
-	ld hl, wBreedMon1Nickname
-	call GetPriceToRetrieveBreedmon
-	call DayCare_AskWithdrawBreedMon
+	farcall GetDayCareMon1LevelGrowth
+	ld hl, wDayCareMon1Nickname
+	call GetPriceToRetrieveDaycaremon
+	call DayCare_AskWithdrawDaycaremon
 	jr c, .print_text
 	farcall RetrieveMonFromDayCareMan
 	call DayCare_GetBackMonForMoney
@@ -71,13 +70,12 @@ DayCareLady:
 	ld hl, wDayCareLady
 	set DAYCARELADY_HAS_MON_F, [hl]
 	call DayCare_DepositPokemonText
-	jmp DayCare_InitBreeding
 
 .AskWithdrawMon:
-	farcall GetBreedMon2LevelGrowth
-	ld hl, wBreedMon2Nickname
-	call GetPriceToRetrieveBreedmon
-	call DayCare_AskWithdrawBreedMon
+	farcall GetDayCareMon2LevelGrowth
+	ld hl, wDayCareMon2Nickname
+	call GetPriceToRetrieveDaycaremon
+	call DayCare_AskWithdrawDaycaremon
 	jr c, .print_text
 	farcall RetrieveMonFromDayCareLady
 	call DayCare_GetBackMonForMoney
@@ -168,7 +166,7 @@ DayCare_DepositPokemonText:
 	ld a, DAYCARETEXT_COME_BACK_LATER
 	jmp PrintDayCareText
 
-DayCare_AskWithdrawBreedMon:
+DayCare_AskWithdrawDaycaremon:
 	ld a, [wStringBuffer2 + 1]
 	and a
 	jr nz, .grew_at_least_one_level
@@ -225,7 +223,7 @@ DayCare_GetBackMonForMoney:
 	ld a, DAYCARETEXT_GOT_BACK
 	jr PrintDayCareText
 
-GetPriceToRetrieveBreedmon:
+GetPriceToRetrieveDaycaremon:
 	ld a, b
 	ld [wStringBuffer2], a
 	ld a, d
@@ -360,378 +358,3 @@ PrintDayCareText:
 .ComeAgainText:
 	text_far _ComeAgainText
 	text_end
-
-DayCareManOutside:
-	ld hl, wDayCareMan
-	bit DAYCAREMAN_HAS_EGG_F, [hl]
-	jr nz, .AskGiveEgg
-	ld hl, .NotYetText
-	jmp PrintText
-
-.NotYetText:
-	text_far _NotYetText
-	text_end
-
-.AskGiveEgg:
-	ld hl, .FoundAnEggText
-	call PrintText
-	call YesNoBox
-	jr c, .Declined
-	ld a, [wPartyCount]
-	cp PARTY_LENGTH
-	jr nc, .PartyFull
-	call DayCare_GiveEgg
-	ld hl, wDayCareMan
-	res DAYCAREMAN_HAS_EGG_F, [hl]
-	call DayCare_InitBreeding
-	ld hl, .ReceivedEggText
-	call PrintText
-	ld de, SFX_GET_EGG
-	call PlaySFX
-	ld c, 120
-	call DelayFrames
-	ld hl, .TakeGoodCareOfEggText
-	jr .Load0
-
-.Declined:
-	ld hl, .IllKeepItThanksText
-
-.Load0:
-	call PrintText
-	xor a ; FALSE
-	ld [wScriptVar], a
-	ret
-
-.PartyFull:
-	ld hl, .NoRoomForEggText
-	call PrintText
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-.FoundAnEggText:
-	text_far _FoundAnEggText
-	text_end
-
-.ReceivedEggText:
-	text_far _ReceivedEggText
-	text_end
-
-.TakeGoodCareOfEggText:
-	text_far _TakeGoodCareOfEggText
-	text_end
-
-.IllKeepItThanksText:
-	text_far _IllKeepItThanksText
-	text_end
-
-.NoRoomForEggText:
-	text_far _NoRoomForEggText
-	text_end
-
-DayCare_GiveEgg:
-	ld a, [wEggMonLevel]
-	ld [wCurPartyLevel], a
-	ld hl, wPartyCount
-	ld a, [hl]
-	cp PARTY_LENGTH
-	jr nc, .PartyFull
-	inc a
-	ld [hl], a
-
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, EGG
-	ld [hli], a
-	ld a, [wEggMonSpecies]
-	ld [wCurSpecies], a
-	ld [wCurPartySpecies], a
-	ld [hl], -1
-
-	ld hl, wPartyMonNicknames
-	ld bc, MON_NAME_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMonNickname
-	rst CopyBytes
-
-	ld hl, wPartyMonOTs
-	ld bc, NAME_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMonOT
-	rst CopyBytes
-
-	ld hl, wPartyMon1
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call DayCare_GetCurrentPartyMember
-	ld hl, wEggMon
-	ld bc, BOXMON_STRUCT_LENGTH
-	rst CopyBytes
-
-	call GetBaseData
-	ld a, [wPartyCount]
-	dec a
-	ld hl, wPartyMon1
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld b, h
-	ld c, l
-	ld hl, MON_ID + 1
-	add hl, bc
-	push hl
-	ld hl, MON_MAXHP
-	add hl, bc
-	ld d, h
-	ld e, l
-	pop hl
-	push bc
-	ld b, FALSE
-	predef CalcMonStats
-	pop bc
-	ld hl, MON_HP
-	add hl, bc
-	xor a
-	ld [hli], a
-	ld [hl], a
-	and a
-	ret
-
-.PartyFull:
-	scf
-	ret
-
-DayCare_GetCurrentPartyMember:
-	ld a, [wPartyCount]
-	dec a
-	rst AddNTimes
-	ld d, h
-	ld e, l
-	ret
-
-DayCare_InitBreeding:
-	ld a, [wDayCareLady]
-	bit DAYCARELADY_HAS_MON_F, a
-	ret z
-	ld a, [wDayCareMan]
-	bit DAYCAREMAN_HAS_MON_F, a
-	ret z
-	call CheckBreedmonCompatibility
-	ld a, [wBreedingCompatibility]
-	and a
-	ret z
-	inc a
-	ret z
-	ld hl, wDayCareMan
-	set DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
-.loop
-	call Random
-	cp 150
-	jr c, .loop
-	ld [wStepsToEgg], a
-; fallthrough
-.UselessJump:
-	xor a
-	ld hl, wEggMon
-	ld bc, BOXMON_STRUCT_LENGTH
-	rst ByteFill
-	ld hl, wEggMonNickname
-	ld bc, MON_NAME_LENGTH
-	rst ByteFill
-	ld hl, wEggMonOT
-	ld bc, NAME_LENGTH
-	rst ByteFill
-	ld a, [wBreedMon1DVs]
-	ld [wTempMonDVs], a
-	ld a, [wBreedMon1DVs + 1]
-	ld [wTempMonDVs + 1], a
-	ld a, [wBreedMon1Species]
-	ld [wCurPartySpecies], a
-	ld a, TEMPMON
-	ld [wMonType], a
-	ld hl, DITTO
-	call GetPokemonIDFromIndex
-	ld c, a
-	ld a, [wBreedMon1Species]
-	cp c
-	ld a, $1
-	jr z, .LoadWhichBreedmonIsTheMother
-	ld a, [wBreedMon2Species]
-	cp c
-	ld a, $0 ; no-optimize a = 0
-	jr z, .LoadWhichBreedmonIsTheMother
-	farcall GetGender
-	ld a, $0 ; no-optimize a = 0
-	jr z, .LoadWhichBreedmonIsTheMother
-	inc a
-
-.LoadWhichBreedmonIsTheMother:
-	ld [wBreedMotherOrNonDitto], a
-	and a
-	ld a, [wBreedMon1Species]
-	jr z, .GotMother
-	ld a, [wBreedMon2Species]
-
-.GotMother:
-	ld [wCurPartySpecies], a
-	farcall GetLowestEvolutionStage
-	ld a, EGG_LEVEL
-	ld [wCurPartyLevel], a
-	call Daycare_CheckAlternateOffspring
-	ld [wCurPartySpecies], a
-	ld [wCurSpecies], a
-	ld [wEggMonSpecies], a
-
-	call GetBaseData
-	ld hl, wEggMonNickname
-	ld de, .String_EGG
-	call CopyName2
-	ld hl, wPlayerName
-	ld de, wEggMonOT
-	ld bc, NAME_LENGTH
-	rst CopyBytes
-	xor a
-	ld [wEggMonItem], a
-	ld de, wEggMonMoves
-	xor a ; FALSE
-	ld [wSkipMovesBeforeLevelUp], a
-	predef FillMoves
-	call InitEggMoves
-	ld hl, wEggMonID
-	ld a, [wPlayerID]
-	ld [hli], a
-	ld a, [wPlayerID + 1]
-	ld [hl], a
-	ld a, [wCurPartyLevel]
-	ld d, a
-	farcall CalcExpAtLevel
-	ld hl, wEggMonExp
-	ldh a, [hMultiplicand]
-	ld [hli], a
-	ldh a, [hMultiplicand + 1]
-	ld [hli], a
-	ldh a, [hMultiplicand + 2]
-	ld [hl], a
-	xor a
-	ld b, wEggMonDVs - wEggMonEVs
-	ld hl, wEggMonEVs
-.loop2
-	ld [hli], a
-	dec b
-	jr nz, .loop2
-	ld hl, DITTO
-	call GetPokemonIDFromIndex
-	ld b, a
-	ld hl, wEggMonDVs
-	call Random
-	ld [hli], a
-	ld [wTempMonDVs], a
-	call Random
-	ld [hld], a
-	ld [wTempMonDVs + 1], a
-	ld de, wBreedMon1DVs
-	ld a, [wBreedMon1Species]
-	cp b
-	jr z, .GotDVs
-	ld de, wBreedMon2DVs
-	ld a, [wBreedMon2Species]
-	cp b
-	jr z, .GotDVs
-	ld a, TEMPMON
-	ld [wMonType], a
-	push hl
-	farcall GetGender
-	pop hl
-	ld de, wBreedMon1DVs
-	ld bc, wBreedMon2DVs
-	jr c, .SkipDVs
-	jr z, .ParentCheck2
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr z, .GotDVs
-	ld d, b
-	ld e, c
-	jr .GotDVs
-
-.ParentCheck2:
-	ld a, [wBreedMotherOrNonDitto]
-	and a
-	jr nz, .GotDVs
-	ld d, b
-	ld e, c
-
-.GotDVs:
-	ld a, [de]
-	inc de
-	and $f
-	ld b, a
-	ld a, [hl]
-	and $f0
-	add b
-	ld [hli], a
-	ld a, [de]
-	and $7
-	ld b, a
-	ld a, [hl]
-	and $f8
-	add b
-	ld [hl], a
-
-.SkipDVs:
-	ld hl, wStringBuffer1
-	ld de, wMonOrItemNameBuffer
-	ld bc, NAME_LENGTH
-	rst CopyBytes
-	ld hl, wEggMonMoves
-	ld de, wEggMonPP
-	predef FillPP
-	ld hl, wMonOrItemNameBuffer
-	ld de, wStringBuffer1
-	ld bc, NAME_LENGTH
-	rst CopyBytes
-	ld a, [wBaseEggSteps]
-	ld hl, wEggMonHappiness
-	ld [hli], a
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	ld a, [wCurPartyLevel]
-	ld [wEggMonLevel], a
-	ret
-
-.String_EGG:
-	db "EGG@"
-
-Daycare_CheckAlternateOffspring:
-	; returns [wCurPartySpecies] in a, unless that species may give birth to an alternate species (e.g., gender variant)
-	; if an alternate species is possible, it returns it 50% of the time
-	call Random
-	add a
-	ld a, [wCurPartySpecies]
-	ret nc
-	push hl
-	push de
-	push bc
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld de, 4
-	ld hl, .alternate_offspring_table
-	call IsInWordArray
-	pop bc
-	pop de
-	ld a, [wCurPartySpecies]
-	jr nc, .done
-	inc hl
-	inc hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	call GetPokemonIDFromIndex
-.done
-	pop hl
-	ret
-
-.alternate_offspring_table
-	dw NIDORAN_F, NIDORAN_M
-	dw -1

@@ -146,10 +146,10 @@ DayCareStep::
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, .day_care_lady
 
-	ld a, [wBreedMon1Level] ; level
+	ld a, [wDayCareMon1Level] ; level
 	cp MAX_LEVEL
 	jr nc, .day_care_lady
-	ld hl, wBreedMon1Exp + 2 ; exp
+	ld hl, wDayCareMon1Exp + 2 ; exp
 	inc [hl]
 	jr nz, .day_care_lady
 	dec hl
@@ -165,54 +165,23 @@ DayCareStep::
 .day_care_lady
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
-	jr z, .check_egg
+	jr z, .done
 
-	ld a, [wBreedMon2Level] ; level
+	ld a, [wDayCareMon2Level] ; level
 	cp MAX_LEVEL
-	jr nc, .check_egg
-	ld hl, wBreedMon2Exp + 2 ; exp
+	jr nc, .done
+	ld hl, wDayCareMon2Exp + 2 ; exp
 	inc [hl]
-	jr nz, .check_egg
+	jr nz, .done
 	dec hl
 	inc [hl]
-	jr nz, .check_egg
+	jr nz, .done
 	dec hl
 	inc [hl]
 	ld a, [hl]
 	cp HIGH(MAX_DAY_CARE_EXP >> 8)
-	jr c, .check_egg
+	jr c, .done
 	ld [hl], HIGH(MAX_DAY_CARE_EXP >> 8)
 
-.check_egg
-	ld hl, wDayCareMan
-	bit DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
-	ret z
-	ld hl, wStepsToEgg
-	dec [hl]
-	ret nz
-
-	call Random
-	ld [hl], a
-	farcall CheckBreedmonCompatibility
-	ld a, [wBreedingCompatibility]
-	cp 230
-	ld b, 31 percent + 1
-	jr nc, .okay
-	ld a, [wBreedingCompatibility]
-	cp 170
-	ld b, 16 percent
-	jr nc, .okay
-	ld a, [wBreedingCompatibility]
-	cp 110
-	ld b, 12 percent
-	jr nc, .okay
-	ld b, 4 percent
-
-.okay
-	call Random
-	cp b
-	ret nc
-	ld hl, wDayCareMan
-	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
-	set DAYCAREMAN_HAS_EGG_F, [hl]
+.done
 	ret

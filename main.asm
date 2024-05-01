@@ -86,7 +86,7 @@ INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
-INCLUDE "engine/pokemon/breeding.asm"
+INCLUDE "engine/pokemon/daycaremons.asm"
 
 
 SECTION "Roofs", ROMX
@@ -501,7 +501,6 @@ INCLUDE "engine/movie/title.asm"
 SECTION "mobile45", ROMX
 
 INCLUDE "mobile/mobile_45_sprite_engine.asm"
-INCLUDE "mobile/mobile_45_stadium.asm"
 
 
 SECTION "mobile46", ROMX

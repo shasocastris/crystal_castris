@@ -2,11 +2,11 @@ CheckBreedmonCompatibility:
 	call .CheckBreedingGroupCompatibility
 	ld c, $0
 	jmp nc, .done
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	ld [wCurPartySpecies], a
-	ld a, [wBreedMon1DVs]
+	ld a, [wDayCareMon1DVs]
 	ld [wTempMonDVs], a
-	ld a, [wBreedMon1DVs + 1]
+	ld a, [wDayCareMon1DVs + 1]
 	ld [wTempMonDVs + 1], a
 	ld a, TEMPMON
 	ld [wMonType], a
@@ -18,11 +18,11 @@ CheckBreedmonCompatibility:
 
 .breedmon2
 	push bc
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	ld [wCurPartySpecies], a
-	ld a, [wBreedMon2DVs]
+	ld a, [wDayCareMon2DVs]
 	ld [wTempMonDVs], a
-	ld a, [wBreedMon2DVs + 1]
+	ld a, [wDayCareMon2DVs + 1]
 	ld [wTempMonDVs + 1], a
 	ld a, TEMPMON
 	ld [wMonType], a
@@ -42,16 +42,16 @@ CheckBreedmonCompatibility:
 	call GetPokemonIDFromIndex
 	ld b, a
 	ld c, $0
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	cp b
 	jr z, .ditto1
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	cp b
 	jr nz, .done
 	jr .compute
 
 .ditto1
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	cp b
 	jr z, .done
 
@@ -59,23 +59,23 @@ CheckBreedmonCompatibility:
 	call .CheckDVs
 	ld c, 255
 	jr z, .done
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	ld b, a
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	cp b
 	ld c, 254
 	jr z, .compare_ids
 	ld c, 128
 .compare_ids
 	; Speed up
-	ld a, [wBreedMon1ID]
+	ld a, [wDayCareMon1ID]
 	ld b, a
-	ld a, [wBreedMon2ID]
+	ld a, [wDayCareMon2ID]
 	cp b
 	jr nz, .done
-	ld a, [wBreedMon1ID + 1]
+	ld a, [wDayCareMon1ID + 1]
 	ld b, a
-	ld a, [wBreedMon2ID + 1]
+	ld a, [wDayCareMon2ID + 1]
 	cp b
 	jr nz, .done
 	ld a, c
@@ -90,17 +90,17 @@ CheckBreedmonCompatibility:
 .CheckDVs:
 ; If Defense DVs match and the lower 3 bits of the Special DVs match,
 ; avoid breeding
-	ld a, [wBreedMon1DVs]
+	ld a, [wDayCareMon1DVs]
 	and %1111
 	ld b, a
-	ld a, [wBreedMon2DVs]
+	ld a, [wDayCareMon2DVs]
 	and %1111
 	cp b
 	ret nz
-	ld a, [wBreedMon1DVs + 1]
+	ld a, [wDayCareMon1DVs + 1]
 	and %111
 	ld b, a
-	ld a, [wBreedMon2DVs + 1]
+	ld a, [wDayCareMon2DVs + 1]
 	and %111
 	cp b
 	ret
@@ -108,14 +108,14 @@ CheckBreedmonCompatibility:
 .CheckBreedingGroupCompatibility:
 ; If either mon is in the No Eggs group,
 ; they are not compatible.
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	ld [wCurSpecies], a
 	call GetBaseData
 	ld a, [wBaseEggGroups]
 	cp EGG_NONE * $11
 	jr z, .Incompatible
 
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	ld [wCurSpecies], a
 	call GetBaseData
 	ld a, [wBaseEggGroups]
@@ -127,7 +127,7 @@ CheckBreedmonCompatibility:
 	ld hl, DITTO
 	call GetPokemonIDFromIndex
 	ld d, a
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	cp d
 	jr z, .Compatible
 	ld [wCurSpecies], a
@@ -141,7 +141,7 @@ CheckBreedmonCompatibility:
 	swap a
 	ld c, a
 
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	cp d
 	jr z, .Compatible
 	ld [wCurSpecies], a
@@ -553,27 +553,27 @@ GetHeritableMoves:
 	ld hl, DITTO
 	call GetPokemonIDFromIndex
 	ld b, a
-	ld hl, wBreedMon2Moves
-	ld a, [wBreedMon1Species]
+	ld hl, wDayCareMon2Moves
+	ld a, [wDayCareMon1Species]
 	cp b
 	jr z, .ditto1
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	cp b
 	jr z, .ditto2
 	ld a, [wBreedMotherOrNonDitto]
 	and a
 	ret z
-	ld hl, wBreedMon1Moves
+	ld hl, wDayCareMon1Moves
 	ret
 
 .ditto1
 	ld a, [wCurPartySpecies]
 	push af
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	ld [wCurPartySpecies], a
-	ld a, [wBreedMon2DVs]
+	ld a, [wDayCareMon2DVs]
 	ld [wTempMonDVs], a
-	ld a, [wBreedMon2DVs + 1]
+	ld a, [wDayCareMon2DVs + 1]
 	ld [wTempMonDVs + 1], a
 	ld a, TEMPMON
 	ld [wMonType], a
@@ -585,11 +585,11 @@ GetHeritableMoves:
 .ditto2
 	ld a, [wCurPartySpecies]
 	push af
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	ld [wCurPartySpecies], a
-	ld a, [wBreedMon1DVs]
+	ld a, [wDayCareMon1DVs]
 	ld [wTempMonDVs], a
-	ld a, [wBreedMon1DVs + 1]
+	ld a, [wDayCareMon1DVs + 1]
 	ld [wTempMonDVs + 1], a
 	ld a, TEMPMON
 	ld [wMonType], a
@@ -598,13 +598,13 @@ GetHeritableMoves:
 	jr nz, .inherit_mon1_moves
 
 .inherit_mon2_moves
-	ld hl, wBreedMon2Moves
+	ld hl, wDayCareMon2Moves
 	pop af
 	ld [wCurPartySpecies], a
 	ret
 
 .inherit_mon1_moves
-	ld hl, wBreedMon1Moves
+	ld hl, wDayCareMon1Moves
 	pop af
 	ld [wCurPartySpecies], a
 	ret
@@ -613,11 +613,11 @@ GetBreedmonMovePointer:
 	ld hl, DITTO
 	call GetPokemonIDFromIndex
 	ld b, a
-	ld hl, wBreedMon1Moves
-	ld a, [wBreedMon1Species]
+	ld hl, wDayCareMon1Moves
+	ld a, [wDayCareMon1Species]
 	cp b
 	ret z
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	cp b
 	jr z, .ditto
 	ld a, [wBreedMotherOrNonDitto]
@@ -625,7 +625,7 @@ GetBreedmonMovePointer:
 	ret z
 
 .ditto
-	ld hl, wBreedMon2Moves
+	ld hl, wDayCareMon2Moves
 	ret
 
 GetEggFrontpic:
@@ -867,26 +867,26 @@ Hatch_ShellFragmentLoop:
 DayCareMon1:
 	ld hl, LeftWithDayCareManText
 	call PrintText
-	ld a, [wBreedMon1Species]
+	ld a, [wDayCareMon1Species]
 	call PlayMonCry
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
 	jr z, DayCareMonCursor
 	call PromptButton
-	ld hl, wBreedMon2Nickname
+	ld hl, wDayCareMon2Nickname
 	call DayCareMonCompatibilityText
 	jmp PrintText
 
 DayCareMon2:
 	ld hl, LeftWithDayCareLadyText
 	call PrintText
-	ld a, [wBreedMon2Species]
+	ld a, [wDayCareMon2Species]
 	call PlayMonCry
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, DayCareMonCursor
 	call PromptButton
-	ld hl, wBreedMon1Nickname
+	ld hl, wDayCareMon1Nickname
 	call DayCareMonCompatibilityText
 	jmp PrintText
 
