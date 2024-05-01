@@ -1,2 +1,0 @@
-GiveOddEgg:
-	farjp _GiveOddEgg

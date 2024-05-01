@@ -1,10 +1,10 @@
-GetBreedMon1LevelGrowth:
-	ld hl, wBreedMon1
+GetDayCareMon1LevelGrowth:
+	ld hl, wDayCareMon1
 	ld de, wTempMon
 	ld bc, BOXMON_STRUCT_LENGTH
 	rst CopyBytes
 	farcall CalcLevel
-	ld a, [wBreedMon1Level]
+	ld a, [wDayCareMon1Level]
 	ld b, a
 	ld a, d
 	ld e, a
@@ -12,13 +12,13 @@ GetBreedMon1LevelGrowth:
 	ld d, a
 	ret
 
-GetBreedMon2LevelGrowth:
-	ld hl, wBreedMon2
+GetDayCareMon2LevelGrowth:
+	ld hl, wDayCareMon2
 	ld de, wTempMon
 	ld bc, BOXMON_STRUCT_LENGTH
 	rst CopyBytes
 	farcall CalcLevel
-	ld a, [wBreedMon2Level]
+	ld a, [wDayCareMon2Level]
 	ld b, a
 	ld a, d
 	ld e, a

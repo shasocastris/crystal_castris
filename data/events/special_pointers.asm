@@ -44,7 +44,6 @@ SpecialsPointers::
 	add_special PlayersHousePC
 	add_special DayCareMan
 	add_special DayCareLady
-	add_special DayCareManOutside
 	add_special MoveDeletion
 	add_special BankOfMom
 	add_special MagnetTrain
@@ -127,7 +126,6 @@ SpecialsPointers::
 	add_special BattleTowerBattle
 	add_special LoadOpponentTrainerAndPokemonWithOTSprite
 	add_special CheckForBattleTowerRules
-	add_special GiveOddEgg
 	add_special Reset ; bank 0
 	add_special MoveTutor
 	add_special OmanyteChamber

@@ -31,7 +31,7 @@ PokemonTableGarbageCollection:
 	ld a, 1
 	ldh [rSVBK], a
 	___conversion_bitmap_check_structs wPartyMons, PARTYMON_STRUCT_LENGTH, PARTY_LENGTH, .set_bit
-	___conversion_bitmap_check_structs wBreedMon1Species, wBreedMon2 - wBreedMon1Species, 2, .set_bit
+	___conversion_bitmap_check_structs wDayCareMon1Species, wDayCareMon2 - wDayCareMon1Species, 2, .set_bit
 	ld a, [wEggMonSpecies]
 	call .set_bit
 	; may or may not be valid, but marking them in use is free
@@ -67,7 +67,7 @@ MoveTableGarbageCollection:
 	ldh [rSVBK], a
 	FOR ___move, NUM_MOVES
 		___conversion_bitmap_check_structs wPartyMon1Moves + ___move, PARTYMON_STRUCT_LENGTH, PARTY_LENGTH, .set_bit
-		___conversion_bitmap_check_structs wBreedMon1Moves + ___move, wBreedMon2 - wBreedMon1, 2, .set_bit
+		___conversion_bitmap_check_structs wDayCareMon1Moves + ___move, wDayCareMon2 - wDayCareMon1, 2, .set_bit
 		ld a, [wEggMonMoves + ___move]
 		call .set_bit
 		; may or may not be valid
