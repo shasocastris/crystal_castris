@@ -6,49 +6,25 @@ DayCare_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback
-
-DayCareEggCheckCallback:
-	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
-	iftrue .PutDayCareManOutside
-	clearevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
-	setevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
-	endcallback
-
-.PutDayCareManOutside:
-	setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
-	clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
-	endcallback
 
 DayCareManScript_Inside:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_ODD_EGG
-	iftrue .AlreadyHaveOddEgg
-	writetext DayCareManText_GiveOddEgg
+	checkevent EVENT_GOT_LUCKY_EGG
+	iftrue .AlreadyHaveLuckyEgg
+	writetext DayCareManText_GiveLuckyEgg
 	promptbutton
-	closetext
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	special GiveOddEgg
-	opentext
-	writetext DayCareText_GotOddEgg
+	verbosegiveitem LUCKY_EGG
+	writetext DayCareText_GotLuckyEgg
 	playsound SFX_KEY_ITEM
 	waitsfx
-	writetext DayCareText_DescribeOddEgg
+	writetext DayCareText_DescribeLuckyEgg
 	waitbutton
 	closetext
-	setevent EVENT_GOT_ODD_EGG
+	setevent EVENT_GOT_LUCKY_EGG
 	end
 
-.PartyFull:
-	opentext
-	writetext DayCareText_PartyFull
-	waitbutton
-	closetext
-	end
-
-.AlreadyHaveOddEgg:
+.AlreadyHaveLuckyEgg:
 	special DayCareMan
 	waitbutton
 	closetext
@@ -57,15 +33,7 @@ DayCareManScript_Inside:
 DayCareLadyScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
-	iftrue .HusbandWasLookingForYou
 	special DayCareLady
-	waitbutton
-	closetext
-	end
-
-.HusbandWasLookingForYou:
-	writetext Text_GrampsLookingForYou
 	waitbutton
 	closetext
 	end
@@ -73,58 +41,49 @@ DayCareLadyScript:
 DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
 
-Text_GrampsLookingForYou:
-	text "Gramps was looking"
-	line "for you."
-	done
-
-DayCareManText_GiveOddEgg:
+DayCareManText_GiveLuckyEgg:
 	text "I'm the DAY-CARE"
 	line "MAN."
 
-	para "Do you know about"
-	line "EGGS?"
+	para "Do you know what"
+	line "a LUCKY EGG is?"
 
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
+	para "If you give it to"
+	line "a #MON, it will"
+	cont "grow much faster"
+	cont "than normal."
 
 	para "How incredible is"
 	line "that?"
 
 	para "Well, wouldn't you"
-	line "like this EGG?"
+	line "like a LUCKY EGG?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
 	done
 
-DayCareText_GotOddEgg:
+DayCareText_GotLuckyEgg:
 	text "<PLAYER> received"
-	line "ODD EGG!"
+	line "LUCKY EGG!"
 	done
 
-DayCareText_DescribeOddEgg:
-	text "I found that when"
-	line "I was caring for"
+DayCareText_DescribeLuckyEgg:
+	text "That was being"
+	line "held by a rare"
+	cont "#MON I once met"
+	cont "on Route 44."
 
-	para "someone's #MON"
-	line "before."
+	para "PROF. ELM thought"
+	line "it was a #MON"
+	cont "EGG, but it is"
+	cont "just an item"
+	cont "#MON can hold."
 
-	para "But the trainer"
-	line "didn't want the"
-
-	para "EGG, so I'd kept"
-	line "it around."
-	done
-
-DayCareText_PartyFull:
-	text "You've no room for"
-	line "this."
-	done
+	para "Hopefully it has"
+	line "some use for a"
+	cont "trainer like"
+	cont "yourself."
 
 DayCare_MapEvents:
 	db 0, 0 ; filler
