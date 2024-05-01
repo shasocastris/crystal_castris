@@ -104,7 +104,7 @@ ItemDescriptions1:
 	dw MiracleBerryDesc ; 005D
 	dw PearlDesc        ; 005E
 	dw BigPearlDesc     ; 005F
-	dw EverStoneDesc    ; 0060
+	dw MistStoneDesc    ; 0060
 	dw SpellTagDesc     ; 0061
 	dw RageCandyBarDesc ; 0062
 	dw MiracleSeedDesc  ; 0063
@@ -621,9 +621,9 @@ BigPearlDesc:
 	db   "A big, beautiful"
 	next "pearl. Sell high.@"
 
-EverStoneDesc:
-	db   "Stops evolution."
-	next "(HOLD)@"
+MistStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
 
 SpellTagDesc:
 	db   "Powers up ghost-"
