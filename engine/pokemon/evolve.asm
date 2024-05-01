@@ -69,7 +69,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_ITEM
-	jmp z, .item
+	jr z, .item
 
 	ld a, [wForceEvolution]
 	and a
@@ -77,7 +77,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_LEVEL
-	jmp z, .level
+	jr z, .level
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
@@ -105,7 +105,7 @@ EvolveAfterBattle_MasterLoop:
 	call GetNextEvoAttackByte
 	cp c
 	jmp nz, .skip_evolution_species
-	jmp .proceed
+	jr .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -114,7 +114,7 @@ EvolveAfterBattle_MasterLoop:
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
-	jmp z, .proceed
+	jr z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
