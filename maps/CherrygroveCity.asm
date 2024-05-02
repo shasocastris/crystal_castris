@@ -4,6 +4,11 @@
 	const CHERRYGROVECITY_TEACHER
 	const CHERRYGROVECITY_YOUNGSTER
 	const CHERRYGROVECITY_FISHER
+	const CHERRYGROVECITYY_FRUIT_TREE1
+	const CHERRYGROVECITYY_FRUIT_TREE2
+	const CHERRYGROVECITYY_FRUIT_TREE3
+	const CHERRYGROVECITYY_FRUIT_TREE4
+
 
 CherrygroveCity_MapScripts:
 	def_scene_scripts
@@ -234,6 +239,18 @@ CherrygroveCityPokecenterSign:
 
 CherrygroveCityMartSign:
 	jumpstd MartSignScript
+
+CherrygroveCityFruitTree1:
+	fruittree FRUITTREE_CHERRYGROVE_CITY_1
+
+CherrygroveCityFruitTree2:
+	fruittree FRUITTREE_CHERRYGROVE_CITY_2
+
+CherrygroveCityFruitTree3:
+	fruittree FRUITTREE_CHERRYGROVE_CITY_3
+
+CherrygroveCityFruitTree4:
+	fruittree FRUITTREE_CHERRYGROVE_CITY_4
 
 GuideGentMovement1:
 	step LEFT
@@ -565,3 +582,8 @@ CherrygroveCity_MapEvents:
 	object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1
 	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
 	object_event  7, 12, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MysticWaterGuy, -1
+	object_event 22, 13, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityFruitTree1, -1
+	object_event 37,  0, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityFruitTree2, -1
+	object_event 35,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityFruitTree3, -1
+	object_event 37,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCityFruitTree4, -1
+
