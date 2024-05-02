@@ -15,7 +15,6 @@ PredefPointers::
 	add_predef TryAddMonToParty
 	add_predef AddTempmonToParty
 	add_predef SendMonIntoBox
-	add_predef GiveEgg
 	add_predef AnimateHPBar
 	add_predef CalcMonStats
 	add_predef CalcMonStatC
