@@ -15,7 +15,6 @@ DayCareManScript_Inside:
 	writetext DayCareManText_GiveLuckyEgg
 	promptbutton
 	verbosegiveitem LUCKY_EGG
-	writetext DayCareText_GotLuckyEgg
 	playsound SFX_KEY_ITEM
 	waitsfx
 	writetext DayCareText_DescribeLuckyEgg
@@ -33,11 +32,18 @@ DayCareManScript_Inside:
 DayCareLadyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_LUCKY_EGG
+	iffalse .AskGrampsForLuckyEgg
 	special DayCareLady
 	waitbutton
 	closetext
 	end
 
+.AskGrampsForLuckyEgg
+	writetext AskGrampsForLuckyEggText
+	waitbutton
+	closetext
+	end
 DayCareBookshelf:
 	jumpstd DifficultBookshelfScript
 
@@ -57,22 +63,19 @@ DayCareManText_GiveLuckyEgg:
 	line "that?"
 
 	para "Well, wouldn't you"
-	line "like a LUCKY EGG?"
+	line "like a one for"
+	cont "yourself?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
 	done
 
-DayCareText_GotLuckyEgg:
-	text "<PLAYER> received"
-	line "LUCKY EGG!"
-	done
-
 DayCareText_DescribeLuckyEgg:
 	text "That was being"
 	line "held by a rare"
-	cont "#MON I once met"
-	cont "on Route 44."
+	cont "#MON Gramms and"
+	cont "I once met on"
+	cont "Route 44."
 
 	para "PROF. ELM thought"
 	line "it was a #MON"
@@ -84,6 +87,19 @@ DayCareText_DescribeLuckyEgg:
 	line "some use for a"
 	cont "trainer like"
 	cont "yourself."
+	done
+
+AskGrampsForLuckyEggText:
+	text "I can raise a"
+	line "#MON for you."
+
+	para "But first you"
+	line "should talk to"
+	cont "Gramps."
+
+	para "He has a nice gift"
+	line "for you."
+	done
 
 DayCare_MapEvents:
 	db 0, 0 ; filler

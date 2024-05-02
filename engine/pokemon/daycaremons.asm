@@ -8,7 +8,7 @@ DayCareMon1:
 	jr z, DayCareMonCursor
 	call PromptButton
 	ld hl, BrimmingWithEnergyText
-	call PrintText
+	jmp PrintText
 
 DayCareMon2:
 	ld hl, LeftWithDayCareLadyText
@@ -18,9 +18,9 @@ DayCareMon2:
 	ld a, [wDayCareMan]
 	bit DAYCAREMAN_HAS_MON_F, a
 	jr z, DayCareMonCursor
-	ld hl, BrimmingWithEnergyText
 	call PromptButton
-	call PrintText
+	ld hl, BrimmingWithEnergyText
+	jmp PrintText
 
 DayCareMonCursor:
 	jmp WaitPressAorB_BlinkCursor

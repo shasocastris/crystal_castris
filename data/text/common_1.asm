@@ -1326,7 +1326,7 @@ _DayCareManIntroText::
 	cont "raise a #MON?"
 	done
 
-_DayCareManIntroEggText::
+_DayCareManIntroLuckyEggText::
 	text "I'm the DAY-CARE"
 	line "MAN. Do you know"
 	cont "about EGGS?"
@@ -1353,20 +1353,21 @@ _DayCareLadyIntroText::
 	line "#MON for you?"
 	done
 
-_DayCareLadyIntroEggText::
+_DayCareLadyIntroLuckyEggText::
 	text "I'm the DAY-CARE"
-	line "LADY. Do you know"
-	cont "about EGGS?"
+	line "LADY. Have you"
+	cont "been using that"
+	cont "LUCKY EGG?"
 
-	para "My husband and I"
-	line "were raising some"
-	cont "#MON, you see."
+	para "I was once"
+	line "training a #MON"
+	cont "that was holding"
+	cont "it, and I was"
+	cont "amazed at how fast"
+	cont "it grew!"
 
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible"
-	line "could that be?"
+	para "But enough of my"
+	line "reminiscing."
 
 	para "Should I raise a"
 	line "#MON for you?"
