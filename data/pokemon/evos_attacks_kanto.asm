@@ -613,6 +613,7 @@ ClefairyEvosAttacks:
 	dbw 19, MINIMIZE
 	dbw 26, DEFENSE_CURL
 	dbw 34, METRONOME
+	dbw 39, MOONBLAST
 	dbw 43, MOONLIGHT
 	dbw 53, LIGHT_SCREEN
 	db 0 ; no more level-up moves
@@ -620,7 +621,7 @@ ClefairyEvosAttacks:
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SING
-	dbw 1, DOUBLESLAP
+	dbw 1, MOONBLAST
 	dbw 1, METRONOME
 	dbw 1, MOONLIGHT
 	db 0 ; no more level-up moves
@@ -658,7 +659,7 @@ JigglypuffEvosAttacks:
 	dbw 24, DOUBLESLAP
 	dbw 29, REST
 	dbw 34, BODY_SLAM
-	dbw 39, DOUBLE_EDGE
+	dbw 39, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -666,7 +667,7 @@ WigglytuffEvosAttacks:
 	dbw 1, SING
 	dbw 1, DISABLE
 	dbw 1, DEFENSE_CURL
-	dbw 1, DOUBLESLAP
+	dbw 1, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -1803,6 +1804,7 @@ MrMimeEvosAttacks:
 	dbw 36, PSYBEAM
 	dbw 41, BATON_PASS
 	dbw 46, SAFEGUARD
+	dbw 51, MOONBLAST
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
