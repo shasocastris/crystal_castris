@@ -280,6 +280,8 @@ MovesGen2:
 	move EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,      PHYSICAL, 100, 15,  50      ;ROCK_SMASH
 	move EFFECT_TRAP_TARGET,        15, WATER,         SPECIAL,   70, 15,   0      ;WHIRLPOOL
 	move EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0      ;BEAT_UP
+	move EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30      ;MOONBLAST
+	move EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,         PHYSICAL,  90, 10,  10      ;PLAY_ROUGH
 .IndirectEnd::
 
 POPS

@@ -260,6 +260,8 @@ MoveDescriptionsGen2:
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
+	dw MoonblastDescription
+	dw PlayRoughDescription
 .IndirectEnd::
 
 InvalidMoveDescription:
@@ -1268,3 +1270,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+MoonblastDescription:
+	db   "An attack that may"
+	next "lower SPCL.ATK.@"
+
+PlayRoughDescription:
+	db   "An attack that may"
+	next "lower ATTACK.@"
