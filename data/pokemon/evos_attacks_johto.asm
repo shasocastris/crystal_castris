@@ -255,6 +255,7 @@ FurretEvosAttacks:
 	dbw 1, QUICK_ATTACK
 	dbw 5, DEFENSE_CURL
 	dbw 11, QUICK_ATTACK
+	dbw 14, AGILITY
 	dbw 18, FURY_SWIPES
 	dbw 28, SLAM
 	dbw 38, REST
@@ -344,6 +345,7 @@ AriadosEvosAttacks:
 	dbw 6, SCARY_FACE
 	dbw 11, CONSTRICT
 	dbw 17, NIGHT_SHADE
+	dbw 21, SWORDS_DANCE
 	dbw 25, LEECH_LIFE
 	dbw 34, FURY_SWIPES
 	dbw 43, SPIDER_WEB
@@ -505,7 +507,7 @@ AmpharosEvosAttacks:
 	dbw 9, THUNDERSHOCK
 	dbw 18, THUNDER_WAVE
 	dbw 27, COTTON_SPORE
-	dbw 30, THUNDERPUNCH
+	dbw 29, THUNDERPUNCH
 	dbw 42, LIGHT_SCREEN
 	dbw 57, THUNDER
 	db 0 ; no more level-up moves
@@ -564,7 +566,7 @@ PolitoedEvosAttacks:
 	dbw 1, HYPNOSIS
 	dbw 1, DOUBLESLAP
 	dbw 1, PERISH_SONG
-	dbw 35, PERISH_SONG
+	dbw 1, PERISH_SONG
 	dbw 51, SWAGGER
 	db 0 ; no more level-up moves
 
@@ -1012,7 +1014,7 @@ PiloswineEvosAttacks:
 	dbw 10, POWDER_SNOW
 	dbw 19, ENDURE
 	dbw 28, TAKE_DOWN
-	dbw 33, FURY_ATTACK
+	dbw 32, FURY_ATTACK
 	dbw 42, MIST
 	dbw 56, BLIZZARD
 	dbw 70, AMNESIA
@@ -1050,7 +1052,7 @@ OctilleryEvosAttacks:
 	dbw 22, PSYBEAM
 	dbw 22, AURORA_BEAM
 	dbw 22, BUBBLEBEAM
-	dbw 25, OCTAZOOKA
+	dbw 24, OCTAZOOKA
 	dbw 38, FOCUS_ENERGY
 	dbw 54, ICE_BEAM
 	dbw 70, HYPER_BEAM
@@ -1142,7 +1144,7 @@ DonphanEvosAttacks:
 	dbw 1, GROWL
 	dbw 9, DEFENSE_CURL
 	dbw 17, FLAIL
-	dbw 25, FURY_ATTACK
+	dbw 24, FURY_ATTACK
 	dbw 33, ROLLOUT
 	dbw 41, RAPID_SPIN
 	dbw 49, EARTHQUAKE
