@@ -4,7 +4,7 @@
 	evs  0,   3,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db DRAGON, FLYING ; type
+	db DRAGON, NORMAL ; type
 	db 15 ; catch rate
 	db 218 ; base exp
 	dw NO_ITEM, DRAGON_SCALE ; items
