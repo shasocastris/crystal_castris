@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FAIRY, FLYING ; type
-	db 75 ; catch rate
+	db 25 ; catch rate
 	db 114 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F12_5 ; gender ratio

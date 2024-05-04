@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db POISON, POISON ; type
-	db 120 ; catch rate
+	db 40 ; catch rate
 	db 118 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F0 ; gender ratio

@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, POISON ; type
-	db 90 ; catch rate
+	db 30 ; catch rate
 	db 126 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio

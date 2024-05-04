@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FAIRY, FAIRY ; type
-	db 25 ; catch rate
+	db 8 ; catch rate
 	db 129 ; base exp
 	dw MYSTERYBERRY, MOON_STONE ; items
 	db GENDER_F75 ; gender ratio

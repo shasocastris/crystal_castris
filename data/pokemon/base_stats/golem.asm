@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db ROCK, GROUND ; type
-	db 45 ; catch rate
+	db 15 ; catch rate
 	db 177 ; base exp
 	dw NO_ITEM, MIST_STONE ; items
 	db GENDER_F50 ; gender ratio
