@@ -630,11 +630,6 @@ Text_BattleUser::
 	text "<USER>@"
 	text_end
 
-_BattleMadeWhirlwindText::
-	text_start
-	line "made a whirlwind!"
-	prompt
-
 _BattleTookSunlightText::
 	text_start
 	line "took in sunlight!"

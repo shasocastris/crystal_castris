@@ -422,14 +422,22 @@ UsedBindText:
 	cont "<TARGET>!"
 	prompt
 
+UsedConstrictText:
+	text "<USER>"
+	line "used CONSTRICT on"
+	cont "<TARGET>!"
+	prompt
+
 WhirlpoolTrapText:
 	text "<TARGET>"
-	line "was trapped!"
+	line "was sucked into"
+	cont "the maelstrom!"
 	prompt
 
 FireSpinTrapText:
 	text "<TARGET>"
-	line "was trapped!"
+	line "was trapped in"
+	cont "the inferno!"
 	prompt
 
 WrappedByText:
@@ -442,6 +450,18 @@ ClampedByText:
 	text "<TARGET>"
 	line "was CLAMPED by"
 	cont "<USER>!"
+	prompt
+
+PsywaveTrapText:
+	text "<TARGET>"
+	line "was caught in the"
+	cont "psychic vortex!"
+	prompt
+
+RazorwindTrapText:
+	text "<TARGET>"
+	line "was buffeted"
+	cont "by the wind!"
 	prompt
 
 StoringEnergyText:

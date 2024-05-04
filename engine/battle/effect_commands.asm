@@ -1096,7 +1096,6 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
@@ -1925,8 +1924,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -3246,8 +3243,6 @@ BattleCommand_ConstantDamage:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_PSYWAVE
-	jr z, .psywave
 
 	cp EFFECT_SUPER_FANG
 	jr z, .super_fang
@@ -3257,21 +3252,6 @@ BattleCommand_ConstantDamage:
 
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
-	ld b, a
-	xor a
-	jr .got_power
-
-.psywave
-	ld a, b
-	srl a
-	add b
-	ld b, a
-.psywave_loop
-	call BattleRandom
-	and a
-	jr z, .psywave_loop
-	cp b
-	jr nc, .psywave_loop
 	ld b, a
 	xor a
 	jr .got_power
@@ -5643,17 +5623,12 @@ BattleCommand_Charge:
 	ret
 
 .move_messages
-	dw RAZOR_WIND, .BattleMadeWhirlwindText
 	dw SOLARBEAM,  .BattleTookSunlightText
 	dw SKULL_BASH, .BattleLoweredHeadText
 	dw SKY_ATTACK, .BattleGlowingText
 	dw FLY,        .BattleFlewText
 	dw DIG,        .BattleDugText
 	dw -1
-
-.BattleMadeWhirlwindText:
-	text_far _BattleMadeWhirlwindText
-	text_end
 
 .BattleTookSunlightText:
 	text_far _BattleTookSunlightText
@@ -5729,11 +5704,14 @@ BattleCommand_TrapTarget:
 	jmp StdBattleTextbox
 
 .Traps:
-	dw BIND,      UsedBindText      ; 'used BIND on'
-	dw WRAP,      WrappedByText     ; 'was WRAPPED by'
-	dw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dw CLAMP,     ClampedByText     ; 'was CLAMPED by'
-	dw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
+	dw BIND,       UsedBindText      ; 'used BIND on'
+	dw WRAP,       WrappedByText     ; 'was WRAPPED by'
+	dw FIRE_SPIN,  FireSpinTrapText  ; 'was trapped!'
+	dw CLAMP,      ClampedByText     ; 'was CLAMPED by'
+	dw WHIRLPOOL,  WhirlpoolTrapText ; 'was trapped!'
+	dw PSYWAVE,    PsywaveTrapText   ; 'was caught!'
+	dw RAZOR_WIND, RazorwindTrapText ; 'was buffeted!'
+	dw CONSTRICT,  UsedConstrictText ; 'used CONSTRICT on'
 
 INCLUDE "engine/battle/move_effects/mist.asm"
 

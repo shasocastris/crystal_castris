@@ -316,8 +316,8 @@ GuillotineDescription:
 	next "pincer attack.@"
 
 RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "Traps the foe for"
+	next "2-5 turns.@"
 
 SwordsDanceDescription:
 	db   "A dance that in-"
@@ -860,8 +860,8 @@ FlashDescription:
 	next "reduce accuracy.@"
 
 PsywaveDescription:
-	db   "An attack with"
-	next "variable power.@"
+	db   "Traps the foe for"
+	next "2-5 turns.@"
 
 SplashDescription:
 	db   "Has no effect"
