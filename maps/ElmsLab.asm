@@ -206,7 +206,6 @@ TotodilePokeBallScript:
 	waitsfx
 	promptbutton
 	givepoke TOTODILE, 5, BERRY
-	givepoke CATERPIE, 9, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -474,7 +473,6 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	verbosegiveitem RARE_CANDY, 99
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
