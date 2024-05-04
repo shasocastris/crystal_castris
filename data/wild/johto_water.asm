@@ -52,24 +52,24 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_1F_OUTSIDE
-	db 4 percent ; encounter rate
-	dbw 15, GOLDEEN
-	dbw 20, MARILL
-	dbw 20, SEAKING
+	db 44 percent ; encounter rate
+	dbw 30, SEAKING
+	dbw 35, AZUMARILL
+	dbw 35, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
-	db 2 percent ; encounter rate
-	dbw 20, GOLDEEN
-	dbw 25, MARILL
-	dbw 25, SEAKING
+	db 44 percent ; encounter rate
+	dbw 35, SEAKING
+	dbw 40, AZUMARILL
+	dbw 40, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons MOUNT_MORTAR_B1F
-	db 2 percent ; encounter rate
-	dbw 15, GOLDEEN
-	dbw 20, MARILL
-	dbw 20, SEAKING
+	db 44 percent ; encounter rate
+	dbw 30, SEAKING
+	dbw 35, AZUMARILL
+	dbw 35, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons WHIRL_ISLAND_SW
@@ -178,10 +178,10 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
-	db 4 percent ; encounter rate
-	dbw 20, GOLDEEN
-	dbw 15, GOLDEEN
-	dbw 20, SEAKING
+	db 100 percent ; encounter rate
+	dbw 32, SEAKING
+	dbw 30, GOLDUCK
+	dbw 30, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43

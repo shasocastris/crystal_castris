@@ -591,115 +591,115 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MACHOP
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw 28, RATTATA
+	dbw 26, ZUBAT
+	dbw 28, MACHOP
+	dbw 26, GOLBAT
+	dbw 28, GEODUDE
+	dbw 32, RATICATE
+	dbw 32, RATICATE
 	; day
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MACHOP
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw 28, RATTATA
+	dbw 26, ZUBAT
+	dbw 28, MACHOP
+	dbw 26, GOLBAT
+	dbw 28, GEODUDE
+	dbw 32, RATICATE
+	dbw 32, RATICATE
 	; nite
-	dbw 14, RATTATA
-	dbw 13, ZUBAT
-	dbw 14, MARILL
-	dbw 13, GOLBAT
-	dbw 14, GEODUDE
-	dbw 16, RATICATE
-	dbw 16, RATICATE
+	dbw 28, RATTATA
+	dbw 26, ZUBAT
+	dbw 28, MARILL
+	dbw 26, GOLBAT
+	dbw 28, GEODUDE
+	dbw 32, RATICATE
+	dbw 32, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, MACHOP
-	dbw 14, RATICATE
-	dbw 15, ZUBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw 26, GEODUDE
+	dbw 28, RATTATA
+	dbw 30, MACHOP
+	dbw 28, RATICATE
+	dbw 30, ZUBAT
+	dbw 30, GOLBAT
+	dbw 30, GOLBAT
 	; day
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, MACHOP
-	dbw 14, RATICATE
-	dbw 15, ZUBAT
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw 26, GEODUDE
+	dbw 28, RATTATA
+	dbw 30, MACHOP
+	dbw 28, RATICATE
+	dbw 30, ZUBAT
+	dbw 30, GOLBAT
+	dbw 30, GOLBAT
 	; nite
-	dbw 13, GEODUDE
-	dbw 14, RATTATA
-	dbw 15, RATICATE
-	dbw 14, ZUBAT
-	dbw 15, MARILL
-	dbw 15, GOLBAT
-	dbw 15, GOLBAT
+	dbw 26, GEODUDE
+	dbw 28, RATTATA
+	dbw 30, RATICATE
+	dbw 28, ZUBAT
+	dbw 30, MARILL
+	dbw 30, GOLBAT
+	dbw 30, GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 31, GRAVELER
-	dbw 32, MACHOKE
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 28, MACHOP
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
+	dbw 46, GRAVELER
+	dbw 47, MACHOKE
+	dbw 46, GRAVELER
+	dbw 45, RATICATE
+	dbw 43, GOLBAT
+	dbw 45, GOLBAT
+	dbw 45, GOLEM
 	; day
-	dbw 31, GRAVELER
-	dbw 32, MACHOKE
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 28, MACHOP
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
+	dbw 46, GRAVELER
+	dbw 47, MACHOKE
+	dbw 46, GRAVELER
+	dbw 45, RATICATE
+	dbw 43, GOLBAT
+	dbw 45, GOLBAT
+	dbw 45, MACHAMP
 	; nite
-	dbw 31, GRAVELER
-	dbw 31, GEODUDE
-	dbw 30, RATICATE
-	dbw 30, GOLBAT
-	dbw 28, MARILL
-	dbw 32, GOLBAT
-	dbw 32, GOLBAT
+	dbw 46, GRAVELER
+	dbw 46, GRAVELER
+	dbw 45, RATICATE
+	dbw 45, GOLBAT
+	dbw 43, AZUMARILL
+	dbw 47, GOLBAT
+	dbw 47, CROBAT
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MACHOP
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 30, ZUBAT
+	dbw 34, ZUBAT
+	dbw 34, GOLBAT
+	dbw 32, MACHOP
+	dbw 32, GEODUDE
+	dbw 36, RATICATE
+	dbw 36, RATICATE
 	; day
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MACHOP
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 30, ZUBAT
+	dbw 34, ZUBAT
+	dbw 34, GOLBAT
+	dbw 32, MACHOP
+	dbw 32, GEODUDE
+	dbw 36, RATICATE
+	dbw 36, RATICATE
 	; nite
-	dbw 15, ZUBAT
-	dbw 17, ZUBAT
-	dbw 17, GOLBAT
-	dbw 16, MARILL
-	dbw 16, GEODUDE
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 30, ZUBAT
+	dbw 30, ZUBAT
+	dbw 34, GOLBAT
+	dbw 32, MARILL
+	dbw 32, GEODUDE
+	dbw 36, RATICATE
+	dbw 36, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F
@@ -1179,59 +1179,59 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
-	dbw 2, GEODUDE
-	dbw 4, GEODUDE
-	dbw 2, TEDDIURSA
-	dbw 4, ZUBAT
-	dbw 4, DUNSPARCE
+	dbw 13, GEODUDE
+	dbw 12, ZUBAT
+	dbw 12, GEODUDE
+	dbw 14, WOOPER
+	dbw 12, TEDDIURSA
+	dbw 14, DUNSPARCE
+	dbw 14, DUNSPARCE
 	; day
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
-	dbw 2, GEODUDE
-	dbw 4, GEODUDE
-	dbw 2, ZUBAT
-	dbw 4, ZUBAT
-	dbw 4, DUNSPARCE
+	dbw 13, GEODUDE
+	dbw 12, ZUBAT
+	dbw 12, GEODUDE
+	dbw 14, WOOPER
+	dbw 12, RHYHORN
+	dbw 14, DUNSPARCE
+	dbw 14, DUNSPARCE
 	; nite
-	dbw 3, GEODUDE
-	dbw 2, ZUBAT
-	dbw 2, GEODUDE
-	dbw 4, GEODUDE
-	dbw 2, ZUBAT
-	dbw 4, ZUBAT
-	dbw 4, DUNSPARCE
+	dbw 13, GEODUDE
+	dbw 12, ZUBAT
+	dbw 12, GEODUDE
+	dbw 14, WOOPER
+	dbw 12, SPINARAK
+	dbw 14, DUNSPARCE
+	dbw 14, DUNSPARCE
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 24 percent, 24 percent, 24 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 23, GEODUDE
-	dbw 23, ZUBAT
-	dbw 25, GRAVELER
-	dbw 25, URSARING
-	dbw 20, TEDDIURSA
-	dbw 23, GOLBAT
-	dbw 23, GOLBAT
+	dbw 33, GRAVELER
+	dbw 33, GOLBAT
+	dbw 35, GRAVELER
+	dbw 35, URSARING
+	dbw 30, DUNSPARCE
+	dbw 33, URSARING
+	dbw 33, DUNSPARCE
 	; day
-	dbw 23, GEODUDE
-	dbw 23, ZUBAT
-	dbw 25, GRAVELER
-	dbw 25, URSARING
-	dbw 30, URSARING
-	dbw 23, GOLBAT
-	dbw 23, GOLBAT
+	dbw 33, GRAVELER
+	dbw 33, GOLBAT
+	dbw 35, RHYHORN
+	dbw 35, URSARING
+	dbw 30, QUAGSIRE
+	dbw 33, URSARING
+	dbw 33, QUAGSIRE
 	; nite
-	dbw 23, GEODUDE
-	dbw 23, ZUBAT
-	dbw 25, GRAVELER
-	dbw 20, WOBBUFFET
-	dbw 25, WOBBUFFET
-	dbw 23, GOLBAT
-	dbw 23, GOLBAT
+	dbw 33, GRAVELER
+	dbw 33, GOLBAT
+	dbw 35, ARIADOS
+	dbw 30, WOBBUFFET
+	dbw 35, QUAGSIRE
+	dbw 33, WOBBUFFET
+	dbw 33, QUAGSIRE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_29
@@ -1543,31 +1543,31 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 100 percent, 100 percent, 100 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, EKANS
-	dbw 14, SPEAROW
-	dbw 15, RATTATA
-	dbw 16, RATICATE
-	dbw 15, ARBOK
-	dbw 16, FEAROW
-	dbw 16, FEAROW
+	dbw 26, ARBOK
+	dbw 28, FEAROW
+	dbw 30, STANTLER
+	dbw 32, RATICATE
+	dbw 30, FURRET
+	dbw 32, FEAROW
+	dbw 32, FEAROW
 	; day
-	dbw 13, EKANS
-	dbw 14, SPEAROW
-	dbw 15, RATTATA
-	dbw 16, RATICATE
-	dbw 15, ARBOK
-	dbw 16, FEAROW
-	dbw 16, FEAROW
+	dbw 26, ARBOK
+	dbw 28, FEAROW
+	dbw 20, STANTLER
+	dbw 32, RATICATE
+	dbw 30, FURRET
+	dbw 32, FEAROW
+	dbw 32, FEAROW
 	; nite
-	dbw 13, RATTATA
-	dbw 14, ZUBAT
-	dbw 15, RATICATE
-	dbw 16, GOLBAT
-	dbw 15, MARILL
-	dbw 16, GOLBAT
-	dbw 16, GOLBAT
+	dbw 26, STANTLER
+	dbw 28, GOLBAT
+	dbw 30, RATICATE
+	dbw 32, AZUMARILL
+	dbw 30, AZUMARILL
+	dbw 32, GOLBAT
+	dbw 32, GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_43
