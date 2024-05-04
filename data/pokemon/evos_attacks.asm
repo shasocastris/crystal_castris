@@ -25,7 +25,7 @@ INCLUDE "data/pokemon/evos_attacks_johto.asm"
 
 SECTION "Evolution Moves", ROMX
 
-EvolutionMoves::
+EvolutionMovesPointers::
 	indirect_table 2, 1
 	indirect_entries JOHTO_POKEMON - 1, EvolutionMovesKanto
 	indirect_entries NUM_POKEMON, EvolutionMovesJohto
