@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
-	db 45 ; catch rate
+	db 15 ; catch rate
 	db 200 ; base exp
 	dw MOOMOO_MILK, MOOMOO_MILK ; items
 	db GENDER_F100 ; gender ratio

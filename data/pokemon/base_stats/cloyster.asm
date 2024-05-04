@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ICE ; type
-	db 60 ; catch rate
+	db 20 ; catch rate
 	db 203 ; base exp
 	dw PEARL, BIG_PEARL ; items
 	db GENDER_F50 ; gender ratio

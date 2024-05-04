@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, FIGHTING ; type
-	db 45 ; catch rate
+	db 15 ; catch rate
 	db 185 ; base exp
 	dw NO_ITEM, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio
