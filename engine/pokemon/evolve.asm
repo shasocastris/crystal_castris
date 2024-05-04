@@ -360,6 +360,8 @@ LearnEvolutionMove:
 
 	push hl
 	call GetFarWord
+	cphl16 NO_MOVE
+	jr z, .has_move
 	call GetMoveIDFromIndex
 	ld d, a
 	ld hl, wPartyMon1Moves
