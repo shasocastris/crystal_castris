@@ -453,29 +453,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, ZUBAT
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 18, GEODUDE
+	dbw 16, ZUBAT
+	dbw 18, ZUBAT
+	dbw 18, ONIX
+	dbw 16, RATTATA
+	dbw 18, RATTATA
+	dbw 18, RATTATA
 	; day
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, ZUBAT
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 18, GEODUDE
+	dbw 16, ZUBAT
+	dbw 18, ZUBAT
+	dbw 18, ONIX
+	dbw 16, RATTATA
+	dbw 18, RATTATA
+	dbw 18, RATTATA
 	; nite
-	dbw 8, GEODUDE
-	dbw 6, ZUBAT
-	dbw 8, WOOPER
-	dbw 8, ONIX
-	dbw 6, RATTATA
-	dbw 8, RATTATA
-	dbw 8, RATTATA
+	dbw 18, GEODUDE
+	dbw 16, ZUBAT
+	dbw 18, WOOPER
+	dbw 18, ONIX
+	dbw 16, RATTATA
+	dbw 18, RATTATA
+	dbw 18, RATTATA
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
