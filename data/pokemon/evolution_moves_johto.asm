@@ -1,161 +1,106 @@
 SECTION "Evolution Moves 2", ROMX
 
 EvolutionMovesJohto:
-	dw NoEvoMoveJohto      ; CHIKORITA
-	dw NoEvoMoveJohto      ; BAYLEEF
-	dw MeganiumEvoMove     ; MEGANIUM
-	dw NoEvoMoveJohto      ; CYNDAQUIL
-	dw NoEvoMoveJohto      ; QUILAVA
-	dw NoEvoMoveJohto      ; TYPHLOSION
-	dw NoEvoMoveJohto      ; TOTODILE
-	dw NoEvoMoveJohto      ; CROCONAW
-	dw NoEvoMoveJohto      ; FERALIGATR
-	dw NoEvoMoveJohto      ; SENTRET
-	dw FurretEvoMove       ; FURRET
-	dw NoEvoMoveJohto      ; HOOTHOOT
-	dw NoEvoMoveJohto      ; NOCTOWL
-	dw NoEvoMoveJohto      ; LEDYBA
-	dw NoEvoMoveJohto      ; LEDIAN
-	dw NoEvoMoveJohto      ; SPINARAK
-	dw AriadosEvoMove      ; ARIADOS
-	dw NoEvoMoveJohto      ; CROBAT
-	dw NoEvoMoveJohto      ; CHINCHOU
-	dw NoEvoMoveJohto      ; LANTURN
-	dw NoEvoMoveJohto      ; PICHU
-	dw NoEvoMoveJohto      ; CLEFFA
-	dw NoEvoMoveJohto      ; IGGLYBUFF
-	dw NoEvoMoveJohto      ; TOGEPI
-	dw NoEvoMoveJohto      ; TOGETIC
-	dw NoEvoMoveJohto      ; NATU
-	dw NoEvoMoveJohto      ; XATU
-	dw NoEvoMoveJohto      ; MAREEP
-	dw NoEvoMoveJohto      ; FLAAFFY
-	dw AmpharosEvoMove     ; AMPHAROS
-	dw NoEvoMoveJohto      ; BELLOSSOM
-	dw NoEvoMoveJohto      ; MARILL
-	dw NoEvoMoveJohto      ; AZUMARILL
-	dw NoEvoMoveJohto      ; SUDOWOODO
-	dw PolitoedEvoMove     ; POLITOED
-	dw NoEvoMoveJohto      ; HOPPIP
-	dw NoEvoMoveJohto      ; SKIPLOOM
-	dw NoEvoMoveJohto      ; JUMPLUFF
-	dw NoEvoMoveJohto      ; AIPOM
-	dw NoEvoMoveJohto      ; SUNKERN
-	dw NoEvoMoveJohto      ; SUNFLORA
-	dw NoEvoMoveJohto      ; YANMA
-	dw NoEvoMoveJohto      ; WOOPER
-	dw NoEvoMoveJohto      ; QUAGSIRE
-	dw EspeonEvoMove       ; ESPEON
-	dw UmbreonEvoMove      ; UMBREON
-	dw NoEvoMoveJohto      ; MURKROW
-	dw NoEvoMoveJohto      ; SLOWKING
-	dw NoEvoMoveJohto      ; MISDREAVUS
-	dw NoEvoMoveJohto      ; UNOWN
-	dw NoEvoMoveJohto      ; WOBBUFFET
-	dw NoEvoMoveJohto      ; GIRAFARIG
-	dw NoEvoMoveJohto      ; PINECO
-	dw NoEvoMoveJohto      ; FORRETRESS
-	dw NoEvoMoveJohto      ; DUNSPARCE
-	dw NoEvoMoveJohto      ; GLIGAR
-	dw SteelixEvoMove      ; STEELIX
-	dw NoEvoMoveJohto      ; SNUBBULL
-	dw NoEvoMoveJohto      ; GRANBULL
-	dw NoEvoMoveJohto      ; QWILFISH
-	dw ScizorEvoMove       ; SCIZOR
-	dw NoEvoMoveJohto      ; SHUCKLE
-	dw NoEvoMoveJohto      ; HERACROSS
-	dw NoEvoMoveJohto      ; SNEASEL
-	dw NoEvoMoveJohto      ; TEDDIURSA
-	dw NoEvoMoveJohto      ; URSARING
-	dw NoEvoMoveJohto      ; SLUGMA
-	dw NoEvoMoveJohto      ; MAGCARGO
-	dw NoEvoMoveJohto      ; SWINUB
-	dw PiloswineEvoMove    ; PILOSWINE
-	dw NoEvoMoveJohto      ; CORSOLA
-	dw NoEvoMoveJohto      ; REMORAID
-	dw OctilleryEvoMove    ; OCTILLERY
-	dw NoEvoMoveJohto      ; DELIBIRD
-	dw NoEvoMoveJohto      ; MANTINE
-	dw NoEvoMoveJohto      ; SKARMORY
-	dw NoEvoMoveJohto      ; HOUNDOUR
-	dw NoEvoMoveJohto      ; HOUNDOOM
-	dw NoEvoMoveJohto      ; KINGDRA
-	dw NoEvoMoveJohto      ; PHANPY
-	dw DonphanEvoMove      ; DONPHAN
-	dw NoEvoMoveJohto      ; PORYGON2
-	dw NoEvoMoveJohto      ; STANTLER
-	dw NoEvoMoveJohto      ; SMEARGLE
-	dw NoEvoMoveJohto      ; TYROGUE
-	dw HitmontopEvoMove    ; HITMONTOP
-	dw NoEvoMoveJohto      ; SMOOCHUM
-	dw NoEvoMoveJohto      ; ELEKID
-	dw NoEvoMoveJohto      ; MAGBY
-	dw NoEvoMoveJohto      ; MILTANK
-	dw NoEvoMoveJohto      ; BLISSEY
-	dw NoEvoMoveJohto      ; RAIKOU
-	dw NoEvoMoveJohto      ; ENTEI
-	dw NoEvoMoveJohto      ; SUICUNE
-	dw NoEvoMoveJohto      ; LARVITAR
-	dw NoEvoMoveJohto      ; PUPITAR
-	dw NoEvoMoveJohto      ; TYRANITAR
-	dw NoEvoMoveJohto      ; LUGIA
-	dw NoEvoMoveJohto      ; HO-OH
-	dw NoEvoMoveJohto      ; CELEBI
+	dw NO_MOVE       ; CHIKORITA
+	dw NO_MOVE       ; BAYLEEF
+	dw PETAL_DANCE   ; MEGANIUM
+	dw NO_MOVE       ; CYNDAQUIL
+	dw NO_MOVE       ; QUILAVA
+	dw NO_MOVE       ; TYPHLOSION
+	dw NO_MOVE       ; TOTODILE
+	dw NO_MOVE       ; CROCONAW
+	dw NO_MOVE       ; FERALIGATR
+	dw NO_MOVE       ; SENTRET
+	dw AGILITY       ; FURRET
+	dw NO_MOVE       ; HOOTHOOT
+	dw NO_MOVE       ; NOCTOWL
+	dw NO_MOVE       ; LEDYBA
+	dw NO_MOVE       ; LEDIAN
+	dw NO_MOVE       ; SPINARAK
+	dw SWORDS_DANCE  ; ARIADOS
+	dw NO_MOVE       ; CROBAT
+	dw NO_MOVE       ; CHINCHOU
+	dw NO_MOVE       ; LANTURN
+	dw NO_MOVE       ; PICHU
+	dw NO_MOVE       ; CLEFFA
+	dw NO_MOVE       ; IGGLYBUFF
+	dw NO_MOVE       ; TOGEPI
+	dw NO_MOVE       ; TOGETIC
+	dw NO_MOVE       ; NATU
+	dw NO_MOVE       ; XATU
+	dw NO_MOVE       ; MAREEP
+	dw NO_MOVE       ; FLAAFFY
+	dw THUNDERPUNCH  ; AMPHAROS
+	dw NO_MOVE       ; BELLOSSOM
+	dw NO_MOVE       ; MARILL
+	dw NO_MOVE       ; AZUMARILL
+	dw NO_MOVE       ; SUDOWOODO
+	dw PERISH_SONG   ; POLITOED
+	dw NO_MOVE       ; HOPPIP
+	dw NO_MOVE       ; SKIPLOOM
+	dw NO_MOVE       ; JUMPLUFF
+	dw NO_MOVE       ; AIPOM
+	dw NO_MOVE       ; SUNKERN
+	dw NO_MOVE       ; SUNFLORA
+	dw NO_MOVE       ; YANMA
+	dw NO_MOVE       ; WOOPER
+	dw NO_MOVE       ; QUAGSIRE
+	dw CONFUSION     ; ESPEON
+	dw PURSUIT       ; UMBREON
+	dw NO_MOVE       ; MURKROW
+	dw NO_MOVE       ; SLOWKING
+	dw NO_MOVE       ; MISDREAVUS
+	dw NO_MOVE       ; UNOWN
+	dw NO_MOVE       ; WOBBUFFET
+	dw NO_MOVE       ; GIRAFARIG
+	dw NO_MOVE       ; PINECO
+	dw NO_MOVE       ; FORRETRESS
+	dw NO_MOVE       ; DUNSPARCE
+	dw NO_MOVE       ; GLIGAR
+	dw IRON_TAIL     ; STEELIX
+	dw NO_MOVE       ; SNUBBULL
+	dw NO_MOVE       ; GRANBULL
+	dw NO_MOVE       ; QWILFISH
+	dw METAL_CLAW    ; SCIZOR
+	dw NO_MOVE       ; SHUCKLE
+	dw NO_MOVE       ; HERACROSS
+	dw NO_MOVE       ; SNEASEL
+	dw NO_MOVE       ; TEDDIURSA
+	dw NO_MOVE       ; URSARING
+	dw NO_MOVE       ; SLUGMA
+	dw NO_MOVE       ; MAGCARGO
+	dw NO_MOVE       ; SWINUB
+	dw FURY_ATTACK   ; PILOSWINE
+	dw NO_MOVE       ; CORSOLA
+	dw NO_MOVE       ; REMORAID
+	dw OCTAZOOKA     ; OCTILLERY
+	dw NO_MOVE       ; DELIBIRD
+	dw NO_MOVE       ; MANTINE
+	dw NO_MOVE       ; SKARMORY
+	dw NO_MOVE       ; HOUNDOUR
+	dw NO_MOVE       ; HOUNDOOM
+	dw NO_MOVE       ; KINGDRA
+	dw NO_MOVE       ; PHANPY
+	dw FURY_ATTACK   ; DONPHAN
+	dw NO_MOVE       ; PORYGON2
+	dw NO_MOVE       ; STANTLER
+	dw NO_MOVE       ; SMEARGLE
+	dw NO_MOVE       ; TYROGUE
+	dw ROLLING_KICK  ; HITMONTOP
+	dw NO_MOVE       ; SMOOCHUM
+	dw NO_MOVE       ; ELEKID
+	dw NO_MOVE       ; MAGBY
+	dw NO_MOVE       ; MILTANK
+	dw NO_MOVE       ; BLISSEY
+	dw NO_MOVE       ; RAIKOU
+	dw NO_MOVE       ; ENTEI
+	dw NO_MOVE       ; SUICUNE
+	dw NO_MOVE       ; LARVITAR
+	dw NO_MOVE       ; PUPITAR
+	dw NO_MOVE       ; TYRANITAR
+	dw NO_MOVE       ; LUGIA
+	dw NO_MOVE       ; HO-OH
+	dw NO_MOVE       ; CELEBI
 .IndirectEnd::
-
-MeganiumEvoMove:
-	dw PETAL_DANCE  ; MEGANIUM
-	dw -1 ; end
-
-FurretEvoMove:
-	dw AGILITY      ; FURRET
-	dw -1 ; end
-
-AriadosEvoMove:
-	dw SWORDS_DANCE ; ARIADOS
-	dw -1 ; end
-
-AmpharosEvoMove:
-	dw THUNDERPUNCH ; AMPHAROS
-	dw -1 ; end
-
-PolitoedEvoMove:
-	dw PERISH_SONG  ; POLITOED
-	dw -1 ; end
-
-EspeonEvoMove:
-	dw CONFUSION    ; ESPEON
-	dw -1 ; end
-
-UmbreonEvoMove:
-	dw PURSUIT      ; UMBREON
-	dw -1 ; end
-
-SteelixEvoMove:
-	dw IRON_TAIL    ; STEELIX
-	dw -1 ; end
-
-ScizorEvoMove:
-	dw METAL_CLAW   ; SCIZOR
-	dw -1 ; end
-
-PiloswineEvoMove:
-	dw FURY_ATTACK  ; PILOSWINE
-	dw -1 ; end
-
-OctilleryEvoMove:
-	dw OCTAZOOKA    ; OCTILLERY
-	dw -1 ; end
-
-DonphanEvoMove:
-	dw FURY_ATTACK  ; DONPHAN
-	dw -1 ; end
-
-HitmontopEvoMove:
-	dw ROLLING_KICK ; HITMONTOP
-	dw -1 ; end
-
-NoEvoMoveJohto:
-	dw -1 ; end
 
 ENDSECTION

@@ -1,288 +1,157 @@
 SECTION "Evolution Moves 1", ROMX
 
 EvolutionMovesKanto:
-	dw NoEvoMoveKanto      ; BULBASAUR
-	dw NoEvoMoveKanto      ; IVYSAUR
-	dw VenusaurEvoMove     ; VENUSAUR
-	dw NoEvoMoveKanto      ; CHARMANDER
-	dw NoEvoMoveKanto      ; CHARMELEON
-	dw CharizardEvoMove    ; CHARIZARD
-	dw NoEvoMoveKanto      ; SQUIRTLE
-	dw NoEvoMoveKanto      ; WARTORTLE
-	dw NoEvoMoveKanto      ; BLASTOISE
-	dw NoEvoMoveKanto      ; CATERPIE
-	dw MetapodEvoMove      ; METAPOD
-	dw ButterfreeEvoMove   ; BUTTERFREE
-	dw NoEvoMoveKanto      ; WEEDLE
-	dw KakunaEvoMove       ; KAKUNA
-	dw BeedrillEvoMove     ; BEEDRILL
-	dw NoEvoMoveKanto      ; PIDGEY
-	dw NoEvoMoveKanto      ; PIDGEOTTO
-	dw NoEvoMoveKanto      ; PIDGEOT
-	dw NoEvoMoveKanto      ; RATTATA
-	dw RaticateEvoMove     ; RATICATE
-	dw NoEvoMoveKanto      ; SPEAROW
-	dw NoEvoMoveKanto      ; FEAROW
-	dw NoEvoMoveKanto      ; EKANS
-	dw ArbokEvoMove        ; ARBOK
-	dw NoEvoMoveKanto      ; PIKACHU
-	dw RaichuEvoMove       ; RAICHU
-	dw NoEvoMoveKanto      ; SANDSHREW
-	dw NoEvoMoveKanto      ; SANDSLASH
-	dw NoEvoMoveKanto      ; NIDORAN♀
-	dw NoEvoMoveKanto      ; NIDORINA
-	dw NoEvoMoveKanto      ; NIDOQUEEN
-	dw NoEvoMoveKanto      ; NIDORAN♂
-	dw NoEvoMoveKanto      ; NIDORINO
-	dw NoEvoMoveKanto      ; NIDOKING
-	dw NoEvoMoveKanto      ; CLEFAIRY
-	dw NoEvoMoveKanto      ; CLEFABLE
-	dw NoEvoMoveKanto      ; VULPIX
-	dw NoEvoMoveKanto      ; NINETALES
-	dw NoEvoMoveKanto      ; JIGGLYPUFF
-	dw NoEvoMoveKanto      ; WIGGLYTUFF
-	dw NoEvoMoveKanto      ; ZUBAT
-	dw NoEvoMoveKanto      ; GOLBAT
-	dw NoEvoMoveKanto      ; ODDISH
-	dw NoEvoMoveKanto      ; GLOOM
-	dw NoEvoMoveKanto      ; VILEPLUME
-	dw NoEvoMoveKanto      ; PARAS
-	dw NoEvoMoveKanto      ; PARASECT
-	dw NoEvoMoveKanto      ; VENONAT
-	dw VenomothEvoMove     ; VENOMOTH
-	dw NoEvoMoveKanto      ; DIGLETT
-	dw DugtrioEvoMove      ; DUGTRIO
-	dw NoEvoMoveKanto      ; MEOWTH
-	dw PersianEvoMove      ; PERSIAN
-	dw NoEvoMoveKanto      ; PSYDUCK
-	dw NoEvoMoveKanto      ; GOLDUCK
-	dw NoEvoMoveKanto      ; MANKEY
-	dw PrimeapeEvoMove     ; PRIMEAPE
-	dw NoEvoMoveKanto      ; GROWLITHE
-	dw NoEvoMoveKanto      ; ARCANINE
-	dw NoEvoMoveKanto      ; POLIWAG
-	dw NoEvoMoveKanto      ; POLIWHIRL
-	dw PoliwrathEvoMove    ; POLIWRATH
-	dw NoEvoMoveKanto      ; ABRA
-	dw KadabraEvoMove      ; KADABRA
-	dw AlakazamEvoMove     ; ALAKAZAM
-	dw NoEvoMoveKanto      ; MACHOP
-	dw NoEvoMoveKanto      ; MACHOKE
-	dw MachampEvoMove      ; MACHAMP
-	dw NoEvoMoveKanto      ; BELLSPROUT
-	dw NoEvoMoveKanto      ; WEEPINBELL
-	dw NoEvoMoveKanto      ; VICTREEBEL
-	dw NoEvoMoveKanto      ; TENTACOOL
-	dw TentacruelEvoMove   ; TENTACRUEL
-	dw NoEvoMoveKanto      ; GEODUDE
-	dw NoEvoMoveKanto      ; GRAVELER
-	dw NoEvoMoveKanto      ; GOLEM
-	dw NoEvoMoveKanto      ; PONYTA
-	dw RapidashEvoMove     ; RAPIDASH
-	dw NoEvoMoveKanto      ; SLOWPOKE
-	dw SlowbroEvoMove      ; SLOWBRO
-	dw NoEvoMoveKanto      ; MAGNEMITE
-	dw MagnetonEvoMove     ; MAGNETON
-	dw NoEvoMoveKanto      ; FARFETCH'D
-	dw NoEvoMoveKanto      ; DODUO
-	dw DodrioEvoMove       ; DODRIO
-	dw NoEvoMoveKanto      ; SEEL
-	dw NoEvoMoveKanto      ; DEWGONG
-	dw NoEvoMoveKanto      ; GRIMER
-	dw NoEvoMoveKanto      ; MUK
-	dw NoEvoMoveKanto      ; SHELLDER
-	dw NoEvoMoveKanto      ; CLOYSTER
-	dw NoEvoMoveKanto      ; GASTLY
-	dw NoEvoMoveKanto      ; HAUNTER
-	dw NoEvoMoveKanto      ; GENGAR
-	dw NoEvoMoveKanto      ; ONIX
-	dw NoEvoMoveKanto      ; DROWZEE
-	dw NoEvoMoveKanto      ; HYPNO
-	dw NoEvoMoveKanto      ; KRABBY
-	dw NoEvoMoveKanto      ; KINGLER
-	dw NoEvoMoveKanto      ; VOLTORB
-	dw NoEvoMoveKanto      ; ELECTRODE
-	dw NoEvoMoveKanto      ; EXEGGCUTE
-	dw ExeggutorEvoMove    ; EXEGGUTOR
-	dw NoEvoMoveKanto      ; CUBONE
-	dw NoEvoMoveKanto      ; MAROWAK
-	dw HitmonleeEvoMove    ; HITMONLEE
-	dw HitmonchanEvoMove   ; HITMONCHAN
-	dw NoEvoMoveKanto      ; LICKITUNG
-	dw NoEvoMoveKanto      ; KOFFING
-	dw NoEvoMoveKanto      ; WEEZING
-	dw NoEvoMoveKanto      ; RHYHORN
-	dw NoEvoMoveKanto      ; RHYDON
-	dw NoEvoMoveKanto      ; CHANSEY
-	dw NoEvoMoveKanto      ; TANGELA
-	dw NoEvoMoveKanto      ; KANGASKHAN
-	dw NoEvoMoveKanto      ; HORSEA
-	dw NoEvoMoveKanto      ; SEADRA
-	dw NoEvoMoveKanto      ; GOLDEEN
-	dw NoEvoMoveKanto      ; SEAKING
-	dw NoEvoMoveKanto      ; STARYU
-	dw NoEvoMoveKanto      ; STARMIE
-	dw NoEvoMoveKanto      ; MR.MIME
-	dw NoEvoMoveKanto      ; SCYTHER
-	dw NoEvoMoveKanto      ; JYNX
-	dw NoEvoMoveKanto      ; ELECTABUZZ
-	dw NoEvoMoveKanto      ; MAGMAR
-	dw NoEvoMoveKanto      ; PINSIR
-	dw NoEvoMoveKanto      ; TAUROS
-	dw NoEvoMoveKanto      ; MAGIKARP
-	dw GyaradosEvoMove     ; GYARADOS
-	dw NoEvoMoveKanto      ; LAPRAS
-	dw NoEvoMoveKanto      ; DITTO
-	dw NoEvoMoveKanto      ; EEVEE
-	dw VaporeonEvoMove     ; VAPOREON
-	dw JolteonEvoMove      ; JOLTEON
-	dw FlareonEvoMove      ; FLAREON
-	dw NoEvoMoveKanto      ; PORYGON
-	dw NoEvoMoveKanto      ; OMANYTE
-	dw OmastarEvoMove      ; OMASTAR
-	dw NoEvoMoveKanto      ; KABUTO
-	dw KabutopsEvoMove     ; KABUTOPS
-	dw NoEvoMoveKanto      ; AERODACTYL
-	dw NoEvoMoveKanto      ; SNORLAX
-	dw NoEvoMoveKanto      ; ARTICUNO
-	dw NoEvoMoveKanto      ; ZAPDOS
-	dw NoEvoMoveKanto      ; MOLTRES
-	dw NoEvoMoveKanto      ; DRATINI
-	dw NoEvoMoveKanto      ; DRAGONAIR
-	dw DragoniteEvoMove    ; DRAGONITE
-	dw NoEvoMoveKanto      ; MEWTWO
-	dw NoEvoMoveKanto      ; MEW
+	dw NO_MOVE       ; BULBASAUR
+	dw NO_MOVE       ; IVYSAUR
+	dw PETAL_DANCE   ; VENUSAUR
+	dw NO_MOVE       ; CHARMANDER
+	dw NO_MOVE       ; CHARMELEON
+	dw WING_ATTACK   ; CHARIZARD
+	dw NO_MOVE       ; SQUIRTLE
+	dw NO_MOVE       ; WARTORTLE
+	dw NO_MOVE       ; BLASTOISE
+	dw NO_MOVE       ; CATERPIE
+	dw HARDEN        ; METAPOD
+	dw CONFUSION     ; BUTTERFREE
+	dw NO_MOVE       ; WEEDLE
+	dw HARDEN        ; KAKUNA
+	dw FURY_ATTACK   ; BEEDRILL
+	dw NO_MOVE       ; PIDGEY
+	dw NO_MOVE       ; PIDGEOTTO
+	dw NO_MOVE       ; PIDGEOT
+	dw NO_MOVE       ; RATTATA
+	dw SCARY_FACE    ; RATICATE
+	dw NO_MOVE       ; SPEAROW
+	dw NO_MOVE       ; FEAROW
+	dw NO_MOVE       ; EKANS
+	dw CRUNCH        ; ARBOK
+	dw NO_MOVE       ; PIKACHU
+	dw THUNDERBOLT   ; RAICHU
+	dw NO_MOVE       ; SANDSHREW
+	dw NO_MOVE       ; SANDSLASH
+	dw NO_MOVE       ; NIDORAN♀
+	dw NO_MOVE       ; NIDORINA
+	dw NO_MOVE       ; NIDOQUEEN
+	dw NO_MOVE       ; NIDORAN♂
+	dw NO_MOVE       ; NIDORINO
+	dw NO_MOVE       ; NIDOKING
+	dw NO_MOVE       ; CLEFAIRY
+	dw NO_MOVE       ; CLEFABLE
+	dw NO_MOVE       ; VULPIX
+	dw NO_MOVE       ; NINETALES
+	dw NO_MOVE       ; JIGGLYPUFF
+	dw NO_MOVE       ; WIGGLYTUFF
+	dw NO_MOVE       ; ZUBAT
+	dw NO_MOVE       ; GOLBAT
+	dw NO_MOVE       ; ODDISH
+	dw NO_MOVE       ; GLOOM
+	dw NO_MOVE       ; VILEPLUME
+	dw NO_MOVE       ; PARAS
+	dw NO_MOVE       ; PARASECT
+	dw NO_MOVE       ; VENONAT
+	dw GUST          ; VENOMOTH
+	dw NO_MOVE       ; DIGLETT
+	dw TRI_ATTACK    ; DUGTRIO
+	dw NO_MOVE       ; MEOWTH
+	dw SWIFT         ; PERSIAN
+	dw NO_MOVE       ; PSYDUCK
+	dw NO_MOVE       ; GOLDUCK
+	dw NO_MOVE       ; MANKEY
+	dw RAGE          ; PRIMEAPE
+	dw NO_MOVE       ; GROWLITHE
+	dw NO_MOVE       ; ARCANINE
+	dw NO_MOVE       ; POLIWAG
+	dw NO_MOVE       ; POLIWHIRL
+	dw SUBMISSION    ; POLIWRATH
+	dw NO_MOVE       ; ABRA
+	dw KINESIS       ; KADABRA
+	dw KINESIS       ; ALAKAZAM
+	dw NO_MOVE       ; MACHOP
+	dw NO_MOVE       ; MACHOKE
+	dw STRENGTH      ; MACHAMP
+	dw NO_MOVE       ; BELLSPROUT
+	dw NO_MOVE       ; WEEPINBELL
+	dw NO_MOVE       ; VICTREEBEL
+	dw NO_MOVE       ; TENTACOOL
+	dw WRAP          ; TENTACRUEL
+	dw NO_MOVE       ; GEODUDE
+	dw NO_MOVE       ; GRAVELER
+	dw NO_MOVE       ; GOLEM
+	dw NO_MOVE       ; PONYTA
+	dw FURY_ATTACK   ; RAPIDASH
+	dw NO_MOVE       ; SLOWPOKE
+	dw WITHDRAW      ; SLOWBRO
+	dw NO_MOVE       ; MAGNEMITE
+	dw TRI_ATTACK    ; MAGNETON
+	dw NO_MOVE       ; FARFETCH'D
+	dw NO_MOVE       ; DODUO
+	dw TRI_ATTACK    ; DODRIO
+	dw NO_MOVE       ; SEEL
+	dw NO_MOVE       ; DEWGONG
+	dw NO_MOVE       ; GRIMER
+	dw NO_MOVE       ; MUK
+	dw NO_MOVE       ; SHELLDER
+	dw NO_MOVE       ; CLOYSTER
+	dw NO_MOVE       ; GASTLY
+	dw NO_MOVE       ; HAUNTER
+	dw NO_MOVE       ; GENGAR
+	dw NO_MOVE       ; ONIX
+	dw NO_MOVE       ; DROWZEE
+	dw NO_MOVE       ; HYPNO
+	dw NO_MOVE       ; KRABBY
+	dw NO_MOVE       ; KINGLER
+	dw NO_MOVE       ; VOLTORB
+	dw NO_MOVE       ; ELECTRODE
+	dw NO_MOVE       ; EXEGGCUTE
+	dw STOMP         ; EXEGGUTOR
+	dw NO_MOVE       ; CUBONE
+	dw NO_MOVE       ; MAROWAK
+	dw DOUBLE_KICK   ; HITMONLEE
+	dw COMET_PUNCH   ; HITMONCHAN
+	dw NO_MOVE       ; LICKITUNG
+	dw NO_MOVE       ; KOFFING
+	dw NO_MOVE       ; WEEZING
+	dw NO_MOVE       ; RHYHORN
+	dw NO_MOVE       ; RHYDON
+	dw NO_MOVE       ; CHANSEY
+	dw NO_MOVE       ; TANGELA
+	dw NO_MOVE       ; KANGASKHAN
+	dw NO_MOVE       ; HORSEA
+	dw NO_MOVE       ; SEADRA
+	dw NO_MOVE       ; GOLDEEN
+	dw NO_MOVE       ; SEAKING
+	dw NO_MOVE       ; STARYU
+	dw NO_MOVE       ; STARMIE
+	dw NO_MOVE       ; MR.MIME
+	dw NO_MOVE       ; SCYTHER
+	dw NO_MOVE       ; JYNX
+	dw NO_MOVE       ; ELECTABUZZ
+	dw NO_MOVE       ; MAGMAR
+	dw NO_MOVE       ; PINSIR
+	dw NO_MOVE       ; TAUROS
+	dw NO_MOVE       ; MAGIKARP
+	dw BITE          ; GYARADOS
+	dw NO_MOVE       ; LAPRAS
+	dw NO_MOVE       ; DITTO
+	dw NO_MOVE       ; EEVEE
+	dw WATER_GUN     ; VAPOREON
+	dw THUNDERSHOCK  ; JOLTEON
+	dw EMBER         ; FLAREON
+	dw NO_MOVE       ; PORYGON
+	dw NO_MOVE       ; OMANYTE
+	dw SPIKE_CANNON  ; OMASTAR
+	dw NO_MOVE       ; KABUTO
+	dw SLASH         ; KABUTOPS
+	dw NO_MOVE       ; AERODACTYL
+	dw NO_MOVE       ; SNORLAX
+	dw NO_MOVE       ; ARTICUNO
+	dw NO_MOVE       ; ZAPDOS
+	dw NO_MOVE       ; MOLTRES
+	dw NO_MOVE       ; DRATINI
+	dw NO_MOVE       ; DRAGONAIR
+	dw WING_ATTACK   ; DRAGONITE
+	dw NO_MOVE       ; MEWTWO
+	dw NO_MOVE       ; MEW
 .IndirectEnd::
-
-VenusaurEvoMove:
-	dw PETAL_DANCE  ; VENUSAUR
-	dw -1 ; end
-
-CharizardEvoMove:
-	dw WING_ATTACK  ; CHARIZARD
-	dw -1 ; end
-
-MetapodEvoMove:
-	dw HARDEN       ; METAPOD
-	dw -1 ; end
-
-ButterfreeEvoMove:
-	dw CONFUSION    ; BUTTERFREE
-	dw -1 ; end
-
-KakunaEvoMove:
-	dw HARDEN       ; KAKUNA
-	dw -1 ; end
-
-BeedrillEvoMove:
-	dw FURY_ATTACK  ; BEEDRILL
-	dw -1 ; end
-
-RaticateEvoMove:
-	dw SCARY_FACE   ; RATICATE
-	dw -1 ; end
-
-ArbokEvoMove:
-	dw CRUNCH       ; ARBOK
-	dw -1 ; end
-
-RaichuEvoMove:
-	dw THUNDERBOLT  ; RAICHU
-	dw -1 ; end
-
-VenomothEvoMove:
-	dw GUST         ; VENOMOTH
-	dw -1 ; end
-
-DugtrioEvoMove:
-	dw TRI_ATTACK   ; DUGTRIO
-	dw -1 ; end
-
-PersianEvoMove:
-	dw SWIFT        ; PERSIAN
-	dw -1 ; end
-
-PrimeapeEvoMove:
-	dw RAGE         ; PRIMEAPE
-	dw -1 ; end
-
-PoliwrathEvoMove:
-	dw SUBMISSION   ; POLIWRATH
-	dw -1 ; end
-
-KadabraEvoMove:
-	dw KINESIS      ; KADABRA
-	dw -1 ; end
-
-AlakazamEvoMove:
-	dw KINESIS      ; ALAKAZAM
-	dw -1 ; end
-
-MachampEvoMove:
-	dw STRENGTH     ; MACHAMP
-	dw -1 ; end
-
-TentacruelEvoMove:
-	dw WRAP         ; TENTACRUEL
-	dw -1 ; end
-
-RapidashEvoMove:
-	dw FURY_ATTACK  ; RAPIDASH
-	dw -1 ; end
-
-SlowbroEvoMove:
-	dw WITHDRAW     ; SLOWBRO
-	dw -1 ; end
-
-MagnetonEvoMove:
-	dw TRI_ATTACK   ; MAGNETON
-	dw -1 ; end
-
-DodrioEvoMove:
-	dw TRI_ATTACK   ; DODRIO
-	dw -1 ; end
-
-ExeggutorEvoMove:
-	dw STOMP        ; EXEGGUTOR
-	dw -1 ; end
-
-HitmonleeEvoMove:
-	dw DOUBLE_KICK  ; HITMONLEE
-	dw -1 ; end
-
-HitmonchanEvoMove:
-	dw COMET_PUNCH  ; HITMONCHAN
-	dw -1 ; end
-
-GyaradosEvoMove:
-	dw BITE         ; GYARADOS
-	dw -1 ; end
-
-VaporeonEvoMove:
-	dw WATER_GUN    ; VAPOREON
-	dw -1 ; end
-
-JolteonEvoMove:
-	dw THUNDERSHOCK ; JOLTEON
-	dw -1 ; end
-
-FlareonEvoMove:
-	dw EMBER        ; FLAREON
-	dw -1 ; end
-
-OmastarEvoMove:
-	dw SPIKE_CANNON ; OMASTAR
-	dw -1 ; end
-
-KabutopsEvoMove:
-	dw SLASH        ; KABUTOPS
-	dw -1 ; end
-
-DragoniteEvoMove:
-	dw WING_ATTACK  ; DRAGONITE
-	dw -1 ; end
-
-NoEvoMoveKanto:
-	dw -1 ; end
 
 ENDSECTION
