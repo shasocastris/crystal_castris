@@ -21,3 +21,15 @@ EvosAttacksPointers::
 
 INCLUDE "data/pokemon/evos_attacks_kanto.asm"
 INCLUDE "data/pokemon/evos_attacks_johto.asm"
+
+
+SECTION "Evolution Moves", ROMX
+
+EvolutionMoves::
+	indirect_table 2, 1
+	indirect_entries JOHTO_POKEMON - 1, EvolutionMovesKanto
+	indirect_entries NUM_POKEMON, EvolutionMovesJohto
+	indirect_table_end
+
+INCLUDE "data/pokemon/evolution_moves_kanto.asm"
+INCLUDE "data/pokemon/evolution_moves_johto.asm"
