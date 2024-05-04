@@ -351,25 +351,25 @@ EvolveAfterBattle_MasterLoop:
 LearnEvolutionMove:
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, EvolutionMoves
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
+	call GetPokemonIndexFromID
+	ld b, h
+	ld c, l
+	ld hl, EvolutionMovesPointers
+	ld a, BANK(EvolutionMovesPointers)
+	call LoadIndirectPointer
 
 	push hl
+	call GetFarWord
+	call GetMoveIDFromIndex
 	ld d, a
 	ld hl, wPartyMon1Moves
 	ld a, [wCurPartyMon]
 	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
+	rst AddNTimes
 
 	ld b, NUM_MOVES
 .check_move
-	ld a, [hli]
+	call GetNextEvoAttackByte
 	cp d
 	jr z, .has_move
 	dec b
@@ -381,12 +381,12 @@ LearnEvolutionMove:
 	call GetMoveName
 	call CopyName1
 	predef LearnMove
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
 
 .has_move
 	pop hl
-ret
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	ret
 
 UpdateSpeciesNameIfNotNicknamed:
 	ld a, [wCurSpecies]
