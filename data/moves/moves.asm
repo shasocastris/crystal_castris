@@ -59,7 +59,7 @@ MovesGen1:
 	move EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30      ;BODY_SLAM
 	move EFFECT_TRAP_TARGET,        15, GRASS,         PHYSICAL, 100, 20,   0      ;WRAP
 	move EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0      ;TAKE_DOWN
-	move EFFECT_RAMPAGE,            90, NORMAL,        PHYSICAL, 100, 20,   0      ;THRASH
+	move EFFECT_RAMPAGE,           120, NORMAL,        PHYSICAL, 100, 10,   0      ;THRASH
 	move EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0      ;DOUBLE_EDGE
 	move EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0      ;TAIL_WHIP
 	move EFFECT_POISON_HIT,         15, POISON,        PHYSICAL, 100, 35,  30      ;POISON_STING
@@ -102,7 +102,7 @@ MovesGen1:
 	move EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0      ;POISONPOWDER
 	move EFFECT_PARALYZE,            0, GRASS,         STATUS,    75, 30,   0      ;STUN_SPORE
 	move EFFECT_SLEEP,               0, GRASS,         STATUS,    75, 15,   0      ;SLEEP_POWDER
-	move EFFECT_RAMPAGE,            70, GRASS,         SPECIAL,  100, 20,   0      ;PETAL_DANCE
+	move EFFECT_RAMPAGE,           120, GRASS,         SPECIAL,  100, 10,   0      ;PETAL_DANCE
 	move EFFECT_SPEED_DOWN,          0, BUG,           STATUS,    95, 40,   0      ;STRING_SHOT
 	move EFFECT_STATIC_DAMAGE,      40, DRAGON,        SPECIAL,  100, 10,   0      ;DRAGON_RAGE
 	move EFFECT_TRAP_TARGET,        15, FIRE,          SPECIAL,  100, 20,   0      ;FIRE_SPIN
@@ -228,7 +228,7 @@ MovesGen2:
 	move EFFECT_PROTECT,             0, FIGHTING,      STATUS,   100,  5,   0      ;DETECT
 	move EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  80, 10,   0      ;BONE_RUSH
 	move EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0      ;LOCK_ON
-	move EFFECT_RAMPAGE,            90, DRAGON,        PHYSICAL, 100, 15,   0      ;OUTRAGE
+	move EFFECT_RAMPAGE,           120, DRAGON,        PHYSICAL, 100, 10,   0      ;OUTRAGE
 	move EFFECT_SANDSTORM,           0, ROCK,          STATUS,   100, 10,   0      ;SANDSTORM
 	move EFFECT_LEECH_HIT,          75, GRASS,         SPECIAL,  100, 10,   0      ;GIGA_DRAIN
 	move EFFECT_ENDURE,              0, NORMAL,        STATUS,   100, 10,   0      ;ENDURE
