@@ -11,7 +11,7 @@ KantoWaterWildMons:
 
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
-	dbw 35, TENTACOOL
+	dbw 35, REMORAID
 	dbw 30, TENTACOOL
 	dbw 35, TENTACRUEL
 	end_water_wildmons
@@ -48,7 +48,7 @@ KantoWaterWildMons:
 	db 6 percent ; encounter rate
 	dbw 25, TENTACOOL
 	dbw 25, QUAGSIRE
-	dbw 25, TENTACRUEL
+	dbw 25, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_13
@@ -62,7 +62,7 @@ KantoWaterWildMons:
 	db 6 percent ; encounter rate
 	dbw 35, TENTACOOL
 	dbw 30, TENTACOOL
-	dbw 35, TENTACRUEL
+	dbw 35, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_20
@@ -102,23 +102,23 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_26
 	db 6 percent ; encounter rate
-	dbw 30, TENTACOOL
-	dbw 25, TENTACOOL
-	dbw 30, TENTACRUEL
+	dbw 30, DEWGONG
+	dbw 25, STARMIE
+	dbw 30, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_27
 	db 6 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, TENTACOOL
-	dbw 20, TENTACRUEL
+	dbw 30, TENTACRUEL
+	dbw 25, CLOYSTER
+	dbw 30, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28
 	db 2 percent ; encounter rate
-	dbw 40, POLIWAG
-	dbw 35, POLIWAG
-	dbw 40, POLIWHIRL
+	dbw 50, LANTURN
+	dbw 45, MANTINE
+	dbw 50, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN
@@ -153,7 +153,7 @@ KantoWaterWildMons:
 	db 2 percent ; encounter rate
 	dbw 20, GRIMER
 	dbw 15, GRIMER
-	dbw 15, MUK
+	dbw 35, MUK
 	end_water_wildmons
 
 	def_water_wildmons FUCHSIA_CITY
@@ -167,7 +167,7 @@ KantoWaterWildMons:
 	db 6 percent ; encounter rate
 	dbw 35, TENTACOOL
 	dbw 30, TENTACOOL
-	dbw 35, TENTACRUEL
+	dbw 35, DEWGONG
 	end_water_wildmons
 
 	db -1 ; end

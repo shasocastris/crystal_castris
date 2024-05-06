@@ -37,25 +37,25 @@ KantoGrassWildMons:
 	dbw 8, GEODUDE
 	dbw 8, SANDSHREW
 	dbw 12, PARAS
-	dbw 10, GEODUDE
-	dbw 8, CLEFAIRY
-	dbw 8, CLEFAIRY
+	dbw 10, CLEFAIRY
+	dbw 8, AERODACTYL
+	dbw 8, AERODACTYL
 	; day
 	dbw 6, ZUBAT
 	dbw 8, GEODUDE
 	dbw 8, SANDSHREW
 	dbw 12, PARAS
-	dbw 10, GEODUDE
-	dbw 8, CLEFAIRY
-	dbw 8, CLEFAIRY
+	dbw 10, CLEFAIRY
+	dbw 8, OMANYTE
+	dbw 8, OMANYTE
 	; nite
 	dbw 6, ZUBAT
 	dbw 8, GEODUDE
-	dbw 8, CLEFAIRY
+	dbw 8, CUBONE
 	dbw 12, PARAS
-	dbw 10, GEODUDE
-	dbw 12, CLEFAIRY
-	dbw 12, CLEFAIRY
+	dbw 10, CLEFAIRY
+	dbw 8, KABUTO
+	dbw 8, KABUTO
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_1F
@@ -115,31 +115,31 @@ KantoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons VICTORY_ROAD
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 33 percent, 33 percent, 33 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 34, GRAVELER
-	dbw 32, RHYHORN
-	dbw 33, ONIX
-	dbw 34, GOLBAT
-	dbw 35, SANDSLASH
-	dbw 35, RHYDON
-	dbw 35, RHYDON
+	dbw 44, GRAVELER
+	dbw 42, RHYDON
+	dbw 43, STEELIX
+	dbw 44, CROBAT
+	dbw 45, SANDSLASH
+	dbw 45, KADABRA
+	dbw 45, KADABRA
 	; day
-	dbw 34, GRAVELER
-	dbw 32, RHYHORN
-	dbw 33, ONIX
-	dbw 34, GOLBAT
-	dbw 35, SANDSLASH
-	dbw 35, RHYDON
-	dbw 35, RHYDON
+	dbw 44, GRAVELER
+	dbw 42, RHYDON
+	dbw 43, STEELIX
+	dbw 44, CROBAT
+	dbw 45, SANDSLASH
+	dbw 45, KADABRA
+	dbw 45, KADABRA
 	; nite
-	dbw 34, GOLBAT
-	dbw 34, GRAVELER
-	dbw 32, ONIX
-	dbw 36, GRAVELER
-	dbw 38, GRAVELER
-	dbw 40, GRAVELER
-	dbw 40, GRAVELER
+	dbw 44, CROBAT
+	dbw 44, GRAVELER
+	dbw 42, STEELIX
+	dbw 46, MACHOKE
+	dbw 48, MAROWAK
+	dbw 50, GOLEM
+	dbw 50, GOLEM
 	end_grass_wildmons
 
 	def_grass_wildmons TOHJO_FALLS
@@ -201,7 +201,7 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 3, CATERPIE
+	dbw 3, BEEDRILL
 	dbw 3, LEDYBA
 	dbw 5, PIDGEY
 	dbw 7, BUTTERFREE
@@ -211,7 +211,7 @@ KantoGrassWildMons:
 	; day
 	dbw 3, CATERPIE
 	dbw 3, PIDGEY
-	dbw 5, PIDGEY
+	dbw 5, BEEDRILL
 	dbw 7, BUTTERFREE
 	dbw 7, PIDGEOTTO
 	dbw 4, PIKACHU
@@ -767,7 +767,7 @@ KantoGrassWildMons:
 	dbw 30, RATICATE
 	dbw 30, DODUO
 	dbw 30, ARBOK
-	dbw 30, ARBOK
+	dbw 3, BULBASAUR
 	; day
 	dbw 28, DODUO
 	dbw 28, SANDSLASH
@@ -775,7 +775,7 @@ KantoGrassWildMons:
 	dbw 30, RATICATE
 	dbw 30, DODUO
 	dbw 30, ARBOK
-	dbw 30, ARBOK
+	dbw 3, CHARMANDER
 	; nite
 	dbw 28, NOCTOWL
 	dbw 28, RATICATE
@@ -783,7 +783,7 @@ KantoGrassWildMons:
 	dbw 30, RATICATE
 	dbw 30, QUAGSIRE
 	dbw 30, QUAGSIRE
-	dbw 30, QUAGSIRE
+	dbw 3, SQUIRTLE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_27
@@ -795,7 +795,7 @@ KantoGrassWildMons:
 	dbw 30, DODUO
 	dbw 32, PONYTA
 	dbw 30, DODRIO
-	dbw 30, DODRIO
+	dbw 3, CHIKORITA
 	; day
 	dbw 28, DODUO
 	dbw 28, ARBOK
@@ -803,7 +803,7 @@ KantoGrassWildMons:
 	dbw 30, DODUO
 	dbw 32, PONYTA
 	dbw 30, DODRIO
-	dbw 30, DODRIO
+	dbw 3, CYNDAQUIL
 	; nite
 	dbw 28, QUAGSIRE
 	dbw 28, NOCTOWL
@@ -811,35 +811,35 @@ KantoGrassWildMons:
 	dbw 30, QUAGSIRE
 	dbw 32, NOCTOWL
 	dbw 32, NOCTOWL
-	dbw 32, NOCTOWL
+	dbw 3, TOTODILE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 39, TANGELA
-	dbw 40, PONYTA
-	dbw 40, RAPIDASH
-	dbw 42, ARBOK
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 49, TANGELA
+	dbw 50, KANGASKHAN
+	dbw 50, RAPIDASH
+	dbw 52, ARBOK
+	dbw 51, DODUO
+	dbw 53, DODRIO
+	dbw 53, DODRIO
 	; day
-	dbw 39, TANGELA
-	dbw 40, PONYTA
-	dbw 40, RAPIDASH
-	dbw 42, ARBOK
-	dbw 41, DODUO
-	dbw 43, DODRIO
-	dbw 43, DODRIO
+	dbw 49, TANGELA
+	dbw 50, KANGASKHAN
+	dbw 50, RAPIDASH
+	dbw 52, ARBOK
+	dbw 51, DODUO
+	dbw 53, DODRIO
+	dbw 53, DODRIO
 	; nite
-	dbw 39, TANGELA
-	dbw 40, POLIWHIRL
-	dbw 40, GOLBAT
-	dbw 40, POLIWHIRL
-	dbw 42, GOLBAT
-	dbw 42, GOLBAT
-	dbw 42, GOLBAT
+	dbw 49, TANGELA
+	dbw 50, POLIWHIRL
+	dbw 50, GOLBAT
+	dbw 50, POLIWHIRL
+	dbw 52, POLIWRATH
+	dbw 52, GOLBAT
+	dbw 52, GOLBAT
 	end_grass_wildmons
 
 	db -1 ; end
