@@ -53,8 +53,8 @@ KurtsHouseKurtCallback:
 Kurt1:
 	faceplayer
 	opentext
-	checkevent EVENT_KURT_GAVE_YOU_LURE_BALL
-	iftrue .GotLureBall
+	checkevent EVENT_KURT_GAVE_YOU_EXP_SHARE
+	iftrue .GotExpShare
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
 	iftrue .ClearedSlowpokeWell
 	writetext KurtsHouseKurtMakingBallsMustWaitText
@@ -86,16 +86,16 @@ Kurt1:
 .ClearedSlowpokeWell:
 	writetext KurtsHouseKurtHonoredToMakeBallsText
 	promptbutton
-	verbosegiveitem LURE_BALL
+	verbosegiveitem EXP_SHARE
 	iffalse .NoRoomForBall
-	setevent EVENT_KURT_GAVE_YOU_LURE_BALL
-.GotLureBall:
+	setevent EVENT_KURT_GAVE_YOU_EXP_SHARE
+.GotExpShare:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .WaitForApricorns
 	checkevent EVENT_GAVE_KURT_RED_APRICORN
 	iftrue .GiveLevelBall
 	checkevent EVENT_GAVE_KURT_BLU_APRICORN
-	iftrue .GiveLureBall
+	iftrue .GiveExpShare
 	checkevent EVENT_GAVE_KURT_YLW_APRICORN
 	iftrue .GiveMoonBall
 	checkevent EVENT_GAVE_KURT_GRN_APRICORN
@@ -217,12 +217,12 @@ Kurt1:
 	clearevent EVENT_GAVE_KURT_RED_APRICORN
 	sjump ._ThatTurnedOutGreat
 
-.GiveLureBall:
+.GiveExpShare:
 	checkflag ENGINE_KURT_MAKING_BALLS
 	iftrue KurtMakingBallsScript
 	writetext KurtsHouseKurtJustFinishedYourBallText
 	promptbutton
-	verbosegiveitemvar LURE_BALL, VAR_KURT_APRICORNS
+	verbosegiveitemvar EXP_SHARE, VAR_KURT_APRICORNS
 	iffalse .NoRoomForBall
 	clearevent EVENT_GAVE_KURT_BLU_APRICORN
 	sjump ._ThatTurnedOutGreat
