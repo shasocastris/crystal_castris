@@ -3,13 +3,13 @@ SECTION "Evolution Moves 1", ROMX
 EvolutionMovesKanto:
 	dw NO_MOVE       ; BULBASAUR
 	dw NO_MOVE       ; IVYSAUR
-	dw PETAL_DANCE   ; VENUSAUR
+	dw STRENGTH      ; VENUSAUR
 	dw NO_MOVE       ; CHARMANDER
 	dw NO_MOVE       ; CHARMELEON
-	dw WING_ATTACK   ; CHARIZARD
+	dw FLY           ; CHARIZARD
 	dw NO_MOVE       ; SQUIRTLE
 	dw NO_MOVE       ; WARTORTLE
-	dw NO_MOVE       ; BLASTOISE
+	dw SURF          ; BLASTOISE
 	dw NO_MOVE       ; CATERPIE
 	dw HARDEN        ; METAPOD
 	dw CONFUSION     ; BUTTERFREE
@@ -24,11 +24,11 @@ EvolutionMovesKanto:
 	dw NO_MOVE       ; SPEAROW
 	dw NO_MOVE       ; FEAROW
 	dw NO_MOVE       ; EKANS
-	dw CRUNCH        ; ARBOK
+	dw SLUDGE        ; ARBOK
 	dw NO_MOVE       ; PIKACHU
 	dw THUNDERBOLT   ; RAICHU
 	dw NO_MOVE       ; SANDSHREW
-	dw NO_MOVE       ; SANDSLASH
+	dw DIG           ; SANDSLASH
 	dw NO_MOVE       ; NIDORAN♀
 	dw NO_MOVE       ; NIDORINA
 	dw NO_MOVE       ; NIDOQUEEN
@@ -49,9 +49,9 @@ EvolutionMovesKanto:
 	dw NO_MOVE       ; PARAS
 	dw NO_MOVE       ; PARASECT
 	dw NO_MOVE       ; VENONAT
-	dw GUST          ; VENOMOTH
+	dw PIN_MISSILE   ; VENOMOTH
 	dw NO_MOVE       ; DIGLETT
-	dw TRI_ATTACK    ; DUGTRIO
+	dw DIG           ; DUGTRIO
 	dw NO_MOVE       ; MEOWTH
 	dw SWIFT         ; PERSIAN
 	dw NO_MOVE       ; PSYDUCK
@@ -94,7 +94,7 @@ EvolutionMovesKanto:
 	dw NO_MOVE       ; CLOYSTER
 	dw NO_MOVE       ; GASTLY
 	dw NO_MOVE       ; HAUNTER
-	dw NO_MOVE       ; GENGAR
+	dw FAINT_ATTACK  ; GENGAR
 	dw NO_MOVE       ; ONIX
 	dw NO_MOVE       ; DROWZEE
 	dw NO_MOVE       ; HYPNO
@@ -110,7 +110,7 @@ EvolutionMovesKanto:
 	dw COMET_PUNCH   ; HITMONCHAN
 	dw NO_MOVE       ; LICKITUNG
 	dw NO_MOVE       ; KOFFING
-	dw NO_MOVE       ; WEEZING
+	dw SLUDGE_BOMB   ; WEEZING
 	dw NO_MOVE       ; RHYHORN
 	dw NO_MOVE       ; RHYDON
 	dw NO_MOVE       ; CHANSEY
@@ -119,7 +119,7 @@ EvolutionMovesKanto:
 	dw NO_MOVE       ; HORSEA
 	dw NO_MOVE       ; SEADRA
 	dw NO_MOVE       ; GOLDEEN
-	dw NO_MOVE       ; SEAKING
+	dw WATERFALL     ; SEAKING
 	dw NO_MOVE       ; STARYU
 	dw NO_MOVE       ; STARMIE
 	dw NO_MOVE       ; MR.MIME
