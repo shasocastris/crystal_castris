@@ -59,8 +59,6 @@ ROMX $07
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
-	"Egg Move Pointers"
-	"Egg Moves 1"
 ROMX $09
 	"bank9"
 ROMX $0a
@@ -87,7 +85,6 @@ ROMX $11
 	"Bill's PC Graphics"
 ROMX $12
 	"Crystal Features 1"
-	"Egg Moves 2"
 	"Evolutions and Attacks 2"
 ROMX $13
 	"bank13"
