@@ -17,8 +17,8 @@ EvolutionMovesJohto:
 	dw NO_MOVE       ; LEDYBA
 	dw NO_MOVE       ; LEDIAN
 	dw NO_MOVE       ; SPINARAK
-	dw SWORDS_DANCE  ; ARIADOS
-	dw NO_MOVE       ; CROBAT
+	dw DIG           ; ARIADOS
+	dw TOXIC         ; CROBAT
 	dw NO_MOVE       ; CHINCHOU
 	dw NO_MOVE       ; LANTURN
 	dw NO_MOVE       ; PICHU
@@ -79,7 +79,7 @@ EvolutionMovesJohto:
 	dw NO_MOVE       ; SKARMORY
 	dw NO_MOVE       ; HOUNDOUR
 	dw NO_MOVE       ; HOUNDOOM
-	dw NO_MOVE       ; KINGDRA
+	dw OUTRAGE       ; KINGDRA
 	dw NO_MOVE       ; PHANPY
 	dw FURY_ATTACK   ; DONPHAN
 	dw NO_MOVE       ; PORYGON2

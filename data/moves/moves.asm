@@ -143,7 +143,7 @@ MovesGen1:
 	move EFFECT_METRONOME,           0, NORMAL,        STATUS,   100, 10,   0      ;METRONOME
 	move EFFECT_MIRROR_MOVE,         0, FLYING,        STATUS,   100, 20,   0      ;MIRROR_MOVE
 	move EFFECT_SELFDESTRUCT,      200, NORMAL,        PHYSICAL, 100,  5,   0      ;SELFDESTRUCT
-	move EFFECT_NORMAL_HIT,        100, NORMAL,        PHYSICAL,  75, 10,   0      ;EGG_BOMB
+	move EFFECT_NORMAL_HIT,         90, GRASS,         PHYSICAL, 100, 10,   0      ;EGG_BOMB
 	move EFFECT_PARALYZE_HIT,       20, GHOST,         PHYSICAL, 100, 30,  30      ;LICK
 	move EFFECT_POISON_HIT,         20, POISON,        SPECIAL,   70, 20,  40      ;SMOG
 	move EFFECT_POISON_HIT,         65, POISON,        SPECIAL,  100, 20,  30      ;SLUDGE
@@ -218,7 +218,7 @@ MovesGen2:
 	move EFFECT_BELLY_DRUM,          0, NORMAL,        STATUS,   100, 10,   0      ;BELLY_DRUM
 	move EFFECT_POISON_HIT,         90, POISON,        SPECIAL,  100, 10,  30      ;SLUDGE_BOMB
 	move EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,        SPECIAL,  100, 10, 100      ;MUD_SLAP
-	move EFFECT_ACCURACY_DOWN_HIT,  65, WATER,         SPECIAL,   85, 10,  50      ;OCTAZOOKA
+	move EFFECT_ACCURACY_DOWN_HIT,  65, WATER,         SPECIAL,  100, 10,  50      ;OCTAZOOKA
 	move EFFECT_SPIKES,              0, GROUND,        STATUS,   100, 20,   0      ;SPIKES
 	move EFFECT_PARALYZE_HIT,      100, ELECTRIC,      SPECIAL,   50,  5, 100      ;ZAP_CANNON
 	move EFFECT_FORESIGHT,           0, NORMAL,        STATUS,   100, 40,   0      ;FORESIGHT
