@@ -57,7 +57,7 @@ MovesGen1:
 	move EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0      ;HORN_DRILL
 	move EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0      ;TACKLE
 	move EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30      ;BODY_SLAM
-	move EFFECT_TRAP_TARGET,        15, GRASS,         PHYSICAL, 100, 20,   0      ;WRAP
+	move EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL, 100, 20,   0      ;WRAP
 	move EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0      ;TAKE_DOWN
 	move EFFECT_RAMPAGE,           120, NORMAL,        PHYSICAL, 100, 10,   0      ;THRASH
 	move EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0      ;DOUBLE_EDGE
@@ -88,7 +88,7 @@ MovesGen1:
 	move EFFECT_HYPER_BEAM,        150, NORMAL,        SPECIAL,   90,  5,   0      ;HYPER_BEAM
 	move EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0      ;PECK
 	move EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0      ;DRILL_PECK
-	move EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 25,   0      ;SUBMISSION
+	move EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL, 100, 25,   0      ;SUBMISSION
 	move EFFECT_FLINCH_HIT,         50, FIGHTING,      PHYSICAL,  90, 20,  30      ;LOW_KICK
 	move EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0      ;COUNTER
 	move EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0      ;SEISMIC_TOSS
@@ -154,7 +154,7 @@ MovesGen1:
 	move EFFECT_ALWAYS_HIT,         60, NORMAL,        SPECIAL,  100, 20,   0      ;SWIFT
 	move EFFECT_SKULL_BASH,        100, STEEL,         PHYSICAL, 100, 15,   0      ;SKULL_BASH
 	move EFFECT_MULTI_HIT,          20, STEEL,         PHYSICAL, 100, 15,   0      ;SPIKE_CANNON
-	move EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL, 100, 20,   0      ;CONSTRICT
+	move EFFECT_TRAP_TARGET,        15, GRASS,         PHYSICAL, 100, 20,   0      ;CONSTRICT
 	move EFFECT_SP_DEF_UP_2,         0, PSYCHIC_TYPE,  STATUS,   100, 20,   0      ;AMNESIA
 	move EFFECT_ACCURACY_DOWN,       0, PSYCHIC_TYPE,  STATUS,    80, 15,   0      ;KINESIS
 	move EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0      ;SOFTBOILED

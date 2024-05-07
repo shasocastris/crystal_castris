@@ -6,10 +6,10 @@ EvolutionMovesJohto:
 	dw PETAL_DANCE   ; MEGANIUM
 	dw NO_MOVE       ; CYNDAQUIL
 	dw NO_MOVE       ; QUILAVA
-	dw NO_MOVE       ; TYPHLOSION
+	dw SUBMISSION    ; TYPHLOSION
 	dw NO_MOVE       ; TOTODILE
 	dw NO_MOVE       ; CROCONAW
-	dw NO_MOVE       ; FERALIGATR
+	dw CRUNCH        ; FERALIGATR
 	dw NO_MOVE       ; SENTRET
 	dw AGILITY       ; FURRET
 	dw NO_MOVE       ; HOOTHOOT

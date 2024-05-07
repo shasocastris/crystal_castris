@@ -1730,7 +1730,7 @@ HaunterEvosAttacks:
 	dbw 21, NIGHT_SHADE
 	dbw 24, SHADOW_BALL
 	dbw 31, CONFUSE_RAY
-	dbw 31, HAZE
+	dbw 34, HAZE
 	dbw 39, DREAM_EATER
 	dbw 48, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -1747,7 +1747,7 @@ GengarEvosAttacks:
 	dbw 21, NIGHT_SHADE
 	dbw 24, SHADOW_BALL
 	dbw 31, CONFUSE_RAY
-	dbw 31, HAZE
+	dbw 34, HAZE
 	dbw 39, DREAM_EATER
 	dbw 48, DESTINY_BOND
 	db 0 ; no more level-up moves
