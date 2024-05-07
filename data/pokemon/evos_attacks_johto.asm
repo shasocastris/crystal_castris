@@ -246,8 +246,7 @@ CroconawEvosAttacks:
 	dbw 21, BITE
 	dbw 24, THRASH
 	dbw 28, SCARY_FACE
-	dbw 32, CRUNCH
-	dbw 37, SLASH
+	dbw 34, SLASH
 	dbw 41, ROCK_SLIDE
 	dbw 45, SCREECH
 	dbw 55, HYDRO_PUMP
@@ -264,7 +263,6 @@ FeraligatrEvosAttacks:
 	dbw 21, BITE
 	dbw 24, THRASH
 	dbw 28, SCARY_FACE
-	dbw 32, CRUNCH
 	dbw 38, SLASH
 	dbw 42, ROCK_SLIDE
 	dbw 47, SCREECH
