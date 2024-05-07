@@ -328,7 +328,7 @@ ChooseWildEncounter:
 	cp BATTLETYPE_CELEBI
 	cp BATTLETYPE_ROAMING
 	cp BATTLETYPE_FORCEITEM
-	jr nz, .ok
+	jr z, .ok
 ; Check if we buff the wild mon, and by how much.
 	call Random
 	cp 35 percent
