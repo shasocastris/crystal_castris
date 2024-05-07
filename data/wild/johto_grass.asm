@@ -454,29 +454,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 18, GEODUDE
-	dbw 16, SANDSHREW
-	dbw 18, ZUBAT
-	dbw 18, ONIX
-	dbw 16, PARAS
-	dbw 18, RATTATA
-	dbw 18, RATTATA
+	dbw 21, GEODUDE
+	dbw 19, SANDSHREW
+	dbw 21, ZUBAT
+	dbw 21, ONIX
+	dbw 19, PARAS
+	dbw 21, RATICATE
+	dbw 21, RATICATE
 	; day
-	dbw 18, GEODUDE
-	dbw 16, SANDSHREW
-	dbw 18, ZUBAT
-	dbw 18, ONIX
-	dbw 16, PARAS
-	dbw 18, RATTATA
-	dbw 18, RATTATA
+	dbw 21, GEODUDE
+	dbw 19, SANDSHREW
+	dbw 21, ZUBAT
+	dbw 21, ONIX
+	dbw 19, PARAS
+	dbw 21, RATICATE
+	dbw 21, RATICATE
 	; nite
-	dbw 18, GEODUDE
-	dbw 16, ZUBAT
-	dbw 18, WOOPER
-	dbw 18, ONIX
-	dbw 16, PARAS
-	dbw 18, RATTATA
-	dbw 18, RATTATA
+	dbw 21, GEODUDE
+	dbw 19, ZUBAT
+	dbw 21, WOOPER
+	dbw 21, ONIX
+	dbw 19, PARAS
+	dbw 21, RATICATE
+	dbw 21, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B2F
@@ -1182,29 +1182,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
 	db 14 percent, 14 percent, 14 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, GEODUDE
-	dbw 12, ZUBAT
-	dbw 12, GEODUDE
-	dbw 14, WOOPER
-	dbw 12, TEDDIURSA
-	dbw 14, DUNSPARCE
-	dbw 14, DUNSPARCE
+	dbw 16, GEODUDE
+	dbw 15, ZUBAT
+	dbw 15, GEODUDE
+	dbw 17, WOOPER
+	dbw 15, TEDDIURSA
+	dbw 17, DUNSPARCE
+	dbw 17, DUNSPARCE
 	; day
-	dbw 13, GEODUDE
-	dbw 12, ZUBAT
-	dbw 12, GEODUDE
-	dbw 14, WOOPER
-	dbw 12, RHYHORN
-	dbw 14, DUNSPARCE
-	dbw 14, DUNSPARCE
+	dbw 16, GEODUDE
+	dbw 15, ZUBAT
+	dbw 15, GEODUDE
+	dbw 17, WOOPER
+	dbw 15, RHYHORN
+	dbw 17, DUNSPARCE
+	dbw 17, DUNSPARCE
 	; nite
-	dbw 13, GEODUDE
-	dbw 12, ZUBAT
-	dbw 12, GEODUDE
-	dbw 14, WOOPER
-	dbw 12, LARVITAR
-	dbw 14, DUNSPARCE
-	dbw 14, DUNSPARCE
+	dbw 16, GEODUDE
+	dbw 15, ZUBAT
+	dbw 15, GEODUDE
+	dbw 17, WOOPER
+	dbw 15, LARVITAR
+	dbw 17, DUNSPARCE
+	dbw 17, DUNSPARCE
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
