@@ -14,11 +14,35 @@ FruitTreeScript::
 
 .fruit
 	writetext HeyItsFruitText
+	random 3
+	ifequal 0, .pick_two
+	ifequal 1, .pick_two
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM, 3
+	iffalse .pick_two
+	promptbutton
+	writetext ObtainedThreeFruitText
+	sjump .continue
+
+.pick_two
 	readmem wCurFruit
 	giveitem ITEM_FROM_MEM, 2
+	iffalse .pick_one
+	promptbutton
+	writetext ObtainedTwoFruitText
+	sjump .continue
+
+.pick_one
+	readmem wCurFruit
+	giveitem ITEM_FROM_MEM
 	iffalse .packisfull
 	promptbutton
+	writetext FruitPackIsFullText
+	promptbutton
 	writetext ObtainedFruitText
+	sjump .continue
+
+.continue
 	callasm PickedFruitTree
 	specialsound
 	itemnotify
@@ -109,6 +133,14 @@ HeyItsFruitText:
 
 ObtainedFruitText:
 	text_far _ObtainedFruitText
+	text_end
+
+ObtainedTwoFruitText:
+	text_far _ObtainedTwoFruitText
+	text_end
+
+ObtainedThreeFruitText:
+	text_far _ObtainedThreeFruitText
 	text_end
 
 FruitPackIsFullText:
