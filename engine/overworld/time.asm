@@ -241,7 +241,6 @@ DoMysteryGiftIfDayHasPassed:
 	ld hl, wTempMysteryGiftTimer
 	call InitOneDayCountdown
 	call CloseSRAM
-	farcall ResetDailyMysteryGiftLimitIfUnlocked
 
 .not_timed_out
 	ld a, BANK(sMysteryGiftTimer)

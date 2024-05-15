@@ -11,7 +11,6 @@
 	const MAINMENUITEM_CONTINUE       ; 0
 	const MAINMENUITEM_NEW_GAME       ; 1
 	const MAINMENUITEM_OPTION         ; 2
-	const MAINMENUITEM_MYSTERY_GIFT   ; 3
 
 MainMenu:
 .loop
@@ -55,13 +54,11 @@ MainMenu:
 	db "CONTINUE@"
 	db "NEW GAME@"
 	db "OPTION@"
-	db "MYSTERY GIFT@"
 .Jumptable:
 ; entries correspond to MAINMENUITEM_* constants
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_MysteryGift
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants
@@ -84,7 +81,6 @@ MainMenuItems:
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
 	db -1
 
 	; MAINMENU_MYSTERY_STUDIUM
@@ -92,7 +88,6 @@ MainMenuItems:
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
 	db -1
 
 	; MAINMENU_STUDIUM
@@ -263,6 +258,3 @@ MainMenu_Option:
 
 MainMenu_Continue:
 	farjp Continue
-
-MainMenu_MysteryGift:
-	farjp MysteryGift

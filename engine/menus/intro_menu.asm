@@ -43,11 +43,6 @@ NewGame_ClearTilemapEtc:
 	call LoadStandardFont
 	jmp ClearWindowData
 
-MysteryGift:
-	call UpdateTime
-	farcall DoMysteryGiftIfDayHasPassed
-	farjp DoMysteryGift
-
 Option:
 	farjp _Option
 
@@ -315,7 +310,6 @@ Continue:
 	ld c, 20
 	call DelayFrames
 	farcall JumpRoamMons
-	farcall CopyMysteryGiftReceivedDecorationsToPC
 	farcall ClockContinue
 	ld a, [wSpawnAfterChampion]
 	cp SPAWN_LANCE

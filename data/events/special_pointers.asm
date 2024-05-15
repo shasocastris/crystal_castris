@@ -26,9 +26,6 @@ SpecialsPointers::
 	add_special Colosseum
 	add_special TimeCapsule
 	add_special CableClubCheckWhichChris
-	add_special CheckMysteryGift
-	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift
 	add_special CheckOtherPlayerGender
 
 ; Map events
