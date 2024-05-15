@@ -64,6 +64,8 @@ _GetVarAction::
 	dwb wBlueCardBalance,               RETVAR_ADDR_DE
 	dwb wBuenasPassword,                RETVAR_ADDR_DE
 	dwb wKenjiBreakTimer,               RETVAR_STRBUF2
+	dwb wNumItems,                      RETVAR_ADDR_DE
+	dwb wNumBalls,                      RETVAR_ADDR_DE
 	dwb .CountUncaughtMons,             RETVAR_EXECUTE
 
 .CountCaughtMons:
