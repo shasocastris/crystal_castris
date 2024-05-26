@@ -9,12 +9,33 @@ CianwoodPhotoStudio_MapScripts:
 CianwoodPhotoStudioFishingGuruScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_CIANWOOD_PHOTOGRAPH
+	iftrue .AlreadyDone
 	writetext CianwoodPhotoStudioFishingGuruText_Question
 	yesorno
 	iffalse .Refused
 	writetext CianwoodPhotoStudioFishingGuruText_Yes
+	promptbutton
+	special CianwoodPhotograph
+	ifequal $0, .NoPicture
+	ifequal $1, .EggPicture
+	setflag ENGINE_CIANWOOD_PHOTOGRAPH
+	writetext PhotoStudioHoldStillText
 	waitbutton
-	special PhotoStudio
+	closetext
+	special FadeOutToBlack
+	special LoadMapPalettes
+	pause 10
+	readmem wCurPartySpecies
+	pokepic 0
+	cry 0
+	waitsfx
+	closepokepic
+	opentext
+	writetext PhotoStudioPrestoText
+	special PlayCurMonCry
+	waitbutton
+	writetext PhotoStudioComeAgainText
 	waitbutton
 	closetext
 	end
@@ -22,6 +43,24 @@ CianwoodPhotoStudioFishingGuruScript:
 .Refused:
 	writetext CianwoodPhotoStudioFishingGuruText_No
 	waitbutton
+	closetext
+	end
+
+.AlreadyDone
+	writetext PhotoStudioAlreadyDoneText
+	waitbutton
+	closetext
+	end
+
+.NoPicture:
+	writetext PhotoStudioNoPictureText
+	waitbutton
+	closetext
+	end
+
+.EggPicture:
+	writetext PhotoStudioEggPictureText
+    waitbutton
 	closetext
 	end
 
@@ -38,12 +77,54 @@ CianwoodPhotoStudioFishingGuruText_Yes:
 	text "OK! Big smile now!"
 	done
 
+	para "Which #MON"
+	line "should I photo-"
+	cont "graph?"
+	done
+
 CianwoodPhotoStudioFishingGuruText_No:
 	text "Oh, that's too"
 	line "bad. I thought it"
 
 	para "would be a great"
 	line "memento…"
+	done
+
+PhotoStudioHoldStillText:
+	text "All righty. Hold"
+	line "still for a bit."
+	done
+
+PhotoStudioPrestoText:
+	text "Presto! All done."
+
+	para "Your "
+	text_ram wStringBuffer3
+	text ""
+	line "looks happier!"
+	done
+
+PhotoStudioAlreadyDoneText:
+	text "I've already taken"
+	line "a photo for you"
+	cont "today."
+
+	para "Come back again"
+	line "tomorrow."
+	done
+
+PhotoStudioNoPictureText:
+	text "Oh, no picture?"
+	line "Come again, OK?"
+	done
+
+PhotoStudioEggPictureText:
+	text "An Egg? My talent"
+	line "is worth more…"
+	done
+
+PhotoStudioComeAgainText:
+	text "Come again, OK?"
 	done
 
 CianwoodPhotoStudio_MapEvents:
