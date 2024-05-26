@@ -81,3 +81,108 @@ CheckForHiddenItems:
 	call GetFarByte
 	inc hl
 	ret
+
+RockItemEncounter:
+	ld hl, .RockItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	ld a, [hl]
+	inc a
+	jr z, .done
+	ld a, [hl]
+.done
+	ld [wScriptVar], a
+	ret
+
+.RockItems
+	dbw 1, MIST_STONE
+	dbw 1, MOON_STONE
+	dbw 1, FIRE_STONE
+	dbw 1, NUGGET
+	dbw 1, IRON
+	dbw 1, CALCIUM
+	dbw 1, ZINC
+	dbw 2, HARD_STONE
+	dbw 2, METAL_COAT
+	dbw 2, SOFT_SAND
+	dbw 2, BRIGHTPOWDER
+	dbw 2, KINGS_ROCK
+	dbw 2, THICK_CLUB
+	db -1
+
+TreeItemEncounter:
+	ld hl, .TreeItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+.ok
+	ld a, [hl]
+	inc a
+	jr z, .done
+	ld a, [hl]
+.done
+	ld [wScriptVar], a
+	ret
+
+.TreeItems
+	dbw 1, LEAF_STONE
+	dbw 1, SUN_STONE
+	dbw 1, BIG_MUSHROOM
+	dbw 1, PROTEIN
+	dbw 1, LUCKY_EGG
+	dbw 2, MIRACLE_SEED
+	dbw 2, SILVERPOWDER
+	dbw 2, POISON_BARB
+	dbw 2, CHARCOAL
+	dbw 2, STICK
+	dbw 2, MIRACLEBERRY
+	dbw 2, TINYMUSHROOM
+	dbw 2, GOLD_LEAF
+	dbw 4, SILVER_LEAF
+	db -1
+
+FishItemEncounter:
+	ld hl, .FishItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+	inc hl
+	inc hl
+	jr .loop
+
+.ok
+	ld a, [hli]
+	inc a
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+
+.FishItems:
+	dbw 1, WATER_STONE
+	dbw 1, THUNDERSTONE
+	dbw 1, DRAGON_SCALE
+	dbw 1, BIG_PEARL
+	dbw 1, STAR_PIECE
+	dbw 1, CARBOS
+	dbw 2, MYSTIC_WATER
+	dbw 2, DRAGON_FANG
+	dbw 2, MAGNET
+	dbw 2, NEVERMELTICE
+	dbw 2, ULTRA_BALL
+	dbw 2, SLOWPOKETAIL
+	dbw 2, STARDUST
+	dbw 2, PEARL
+	db -1
