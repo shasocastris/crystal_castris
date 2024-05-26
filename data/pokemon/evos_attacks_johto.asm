@@ -1693,29 +1693,29 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, AEROBLAST
+	dbw 1, GUST
 	dbw 11, SAFEGUARD
-	dbw 22, GUST
+	dbw 22, AEROBLAST
 	dbw 33, RECOVER
-	dbw 44, HYDRO_PUMP
-	dbw 55, RAIN_DANCE
+	dbw 44, PSYCHIC_M
+	dbw 55, ANCIENTPOWER
 	dbw 66, SWIFT
 	dbw 77, WHIRLWIND
-	dbw 88, ANCIENTPOWER
+	dbw 88, RAIN_DANCE
 	dbw 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, SACRED_FIRE
+	dbw 1, GUST
 	dbw 11, SAFEGUARD
-	dbw 22, GUST
+	dbw 22, SACRED_FIRE
 	dbw 33, RECOVER
-	dbw 44, FIRE_BLAST
-	dbw 55, SUNNY_DAY
+	dbw 44, MOONBLAST
+	dbw 55, ANCIENTPOWER
 	dbw 66, SWIFT
 	dbw 77, WHIRLWIND
-	dbw 88, ANCIENTPOWER
+	dbw 88, SUNNY_DAY
 	dbw 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 

@@ -205,7 +205,7 @@ MovesGen2:
 	move EFFECT_CURSE,               0, CURSE_TYPE,    STATUS,   100, 10,   0      ;CURSE
 	move EFFECT_REVERSAL,            1, NORMAL,        PHYSICAL, 100, 15,   0      ;FLAIL
 	move EFFECT_CONVERSION2,         0, NORMAL,        STATUS,   100, 30,   0      ;CONVERSION2
-	move EFFECT_NORMAL_HIT,        100, FLYING,        SPECIAL,   95,  5,   0      ;AEROBLAST
+	move EFFECT_NORMAL_HIT,        100, DRAGON,        SPECIAL,  100,  5,   0      ;AEROBLAST
 	move EFFECT_SPEED_DOWN_2,        0, GRASS,         STATUS,    85, 40,   0      ;COTTON_SPORE
 	move EFFECT_REVERSAL,            1, FIGHTING,      PHYSICAL, 100, 15,   0      ;REVERSAL
 	move EFFECT_SPITE,               0, GHOST,         STATUS,   100, 10,   0      ;SPITE
@@ -249,7 +249,7 @@ MovesGen2:
 	move EFFECT_FRUSTRATION,         1, NORMAL,        PHYSICAL, 100, 20,   0      ;FRUSTRATION
 	move EFFECT_SAFEGUARD,           0, NORMAL,        STATUS,   100, 25,   0      ;SAFEGUARD
 	move EFFECT_PAIN_SPLIT,          0, NORMAL,        STATUS,   100, 20,   0      ;PAIN_SPLIT
-	move EFFECT_SACRED_FIRE,       100, FIRE,          PHYSICAL,  95,  5,  50      ;SACRED_FIRE
+	move EFFECT_SACRED_FIRE,       100, FIRE,          PHYSICAL, 100,  5,  50      ;SACRED_FIRE
 	move EFFECT_MAGNITUDE,           1, GROUND,        PHYSICAL, 100, 30,   0      ;MAGNITUDE
 	move EFFECT_CONFUSE_HIT,       100, FIGHTING,      PHYSICAL,  50,  5, 100      ;DYNAMICPUNCH
 	move EFFECT_NORMAL_HIT,        120, BUG,           PHYSICAL,  85, 10,   0      ;MEGAHORN
