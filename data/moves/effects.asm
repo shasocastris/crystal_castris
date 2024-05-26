@@ -890,6 +890,16 @@ PoisonMultiHit:
 	poisontarget
 	endmove
 
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	burntarget
+	endmove
+
 FlinchHit:
 	checkobedience
 	usedmovetext
@@ -1031,6 +1041,16 @@ TriAttack:
 	checkfaint
 	buildopponentrage
 	tristatuschance
+	endmove
+
+DoFreeze:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	freezetarget
 	endmove
 
 Toxic:

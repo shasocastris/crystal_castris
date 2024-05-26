@@ -38,7 +38,7 @@ MoveEffectsPointers:
 	dw PayDay
 	dw LightScreen
 	dw TriAttack
-	dw NormalHit
+	dw DoFreeze
 	dw OHKOHit
 	dw SuperFang
 	dw StaticDamage
@@ -78,7 +78,7 @@ MoveEffectsPointers:
 	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
-	dw NormalHit
+	dw DoBurn
 	dw Substitute
 	dw HyperBeam
 	dw Rage

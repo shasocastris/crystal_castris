@@ -253,4 +253,6 @@ MoveNames::
 	li "BEAT UP"
 	li "MOONBLAST"
 	li "PLAY ROUGH"
+	li "WILL-O-WISP"
+	li "SUDDEN CHILL"
 	assert_list_length NUM_ATTACKS

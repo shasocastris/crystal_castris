@@ -260,6 +260,8 @@ DEF GEN1_MOVES EQU const_value - 1
 	const BEAT_UP      ; fb
 	const MOONBLAST    ; fc
 	const PLAY_ROUGH   ; fd
+	const WILL_O_WISP  ; fe
+	const SUDDEN_CHILL ; ff
 DEF GEN2_MOVES EQU const_value - 1
 
 DEF NUM_ATTACKS EQU const_value - 1
