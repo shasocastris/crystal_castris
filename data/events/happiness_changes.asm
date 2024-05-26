@@ -21,4 +21,5 @@ HappinessChanges:
 	db -15, -15, -20 ; Used Revival Herb (bitter)
 	db  +3,  +3,  +1 ; Grooming
 	db +10,  +6,  +4 ; Gained a level in the place where it was caught
+	db  +1,  +1,  +0 ; Added every step cycle
 	assert_table_length NUM_HAPPINESS_CHANGES

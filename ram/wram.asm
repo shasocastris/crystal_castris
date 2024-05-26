@@ -2948,8 +2948,6 @@ wPlayerMonSelection:: ds 3
 wStepCount:: db
 wPoisonStepCount:: db
 
-wHappinessStepCount:: db
-
 
 wParkBallsRemaining::
 wSafariBallsRemaining:: db
