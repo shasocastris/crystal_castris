@@ -270,6 +270,7 @@ DEF NUM_TREEMON_SETS EQU const_value
 	const HAPPINESS_GROOMING          ; 12
 	const HAPPINESS_GAINLEVELATHOME   ; 13
 	const HAPPINESS_STEP              ; 14
+	const HAPPINESS_PHOTOGRAPH        ; 15
 DEF NUM_HAPPINESS_CHANGES EQU const_value - 1
 
 ; significant happiness values

@@ -115,6 +115,7 @@ SpecialsPointers::
 	add_special PhotoStudio
 	add_special InitRoamMons
 	add_special FadeOutMusic
+	add_special CianwoodPhotograph
 	add_special Diploma
 	add_special PrintDiploma
 
