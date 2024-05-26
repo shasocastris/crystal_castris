@@ -7,7 +7,7 @@
 	db ELECTRIC, FLYING ; type
 	db 3 ; catch rate
 	db 216 ; base exp
-	dw NO_ITEM, NO_ITEM ; items
+	dw MIRACLEBERRY, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/zapdos/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)

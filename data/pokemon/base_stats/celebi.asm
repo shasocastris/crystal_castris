@@ -7,7 +7,7 @@
 	db PSYCHIC_TYPE, GRASS ; type
 	db 15 ; catch rate
 	db 64 ; base exp
-	dw NO_ITEM, MIRACLEBERRY ; items
+	dw MIRACLEBERRY, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/celebi/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
