@@ -282,6 +282,8 @@ MovesGen2:
 	move EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0      ;BEAT_UP
 	move EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30      ;MOONBLAST
 	move EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,         PHYSICAL,  90, 10,  10      ;PLAY_ROUGH
+	move EFFECT_BURN,                0, FIRE,          STATUS,   100, 20,   0      ;WILL_O_WISP
+	move EFFECT_FREEZE,              0, ICE,           STATUS,   100, 20,   0      ;SUDDEN_CHILL
 .IndirectEnd::
 
 POPS

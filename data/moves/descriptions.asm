@@ -262,6 +262,8 @@ MoveDescriptionsGen2:
 	dw BeatUpDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
+	dw WillOWispDescription
+	dw SuddenChillDescription
 .IndirectEnd::
 
 InvalidMoveDescription:
@@ -1278,3 +1280,11 @@ MoonblastDescription:
 PlayRoughDescription:
 	db   "An attack that may"
 	next "lower ATTACK.@"
+
+WillOWispDescription:
+	db   "A move that will"
+	next "burn the foe."
+
+SuddenChillDescription:
+	db   "A move that will"
+	next "freeze the foe."

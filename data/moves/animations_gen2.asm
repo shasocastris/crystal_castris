@@ -87,6 +87,8 @@ BattleAnimationsGen2::
 	dw BattleAnim_BeatUp
 	dw BattleAnim_Moonblast
 	dw BattleAnim_PlayRough
+	dw BattleAnim_WillOWisp
+	dw BattleAnim_SuddenChill
 .IndirectEnd::
 
 BattleAnim_Sketch:
@@ -1676,6 +1678,7 @@ BattleAnimSub_Sound:
 	anim_obj BATTLE_ANIM_OBJ_SOUND, 64, 100, $2
 	anim_ret
 
+BattleAnim_WillOWisp:
 BattleAnimSub_Fire:
 	anim_sound 0, 1, SFX_EMBER
 .loop
@@ -1685,6 +1688,7 @@ BattleAnimSub_Fire:
 	anim_loop 4, .loop
 	anim_ret
 
+BattleAnim_SuddenChill:
 BattleAnimSub_Ice:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj BATTLE_ANIM_OBJ_ICE, 128, 42, $0
