@@ -12,6 +12,19 @@ TeamRocketBaseB1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_OBJECTS, TeamRocketBaseB1FHideSecurityGruntCallback
+	callback MAPCALLBACK_TILES, .RocketBaseLocked
+
+.RocketBaseLocked
+	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+	iffalse .LockRocketBase
+	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
+	iftrue .UnlockRocketBase
+.LockRocketBase
+    changeblock 27, 2, $0D ; floor
+    endcallback
+.UnlockRocketBase
+    changeblock 27, 2, $02 ; stairs up
+    endcallback
 
 TeamRocketBaseB1FNoopScene:
 	end

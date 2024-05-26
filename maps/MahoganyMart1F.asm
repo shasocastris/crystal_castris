@@ -206,6 +206,14 @@ MahoganyMart1FLanceSplitUpText:
 
 	para "check this place."
 	line "I'll go first."
+
+	para "Be careful. Once"
+	line "we go in, we won't"
+	cont "be able to leave"
+
+	para "until we defeat"
+	line "every member of"
+	cont "Team Rocket!"
 	done
 
 MahoganyMart1F_MapEvents:
