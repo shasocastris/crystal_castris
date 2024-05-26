@@ -420,6 +420,9 @@ IlexForestHiddenSuperPotion:
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
 
+IlexForestHiddenMistStone:
+	hiddenitem MIST_STONE, EVENT_ILEX_FOREST_HIDDEN_MIST_STONE
+
 IlexForestSignpost:
 	jumptext IlexForestSignpostText
 
@@ -946,6 +949,7 @@ IlexForest_MapEvents:
 	bg_event 11,  7, BGEVENT_ITEM, IlexForestHiddenEther
 	bg_event 22, 14, BGEVENT_ITEM, IlexForestHiddenSuperPotion
 	bg_event  1, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event 23, 22, BGEVENT_ITEM, IlexForestHiddenMistStone
 	bg_event  8, 22, BGEVENT_UP, IlexForestShrineScript
 
 	def_object_events
