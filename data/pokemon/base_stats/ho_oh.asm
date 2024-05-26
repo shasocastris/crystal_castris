@@ -4,7 +4,7 @@
 	evs  0,   0,   0,   0,   0,   3
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIRE, FLYING ; type
+	db FIRE, FAIRY ; type
 	db 3 ; catch rate
 	db 220 ; base exp
 	dw SACRED_ASH, SACRED_ASH ; items
