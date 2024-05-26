@@ -154,6 +154,7 @@ ENDM
 	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const SEAFOAM_CAVES,                               10,  9 ; 92
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
