@@ -317,6 +317,11 @@ LakeOfRageGyaradosCryText:
 LakeOfRageGotRedScaleText:
 	text "<PLAYER> obtained a"
 	line "RED SCALE."
+
+	para "It is a rare item"
+	line "that Mr. Pokemon"
+	cont "might want to add"
+	cont "to his collection."
 	done
 
 LakeOfRageGrampsText:

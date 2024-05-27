@@ -517,6 +517,7 @@
 	const EVENT_GOT_LUCKY_EGG
 	const_skip ; unused
 	const EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	const EVENT_GOT_GS_BALL_FROM_MR_POKEMON
 ; Unused: next 167 events
 
 	const_next 1000

@@ -66,13 +66,19 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 .RedScale:
+    checkevent EVENT_GOT_GS_BALL_FROM_MR_POKEMON
+    iftrue .cancel
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem GS_BALL
 	iffalse .full
 	takeitem RED_SCALE
+	setevent EVENT_GOT_GS_BALL_FROM_MR_POKEMON
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	sjump .AlwaysNewDiscoveries
+.cancel
+	end
 
 .refused
 	writetext MrPokemonText_Disappointed
@@ -338,8 +344,8 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
-	cont "from PROF.OAK."
+	line "strange ball I got"
+	cont "during my travels."
 	done
 
 MrPokemonText_Disappointed:
@@ -368,6 +374,9 @@ MrPokemonsHouse_StrangeCoinsText:
 
 	para "Maybe they're from"
 	line "another country…"
+
+	para "Perhaps Hoenn, or"
+	line "maybe Sinnoh."
 	done
 
 MrPokemonsHouse_MapEvents:
