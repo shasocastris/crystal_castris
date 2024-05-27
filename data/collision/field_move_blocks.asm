@@ -15,6 +15,7 @@ CutTreeBlockPointers:
 	db $5f, $3d, 0 ; tree
 	db $63, $3f, 0 ; tree
 	db $67, $3e, 0 ; tree
+	db $80, $80, 1 ; tree
 	db -1 ; end
 
 .johto_modern:
