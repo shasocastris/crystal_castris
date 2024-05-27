@@ -41,6 +41,12 @@ OlivineCafeStrengthSailorText:
 	para "Here, use this"
 	line "and teach them"
 	cont "STRENGTH!"
+
+	para "Not every #MON"
+	line "can lift like I"
+	cont "can. Usually they"
+	cont "need to be fully"
+	cont "evolved."
 	done
 
 OlivineCafeStrengthSailorText_GotStrength:
@@ -52,6 +58,11 @@ OlivineCafeStrengthSailorText_GotStrength:
 
 	para "I'm so proud of my"
 	line "buff bod!"
+
+	para "Remember that you"
+	line "will need to use"
+	cont "STRENGTH on your"
+	cont "bulkiest #MON."
 	done
 
 OlivineCafeFishingGuruText:

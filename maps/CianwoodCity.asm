@@ -220,6 +220,13 @@ ChucksWifeFlySpeechText:
 
 	para "to anywhere you"
 	line "have visited."
+
+	para "Like SURF and"
+	line "STRENGTH, small"
+	cont "flying #MON"
+	cont "won't be able to"
+	cont "bring you from"
+	cont "city to city."
 	done
 
 ChucksWifeChubbyText:
@@ -230,6 +237,12 @@ ChucksWifeChubbyText:
 	para "That's good, since"
 	line "he was getting a"
 	cont "little chubby."
+
+	para "Have you found a"
+	line "flying #MON"
+	cont "large enough to"
+	cont "take you across"
+	cont "the sea?"
 	done
 
 CianwoodCityYoungsterText:
