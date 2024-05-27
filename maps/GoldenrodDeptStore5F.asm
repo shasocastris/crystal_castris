@@ -110,7 +110,7 @@ GoldenrodDeptStore5FMysteryGiftCarrieScript:
 	yesorno
 	iffalse .Decline
 	readvar VAR_ITEM_POCKET
-	ifgreater 16, .ItemsNearlyFull
+	ifgreater 36, .ItemsNearlyFull
 	readvar VAR_BALL_POCKET
 	ifgreater 8, .BallsNearlyFull
 .AskSave
