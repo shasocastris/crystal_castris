@@ -84,21 +84,29 @@ CheckForHiddenItems:
 
 RockItemEncounter:
 	ld hl, .RockItems
-	call Random
 .loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
 	sub [hl]
-	jr c, .ok
+	jr c, .got_item
+	inc hl
 	inc hl
 	inc hl
 	jr .loop
-.ok
-	ld a, [hl]
-	inc a
-	jr z, .done
-	ld a, [hl]
+.got_item
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 .done
+	call GetItemIDFromIndex
 	ld [wScriptVar], a
 	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
 
 .RockItems
 	dbw 1, MIST_STONE
@@ -118,21 +126,29 @@ RockItemEncounter:
 
 TreeItemEncounter:
 	ld hl, .TreeItems
-	call Random
 .loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
 	sub [hl]
-	jr c, .ok
+	jr c, .got_item
+	inc hl
 	inc hl
 	inc hl
 	jr .loop
-.ok
-	ld a, [hl]
-	inc a
-	jr z, .done
-	ld a, [hl]
+.got_item
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 .done
+	call GetItemIDFromIndex
 	ld [wScriptVar], a
 	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
 
 .TreeItems
 	dbw 1, LEAF_STONE
@@ -153,22 +169,29 @@ TreeItemEncounter:
 
 FishItemEncounter:
 	ld hl, .FishItems
-	call Random
 .loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
 	sub [hl]
-	jr c, .ok
+	jr c, .got_item
+	inc hl
 	inc hl
 	inc hl
 	jr .loop
-
-.ok
+.got_item
+	inc hl
 	ld a, [hli]
-	inc a
-	jr z, .done
-	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 .done
+	call GetItemIDFromIndex
 	ld [wScriptVar], a
 	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
 
 .FishItems:
 	dbw 1, WATER_STONE
