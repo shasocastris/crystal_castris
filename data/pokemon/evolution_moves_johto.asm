@@ -25,7 +25,7 @@ EvolutionMovesJohto:
 	dw NO_MOVE       ; CLEFFA
 	dw NO_MOVE       ; IGGLYBUFF
 	dw NO_MOVE       ; TOGEPI
-	dw NO_MOVE       ; TOGETIC
+	dw WING_ATTACK   ; TOGETIC
 	dw NO_MOVE       ; NATU
 	dw NO_MOVE       ; XATU
 	dw NO_MOVE       ; MAREEP

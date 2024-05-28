@@ -510,11 +510,17 @@ TogepiEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, CHARM
+	dbw 4, PECK
 	dbw 7, METRONOME
+	dbw 13, MOONLIGHT
 	dbw 18, SWEET_KISS
+	dbw 22, DISABLE
 	dbw 25, ENCORE
+	dbw 28, GROWTH
 	dbw 31, SAFEGUARD
+	dbw 34, MIMIC
 	dbw 38, PLAY_ROUGH
+	dbw 41, MINIMIZE
 	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves
 
@@ -522,11 +528,17 @@ TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, GROWL
 	dbw 1, CHARM
+	dbw 4, PECK
 	dbw 7, METRONOME
+	dbw 13, MOONLIGHT
 	dbw 18, SWEET_KISS
+	dbw 22, WING_ATTACK
 	dbw 25, ENCORE
+	dbw 28, GROWTH
 	dbw 31, SAFEGUARD
+	dbw 34, HEADBUTT
 	dbw 38, PLAY_ROUGH
+	dbw 41, ANCIENTPOWER
 	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves
 
