@@ -76,7 +76,6 @@ SometimesFleeMons:
 	dw POLIWRATH
 	dw POLITOED
 	dw MAGIKARP
-	dw GYARADOS
 	dw GOLDEEN
 	dw SEAKING
 	dw SLOWPOKE
@@ -105,7 +104,6 @@ SometimesFleeMons:
 	dw SUNFLORA
 	dw EXEGGCUTE
 	dw EXEGGUTOR
-	dw SUDOWOODO
 	dw WOBBUFFET
 	dw VENONAT
 	dw VENOMOTH
@@ -209,13 +207,11 @@ SometimesFleeMons:
 	dw PORYGON2
 	dw CHANSEY
 	dw BLISSEY
-	dw LAPRAS
 	dw OMANYTE
 	dw OMASTAR
 	dw KABUTO
 	dw KABUTOPS
 	dw AERODACTYL
-	dw SNORLAX
 	dw BULBASAUR
 	dw IVYSAUR
 	dw VENUSAUR
