@@ -4359,7 +4359,7 @@ BattleCommand_StatDown:
 	ld [wLoweredStat], a
 
 	call CheckMist
-	jmp nz, .Mist
+	jr nz, .Mist
 
 	ld hl, wEnemyStatLevels
 	ldh a, [hBattleTurn]
