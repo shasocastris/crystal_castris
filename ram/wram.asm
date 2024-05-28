@@ -2918,6 +2918,7 @@ wMomItemTriggerBalance:: ds 3
 wDailyResetTimer:: dw
 wDailyFlags1:: db
 wDailyFlags2:: db
+wDailyFlags3:: db
 wSwarmFlags:: db
 wTimerEventStartDay:: db
 

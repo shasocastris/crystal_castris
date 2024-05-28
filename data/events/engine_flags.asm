@@ -122,11 +122,14 @@ EngineFlags:
 	engine_flag wDailyFlags2, DAILYFLAGS2_INDIGO_PLATEAU_RIVAL_FIGHT_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_MOVE_TUTOR_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
-	engine_flag wDailyFlags2, DAILYFLAGS2_MYSTERY_GIFT_F
-    engine_flag wDailyFlags2, DAILYFLAGS2_CIANWOOD_PHOTOGRAPH
+
+	engine_flag wDailyFlags3, DAILYFLAGS3_MYSTERY_GIFT_F
+    engine_flag wDailyFlags3, DAILYFLAGS3_CIANWOOD_PHOTOGRAPH
 
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F
 	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F
+	engine_flag wSwarmFlags, SWARMFLAGS_DUNSPARCE_SWARM_F
+	engine_flag wSwarmFlags, SWARMFLAGS_YANMA_SWARM_F
 
 	engine_flag wGameTimerPaused, GAME_TIMER_MOBILE_F
 
@@ -197,8 +200,5 @@ EngineFlags:
 	engine_flag wDailyPhoneTimeOfDayFlags, 23 ; erin
 
 	engine_flag wPlayerSpriteSetupFlags, PLAYERSPRITESETUP_FEMALE_TO_MALE_F
-
-	engine_flag wSwarmFlags, SWARMFLAGS_DUNSPARCE_SWARM_F
-	engine_flag wSwarmFlags, SWARMFLAGS_YANMA_SWARM_F
 
 	assert_table_length NUM_ENGINE_FLAGS
