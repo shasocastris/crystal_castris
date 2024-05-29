@@ -1038,35 +1038,19 @@ TitleScreenMain:
 	inc a
 	jr z, .delete_save_data
 
-; To bring up the clock reset dialog:
-
-; Hold Down + B + Select to initiate the sequence.
+; To bring up the clock reset dialog, press Down + B.
 	ldh a, [hClockResetTrigger]
 	cp $34
-	jr z, .check_clock_reset
+	jr z, .reset_clock
 
 	ld a, [hl]
-	or ~(D_DOWN + B_BUTTON + SELECT)
+	or ~(D_DOWN + B_BUTTON)
 	inc a
 	jr nz, .check_start
 
 	ld a, $34
 	ldh [hClockResetTrigger], a
 	jr .check_start
-
-; Keep Select pressed, and hold Left + Up.
-; Then let go of Select.
-.check_clock_reset
-	bit SELECT_F, [hl]
-	jr nz, .check_start
-
-	xor a
-	ldh [hClockResetTrigger], a
-
-	ld a, [hl]
-	or ~(D_LEFT + D_UP)
-	inc a
-	jr z, .reset_clock
 
 ; Press Start or A to start the game.
 .check_start
