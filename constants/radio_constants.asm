@@ -15,6 +15,7 @@
 	const POKE_FLUTE_RADIO       ; 08
 	const UNOWN_RADIO            ; 09
 	const EVOLUTION_RADIO        ; 0a
+	const LULLABY_MUSIC_RADIO    ; 0b
 DEF NUM_RADIO_CHANNELS EQU const_value
 ; internal indexes for channel segments
 	const OAKS_POKEMON_TALK_2    ; 0b
@@ -107,6 +108,7 @@ DEF NUM_RADIO_SEGMENTS EQU const_value
 	const MAPRADIO_PLACES_PEOPLE
 	const MAPRADIO_LETS_ALL_SING
 	const MAPRADIO_ROCKET
+	const MAPRADIO_LULLABY_MUSIC
 DEF NUM_MAP_RADIO_STATIONS EQU const_value
 
 ; These tables in engine/pokegear/radio.asm are all sized to a power of 2
