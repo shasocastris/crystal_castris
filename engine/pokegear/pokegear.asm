@@ -1376,6 +1376,7 @@ RadioChannels:
 	dbw 32, .LuckyChannel           ; 08.5
 	dbw 40, .BuenasPassword         ; 10.5
 	dbw 52, .RuinsOfAlphRadio       ; 13.5
+	dbw 58, .LullabyMusic           ; 15.0
 	dbw 64, .PlacesAndPeople        ; 16.5
 	dbw 72, .LetsAllSing            ; 18.5
 	dbw 78, .PokeFluteRadio         ; 20.0
@@ -1390,7 +1391,7 @@ RadioChannels:
 	ld a, [wTimeOfDay]
 	and a
 	jmp z, LoadStation_PokedexShow
-	jr LoadStation_OaksPokemonTalk
+	jmp LoadStation_OaksPokemonTalk
 
 .PokemonMusic:
 	call .InJohto
@@ -1412,6 +1413,11 @@ RadioChannels:
 	cp LANDMARK_RUINS_OF_ALPH
 	jr nz, .NoSignal
 	jmp LoadStation_UnownRadio
+
+.LullabyMusic:
+	call .InJohto
+	jr nc, .NoSignal
+	jmp LoadStation_LullabyMusic
 
 .PlacesAndPeople:
 	call .InJohto
@@ -1543,6 +1549,17 @@ LoadStation_UnownRadio:
 	ld de, UnownStationName
 	ret
 
+LoadStation_LullabyMusic:
+	ld a, LULLABY_MUSIC_RADIO
+	ld [wCurRadioLine], a
+	xor a
+	ld [wNumRadioLinesPrinted], a
+	ld a, BANK(PlayRadioShow)
+	ld hl, PlayRadioShow
+	call Radio_BackUpFarCallParams
+	ld de, LullabyMusicName
+	ret
+
 LoadStation_PlacesAndPeople:
 	ld a, PLACES_AND_PEOPLE
 	ld [wCurRadioLine], a
@@ -1661,6 +1678,7 @@ PokedexShowName:      db "#DEX Show@"
 PokemonMusicName:     db "#MON Music@"
 LuckyChannelName:     db "Lucky Channel@"
 UnownStationName:     db "?????@"
+LullabyMusicName:     db "Lullaby Music@"
 
 PlacesAndPeopleName:  db "Places & People@"
 LetsAllSingName:      db "Let's All Sing!@"
@@ -1893,6 +1911,7 @@ PlayRadioStationPointers:
 	dw LoadStation_PlacesAndPeople
 	dw LoadStation_LetsAllSing
 	dw LoadStation_RocketRadio
+	dw LoadStation_LullabyMusic
 	assert_table_length NUM_MAP_RADIO_STATIONS
 
 LoadStation_PokemonChannel:
