@@ -20,10 +20,16 @@ VioletNicknameSpeechHouseBirdScript:
 	writetext VioletNicknameSpeechHouseBirdText
 	cry PIDGEY
 	waitbutton
-	setval MURKROW
+	callasm .Murkrow
 	special ShowPokedexEntry
 	closetext
 	end
+
+.Murkrow
+	ld hl, MURKROW
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 VioletNicknameSpeechHouseTeacherText:
 	text "She uses the names"

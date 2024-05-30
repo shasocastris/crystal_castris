@@ -18,7 +18,6 @@ NewPokedexEntry:
 	farcall _NewPokedexEntry
 	call WaitPressAorB_BlinkCursor
 	ld a, [wNamedObjectIndex]
-	dec a
 	call CheckCaughtMon
 	jr z, .notcaught
 	ld a, 1 ; page 2
