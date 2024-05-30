@@ -20,6 +20,8 @@ VioletNicknameSpeechHouseBirdScript:
 	writetext VioletNicknameSpeechHouseBirdText
 	cry PIDGEY
 	waitbutton
+	setval MURKROW
+	special ShowPokedexEntry
 	closetext
 	end
 
