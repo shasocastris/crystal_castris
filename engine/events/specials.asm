@@ -28,7 +28,6 @@ GameCornerPrizeMonCheckDex:
 
 ShowPokedexEntry:
 	ld a, [wScriptVar]
-	dec a
 	call SetSeenMon
 	call FadeToMenu
 	ld a, [wScriptVar]
