@@ -30,6 +30,7 @@ CianwoodPhotoStudioFishingGuruScript:
 	pokepic 0
 	cry 0
 	waitsfx
+	pause 30
 	closepokepic
 	opentext
 	writetext PhotoStudioPrestoText
@@ -98,7 +99,7 @@ PhotoStudioHoldStillText:
 PhotoStudioPrestoText:
 	text "Presto! All done."
 
-	para "Your "
+	para "Your @"
 	text_ram wStringBuffer3
 	text ""
 	line "looks happier!"
