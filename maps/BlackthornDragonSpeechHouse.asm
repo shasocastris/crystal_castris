@@ -15,8 +15,16 @@ BlackthornDragonSpeechHouseDratiniScript:
 	writetext BlackthornDragonSpeechHouseDratiniText
 	cry DRATINI
 	waitbutton
+	callasm .Dratini
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Dratini
+	ld hl, DRATINI
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 BlackthornDragonSpeechHouseGrannyText:
 	text "A clan of trainers"

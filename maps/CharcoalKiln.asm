@@ -66,8 +66,16 @@ CharcoalKilnFarfetchd:
 	writetext FarfetchdText
 	cry FARFETCH_D
 	waitbutton
+	callasm .Farfetchd
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Farfetchd
+	ld hl, FARFETCH_D
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 CharcoalKilnBookshelf:
 	jumpstd MagazineBookshelfScript

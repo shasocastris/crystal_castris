@@ -19,8 +19,16 @@ CeruleanDiglett:
 	writetext CeruleanDiglettText
 	cry DIGLETT
 	waitbutton
+	callasm .Slowbro
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Slowbro
+	ld hl, DIGLETT
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 CeruleanPoliceStationFishingGuruText:
 	text "I heard that some"

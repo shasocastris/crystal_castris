@@ -20,8 +20,16 @@ Route39Miltank:
 	writetext Route39MiltankText
 	cry MILTANK
 	waitbutton
+	callasm .Miltank
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Miltank
+	ld hl, MILTANK
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 TrainerPokefanmDerek:
 	trainer POKEFANM, DEREK1, EVENT_BEAT_POKEFANM_DEREK, PokefanmDerekSeenText, PokefanmDerekBeatenText, 0, .Script

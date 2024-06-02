@@ -20,16 +20,32 @@ Speary:
 	writetext SpearyText
 	cry SPEAROW
 	waitbutton
+	callasm .Spearow
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Spearow
+	ld hl, SPEAROW
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 Rattey:
 	opentext
 	writetext RatteyText
 	cry RATTATA
 	waitbutton
+	callasm .Rattata
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Rattata
+	ld hl, RATTATA
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 ViridianNicknameSpeechHousePokefanMText:
 	text "Do you put a lot"
@@ -73,5 +89,5 @@ ViridianNicknameSpeechHouse_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHousePokefanMScript, -1
 	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianNicknameSpeechHouseLassScript, -1
-	object_event  5,  2, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
-	object_event  6,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Rattey, -1
+	object_event  5,  2, SPRITE_SPEAROW, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Speary, -1
+	object_event  6,  3, SPRITE_RATTATA2, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Rattey, -1

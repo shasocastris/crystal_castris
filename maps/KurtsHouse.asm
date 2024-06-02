@@ -438,8 +438,16 @@ KurtsHouseSlowpoke:
 	writetext KurtsHouseSlowpokeText
 	cry SLOWPOKE
 	waitbutton
+	callasm .Slowpoke
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Slowpoke
+	ld hl, SLOWPOKE
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 KurtsHouseOakPhoto:
 	jumptext KurtsHouseOakPhotoText
