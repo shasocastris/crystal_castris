@@ -15,21 +15,37 @@ CeruleanTradeSpeechHouseGrannyScript:
 CeruleanTradeSpeechHouseGrampsScript:
 	jumptextfaceplayer CeruleanTradeSpeechHouseGrampsText
 
-CeruleanTradeSpeechHouseRhydonScript:
+CeruleanTradeSpeechHouseKangaskhanScript:
 	opentext
-	writetext CeruleanTradeSpeechHouseRhydonText
+	writetext CeruleanTradeSpeechHouseKangaskhanText
 	cry KANGASKHAN
 	waitbutton
+	callasm .Kangaskhan
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Kangaskhan
+	ld hl, KANGASKHAN
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 CeruleanTradeSpeechHouseZubatScript:
 	opentext
 	writetext CeruleanTradeSpeechHouseZubatText
 	cry ZUBAT
 	waitbutton
+	callasm .Zubat
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Zubat
+	ld hl, ZUBAT
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 CeruleanTradeSpeechHouseGrannyText:
 	text "My husband lives"
@@ -42,7 +58,7 @@ CeruleanTradeSpeechHouseGrampsText:
 	text "Ah… I'm so happy…"
 	done
 
-CeruleanTradeSpeechHouseRhydonText:
+CeruleanTradeSpeechHouseKangaskhanText:
 	text "KANGASKHAN: Garu"
 	line "garuu."
 	done
@@ -65,5 +81,5 @@ CeruleanTradeSpeechHouse_MapEvents:
 	def_object_events
 	object_event  2,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrannyScript, -1
 	object_event  1,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseGrampsScript, -1
-	object_event  5,  2, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseRhydonScript, -1
+	object_event  5,  2, SPRITE_KANGASKHAN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseKangaskhanScript, -1
 	object_event  5,  6, SPRITE_ZUBAT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanTradeSpeechHouseZubatScript, -1

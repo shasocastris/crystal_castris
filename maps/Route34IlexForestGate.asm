@@ -71,8 +71,16 @@ Route34IlexForestGateButterfreeScript:
 	writetext Route34IlexForestGateButterfreeText
 	cry BUTTERFREE
 	waitbutton
+	callasm .Butterfree
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Butterfree
+	ld hl, BUTTERFREE
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 Route34IlexForestGateLassScript:
 	jumptextfaceplayer Route34IlexForestGateLassText
@@ -150,6 +158,6 @@ Route34IlexForestGate_MapEvents:
 
 	def_object_events
 	object_event  9,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_BEHIND_COUNTER
-	object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1
+	object_event  9,  4, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateButterfreeScript, -1
 	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateLassScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_LASS
 	object_event  5,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route34IlexForestGateTeacherScript, EVENT_ROUTE_34_ILEX_FOREST_GATE_TEACHER_IN_WALKWAY

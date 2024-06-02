@@ -42,8 +42,16 @@ RadioTowerJigglypuff:
 	writetext RadioTowerJigglypuffText
 	cry JIGGLYPUFF
 	waitbutton
+	callasm .Jigglypuff
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Jigglypuff
+	ld hl, JIGGLYPUFF
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 RadioTower2FBlackBelt1Script:
 	jumptextfaceplayer RadioTower2FBlackBelt1Text

@@ -139,8 +139,16 @@ AzaleaTownSlowpokeScript:
 	writetext AzaleaTownSlowpokeText2
 	cry SLOWPOKE
 	waitbutton
+	callasm .Slowpoke
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Slowpoke
+	ld hl, SLOWPOKE
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 AzaleaTownCelebiScene:
 	applymovement PLAYER, AzaleaTownPlayerLeavesKurtsHouseMovement

@@ -57,8 +57,16 @@ NationalParkPersian:
 	writetext NationalParkPersianText
 	cry PERSIAN
 	waitbutton
+	callasm .Persian
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Persian
+	ld hl, PERSIAN
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 NationalParkGameboyKidScript:
 	faceplayer

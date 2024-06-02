@@ -40,8 +40,16 @@ CeruleanCitySlowbro:
 	writetext CeruleanCitySlowbroText
 	cry SLOWBRO
 	waitbutton
+	callasm .Slowbro
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Slowbro
+	ld hl, SLOWBRO
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 CeruleanCityCooltrainerFScript:
 	faceplayer

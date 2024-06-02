@@ -115,8 +115,17 @@ SlowpokeWellB1FTaillessSlowpokeScript:
 	writetext SlowpokeWellB1FTaillessSlowpokeText
 	cry SLOWPOKE
 	waitbutton
+	callasm .Slowpoke
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Slowpoke
+	ld hl, SLOWPOKE
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
+
 
 SlowpokeWellB1FBoulder:
 	jumpstd StrengthBoulderScript

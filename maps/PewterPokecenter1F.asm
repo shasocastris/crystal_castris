@@ -21,8 +21,16 @@ PewterJigglypuff:
 	writetext PewterJigglypuffText
 	cry JIGGLYPUFF
 	waitbutton
+	callasm .Jigglypuff
+	special ShowPokedexEntry
 	closetext
 	end
+
+.Jigglypuff
+	ld hl, JIGGLYPUFF
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 PewterPokecenter1FBugCatcherScript:
 	jumptextfaceplayer PewterPokecenter1FBugCatcherText
