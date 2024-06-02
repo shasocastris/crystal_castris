@@ -44,12 +44,12 @@ RGBLINK ?= $(RGBDS)rgblink
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystal_debug crystal_vc clean tidy tools
+.PHONY: all crystal crystal_vc clean tidy tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
+all: crystal crystal_debug
 crystal:       crystal_castris.gbc
 crystal_debug: crystal_castris_debug.gbc
 crystal_vc:    crystal_castris.patch
