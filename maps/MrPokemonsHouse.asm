@@ -52,15 +52,7 @@ MrPokemonsHouse_MrPokemonScript:
 	opentext
 	checkitem RED_SCALE
 	iftrue .RedScale
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .AlwaysNewDiscoveries
-	writetext MrPokemonText_ImDependingOnYou
-	waitbutton
-	closetext
-	end
-
-.AlwaysNewDiscoveries:
-	writetext MrPokemonText_AlwaysNewDiscoveries
+	writetext MrPokemonText_UsePokedexOnMurkrow
 	waitbutton
 	closetext
 	end
@@ -76,7 +68,7 @@ MrPokemonsHouse_MrPokemonScript:
 	takeitem RED_SCALE
 	setevent EVENT_GOT_GS_BALL_FROM_MR_POKEMON
 	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
-	sjump .AlwaysNewDiscoveries
+	writetext MrPokemonText_UsePokedexOnMurkrow
 .cancel
 	end
 
@@ -123,7 +115,7 @@ MrPokemonsHouse_OakScript:
 	special FadeInFromBlack
 	special RestartMapMusic
 	opentext
-	writetext MrPokemonText_ImDependingOnYou
+	writetext MrPokemonText_UsePokedexOnMurkrow
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_NEW_BARK_TOWN
@@ -232,17 +224,19 @@ MrPokemonsHouse_MrPokemonHealText:
 	cont "rest."
 	done
 
-MrPokemonText_ImDependingOnYou:
-	text "I'm depending on"
-	line "you!"
-	done
+MrPokemonText_UsePokedexOnMurkrow:
+	text "Don't forget to"
+	line "use your #DEX"
 
-MrPokemonText_AlwaysNewDiscoveries:
-	text "Life is delight-"
-	line "ful! Always, new"
+	para "to learn about"
+	line "#MON you meet!"
 
-	para "discoveries to be"
-	line "made!"
+	para "Maybe you can try"
+	line "it out on my"
+	cont "friend's MURKROW."
+
+	para "She has a house in"
+	line "VIOLET CITY."
 	done
 
 MrPokemonsHouse_OakText1:
@@ -304,6 +298,10 @@ MrPokemonsHouse_OakText1:
 
 	para "#MON you've"
 	line "seen or caught."
+
+	para "It will also show"
+	line "#MON you meet"
+	cont "on your travels."
 
 	para "It's a hi-tech"
 	line "encyclopedia!"
