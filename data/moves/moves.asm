@@ -284,6 +284,7 @@ MovesGen2:
 	move EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,         PHYSICAL,  90, 10,  10      ;PLAY_ROUGH
 	move EFFECT_BURN,                0, FIRE,          STATUS,   100, 20,   0      ;WILL_O_WISP
 	move EFFECT_FREEZE,              0, ICE,           STATUS,   100, 20,   0      ;SUDDEN_CHILL
+	move EFFECT_HAIL,                0, ICE,           STATUS,   100, 10,   0      ;HAIL
 .IndirectEnd::
 
 POPS
