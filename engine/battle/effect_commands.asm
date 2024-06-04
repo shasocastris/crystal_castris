@@ -193,29 +193,6 @@ BattleCommand_CheckTurn:
 
 .not_asleep
 
-	ld hl, wBattleMonStatus
-	bit FRZ, [hl]
-	jr z, .not_frozen
-
-	; Flame Wheel and Sacred Fire thaw the user.
-	ld a, [wCurPlayerMove]
-	ld hl, .thawing_moves
-	call CheckMoveInList
-	jr c, .not_frozen
-
-	ld hl, FrozenSolidText
-	call StdBattleTextbox
-
-	call CantMove
-	jmp EndTurn
-
-.thawing_moves
-	dw FLAME_WHEEL
-	dw SACRED_FIRE
-	dw -1
-
-.not_frozen
-
 	ld hl, wPlayerSubStatus3
 	bit SUBSTATUS_FLINCHED, [hl]
 	jr z, .not_flinched
@@ -431,28 +408,6 @@ CheckEnemyTurn:
 	dw -1
 
 .not_asleep
-
-	ld hl, wEnemyMonStatus
-	bit FRZ, [hl]
-	jr z, .not_frozen
-
-	; Flame Wheel and Sacred Fire thaw the user.
-	ld a, [wCurEnemyMove]
-	ld hl, .thawing_moves
-	call CheckMoveInList
-	jr c, .not_frozen
-
-	ld hl, FrozenSolidText
-	call StdBattleTextbox
-	call CantMove
-	jmp EndTurn
-
-.thawing_moves
-	dw FLAME_WHEEL
-	dw SACRED_FIRE
-	dw -1
-
-.not_frozen
 
 	ld hl, wEnemySubStatus3
 	bit SUBSTATUS_FLINCHED, [hl]
@@ -4059,25 +4014,16 @@ BattleCommand_FreezeTarget:
 	call GetBattleVarAddr
 	set FRZ, [hl]
 	call UpdateOpponentInParty
+	ld hl, ApplyFrbEffectOnSpclAttack
+	call CallBattleCore
 	ld de, ANIM_FRZ
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
 
-	ld hl, WasFrozenText
+	ld hl, GotAFrostbiteText
 	call StdBattleTextbox
 
 	farcall UseHeldStatusHealingItem
-	ret nz
-
-	call OpponentCantMove
-	call EndRechargeOpp
-	ld hl, wEnemyJustGotFrozen
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .finish
-	ld hl, wPlayerJustGotFrozen
-.finish
-	ld [hl], $1
 	ret
 
 BattleCommand_ParalyzeTarget:
@@ -4798,6 +4744,9 @@ CalcPlayerStats:
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
+	ld hl, ApplyFrbEffectOnSpclAttack
+	call CallBattleCore
+
 	jmp BattleCommand_SwitchTurn
 
 CalcEnemyStats:
@@ -4814,6 +4763,9 @@ CalcEnemyStats:
 	call CallBattleCore
 
 	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+
+	ld hl, ApplyFrbEffectOnSpclAttack
 	call CallBattleCore
 
 	jmp BattleCommand_SwitchTurn
@@ -5341,7 +5293,7 @@ BattleCommand_FakeOut:
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
+	and SLP_MASK
 	jr nz, .fail
 
 	call CheckOpponentWentFirst
@@ -5358,7 +5310,7 @@ BattleCommand_FlinchTarget:
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	and 1 << FRZ | SLP_MASK
+	and SLP_MASK
 	ret nz
 
 	call CheckOpponentWentFirst
