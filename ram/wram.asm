@@ -596,8 +596,6 @@ wAmuletCoin:: db
 
 wSomeoneIsRampaging:: db
 
-wPlayerJustGotFrozen:: db
-wEnemyJustGotFrozen:: db
 wBattleEnd::
 
 
