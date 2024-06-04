@@ -255,4 +255,5 @@ MoveNames::
 	li "PLAY ROUGH"
 	li "WILL-O-WISP"
 	li "SUDDEN CHILL"
+	li "HAIL"
 	assert_list_length NUM_ATTACKS

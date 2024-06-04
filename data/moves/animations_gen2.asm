@@ -89,6 +89,7 @@ BattleAnimationsGen2::
 	dw BattleAnim_PlayRough
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_SuddenChill
+	dw BattleAnim_Hail
 .IndirectEnd::
 
 BattleAnim_Sketch:
@@ -671,6 +672,22 @@ BattleAnim_Outrage:
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 152, 40, $0
 	anim_wait 16
 	anim_ret
+
+BattleAnim_Hail:
+	anim_1gfx BATTLE_ANIM_GFX_ICE
+	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
+	anim_obj BATTLE_ANIM_OBJ_HAIL, 88, 0, $0
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HAIL, 72, 0, $1
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_HAIL, 56, 0, $2
+.loop
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_loop 8, .loop
+	anim_wait 8
+	anim_ret
+
 
 BattleAnim_Sandstorm:
 	anim_1gfx BATTLE_ANIM_GFX_POWDER

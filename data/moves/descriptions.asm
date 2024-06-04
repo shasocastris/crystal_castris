@@ -264,6 +264,7 @@ MoveDescriptionsGen2:
 	dw PlayRoughDescription
 	dw WillOWispDescription
 	dw SuddenChillDescription
+	dw HailDescription
 .IndirectEnd::
 
 InvalidMoveDescription:
@@ -1288,3 +1289,7 @@ WillOWispDescription:
 SuddenChillDescription:
 	db   "A move that will"
 	next "freeze the foe."
+
+HailDescription:
+	db   "Inflicts damage"
+	next "every turn.@"
