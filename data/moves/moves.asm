@@ -81,7 +81,7 @@ MovesGen1:
 	move EFFECT_NORMAL_HIT,        120, WATER,         SPECIAL,   80,  5,   0      ;HYDRO_PUMP
 	move EFFECT_NORMAL_HIT,         95, WATER,         SPECIAL,  100, 15,   0      ;SURF
 	move EFFECT_FREEZE_HIT,         95, ICE,           SPECIAL,  100, 10,  10      ;ICE_BEAM
-	move EFFECT_FREEZE_HIT,        120, ICE,           SPECIAL,   70,  5,  10      ;BLIZZARD
+	move EFFECT_BLIZZARD,          120, ICE,           SPECIAL,   70,  5,  10      ;BLIZZARD
 	move EFFECT_CONFUSE_HIT,        65, PSYCHIC_TYPE,  SPECIAL,  100, 20,  10      ;PSYBEAM
 	move EFFECT_SPEED_DOWN_HIT,     65, WATER,         SPECIAL,  100, 20,  10      ;BUBBLEBEAM
 	move EFFECT_ATTACK_DOWN_HIT,    65, ICE,           SPECIAL,  100, 20,  10      ;AURORA_BEAM
