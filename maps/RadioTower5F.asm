@@ -38,6 +38,7 @@ FakeDirectorScript:
 	winlosstext FakeDirectorWinText, 0
 	setlasttalked RADIOTOWER5F_DIRECTOR
 	loadtrainer EXECUTIVEM, EXECUTIVEM_3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -86,6 +87,7 @@ RadioTower5FRocketBossScript:
 	winlosstext RadioTower5FRocketBossWinText, 0
 	setlasttalked RADIOTOWER5F_ROCKET
 	loadtrainer EXECUTIVEM, EXECUTIVEM_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	opentext

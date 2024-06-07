@@ -21,6 +21,7 @@ SaffronGymSabrinaScript:
 	closetext
 	winlosstext SabrinaWinLossText, 0
 	loadtrainer SABRINA, SABRINA1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SABRINA

@@ -22,6 +22,7 @@ MahoganyGymPryceScript:
 	closetext
 	winlosstext PryceText_Impressed, 0
 	loadtrainer PRYCE, PRYCE1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE

@@ -31,6 +31,7 @@ EcruteakGymMortyScript:
 	closetext
 	winlosstext MortyWinLossText, 0
 	loadtrainer MORTY, MORTY1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY

@@ -15,6 +15,7 @@ Red:
 	closetext
 	winlosstext RedWinLossText, RedWinLossText
 	loadtrainer RED, RED1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

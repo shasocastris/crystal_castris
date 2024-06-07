@@ -21,6 +21,7 @@ SeafoamGymBlaineScript:
 	closetext
 	winlosstext BlaineWinLossText, 0
 	loadtrainer BLAINE, BLAINE1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	iftrue .ReturnAfterBattle
 	appear SEAFOAMGYM_GYM_GUIDE
