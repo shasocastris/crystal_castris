@@ -19,6 +19,7 @@ VioletGymFalknerScript:
 	closetext
 	winlosstext FalknerWinLossText, 0
 	loadtrainer FALKNER, FALKNER1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
@@ -219,12 +220,17 @@ BirdKeeperRodBeatenText:
 	done
 
 BirdKeeperRodAfterBattleText:
-	text "FALKNER's skills"
-	line "are for real!"
-
-	para "Don't get cocky"
+	text "Don't get cocky"
 	line "just because you"
 	cont "beat me!"
+
+	para "You can't switch"
+	line "out when a gym"
+	cont "leader sends in a"
+	cont "new #MON."
+
+	para "It makes the"
+	line "fight much harder!"
 	done
 
 BirdKeeperAbeSeenText:
@@ -244,6 +250,9 @@ BirdKeeperAbeAfterBattleText:
 	cont "how trapping moves"
 	cont "keep wild #MON"
 	cont "from fleeing."
+
+	para "You should check"
+	line "it out!"
 	done
 
 VioletGymGuideText:

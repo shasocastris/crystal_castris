@@ -3382,6 +3382,9 @@ CheckWhetherToAskSwitch:
 	ld a, [wOptions]
 	bit BATTLE_SHIFT, a
 	jr nz, .return_nc
+	ld a, [wBattleType]
+	cp BATTLETYPE_SET
+	jr z, .return_nc
 	ld a, [wCurPartyMon]
 	push af
 	ld a, [wCurBattleMon]
