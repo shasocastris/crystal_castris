@@ -308,13 +308,15 @@ YoungsterMikeyBeatenText:
 	done
 
 YoungsterMikeyAfterText:
-	text "Becoming a good"
-	line "trainer is really"
-	cont "tough."
+	text "Have you heard"
+	line "about the travel"
+	cont "journals written"
+	cont "by Mr. Pokemon?"
 
-	para "I'm going to bat-"
-	line "tle other people"
-	cont "to get better."
+	para "Rumors say they"
+	line "provide a lot of"
+	cont "insight into our"
+	cont "world."
 	done
 
 BugCatcherDonSeenText:

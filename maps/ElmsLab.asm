@@ -473,7 +473,8 @@ AideScript_GivePotion:
 	writetext AideText_GiveYouPotion
 	promptbutton
 	verbosegiveitem POTION
-	writetext AideText_AlwaysBusy
+	showemote EMOTE_SHOCK, ELMSLAB_ELMS_AIDE, 30
+    writetext AideText_ReadBooksReminder
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
@@ -1219,10 +1220,29 @@ AideText_GiveYouPotion:
 	cont "for your errand."
 	done
 
+AideText_ReadBooksReminder:
+	text "Oh! You might want"
+	line "to read the"
+	cont "professor's travel"
+	cont "tips and research"
+	cont "notes."
+
+	para "They contain lots"
+	line "of useful info and"
+	cont "are always here"
+	cont "for new trainers"
+	cont "to review."
+	done
+
 AideText_AlwaysBusy:
 	text "There are only two"
 	line "of us, so we're"
 	cont "always busy."
+
+	para "Have you read any"
+	line "of Elm's travel"
+	cont "tips or research"
+	cont "notes?"
 	done
 
 AideText_TheftTestimony:

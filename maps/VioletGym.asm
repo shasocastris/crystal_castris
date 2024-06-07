@@ -241,9 +241,11 @@ BirdKeeperAbeBeatenText:
 	done
 
 BirdKeeperAbeAfterBattleText:
-	text "This is pathetic,"
-	line "losing to some"
-	cont "rookie trainer…"
+	text "This semester,"
+	line "Earl is teaching"
+	cont "how trapping moves"
+	cont "keep wild #MON"
+	cont "from fleeing."
 	done
 
 VioletGymGuideText:

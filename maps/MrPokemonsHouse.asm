@@ -389,6 +389,8 @@ MrPokemonsHouse_MapEvents:
 	def_bg_events
 	bg_event  0,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
 	bg_event  1,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
+	bg_event  4,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
+	bg_event  5,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
 	bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins
