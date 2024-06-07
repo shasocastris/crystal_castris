@@ -81,10 +81,10 @@ endc
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement1
 	turnobject PLAYER, UP
 	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement2
-	turnobject PLAYER, RIGHT
 	opentext
 	writetext ElmText_ChooseAPokemon
 	waitbutton
+	turnobject PLAYER, RIGHT
 	setscene SCENE_ELMSLAB_CANT_LEAVE
 	closetext
 	end
@@ -178,7 +178,7 @@ CyndaquilPokeBallScript:
 	givepoke CYNDAQUIL, 5, BERRY
 	closetext
 	readvar VAR_FACING
-	ifequal RIGHT, ElmDirectionsScript
+	ifequal RIGHT, AfterCyndaquilRight
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
 
@@ -205,7 +205,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 5, BERRY
+	givepoke TOTODILE, 15, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -269,6 +269,7 @@ endc
 	writetext ElmDirectionsText3
 	waitbutton
 	closetext
+	turnobject PLAYER, DOWN
 	setevent EVENT_GOT_A_POKEMON_FROM_ELM
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
@@ -313,6 +314,7 @@ ElmsLabHealingMachine_HealParty:
 	pause 30
 	special RestartMapMusic
 	closetext
+	turnobject PLAYER, DOWN
 	end
 
 ElmAfterTheftDoneScript:
@@ -693,18 +695,28 @@ ElmsLab_ElmToDefaultPositionMovement1:
 
 ElmsLab_ElmToDefaultPositionMovement2:
 	step RIGHT
-	step RIGHT
 	step UP
 	turn_head DOWN
 	step_end
 
 AfterCyndaquilMovement:
 	step LEFT
+	step LEFT
 	step UP
 	turn_head UP
 	step_end
 
+AfterCyndaquilRight:
+	applymovement PLAYER, AfterCyndaquilMovementRight
+	sjump ElmDirectionsScript
+
+AfterCyndaquilMovementRight:
+	step LEFT
+	turn_head UP
+	step_end
+
 AfterTotodileMovement:
+	step LEFT
 	step LEFT
 	step LEFT
 	step UP
@@ -712,6 +724,7 @@ AfterTotodileMovement:
 	step_end
 
 AfterChikoritaMovement:
+	step LEFT
 	step LEFT
 	step LEFT
 	step LEFT
@@ -1422,7 +1435,7 @@ ElmsLab_MapEvents:
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 
 	def_object_events
-	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
+	object_event  4,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
