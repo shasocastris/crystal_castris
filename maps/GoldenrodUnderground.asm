@@ -115,7 +115,6 @@ TrainerSupernerdEric:
 	trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SupernerdEricAfterBattleText
 	waitbutton
@@ -126,7 +125,6 @@ TrainerSupernerdTeru:
 	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SupernerdTeruAfterBattleText
 	waitbutton
@@ -137,7 +135,6 @@ TrainerPokemaniacIssac:
 	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacIssacAfterBattleText
 	waitbutton
@@ -148,7 +145,6 @@ TrainerPokemaniacDonald:
 	trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacDonaldAfterBattleText
 	waitbutton

@@ -18,7 +18,6 @@ TrainerKimonoGirlNaoko:
 	trainer KIMONO_GIRL, NAOKO, EVENT_BEAT_KIMONO_GIRL_NAOKO, KimonoGirlNaokoSeenText, KimonoGirlNaokoBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext KimonoGirlNaokoAfterBattleText
 	waitbutton
@@ -29,7 +28,6 @@ TrainerKimonoGirlSayo:
 	trainer KIMONO_GIRL, SAYO, EVENT_BEAT_KIMONO_GIRL_SAYO, KimonoGirlSayoSeenText, KimonoGirlSayoBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext KimonoGirlSayoAfterBattleText
 	waitbutton
@@ -40,7 +38,6 @@ TrainerKimonoGirlZuki:
 	trainer KIMONO_GIRL, ZUKI, EVENT_BEAT_KIMONO_GIRL_ZUKI, KimonoGirlZukiSeenText, KimonoGirlZukiBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext KimonoGirlZukiAfterBattleText
 	waitbutton
@@ -51,7 +48,6 @@ TrainerKimonoGirlKuni:
 	trainer KIMONO_GIRL, KUNI, EVENT_BEAT_KIMONO_GIRL_KUNI, KimonoGirlKuniSeenText, KimonoGirlKuniBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext KimonoGirlKuniAfterBattleText
 	waitbutton
@@ -62,7 +58,6 @@ TrainerKimonoGirlMiki:
 	trainer KIMONO_GIRL, MIKI, EVENT_BEAT_KIMONO_GIRL_MIKI, KimonoGirlMikiSeenText, KimonoGirlMikiBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext KimonoGirlMikiAfterBattleText
 	waitbutton

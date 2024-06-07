@@ -17,7 +17,6 @@ TrainerBugCatcherRob:
 	trainer BUG_CATCHER, ROB, EVENT_BEAT_BUG_CATCHER_ROB, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BugCatcherRobAfterBattleText
 	waitbutton
@@ -28,7 +27,6 @@ TrainerBugCatcherEd:
 	trainer BUG_CATCHER, ED, EVENT_BEAT_BUG_CATCHER_ED, BugCatcherEdSeenText, BugCatcherEdBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BugCatcherEdAfterBattleText
 	waitbutton
@@ -39,7 +37,6 @@ TrainerBugCatcherDoug:
 	trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BugCatcherDougAfterBattleText
 	waitbutton

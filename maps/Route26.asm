@@ -17,7 +17,6 @@ TrainerCooltrainermJake:
 	trainer COOLTRAINERM, JAKE, EVENT_BEAT_COOLTRAINERM_JAKE, CooltrainermJakeSeenText, CooltrainermJakeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainermJakeAfterBattleText
 	waitbutton
@@ -112,7 +111,6 @@ TrainerCooltrainerfJoyce:
 	trainer COOLTRAINERF, JOYCE, EVENT_BEAT_COOLTRAINERF_JOYCE, CooltrainerfJoyceSeenText, CooltrainerfJoyceBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfJoyceAfterBattleText
 	waitbutton
@@ -207,7 +205,6 @@ TrainerPsychicRichard:
 	trainer PSYCHIC_T, RICHARD, EVENT_BEAT_PSYCHIC_RICHARD, PsychicRichardSeenText, PsychicRichardBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicRichardAfterBattleText
 	waitbutton
@@ -218,7 +215,6 @@ TrainerFisherScott:
 	trainer FISHER, SCOTT, EVENT_BEAT_FISHER_SCOTT, FisherScottSeenText, FisherScottBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherScottAfterBattleText
 	waitbutton

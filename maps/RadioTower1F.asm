@@ -187,7 +187,6 @@ TrainerGruntM3:
 	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM3AfterBattleText
 	waitbutton

@@ -16,7 +16,6 @@ TrainerCooltrainermSean:
 	trainer COOLTRAINERM, SEAN, EVENT_BEAT_COOLTRAINERM_SEAN, CooltrainermSeanSeenText, CooltrainermSeanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainermSeanAfterBattleText
 	waitbutton
@@ -27,7 +26,6 @@ TrainerCooltrainerfCarol:
 	trainer COOLTRAINERF, CAROL, EVENT_BEAT_COOLTRAINERF_CAROL, CooltrainerfCarolSeenText, CooltrainerfCarolBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfCarolAfterBattleText
 	waitbutton
@@ -38,7 +36,6 @@ TrainerPokemaniacEthan:
 	trainer POKEMANIAC, ETHAN, EVENT_BEAT_POKEMANIAC_ETHAN, PokemaniacEthanSeenText, PokemaniacEthanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokemaniacEthanAfterBattleText
 	waitbutton
@@ -49,7 +46,6 @@ TrainerHikerNoland:
 	trainer HIKER, NOLAND, EVENT_BEAT_HIKER_NOLAND, HikerNolandSeenText, HikerNolandBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext HikerNolandAfterBattleText
 	waitbutton
@@ -60,7 +56,6 @@ TrainerGentlemanEdward:
 	trainer GENTLEMAN, EDWARD, EVENT_BEAT_GENTLEMAN_EDWARD, GentlemanEdwardSeenText, GentlemanEdwardBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GentlemanEdwardAfterBattleText
 	waitbutton
@@ -71,7 +66,6 @@ TrainerBurglarCorey:
 	trainer BURGLAR, COREY, EVENT_BEAT_BURGLAR_COREY, BurglarCoreySeenText, BurglarCoreyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BurglarCoreyAfterBattleText
 	waitbutton

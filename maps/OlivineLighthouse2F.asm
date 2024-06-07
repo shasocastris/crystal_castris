@@ -11,7 +11,6 @@ TrainerGentlemanAlfred:
 	trainer GENTLEMAN, ALFRED, EVENT_BEAT_GENTLEMAN_ALFRED, GentlemanAlfredSeenText, GentlemanAlfredBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GentlemanAlfredAfterBattleText
 	waitbutton

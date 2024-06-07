@@ -12,7 +12,6 @@ TrainerSwimmermSeth:
 	trainer SWIMMERM, SETH, EVENT_BEAT_SWIMMERM_SETH, SwimmermSethSeenText, SwimmermSethBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermSethAfterBattleText
 	waitbutton
@@ -23,7 +22,6 @@ TrainerSwimmerfNikki:
 	trainer SWIMMERF, NIKKI, EVENT_BEAT_SWIMMERF_NIKKI, SwimmerfNikkiSeenText, SwimmerfNikkiBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfNikkiAfterBattleText
 	waitbutton
@@ -34,7 +32,6 @@ TrainerFisherArnold:
 	trainer FISHER, ARNOLD, EVENT_BEAT_FISHER_ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext FisherArnoldAfterBattleText
 	waitbutton

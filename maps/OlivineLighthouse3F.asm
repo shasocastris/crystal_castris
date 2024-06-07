@@ -13,7 +13,6 @@ TrainerBirdKeeperTheo:
 	trainer BIRD_KEEPER, THEO, EVENT_BEAT_BIRD_KEEPER_THEO, BirdKeeperTheoSeenText, BirdKeeperTheoBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BirdKeeperTheoAfterBattleText
 	waitbutton
@@ -24,7 +23,6 @@ TrainerGentlemanPreston:
 	trainer GENTLEMAN, PRESTON, EVENT_BEAT_GENTLEMAN_PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GentlemanPrestonAfterBattleText
 	waitbutton
@@ -35,7 +33,6 @@ TrainerSailorTerrell:
 	trainer SAILOR, TERRELL, EVENT_BEAT_SAILOR_TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SailorTerrellAfterBattleText
 	waitbutton

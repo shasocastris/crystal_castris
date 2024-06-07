@@ -14,7 +14,6 @@ TrainerBirdKeeperDenis:
 	trainer BIRD_KEEPER, DENIS, EVENT_BEAT_BIRD_KEEPER_DENIS, BirdKeeperDenisSeenText, BirdKeeperDenisBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BirdKeeperDenisAfterBattleText
 	waitbutton
@@ -25,7 +24,6 @@ TrainerSailorErnest:
 	trainer SAILOR, ERNEST, EVENT_BEAT_SAILOR_ERNEST, SailorErnestSeenText, SailorErnestBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SailorErnestAfterBattleText
 	waitbutton

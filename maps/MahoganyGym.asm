@@ -72,7 +72,6 @@ TrainerSkierRoxanne:
 	trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SkierRoxanneAfterBattleText
 	waitbutton
@@ -83,7 +82,6 @@ TrainerSkierClarissa:
 	trainer SKIER, CLARISSA, EVENT_BEAT_SKIER_CLARISSA, SkierClarissaSeenText, SkierClarissaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SkierClarissaAfterBattleText
 	waitbutton
@@ -94,7 +92,6 @@ TrainerBoarderRonald:
 	trainer BOARDER, RONALD, EVENT_BEAT_BOARDER_RONALD, BoarderRonaldSeenText, BoarderRonaldBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BoarderRonaldAfterBattleText
 	waitbutton
@@ -105,7 +102,6 @@ TrainerBoarderBrad:
 	trainer BOARDER, BRAD, EVENT_BEAT_BOARDER_BRAD, BoarderBradSeenText, BoarderBradBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BoarderBradAfterBattleText
 	waitbutton
@@ -116,7 +112,6 @@ TrainerBoarderDouglas:
 	trainer BOARDER, DOUGLAS, EVENT_BEAT_BOARDER_DOUGLAS, BoarderDouglasSeenText, BoarderDouglasBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BoarderDouglasAfterBattleText
 	waitbutton

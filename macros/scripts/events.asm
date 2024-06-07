@@ -643,11 +643,6 @@ MACRO scripttalkafter
 	db scripttalkafter_command
 ENDM
 
-	const endifjustbattled_command ; $66
-MACRO endifjustbattled
-	db endifjustbattled_command
-ENDM
-
 	const checkjustbattled_command ; $67
 MACRO checkjustbattled
 	db checkjustbattled_command

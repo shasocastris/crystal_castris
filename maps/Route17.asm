@@ -19,7 +19,6 @@ TrainerBikerCharles:
 	trainer BIKER, CHARLES, EVENT_BEAT_BIKER_CHARLES, BikerCharlesSeenText, BikerCharlesBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BikerCharlesAfterBattleText
 	waitbutton
@@ -30,7 +29,6 @@ TrainerBikerRiley:
 	trainer BIKER, RILEY, EVENT_BEAT_BIKER_RILEY, BikerRileySeenText, BikerRileyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BikerRileyAfterBattleText
 	waitbutton
@@ -41,7 +39,6 @@ TrainerBikerJoel:
 	trainer BIKER, JOEL, EVENT_BEAT_BIKER_JOEL, BikerJoelSeenText, BikerJoelBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BikerJoelAfterBattleText
 	waitbutton
@@ -52,7 +49,6 @@ TrainerBikerGlenn:
 	trainer BIKER, GLENN, EVENT_BEAT_BIKER_GLENN, BikerGlennSeenText, BikerGlennBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BikerGlennAfterBattleText
 	waitbutton

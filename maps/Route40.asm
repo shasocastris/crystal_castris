@@ -33,7 +33,6 @@ TrainerSwimmerfElaine:
 	trainer SWIMMERF, ELAINE, EVENT_BEAT_SWIMMERF_ELAINE, SwimmerfElaineSeenText, SwimmerfElaineBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfElaineAfterBattleText
 	waitbutton
@@ -44,7 +43,6 @@ TrainerSwimmerfPaula:
 	trainer SWIMMERF, PAULA, EVENT_BEAT_SWIMMERF_PAULA, SwimmerfPaulaSeenText, SwimmerfPaulaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfPaulaAfterBattleText
 	waitbutton
@@ -55,7 +53,6 @@ TrainerSwimmermSimon:
 	trainer SWIMMERM, SIMON, EVENT_BEAT_SWIMMERM_SIMON, SwimmermSimonSeenText, SwimmermSimonBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermSimonAfterBattleText
 	waitbutton
@@ -66,7 +63,6 @@ TrainerSwimmermRandall:
 	trainer SWIMMERM, RANDALL, EVENT_BEAT_SWIMMERM_RANDALL, SwimmermRandallSeenText, SwimmermRandallBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermRandallAfterBattleText
 	waitbutton

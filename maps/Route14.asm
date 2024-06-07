@@ -21,7 +21,6 @@ TrainerPokefanmCarter:
 	trainer POKEFANM, CARTER, EVENT_BEAT_POKEFANM_CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokefanmCarterAfterBattleText
 	waitbutton
@@ -32,7 +31,6 @@ TrainerBirdKeeperRoy:
 	trainer BIRD_KEEPER, ROY, EVENT_BEAT_BIRD_KEEPER_ROY, BirdKeeperRoySeenText, BirdKeeperRoyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BirdKeeperRoyAfterBattleText
 	waitbutton
@@ -43,7 +41,6 @@ TrainerPokefanmTrevor:
 	trainer POKEFANM, TREVOR, EVENT_BEAT_POKEFANM_TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokefanmTrevorAfterBattleText
 	waitbutton

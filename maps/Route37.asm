@@ -27,7 +27,6 @@ TrainerTwinsAnnandanne1:
 	trainer TWINS, ANNANDANNE1, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne1SeenText, TwinsAnnandanne1BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext TwinsAnnandanne1AfterBattleText
 	waitbutton
@@ -38,7 +37,6 @@ TrainerTwinsAnnandanne2:
 	trainer TWINS, ANNANDANNE2, EVENT_BEAT_TWINS_ANN_AND_ANNE, TwinsAnnandanne2SeenText, TwinsAnnandanne2BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext TwinsAnnandanne2AfterBattleText
 	waitbutton
@@ -49,7 +47,6 @@ TrainerPsychicGreg:
 	trainer PSYCHIC_T, GREG, EVENT_BEAT_PSYCHIC_GREG, PsychicGregSeenText, PsychicGregBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicGregAfterBattleText
 	waitbutton

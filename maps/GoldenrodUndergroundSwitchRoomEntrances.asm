@@ -208,7 +208,6 @@ TrainerGruntM11:
 	trainer GRUNTM, GRUNTM_11, EVENT_BEAT_ROCKET_GRUNTM_11, GruntM11SeenText, GruntM11BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM11AfterBattleText
 	waitbutton
@@ -219,7 +218,6 @@ TrainerGruntM25:
 	trainer GRUNTM, GRUNTM_25, EVENT_BEAT_ROCKET_GRUNTM_25, GruntM25SeenText, GruntM25BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM25AfterBattleText
 	waitbutton
@@ -230,7 +228,6 @@ TrainerBurglarDuncan:
 	trainer BURGLAR, DUNCAN, EVENT_BEAT_BURGLAR_DUNCAN, BurglarDuncanSeenText, BurglarDuncanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BurglarDuncanAfterBattleText
 	waitbutton
@@ -241,7 +238,6 @@ TrainerBurglarEddie:
 	trainer BURGLAR, EDDIE, EVENT_BEAT_BURGLAR_EDDIE, BurglarEddieSeenText, BurglarEddieBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BurglarEddieAfterBattleText
 	waitbutton
@@ -252,7 +248,6 @@ TrainerGruntM13:
 	trainer GRUNTM, GRUNTM_13, EVENT_BEAT_ROCKET_GRUNTM_13, GruntM13SeenText, GruntM13BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM13AfterBattleText
 	waitbutton
@@ -263,7 +258,6 @@ TrainerGruntF3:
 	trainer GRUNTF, GRUNTF_3, EVENT_BEAT_ROCKET_GRUNTF_3, GruntF3SeenText, GruntF3BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntF3AfterBattleText
 	waitbutton

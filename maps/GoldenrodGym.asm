@@ -94,7 +94,6 @@ TrainerLassCarrie:
 	trainer LASS, CARRIE, EVENT_BEAT_LASS_CARRIE, LassCarrieSeenText, LassCarrieBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext LassCarrieAfterBattleText
 	waitbutton
@@ -118,7 +117,6 @@ TrainerLassBridget:
 	trainer LASS, BRIDGET, EVENT_BEAT_LASS_BRIDGET, LassBridgetSeenText, LassBridgetBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext LassBridgetAfterBattleText
 	waitbutton
@@ -129,7 +127,6 @@ TrainerBeautyVictoria:
 	trainer BEAUTY, VICTORIA, EVENT_BEAT_BEAUTY_VICTORIA, BeautyVictoriaSeenText, BeautyVictoriaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BeautyVictoriaAfterBattleText
 	waitbutton
@@ -140,7 +137,6 @@ TrainerBeautySamantha:
 	trainer BEAUTY, SAMANTHA, EVENT_BEAT_BEAUTY_SAMANTHA, BeautySamanthaSeenText, BeautySamanthaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BeautySamanthaAfterBattleText
 	waitbutton

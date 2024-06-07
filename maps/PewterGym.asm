@@ -42,7 +42,6 @@ TrainerCamperJerry:
 	trainer CAMPER, JERRY, EVENT_BEAT_CAMPER_JERRY, CamperJerrySeenText, CamperJerryBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CamperJerryAfterBattleText
 	waitbutton

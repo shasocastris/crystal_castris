@@ -113,7 +113,6 @@ TrainerPokefanfRuth:
 	trainer POKEFANF, RUTH, EVENT_BEAT_POKEFANF_RUTH, PokefanfRuthSeenText, PokefanfRuthBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokefanfRuthAfterBattleText
 	waitbutton
@@ -124,7 +123,6 @@ TrainerSailorEugene:
 	trainer SAILOR, EUGENE, EVENT_BEAT_SAILOR_EUGENE, SailorEugeneSeenText, SailorEugeneBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SailorEugeneAfterBattleText
 	waitbutton
@@ -135,7 +133,6 @@ TrainerPsychicNorman:
 	trainer PSYCHIC_T, NORMAN, EVENT_BEAT_PSYCHIC_NORMAN, PsychicNormanSeenText, PsychicNormanBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PsychicNormanAfterBattleText
 	waitbutton

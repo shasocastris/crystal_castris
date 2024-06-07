@@ -19,7 +19,6 @@ TrainerSwimmerfKaylee:
 	trainer SWIMMERF, KAYLEE, EVENT_BEAT_SWIMMERF_KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfKayleeAfterBattleText
 	waitbutton
@@ -30,7 +29,6 @@ TrainerSwimmerfSusie:
 	trainer SWIMMERF, SUSIE, EVENT_BEAT_SWIMMERF_SUSIE, SwimmerfSusieSeenText, SwimmerfSusieBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfSusieAfterBattleText
 	waitbutton
@@ -41,7 +39,6 @@ TrainerSwimmerfDenise:
 	trainer SWIMMERF, DENISE, EVENT_BEAT_SWIMMERF_DENISE, SwimmerfDeniseSeenText, SwimmerfDeniseBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfDeniseAfterBattleText
 	waitbutton
@@ -52,7 +49,6 @@ TrainerSwimmerfKara:
 	trainer SWIMMERF, KARA, EVENT_BEAT_SWIMMERF_KARA, SwimmerfKaraSeenText, SwimmerfKaraBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfKaraAfterBattleText
 	waitbutton
@@ -63,7 +59,6 @@ TrainerSwimmerfWendy:
 	trainer SWIMMERF, WENDY, EVENT_BEAT_SWIMMERF_WENDY, SwimmerfWendySeenText, SwimmerfWendyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmerfWendyAfterBattleText
 	waitbutton
@@ -74,7 +69,6 @@ TrainerSwimmermCharlie:
 	trainer SWIMMERM, CHARLIE, EVENT_BEAT_SWIMMERM_CHARLIE, SwimmermCharlieSeenText, SwimmermCharlieBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermCharlieAfterBattleText
 	waitbutton
@@ -85,7 +79,6 @@ TrainerSwimmermGeorge:
 	trainer SWIMMERM, GEORGE, EVENT_BEAT_SWIMMERM_GEORGE, SwimmermGeorgeSeenText, SwimmermGeorgeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermGeorgeAfterBattleText
 	waitbutton
@@ -96,7 +89,6 @@ TrainerSwimmermBerke:
 	trainer SWIMMERM, BERKE, EVENT_BEAT_SWIMMERM_BERKE, SwimmermBerkeSeenText, SwimmermBerkeBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermBerkeAfterBattleText
 	waitbutton
@@ -107,7 +99,6 @@ TrainerSwimmermKirk:
 	trainer SWIMMERM, KIRK, EVENT_BEAT_SWIMMERM_KIRK, SwimmermKirkSeenText, SwimmermKirkBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermKirkAfterBattleText
 	waitbutton
@@ -118,7 +109,6 @@ TrainerSwimmermMathew:
 	trainer SWIMMERM, MATHEW, EVENT_BEAT_SWIMMERM_MATHEW, SwimmermMathewSeenText, SwimmermMathewBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SwimmermMathewAfterBattleText
 	waitbutton

@@ -161,7 +161,6 @@ ScriptCommandTable:
 	dw Script_trainerflagaction          ; 63
 	dw Script_winlosstext                ; 64
 	dw Script_scripttalkafter            ; 65
-	dw Script_endifjustbattled           ; 66
 	dw Script_checkjustbattled           ; 67
 	dw Script_setlasttalked              ; 68
 	dw Script_applymovement              ; 69
@@ -688,12 +687,6 @@ Script_winlosstext:
 	rst GetScriptByte
 	ld [hli], a
 	ret
-
-Script_endifjustbattled:
-	ld a, [wRunningTrainerBattleScript]
-	and a
-	ret z
-	jmp Script_end
 
 Script_checkjustbattled:
 	ld a, TRUE

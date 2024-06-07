@@ -88,7 +88,6 @@ TrainerBlackbeltYoshi:
 	trainer BLACKBELT_T, YOSHI, EVENT_BEAT_BLACKBELT_YOSHI, BlackbeltYoshiSeenText, BlackbeltYoshiBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BlackbeltYoshiAfterText
 	waitbutton
@@ -99,7 +98,6 @@ TrainerBlackbeltLao:
 	trainer BLACKBELT_T, LAO, EVENT_BEAT_BLACKBELT_LAO, BlackbeltLaoSeenText, BlackbeltLaoBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BlackbeltLaoAfterText
 	waitbutton
@@ -110,7 +108,6 @@ TrainerBlackbeltNob:
 	trainer BLACKBELT_T, NOB, EVENT_BEAT_BLACKBELT_NOB, BlackbeltNobSeenText, BlackbeltNobBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BlackbeltNobAfterText
 	waitbutton
@@ -121,7 +118,6 @@ TrainerBlackbeltLung:
 	trainer BLACKBELT_T, LUNG, EVENT_BEAT_BLACKBELT_LUNG, BlackbeltLungSeenText, BlackbeltLungBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext BlackbeltLungAfterText
 	waitbutton

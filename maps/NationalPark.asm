@@ -185,7 +185,6 @@ TrainerPokefanmWilliam:
 	trainer POKEFANM, WILLIAM, EVENT_BEAT_POKEFANM_WILLIAM, PokefanmWilliamSeenText, PokefanmWilliamBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext PokefanmWilliamAfterBattleText
 	waitbutton
@@ -197,7 +196,6 @@ TrainerPokefanfBeverly1:
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_POKEFAN_BEVERLY
-	endifjustbattled
 	opentext
 	checkflag ENGINE_BEVERLY_HAS_NUGGET
 	iftrue .GiveNugget
@@ -275,7 +273,6 @@ TrainerLassKrise:
 	trainer LASS, KRISE, EVENT_BEAT_LASS_KRISE, LassKriseSeenText, LassKriseBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext LassKriseAfterBattleText
 	waitbutton

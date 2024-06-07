@@ -12,7 +12,6 @@ TrainerSchoolboyDanny:
 	trainer SCHOOLBOY, DANNY, EVENT_BEAT_SCHOOLBOY_DANNY, SchoolboyDannySeenText, SchoolboyDannyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SchoolboyDannyAfterBattleText
 	waitbutton
@@ -23,7 +22,6 @@ TrainerCooltrainerfQuinn:
 	trainer COOLTRAINERF, QUINN, EVENT_BEAT_COOLTRAINERF_QUINN, CooltrainerfQuinnSeenText, CooltrainerfQuinnBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext CooltrainerfQuinnAfterBattleText
 	waitbutton

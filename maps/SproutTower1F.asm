@@ -27,7 +27,6 @@ TrainerSageChow:
 	trainer SAGE, CHOW, EVENT_BEAT_SAGE_CHOW, SageChowSeenText, SageChowBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SageChowAfterBattleText
 	waitbutton

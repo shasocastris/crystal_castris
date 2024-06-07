@@ -129,7 +129,6 @@ SlowpokeTailGrunt:
 	trainer GRUNTF, GRUNTF_5, EVENT_BEAT_ROCKET_GRUNTF_5, GruntF5SeenText, GruntF5BeatenText, 0, GruntF5Script
 
 GruntF5Script:
-	endifjustbattled
 	opentext
 	writetext GruntF5AfterBattleText
 	waitbutton
@@ -141,7 +140,6 @@ RaticateTailGrunt:
 	trainer GRUNTM, GRUNTM_28, EVENT_BEAT_ROCKET_GRUNTM_28, GruntM28SeenText, GruntM28BeatenText, 0, GruntM28Script
 
 GruntM28Script:
-	endifjustbattled
 	opentext
 	writetext GruntM28AfterBattleText
 	waitbutton
@@ -153,7 +151,6 @@ TrainerScientistRoss:
 	trainer SCIENTIST, ROSS, EVENT_BEAT_SCIENTIST_ROSS, ScientistRossSeenText, ScientistRossBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext ScientistRossAfterBattleText
 	waitbutton
@@ -164,7 +161,6 @@ TrainerScientistMitch:
 	trainer SCIENTIST, MITCH, EVENT_BEAT_SCIENTIST_MITCH, ScientistMitchSeenText, ScientistMitchBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext ScientistMitchAfterBattleText
 	waitbutton

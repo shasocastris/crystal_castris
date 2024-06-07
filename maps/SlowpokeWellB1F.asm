@@ -21,7 +21,6 @@ TrainerGruntM29:
 	trainer GRUNTM, GRUNTM_29, EVENT_BEAT_ROCKET_GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM29AfterBattleText
 	waitbutton
@@ -75,7 +74,6 @@ TrainerGruntM2:
 	trainer GRUNTM, GRUNTM_2, EVENT_BEAT_ROCKET_GRUNTM_2, GruntM2SeenText, GruntM2BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntM2AfterBattleText
 	waitbutton
@@ -86,7 +84,6 @@ TrainerGruntF1:
 	trainer GRUNTF, GRUNTF_1, EVENT_BEAT_ROCKET_GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext GruntF1AfterBattleText
 	waitbutton

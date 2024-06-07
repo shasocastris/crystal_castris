@@ -99,7 +99,6 @@ TrainerSageJeffrey:
 	trainer SAGE, JEFFREY, EVENT_BEAT_SAGE_JEFFREY, SageJeffreySeenText, SageJeffreyBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SageJeffreyAfterBattleText
 	waitbutton
@@ -110,7 +109,6 @@ TrainerSagePing:
 	trainer SAGE, PING, EVENT_BEAT_SAGE_PING, SagePingSeenText, SagePingBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext SagePingAfterBattleText
 	waitbutton
@@ -121,7 +119,6 @@ TrainerMediumMartha:
 	trainer MEDIUM, MARTHA, EVENT_BEAT_MEDIUM_MARTHA, MediumMarthaSeenText, MediumMarthaBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext MediumMarthaAfterBattleText
 	waitbutton
@@ -132,7 +129,6 @@ TrainerMediumGrace:
 	trainer MEDIUM, GRACE, EVENT_BEAT_MEDIUM_GRACE, MediumGraceSeenText, MediumGraceBeatenText, 0, .Script
 
 .Script:
-	endifjustbattled
 	opentext
 	writetext MediumGraceAfterBattleText
 	waitbutton
