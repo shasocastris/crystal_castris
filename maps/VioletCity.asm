@@ -23,23 +23,12 @@ VioletCityEarlScript:
 	faceplayer
 	opentext
 	writetext Text_EarlAsksIfYouBeatFalkner
-	yesorno
-	iffalse .FollowEarl
-; fallthrough
-.PointlessJump:
-	writetext Text_VeryNiceIndeed
-	waitbutton
-	closetext
-	end
-
-.FollowEarl:
-	writetext Text_FollowEarl
 	waitbutton
 	closetext
 	playmusic MUSIC_SHOW_ME_AROUND
 	follow VIOLETCITY_EARL, PLAYER
 	applymovement VIOLETCITY_EARL, VioletCityFollowEarl_MovementData
-	turnobject PLAYER, UP
+	turnobject PLAYER, RIGHT
 	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
 	stopfollow
 	special RestartMapMusic
@@ -98,16 +87,9 @@ VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
 
 VioletCityFollowEarl_MovementData:
-	big_step DOWN
-	big_step DOWN
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
 	big_step RIGHT
@@ -124,36 +106,6 @@ VioletCityFollowEarl_MovementData:
 	turn_head RIGHT
 	turn_head DOWN
 	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	big_step DOWN
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	big_step UP
-	turn_head DOWN
 	step_end
 
 VioletCityFinishFollowEarl_MovementData:
@@ -174,25 +126,15 @@ VioletCitySpinningEarl_MovementData:
 	turn_head UP
 	turn_head RIGHT
 	turn_head DOWN
+	turn_head LEFT
 	step_end
 
 Text_EarlAsksIfYouBeatFalkner:
-	text "Hello!"
-	line "You are trainer?"
+	text "Hello! You are"
+	line "new trainer, yes?"
 
-	para "Battle GYM LEADER,"
-	line "win you did?"
-	done
-
-Text_VeryNiceIndeed:
-	text "Ooh, la la!"
-	line "Very indeed nice!"
-	done
-
-Text_FollowEarl:
-	text "Is that so? Then"
-	line "study shall you!"
-	cont "Follow me!"
+	para "Then study shall"
+	line "you! Follow me!"
 	done
 
 Text_HereTeacherIAm:
