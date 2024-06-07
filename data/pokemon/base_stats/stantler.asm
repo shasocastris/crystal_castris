@@ -4,7 +4,7 @@
 	evs  0,   1,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db NORMAL, PSYCHIC_TYPE ; type
 	db 15 ; catch rate
 	db 165 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
