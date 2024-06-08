@@ -45,11 +45,11 @@ SeafoamCaves_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 16, ROUTE_20, 2
+	warp_event 10, 15, ROUTE_20, 2
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-    object_event 10,  6, SPRITE_ARTICUNO, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Articuno, EVENT_SEAFOAM_CAVES_ARTICUNO
+	object_event 10,  6, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Articuno, EVENT_SEAFOAM_CAVES_ARTICUNO
