@@ -6,6 +6,17 @@ OlivineGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .OlivineGymLocked
+
+.OlivineGymLocked
+	checkevent EVENT_JASMINE_RETURNED_TO_GYM
+	iffalse .UnlockGym
+	checkevent EVENT_BEAT_JASMINE
+	iftrue .UnlockGym
+	changeblock 4, 15, $10 ; floor
+	changeblock 5, 15, $10 ; floor
+.UnlockGym
+    endcallback
 
 OlivineGymJasmineScript:
 	faceplayer
@@ -29,6 +40,8 @@ OlivineGymJasmineScript:
 	readvar VAR_BADGES
 	scall OlivineGymActivateRockets
 .FightDone:
+	changeblock 4, 15, $23 ; door
+	changeblock 5, 15, $23 ; door
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech

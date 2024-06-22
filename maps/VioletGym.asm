@@ -8,6 +8,15 @@ VioletGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .VioletGymLocked
+
+.VioletGymLocked
+	checkevent EVENT_BEAT_FALKNER
+	iftrue .UnlockGym
+	changeblock 4, 15, $2D ; floor
+	changeblock 5, 15, $2D ; floor
+.UnlockGym
+    endcallback
 
 VioletGymFalknerScript:
 	faceplayer
@@ -31,6 +40,8 @@ VioletGymFalknerScript:
 	readvar VAR_BADGES
 	scall VioletGymActivateRockets
 .FightDone:
+	changeblock 4, 15, $1C ; door
+	changeblock 5, 15, $1C ; door
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD

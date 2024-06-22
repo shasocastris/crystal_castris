@@ -11,6 +11,15 @@ MahoganyGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .MahoganyGymLocked
+
+.MahoganyGymLocked
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .UnlockGym
+	changeblock 4, 17, $2D ; floor
+	changeblock 5, 17, $2D ; floor
+.UnlockGym
+    endcallback
 
 MahoganyGymPryceScript:
 	faceplayer
@@ -34,6 +43,8 @@ MahoganyGymPryceScript:
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
 .FightDone:
+	changeblock 4, 17, $1C ; door
+	changeblock 5, 17, $1C ; door
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE

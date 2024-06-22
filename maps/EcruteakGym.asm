@@ -13,6 +13,15 @@ EcruteakGym_MapScripts:
 	scene_script EcruteakGymNoopScene,          SCENE_ECRUTEAKGYM_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .EcruteakGymLocked
+
+.EcruteakGymLocked
+	checkevent EVENT_BEAT_MORTY
+	iftrue .UnlockGym
+	changeblock 4, 17, $09 ; floor
+	changeblock 5, 17, $09 ; floor
+.UnlockGym
+    endcallback
 
 EcruteakGymForcedToLeaveScene:
 	sdefer EcruteakGymClosed
@@ -46,6 +55,8 @@ EcruteakGymMortyScript:
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
 .FightDone:
+	changeblock 4, 17, $26 ; door
+	changeblock 5, 17, $26 ; door
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY

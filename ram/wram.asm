@@ -2840,6 +2840,7 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wVioletCitySceneID::                              db
 
 ; fight counts
 wJackFightCount::    db

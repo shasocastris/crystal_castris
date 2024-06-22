@@ -11,6 +11,15 @@ AzaleaGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .AzaleaGymLocked
+
+.AzaleaGymLocked
+	checkevent EVENT_BEAT_BUGSY
+	iftrue .UnlockGym
+	changeblock 4, 15, $02 ; floor
+	changeblock 5, 15, $02 ; floor
+.UnlockGym
+    endcallback
 
 AzaleaGymBugsyScript:
 	faceplayer
@@ -34,6 +43,8 @@ AzaleaGymBugsyScript:
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets
 .FightDone:
+	changeblock 4, 15, $03 ; door
+	changeblock 5, 15, $03 ; door
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY

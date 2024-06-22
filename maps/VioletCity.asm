@@ -10,13 +10,31 @@
 
 VioletCity_MapScripts:
 	def_scene_scripts
+	scene_script VioletCityNoop1Scene, SCENE_VIOLETCITY_GYM_NOTICE
+	scene_script VioletCityNoop2Scene, SCENE_VIOLETCITY_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VioletCityFlypointCallback
 
+VioletCityNoop1Scene:
+	end
+
+VioletCityNoop2Scene:
+	end
+
 VioletCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_VIOLET
 	endcallback
+
+VioletCityGymNoticeScript:
+	turnobject PLAYER, UP
+	showemote EMOTE_SHOCK, PLAYER, 15
+    opentext
+	writetext VioletGymNoticeText
+	waitbutton
+	closetext
+	setscene SCENE_VIOLETCITY_NOOP
+	end
 
 VioletCityEarlScript:
 	applymovement VIOLETCITY_EARL, VioletCitySpinningEarl_MovementData
@@ -217,6 +235,21 @@ EarlsPokemonAcademySignText:
 	line "ACADEMY"
 	done
 
+VioletGymNoticeText:
+	text "There is an"
+	line "announcement on"
+	cont "the door:"
+
+	para "NOTICE TO ALL"
+	line "#MON TRAINERS!"
+
+	para "Once entered,"
+	line "trainers may not"
+	cont "exit a gym until"
+	cont "they have the"
+	cont "gym's badge."
+	done
+
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -232,6 +265,7 @@ VioletCity_MapEvents:
 	warp_event 39, 25, ROUTE_31_VIOLET_GATE, 2
 
 	def_coord_events
+	coord_event 18, 18, SCENE_VIOLETCITY_GYM_NOTICE, VioletCityGymNoticeScript
 
 	def_bg_events
 	bg_event 24, 20, BGEVENT_READ, VioletCitySign

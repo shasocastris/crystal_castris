@@ -13,6 +13,15 @@ CianwoodGym_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .CianwoodGymLocked
+
+.CianwoodGymLocked
+	checkevent EVENT_BEAT_CHUCK
+	iftrue .UnlockGym
+	changeblock 4, 17, $09 ; floor
+	changeblock 5, 17, $09 ; floor
+.UnlockGym
+    endcallback
 
 CianwoodGymChuckScript:
 	faceplayer
@@ -51,6 +60,8 @@ CianwoodGymChuckScript:
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
 .FightDone:
+	changeblock 4, 17, $26 ; door
+	changeblock 5, 17, $26 ; door
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI

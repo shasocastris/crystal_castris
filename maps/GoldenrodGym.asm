@@ -12,6 +12,15 @@ GoldenrodGym_MapScripts:
 	scene_script GoldenrodGymNoop2Scene, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .GoldenrodGymLocked
+
+.GoldenrodGymLocked
+	checkevent EVENT_BEAT_WHITNEY
+	iftrue .UnlockGym
+	changeblock 2, 17, $02 ; floor
+	changeblock 3, 17, $02 ; floor
+.UnlockGym
+    endcallback
 
 GoldenrodGymNoop1Scene:
 	end
@@ -40,6 +49,8 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
 .FightDone:
+	changeblock 2, 17, $03 ; door
+	changeblock 3, 17, $03 ; door
 	opentext
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying

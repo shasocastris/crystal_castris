@@ -10,8 +10,22 @@ BlackthornGym1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, BlackthornGym1FBouldersCallback
+;    callback MAPCALLBACK_TILES, .BlackthornGymLocked
+
+;.BlackthornGymLocked:
+;	checkevent EVENT_BEAT_CLAIR
+;	iftrue .UnlockGym
+;	changeblock 4, 17, $2D ; floor
+;	changeblock 5, 17, $2D ; floor
+;.UnlockGym
+;    endcallback
 
 BlackthornGym1FBouldersCallback:
+	checkevent EVENT_BEAT_CLAIR
+	iftrue .UnlockGym
+	changeblock 4, 17, $2D ; floor
+	changeblock 5, 17, $2D ; floor
+.UnlockGym
 	checkevent EVENT_BOULDER_IN_BLACKTHORN_GYM_1
 	iffalse .skip1
 	changeblock 8, 2, $3b ; fallen boulder 3
@@ -46,6 +60,8 @@ BlackthornGymClairScript:
 	writetext ClairText_GoToDragonsDen
 	waitbutton
 	closetext
+	changeblock 4, 17, $1C ; door
+	changeblock 5, 17, $1C ; door
 	setevent EVENT_BEAT_COOLTRAINERM_PAUL
 	setevent EVENT_BEAT_COOLTRAINERM_CODY
 	setevent EVENT_BEAT_COOLTRAINERM_MIKE
