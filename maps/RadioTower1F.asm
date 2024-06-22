@@ -10,6 +10,17 @@ RadioTower1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .RadioTowerLocked
+
+.RadioTowerLocked
+	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
+	iffalse .UnlockRadioTower
+	checkevent EVENT_BEAT_ROCKET_EXECUTIVEM_3 ; Executive with basement key
+	iftrue .UnlockRadioTower
+	changeblock 2, 7, $01 ; floor
+	changeblock 3, 7, $01 ; floor
+.UnlockRadioTower
+    endcallback
 
 RadioTower1FReceptionistScript:
 	faceplayer
@@ -214,10 +225,10 @@ RadioTower1FReceptionistWelcomeText:
 	done
 
 RadioTower1FReceptionistNoToursText:
-	text "Hello. I'm sorry,"
-	line "but we're not"
-	cont "offering any tours"
-	cont "today."
+	text "No one can escape"
+	line "until the rocket"
+	cont "executives are"
+	cont "all defeated!"
 	done
 
 RadioTower1FLuckyNumberManAskToPlayText:

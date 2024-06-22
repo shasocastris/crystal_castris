@@ -14,8 +14,17 @@ RadioTower3F_MapScripts:
 	callback MAPCALLBACK_TILES, RadioTower3FCardKeyShutterCallback
 
 RadioTower3FCardKeyShutterCallback:
+	checkevent EVENT_BEAT_ROCKET_EXECUTIVEM_1
+	iftrue .Change
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_9
+	iftrue .CloseShutter
 	checkevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
 	iftrue .Change
+	endcallback
+
+.CloseShutter:
+	changeblock 14, 2, $28 ; open shutter
+	changeblock 14, 4, $29 ; floor
 	endcallback
 
 .Change:
@@ -104,6 +113,7 @@ TrainerGruntM9:
 	trainer GRUNTM, GRUNTM_9, EVENT_BEAT_ROCKET_GRUNTM_9, GruntM9SeenText, GruntM9BeatenText, 0, .Script
 
 .Script:
+	reloadmap
 	opentext
 	writetext GruntM9AfterBattleText
 	waitbutton
@@ -280,7 +290,13 @@ GruntM9AfterBattleText:
 	line "past our men in"
 	cont "the UNDERGROUND?"
 
-	para "How could you?"
+	para "But now I relocked"
+	line "the gate and you"
+	cont "are trapped until"
+	cont "you defeat the"
+	cont "executives!"
+
+	para "You're done for!"
 	done
 
 ScientistMarcSeenText:
