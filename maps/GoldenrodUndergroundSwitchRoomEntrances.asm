@@ -629,14 +629,16 @@ GoldenrodUndergroundSwitchRoomEntrancesHiddenRevive:
 	hiddenitem REVIVE, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_HIDDEN_REVIVE
 
 UndergroundRivalApproachMovement1:
-	step DOWN
+	step LEFT
+	step LEFT
 	step LEFT
 	step LEFT
 	step LEFT
 	step_end
 
 UndergroundRivalApproachMovement2:
-	step DOWN
+	step LEFT
+	step LEFT
 	step DOWN
 	step LEFT
 	step LEFT
@@ -647,15 +649,16 @@ UndergroundRivalRetreatMovement1:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step UP
+	step RIGHT
+	step RIGHT
 	step_end
 
 UndergroundRivalRetreatMovement2:
 	step RIGHT
 	step RIGHT
 	step RIGHT
-	step UP
-	step UP
+	step RIGHT
+	step RIGHT
 	step_end
 
 UndergroundRivalBeforeText:
@@ -959,4 +962,4 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
 	object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesFullHeal, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL
-	object_event 23,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_GOLDENROD_UNDERGROUND
+	object_event 25,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_GOLDENROD_UNDERGROUND

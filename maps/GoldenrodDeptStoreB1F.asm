@@ -13,34 +13,13 @@ GoldenrodDeptStoreB1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, GoldenRodDeptStoreB1FClearBoxesCallback
-	callback MAPCALLBACK_NEWMAP, GoldenRodDeptStoreUnblockCallback
 
 GoldenRodDeptStoreB1FClearBoxesCallback:
 	checkevent EVENT_RECEIVED_CARD_KEY
 	iftrue .GotCardKey
-	sjump .Continue
-
+	endcallback
 .GotCardKey:
 	changeblock 16, 4, $0d ; floor
-; fallthrough
-.Continue:
-	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
-	iftrue .Layout2
-	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
-	iftrue .Layout3
-	changeblock 10, 8, $0d ; floor
-	endcallback
-
-.Layout2:
-	changeblock 4, 10, $0d ; floor
-	endcallback
-
-.Layout3:
-	changeblock 10, 12, $0d ; floor
-	endcallback
-
-GoldenRodDeptStoreUnblockCallback:
-	clearevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF
 	endcallback
 
 GoldenrodDeptStoreB1FBlackBelt1Script:
