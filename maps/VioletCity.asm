@@ -177,11 +177,12 @@ VioletCitySuperNerdText:
 	text "Hey, you're a"
 	line "#MON trainer?"
 
-	para "If you beat the"
-	line "GYM LEADER here,"
+	para "If you defeat the"
+	line "ELDER in SPROUT"
+	cont "TOWER,"
 
 	para "you'll be ready"
-	line "for prime time!"
+	line "to face FALKNER!"
 	done
 
 VioletCityGrampsText:
