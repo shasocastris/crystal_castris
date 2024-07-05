@@ -5,7 +5,7 @@ DEF SHINY_DEF_DV EQU 10
 DEF SHINY_SPD_DV EQU 10
 DEF SHINY_SPC_DV EQU 10
 
-CheckShininess:
+Unused_CheckShininess:
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
 
@@ -43,29 +43,29 @@ CheckShininess:
 	and a
 	ret
 
-Unused_CheckShininess:
+CheckShininess:
 ; Return carry if the DVs at hl are all 10 or higher.
 
 ; Attack
 	ld a, [hl]
-	cp 10 << 4
+	cp 12 << 4
 	jr c, .not_shiny
 
 ; Defense
 	ld a, [hli]
 	and %1111
-	cp 10
+	cp 12
 	jr c, .not_shiny
 
 ; Speed
 	ld a, [hl]
-	cp 10 << 4
+	cp 12 << 4
 	jr c, .not_shiny
 
 ; Special
 	ld a, [hl]
 	and %1111
-	cp 10
+	cp 12
 	jr c, .not_shiny
 
 ; shiny
