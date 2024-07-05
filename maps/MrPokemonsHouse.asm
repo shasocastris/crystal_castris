@@ -141,8 +141,17 @@ MrPokemonsHouse_OakScript:
 	setevent EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	end
 
-MrPokemonsHouse_ForeignMagazines:
-	jumptext MrPokemonsHouse_ForeignMagazinesText
+MrPokemonsJournal1:
+	jumptext MrPokemonsJournal1_Text
+
+MrPokemonsJournal2:
+	jumptext MrPokemonsJournal2_Text
+
+MrPokemonsJournal3:
+	jumptext MrPokemonsJournal3_Text
+
+MrPokemonsJournal4:
+	jumptext MrPokemonsJournal4_Text
 
 MrPokemonsHouse_BrokenComputer:
 	jumptext MrPokemonsHouse_BrokenComputerText
@@ -360,6 +369,71 @@ MrPokemonsHouse_ForeignMagazinesText:
 	line "their titles…"
 	done
 
+MrPokemonsJournal1_Text:
+	text "A journal of Mr."
+	line "Pokemon's travels:"
+
+    para "New shiny Pokemon"
+    line "have begun"
+    cont "appearing across"
+	cont "the world."
+
+	para "The coloring seems"
+	line "to indicate that"
+	cont "they are among the"
+	cont "strongest of their"
+	cont "species."
+	done
+
+MrPokemonsJournal2_Text:
+	text "A journal of Mr."
+	line "Pokemon's travels:"
+
+    para "Wild #MON"
+    line "levels can vary"
+	cont "significantly and"
+	cont "are often higher"
+	cont "than expected."
+
+	para "They are also more"
+	line "difficult to"
+	cont "capture than they"
+	cont "were three years"
+	cont "ago."
+	done
+
+MrPokemonsJournal3_Text:
+	text "A journal of Mr."
+	line "Pokemon's travels:"
+
+    para "#MON League"
+    line "rules enforce the"
+	cont "SET battle style"
+	cont "when fighting gym"
+	cont "leaders."
+
+	para "This also applies"
+	line "to battles with"
+	cont "the Elite Four"
+	cont "and the Champion."
+	done
+
+MrPokemonsJournal4_Text:
+	text "A journal of Mr."
+	line "Pokemon's travels:"
+
+    para "Some locations"
+    line "always have the"
+	cont "same weather."
+
+	para "Some gyms have"
+	line "begun to emulate"
+	cont "this phenomenon"
+	cont "to make battles"
+	cont "more difficult"
+	cont "for challengers."
+	done
+
 MrPokemonsHouse_BrokenComputerText:
 	text "It's a big com-"
 	line "puter. Hmm. It's"
@@ -387,10 +461,10 @@ MrPokemonsHouse_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
-	bg_event  1,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
-	bg_event  4,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
-	bg_event  5,  1, BGEVENT_READ, MrPokemonsHouse_ForeignMagazines
+	bg_event  0,  1, BGEVENT_READ, MrPokemonsJournal1
+	bg_event  1,  1, BGEVENT_READ, MrPokemonsJournal2
+	bg_event  4,  1, BGEVENT_READ, MrPokemonsJournal3
+	bg_event  5,  1, BGEVENT_READ, MrPokemonsJournal4
 	bg_event  6,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  7,  1, BGEVENT_READ, MrPokemonsHouse_BrokenComputer
 	bg_event  6,  4, BGEVENT_READ, MrPokemonsHouse_StrangeCoins

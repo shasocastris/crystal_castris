@@ -124,7 +124,7 @@ ElmTogepiEvolvedScript:
 
 ElmCheckTogepiEvolved:
 	checkevent EVENT_GOT_TOGEPI_FROM_ELMS_AIDE
-    iffalse ElmCheckGotTogepiAgain
+	iffalse ElmCheckGotTogepiAgain
 	checkevent EVENT_TOGEPI_EVOLVED
 	iftrue ElmTogepiEvolvedScript
 ElmCheckGotTogepiAgain:
@@ -205,7 +205,7 @@ TotodilePokeBallScript:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	promptbutton
-	givepoke TOTODILE, 15, BERRY
+	givepoke TOTODILE, 5, BERRY
 	closetext
 	applymovement PLAYER, AfterTotodileMovement
 	sjump ElmDirectionsScript
@@ -476,7 +476,7 @@ AideScript_GivePotion:
 	promptbutton
 	verbosegiveitem POTION
 	showemote EMOTE_SHOCK, ELMSLAB_ELMS_AIDE, 30
-    writetext AideText_ReadBooksReminder
+	writetext AideText_ReadBooksReminder
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
@@ -596,6 +596,30 @@ ElmsLabTravelTip3:
 
 ElmsLabTravelTip4:
 	jumptext ElmsLabTravelTip4Text
+
+ElmsLabTravelTip5:
+	jumptext ElmsLabTravelTip5Text
+
+ElmsLabTravelTip6:
+	jumptext ElmsLabTravelTip6Text
+
+ElmsLabTravelTip7:
+	jumptext ElmsLabTravelTip7Text
+
+ElmsLabTravelTip8:
+	jumptext ElmsLabTravelTip8Text
+
+ElmsResearchNotes1:
+	jumptext ElmsResearchNotes1Text
+
+ElmsResearchNotes2:
+	jumptext ElmsResearchNotes2Text
+
+ElmsResearchNotes3:
+	jumptext ElmsResearchNotes3Text
+
+ElmsResearchNotes4:
+	jumptext ElmsResearchNotes4Text
 
 ElmsLabTrashcan:
 	jumptext ElmsLabTrashcanText
@@ -1347,8 +1371,12 @@ ElmsLabTravelTip1Text:
 
 	para "Travel Tip 1:"
 
-	para "Press START to"
-	line "open the MENU."
+	para "A #MON past L10"
+	line "won't obey you"
+	cont "unless you have"
+	cont "been raising its"
+	cont "happiness as well"
+	cont "as its level."
 	done
 
 ElmsLabTravelTip2Text:
@@ -1357,8 +1385,12 @@ ElmsLabTravelTip2Text:
 
 	para "Travel Tip 2:"
 
-	para "Record your trip"
-	line "with SAVE!"
+	para "A #MON that"
+	line "faints in battle"
+	cont "or from being"
+	cont "poisoned will be"
+	cont "unhappy with its"
+	cont "trainer."
 	done
 
 ElmsLabTravelTip3Text:
@@ -1367,9 +1399,15 @@ ElmsLabTravelTip3Text:
 
 	para "Travel Tip 3:"
 
-	para "Open your PACK and"
-	line "press SELECT to"
-	cont "move items."
+	para "#MON are often"
+	line "happier after a"
+	cont "haircut, grooming,"
+	cont "or photograph."
+
+	para "They even get"
+	line "excited when an"
+	cont "X-item is used on"
+	cont "them in battle."
 	done
 
 ElmsLabTravelTip4Text:
@@ -1378,11 +1416,132 @@ ElmsLabTravelTip4Text:
 
 	para "Travel Tip 4:"
 
-	para "Check your #MON"
-	line "moves. Press the"
+	para "#MON with very"
+	line "high happiness "
+	cont "have been known"
+	cont "to endure hits and"
+	cont "keep fighting."
+	done
 
-	para "A Button to switch"
-	line "moves."
+ElmsLabTravelTip5Text:
+	text "<PLAYER> opened a"
+	line "book."
+
+	para "Travel Tip 5:"
+
+	para "Some trainers are"
+	line "more likely to"
+	cont "exchange phone"
+	cont "numbers after they"
+	cont "know you share an"
+	cont "interest in"
+	cont "certain #MON."
+	done
+
+ElmsLabTravelTip6Text:
+	text "<PLAYER> opened a"
+	line "book."
+
+	para "Travel Tip 6:"
+
+	para "Once you enter a"
+	line "gym, it will be"
+	cont "locked until you"
+	cont "defeat the gym"
+	cont "leader."
+	done
+
+ElmsLabTravelTip7Text:
+	text "<PLAYER> opened a"
+	line "book."
+
+	para "Travel Tip 7:"
+
+	para "Trainers can often"
+	line "find rare items by"
+	cont "smashing rocks and"
+	cont "headbutting trees."
+
+	para "Fishing rods also"
+	line "sometimes catch"
+	cont "more than just"
+	cont "wild #MON."
+	done
+
+ElmsLabTravelTip8Text:
+	text "<PLAYER> opened a"
+	line "book."
+
+	para "Travel Tip 8:"
+
+	para "Gym leaders often"
+	line "have #MON"
+	cont "with movesets"
+	cont "unavailable to"
+	cont "normal trainers."
+	done
+
+ElmsResearchNotes1Text:
+	text "<PLAYER> opened a"
+	line "set of notes."
+
+	para "Research Notes 1:"
+
+	para "A MIST STONE will"
+	line "evolve a #MON"
+	cont "we once thought"
+	cont "only evolved when"
+	cont "traded."
+	done
+
+ElmsResearchNotes2Text:
+	text "<PLAYER> opened a"
+	line "set of notes."
+
+	para "Research Notes 2:"
+
+	para "The radio channel"
+	line "#MON Lullaby"
+	cont "can help avoid"
+	cont "wild encounters."
+
+	para "This was quite"
+	line "useful in the area"
+	cont "beneath Mt Mortar."
+	done
+
+ElmsResearchNotes3Text:
+	text "<PLAYER> opened a"
+	line "set of notes."
+
+	para "Research Notes 3:"
+
+	para "There must be a"
+	line "location where"
+	cont "baby #MON are"
+	cont "born and raised."
+
+	para "There is also"
+	line "probably a place"
+	cont "where fully"
+	cont "evolved #MON"
+	cont "are very common."
+	done
+
+ElmsResearchNotes4Text:
+	text "<PLAYER> opened a"
+	line "set of notes."
+
+	para "Research Notes 4:"
+
+	para "Where are all the"
+	line "legendaries? Oak"
+	cont "believes they will"
+	cont "reveal themselves"
+	cont "to trainers only"
+	cont "after they have"
+	cont "proven themselves"
+	cont "worthy."
 	done
 
 ElmsLabTrashcanText:
@@ -1418,18 +1577,18 @@ ElmsLab_MapEvents:
 
 	def_bg_events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
-	bg_event  6,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  7,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  9,  1, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  6,  1, BGEVENT_READ, ElmsResearchNotes1
+	bg_event  7,  1, BGEVENT_READ, ElmsResearchNotes2
+	bg_event  8,  1, BGEVENT_READ, ElmsResearchNotes3
+	bg_event  9,  1, BGEVENT_READ, ElmsResearchNotes4
 	bg_event  0,  7, BGEVENT_READ, ElmsLabTravelTip1
 	bg_event  1,  7, BGEVENT_READ, ElmsLabTravelTip2
 	bg_event  2,  7, BGEVENT_READ, ElmsLabTravelTip3
 	bg_event  3,  7, BGEVENT_READ, ElmsLabTravelTip4
-	bg_event  6,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  6,  7, BGEVENT_READ, ElmsLabTravelTip5
+	bg_event  7,  7, BGEVENT_READ, ElmsLabTravelTip6
+	bg_event  8,  7, BGEVENT_READ, ElmsLabTravelTip7
+	bg_event  9,  7, BGEVENT_READ, ElmsLabTravelTip8
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
