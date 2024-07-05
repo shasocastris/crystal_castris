@@ -1151,6 +1151,10 @@ RandomEncounter::
 	ret
 
 .ok
+	push bc
+	ld bc, wPlayerStruct
+	farcall ResetObject
+	pop bc
 	ld a, BANK(WildBattleScript)
 	ld hl, WildBattleScript
 	jr .done
