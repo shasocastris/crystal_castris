@@ -117,7 +117,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takecoins 4000
+	takecoins 400
 	waitsfx
 	playsound SFX_TRANSACTION
 	special DisplayCoinCaseBalance
