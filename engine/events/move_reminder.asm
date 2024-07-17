@@ -145,17 +145,14 @@ GetRemindableMoves:
 	; table that is located in another bank. This is the
 	; list of evolutions and learnset of every Pokémon.
 	ld a, [wCurPartySpecies]
-	dec a
 	push bc
 	ld c, a
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
 	ld hl, EvosAttacksPointers
-	add hl, bc
-	add hl, bc
 	ld a, BANK(EvosAttacksPointers)
-	call GetFarWord
+	call LoadDoubleIndirectPointer
 
 ; Skips the evolution data to start at the learnset for the
 ; currently selected Pokémon in the "EvosAttacksPointers"
@@ -165,7 +162,26 @@ GetRemindableMoves:
 	call GetFarByte
 	inc hl
 	and a
-	jr nz, .skip_evos
+	jr z, .skip_evos_done
+	dec a
+	assert EVOLVE_LEVEL == 1
+	jr z, .skip_four_bytes
+	dec a
+	assert EVOLVE_ITEM == 2
+	jr z, .skip_four_bytes
+	dec a
+	assert EVOLVE_HAPPINESS == 3
+	jr z, .skip_three_bytes
+	assert EVOLVE_STAT == 4
+.skip_four_bytes
+	inc hl
+.skip_three_bytes
+	inc hl
+	inc hl
+	inc hl
+	jr .skip_evos
+
+.skip_evos_done
 
 ; Loops through the move list until it reaches
 ; the end of the "EvosAttacksPointers" table
@@ -187,6 +203,15 @@ GetRemindableMoves:
 	cp c
 	ld a, BANK(EvosAttacksPointers)
 	call GetFarByte
+	inc hl
+	ld b, a
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarByte
+	push hl
+	ld h, a
+	ld l, b
+	call GetMoveIDFromIndex
+	pop hl
 	inc hl
 	jr c, .loop_moves
 
@@ -273,6 +298,8 @@ CheckPokemonAlreadyKnowsMove:
 ChooseMoveToLearn:
 	farcall FadeOutToWhite
 	farcall BlankScreen
+	ld b, SCGB_MOVE_LIST
+	call GetSGBLayout
 	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
@@ -397,10 +424,14 @@ ChooseMoveToLearn:
 	push de
 
 	ld a, [wMenuSelection]
-	ld bc, MOVE_LENGTH
-	ld hl, (Moves + MOVE_PP) - MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
+	call GetMoveIndexFromID
+	ld b, h
+	ld c, l
+	ld a, Bank(Moves)
+	ld hl, Moves
+	call LoadIndirectPointer
+	ld bc, MOVE_PP - 1 ; skip MOVE_ANIM
+	add hl, bc
 	call GetFarByte
 	ld [wBuffer1], a
 	ld hl, wStringBuffer1 + 9
@@ -491,10 +522,14 @@ ChooseMoveToLearn:
 ; This prints the move's attack number.
 .print_move_attack
 	ld a, [wMenuSelection]
-	ld bc, MOVE_LENGTH
-	ld hl, (Moves + MOVE_POWER) - MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
+	call GetMoveIndexFromID
+	ld b, h
+	ld c, l
+	ld a, Bank(Moves)
+	ld hl, Moves
+	call LoadIndirectPointer
+	ld bc, MOVE_POWER - 1 ; skip MOVE_ANIM
+	add hl, bc
 	call GetFarByte
 	cp 2
 	jr c, .print_move_null_attack
