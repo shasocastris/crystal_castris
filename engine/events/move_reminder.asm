@@ -153,7 +153,7 @@ GetRemindableMoves:
 	ld hl, EvosAttacksPointers
 	ld a, BANK(EvosAttacksPointers)
 	call LoadDoubleIndirectPointer
-;
+
 ; Skips the evolution data to start at the learnset for the
 ; currently selected Pokémon in the "EvosAttacksPointers"
 ; table. This is "db 0 ; no more evolutions".
