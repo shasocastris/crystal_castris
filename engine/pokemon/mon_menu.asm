@@ -965,10 +965,13 @@ MoveScreenLoop:
 	hlcoord 1, 11
 	ld bc, 8
 	rst ByteFill
+	hlcoord 1, 11
+	lb bc, 5, 7
+	call ClearBox
 	hlcoord 1, 12
 	lb bc, 5, SCREEN_WIDTH - 2
 	call ClearBox
-	hlcoord 1, 12
+	hlcoord 2, 13
 	ld de, String_MoveWhere
 	rst PlaceString
 	jr .joy_loop
@@ -1001,12 +1004,14 @@ MoveScreenLoop:
 	ld a, [wCurPartyMon]
 	cp b
 	jr z, .joy_loop
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
 	jmp MoveScreenLoop
 
 .d_left
 	ld a, [wSwappingMove]
 	and a
-	jr nz, .joy_loop
+	jp nz, .joy_loop
 	ld a, [wCurPartyMon]
 	ld b, a
 	push bc
@@ -1015,6 +1020,8 @@ MoveScreenLoop:
 	ld a, [wCurPartyMon]
 	cp b
 	jmp z, .joy_loop
+	ld de, SFX_SWITCH_POCKETS
+	call PlaySFX
 	jmp MoveScreenLoop
 
 .cycle_right
@@ -1140,7 +1147,7 @@ MoveScreen2DMenuData:
 	db D_UP | D_DOWN | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON ; accepted buttons
 
 String_MoveWhere:
-	db "Where?@"
+	db "Select a move<NEXT>to swap places.@"
 
 SetUpMoveScreenBG:
 	call ClearBGPalettes
@@ -1231,32 +1238,79 @@ PrepareToPlaceMoveData:
 PlaceMoveData:
 	xor a
 	ldh [hBGMapMode], a
+
+; Print UI elements
 	hlcoord 0, 10
 	ld de, String_MoveType_Top
 	rst PlaceString
 	hlcoord 0, 11
 	ld de, String_MoveType_Bottom
 	rst PlaceString
-	hlcoord 12, 12
+	hlcoord 1, 11
 	ld de, String_MoveAtk
 	rst PlaceString
+	hlcoord 1, 12
+	ld de, String_MoveAcc
+	call PlaceString
+	hlcoord 1, 13
+	ld de, String_MoveEff
+	call PlaceString
+
+; Print move effect chance
+	ld a, [wCurSpecies]
+	ld l, a
+	ld a, MOVE_CHANCE
+	call GetMoveAttribute
+	cp 1
+	jr c, .if_null_chance
+	call ConvertPercentages
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	hlcoord 5, 13
+	call PrintNum
+	jr .skip_null_chance
+
+.if_null_chance
+	ld de, String_MoveNoPower
+	ld bc, 3
+	hlcoord 5, 13
+	call PlaceString
+
+.skip_null_chance
+
+; Print move accuracy
+	ld a, [wCurSpecies]
+	ld l, a
+	ld a, MOVE_ACC
+	call GetMoveAttribute
+    call ConvertPercentages
+	ld [wTextDecimalByte], a
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	hlcoord 5, 12
+	call PrintNum
+
+; Print move type
 	ld a, [wCurSpecies]
 	ld b, a
 	farcall GetMoveCategoryName
-	hlcoord 1, 11
+	hlcoord 10, 12
 	ld de, wStringBuffer1
 	call PlaceString
 	ld a, [wCurSpecies]
 	ld b, a
-	hlcoord 1, 12
+	hlcoord 10, 13
 	ld [hl], "/"
 	inc hl
 	predef PrintMoveType
+
+; Print move power
 	ld a, [wCurSpecies]
 	ld l, a
 	ld a, MOVE_POWER
 	call GetMoveAttribute
-	hlcoord 16, 12
+	hlcoord 5, 11
 	cp 2
 	jr c, .no_power
 	ld [wTextDecimalByte], a
@@ -1269,21 +1323,82 @@ PlaceMoveData:
 	ld de, String_MoveNoPower
 	rst PlaceString
 
+; Print move description
 .description
-	hlcoord 1, 14
+	hlcoord 1, 15
 	predef PrintMoveDescription
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
 
+; This converts values out of 256 into a value
+; out of 100. It achieves this by multiplying
+; the value by 100 and dividing it by 256.
+ConvertPercentages:
+
+	; Overwrite the "hl" register.
+	ld l, a
+	ld h, 0
+	push af
+
+	; Multiplies the value of the "hl" register by 3.
+	add hl, hl
+	add a, l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+
+	; Multiplies the value of the "hl" register
+	; by 8. The value of the "hl" register
+	; is now 24 times its original value.
+	add hl, hl
+	add hl, hl
+	add hl, hl
+
+	; Add the original value of the "hl" value to itself,
+	; making it 25 times its original value.
+	pop af
+	add a, l
+	ld l, a
+	adc h
+	sbc l
+	ld h, a
+
+	; Multiply the value of the "hl" register by
+	; 4, making it 100 times its original value.
+	add hl, hl
+	add hl, hl
+
+	; Set the "l" register to 0.5, otherwise the rounded
+	; value may be lower than expected. Round the
+	; high byte to nearest and drop the low byte.
+	ld l, 0.5
+	sla l
+	sbc a
+	and 1
+	add a, h
+	ret
+
+; UI elements
 String_MoveType_Top:
-	db "┌────────┐@"
+	db "┌───────┐@"
 String_MoveType_Bottom:
-	db "│        └@"
+	db "│       └@"
 String_MoveAtk:
 	db "ATK/@"
+String_MoveAcc:
+	db "ACC/@"
+String_MoveEff:
+	db "EFF/@"
 String_MoveNoPower:
 	db "---@"
+String_MovePhy:
+	db "PHYSICAL@"
+String_MoveSpe:
+	db "SPECIAL @"
+String_MoveSta:
+	db "STATUS  @"
 
 PlaceMoveScreenArrows:
 	call PlaceMoveScreenLeftArrow
