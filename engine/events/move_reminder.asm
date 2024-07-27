@@ -1,13 +1,18 @@
 MoveReminding:
-	; Loads and prints the "MoveReminderIntroText" text.
-	; Then prompts the player to select "YES" or "NO".
-	; Relative jump to the ".cancel" local jump
-	; if the player selected "NO" and continue
-	; if the player selected "YES".
+	; Loads and prints the "MoveReminderIntroText" text and places
+	; the player's current money at the top right corner of the
+	; screen. Then prompts the player to select "YES" or "NO".
 	ld hl, MoveReminderIntroText
 	call PrintText
+	farcall PlaceMoneyTopRight
 	call YesNoBox
 	jr c, .cancel
+
+	; Calls the "CheckCostAgainstPlayerMoney" label. Relative jump
+	; to the ".not_enough_money" local jump if the player does
+	; not have enough money and continue if they do.
+	call CheckCostAgainstPlayerMoney
+	jr c, .not_enough_money
 
 	; Loads and prints the "MoveReminderWhichMonText" text.
 	ld hl, MoveReminderWhichMonText
@@ -99,14 +104,62 @@ MoveReminding:
 	ld hl, MoveReminderNoMovesText
 	jp PrintText
 
+; Loads and prints the "MoveReminderNotEnoughMoneyText" text.
+; This will end the dialogue.
+.not_enough_money
+	ld hl, MoveReminderNotEnoughMoneyText
+	jp PrintText
+
 ; Exits the menu and goes back to the map with a
 ; speech text box open and then loads and prints
 ; the "MoveReminderMoveLearnedText" text.
-; This ends the dialogue.
 .move_learned
 	call ReturnToMapWithSpeechTextbox
 	ld hl, MoveReminderMoveLearnedText
-	jp PrintText
+	call PrintText
+; This code falls through into the ".pay_for_move" local jump.
+
+; Places the player's current money at the top right corner of
+; the screen, retrieves the amount of money defined in the
+; "MoveCost" label, removes the defined amount of money from
+; the player, plays the "SFX_TRANSACTION" sound effect,
+; prints the "MoveReminderPaymentReceivedText"text and
+; finally relative jump to the ".cancel" local jump.
+.pay_for_move
+	farcall PlaceMoneyTopRight
+	ld hl, MoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	call ApplyTilemap
+	call PromptButton
+	call WaitSFX
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall TakeMoney
+	farcall PlaceMoneyTopRight
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+	ld hl, MoveReminderPaymentReceivedText
+	call PrintText
+	jr .cancel
+
+; Compares the value of "MoveCost" to
+; the amount of money the player has.
+CheckCostAgainstPlayerMoney:
+	ld hl, MoveCost
+	ld de, hMoneyTemp
+	ld bc, 3
+	call CopyBytes
+	ld bc, hMoneyTemp
+	ld de, wMoney
+	farcall CompareMoney
+	ret
+
+; The cost for learning a move.
+MoveCost:
+	dt 500
 
 ; Checks for moves that can be learned and returns
 ; a zero flag if there are none.
@@ -574,8 +627,9 @@ MoveReminderIntroText:
 	text "Hi, I'm the Move"
 	line "Reminder!"
 
-	para "I can make #MON"
-	line "remember moves."
+	para "For ¥500, I can"
+	line "make #MON"
+	cont "remember a move."
 
 	para "Are you"
 	line "interested?"
@@ -629,6 +683,16 @@ MoveReminderNoMovesText:
 	cont "to learn."
 	done
 
+; This is the text that displays if the player
+; does not have enough money to learn a move.
+MoveReminderNotEnoughMoneyText:
+	text "Hm… You don't have"
+	line "enough money."
+
+	para "Please come back"
+	line "when you do."
+	done
+
 ; This is the text that displays after a
 ; Pokémon successfully learns a move.
 MoveReminderMoveLearnedText:
@@ -636,3 +700,11 @@ MoveReminderMoveLearnedText:
 	line "remembered the"
 	cont "move."
 	done
+
+; This is the text that displays after the
+; Move Reminder accepts payment.
+MoveReminderPaymentReceivedText:
+	text "Pleasure doing"
+	line "business with"
+	cont "you!"
+	prompt
