@@ -95,9 +95,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 10 percent ; encounter rate
-	dbw 35, SEAKING
-	dbw 35, GOLDUCK
-	dbw 35, SEADRA
+	dbw 55, SEAKING
+	dbw 55, GOLDUCK
+	dbw 55, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE

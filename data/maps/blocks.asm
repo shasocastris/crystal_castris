@@ -900,4 +900,7 @@ GoldenrodDeptStoreRoof_Blocks:
 SeafoamCaves_Blocks:
 	INCBIN "maps/SeafoamCaves.ablk"
 
+SilverCaveUnderbelly_Blocks:
+	INCBIN "maps/SilverCaveUnderbelly.ablk"
+
 ENDSECTION

@@ -1088,7 +1088,7 @@ JohtoGrassWildMons:
 	dbw 53, GRAVELER
 	dbw 54, GOLBAT
 	dbw 52, ONIX
-	dbw 52, GOLBAT
+	dbw 52, MISDREAVUS
 	dbw 55, GOLDUCK
 	dbw 56, KADABRA
 	dbw 56, KADABRA
@@ -1125,7 +1125,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ROOM_3
 	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 61, GOLBAT
+	dbw 61, CROBAT
 	dbw 58, STEELIX
 	dbw 58, GRAVELER
 	dbw 60, URSARING
@@ -1133,7 +1133,7 @@ JohtoGrassWildMons:
 	dbw 25, LARVITAR
 	dbw 35, PUPITAR
 	; day
-	dbw 61, GOLBAT
+	dbw 61, CROBAT
 	dbw 58, STEELIX
 	dbw 58, GRAVELER
 	dbw 60, URSARING
@@ -1141,7 +1141,7 @@ JohtoGrassWildMons:
 	dbw 25, LARVITAR
 	dbw 35, PUPITAR
 	; nite
-	dbw 61, GOLBAT
+	dbw 61, CROBAT
 	dbw 58, STEELIX
 	dbw 58, GRAVELER
 	dbw 59, GOLBAT
@@ -1158,24 +1158,24 @@ JohtoGrassWildMons:
 	dbw 60, GOLBAT
 	dbw 56, PARASECT
 	dbw 58, PARASECT
-	dbw 60, PARASECT
-	dbw 62, PARASECT
+	dbw 60, CROBAT
+	dbw 62, CROBAT
 	; day
 	dbw 58, GOLBAT
 	dbw 56, GOLBAT
 	dbw 60, GOLBAT
 	dbw 56, PARASECT
 	dbw 58, PARASECT
-	dbw 60, PARASECT
-	dbw 62, PARASECT
+	dbw 60, CROBAT
+	dbw 62, CROBAT
 	; nite
 	dbw 55, MISDREAVUS
 	dbw 58, GOLBAT
 	dbw 60, GOLBAT
 	dbw 56, PARASECT
 	dbw 58, PARASECT
-	dbw 60, PARASECT
-	dbw 62, PARASECT
+	dbw 60, CROBAT
+	dbw 62, CROBAT
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1708,6 +1708,34 @@ JohtoGrassWildMons:
 	dbw 50, POLITOED
 	dbw 54, CROBAT
 	dbw 54, DITTO
+	end_grass_wildmons
+
+	def_grass_wildmons SILVER_CAVE_UNDERBELLY
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 51, MAGCARGO
+	dbw 52, RAPIDASH
+	dbw 52, MAGMAR
+	dbw 54, HOUNDOOM
+	dbw 51, ARCANINE
+	dbw 53, NINETALES
+	dbw 53, CHARIZARD
+	; day
+	dbw 51, MAGCARGO
+	dbw 52, RAPIDASH
+	dbw 52, MAGMAR
+	dbw 54, HOUNDOOM
+	dbw 51, ARCANINE
+	dbw 53, NINETALES
+	dbw 53, TYPHLOSION
+	; nite
+	dbw 51, MAGCARGO
+	dbw 52, MAGMAR
+	dbw 52, HOUNDOOM
+	dbw 54, RAPIDASH
+	dbw 50, ARCANINE
+	dbw 54, NINETALES
+	dbw 54, FLAREON
 	end_grass_wildmons
 
 	db -1 ; end
