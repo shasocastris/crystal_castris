@@ -1182,6 +1182,8 @@ CanEncounterWildMon::
 	jr z, .ice_check
 	cp DUNGEON
 	jr z, .ice_check
+	cp INDOOR
+	jr z, .ice_check
 	farcall CheckGrassCollision
 	jr nc, .no
 
