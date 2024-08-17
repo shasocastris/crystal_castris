@@ -483,5 +483,6 @@ SECTION "Map Scripts 25", ROMX
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/SeafoamCaves.asm"
+INCLUDE "maps/SilverCaveUnderbelly.asm"
 
 ENDSECTION

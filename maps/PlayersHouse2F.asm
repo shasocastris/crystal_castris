@@ -59,6 +59,7 @@ if DEF(_DEBUG)
 	setflag ENGINE_POKEDEX
 	; useful items
 	giveitem MAX_REPEL, 99
+	giveitem ESCAPE_ROPE, 99
 	giveitem MASTER_BALL, 99
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
@@ -94,6 +95,7 @@ if DEF(_DEBUG)
 	setevent EVENT_BEAT_BLAINE
 	setevent EVENT_BEAT_BLUE
 	setevent EVENT_BEAT_ELITE_FOUR
+	clearevent EVENT_RED_IN_MT_SILVER
 	; fly anywhere
 	setflag ENGINE_FLYPOINT_NEW_BARK
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
@@ -136,6 +138,7 @@ if DEF(_DEBUG)
 	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke PIKACHU, 50
+	givepokemove DIG,        wPartyMon4, 0
 	givepoke GENGAR, 50
 	givepoke DITTO, 50
 	; intro events

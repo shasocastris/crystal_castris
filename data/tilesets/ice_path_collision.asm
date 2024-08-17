@@ -40,7 +40,7 @@
 	tilecoll WALL, HOP_LEFT, WALL, HOP_LEFT ; 27
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; 28
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; 29
-	tilecoll WALL, WALL, WALL, WALL ; 2a
+	tilecoll UP_WALL, WALL, FLOOR, FLOOR ; 2a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2b
 	tilecoll WALL, ICE, ICE, ICE ; 2c
 	tilecoll ICE, ICE, WALL, ICE ; 2d

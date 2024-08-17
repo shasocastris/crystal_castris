@@ -118,6 +118,11 @@ TilesetEliteFourRoomAnim::
 
 TilesetCaveAnim::
 TilesetDarkCaveAnim::
+	dw NULL,  AnimateLavaBubbleTile2
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  AnimateLavaBubbleTile1
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
