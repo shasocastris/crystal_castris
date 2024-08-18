@@ -118,9 +118,11 @@ TilesetEliteFourRoomAnim::
 
 TilesetCaveAnim::
 TilesetDarkCaveAnim::
-	dw NULL,  AnimateLavaBubbleTile2
+	dw NULL,  AnimateLavaBubbleTile4
 	dw NULL,  DoNothing ; WaitTileAnimation
-	dw NULL,  AnimateLavaBubbleTile1
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  DoNothing ; WaitTileAnimation
+	dw NULL,  AnimateLavaBubbleTile3
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw vTiles2 tile $14, ReadTileToAnimBuffer
@@ -653,6 +655,61 @@ AnimateLavaBubbleTile2:
 ; Write the tile graphic from hl (now sp) to tile $38 (now hl)
 	ld sp, hl
 	ld hl, vTiles2 tile $38
+	jmp WriteTile
+
+AnimateLavaBubbleTile3:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	srl a ; account for 60fps
+	and %110
+
+; Offset by 2 frames from AnimateLavaBubbleTile4
+	srl a
+	inc a
+	inc a
+	and %011
+
+; hl = LavaBubbleTileFrames + a * 16
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, LavaBubbleTileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $5b (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $42
+	jmp WriteTile
+
+AnimateLavaBubbleTile4:
+; Save the stack pointer in bc for WriteTile to restore
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; A cycle of 4 frames, updating every other tick
+	ld a, [wTileAnimationTimer]
+	srl a ; account for 60fps
+	and %110
+
+; hl = LavaBubbleTileFrames + a * 8
+; (a was pre-multiplied by 2 from 'and %110')
+	add a
+	add a
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, LavaBubbleTileFrames
+	add hl, de
+
+; Write the tile graphic from hl (now sp) to tile $38 (now hl)
+	ld sp, hl
+	ld hl, vTiles2 tile $41
 	jmp WriteTile
 
 LavaBubbleTileFrames:
