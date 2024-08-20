@@ -175,11 +175,21 @@ ViridianCityDreamEaterFisherGotDreamEaterText:
 	done
 
 ViridianCityYoungsterText:
-	text "I heard that there"
-	line "are many items on"
+	text "PROF.OAK has a"
+	line "granddaughter"
+	cont "named DAISY."
 
-	para "the ground in"
-	line "VIRIDIAN FOREST."
+	para "She has tea every"
+	line "day for an hour"
+
+	para "from three to four"
+	line "in the afternoon."
+
+	para "I wish I could"
+	line "join her for tea"
+
+	para "and chat about"
+	line "PROF.OAK."
 	done
 
 ViridianCitySignText:

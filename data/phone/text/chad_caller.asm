@@ -185,24 +185,6 @@ ChadProfOakTrainerGossipText:
 	line "a researcher."
 	done
 
-ChadDaisyTeaGossipText:
-	text "PROF.OAK has a"
-	line "granddaughter"
-	cont "named DAISY."
-
-	para "She has tea every"
-	line "day for an hour"
-
-	para "from three in the"
-	line "afternoon."
-
-	para "I wish I could"
-	line "join her for tea"
-
-	para "and chat about"
-	line "PROF.OAK."
-	done
-
 ChadProfOakTravelingGossipText:
 	text "Did you know?"
 	line "PROF.OAK traveled"

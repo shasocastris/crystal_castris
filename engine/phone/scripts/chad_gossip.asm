@@ -1,5 +1,5 @@
 ChadOakGossipScript:
-	random 10
+	random 9
 	ifequal 0, .Blue
 	ifequal 1, .Daisy
 	ifequal 2, .ProfElm
@@ -8,8 +8,7 @@ ChadOakGossipScript:
 	ifequal 5, .League
 	ifequal 6, .RadioShow
 	ifequal 7, .Battling
-	ifequal 8, .DaisyTea
-	ifequal 9, .Traveled
+	ifequal 8, .Traveled
 
 .Blue:
 	farwritetext ChadBlueGossipText
@@ -48,11 +47,6 @@ ChadOakGossipScript:
 
 .Battling:
 	farwritetext ChadProfOakTrainerGossipText
-	promptbutton
-	sjump PhoneScript_HangUpText_Male
-
-.DaisyTea:
-	farwritetext ChadDaisyTeaGossipText
 	promptbutton
 	sjump PhoneScript_HangUpText_Male
 
