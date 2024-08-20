@@ -1066,116 +1066,146 @@ JohtoGrassWildMons:
 	dbw 27, QUAGSIRE
 	end_grass_wildmons
 
-	def_grass_wildmons SILVER_CAVE_ROOM_1
-	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons SILVER_CAVE_ROOM_1  ; weather: sand
+	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 53, GRAVELER
+	dbw 53, STEELIX
 	dbw 54, URSARING
-	dbw 52, ONIX
-	dbw 55, MAGMAR
-	dbw 55, GOLBAT
-	dbw 30, LARVITAR
+	dbw 52, GOLEM
+	dbw 55, RHYDON
+	dbw 55, SANDSLASH
 	dbw 25, LARVITAR
+	dbw 30, PUPITAR
 	; day
-	dbw 53, GRAVELER
-	dbw 54, URSARING
-	dbw 52, ONIX
-	dbw 55, MAGMAR
-	dbw 55, GOLBAT
-	dbw 30, LARVITAR
+	dbw 53, GOLEM
+	dbw 54, STEELIX
+	dbw 52, SANDSLASH
+	dbw 55, URSARING
+	dbw 55, GOLEM
 	dbw 25, LARVITAR
+	dbw 30, PUPITAR
 	; nite
 	dbw 53, GRAVELER
-	dbw 54, GOLBAT
-	dbw 52, ONIX
-	dbw 52, MISDREAVUS
-	dbw 55, GOLDUCK
-	dbw 56, KADABRA
-	dbw 56, KADABRA
+	dbw 54, SANDSLASH
+	dbw 52, GOLEM
+	dbw 52, URSARING
+	dbw 55, STEELIX
+	dbw 54, WOBBUFFET
+	dbw 54, WOBBUFFET
 	end_grass_wildmons
 
-	def_grass_wildmons SILVER_CAVE_ROOM_2
-	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons SILVER_CAVE_UNDERBELLY  ; weather: sun
+	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 58, GOLBAT
-	dbw 58, MACHOKE
-	dbw 57, URSARING
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 25, LARVITAR
-	dbw 30, LARVITAR
+	dbw 56, MAGCARGO
+	dbw 57, MAGMAR
+	dbw 57, GOLEM
+	dbw 59, HOUNDOOM
+	dbw 56, WEEZING
+	dbw 58, FLAREON
+	dbw 58, FLAREON
 	; day
-	dbw 58, GOLBAT
-	dbw 58, MACHOKE
-	dbw 57, URSARING
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 25, LARVITAR
-	dbw 30, LARVITAR
+	dbw 56, MAGMAR
+	dbw 57, MAGCARGO
+	dbw 57, WEEZING
+	dbw 59, GOLEM
+	dbw 56, HOUNDOOM
+	dbw 58, FLAREON
+	dbw 58, FLAREON
 	; nite
-	dbw 58, GOLBAT
-	dbw 58, GOLDUCK
-	dbw 56, KADABRA
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 55, MISDREAVUS
-	dbw 55, MISDREAVUS
+	dbw 56, HOUNDOOM
+	dbw 57, GOLEM
+	dbw 57, MAGCARGO
+	dbw 59, WEEZING
+	dbw 55, MAGMAR
+	dbw 59, FLAREON
+	dbw 59, FLAREON
 	end_grass_wildmons
 
-	def_grass_wildmons SILVER_CAVE_ROOM_3
-	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
+	db -1 ; end
+
+	def_grass_wildmons SILVER_CAVE_ROOM_2  ; weather: rain
+	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 61, CROBAT
-	dbw 58, STEELIX
-	dbw 58, GRAVELER
-	dbw 60, URSARING
-	dbw 30, LARVITAR
-	dbw 25, LARVITAR
-	dbw 35, PUPITAR
+	dbw 63, GOLDUCK
+	dbw 63, ELECTABUZZ
+	dbw 62, QUAGSIRE
+	dbw 61, VAPOREON
+	dbw 63, CROBAT
+	dbw 60, PARASECT
+	dbw 60, PARASECT
 	; day
-	dbw 61, CROBAT
-	dbw 58, STEELIX
-	dbw 58, GRAVELER
-	dbw 60, URSARING
-	dbw 30, LARVITAR
-	dbw 25, LARVITAR
-	dbw 35, PUPITAR
+	dbw 63, GOLDUCK
+	dbw 63, ELECTABUZZ
+	dbw 62, VAPOREON
+	dbw 61, QUAGSIRE
+	dbw 62, CROBAT
+	dbw 60, PARASECT
+	dbw 60, PARASECT
 	; nite
+	dbw 63, ELECTABUZZ
+	dbw 63, QUAGSIRE
+	dbw 61, KADABRA
 	dbw 61, CROBAT
-	dbw 58, STEELIX
-	dbw 58, GRAVELER
-	dbw 59, GOLBAT
-	dbw 55, GOLDUCK
-	dbw 63, ALAKAZAM
-	dbw 63, ALAKAZAM
+	dbw 63, VAPOREON
+	dbw 60, MISDREAVUS
+	dbw 60, MISDREAVUS
 	end_grass_wildmons
 
-	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS
-	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
+	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS ; no weather
+	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 58, GOLBAT
-	dbw 56, GOLBAT
-	dbw 60, GOLBAT
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 60, CROBAT
-	dbw 62, CROBAT
+	dbw 63, CROBAT
+	dbw 61, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 61, CROBAT
+	dbw 63, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 67, MISDREAVUS
 	; day
-	dbw 58, GOLBAT
-	dbw 56, GOLBAT
-	dbw 60, GOLBAT
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 60, CROBAT
-	dbw 62, CROBAT
+	dbw 63, CROBAT
+	dbw 61, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 61, CROBAT
+	dbw 63, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 67, MISDREAVUS
 	; nite
-	dbw 55, MISDREAVUS
-	dbw 58, GOLBAT
-	dbw 60, GOLBAT
-	dbw 56, PARASECT
-	dbw 58, PARASECT
-	dbw 60, CROBAT
-	dbw 62, CROBAT
+	dbw 63, CROBAT
+	dbw 61, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 61, CROBAT
+	dbw 63, PARASECT
+	dbw 65, MISDREAVUS
+	dbw 67, MISDREAVUS
+	end_grass_wildmons
+
+	def_grass_wildmons SILVER_CAVE_ROOM_3  ; weather: hail
+	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 68, PILOSWINE
+	dbw 66, JYNX
+	dbw 67, DELIBIRD
+	dbw 68, CLOYSTER
+	dbw 69, SNEASEL
+	dbw 67, TYRANITAR
+	dbw 70, TYRANITAR
+	; day
+	dbw 68, JYNX
+	dbw 66, CLOYSTER
+	dbw 67, PILOSWINE
+	dbw 68, DELIBIRD
+	dbw 69, SNEASEL
+	dbw 67, TYRANITAR
+	dbw 70, TYRANITAR
+	; nite
+	dbw 68, SNEASEL
+	dbw 66, JYNX
+	dbw 67, TYRANITAR
+	dbw 68, CLOYSTER
+	dbw 69, PILOSWINE
+	dbw 67, DELIBIRD
+	dbw 70, DELIBIRD
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1709,33 +1739,3 @@ JohtoGrassWildMons:
 	dbw 54, CROBAT
 	dbw 54, DITTO
 	end_grass_wildmons
-
-	def_grass_wildmons SILVER_CAVE_UNDERBELLY
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	dbw 51, MAGCARGO
-	dbw 52, RAPIDASH
-	dbw 52, MAGMAR
-	dbw 54, HOUNDOOM
-	dbw 51, ARCANINE
-	dbw 53, NINETALES
-	dbw 53, CHARIZARD
-	; day
-	dbw 51, MAGCARGO
-	dbw 52, RAPIDASH
-	dbw 52, MAGMAR
-	dbw 54, HOUNDOOM
-	dbw 51, ARCANINE
-	dbw 53, NINETALES
-	dbw 53, TYPHLOSION
-	; nite
-	dbw 51, MAGCARGO
-	dbw 52, MAGMAR
-	dbw 52, HOUNDOOM
-	dbw 54, RAPIDASH
-	dbw 50, ARCANINE
-	dbw 54, NINETALES
-	dbw 54, FLAREON
-	end_grass_wildmons
-
-	db -1 ; end
