@@ -22,25 +22,44 @@ AzaleaMartBugCatcherScript:
 
 AzaleaMartCooltrainerMText:
 	text "There's no GREAT"
-	line "BALL here. #"
+	line "BALL here. They"
 
-	para "BALLS will have"
-	line "to do."
+	para "are better for"
+	line "catching #MON"
+	cont "than a # BALL."
 
 	para "I wish KURT would"
 	line "make me some of"
 	cont "his custom BALLS."
+
+	para "They are sometimes"
+	line "even better than"
+	cont "an ULTRA BALL!"
 	done
 
 AzaleaMartBugCatcherText:
-	text "A GREAT BALL is"
-	line "better for catch-"
-	cont "ing #MON than a"
-	cont "# BALL."
+	text "Have you ever"
+	line "taken part in a"
 
-	para "But KURT's might"
-	line "be better some-"
-	cont "times."
+	para "Bug-Catching"
+	line "Contest at the"
+	cont "NATIONAL PARK?"
+
+	para "I did once, but"
+	line "all I could catch"
+	cont "was a CATERPIE."
+
+	para "I didn't even"
+	line "battle it, I just"
+	cont "threw a PARK BALL"
+	cont "and caught it at"
+	cont "full health."
+
+	para "And guess what!"
+
+	para "I won with that"
+	line "CATERPIE. Isn't"
+	cont "that great?"
 	done
 
 AzaleaMart_MapEvents:

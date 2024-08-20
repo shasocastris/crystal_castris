@@ -77,22 +77,6 @@ LizHangUpText:
 	line "later!"
 	done
 
-LizRuinsOfAlphGossipText:
-	text "Listen, listen!"
-
-	para "I was listening to"
-	line "the radio in the"
-
-	para "RUINS OF ALPH when"
-	line "an odd broadcast"
-
-	para "suddenly cut it on"
-	line "the regular show."
-
-	para "I wonder what it"
-	line "was. So strange!"
-	done
-
 LizFalknerGossipText:
 	text "Listen, listen!"
 
@@ -115,22 +99,6 @@ LizFalknerGossipText:
 	line "meet him!"
 	done
 
-LizEarlGossipText:
-	text "Listen, listen!"
-
-	para "Do you know EARL,"
-	line "the teacher who"
-
-	para "runs the #MON"
-	line "ACADEMY in VIOLET?"
-
-	para "I saw him doing"
-	line "pirouettes while"
-
-	para "he was running. It"
-	line "was wildly funny!"
-	done
-
 LizSurfPikachuGossipText:
 	text "Listen, listen!"
 
@@ -151,53 +119,6 @@ LizSurfPikachuGossipText:
 	cont "you had one."
 	done
 
-LizMooMooMilkGossipText:
-	text "Listen, listen!"
-
-	para "Do you know about"
-	line "MOOMOO MILK?"
-
-	para "You can buy it at"
-	line "MOOMOO FARM."
-
-	para "It's supposed to"
-	line "be good for health"
-
-	para "and beauty."
-	line "I really want to"
-
-	para "try some. I bet"
-	line "it's delicious!"
-	done
-
-LizSalonGossipText:
-	text "Listen, listen!"
-
-	para "There's a #MON"
-	line "SALON in GOLDENROD"
-
-	para "that's run by two"
-	line "brothers."
-
-	para "The older brother"
-	line "is good, but the"
-
-	para "younger one really"
-	line "isn't."
-
-	para "But sometimes the"
-	line "younger one does a"
-
-	para "better job than"
-	line "his brother."
-
-	para "Every time I go, I"
-	line "have a hard time"
-
-	para "trying to decide"
-	line "whom I should use…"
-	done
-
 LizWhitneyGossipText:
 	text "Listen, listen!"
 
@@ -213,27 +134,6 @@ LizWhitneyGossipText:
 
 	para "I bet she must be"
 	line "totally talented."
-	done
-
-LizBugCatchingContestGossipText:
-	text "Listen, listen!"
-
-	para "Have you ever"
-	line "taken part in a"
-
-	para "Bug-Catching"
-	line "Contest at the"
-	cont "NATIONAL PARK?"
-
-	para "I did once, but"
-	line "all I could catch"
-	cont "was a CATERPIE."
-
-	para "But guess what!"
-
-	para "I won with that"
-	line "CATERPIE. Isn't"
-	cont "that great?"
 	done
 
 LizBeautifulTrainerGossipText:

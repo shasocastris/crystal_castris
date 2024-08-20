@@ -278,11 +278,29 @@ GoldenrodCityMoveTutorWalkAroundPlayerThenEnterGameCornerMovement:
 	step_end
 
 GoldenrodCityPokefanMText:
-	text "They built the new"
-	line "RADIO TOWER to"
+	text "There's a #MON"
+	line "SALON in GOLDENROD"
 
-	para "replace the old,"
-	line "creaky one."
+	para "that's run by two"
+	line "brothers."
+
+	para "The older brother"
+	line "is good, but the"
+
+	para "younger one really"
+	line "isn't."
+
+	para "But sometimes the"
+	line "younger one does a"
+
+	para "better job than"
+	line "his brother."
+
+	para "Every time I go, I"
+	line "have a hard time"
+
+	para "trying to decide"
+	line "whom I should use…"
 	done
 
 GoldenrodCityYoungster1Text:
@@ -350,11 +368,21 @@ GoldenrodCityLassText:
 	done
 
 GoldenrodCityGrampsText:
-	text "Whew! This is one"
-	line "big town. I don't"
+	text "Do you know about"
+	line "MOOMOO MILK?"
 
-	para "know where any-"
-	line "thing is."
+	para "You can buy it at"
+	line "MOOMOO FARM on"
+	cont "Route 41."
+
+	para "It's supposed to"
+	line "be good for health"
+
+	para "and beauty."
+	line "I really want to"
+
+	para "try some. I bet"
+	line "it's delicious!"
 	done
 
 GoldenrodCityRocketScoutText1:

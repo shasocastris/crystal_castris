@@ -73,6 +73,12 @@ SproutTower1FSage2Text:
 
 	para "as a place for"
 	line "#MON training."
+
+	para "See the pillar"
+	line "shaking?"
+
+	para "People are train-"
+	line "ing upstairs."
 	done
 
 SproutTower1FGrannyText:
@@ -85,11 +91,17 @@ SproutTower1FGrannyText:
 	done
 
 SproutTower1FTeacherText:
-	text "See the pillar"
-	line "shaking?"
+	text "I was listening to"
+	line "the radio in the"
 
-	para "People are train-"
-	line "ing upstairs."
+	para "RUINS OF ALPH when"
+	line "an odd broadcast"
+
+	para "suddenly cut it on"
+	line "the regular show."
+
+	para "I wonder what it"
+	line "was. So strange!"
 	done
 
 SproutTower1FStatueText:
