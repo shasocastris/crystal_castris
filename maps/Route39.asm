@@ -247,11 +247,11 @@ PokefanfRuthBeatenText:
 	done
 
 PokefanfRuthAfterBattleText:
-	text "Do you know about"
-	line "baby #MON?"
+	text "If your opponent"
+	line "is FLYing, your"
 
-	para "I bet they're just"
-	line "adorable!"
+	para "GUST becomes much"
+	line "more powerful."
 	done
 
 PokefanMDerekPikachuIsItText:

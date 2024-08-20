@@ -20,8 +20,6 @@ JackPhoneCalleeScript:
 JackPhoneCallerScript:
 	gettrainername STRING_BUFFER_3, SCHOOLBOY, JACK1
 	farscall PhoneScript_GreetPhone_Male
-	farscall PhoneScript_Random2
-	ifequal 0, JackBattleTrivia
 	checkflag ENGINE_JACK_READY_FOR_REMATCH
 	iftrue .WaitingForBattle
 	checkflag ENGINE_JACK_MONDAY_MORNING
@@ -44,6 +42,3 @@ JackWantsToBattle:
 
 JackFindsRare:
 	farsjump Phone_CheckIfUnseenRare_Male
-
-JackBattleTrivia:
-	farsjump JackTriviaScript

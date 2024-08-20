@@ -387,9 +387,11 @@ PsychicPhilBeatenText:
 	done
 
 PsychicPhilAfterBattleText:
-	text "It's important to"
-	line "have conviction"
-	cont "on your side."
+	para "If the sunlight is"
+	line "harsh, SOLARBEAM"
+
+	para "doesn't need to be"
+	line "charged up."
 	done
 
 PokemaniacZachSeenText:

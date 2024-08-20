@@ -243,11 +243,11 @@ HikerBenjaminBeatenText:
 	done
 
 HikerBenjaminAfterBattleText:
-	text "Losing feels in-"
-	line "significant if you"
+	text "The rock, ground"
+	line "and steel types"
 
-	para "look up at the big"
-	line "sky!"
+	para "can't be hurt by"
+	line "SANDSTORM."
 	done
 
 PokemaniacShaneSeenText:

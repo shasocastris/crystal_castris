@@ -133,9 +133,11 @@ SwimmermCharlieBeatenText:
 	done
 
 SwimmermCharlieAfterBattleText:
-	text "Isn't it relaxing"
-	line "just floating like"
-	cont "this?"
+	text "If the sunlight is"
+	line "harsh, water-type"
+
+	para "moves become much"
+	line "weaker."
 	done
 
 SwimmermGeorgeSeenText:

@@ -267,9 +267,11 @@ CamperIvanBeatenText:
 	done
 
 CamperIvanAfterBattleText:
-	text "Music on the radio"
-	line "changes the moods"
-	cont "of wild #MON."
+	text "If your opponent"
+	line "uses DIG, your"
+
+	para "MAGNITUDE becomes"
+	line "more powerful."
 	done
 
 CamperElliotSeenText:

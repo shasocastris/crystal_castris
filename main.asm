@@ -308,7 +308,6 @@ INCLUDE "data/pokemon/first_stages.asm"
 SECTION "Phone Scripts 1", ROMX
 
 INCLUDE "engine/phone/scripts/generic_caller.asm"
-INCLUDE "engine/phone/scripts/jack_gossip.asm"
 INCLUDE "engine/phone/scripts/liz_gossip.asm"
 INCLUDE "engine/phone/scripts/chad_gossip.asm"
 INCLUDE "engine/phone/scripts/brent_gossip.asm"

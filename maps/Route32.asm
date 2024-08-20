@@ -733,9 +733,11 @@ BirdKeeperPeterBeatenText:
 	done
 
 BirdKeeperPeterAfterText:
-	text "I should train"
-	line "again at the GYM"
-	cont "in VIOLET CITY."
+	text "If you use DEFENSE"
+	line "CURL, ROLLOUT's"
+
+	para "power goes way up"
+	line "past normal."
 	done
 
 Text_RoarIntro:

@@ -388,11 +388,11 @@ SailorHarryBeatenText:
 	done
 
 SailorHarryAfterBattleText:
-	text "All kinds of peo-"
-	line "ple around the"
+	text "When it's raining,"
+	line "fire-type moves"
 
-	para "world live happily"
-	line "with #MON."
+	para "become much weaker"
+	line "than usual."
 	done
 
 BeautyOliviaSeenText:

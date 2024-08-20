@@ -331,9 +331,11 @@ PokemaniacBrentBeatenText:
 	done
 
 PokemaniacBrentAfterBattleText:
-	text "I'd be happy just"
-	line "to own a single"
-	cont "rare #MON."
+	text "If your opponent"
+	line "is FLYing, your"
+
+	para "TWISTER becomes"
+	line "more powerful."
 	done
 
 PokemaniacRonSeenText:

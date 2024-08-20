@@ -340,9 +340,11 @@ CooltrainermBrianBeatenText:
 	done
 
 CooltrainermBrianAfterBattleText:
-	text "A good trainer can"
-	line "recognize other"
-	cont "good trainers."
+	text "If your opponent"
+	line "uses DIG, your"
+
+	para "EARTHQUAKE becomes"
+	line "more powerful."
 	done
 
 CooltrainerfReenaSeenText:

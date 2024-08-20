@@ -175,9 +175,9 @@ SwimmerfElaineBeatenText:
 	done
 
 SwimmerfElaineAfterBattleText:
-	text "I'd say I'm a bet-"
-	line "ter swimmer than"
-	cont "you. Yeah!"
+	text "When it's raining,"
+	line "THUNDER is sure to"
+	cont "strike."
 	done
 
 SwimmerfPaulaSeenText:

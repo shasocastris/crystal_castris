@@ -390,8 +390,9 @@ FisherRaymondBeatenText:
 	done
 
 FisherRaymondAfterBattleText:
-	text "Why can't I catch"
-	line "any good #MON?"
+	text "The ice type"
+	line "can't be hurt by"
+	cont "HAIL."
 	done
 
 CooltrainermAaronSeenText:
