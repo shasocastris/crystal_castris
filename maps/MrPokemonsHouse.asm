@@ -58,16 +58,15 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 .RedScale:
-    checkevent EVENT_GOT_GS_BALL_FROM_MR_POKEMON
+    checkevent EVENT_GOT_LIGHT_BALL_FROM_MR_POKEMON
     iftrue .cancel
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem GS_BALL
+	verbosegiveitem LIGHT_BALL
 	iffalse .full
 	takeitem RED_SCALE
-	setevent EVENT_GOT_GS_BALL_FROM_MR_POKEMON
-	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	setevent EVENT_GOT_LIGHT_BALL_FROM_MR_POKEMON
 	writetext MrPokemonText_UsePokedexOnMurkrow
 .cancel
 	end
