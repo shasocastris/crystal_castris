@@ -9,17 +9,17 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 
 	def_callbacks
 
-RuinsOfAlphHoOhItemRoomGoldBerry:
-	itemball GOLD_BERRY
+RuinsOfAlphHoOhItemRoomAmuletCoin:
+	itemball AMULET_COIN
 
-RuinsOfAlphHoOhItemRoomMysteryberry:
-	itemball MYSTERYBERRY
+RuinsOfAlphHoOhItemRoomSacredAsh:
+	itemball SACRED_ASH
 
 RuinsOfAlphHoOhItemRoomRevivalHerb:
 	itemball REVIVAL_HERB
 
-RuinsOfAlphHoOhItemRoomCharcoal:
-	itemball CHARCOAL
+RuinsOfAlphHoOhItemRoomSunStone:
+	itemball SUN_STONE
 
 RuinsOfAlphHoOhItemRoomAncientReplica:
 	jumptext RuinsOfAlphHoOhItemRoomAncientReplicaText
@@ -46,7 +46,7 @@ RuinsOfAlphHoOhItemRoom_MapEvents:
 	bg_event  5,  1, BGEVENT_READ, RuinsOfAlphHoOhItemRoomAncientReplica
 
 	def_object_events
-	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomGoldBerry, EVENT_PICKED_UP_GOLD_BERRY_FROM_HO_OH_ITEM_ROOM
-	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomMysteryberry, EVENT_PICKED_UP_MYSTERYBERRY_FROM_HO_OH_ITEM_ROOM
+	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomAmuletCoin, EVENT_PICKED_UP_AMULET_COIN_FROM_HO_OH_ITEM_ROOM
+	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSacredAsh, EVENT_PICKED_UP_SACRED_ASH_FROM_HO_OH_ITEM_ROOM
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomRevivalHerb, EVENT_PICKED_UP_REVIVAL_HERB_FROM_HO_OH_ITEM_ROOM
-	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomCharcoal, EVENT_PICKED_UP_CHARCOAL_FROM_HO_OH_ITEM_ROOM
+	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSunStone, EVENT_PICKED_UP_SUN_STONE_FROM_HO_OH_ITEM_ROOM
