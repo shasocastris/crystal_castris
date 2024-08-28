@@ -116,9 +116,15 @@ GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	done
 
 GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
-	text "Lalala lalalala."
-	line "Have plenty of"
-	cont "water, my lovely!"
+	text "Some of our plants"
+	line "can be ground into"
+	cont "herbal medicine"
+	cont "for #MON."
+
+	para "Our mother sells"
+	line "them in the city's"
+	cont "UNDERGROUND on the"
+	cont "weekends."
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:

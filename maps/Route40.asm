@@ -208,10 +208,19 @@ Route40Lass1Text:
 	done
 
 Route40PokefanMText:
-	text "Hm! There's a big"
-	line "building up ahead!"
+	text "Have you visited"
+	line "the bargain mart"
+	cont "in the GOLDENROD"
+	cont "UNDERGROUND?"
 
-	para "What is it?"
+	para "The old man that"
+	line "runs it sells his"
+	cont "wares every MONDAY"
+	cont "morning."
+
+	para "He even has rare"
+	line "items that restore"
+	cont "#MON PP."
 	done
 
 Route40Lass2Text:
