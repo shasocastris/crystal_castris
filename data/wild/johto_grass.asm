@@ -1122,8 +1122,6 @@ JohtoGrassWildMons:
 	dbw 59, FLAREON
 	end_grass_wildmons
 
-	db -1 ; end
-
 	def_grass_wildmons SILVER_CAVE_ROOM_2  ; weather: rain
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1679,7 +1677,7 @@ JohtoGrassWildMons:
 	dbw 33, GLIGAR
 	dbw 34, PILOSWINE
 	dbw 35, SKARMORY
-	dbw 37, GRAVELER
+	dbw 37, PRIMEAPE
 	dbw 42, GOLEM
 	dbw 43, GOLEM
 	end_grass_wildmons
@@ -1739,3 +1737,5 @@ JohtoGrassWildMons:
 	dbw 54, CROBAT
 	dbw 54, DITTO
 	end_grass_wildmons
+
+	db -1 ; end
