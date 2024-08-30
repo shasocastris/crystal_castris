@@ -1898,6 +1898,8 @@ SkullBash:
 	endturn
 	defenseup
 	statupmessage
+	specialdefenseup
+	statupmessage
 	endmove
 
 Twister:
