@@ -61,6 +61,21 @@ if DEF(_DEBUG)
 	giveitem MAX_REPEL, 99
 	giveitem ESCAPE_ROPE, 99
 	giveitem MASTER_BALL, 99
+	giveitem BICYCLE
+	giveitem GOOD_ROD
+	giveitem THUNDERSTONE, 10
+	giveitem FIRE_STONE, 10
+	giveitem WATER_STONE, 10
+	giveitem LEAF_STONE, 10
+	giveitem MOON_STONE, 10
+	giveitem BERRY, 10
+	giveitem GOLD_BERRY, 10
+	giveitem MINT_BERRY, 10
+	giveitem MYSTERYBERRY, 10
+	giveitem QUICK_CLAW
+	giveitem KINGS_ROCK
+	giveitem AMULET_COIN
+	giveitem SCOPE_LENS
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -127,7 +142,7 @@ if DEF(_DEBUG)
 	givepoke MEWTWO, 100, BRIGHTPOWDER
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
-	givepoke MEW, 100, LEFTOVERS
+	givepoke LANTURN, 100, LEFTOVERS
 	givepokemove FLY,        wPartyMon2, 0
 	givepokemove SURF,       wPartyMon2, 1
 	givepokemove STRENGTH,   wPartyMon2, 2
@@ -137,8 +152,7 @@ if DEF(_DEBUG)
 	givepokemove HEADBUTT,   wPartyMon3, 2
 	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke PIKACHU, 50
-	givepokemove DIG,        wPartyMon4, 0
+	givepoke AMPHAROS, 50
 	givepoke GENGAR, 50
 	givepoke DITTO, 50
 	; intro events
