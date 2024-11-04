@@ -206,12 +206,13 @@ GetRemindableMoves:
 	ld hl, EvosAttacksPointers
 	ld a, BANK(EvosAttacksPointers)
 	call LoadDoubleIndirectPointer
+	ldh [hTemp], a
 
 ; Skips the evolution data to start at the learnset for the
 ; currently selected Pokémon in the "EvosAttacksPointers"
 ; table. This is "db 0 ; no more evolutions".
 .skip_evos
-	ld a, BANK(EvosAttacksPointers)
+	ld a, [hTemp] ; EvosAttacksPointers bank
 	call GetFarByte
 	inc hl
 	and a
@@ -246,7 +247,7 @@ GetRemindableMoves:
 ; if the Pokémon's level is higher, it will
 ; attempt to add the move to the move list.
 .loop_moves
-	ld a, BANK(EvosAttacksPointers)
+	ld a, [hTemp] ; EvosAttacksPointers bank
 	call GetFarByte
 	inc hl
 	and a
@@ -254,11 +255,11 @@ GetRemindableMoves:
 	ld c, a
 	ld a, [wCurPartyLevel]
 	cp c
-	ld a, BANK(EvosAttacksPointers)
+	ld a, [hTemp] ; EvosAttacksPointers bank
 	call GetFarByte
 	inc hl
 	ld b, a
-	ld a, BANK(EvosAttacksPointers)
+	ld a, [hTemp] ; EvosAttacksPointers bank
 	call GetFarByte
 	push hl
 	ld h, a
