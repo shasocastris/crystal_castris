@@ -83,11 +83,8 @@ EvolveAfterBattle_MasterLoop:
 	jr z, .happiness
 
 ; EVOLVE_STAT
-	call GetNextEvoAttackByte
-	ld c, a
-	ld a, [wTempMonLevel]
-	cp c
-	jmp c, .skip_evolution_species_parameter
+	call GetEvoLevel
+	jmp c, .skip_evolution_species_parameter_byte
 
 	push hl
 	ld de, wTempMonAttack
@@ -110,7 +107,7 @@ EvolveAfterBattle_MasterLoop:
 .happiness
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
-	jmp c, .skip_evolution_species_parameter
+	jmp c, .skip_evolution_species_parameter_byte
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
@@ -121,25 +118,17 @@ EvolveAfterBattle_MasterLoop:
 ; TR_EVENITE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp c, .skip_half_species_parameter ; MORN_F or DAY_F < NITE_F
+	jmp c, .skip_evolution_species ; MORN_F or DAY_F < NITE_F
 	jr .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jmp nc, .skip_half_species_parameter ; NITE_F or EVE_F >= NITE_F
+	jmp nc, .skip_evolution_species ; NITE_F or EVE_F >= NITE_F
 	jr .proceed
 
 .item
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jmp nz, .skip_evolution_species
@@ -153,10 +142,7 @@ EvolveAfterBattle_MasterLoop:
 	jr .proceed
 
 .level
-	call GetNextEvoAttackByte
-	ld b, a
-	ld a, [wTempMonLevel]
-	cp b
+	call GetEvoLevel
 	jmp c, .skip_evolution_species
 
 .proceed
@@ -321,12 +307,13 @@ EvolveAfterBattle_MasterLoop:
 
 .dont_evolve_check
 	ld a, b
-	cp EVOLVE_STAT
-	jr nz, .skip_evolution_species_parameter
+	cp EVOLVE_LEVEL
+	jr z, .skip_evolution_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_evolution_species_parameter_byte
+.skip_evolution_species_parameter_word
 	inc hl
-.skip_evolution_species_parameter
-	inc hl
-.skip_half_species_parameter
+.skip_evolution_species_parameter_byte
 	inc hl
 .skip_evolution_species
 	inc hl
@@ -656,11 +643,10 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
-	cp EVOLVE_STAT
-	jr z, .inc_hl
-	cp EVOLVE_ITEM
-	jr nz, .no_extra_skip
-.inc_hl
+	cp EVOLVE_LEVEL
+	jr z, .no_extra_skip
+	cp EVOLVE_HAPPINESS
+	jr z, .no_extra_skip
 	inc hl
 .no_extra_skip
 	inc hl
@@ -680,19 +666,13 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
-	cp EVOLVE_STAT
-	jr z, .skip_species_two_parameters
+	cp EVOLVE_LEVEL
+	jr z, .skip_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_species_parameter_byte
 	cp EVOLVE_ITEM
-	jr nz, .skip_species_parameter
-	call GetNextEvoAttackByte
-	ld b, a
-	call GetNextEvoAttackByte
-	push hl
-	ld h, a
-	ld l, b
-	call GetItemIDFromIndex
-	ld b, a
-	pop hl
+	jr nz, .skip_species_parameter_word
+	call GetEvoItem
 	ld a, [wCurItem]
 	cp b
 	jr nz, .skip_species
@@ -702,11 +682,9 @@ DetermineEvolutionItemResults::
 	ld e, l
 	ret
 
-.skip_species_two_parameters
+.skip_species_parameter_word
 	inc hl
-.skip_species_parameter
-	inc hl
-.skip_half_species_parameter
+.skip_species_parameter_byte
 	inc hl
 .skip_species
 	inc hl
@@ -717,4 +695,24 @@ GetNextEvoAttackByte:
 	ldh a, [hTemp]
 	call GetFarByte
 	inc hl
+	ret
+
+GetEvoItem:
+; Return evolution item in register b
+	call GetNextEvoAttackByte
+	ld b, a
+	call GetNextEvoAttackByte
+	push hl
+	ld h, a
+	ld l, b
+	call GetItemIDFromIndex
+	ld b, a
+	pop hl
+	ret
+
+GetEvoLevel:
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wTempMonLevel]
+	cp b
 	ret
