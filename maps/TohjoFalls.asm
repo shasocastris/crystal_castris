@@ -11,8 +11,8 @@ TohjoFalls_MapScripts:
 TohjoFallsMewtwoCallback:
 	checkevent EVENT_FOUGHT_MEWTWO
 	iftrue .NoAppear
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .Appear
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .Appear
 	sjump .NoAppear
 
 .Appear:
