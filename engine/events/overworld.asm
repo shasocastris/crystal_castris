@@ -1629,7 +1629,7 @@ Script_FishCastRod:
 	special UpdateTimePals
 	loademote EMOTE_ROD
 	callasm LoadFishingGFX
-	loademote EMOTE_SHOCK
+	loademote EMOTE_FISH
 	applymovement PLAYER, MovementData_CastRod
 	pause 40
 	end
