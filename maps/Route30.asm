@@ -238,8 +238,8 @@ Route30FruitTree2:
 Route30HiddenPotion:
 	hiddenitem POTION, EVENT_ROUTE_30_HIDDEN_POTION
 
-Route30HiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_ROUTE_30_HIDDEN_FULL_RESTORE
+Route30HiddenLureBall:
+	hiddenitem LURE_BALL, EVENT_ROUTE_30_HIDDEN_LURE_BALL
 
 Route30_JoeysRattataAttacksMovement:
 	fix_facing
@@ -414,7 +414,7 @@ Route30_MapEvents:
 	bg_event 15,  5, BGEVENT_READ, MrPokemonsHouseSign
 	bg_event  3, 21, BGEVENT_READ, Route30TrainerTips
 	bg_event 14,  9, BGEVENT_ITEM, Route30HiddenPotion
-	bg_event 23, 44, BGEVENT_ITEM, Route30HiddenFullRestore
+	bg_event 20, 42, BGEVENT_ITEM, Route30HiddenLureBall
 
 
 	def_object_events
