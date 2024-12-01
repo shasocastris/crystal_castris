@@ -156,6 +156,7 @@ ENDM
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const SEAFOAM_CAVES,                               10,  9 ; 92
 	map_const SILVER_CAVE_UNDERBELLY,                      15, 18 ; 93
+	map_const CERULEAN_CAVE,                               15,  9 ; 94
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

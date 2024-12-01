@@ -695,3 +695,4 @@ ENDM
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
 	map_attributes SilverCaveUnderbelly, SILVER_CAVE_UNDERBELLY, $09, 0
+	map_attributes CeruleanCave, CERULEAN_CAVE, $09, 0

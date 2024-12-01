@@ -903,4 +903,7 @@ SeafoamCaves_Blocks:
 SilverCaveUnderbelly_Blocks:
 	INCBIN "maps/SilverCaveUnderbelly.ablk"
 
+CeruleanCave_Blocks:
+	INCBIN "maps/CeruleanCave.ablk"
+
 ENDSECTION

@@ -170,4 +170,11 @@ KantoWaterWildMons:
 	dbw 35, DEWGONG
 	end_water_wildmons
 
+	def_water_wildmons CERULEAN_CAVE
+	db 6 percent ; encounter rate
+	dbw 65, GYARADOS
+	dbw 60, LAPRAS
+	dbw 65, KINGDRA
+	end_water_wildmons
+
 	db -1 ; end

@@ -842,4 +842,32 @@ KantoGrassWildMons:
 	dbw 52, GOLBAT
 	end_grass_wildmons
 
+	def_grass_wildmons CERULEAN_CAVE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 59, CROBAT
+	dbw 60, GOLEM
+	dbw 60, MACHAMP
+	dbw 62, STEELIX
+	dbw 61, NIDOKING
+	dbw 63, TYRANITAR
+	dbw 63, TYRANITAR
+	; day
+	dbw 59, CROBAT
+	dbw 60, GOLEM
+	dbw 60, ALAKAZAM
+	dbw 62, STEELIX
+	dbw 61, NIDOQUEEN
+	dbw 63, TYRANITAR
+	dbw 63, TYRANITAR
+	; nite
+	dbw 59, CROBAT
+	dbw 60, GENGAR
+	dbw 60, ALAKAZAM
+	dbw 60, URSARING
+	dbw 62, URSARING
+	dbw 62, TYRANITAR
+	dbw 62, TYRANITAR
+	end_grass_wildmons
+
 	db -1 ; end
