@@ -273,6 +273,11 @@ LanceBattleAfterText:
 
 	para "grow strong with"
 	line "your #MON."
+
+	para "That's especially"
+	line "true now that you"
+	cont "can rematch gym"
+	cont "leaders."
 	done
 
 LancesRoomMaryOhNoOakText:
@@ -335,6 +340,11 @@ LancesRoomMaryNoInterviewText:
 	text "MARY: Oh, wait!"
 	line "We haven't done"
 	cont "the interview!"
+
+	para "Maybe I'll catch"
+	line "<PLAY_G> the next"
+	cont "time they are in"
+	cont "Goldenrod City…"
 	done
 
 LancesRoom_MapEvents:

@@ -517,6 +517,8 @@ AideScript_ReceiveTheBalls:
 ElmsAideScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue AideScript_CongratulationsE4Win
 	checkevent EVENT_GOT_TOGEPI_FROM_ELMS_AIDE
 	iftrue AideScript_AfterTheft
 	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
@@ -524,6 +526,12 @@ ElmsAideScript:
 	checkevent EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	iftrue AideScript_TheftTestimony
 	writetext AideText_AlwaysBusy
+	waitbutton
+	closetext
+	end
+
+AideScript_CongratulationsE4Win:
+	writetext AideText_CongratulationsE4Win
 	waitbutton
 	closetext
 	end
@@ -1280,6 +1288,21 @@ AideText_AlwaysBusy:
 	line "of Elm's travel"
 	cont "tips or research"
 	cont "notes?"
+	done
+
+AideText_CongratulationsE4Win:
+	text "Congratulations on"
+	line "your win against"
+	cont "the Elite Four!"
+
+	para "How have your"
+	line "rematches with gym"
+	cont "leaders gone?"
+
+	para "You can face them"
+	line "again each time"
+	cont "you defeat the"
+	cont "CHAMPION."
 	done
 
 AideText_TheftTestimony:
