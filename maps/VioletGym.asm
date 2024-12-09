@@ -19,6 +19,10 @@ VioletGym_MapScripts:
     endcallback
 
 VioletGymFalknerScript:
+;	readvar VAR_BADGES
+;	ifequal NUM_BADGES, .Rematch2
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch1
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_FALKNER
@@ -62,6 +66,27 @@ VioletGymFalknerScript:
 	writetext FalknerFightDoneText
 	waitbutton
 .NoRoomForMudSlap:
+	closetext
+	end
+
+.Rematch1
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_FALKNER
+	iftrue .Rematch1Done
+	writetext FalknerRematch1Text
+	waitbutton
+	closetext
+	winlosstext FalknerWinLossRematch1Text, 0
+	loadtrainer FALKNER, FALKNER2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FALKNER
+	opentext
+.Rematch1Done
+	writetext FalknerRematch1DoneText
+	waitbutton
 	closetext
 	end
 
@@ -154,6 +179,10 @@ FalknerWinLossText:
 	para "It's the official"
 	line "#MON LEAGUE"
 	cont "ZEPHYRBADGE."
+	done
+
+FalknerWinLossRematch1Text:
+	text "Rematch WinLoss"
 	done
 
 ReceivedZephyrBadgeText:
@@ -293,6 +322,15 @@ VioletGymGuideWinText:
 
 	para "be the CHAMP in no"
 	line "time at all!"
+	done
+
+FalknerRematch1Text:
+	text "Rematch 1 Text"
+	done
+
+FalknerRematch1DoneText:
+	text "Rematch 1 Text"
+	line "REMATCH DONE"
 	done
 
 VioletGym_MapEvents:

@@ -63,6 +63,7 @@ LancesRoomLanceScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
+	clearevent EVENT_BEAT_FALKNER
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
