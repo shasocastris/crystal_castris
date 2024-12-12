@@ -387,7 +387,7 @@ PsychicPhilBeatenText:
 	done
 
 PsychicPhilAfterBattleText:
-	para "If the sunlight is"
+	text "If the sunlight is"
 	line "harsh, SOLARBEAM"
 
 	para "doesn't need to be"
