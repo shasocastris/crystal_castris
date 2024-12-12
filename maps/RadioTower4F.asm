@@ -18,6 +18,8 @@ RadioTower4FFisherScript:
 RadioTower4FDJMaryScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .InterviewPlayer
 	checkevent EVENT_GOT_PINK_BOW_FROM_MARY
 	iftrue .GotPinkBow
 	checkevent EVENT_CLEARED_RADIO_TOWER
@@ -42,6 +44,44 @@ RadioTower4FDJMaryScript:
 	writetext RadioTower4FDJMaryText_After
 	waitbutton
 .NoRoom:
+	closetext
+	end
+
+.InterviewPlayer
+	checkevent EVENT_GOT_MASTER_BALL_FROM_MARY
+	iftrue .NoInterview
+	writetext RadioTower4FDJMaryText_Interview
+	waitbutton
+	closetext
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	readvar VAR_FACING
+	ifnotequal RIGHT, .DontNeedToMove
+	applymovement PLAYER, RadioTower4FPlayerWalksToMicrophoneMovement
+.DontNeedToMove
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext RadioTower4FDJMaryText_IntroducePlayer
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	turnobject PLAYER, UP
+	writetext RadioTower4FDJMaryText_AskQuestions
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, RIGHT
+	writetext RadioTower4FDJMaryText_RegularSchedule
+	waitbutton
+	turnobject RADIOTOWER4F_TEACHER, DOWN
+	writetext RadioTower4FDJMaryText_GiveMasterBall
+	promptbutton
+	verbosegiveitem MASTER_BALL
+	setevent EVENT_GOT_MASTER_BALL_FROM_MARY
+	writetext RadioTower4FDJMaryText_TalkAgain
+	waitbutton
+	closetext
+	end
+
+.NoInterview
+	writetext RadioTower4FDJMaryText_ThanksForInterview
+	waitbutton
 	closetext
 	end
 
@@ -107,6 +147,11 @@ RadioTower4FProductionSign:
 RadioTower4FStudio2Sign:
 	jumptext RadioTower4FStudio2SignText
 
+RadioTower4FPlayerWalksToMicrophoneMovement:
+	slow_step DOWN
+	slow_step RIGHT
+	step_end
+
 RadioTower4FFisherText:
 	text "I listened to the"
 	line "radio while I was"
@@ -146,6 +191,88 @@ RadioTower4FDJMaryText_After:
 
 	para "OAK'S #MON TALK"
 	line "show."
+	done
+
+RadioTower4FDJMaryText_Interview:
+	text "Oh, you're hear to"
+	line "discuss your"
+	cont "battle with Lance?"
+
+	para "Thanks so much for"
+	line "taking me up on my"
+	cont "offer!"
+	done
+
+RadioTower4FDJMaryText_IntroducePlayer:
+	text "Listeners!"
+
+	para "In the studio, a"
+	line "very special guest"
+	cont "just dropped in!"
+
+	para "Please welcome"
+	line "<PLAYER>, who"
+	cont "recently defeated"
+	cont "LANCE and became"
+	cont "the latest trainer"
+	cont "to become the"
+	cont "#MON CHAMPION!"
+	done
+
+RadioTower4FDJMaryText_AskQuestions:
+	text "<PLAYER>, please"
+	line "give us some idea"
+	cont "of the struggles"
+	cont "you went through"
+	cont "to achieve this"
+	cont "accomplishment."
+
+	para "<PLAYER>: … … …"
+
+	para "MARY: Can you"
+	line "please elaborate?"
+
+	para "<PLAYER>: … … …"
+
+	para "MARY: So exciting!"
+
+	para "Well we've used up"
+	line "enough of the"
+	cont "CHAMPION's time,"
+	cont "so that's all for"
+	cont "now."
+
+	para "Thanks for joining"
+	line "us today! Feel"
+	cont "free to drop in as"
+	cont "you achieve even"
+	cont "more!"
+	done
+
+RadioTower4FDJMaryText_RegularSchedule:
+	text "And now back to"
+	line "regular program!"
+	done
+
+RadioTower4FDJMaryText_GiveMasterBall:
+	text "And here's a very"
+	line "special thank you"
+	cont "for your time."
+	done
+
+RadioTower4FDJMaryText_TalkAgain:
+	text "I can't wait to"
+	line "talk to you again!"
+	done
+
+RadioTower4FDJMaryText_ThanksForInterview:
+	text "Thanks for the"
+	line "interview!"
+
+	para "And don't forget,"
+	line "my listeners are"
+	cont "eager to hear more"
+	cont "of your stories!"
 	done
 
 RadioTowerMeowthText:
@@ -264,7 +391,7 @@ RadioTower4F_MapEvents:
 
 	def_object_events
 	object_event  6,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower4FFisherScript, EVENT_RADIO_TOWER_CIVILIANS_AFTER
-	object_event 14,  6, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
+	object_event 14,  5, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower4FDJMaryScript, -1
 	object_event 12,  7, SPRITE_MEOWTH, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTowerMeowth, -1
 	object_event  5,  6, SPRITE_ROCKET, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerExecutivem2, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
