@@ -11,6 +11,8 @@ VioletGym_MapScripts:
 	callback MAPCALLBACK_TILES, .VioletGymLocked
 
 .VioletGymLocked
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .UnlockGym
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .UnlockGym
 	changeblock 4, 15, $2D ; floor
