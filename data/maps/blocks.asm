@@ -906,4 +906,7 @@ SilverCaveUnderbelly_Blocks:
 CeruleanCave_Blocks:
 	INCBIN "maps/CeruleanCave.ablk"
 
+BlackthornPass_Blocks:
+	INCBIN "maps/BlackthornPass.ablk"
+
 ENDSECTION

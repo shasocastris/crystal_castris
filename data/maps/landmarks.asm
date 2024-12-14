@@ -101,6 +101,7 @@ Landmarks:
 	landmark  28,  36, IndigoPlateauName
 	landmark  28,  92, Route26Name
 	landmark  20, 100, Route27Name
+	landmark  16,  88, BlackthornPassName
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
@@ -198,6 +199,7 @@ IlexForestName:      db "ILEX<BSP>FOREST@"
 BurnedTowerName:     db "BURNED<BSP>TOWER@"
 FastShipName:        db "FAST SHIP@"
 DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"
+BlackthornPassName:  db "BLACKTHORN<BSP>PASS@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
 BattleTowerName:     db "BATTLE<BSP>TOWER@"
