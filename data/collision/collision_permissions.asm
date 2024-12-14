@@ -61,10 +61,10 @@ CollisionPermissionTable::
 	db WATER_TILE        ; COLL_CURRENT_LEFT
 	db WATER_TILE        ; COLL_CURRENT_UP
 	db WATER_TILE        ; COLL_CURRENT_DOWN
-	db WATER_TILE        ; 3c
-	db WATER_TILE        ; 3d
-	db WATER_TILE        ; 3e
-	db WATER_TILE        ; 3f
+	db WATER_TILE        ; COLL_WARP_WATER_RIGHT
+	db WATER_TILE        ; COLL_WARP_WATER_LEFT
+	db WATER_TILE        ; COLL_WARP_WATER_UP
+	db WATER_TILE        ; COLL_WARP_WATER_DOWN
 	db LAND_TILE         ; COLL_BRAKE
 	db LAND_TILE         ; COLL_WALK_RIGHT
 	db LAND_TILE         ; COLL_WALK_LEFT
