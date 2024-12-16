@@ -826,11 +826,11 @@ DampRockDesc:
 
 HeatRockDesc:
 	db   "Extends duration"
-	next "of sun.@"
+	next "of sunlight.@"
 
 SmoothRockDesc:
 	db   "Extends duration"
-	next "of sand.@"
+	next "of sandstorms.@"
 
 IcyRockDesc:
 	db   "Extends duration"
