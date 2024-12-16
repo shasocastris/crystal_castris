@@ -5591,12 +5591,28 @@ BattleCommand_TrapTarget:
 	call GetBattleVar
 	bit SUBSTATUS_SUBSTITUTE, a
 	ret nz
+
+	push bc
+	push de
+	push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_PROLONG_WRAP
+	pop hl
+	pop de
+	pop bc
+	jr z, .prolong_wrap
+
 	call BattleRandom
 	; trapped for 2-5 turns
 	and %11
 	inc a
 	inc a
 	inc a
+	jr .got_count
+.prolong_wrap
+	ld a, 7
+.got_count
 	ld [hl], a
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
@@ -6064,7 +6080,7 @@ INCLUDE "engine/battle/move_effects/transform.asm"
 
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
-	jr PrintButItFailed
+	jmp PrintButItFailed
 
 ClearLastMove:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
@@ -6112,7 +6128,9 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
-	ld a, 5
+
+	call CheckProlongScreens
+
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6125,7 +6143,8 @@ BattleCommand_Screen:
 	; LightScreenCount -> ReflectCount
 	inc bc
 
-	ld a, 5
+	call CheckProlongScreens
+
 	ld [bc], a
 	ld hl, ReflectEffectText
 
@@ -6136,6 +6155,18 @@ BattleCommand_Screen:
 .failed
 	call AnimateFailedMove
 	jr PrintButItFailed
+
+CheckProlongScreens:
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_PROLONG_SCREENS
+	ld a, 5
+	jr nz, .dont_prolong
+	ld a, 8
+.dont_prolong
+	pop bc
+	ret
 
 PrintDoesntAffect:
 	ld hl, DoesntAffectText
