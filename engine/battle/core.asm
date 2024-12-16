@@ -1727,12 +1727,22 @@ HandleWeather:
 ; player first
 	call SetPlayerTurn
 	call .HailDamage
+
+	ld a, [wTrainerClass]
+	cp RED
+	ret z
+
 	call SetEnemyTurn
 	jr .HailDamage
 
 .enemy_first_hail
+	ld a, [wTrainerClass]
+	cp RED
+	jr z, .do_player_turn
+
 	call SetEnemyTurn
 	call .HailDamage
+.do_player_turn
 	call SetPlayerTurn
 
 .HailDamage:
