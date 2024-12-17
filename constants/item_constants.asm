@@ -177,7 +177,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 
-	const_align 8; Ball items assume the value of HIGH(FIRST_BALL_ITEM) when storing in bag.
+	const_align 8 ; Ball items assume the value of HIGH(FIRST_BALL_ITEM) when storing in bag.
 DEF FIRST_BALL_ITEM EQU const_value
 	const MASTER_BALL  ; 0200
 	const ULTRA_BALL   ; 0201
@@ -238,56 +238,56 @@ ENDM
 DEF FIRST_TMHM_ITEM EQU const_value
 ; see data/moves/tmhm_moves.asm for moves
 DEF TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; 0300
-	add_tm HEADBUTT     ; 0301
-	add_tm CURSE        ; 0302
-	add_tm ROLLOUT      ; 0303
-	add_tm ROAR         ; 0304
-	add_tm TOXIC        ; 0305
-	add_tm ZAP_CANNON   ; 0306
-	add_tm ROCK_SMASH   ; 0307
-	add_tm PSYCH_UP     ; 0308
-	add_tm HIDDEN_POWER ; 0309
-	add_tm SUNNY_DAY    ; 030A
-	add_tm SWEET_SCENT  ; 030B
-	add_tm SNORE        ; 030C
-	add_tm BLIZZARD     ; 030D
-	add_tm HYPER_BEAM   ; 030E
-	add_tm ICY_WIND     ; 030F
-	add_tm PROTECT      ; 0310
-	add_tm RAIN_DANCE   ; 0311
-	add_tm GIGA_DRAIN   ; 0312
-	add_tm ENDURE       ; 0313
-	add_tm FRUSTRATION  ; 0314
-	add_tm SOLARBEAM    ; 0315
-	add_tm IRON_TAIL    ; 0316
-	add_tm DRAGONBREATH ; 0317
-	add_tm THUNDER      ; 0318
-	add_tm EARTHQUAKE   ; 0319
-	add_tm RETURN       ; 031A
-	add_tm DIG          ; 031B
-	add_tm PSYCHIC_M    ; 031C
-	add_tm SHADOW_BALL  ; 031D
-	add_tm MUD_SLAP     ; 031E
-	add_tm DOUBLE_TEAM  ; 031F
-	add_tm ICE_PUNCH    ; 0320
-	add_tm SWAGGER      ; 0321
-	add_tm SLEEP_TALK   ; 0322
-	add_tm SLUDGE_BOMB  ; 0323
-	add_tm SANDSTORM    ; 0324
-	add_tm FIRE_BLAST   ; 0325
-	add_tm SWIFT        ; 0326
-	add_tm DEFENSE_CURL ; 0327
-	add_tm THUNDERPUNCH ; 0328
-	add_tm DREAM_EATER  ; 0329
-	add_tm DETECT       ; 032A
-	add_tm REST         ; 032B
-	add_tm ATTRACT      ; 032C
-	add_tm THIEF        ; 032D
-	add_tm STEEL_WING   ; 032E
-	add_tm FIRE_PUNCH   ; 032F
-	add_tm FURY_CUTTER  ; 0330
-	add_tm NIGHTMARE    ; 0331
+	add_tm DYNAMICPUNCH ; 0400
+	add_tm HEADBUTT     ; 0401
+	add_tm CURSE        ; 0402
+	add_tm ROLLOUT      ; 0403
+	add_tm ROAR         ; 0404
+	add_tm TOXIC        ; 0405
+	add_tm ZAP_CANNON   ; 0406
+	add_tm ROCK_SMASH   ; 0407
+	add_tm PSYCH_UP     ; 0408
+	add_tm HIDDEN_POWER ; 0409
+	add_tm SUNNY_DAY    ; 040A
+	add_tm SWEET_SCENT  ; 040B
+	add_tm SNORE        ; 040C
+	add_tm BLIZZARD     ; 040D
+	add_tm HYPER_BEAM   ; 040E
+	add_tm ICY_WIND     ; 040F
+	add_tm PROTECT      ; 0410
+	add_tm RAIN_DANCE   ; 0411
+	add_tm GIGA_DRAIN   ; 0412
+	add_tm ENDURE       ; 0413
+	add_tm FRUSTRATION  ; 0414
+	add_tm SOLARBEAM    ; 0415
+	add_tm IRON_TAIL    ; 0416
+	add_tm DRAGONBREATH ; 0417
+	add_tm THUNDER      ; 0418
+	add_tm EARTHQUAKE   ; 0419
+	add_tm RETURN       ; 041A
+	add_tm DIG          ; 041B
+	add_tm PSYCHIC_M    ; 041C
+	add_tm SHADOW_BALL  ; 041D
+	add_tm MUD_SLAP     ; 041E
+	add_tm DOUBLE_TEAM  ; 041F
+	add_tm ICE_PUNCH    ; 0420
+	add_tm SWAGGER      ; 0421
+	add_tm SLEEP_TALK   ; 0422
+	add_tm SLUDGE_BOMB  ; 0423
+	add_tm SANDSTORM    ; 0424
+	add_tm FIRE_BLAST   ; 0425
+	add_tm SWIFT        ; 0426
+	add_tm DEFENSE_CURL ; 0427
+	add_tm THUNDERPUNCH ; 0428
+	add_tm DREAM_EATER  ; 0429
+	add_tm DETECT       ; 042A
+	add_tm REST         ; 042B
+	add_tm ATTRACT      ; 042C
+	add_tm THIEF        ; 042D
+	add_tm STEEL_WING   ; 042E
+	add_tm FIRE_PUNCH   ; 042F
+	add_tm FURY_CUTTER  ; 0430
+	add_tm NIGHTMARE    ; 0431
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -302,13 +302,13 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT       ; 0332
-	add_hm FLY       ; 0333
-	add_hm SURF      ; 0334
-	add_hm STRENGTH  ; 0335
-	add_hm FLASH     ; 0336
-	add_hm WHIRLPOOL ; 0337
-	add_hm WATERFALL ; 0338
+	add_hm CUT       ; 0432
+	add_hm FLY       ; 0433
+	add_hm SURF      ; 0434
+	add_hm STRENGTH  ; 0435
+	add_hm FLASH     ; 0436
+	add_hm WHIRLPOOL ; 0437
+	add_hm WATERFALL ; 0438
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."

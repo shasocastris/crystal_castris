@@ -108,19 +108,19 @@ ItemDescriptions1:
 	dw StardustDesc     ; 006D
 	dw StarPieceDesc    ; 006E
 	dw QuestionMarkDesc ; 006F
-	dw QuestionMarkDesc ; 0070
-	dw ZincDesc         ; 0071
-	dw CharcoalDesc     ; 0072
-	dw BerryJuiceDesc   ; 0073
-	dw ScopeLensDesc    ; 0074
-	dw QuestionMarkDesc ; 0075
-	dw QuestionMarkDesc ; 0076
-	dw MetalCoatDesc    ; 0077
-	dw DragonFangDesc   ; 0078
-	dw QuestionMarkDesc ; 0079
-	dw LeftoversDesc    ; 007A
-	dw QuestionMarkDesc ; 007B
-	dw QuestionMarkDesc ; 007C
+	dw DragonScaleDesc  ; 0070
+	dw BerserkGeneDesc  ; 0071
+	dw QuestionMarkDesc ; 0072
+	dw QuestionMarkDesc ; 0073
+	dw QuestionMarkDesc ; 0074
+	dw SacredAshDesc    ; 0075
+	dw FlowerMailDesc   ; 0076
+	dw QuestionMarkDesc ; 0077
+	dw LightBallDesc    ; 0078
+	dw NormalBoxDesc    ; 0079
+	dw GorgeousBoxDesc  ; 007A
+	dw SunStoneDesc     ; 007B
+	dw PolkadotBowDesc  ; 007C
 	dw QuestionMarkDesc ; 007D
 	dw DragonScaleDesc  ; 007F
 	dw BerserkGeneDesc  ; 0080
