@@ -63,34 +63,21 @@
 	const ELIXER       ; 0037
 	const MOOMOO_MILK  ; 0038
 	const QUICK_CLAW   ; 0039
-	const PSNCUREBERRY ; 003A
 	const GOLD_LEAF    ; 003B
 	const SOFT_SAND    ; 003C
 	const SHARP_BEAK   ; 003D
-	const PRZCUREBERRY ; 003E
-	const BURNT_BERRY  ; 003F
-	const ICE_BERRY    ; 0040
 	const POISON_BARB  ; 0041
 	const KINGS_ROCK   ; 0042
-	const BITTER_BERRY ; 0043
-	const MINT_BERRY   ; 0044
-	const RED_APRICORN ; 0045
 	const TINYMUSHROOM ; 0046
 	const BIG_MUSHROOM ; 0047
 	const SILVERPOWDER ; 0048
-	const BLU_APRICORN ; 0049
 	const ITEM_5A      ; 004A
 	const AMULET_COIN  ; 004B
-	const YLW_APRICORN ; 004C
-	const GRN_APRICORN ; 004D
 	const CLEANSE_TAG  ; 004E
 	const MYSTIC_WATER ; 004F
 	const TWISTEDSPOON ; 0050
-	const WHT_APRICORN ; 0051
 	const BLACKBELT_I  ; 0052
-	const BLK_APRICORN ; 0053
 	const ITEM_64      ; 0054
-	const PNK_APRICORN ; 0055
 	const BLACKGLASSES ; 0056
 	const SLOWPOKETAIL ; 0057
 	const PINK_BOW     ; 0058
@@ -98,7 +85,6 @@
 	const SMOKE_BALL   ; 005A
 	const NEVERMELTICE ; 005B
 	const MAGNET       ; 005C
-	const MIRACLEBERRY ; 005D
 	const PEARL        ; 005E
 	const BIG_PEARL    ; 005F
 	const EVERSTONE    ; 0060
@@ -131,7 +117,6 @@
 	const ITEM_93      ; 007B
 	const ITEM_94      ; 007C
 	const ITEM_95      ; 007D
-	const MYSTERYBERRY ; 007E
 	const DRAGON_SCALE ; 007F
 	const BERSERK_GENE ; 0080
 	const ITEM_99      ; 0081
@@ -147,8 +132,6 @@
 	const POLKADOT_BOW ; 008B
 	const ITEM_AB      ; 008C
 	const UP_GRADE     ; 008D
-	const BERRY        ; 008E
-	const GOLD_BERRY   ; 008F
 	const ITEM_B0      ; 0090
 	const ITEM_B3      ; 0091
 	const BRICK_PIECE  ; 0092
@@ -210,6 +193,28 @@ DEF FIRST_BALL_ITEM EQU const_value
 	const PARK_BALL    ; 020B
 DEF NUM_BALL_ITEM_POCKET EQU const_value - FIRST_BALL_ITEM
 assert NUM_BALL_ITEM_POCKET <= $ff
+
+	const_align 8; Berries items assume the value of HIGH(FIRST_BERRY_ITEM) when storing in bag.
+DEF FIRST_BERRY_ITEM EQU const_value
+	const PSNCUREBERRY ; 003A
+	const PRZCUREBERRY ; 003E
+	const BURNT_BERRY  ; 003F
+	const ICE_BERRY    ; 0040
+	const BITTER_BERRY ; 0043
+	const MINT_BERRY   ; 0044
+	const MIRACLEBERRY ; 005D
+	const MYSTERYBERRY ; 007E
+	const BERRY        ; 008E
+	const GOLD_BERRY   ; 008F
+	const RED_APRICORN ; 0045
+	const BLU_APRICORN ; 0049
+	const YLW_APRICORN ; 004C
+	const GRN_APRICORN ; 004D
+	const WHT_APRICORN ; 0051
+	const BLK_APRICORN ; 0053
+	const PNK_APRICORN ; 0055
+def NUM_BERRY_ITEM_POCKET EQU const_value - FIRST_BERRY_ITEM
+assert NUM_BERRY_ITEM_POCKET <= $ff
 DEF NUM_ITEMS EQU const_value - 1
 
 DEF __tmhm_value__ = 1

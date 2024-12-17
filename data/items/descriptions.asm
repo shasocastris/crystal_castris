@@ -5,6 +5,8 @@ ItemDescriptions:
 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, ItemDescriptionsKeyItems
 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, ItemDescriptionsBalls
+	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, ItemDescriptionsBerries
 	indirect_table_end
 
 ItemDescriptions1:
@@ -66,34 +68,21 @@ ItemDescriptions1:
 	dw ElixerDesc       ; 0037
 	dw MoomooMilkDesc   ; 0038
 	dw QuickClawDesc    ; 0039
-	dw PsnCureBerryDesc ; 003A
 	dw GoldLeafDesc     ; 003B
 	dw SoftSandDesc     ; 003C
 	dw SharpBeakDesc    ; 003D
-	dw PrzCureBerryDesc ; 003E
-	dw BurntBerryDesc   ; 003F
-	dw IceBerryDesc     ; 0040
 	dw PoisonBarbDesc   ; 0041
 	dw KingsRockDesc    ; 0042
-	dw BitterBerryDesc  ; 0043
-	dw MintBerryDesc    ; 0044
-	dw RedApricornDesc  ; 0045
 	dw TinyMushroomDesc ; 0046
 	dw BigMushroomDesc  ; 0047
 	dw SilverPowderDesc ; 0048
-	dw BluApricornDesc  ; 0049
 	dw QuestionMarkDesc ; 004A
 	dw AmuletCoinDesc   ; 004B
-	dw YlwApricornDesc  ; 004C
-	dw GrnApricornDesc  ; 004D
 	dw CleanseTagDesc   ; 004E
 	dw MysticWaterDesc  ; 004F
 	dw TwistedSpoonDesc ; 0050
-	dw WhtApricornDesc  ; 0051
 	dw BlackbeltDesc    ; 0052
-	dw BlkApricornDesc  ; 0053
 	dw QuestionMarkDesc ; 0054
-	dw PnkApricornDesc  ; 0055
 	dw BlackGlassesDesc ; 0056
 	dw SlowpokeTailDesc ; 0057
 	dw PinkBowDesc      ; 0058
@@ -101,7 +90,6 @@ ItemDescriptions1:
 	dw SmokeBallDesc    ; 005A
 	dw NeverMeltIceDesc ; 005B
 	dw MagnetDesc       ; 005C
-	dw MiracleBerryDesc ; 005D
 	dw PearlDesc        ; 005E
 	dw BigPearlDesc     ; 005F
 	dw EverStoneDesc    ; 0060
@@ -134,7 +122,6 @@ ItemDescriptions1:
 	dw QuestionMarkDesc ; 007B
 	dw QuestionMarkDesc ; 007C
 	dw QuestionMarkDesc ; 007D
-	dw MysteryBerryDesc ; 007E
 	dw DragonScaleDesc  ; 007F
 	dw BerserkGeneDesc  ; 0080
 	dw QuestionMarkDesc ; 0081
@@ -150,8 +137,6 @@ ItemDescriptions1:
 	dw PolkadotBowDesc  ; 008B
 	dw QuestionMarkDesc ; 008C
 	dw UpGradeDesc      ; 008D
-	dw BerryDesc        ; 008E
-	dw GoldBerryDesc    ; 008F
 	dw QuestionMarkDesc ; 0090
 	dw QuestionMarkDesc ; 0091
 	dw BrickPieceDesc   ; 0092
@@ -208,6 +193,26 @@ ItemDescriptionsBalls:
 	dw MoonBallDesc   ; 0209
 	dw LoveBallDesc   ; 020A
 	dw ParkBallDesc   ; 020B
+.IndirectEnd:
+
+ItemDescriptionsBerries:
+	dw PsnCureBerryDesc ; 003A
+	dw PrzCureBerryDesc ; 003E
+	dw BurntBerryDesc   ; 003F
+	dw IceBerryDesc     ; 0040
+	dw BitterBerryDesc  ; 0043
+	dw MintBerryDesc    ; 0044
+	dw MiracleBerryDesc ; 005D
+	dw MysteryBerryDesc ; 007E
+	dw BerryDesc        ; 008E
+	dw GoldBerryDesc    ; 008F
+	dw RedApricornDesc  ; 0045
+	dw BluApricornDesc  ; 0049
+	dw YlwApricornDesc  ; 004C
+	dw GrnApricornDesc  ; 004D
+	dw WhtApricornDesc  ; 0051
+	dw BlkApricornDesc  ; 0053
+	dw PnkApricornDesc  ; 0055
 .IndirectEnd:
 
 MasterBallDesc:

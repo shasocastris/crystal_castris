@@ -57,34 +57,21 @@ ItemNames::
 	li "ELIXER"       ; 0037
 	li "MOOMOO MILK"  ; 0038
 	li "QUICK CLAW"   ; 0039
-	li "PSNCUREBERRY" ; 003A
 	li "GOLD LEAF"    ; 003B
 	li "SOFT SAND"    ; 003C
 	li "SHARP BEAK"   ; 003D
-	li "PRZCUREBERRY" ; 003E
-	li "BURNT BERRY"  ; 003F
-	li "ICE BERRY"    ; 0040
 	li "POISON BARB"  ; 0041
 	li "KING'S ROCK"  ; 0042
-	li "BITTER BERRY" ; 0043
-	li "MINT BERRY"   ; 0044
-	li "RED APRICORN" ; 0045
 	li "TINYMUSHROOM" ; 0046
 	li "BIG MUSHROOM" ; 0047
 	li "SILVERPOWDER" ; 0048
-	li "BLU APRICORN" ; 0049
 	li "TERU-SAMA"    ; 004A
 	li "AMULET COIN"  ; 004B
-	li "YLW APRICORN" ; 004C
-	li "GRN APRICORN" ; 004D
 	li "CLEANSE TAG"  ; 004E
 	li "MYSTIC WATER" ; 004F
 	li "TWISTEDSPOON" ; 0050
-	li "WHT APRICORN" ; 0051
 	li "BLACKBELT"    ; 0052
-	li "BLK APRICORN" ; 0053
 	li "TERU-SAMA"    ; 0054
-	li "PNK APRICORN" ; 0055
 	li "BLACKGLASSES" ; 0056
 	li "SLOWPOKETAIL" ; 0057
 	li "PINK BOW"     ; 0058
@@ -92,7 +79,6 @@ ItemNames::
 	li "SMOKE BALL"   ; 005A
 	li "NEVERMELTICE" ; 005B
 	li "MAGNET"       ; 005C
-	li "MIRACLEBERRY" ; 005D
 	li "PEARL"        ; 005E
 	li "BIG PEARL"    ; 005F
 	li "EVERSTONE"    ; 0060
@@ -125,7 +111,6 @@ ItemNames::
 	li "TERU-SAMA"    ; 007D
 	li "TERU-SAMA"    ; 007B
 	li "TERU-SAMA"    ; 007C
-	li "MYSTERYBERRY" ; 007E
 	li "DRAGON SCALE" ; 007F
 	li "BERSERK GENE" ; 0080
 	li "TERU-SAMA"    ; 0083
@@ -141,8 +126,6 @@ ItemNames::
 	li "POLKADOT BOW" ; 008B
 	li "TERU-SAMA"    ; 008C
 	li "UP-GRADE"     ; 008D
-	li "BERRY"        ; 008E
-	li "GOLD BERRY"   ; 008F
 	li "TERU-SAMA"    ; 0091
 	li "TERU-SAMA"    ; 0090
 	li "BRICK PIECE"  ; 0092
@@ -202,3 +185,23 @@ BallNames::
 	li "LOVE BALL"   ; 020A
 	li "PARK BALL"   ; 020B
 	assert_list_length NUM_BALL_ITEM_POCKET
+
+BerryNames::
+	list_start BerryNames
+	li "PSNCUREBERRY" ; 003A
+	li "PRZCUREBERRY" ; 003E
+	li "BURNT BERRY"  ; 003F
+	li "ICE BERRY"    ; 0040
+	li "BITTER BERRY" ; 0043
+	li "MINT BERRY"   ; 0044
+	li "MIRACLEBERRY" ; 005D
+	li "MYSTERYBERRY" ; 007E
+	li "BERRY"        ; 008E
+	li "GOLD BERRY"   ; 008F
+	li "RED APRICORN" ; 0045
+	li "BLU APRICORN" ; 0049
+	li "YLW APRICORN" ; 004C
+	li "GRN APRICORN" ; 004D
+	li "WHT APRICORN" ; 0051
+	li "BLK APRICORN" ; 0053
+	li "PNK APRICORN" ; 0055

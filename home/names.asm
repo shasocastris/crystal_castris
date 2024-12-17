@@ -180,6 +180,8 @@ GetItemName::
 	jr nc, .Balls
 	cphl16 FIRST_KEY_ITEM
 	jr nc, .Key_Items
+	cphl16 FIRST_BERRY_ITEM
+	jr nc, .Berries
 	dec bc
 	ld hl, ItemNames
 	jr .get_nth_string_16
@@ -196,6 +198,12 @@ GetItemName::
 	ld b, h
 	ld c, l
 	ld hl, BallNames
+.Berries
+	ld hl, -(FIRST_BERRY_ITEM)
+	add hl, bc
+	ld b, h
+	ld c, l
+	ld hl, BerryNames
 .get_nth_string_16
 	call GetNthString16
 	jr .Copied
