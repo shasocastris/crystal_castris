@@ -71,13 +71,16 @@ if DEF(_DEBUG)
 	giveitem MOON_STONE, 10
 	giveitem SUN_STONE, 10
 	giveitem BERRY, 10
-	giveitem GOLD_BERRY, 10
+	giveitem BLU_APRICORN, 10
 	giveitem MINT_BERRY, 10
-	giveitem MYSTERYBERRY, 10
+	giveitem EVN_UP_BERRY, 10
 	giveitem QUICK_CLAW
 	giveitem KINGS_ROCK
 	giveitem AMULET_COIN
 	giveitem SCOPE_LENS
+	giveitem GRIP_CLAW
+	giveitem HEAT_ROCK
+	giveitem SLEEP_GUARD
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
@@ -142,6 +145,7 @@ if DEF(_DEBUG)
 	setflag ENGINE_CREDITS_SKIP
 	; good party
 	givepoke MEWTWO, 100, BRIGHTPOWDER
+	givepokemove HAIL,       wPartyMon1, 1
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
 	givepoke LANTURN, 100, LEFTOVERS
@@ -156,6 +160,9 @@ if DEF(_DEBUG)
 	; misc pokemon for testing
 	givepoke AMPHAROS, 50
 	givepoke GENGAR, 50
+	givepokemove PSYWAVE,    wPartyMon5, 0
+	givepokemove SUNNY_DAY,  wPartyMon5, 1
+	givepokemove SOLARBEAM,  wPartyMon5, 2
 	givepoke DITTO, 50
 	; intro events
 	addcellnum PHONE_MOM

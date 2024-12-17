@@ -6,193 +6,166 @@
 ; - ItemEffects (see engine/items/item_effects.asm)
 	const_def
 	const NO_ITEM      ; 0000
-	const POTION       ; 000D
-	const SUPER_POTION ; 000C
-	const HYPER_POTION ; 000B
-	const MAX_POTION   ; 000A
+	const POTION       ; 0001
+	const SUPER_POTION ; 0002
+	const HYPER_POTION ; 0003
+	const MAX_POTION   ; 0004
 
-	const ANTIDOTE     ; 0004
-	const BURN_HEAL    ; 0005
-	const PARLYZ_HEAL  ; 0008
-	const AWAKENING    ; 0007
-	const ICE_HEAL     ; 0006
-	const FULL_HEAL    ; 0021
-	const FULL_RESTORE ; 0009
+	const ANTIDOTE     ; 0005
+	const BURN_HEAL    ; 0006
+	const PARLYZ_HEAL  ; 0007
+	const AWAKENING    ; 0008
+	const ICE_HEAL     ; 0009
+	const FULL_HEAL    ; 000A
+	const FULL_RESTORE ; 000B
 
-	const REVIVE       ; 0022
-	const MAX_REVIVE   ; 0023
+	const REVIVE       ; 000C
+	const MAX_REVIVE   ; 000D
 
-	const ETHER        ; 0035
-	const MAX_ETHER    ; 0036
-	const ELIXER       ; 0037
-	const MAX_ELIXER   ; 0010
+	const ETHER        ; 000E
+	const MAX_ETHER    ; 000F
+	const ELIXER       ; 0010
+	const MAX_ELIXER   ; 0011
 
-	const HP_UP        ; 0015
-	const PROTEIN      ; 0016
-	const IRON         ; 0017
-	const CARBOS       ; 0018
-	const CALCIUM      ; 001A
-	const ZINC         ; 0071
-	const RARE_CANDY   ; 001B
-	const PP_UP        ; 0034
+	const HP_UP        ; 0012
+	const PROTEIN      ; 0013
+	const IRON         ; 0014
+	const CARBOS       ; 0015
+	const CALCIUM      ; 0016
+	const ZINC         ; 0017
+	const RARE_CANDY   ; 0018
+	const PP_UP        ; 0019
 
-	const FRESH_WATER  ; 0029
-	const SODA_POP     ; 002A
-	const LEMONADE     ; 002B
-	const MOOMOO_MILK  ; 0038
-	const RAGECANDYBAR ; 0062
+	const FRESH_WATER  ; 001A
+	const SODA_POP     ; 001B
+	const LEMONADE     ; 001C
+	const MOOMOO_MILK  ; 001D
+	const RAGECANDYBAR ; 001E
 
-	const ENERGYPOWDER ; 0067
-	const ENERGY_ROOT  ; 0068
-	const HEAL_POWDER  ; 0069
-	const REVIVAL_HERB ; 006A
+	const ENERGYPOWDER ; 001F
+	const ENERGY_ROOT  ; 0020
+	const HEAL_POWDER  ; 0021
+	const REVIVAL_HERB ; 0022
 
-	const SACRED_ASH   ; 0084
-	const MYSTIC_DEW   ; 0002 -> MYSTIC_DEW, sacred ash analog for Lugia
+	const SACRED_ASH   ; 0023
+	const MYSTIC_DEW   ; 0024
 
-	const BERRY        ; 008E
-	const GOLD_BERRY   ; 008F
-	const MYSTERYBERRY ; 007E
-	const MIRACLEBERRY ; 005D
-	const PSNCUREBERRY ; 003A
-	const PRZCUREBERRY ; 003E
-	const BURNT_BERRY  ; 003F
-	const ICE_BERRY    ; 0040
-	const BITTER_BERRY ; 0043
-	const MINT_BERRY   ; 0044
+	const BERRY_JUICE  ; 0025
 
-	const ATK_UP_BERRY ; 0083 - ATK_UP_BERRY, HELD_ATTACK_UP
-	const DEF_UP_BERRY ; 0086 - DEF_UP_BERRY, HELD_DEFENSE_UP
-	const SPD_UP_BERRY ; 008C - SPD_UP_BERRY, HELD_SPEED_UP
-	const SPA_UP_BERRY ; 0090 - SPA_UP_BERRY, HELD_SP_ATTACK_UP
-	const SPF_UP_BERRY ; 0091 - SPF_UP_BERRY, HELD_SP_DEFENSE_UP
-	const ACC_UP_BERRY ; 009C - ACC_UP_BERRY, HELD_ACCURACY_UP
-	const EVN_UP_BERRY ; 009D - EVN_UP_BERRY, HELD_EVASION_UP
+	const REPEL        ; 0026
+	const SUPER_REPEL  ; 0027
+	const MAX_REPEL    ; 0028
 
-	const BERRY_JUICE  ; 0073
+	const ESCAPE_ROPE  ; 0029
+	const POKE_DOLL    ; 002A
 
-	const REPEL        ; 000F
-	const SUPER_REPEL  ; 0025
-	const MAX_REPEL    ; 0026
+	const X_ATTACK     ; 002B
+	const X_DEFEND     ; 002C
+	const X_SPEED      ; 002D
+	const X_SP_ATK     ; 002E
+	const X_SP_DEF     ; 002F
+	const X_ACCURACY   ; 0030
+	const GUARD_SPEC   ; 0031
+	const DIRE_HIT     ; 0032
 
-	const ESCAPE_ROPE  ; 000E
-	const POKE_DOLL    ; 0020
+	const LEAF_STONE   ; 0033
+	const FIRE_STONE   ; 0034
+	const WATER_STONE  ; 0035
+	const THUNDERSTONE ; 0036
+	const MOON_STONE   ; 0037
+	const SUN_STONE    ; 0038
+	const MIST_STONE   ; 0039
 
-	const X_ATTACK     ; 002C
-	const X_DEFEND     ; 002E
-	const X_SPEED      ; 002F
-	const X_SP_ATK     ; 0030 - X_SP_ATK
-	const X_SP_DEF     ; 006F - X_SP_DEF
-	const X_ACCURACY   ; 001C
-	const GUARD_SPEC   ; 0024
-	const DIRE_HIT     ; 0027
+	const EXP_SHARE    ; 003A
 
-	const LEAF_STONE   ; 001D
-	const FIRE_STONE   ; 0011
-	const WATER_STONE  ; 0013
-	const THUNDERSTONE ; 0012
-	const MOON_STONE   ; 0003
-	const SUN_STONE    ; 008A
-	const MIST_STONE   ; 0060
+	const MIRACLE_SEED ; 003B
+	const SILVERPOWDER ; 003C
+	const POISON_BARB  ; 003D
+	const CHARCOAL     ; 003E
+	const MYSTIC_WATER ; 003F
+	const NEVERMELTICE ; 0040
+	const MAGNET       ; 0041
+	const BLACKBELT_I  ; 0042
+	const HARD_STONE   ; 0043
+	const SOFT_SAND    ; 0044
+	const TWISTEDSPOON ; 0045
+	const PINK_BOW     ; 0046
+	const POLKADOT_BOW ; 0047
+	const SHARP_BEAK   ; 0048
+	const SPELL_TAG    ; 0049
+	const BLACKGLASSES ; 004A
+	const METAL_COAT   ; 004B
+	const DRAGON_FANG  ; 004C
 
-	const EXP_SHARE    ; 0032
+	const BERSERK_GENE ; 004D
+ 	const BRIGHTPOWDER ; 004E
+	const QUICK_CLAW   ; 004F
+	const KINGS_ROCK   ; 0050
+	const AMULET_COIN  ; 0051
+	const CLEANSE_TAG  ; 0052
+	const SMOKE_BALL   ; 0053
+	const FOCUS_BAND   ; 0054
+	const LUCKY_EGG    ; 0055
+	const LEFTOVERS    ; 0056
+	const SCOPE_LENS   ; 0057
 
-	const MIRACLE_SEED ; 0063
-	const SILVERPOWDER ; 0048
-	const POISON_BARB  ; 0041
-	const CHARCOAL     ; 0072
-	const MYSTIC_WATER ; 004F
-	const NEVERMELTICE ; 005B
-	const MAGNET       ; 005C
-	const BLACKBELT_I  ; 0052
-	const HARD_STONE   ; 006B
-	const SOFT_SAND    ; 003C
-	const TWISTEDSPOON ; 0050
-	const PINK_BOW     ; 0058
-	const POLKADOT_BOW ; 008B
-	const SHARP_BEAK   ; 003D
-	const SPELL_TAG    ; 0061
-	const BLACKGLASSES ; 0056
-	const METAL_COAT   ; 0077
-	const DRAGON_FANG  ; 0078
-
-	const BERSERK_GENE ; 0080
- 	const BRIGHTPOWDER ; 0001
-	const QUICK_CLAW   ; 0039
-	const KINGS_ROCK   ; 0042
-	const AMULET_COIN  ; 004B
-	const CLEANSE_TAG  ; 004E
-	const SMOKE_BALL   ; 005A
-	const FOCUS_BAND   ; 0065
-	const LUCKY_EGG    ; 006C
-	const LEFTOVERS    ; 007A
-	const SCOPE_LENS   ; 0074
-
-	const LIGHT_BALL   ; 0087
+	const LIGHT_BALL   ; 0058
 	const STICK        ; 0059
-	const THICK_CLUB   ; 0064
-	const LUCKY_PUNCH  ; 0019
-	const METAL_POWDER ; 001E
+	const THICK_CLUB   ; 005A
+	const LUCKY_PUNCH  ; 005B
+	const METAL_POWDER ; 005C
 
-	const DRAGON_SCALE ; 007F
-	const UP_GRADE     ; 008D
-	const RAZOR_CLAW   ; 0081 - RAZOR_CLAW
-	const DUBIOUS_DISC ; 009E - DUBIOUS_DISC
-	const PROTECTOR    ; 009F - PROTECTOR
+	const DRAGON_SCALE ; 005D
+	const UP_GRADE     ; 005E
+	const RAZOR_CLAW   ; 005F
+	const DUBIOUS_DISC ; 0060
+	const PROTECTOR    ; 0061
 
-	const SILVER_LEAF  ; 0033
-	const GOLD_LEAF    ; 003B
+	const SILVER_LEAF  ; 0062
+	const GOLD_LEAF    ; 0063
 
-	const NUGGET       ; 001F
-	const TINYMUSHROOM ; 0046
-	const BIG_MUSHROOM ; 0047
-	const PEARL        ; 005E
-	const BIG_PEARL    ; 005F
-	const STARDUST     ; 006D
-	const STAR_PIECE   ; 006E
-	const BRICK_PIECE  ; 0092
-	const SLOWPOKETAIL ; 0057
+	const NUGGET       ; 0064
+	const TINYMUSHROOM ; 0065
+	const BIG_MUSHROOM ; 0066
+	const PEARL        ; 0067
+	const BIG_PEARL    ; 0068
+	const STARDUST     ; 0069
+	const STAR_PIECE   ; 006A
+	const BRICK_PIECE  ; 006B
+	const SLOWPOKETAIL ; 006C
 
-	const WHT_APRICORN ; 0051
-	const RED_APRICORN ; 0045
-	const BLU_APRICORN ; 0049
-	const BLK_APRICORN ; 0053
-	const YLW_APRICORN ; 004C
-	const GRN_APRICORN ; 004D
-	const PNK_APRICORN ; 0055
+	const NORMAL_BOX   ; 006D
+	const GORGEOUS_BOX ; 006E
 
-	const NORMAL_BOX   ; 0088
-	const GORGEOUS_BOX ; 0089
+	const FLOWER_MAIL  ; 006F
+	const SURF_MAIL    ; 0070
+	const LITEBLUEMAIL ; 0071
+	const PORTRAITMAIL ; 0072
+	const LOVELY_MAIL  ; 0073
+	const EON_MAIL     ; 0074
+	const MORPH_MAIL   ; 0075
+	const BLUESKY_MAIL ; 0076
+	const MUSIC_MAIL   ; 0077
+	const MIRAGE_MAIL  ; 0078
 
-	const FLOWER_MAIL  ; 0085
-	const SURF_MAIL    ; 0093
-	const LITEBLUEMAIL ; 0094
-	const PORTRAITMAIL ; 0095
-	const LOVELY_MAIL  ; 0096
-	const EON_MAIL     ; 0097
-	const MORPH_MAIL   ; 0098
-	const BLUESKY_MAIL ; 0099
-	const MUSIC_MAIL   ; 009A
-	const MIRAGE_MAIL  ; 009B
+	const POISON_GUARD ; 0079
+	const BURN_GUARD   ; 007A
+	const FREEZE_GUARD ; 007B
+	const SLEEP_GUARD  ; 007C
+	const PARLYZ_GUARD ; 007D
+	const CONFUSEGUARD ; 007E
 
-	const POISON_GUARD ; 0014 - POISON_GUARD
-	const BURN_GUARD   ; 0028 - BURN_GUARD
-	const FREEZE_GUARD ; 002D - FREEZE_GUARD
-	const SLEEP_GUARD  ; 004A - SLEEP_GUARD
-	const PARLYZ_GUARD ; 0054 - PARLYZ_GUARD
-	const CONFUSEGUARD ; 0066 - CONFUSEGUARD
+	const DAMP_ROCK    ; 007F
+	const HEAT_ROCK    ; 0080
+	const SMOOTH_ROCK  ; 0081
+	const ICY_ROCK     ; 0082
 
-	const DAMP_ROCK   ; 0075 - DAMP_ROCK, extend rain
-	const HEAT_ROCK   ; 0076 - HEAT_ROCK, extend sun
-	const SMOOTH_ROCK ; 0079 - SMOOTH_ROCK, extend sand
-	const ICY_ROCK    ; 007B - ICY_ROCK, extend hail
+	const LIGHT_CLAY   ; 0083
+	const GRIP_CLAW    ; 0084
 
-	const LIGHT_CLAY   ; 007C - LIGHT_CLAY, extend barriers
-	const GRIP_CLAW    ; 007D - GRIP_CLAW, extend trap duration
+	const SAFARI_LURE  ; 0085
 
-	const SAFARI_LURE  ; 0082 - SAFARI_LURE, increase catch chance w/ HELD_CATCH_CHANCE
-
-	const RADIANCE_ORB ; 0070 - LEGENDS_AURA -> RADIANCE_ORB, mass stats buff
+	const RADIANCE_ORB ; 0086
 
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
@@ -220,7 +193,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const PASS         ; 0113
 	const SQUIRTBOTTLE ; 0114
 	const RAINBOW_WING ; 0115
-	const POKE_FLUTE   ; 0031
+	const POKE_FLUTE   ; 0116
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 
@@ -240,6 +213,37 @@ DEF FIRST_BALL_ITEM EQU const_value
 	const PARK_BALL    ; 020B
 DEF NUM_BALL_ITEM_POCKET EQU const_value - FIRST_BALL_ITEM
 assert NUM_BALL_ITEM_POCKET <= $ff
+
+	const_align 8; Berries items assume the value of HIGH(FIRST_BERRY_ITEM) when storing in bag.
+DEF FIRST_BERRY_ITEM EQU const_value
+	const BERRY        ; 0300
+	const GOLD_BERRY   ; 0301
+	const MYSTERYBERRY ; 0302
+	const MIRACLEBERRY ; 0303
+	const PSNCUREBERRY ; 0304
+	const PRZCUREBERRY ; 0305
+	const BURNT_BERRY  ; 0306
+	const ICE_BERRY    ; 0307
+	const BITTER_BERRY ; 0308
+	const MINT_BERRY   ; 0309
+
+	const ATK_UP_BERRY ; 030A
+	const DEF_UP_BERRY ; 030B
+	const SPD_UP_BERRY ; 030C
+	const SPA_UP_BERRY ; 030D
+	const SPF_UP_BERRY ; 030E
+	const ACC_UP_BERRY ; 030F
+	const EVN_UP_BERRY ; 0310
+
+	const WHT_APRICORN ; 0311
+	const RED_APRICORN ; 0312
+	const BLU_APRICORN ; 0313
+	const BLK_APRICORN ; 0314
+	const YLW_APRICORN ; 0315
+	const GRN_APRICORN ; 0316
+	const PNK_APRICORN ; 0317
+DEF NUM_BERRY_ITEM_POCKET EQU const_value - FIRST_BERRY_ITEM
+assert NUM_BERRY_ITEM_POCKET <= $ff
 DEF NUM_ITEMS EQU const_value - 1
 
 DEF __tmhm_value__ = 1
@@ -263,56 +267,56 @@ ENDM
 DEF FIRST_TMHM_ITEM EQU const_value
 ; see data/moves/tmhm_moves.asm for moves
 DEF TM01 EQU const_value
-	add_tm DYNAMICPUNCH ; 0300
-	add_tm HEADBUTT     ; 0301
-	add_tm CURSE        ; 0302
-	add_tm ROLLOUT      ; 0303
-	add_tm ROAR         ; 0304
-	add_tm TOXIC        ; 0305
-	add_tm ZAP_CANNON   ; 0306
-	add_tm ROCK_SMASH   ; 0307
-	add_tm PSYCH_UP     ; 0308
-	add_tm HIDDEN_POWER ; 0309
-	add_tm SUNNY_DAY    ; 030A
-	add_tm SWEET_SCENT  ; 030B
-	add_tm SNORE        ; 030C
-	add_tm BLIZZARD     ; 030D
-	add_tm HYPER_BEAM   ; 030E
-	add_tm ICY_WIND     ; 030F
-	add_tm PROTECT      ; 0310
-	add_tm RAIN_DANCE   ; 0311
-	add_tm GIGA_DRAIN   ; 0312
-	add_tm ENDURE       ; 0313
-	add_tm FRUSTRATION  ; 0314
-	add_tm SOLARBEAM    ; 0315
-	add_tm IRON_TAIL    ; 0316
-	add_tm DRAGONBREATH ; 0317
-	add_tm THUNDER      ; 0318
-	add_tm EARTHQUAKE   ; 0319
-	add_tm RETURN       ; 031A
-	add_tm DIG          ; 031B
-	add_tm PSYCHIC_M    ; 031C
-	add_tm SHADOW_BALL  ; 031D
-	add_tm MUD_SLAP     ; 031E
-	add_tm DOUBLE_TEAM  ; 031F
-	add_tm ICE_PUNCH    ; 0320
-	add_tm SWAGGER      ; 0321
-	add_tm SLEEP_TALK   ; 0322
-	add_tm SLUDGE_BOMB  ; 0323
-	add_tm SANDSTORM    ; 0324
-	add_tm FIRE_BLAST   ; 0325
-	add_tm SWIFT        ; 0326
-	add_tm DEFENSE_CURL ; 0327
-	add_tm THUNDERPUNCH ; 0328
-	add_tm DREAM_EATER  ; 0329
-	add_tm DETECT       ; 032A
-	add_tm REST         ; 032B
-	add_tm ATTRACT      ; 032C
-	add_tm THIEF        ; 032D
-	add_tm STEEL_WING   ; 032E
-	add_tm FIRE_PUNCH   ; 032F
-	add_tm FURY_CUTTER  ; 0330
-	add_tm NIGHTMARE    ; 0331
+	add_tm DYNAMICPUNCH ; 0400
+	add_tm HEADBUTT     ; 0401
+	add_tm CURSE        ; 0402
+	add_tm ROLLOUT      ; 0403
+	add_tm ROAR         ; 0404
+	add_tm TOXIC        ; 0405
+	add_tm ZAP_CANNON   ; 0406
+	add_tm ROCK_SMASH   ; 0407
+	add_tm PSYCH_UP     ; 0408
+	add_tm HIDDEN_POWER ; 0409
+	add_tm SUNNY_DAY    ; 040A
+	add_tm SWEET_SCENT  ; 040B
+	add_tm SNORE        ; 040C
+	add_tm BLIZZARD     ; 040D
+	add_tm HYPER_BEAM   ; 040E
+	add_tm ICY_WIND     ; 040F
+	add_tm PROTECT      ; 0410
+	add_tm RAIN_DANCE   ; 0411
+	add_tm GIGA_DRAIN   ; 0412
+	add_tm ENDURE       ; 0413
+	add_tm FRUSTRATION  ; 0414
+	add_tm SOLARBEAM    ; 0415
+	add_tm IRON_TAIL    ; 0416
+	add_tm DRAGONBREATH ; 0417
+	add_tm THUNDER      ; 0418
+	add_tm EARTHQUAKE   ; 0419
+	add_tm RETURN       ; 041A
+	add_tm DIG          ; 041B
+	add_tm PSYCHIC_M    ; 041C
+	add_tm SHADOW_BALL  ; 041D
+	add_tm MUD_SLAP     ; 041E
+	add_tm DOUBLE_TEAM  ; 041F
+	add_tm ICE_PUNCH    ; 0420
+	add_tm SWAGGER      ; 0421
+	add_tm SLEEP_TALK   ; 0422
+	add_tm SLUDGE_BOMB  ; 0423
+	add_tm SANDSTORM    ; 0424
+	add_tm FIRE_BLAST   ; 0425
+	add_tm SWIFT        ; 0426
+	add_tm DEFENSE_CURL ; 0427
+	add_tm THUNDERPUNCH ; 0428
+	add_tm DREAM_EATER  ; 0429
+	add_tm DETECT       ; 042A
+	add_tm REST         ; 042B
+	add_tm ATTRACT      ; 042C
+	add_tm THIEF        ; 042D
+	add_tm STEEL_WING   ; 042E
+	add_tm FIRE_PUNCH   ; 042F
+	add_tm FURY_CUTTER  ; 0430
+	add_tm NIGHTMARE    ; 0431
 DEF NUM_TMS EQU __tmhm_value__ - 1
 
 MACRO add_hm
@@ -327,13 +331,13 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT       ; 0332
-	add_hm FLY       ; 0333
-	add_hm SURF      ; 0334
-	add_hm STRENGTH  ; 0335
-	add_hm FLASH     ; 0336
-	add_hm WHIRLPOOL ; 0337
-	add_hm WATERFALL ; 0338
+	add_hm CUT       ; 0432
+	add_hm FLY       ; 0433
+	add_hm SURF      ; 0434
+	add_hm STRENGTH  ; 0435
+	add_hm FLASH     ; 0436
+	add_hm WHIRLPOOL ; 0437
+	add_hm WATERFALL ; 0438
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."

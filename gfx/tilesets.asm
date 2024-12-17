@@ -624,6 +624,9 @@ INCBIN "data/tilesets/ice_path_attributes.bin.lz"
 TilesetForestAttr::
 INCBIN "data/tilesets/forest_attributes.bin.lz"
 
+
+SECTION "Tileset Data 12", ROMX
+
 TilesetBetaWordRoomAttr::
 INCBIN "data/tilesets/beta_word_room_attributes.bin.lz"
 
