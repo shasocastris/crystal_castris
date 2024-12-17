@@ -16,7 +16,7 @@ UpdateItemBallDescription:
 	ld l, a
 	jr UpdateDescription16bit
 
-UpdateBerryDescription:
+UpdateItemBerryDescription:
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_BERRY_ITEM)
 	ld l, a

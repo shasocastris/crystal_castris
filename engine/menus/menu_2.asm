@@ -15,7 +15,7 @@ PlaceMenuItemBallName:
 	ld l, a
 	jr _PlaceSimpleMenuQuantity16bit
 
-PlaceMenuBerriesName:
+PlaceMenuItemBerryName:
 	push de
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_BERRY_ITEM)
@@ -43,7 +43,7 @@ PlaceMenuItemBallQuantity:
 	ld l, a
 	jr _PlaceMenuQuantity16bit
 
-PlaceMenuBerriesQuantity:
+PlaceMenuItemBerryQuantity:
 	push de
 	ld a, [wMenuSelection]
 	ld h, HIGH(FIRST_BERRY_ITEM)

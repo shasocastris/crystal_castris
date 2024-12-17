@@ -9,10 +9,10 @@
 	const PACKSTATE_KEYITEMSPOCKETMENU ;  6
 	const PACKSTATE_INITTMHMPOCKET     ;  7
 	const PACKSTATE_TMHMPOCKETMENU     ;  8
-	const PACKSTATE_INITBERRYPOCKET
-	const PACKSTATE_BERRYPOCKETMENU
-	const PACKSTATE_QUITNOSCRIPT       ;  9
-	const PACKSTATE_QUITRUNSCRIPT      ; 10
+	const PACKSTATE_INITBERRYPOCKET    ;  9
+	const PACKSTATE_BERRYPOCKETMENU    ; 10
+	const PACKSTATE_QUITNOSCRIPT       ; 11
+	const PACKSTATE_QUITRUNSCRIPT      ; 12
 
 Pack:
 	ld hl, wItemFlags
@@ -55,10 +55,10 @@ Pack:
 	dw .KeyItemsPocketMenu ;  6
 	dw .InitTMHMPocket     ;  7
 	dw .TMHMPocketMenu     ;  8
-	dw .InitBerryPocket
-	dw .BerryPocketMenu
-	dw Pack_QuitNoScript   ;  9
-	dw Pack_QuitRunScript  ; 10
+	dw .InitBerryPocket    ;  9
+	dw .BerryPocketMenu    ; 10
+	dw Pack_QuitNoScript   ; 11
+	dw Pack_QuitRunScript  ; 12
 
 .InitGFX:
 	xor a
@@ -644,10 +644,10 @@ BattlePack:
 	dw .KeyItemsPocketMenu ;  6
 	dw .InitTMHMPocket     ;  7
 	dw .TMHMPocketMenu     ;  8
-	dw .InitBerryPocket
-	dw .BerryPocketMenu
-	dw Pack_QuitNoScript   ;  9
-	dw Pack_QuitRunScript  ; 10
+	dw .InitBerryPocket    ;  9
+	dw .BerryPocketMenu    ; 10
+	dw Pack_QuitNoScript   ; 11
+	dw Pack_QuitRunScript  ; 12
 
 .InitGFX:
 	xor a
@@ -940,9 +940,9 @@ DepositSellPack:
 ; entries correspond to *_POCKET constants
 	dw .ItemsPocket
 	dw .BallsPocket
+	dw .BerryPocket
 	dw .KeyItemsPocket
 	dw .TMHMPocket
-	dw .BerryPocket
 
 .ItemsPocket:
 	xor a ; ITEM_POCKET
@@ -1194,9 +1194,9 @@ TutorialPack:
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wDudeNumBerries
-	dba PlaceMenuBerriesName
-	dba PlaceMenuBerriesQuantity
-	dba UpdateBerryDescription
+	dba PlaceMenuItemBerryName
+	dba PlaceMenuItemBerryQuantity
+	dba UpdateItemBerryDescription
 
 .DisplayPocket:
 	push hl
@@ -1275,8 +1275,8 @@ PackGFXPointers:
 	dw PackGFX + (15 tiles) * 1 ; ITEM_POCKET
 	dw PackGFX + (15 tiles) * 3 ; BALL_POCKET
 	dw PackGFX + (15 tiles) * 0 ; KEY_ITEM_POCKET
-	dw PackGFX + (15 tiles) * 2 ; TM_HM_POCKET
-	dw PackGFX + (15 tiles) * 4 ; BERRY_POCKET
+	dw PackGFX + (15 tiles) * 4 ; TM_HM_POCKET
+	dw PackGFX + (15 tiles) * 2 ; BERRY_POCKET
 
 Pack_InterpretJoypad:
 	ld hl, wMenuJoypad
@@ -1369,7 +1369,7 @@ Pack_InitGFX:
 	call DisableLCD
 	ld hl, PackMenuGFX
 	ld de, vTiles2
-	ld bc, $60 tiles
+	ld bc, $78 tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes
 ; Background (blue if male, pink if female)
@@ -1419,7 +1419,7 @@ DrawPocketGFX:
 	ld a, [wCurPocket]
 	; * 6
 	push bc
-	ld c, 5
+	ld c, 6
 	ld b, a
 .multloop
 	add b
@@ -1434,7 +1434,7 @@ DrawPocketGFX:
 	ld d, h
 	ld e, l
 	hlcoord 9, 0
-	ld b, 6
+	ld b, 7
 .col
 	ld a, [de]
 	inc de
@@ -1445,13 +1445,15 @@ DrawPocketGFX:
 
 .tilemap
 	; Regular Items
-	db $2d, $4c, $2c, $2c, $2c, $2e
+	db $2d, $4b, $2c, $2c, $2c, $2c, $2e
 	; Balls
-	db $2d, $2c, $4d, $2c, $2c, $2e
-	; TMs
-	db $2d, $2c, $2c, $4e, $2c, $2e
+	db $2d, $2c, $4c, $2c, $2c, $2c, $2e
 	; Key Items
-	db $2d, $2c, $2c, $2c, $4f, $2e
+	db $2d, $2c, $2c, $2c, $4e, $2c, $2e
+	; TMs
+	db $2d, $2c, $2c, $2c, $2c, $4f, $2e
+	; Berries
+	db $2d, $2c, $2c, $4d, $2c, $2c, $2e
 
 DrawPocketName:
 	ld a, [wCurPocket]
@@ -1569,10 +1571,10 @@ BerryPocketMenuHeader:
 	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
-    dbw 0, wNumBerries
-	dba PlaceMenuBerriesName
-	dba PlaceMenuBerriesQuantity
-	dba UpdateBerryDescription
+	dbw 0, wNumBerries
+	dba PlaceMenuItemBerryName
+	dba PlaceMenuItemBerryQuantity
+	dba UpdateItemBerryDescription
 
 KeyItemsPocketMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -1645,9 +1647,9 @@ PC_Mart_BerryPocketMenuHeader:
 	db 5, 8 ; rows, columns
 	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
 	dbw 0, wNumBerries
-	dba PlaceMenuBerriesName
-	dba PlaceMenuBerriesQuantity
-	dba UpdateItemBallDescription
+	dba PlaceMenuItemBerryName
+	dba PlaceMenuItemBerryQuantity
+	dba UpdateItemBerryDescription
 
 AskThrowAwayText:
 	text_far _AskThrowAwayText

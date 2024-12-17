@@ -205,3 +205,4 @@ BerryNames::
 	li "WHT APRICORN" ; 0051
 	li "BLK APRICORN" ; 0053
 	li "PNK APRICORN" ; 0055
+	assert_list_length NUM_BERRY_ITEM_POCKET

@@ -33,7 +33,7 @@ _ReceiveItem::
 
 .Berry:
 	ld hl, wNumBerries
-	jp PutItemInPocket
+	jp PutItemInPocketLow
 
 .TMHM:
 	ld h, d
@@ -68,7 +68,7 @@ _TossItem::
 
 .Berry:
 	ld hl, wNumBerries
-	jp RemoveItemFromPocket
+	jp RemoveItemFromPocketLow
 
 .TMHM:
 	ld h, d
@@ -115,7 +115,7 @@ _CheckItem::
 
 .Berry:
 	ld hl, wNumBerries
-	jp CheckTheItem
+	jp CheckTheItemLow
 
 .TMHM:
 	ld h, d
