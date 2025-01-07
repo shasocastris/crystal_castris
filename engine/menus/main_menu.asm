@@ -2,7 +2,6 @@
 	const_def
 	const MAINMENU_NEW_GAME               ; 0
 	const MAINMENU_CONTINUE               ; 1
-	const MAINMENU_MYSTERY                ; 2
 	const MAINMENU_MYSTERY_STUDIUM        ; 3
 	const MAINMENU_STUDIUM                ; 4
 
@@ -76,13 +75,6 @@ MainMenuItems:
 	db MAINMENUITEM_OPTION
 	db -1
 
-	; MAINMENU_MYSTERY
-	db 4
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db -1
-
 	; MAINMENU_MYSTERY_STUDIUM
 	db 5
 	db MAINMENUITEM_CONTINUE
@@ -114,8 +106,6 @@ MainMenu_GetWhichMenu:
 	ld a, [sNumDailyMysteryGiftPartnerIDs]
 	cp -1 ; locked?
 	call CloseSRAM
-	jr nz, .mystery_gift
-	; This check makes no difference.
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
 	ld a, MAINMENU_CONTINUE
@@ -123,16 +113,6 @@ MainMenu_GetWhichMenu:
 .ok
 .ok2
 	ld a, MAINMENU_CONTINUE
-	ret
-
-.mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-	jr z, .ok3
-.ok3
-.ok4
-	ld a, MAINMENU_MYSTERY
 	ret
 
 MainMenuJoypadLoop:
