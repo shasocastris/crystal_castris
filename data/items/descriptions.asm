@@ -51,6 +51,7 @@ ItemDescriptions1:
 	dw RevivalHerbDesc  ; 006A
 
 	dw SacredAshDesc    ; 0084
+	dw MysticDewDesc    ; 0002 -> MYSTIC_DEW
 
 	dw BerryDesc        ; 008E
 	dw GoldBerryDesc    ; 008F
@@ -62,6 +63,14 @@ ItemDescriptions1:
 	dw IceBerryDesc     ; 0040
 	dw BitterBerryDesc  ; 0043
 	dw MintBerryDesc    ; 0044
+
+	dw AttackUpBerryDesc    ; 0083 -> ATK_UP_BERRY
+	dw DefenseUpBerryDesc   ; 0086 -> DEF_UP_BERRY
+	dw SpeedUpBerryDesc     ; 008C -> SPD_UP_BERRY
+	dw SpAttackUpBerryDesc  ; 0090 -> SPA_UP_BERRY
+	dw SpDefenseUpBerryDesc ; 0091 -> SPF_UP_BERRY
+	dw AccuracyUpBerryDesc  ; 009C -> ACC_UP_BERRY
+	dw EvasionUpBerryDesc   ; 009D -> EVN_UP_BERRY
 
 	dw BerryJuiceDesc   ; 0073
 
@@ -76,7 +85,7 @@ ItemDescriptions1:
 	dw XDefendDesc      ; 002E
 	dw XSpeedDesc       ; 002F
 	dw XSpAttackDesc    ; 0030
-	dw XSpDefenseDesc   ; 006F
+	dw XSpDefenseDesc   ; 006F -> X_SP_DEF
 	dw XAccuracyDesc    ; 001C
 	dw GuardSpecDesc    ; 0024
 	dw DireHitDesc      ; 0027
@@ -130,6 +139,9 @@ ItemDescriptions1:
 
 	dw DragonScaleDesc  ; 007F
 	dw UpGradeDesc      ; 008D
+	dw RazorClawDesc    ; 0081 -> RAZOR_CLAW
+	dw DubiousDiscDesc  ; 009E -> DUBIOUS_DISC
+	dw ProtectorDesc    ; 009F -> PROTECTOR
 
 	dw SilverLeafDesc   ; 0033
 	dw GoldLeafDesc     ; 003B
@@ -165,6 +177,25 @@ ItemDescriptions1:
 	dw BlueSkyMailDesc  ; 0099
 	dw MusicMailDesc    ; 009A
 	dw MirageMailDesc   ; 009B
+
+	dw PoisonGuardDesc  ; 0014 -> POISON_GUARD
+	dw BurnGuardDesc    ; 0028 -> BURN_GUARD
+	dw FreezeGuardDesc  ; 002D -> FREEZE_GUARD
+	dw SleepGuardDesc   ; 004A -> SLEEP_GUARD
+	dw ParlyzGuardDesc  ; 0054 -> PARLYZ_GUARD
+	dw ConfuseGuardDesc ; 0066 -> CONFUSEGUARD
+
+	dw DampRockDesc     ; 0075 -> DAMP_ROCK
+	dw HeatRockDesc     ; 0076 -> HEAT_ROCK
+	dw SmoothRockDesc   ; 0079 -> SMOOTH_ROCK
+	dw IcyRockDesc      ; 007B -> ICY_ROCK
+
+	dw LightClayDesc    ; 007C -> LIGHT_CLAY
+	dw GripClawDesc     ; 007D -> GRIP_CLAW
+
+	dw SafariLureDesc   ; 0082 -> SAFARI_LURE
+
+	dw RadianceOrbDesc  ; 0070 -> RADIANCE_ORB
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -190,7 +221,7 @@ ItemDescriptionsKeyItems:
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
-	dw PokeFluteDesc    ; 0031
+	dw PokeFluteDesc    ; 0031 -> POKE_FLUTE
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -348,6 +379,10 @@ SacredAshDesc:
 	db   "Fully revives all"
 	next "fainted #MON.@"
 
+MysticDewDesc:
+	db   "Fully restores HP,"
+	next "PP & status.@"
+
 BerryDesc:
 	db   "A self-restore"
 	next "item for 10HP.@"
@@ -387,6 +422,34 @@ BitterBerryDesc:
 MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep.@"
+
+AttackUpBerryDesc:
+	db   "Raises Attack in"
+	next "a pinch.@"
+
+DefenseUpBerryDesc:
+	db   "Raises Defense in"
+	next "a pinch.@"
+
+SpeedUpBerryDesc:
+	db   "Raises Speed in"
+	next "a pinch.@"
+
+SpAttackUpBerryDesc:
+	db   "Raises Sp.Atk in"
+	next "a pinch.@"
+
+SpDefenseUpBerryDesc:
+	db   "Raises Sp.Def in"
+	next "a pinch.@"
+
+AccuracyUpBerryDesc:
+	db   "Raises Accuracy in"
+	next "a pinch.@"
+
+EvasionUpBerryDesc:
+	db   "Raises Evasion in"
+	next "a pinch.@"
 
 BerryJuiceDesc:
 	db   "Restores #MON"
@@ -602,6 +665,18 @@ UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
 
+RazorClawDesc:
+	db   "Raises critical"
+	next "hit ratio.@"
+
+DubiousDiscDesc:
+	db   "A transparent disc"
+	next "of unknown origin.@"
+
+ProtectorDesc:
+	db   "A protective item."
+	next "Stiff and heavy.@"
+
 SilverLeafDesc:
 	db   "A strange, silver-"
 	next "colored leaf.@"
@@ -716,6 +791,62 @@ MusicMailDesc:
 MirageMailDesc:
 	db   "MEW-print MAIL."
 	next "(HOLD)@"
+
+PoisonGuardDesc:
+	db	 "User can't get"
+	next "poisoned.@"
+
+BurnGuardDesc:
+	db	 "User can't get"
+	next "burned.@"
+
+FreezeGuardDesc:
+	db	 "User can't get"
+	next "frostbite.@"
+
+SleepGuardDesc:
+	db	 "User can't fall"
+	next "asleep.@"
+
+ParlyzGuardDesc:
+	db	 "User can't get"
+	next "paralyzed.@"
+
+ConfuseGuardDesc:
+	db	 "User can't get"
+	next "confused.@"
+
+DampRockDesc:
+	db   "Extends duration"
+	next "of rain.@"
+
+HeatRockDesc:
+	db   "Extends duration"
+	next "of sun.@"
+
+SmoothRockDesc:
+	db   "Extends duration"
+	next "of sand.@"
+
+IcyRockDesc:
+	db   "Extends duration"
+	next "of hail.@"
+
+LightClayDesc:
+	db   "Extends duration"
+	next "of barrier moves.@"
+
+GripClawDesc:
+	db   "Extends duration"
+	next "of trapping moves.@"
+
+SafariLureDesc:
+	db   "Increase chance to"
+	next "capture #MON.@"
+
+RadianceOrbDesc:
+	db   "Reveals true power"
+	next "of #MON.@"
 
 BicycleDesc:
 	db   "A collapsible bike"

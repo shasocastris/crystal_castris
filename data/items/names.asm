@@ -42,6 +42,7 @@ ItemNames::
 	li "REVIVAL HERB" ; 006A
 
 	li "SACRED ASH"   ; 0084
+	li "MYSTIC DEW"   ; 0002
 
 	li "BERRY"        ; 008E
 	li "GOLD BERRY"   ; 008F
@@ -53,6 +54,14 @@ ItemNames::
 	li "ICE BERRY"    ; 0040
 	li "BITTER BERRY" ; 0043
 	li "MINT BERRY"   ; 0044
+
+	li "ATK UP BERRY" ; 0083
+	li "DEF UP BERRY" ; 0086
+	li "SPD UP BERRY" ; 008C
+	li "SPA UP BERRY" ; 0090
+	li "SPF UP BERRY" ; 0091
+	li "ACC UP BERRY" ; 009C
+	li "EVN UP BERRY" ; 009D
 
 	li "BERRY JUICE"  ; 0073
 
@@ -121,6 +130,9 @@ ItemNames::
 
 	li "DRAGON SCALE" ; 007F
 	li "UP-GRADE"     ; 008D
+	li "RAZOR CLAW"   ; 0081
+	li "DUBIOUS DISC" ; 009E
+	li "PROTECTOR"    ; 009F
 
 	li "SILVER LEAF"  ; 0033
 	li "GOLD LEAF"    ; 003B
@@ -156,6 +168,25 @@ ItemNames::
 	li "BLUESKY MAIL" ; 0099
 	li "MUSIC MAIL"   ; 009A
 	li "MIRAGE MAIL"  ; 009B
+
+	li "POISON GUARD" ; 0014
+	li "BURN GUARD"   ; 0028
+	li "FREEZE GUARD" ; 002D
+	li "SLEEP GUARD"  ; 004A
+	li "PARLYZ GUARD" ; 0054
+	li "CONFUSEGUARD" ; 0066
+
+	li "DAMP ROCK"    ; 0075
+	li "HEAT ROCK"    ; 0076
+	li "SMOOTH ROCK"  ; 0079
+	li "ICY ROCK"     ; 007B
+
+	li "LIGHT CLAY"   ; 007C
+	li "GRIP CLAW"    ; 007D
+
+	li "SAFARI LURE"  ; 0082
+
+	li "RADIANCE ORB" ; 0070
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

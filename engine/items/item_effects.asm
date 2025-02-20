@@ -71,6 +71,7 @@ ItemEffects1:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 
 	dw SacredAshEffect     ; SACRED_ASH
+	dw SacredAshEffect     ; MYSTIC_DEW
 
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
@@ -82,6 +83,14 @@ ItemEffects1:
 	dw StatusHealingEffect ; ICE_BERRY
 	dw BitterBerryEffect   ; BITTER_BERRY
 	dw StatusHealingEffect ; MINT_BERRY
+
+	dw NoEffect            ; ATK_UP_BERRY
+	dw NoEffect            ; DEF_UP_BERRY
+	dw NoEffect            ; SPD_UP_BERRY
+	dw NoEffect            ; SPA_UP_BERRY
+	dw NoEffect            ; SPF_UP_BERRY
+	dw NoEffect            ; ACC_UP_BERRY
+	dw NoEffect            ; EVN_UP_BERRY
 
 	dw RestoreHPEffect     ; BERRY_JUICE
 
@@ -150,6 +159,9 @@ ItemEffects1:
 
 	dw EvoStoneEffect      ; DRAGON_SCALE
 	dw EvoStoneEffect      ; UP_GRADE
+	dw EvoStoneEffect      ; RAZOR_CLAW
+	dw EvoStoneEffect      ; DUBIOUS_DISC
+	dw EvoStoneEffect      ; PROTECTOR
 
 	dw NoEffect            ; SILVER_LEAF
 	dw NoEffect            ; GOLD_LEAF
@@ -185,6 +197,25 @@ ItemEffects1:
 	dw NoEffect            ; BLUESKY_MAIL
 	dw NoEffect            ; MUSIC_MAIL
 	dw NoEffect            ; MIRAGE_MAIL
+
+	dw NoEffect            ; POISON_GUARD
+	dw NoEffect            ; BURN_GUARD
+	dw NoEffect            ; FREEZE_GUARD
+	dw NoEffect            ; SLEEP_GUARD
+	dw NoEffect            ; PARLYZ_GUARD
+	dw NoEffect            ; CONFUSEGUARD
+
+	dw NoEffect            ; DAMP_ROCK
+	dw NoEffect            ; HEAT_ROCK
+	dw NoEffect            ; SMOOTH_ROCK
+	dw NoEffect            ; ICY_ROCK
+
+	dw NoEffect            ; LIGHT_CLAY
+	dw NoEffect            ; GRIP_CLAW
+
+	dw NoEffect            ; SAFARI_LURE
+
+	dw NoEffect            ; RADIANCE_ORB
 .IndirectEnd:
 
 ItemEffectsKeyItems:

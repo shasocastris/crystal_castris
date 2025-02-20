@@ -48,6 +48,7 @@
 	const REVIVAL_HERB ; 006A
 
 	const SACRED_ASH   ; 0084
+	const MYSTIC_DEW   ; 0002 -> MYSTIC_DEW, sacred ash analog for Lugia
 
 	const BERRY        ; 008E
 	const GOLD_BERRY   ; 008F
@@ -59,6 +60,14 @@
 	const ICE_BERRY    ; 0040
 	const BITTER_BERRY ; 0043
 	const MINT_BERRY   ; 0044
+
+	const ATK_UP_BERRY ; 0083 - ATK_UP_BERRY, HELD_ATTACK_UP
+	const DEF_UP_BERRY ; 0086 - DEF_UP_BERRY, HELD_DEFENSE_UP
+	const SPD_UP_BERRY ; 008C - SPD_UP_BERRY, HELD_SPEED_UP
+	const SPA_UP_BERRY ; 0090 - SPA_UP_BERRY, HELD_SP_ATTACK_UP
+	const SPF_UP_BERRY ; 0091 - SPF_UP_BERRY, HELD_SP_DEFENSE_UP
+	const ACC_UP_BERRY ; 009C - ACC_UP_BERRY, HELD_ACCURACY_UP
+	const EVN_UP_BERRY ; 009D - EVN_UP_BERRY, HELD_EVASION_UP
 
 	const BERRY_JUICE  ; 0073
 
@@ -127,6 +136,9 @@
 
 	const DRAGON_SCALE ; 007F
 	const UP_GRADE     ; 008D
+	const RAZOR_CLAW   ; 0081 - RAZOR_CLAW
+	const DUBIOUS_DISC ; 009E - DUBIOUS_DISC
+	const PROTECTOR    ; 009F - PROTECTOR
 
 	const SILVER_LEAF  ; 0033
 	const GOLD_LEAF    ; 003B
@@ -162,6 +174,26 @@
 	const BLUESKY_MAIL ; 0099
 	const MUSIC_MAIL   ; 009A
 	const MIRAGE_MAIL  ; 009B
+
+	const POISON_GUARD ; 0014 - POISON_GUARD
+	const BURN_GUARD   ; 0028 - BURN_GUARD
+	const FREEZE_GUARD ; 002D - FREEZE_GUARD
+	const SLEEP_GUARD  ; 004A - SLEEP_GUARD
+	const PARLYZ_GUARD ; 0054 - PARLYZ_GUARD
+	const CONFUSEGUARD ; 0066 - CONFUSEGUARD
+
+	const DAMP_ROCK   ; 0075 - DAMP_ROCK, extend rain
+	const HEAT_ROCK   ; 0076 - HEAT_ROCK, extend sun
+	const SMOOTH_ROCK ; 0079 - SMOOTH_ROCK, extend sand
+	const ICY_ROCK    ; 007B - ICY_ROCK, extend hail
+
+	const LIGHT_CLAY   ; 007C - LIGHT_CLAY, extend barriers
+	const GRIP_CLAW    ; 007D - GRIP_CLAW, extend trap duration
+
+	const SAFARI_LURE  ; 0082 - SAFARI_LURE, increase catch chance w/ HELD_CATCH_CHANCE
+
+	const RADIANCE_ORB ; 0070 - LEGENDS_AURA -> RADIANCE_ORB, mass stats buff
+
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.
