@@ -30,7 +30,6 @@ ItemEffects:
 
 ItemEffects1:
 	dw NoEffect            ; BRIGHTPOWDER
-	dw TownMapEffect       ; TOWN_MAP
 	dw EvoStoneEffect      ; MOON_STONE
 	dw StatusHealingEffect ; ANTIDOTE
 	dw StatusHealingEffect ; BURN_HEAL
@@ -1160,9 +1159,6 @@ AskGiveNicknameText:
 
 ReturnToBattle_UseBall:
 	farjp _ReturnToBattle_UseBall
-
-TownMapEffect:
-	farjp PokegearMap
 
 BicycleEffect:
 	jmp BikeFunction

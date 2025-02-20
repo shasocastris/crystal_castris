@@ -10,7 +10,6 @@ ItemDescriptions:
 ItemDescriptions1:
 ; entries correspond to item ids (see constants/item_constants.asm)
 	dw BrightpowderDesc ; 0001
-	dw QuestionMarkDesc ; 0002
 	dw MoonStoneDesc    ; 0003
 	dw AntidoteDesc     ; 0004
 	dw BurnHealDesc     ; 0005

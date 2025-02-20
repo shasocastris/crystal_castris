@@ -1,7 +1,6 @@
 ItemNames::
 	list_start ItemNames
 	li "BRIGHTPOWDER" ; 0001
-	li "TERU-SAMA"    ; 0002
 	li "MOON STONE"   ; 0003
 	li "ANTIDOTE"     ; 0004
 	li "BURN HEAL"    ; 0005
