@@ -107,9 +107,10 @@ MartGoldenrod2F2:
 	dw FLOWER_MAIL
 
 MartGoldenrod3F:
-	db 7 ; # items
+	db 8 ; # items
 	dw X_SPEED
-	dw X_SPECIAL
+	dw X_SP_ATK
+	dw X_SP_DEF
 	dw X_DEFEND
 	dw X_ATTACK
 	dw DIRE_HIT
@@ -312,14 +313,15 @@ MartCeladon5F1:
 	dw ZINC
 
 MartCeladon5F2:
-	db 7 ; # items
+	db 8 ; # items
 	dw X_ACCURACY
 	dw GUARD_SPEC
 	dw DIRE_HIT
 	dw X_ATTACK
 	dw X_DEFEND
 	dw X_SPEED
-	dw X_SPECIAL
+	dw X_SP_ATK
+	dw X_SP_DEF
 
 MartFuchsia:
 	db 7 ; # items

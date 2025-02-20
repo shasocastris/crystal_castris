@@ -28,7 +28,7 @@ ItemDescriptions1:
 	dw FireStoneDesc    ; 0011
 	dw ThunderStoneDesc ; 0012
 	dw WaterStoneDesc   ; 0013
-	dw QuestionMarkDesc ; 0014
+	dw XSpDefenseDesc   ; 0014
 	dw HPUpDesc         ; 0015
 	dw ProteinDesc      ; 0016
 	dw IronDesc         ; 0017
@@ -56,7 +56,7 @@ ItemDescriptions1:
 	dw QuestionMarkDesc ; 002D
 	dw XDefendDesc      ; 002E
 	dw XSpeedDesc       ; 002F
-	dw XSpecialDesc     ; 0030
+	dw XSpAttackDesc    ; 0030
 	dw QuestionMarkDesc ; 0031
 	dw ExpShareDesc     ; 0032
 	dw SilverLeafDesc   ; 0033
@@ -402,9 +402,13 @@ XSpeedDesc:
 	db   "Raises SPEED."
 	next "(1 BTL)@"
 
-XSpecialDesc:
+XSpAttackDesc:
 	db   "Raises SPECIAL"
 	next "ATTACK. (1 BTL)@"
+
+XSpDefenseDesc:
+	db   "Raises SPECIAL"
+	next "DEFENSE. (1 BTL)@"
 
 CoinCaseDesc:
 	db   "Holds up to 9,999"

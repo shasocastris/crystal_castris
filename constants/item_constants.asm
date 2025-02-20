@@ -25,7 +25,7 @@
 	const FIRE_STONE   ; 0011
 	const THUNDERSTONE ; 0012
 	const WATER_STONE  ; 0013
-	const ITEM_19      ; 0014
+	const X_SP_DEF     ; 0014
 	const HP_UP        ; 0015
 	const PROTEIN      ; 0016
 	const IRON         ; 0017
@@ -53,7 +53,7 @@
 	const ITEM_32      ; 002D
 	const X_DEFEND     ; 002E
 	const X_SPEED      ; 002F
-	const X_SPECIAL    ; 0030
+	const X_SP_ATK     ; 0030
 	const POKE_FLUTE   ; 0031
 	const EXP_SHARE    ; 0032
 	const SILVER_LEAF  ; 0033

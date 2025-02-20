@@ -19,7 +19,7 @@ ItemNames::
 	li "FIRE STONE"   ; 0011
 	li "THUNDERSTONE" ; 0012
 	li "WATER STONE"  ; 0013
-	li "TERU-SAMA"    ; 0014
+	li "X SP DEF"     ; 0014
 	li "HP UP"        ; 0015
 	li "PROTEIN"      ; 0016
 	li "IRON"         ; 0017
@@ -47,7 +47,7 @@ ItemNames::
 	li "TERU-SAMA"    ; 002D
 	li "X DEFEND"     ; 002E
 	li "X SPEED"      ; 002F
-	li "X SPECIAL"    ; 0030
+	li "X SP ATK"     ; 0030
 	li "TERU-SAMA"    ; 0031
 	li "EXP.SHARE"    ; 0032
 	li "SILVER LEAF"  ; 0033

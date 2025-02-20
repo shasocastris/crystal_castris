@@ -292,7 +292,8 @@ AI_Items:
 	dw X_ATTACK,     .XAttack
 	dw X_DEFEND,     .XDefend
 	dw X_SPEED,      .XSpeed
-	dw X_SPECIAL,    .XSpecial
+	dw X_SP_ATK,     .XSpAttack
+	dw X_SP_DEF,     .XSpDefense
 	dw -1 ; end
 
 .FullHeal:
@@ -404,7 +405,7 @@ AI_Items:
 
 .Potion:
 	call .HealItem
-	jr c, .DontUse
+	jmp c, .DontUse
 	ld b, 20
 	call EnemyUsedPotion
 	jr .Use
@@ -445,10 +446,16 @@ AI_Items:
 	call EnemyUsedXSpeed
 	jr .Use
 
-.XSpecial:
+.XSpAttack:
 	call .XItem
 	jr c, .DontUse
-	call EnemyUsedXSpecial
+	call EnemyUsedXSpAttack
+	jr .Use
+
+.XSpDefense:
+	call .XItem
+	jr c, .DontUse
+	call EnemyUsedXSpDefense
 	jr .Use
 
 .XItem:
@@ -765,10 +772,17 @@ EnemyUsedXSpeed:
 	pop hl
 	jr EnemyUsedXItem
 
-EnemyUsedXSpecial:
+EnemyUsedXSpAttack:
 	ld b, SP_ATTACK
 	push hl
-	ld hl, X_SPECIAL
+	ld hl, X_SP_ATK
+	call GetItemIDFromIndex
+	pop hl
+
+EnemyUsedXSpDefense:
+	ld b, SP_DEFENSE
+	push hl
+	ld hl, X_SP_DEF
 	call GetItemIDFromIndex
 	pop hl
 

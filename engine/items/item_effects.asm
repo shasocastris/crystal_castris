@@ -48,7 +48,7 @@ ItemEffects1:
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
-	dw NoEffect            ; ITEM_19
+	dw XItemEffect         ; X_SP_DEF
 	dw VitaminEffect       ; HP_UP
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
@@ -76,7 +76,7 @@ ItemEffects1:
 	dw NoEffect            ; ITEM_32
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
-	dw XItemEffect         ; X_SPECIAL
+	dw XItemEffect         ; X_SP_ATK
 	dw PokeFluteEffect     ; POKE_FLUTE
 	dw NoEffect            ; EXP_SHARE
 	dw NoEffect            ; SILVER_LEAF
