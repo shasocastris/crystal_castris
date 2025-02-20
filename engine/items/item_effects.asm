@@ -76,7 +76,6 @@ ItemEffects1:
 	dw XItemEffect         ; X_DEFEND
 	dw XItemEffect         ; X_SPEED
 	dw XItemEffect         ; X_SP_ATK
-	dw PokeFluteEffect     ; POKE_FLUTE
 	dw NoEffect            ; EXP_SHARE
 	dw NoEffect            ; SILVER_LEAF
 	dw RestorePPEffect     ; PP_UP
@@ -212,6 +211,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; PASS
 	dw SquirtbottleEffect ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
+	dw PokeFluteEffect    ; POKE_FLUTE
 .IndirectEnd:
 
 ItemEffectsBalls:

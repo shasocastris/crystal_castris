@@ -47,7 +47,6 @@ ItemNames::
 	li "X DEFEND"     ; 002E
 	li "X SPEED"      ; 002F
 	li "X SP ATK"     ; 0030
-	li "TERU-SAMA"    ; 0031
 	li "EXP.SHARE"    ; 0032
 	li "SILVER LEAF"  ; 0033
 	li "PP UP"        ; 0034
@@ -184,6 +183,7 @@ KeyItemNames::
 	li "PASS"         ; 0113
 	li "SQUIRTBOTTLE" ; 0114
 	li "RAINBOW WING" ; 0115
+	li "POKé FLUTE"   ; 0031
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

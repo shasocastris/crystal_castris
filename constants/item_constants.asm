@@ -53,7 +53,6 @@
 	const X_DEFEND     ; 002E
 	const X_SPEED      ; 002F
 	const X_SP_ATK     ; 0030
-	const POKE_FLUTE   ; 0031
 	const EXP_SHARE    ; 0032
 	const SILVER_LEAF  ; 0033
 	const PP_UP        ; 0034
@@ -190,6 +189,7 @@ DEF FIRST_KEY_ITEM EQU const_value
 	const PASS         ; 0113
 	const SQUIRTBOTTLE ; 0114
 	const RAINBOW_WING ; 0115
+	const POKE_FLUTE   ; 0031
 DEF NUM_KEY_ITEM_POCKET EQU const_value - FIRST_KEY_ITEM
 assert NUM_KEY_ITEM_POCKET <= $ff
 

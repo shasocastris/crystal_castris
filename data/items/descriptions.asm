@@ -56,7 +56,6 @@ ItemDescriptions1:
 	dw XDefendDesc      ; 002E
 	dw XSpeedDesc       ; 002F
 	dw XSpAttackDesc    ; 0030
-	dw QuestionMarkDesc ; 0031
 	dw ExpShareDesc     ; 0032
 	dw SilverLeafDesc   ; 0033
 	dw PPUpDesc         ; 0034
@@ -192,6 +191,7 @@ ItemDescriptionsKeyItems:
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
+	dw PokeFluteDesc    ; 0031 -> POKE_FLUTE
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -734,6 +734,10 @@ MetalCoatDesc:
 DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
+
+PokeFluteDesc:
+	db   "Plays a pleasant"
+	next "melody.@"
 
 LeftoversDesc:
 	db   "Restores HP during"
