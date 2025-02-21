@@ -1,48 +1,48 @@
 ItemNames::
 	list_start ItemNames
-	li "POTION"       ; 000D
-	li "SUPER POTION" ; 000C
-	li "HYPER POTION" ; 000B
-	li "MAX POTION"   ; 000A
+	li "POTION"       ; 0001
+	li "SUPER POTION" ; 0002
+	li "HYPER POTION" ; 0003
+	li "MAX POTION"   ; 0004
 
-	li "ANTIDOTE"     ; 0004
-	li "BURN HEAL"    ; 0005
-	li "PARLYZ HEAL"  ; 0008
-	li "AWAKENING"    ; 0007
-	li "ICE HEAL"     ; 0006
-	li "FULL HEAL"    ; 0021
-	li "FULL RESTORE" ; 0009
+	li "ANTIDOTE"     ; 0005
+	li "BURN HEAL"    ; 0006
+	li "PARLYZ HEAL"  ; 0007
+	li "AWAKENING"    ; 0008
+	li "ICE HEAL"     ; 0009
+	li "FULL HEAL"    ; 000A
+	li "FULL RESTORE" ; 000B
 
-	li "REVIVE"       ; 0022
-	li "MAX REVIVE"   ; 0023
+	li "REVIVE"       ; 000C
+	li "MAX REVIVE"   ; 000D
 
-	li "ETHER"        ; 0035
-	li "MAX ETHER"    ; 0036
-	li "ELIXER"       ; 0037
-	li "MAX ELIXER"   ; 0010
+	li "ETHER"        ; 000E
+	li "MAX ETHER"    ; 000F
+	li "ELIXER"       ; 0010
+	li "MAX ELIXER"   ; 0011
 
-	li "HP UP"        ; 0015
-	li "PROTEIN"      ; 0016
-	li "IRON"         ; 0017
-	li "CARBOS"       ; 0018
-	li "CALCIUM"      ; 001A
-	li "ZINC"         ; 0071
-	li "RARE CANDY"   ; 001B
-	li "PP UP"        ; 0034
+	li "HP UP"        ; 0012
+	li "PROTEIN"      ; 0013
+	li "IRON"         ; 0014
+	li "CARBOS"       ; 0015
+	li "CALCIUM"      ; 0016
+	li "ZINC"         ; 0017
+	li "RARE CANDY"   ; 0018
+	li "PP UP"        ; 0019
 
-	li "FRESH WATER"  ; 0029
-	li "SODA POP"     ; 002A
-	li "LEMONADE"     ; 002B
-	li "MOOMOO MILK"  ; 0038
-	li "RAGECANDYBAR" ; 0062
+	li "FRESH WATER"  ; 001A
+	li "SODA POP"     ; 001B
+	li "LEMONADE"     ; 001C
+	li "MOOMOO MILK"  ; 001D
+	li "RAGECANDYBAR" ; 001E
 
-	li "ENERGYPOWDER" ; 0067
-	li "ENERGY ROOT"  ; 0068
-	li "HEAL POWDER"  ; 0069
-	li "REVIVAL HERB" ; 006A
+	li "ENERGYPOWDER" ; 001F
+	li "ENERGY ROOT"  ; 0020
+	li "HEAL POWDER"  ; 0021
+	li "REVIVAL HERB" ; 0022
 
-	li "SACRED ASH"   ; 0084
-	li "MYSTIC DEW"   ; 0002
+	li "SACRED ASH"   ; 0023
+	li "MYSTIC DEW"   ; 0024
 
 	li "BERRY"        ; 008E
 	li "GOLD BERRY"   ; 008F
@@ -63,89 +63,88 @@ ItemNames::
 	li "ACC UP BERRY" ; 009C
 	li "EVN UP BERRY" ; 009D
 
-	li "BERRY JUICE"  ; 0073
+	li "BERRY JUICE"  ; 0025
 
-	li "REPEL"        ; 000F
-	li "SUPER REPEL"  ; 0025
-	li "MAX REPEL"    ; 0026
+	li "REPEL"        ; 0026
+	li "SUPER REPEL"  ; 0027
+	li "MAX REPEL"    ; 0028
 
-	li "ESCAPE ROPE"  ; 000E
-	li "POKé DOLL"    ; 0020 VWF can't print "# DOLL"
+	li "ESCAPE ROPE"  ; 0029
+	li "POKé DOLL"    ; 002A VWF can't print "# DOLL"
 
-	li "X ATTACK"     ; 002C
-	li "X DEFEND"     ; 002E
-	li "X SPEED"      ; 002F
-	li "X SP ATK"     ; 0030
-	li "X SP DEF"     ; 006F
-	li "X ACCURACY"   ; 001C
-	li "GUARD SPEC."  ; 0024
-	li "DIRE HIT"     ; 0027
+	li "X ATTACK"     ; 002B
+	li "X DEFEND"     ; 002C
+	li "X SPEED"      ; 002D
+	li "X SP ATK"     ; 002E
+	li "X SP DEF"     ; 002F
+	li "X ACCURACY"   ; 0030
+	li "GUARD SPEC."  ; 0031
+	li "DIRE HIT"     ; 0032
 
-	li "LEAF STONE"   ; 001D
-	li "FIRE STONE"   ; 0011
-	li "WATER STONE"  ; 0013
-	li "THUNDERSTONE" ; 0012
-	li "MOON STONE"   ; 0003
-	li "SUN STONE"    ; 008A
-	li "MIST STONE"   ; 0060
+	li "LEAF STONE"   ; 0033
+	li "FIRE STONE"   ; 0034
+	li "WATER STONE"  ; 0035
+	li "THUNDERSTONE" ; 0036
+	li "MOON STONE"   ; 0037
+	li "SUN STONE"    ; 0038
+	li "MIST STONE"   ; 0039
 
-	li "EXP.SHARE"    ; 0032
+	li "EXP.SHARE"    ; 003A
 
-	li "MIRACLE SEED" ; 0063
-	li "SILVERPOWDER" ; 0048
-	li "POISON BARB"  ; 0041
-	li "CHARCOAL"     ; 0072
-	li "MYSTIC WATER" ; 004F
-	li "NEVERMELTICE" ; 005B
-	li "MAGNET"       ; 005C
-	li "BLACKBELT"    ; 0052
-	li "HARD STONE"   ; 006B
-	li "SOFT SAND"    ; 003C
-	li "TWISTEDSPOON" ; 0050
-	li "PINK BOW"     ; 0058
-	li "POLKADOT BOW" ; 008B
-	li "SHARP BEAK"   ; 003D
-	li "SPELL TAG"    ; 0061
-	li "BLACKGLASSES" ; 0056
-	li "METAL COAT"   ; 0077
-	li "DRAGON FANG"  ; 0078
+	li "MIRACLE SEED" ; 003B
+	li "SILVERPOWDER" ; 003C
+	li "POISON BARB"  ; 003D
+	li "CHARCOAL"     ; 003E
+	li "MYSTIC WATER" ; 003F
+	li "NEVERMELTICE" ; 0040
+	li "MAGNET"       ; 0041
+	li "BLACKBELT"    ; 0042
+	li "HARD STONE"   ; 0043
+	li "SOFT SAND"    ; 0044
+	li "TWISTEDSPOON" ; 0045
+	li "PINK BOW"     ; 0046
+	li "POLKADOT BOW" ; 0047
+	li "SHARP BEAK"   ; 0048
+	li "SPELL TAG"    ; 0049
+	li "BLACKGLASSES" ; 004A
+	li "METAL COAT"   ; 004B
+	li "DRAGON FANG"  ; 004C
 
-	li "BERSERK GENE" ; 0080
-	li "BRIGHTPOWDER" ; 0001
-	li "QUICK CLAW"   ; 0039
-	li "KING'S ROCK"  ; 0042
-	li "AMULET COIN"  ; 004B
-	li "CLEANSE TAG"  ; 004E
-	li "SMOKE BALL"   ; 005A
-	li "FOCUS BAND"   ; 0065
-	li "LUCKY EGG"    ; 006C
-	li "LEFTOVERS"    ; 007A
-	li "SCOPE LENS"   ; 0074
-
-	li "LIGHT BALL"   ; 0087
+	li "BERSERK GENE" ; 004D
+	li "BRIGHTPOWDER" ; 004E
+	li "QUICK CLAW"   ; 004F
+	li "KING'S ROCK"  ; 0050
+	li "AMULET COIN"  ; 0051
+	li "CLEANSE TAG"  ; 0052
+	li "SMOKE BALL"   ; 0053
+	li "FOCUS BAND"   ; 0054
+	li "LUCKY EGG"    ; 0055
+	li "LEFTOVERS"    ; 0056
+	li "SCOPE LENS"   ; 0057
+	li "LIGHT BALL"   ; 0058
 	li "STICK"        ; 0059
-	li "THICK CLUB"   ; 0064
-	li "LUCKY PUNCH"  ; 0019
-	li "METAL POWDER" ; 001E
+	li "THICK CLUB"   ; 005A
+	li "LUCKY PUNCH"  ; 005B
+	li "METAL POWDER" ; 005C
 
-	li "DRAGON SCALE" ; 007F
-	li "UP-GRADE"     ; 008D
-	li "RAZOR CLAW"   ; 0081
-	li "DUBIOUS DISC" ; 009E
-	li "PROTECTOR"    ; 009F
+	li "DRAGON SCALE" ; 005D
+	li "UP-GRADE"     ; 005E
+	li "RAZOR CLAW"   ; 005F
+	li "DUBIOUS DISC" ; 0060
+	li "PROTECTOR"    ; 0061
 
-	li "SILVER LEAF"  ; 0033
-	li "GOLD LEAF"    ; 003B
+	li "SILVER LEAF"  ; 0062
+	li "GOLD LEAF"    ; 0063
 
-	li "NUGGET"       ; 001F
-	li "TINYMUSHROOM" ; 0046
-	li "BIG MUSHROOM" ; 0047
-	li "PEARL"        ; 005E
-	li "BIG PEARL"    ; 005F
-	li "STARDUST"     ; 006D
-	li "STAR PIECE"   ; 006E
-	li "BRICK PIECE"  ; 0092
-	li "SLOWPOKETAIL" ; 0057
+	li "NUGGET"       ; 0064
+	li "TINYMUSHROOM" ; 0065
+	li "BIG MUSHROOM" ; 0066
+	li "PEARL"        ; 0067
+	li "BIG PEARL"    ; 0068
+	li "STARDUST"     ; 0069
+	li "STAR PIECE"   ; 006A
+	li "BRICK PIECE"  ; 006B
+	li "SLOWPOKETAIL" ; 006C
 
 	li "WHT APRICORN" ; 0051
 	li "RED APRICORN" ; 0045
@@ -155,38 +154,38 @@ ItemNames::
 	li "GRN APRICORN" ; 004D
 	li "PNK APRICORN" ; 0055
 
-	li "NORMAL BOX"   ; 0088
-	li "GORGEOUS BOX" ; 0089
+	li "NORMAL BOX"   ; 006D
+	li "GORGEOUS BOX" ; 006E
 
-	li "FLOWER MAIL"  ; 0085
-	li "SURF MAIL"    ; 0093
-	li "LITEBLUEMAIL" ; 0094
-	li "PORTRAITMAIL" ; 0095
-	li "LOVELY MAIL"  ; 0096
-	li "EON MAIL"     ; 0097
-	li "MORPH MAIL"   ; 0098
-	li "BLUESKY MAIL" ; 0099
-	li "MUSIC MAIL"   ; 009A
-	li "MIRAGE MAIL"  ; 009B
+	li "FLOWER MAIL"  ; 006F
+	li "SURF MAIL"    ; 0070
+	li "LITEBLUEMAIL" ; 0071
+	li "PORTRAITMAIL" ; 0072
+	li "LOVELY MAIL"  ; 0073
+	li "EON MAIL"     ; 0074
+	li "MORPH MAIL"   ; 0075
+	li "BLUESKY MAIL" ; 0076
+	li "MUSIC MAIL"   ; 0077
+	li "MIRAGE MAIL"  ; 0078
 
-	li "POISON GUARD" ; 0014
-	li "BURN GUARD"   ; 0028
-	li "FREEZE GUARD" ; 002D
-	li "SLEEP GUARD"  ; 004A
-	li "PARLYZ GUARD" ; 0054
-	li "CONFUSEGUARD" ; 0066
+	li "POISON GUARD" ; 0079
+	li "BURN GUARD"   ; 007A
+	li "FREEZE GUARD" ; 007B
+	li "SLEEP GUARD"  ; 007C
+	li "PARLYZ GUARD" ; 007D
+	li "CONFUSEGUARD" ; 007E
 
-	li "DAMP ROCK"    ; 0075
-	li "HEAT ROCK"    ; 0076
-	li "SMOOTH ROCK"  ; 0079
-	li "ICY ROCK"     ; 007B
+	li "DAMP ROCK"    ; 007F
+	li "HEAT ROCK"    ; 0080
+	li "SMOOTH ROCK"  ; 0081
+	li "ICY ROCK"     ; 0082
 
-	li "LIGHT CLAY"   ; 007C
-	li "GRIP CLAW"    ; 007D
+	li "LIGHT CLAY"   ; 0083
+	li "GRIP CLAW"    ; 0084
 
-	li "SAFARI LURE"  ; 0082
+	li "SAFARI LURE"  ; 0085
 
-	li "RADIANCE ORB" ; 0070
+	li "RADIANCE ORB" ; 0086
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::
@@ -213,7 +212,7 @@ KeyItemNames::
 	li "PASS"         ; 0113
 	li "SQUIRTBOTTLE" ; 0114
 	li "RAINBOW WING" ; 0115
-	li "POKé FLUTE"   ; 0031
+	li "POKé FLUTE"   ; 0116
 	assert_list_length NUM_KEY_ITEM_POCKET
 
 BallNames::

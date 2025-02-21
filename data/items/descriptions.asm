@@ -9,49 +9,49 @@ ItemDescriptions:
 
 ItemDescriptions1:
 ; entries correspond to item ids (see constants/item_constants.asm)
-	dw PotionDesc       ; 000D
-	dw SuperPotionDesc  ; 000C
-	dw HyperPotionDesc  ; 000B
-	dw MaxPotionDesc    ; 000A
+	dw PotionDesc       ; 0001
+	dw SuperPotionDesc  ; 0002
+	dw HyperPotionDesc  ; 0003
+	dw MaxPotionDesc    ; 0004
 
-	dw AntidoteDesc     ; 0004
-	dw BurnHealDesc     ; 0005
-	dw ParlyzHealDesc   ; 0008
-	dw AwakeningDesc    ; 0007
-	dw IceHealDesc      ; 0006
-	dw FullHealDesc     ; 0021
-	dw FullRestoreDesc  ; 0009
+	dw AntidoteDesc     ; 0005
+	dw BurnHealDesc     ; 0006
+	dw ParlyzHealDesc   ; 0007
+	dw AwakeningDesc    ; 0008
+	dw IceHealDesc      ; 0009
+	dw FullHealDesc     ; 000A
+	dw FullRestoreDesc  ; 000B
 
-	dw ReviveDesc       ; 0022
-	dw MaxReviveDesc    ; 0023
+	dw ReviveDesc       ; 000C
+	dw MaxReviveDesc    ; 000D
 
-	dw EtherDesc        ; 0035
-	dw MaxEtherDesc     ; 0036
-	dw ElixerDesc       ; 0037
-	dw MaxElixerDesc    ; 0010
+	dw EtherDesc        ; 000E
+	dw MaxEtherDesc     ; 000F
+	dw ElixerDesc       ; 0010
+	dw MaxElixerDesc    ; 0011
 
-	dw HPUpDesc         ; 0015
-	dw ProteinDesc      ; 0016
-	dw IronDesc         ; 0017
-	dw CarbosDesc       ; 0018
-	dw CalciumDesc      ; 001A
-	dw ZincDesc         ; 0071
-	dw RareCandyDesc    ; 001B
-	dw PPUpDesc         ; 0034
+	dw HPUpDesc         ; 0012
+	dw ProteinDesc      ; 0013
+	dw IronDesc         ; 0014
+	dw CarbosDesc       ; 0015
+	dw CalciumDesc      ; 0016
+	dw ZincDesc         ; 0017
+	dw RareCandyDesc    ; 0018
+	dw PPUpDesc         ; 0019
 
-	dw FreshWaterDesc   ; 0029
-	dw SodaPopDesc      ; 002A
-	dw LemonadeDesc     ; 002B
-	dw MoomooMilkDesc   ; 0038
-	dw RageCandyBarDesc ; 0062
+	dw FreshWaterDesc   ; 001A
+	dw SodaPopDesc      ; 001B
+	dw LemonadeDesc     ; 001C
+	dw MoomooMilkDesc   ; 001D
+	dw RageCandyBarDesc ; 001E
 
-	dw EnergyPowderDesc ; 0067
-	dw EnergyRootDesc   ; 0068
-	dw HealPowderDesc   ; 0069
-	dw RevivalHerbDesc  ; 006A
+	dw EnergyPowderDesc ; 001F
+	dw EnergyRootDesc   ; 0020
+	dw HealPowderDesc   ; 0021
+	dw RevivalHerbDesc  ; 0022
 
-	dw SacredAshDesc    ; 0084
-	dw MysticDewDesc    ; 0002 -> MYSTIC_DEW
+	dw SacredAshDesc    ; 0023
+	dw MysticDewDesc    ; 0024
 
 	dw BerryDesc        ; 008E
 	dw GoldBerryDesc    ; 008F
@@ -72,89 +72,89 @@ ItemDescriptions1:
 	dw AccuracyUpBerryDesc  ; 009C -> ACC_UP_BERRY
 	dw EvasionUpBerryDesc   ; 009D -> EVN_UP_BERRY
 
-	dw BerryJuiceDesc   ; 0073
+	dw BerryJuiceDesc   ; 0025
 
-	dw RepelDesc        ; 000F
-	dw SuperRepelDesc   ; 0025
-	dw MaxRepelDesc     ; 0026
+	dw RepelDesc        ; 0026
+	dw SuperRepelDesc   ; 0027
+	dw MaxRepelDesc     ; 0028
 
-	dw EscapeRopeDesc   ; 000E
-	dw PokeDollDesc     ; 0020
+	dw EscapeRopeDesc   ; 0029
+	dw PokeDollDesc     ; 002A
 
-	dw XAttackDesc      ; 002C
-	dw XDefendDesc      ; 002E
-	dw XSpeedDesc       ; 002F
-	dw XSpAttackDesc    ; 0030
-	dw XSpDefenseDesc   ; 006F -> X_SP_DEF
-	dw XAccuracyDesc    ; 001C
-	dw GuardSpecDesc    ; 0024
-	dw DireHitDesc      ; 0027
+	dw XAttackDesc      ; 002B
+	dw XDefendDesc      ; 002C
+	dw XSpeedDesc       ; 002D
+	dw XSpAttackDesc    ; 002E
+	dw XSpDefenseDesc   ; 002F
+	dw XAccuracyDesc    ; 0030
+	dw GuardSpecDesc    ; 0031
+	dw DireHitDesc      ; 0032
 
-	dw LeafStoneDesc    ; 001D
-	dw FireStoneDesc    ; 0011
-	dw WaterStoneDesc   ; 0013
-	dw ThunderStoneDesc ; 0012
-	dw MoonStoneDesc    ; 0003
-	dw SunStoneDesc     ; 008A
-	dw MistStoneDesc    ; 0060
+	dw LeafStoneDesc    ; 0033
+	dw FireStoneDesc    ; 0034
+	dw WaterStoneDesc   ; 0035
+	dw ThunderStoneDesc ; 0036
+	dw MoonStoneDesc    ; 0037
+	dw SunStoneDesc     ; 0038
+	dw MistStoneDesc    ; 0039
 
-	dw ExpShareDesc     ; 0032
+	dw ExpShareDesc     ; 003A
 
-	dw MiracleSeedDesc  ; 0063
-	dw SilverPowderDesc ; 0048
-	dw PoisonBarbDesc   ; 0041
-	dw CharcoalDesc     ; 0072
-	dw MysticWaterDesc  ; 004F
-	dw NeverMeltIceDesc ; 005B
-	dw MagnetDesc       ; 005C
-	dw BlackbeltDesc    ; 0052
-	dw HardStoneDesc    ; 006B
-	dw SoftSandDesc     ; 003C
-	dw TwistedSpoonDesc ; 0050
-	dw PinkBowDesc      ; 0058
-	dw PolkadotBowDesc  ; 008B
-	dw SharpBeakDesc    ; 003D
-	dw SpellTagDesc     ; 0061
-	dw BlackGlassesDesc ; 0056
-	dw MetalCoatDesc    ; 0077
-	dw DragonFangDesc   ; 0078
+	dw MiracleSeedDesc  ; 003B
+	dw SilverPowderDesc ; 003C
+	dw PoisonBarbDesc   ; 003D
+	dw CharcoalDesc     ; 003E
+	dw MysticWaterDesc  ; 003F
+	dw NeverMeltIceDesc ; 0040
+	dw MagnetDesc       ; 0041
+	dw BlackbeltDesc    ; 0042
+	dw HardStoneDesc    ; 0043
+	dw SoftSandDesc     ; 0044
+	dw TwistedSpoonDesc ; 0045
+	dw PinkBowDesc      ; 0046
+	dw PolkadotBowDesc  ; 0047
+	dw SharpBeakDesc    ; 0048
+	dw SpellTagDesc     ; 0049
+	dw BlackGlassesDesc ; 004A
+	dw MetalCoatDesc    ; 004B
+	dw DragonFangDesc   ; 004C
 
-	dw BerserkGeneDesc  ; 0080
-	dw BrightpowderDesc ; 0001
-	dw QuickClawDesc    ; 0039
-	dw KingsRockDesc    ; 0042
-	dw AmuletCoinDesc   ; 004B
-	dw CleanseTagDesc   ; 004E
-	dw SmokeBallDesc    ; 005A
-	dw FocusBandDesc    ; 0065
-	dw LuckyEggDesc     ; 006C
-	dw LeftoversDesc    ; 007A
-	dw ScopeLensDesc    ; 0074
+	dw BerserkGeneDesc  ; 004D
+	dw BrightpowderDesc ; 004E
+	dw QuickClawDesc    ; 004F
+	dw KingsRockDesc    ; 0050
+	dw AmuletCoinDesc   ; 0051
+	dw CleanseTagDesc   ; 0052
+	dw SmokeBallDesc    ; 0053
+	dw FocusBandDesc    ; 0054
+	dw LuckyEggDesc     ; 0055
+	dw LeftoversDesc    ; 0056
+	dw ScopeLensDesc    ; 0057
 
-	dw LightBallDesc    ; 0087
+	dw LightBallDesc    ; 0058
 	dw StickDesc        ; 0059
-	dw ThickClubDesc    ; 0064
-	dw LuckyPunchDesc   ; 0019
-	dw MetalPowderDesc  ; 001E
+	dw ThickClubDesc    ; 005A
+	dw LuckyPunchDesc   ; 005B
+	dw MetalPowderDesc  ; 005C
 
-	dw DragonScaleDesc  ; 007F
-	dw UpGradeDesc      ; 008D
-	dw RazorClawDesc    ; 0081 -> RAZOR_CLAW
-	dw DubiousDiscDesc  ; 009E -> DUBIOUS_DISC
-	dw ProtectorDesc    ; 009F -> PROTECTOR
+	dw DragonScaleDesc  ; 005D
+	dw UpGradeDesc      ; 005E
+	dw RazorClawDesc    ; 005F
+	dw DubiousDiscDesc  ; 0060
+	dw ProtectorDesc    ; 0061
 
-	dw SilverLeafDesc   ; 0033
-	dw GoldLeafDesc     ; 003B
+	dw SilverLeafDesc   ; 0062
+	dw GoldLeafDesc     ; 0063
 
-	dw NuggetDesc       ; 001F
-	dw TinyMushroomDesc ; 0046
-	dw BigMushroomDesc  ; 0047
-	dw PearlDesc        ; 005E
-	dw BigPearlDesc     ; 005F
-	dw StardustDesc     ; 006D
-	dw StarPieceDesc    ; 006E
-	dw BrickPieceDesc   ; 0092
-	dw SlowpokeTailDesc ; 0057
+	dw NuggetDesc       ; 0064
+	dw TinyMushroomDesc ; 0065
+	dw BigMushroomDesc  ; 0066
+	dw PearlDesc        ; 0067
+	dw BigPearlDesc     ; 0068
+	dw StardustDesc     ; 0069
+	dw StarPieceDesc    ; 006A
+	dw BrickPieceDesc   ; 006B
+	dw SlowpokeTailDesc ; 006C
 
 	dw WhtApricornDesc  ; 0051
 	dw RedApricornDesc  ; 0045
@@ -164,38 +164,38 @@ ItemDescriptions1:
 	dw GrnApricornDesc  ; 004D
 	dw PnkApricornDesc  ; 0055
 
-	dw NormalBoxDesc    ; 0088
-	dw GorgeousBoxDesc  ; 0089
+	dw NormalBoxDesc    ; 006D
+	dw GorgeousBoxDesc  ; 006E
 
-	dw FlowerMailDesc   ; 0085
-	dw SurfMailDesc     ; 0093
-	dw LiteBlueMailDesc ; 0094
-	dw PortraitMailDesc ; 0095
-	dw LovelyMailDesc   ; 0096
-	dw EonMailDesc      ; 0097
-	dw MorphMailDesc    ; 0098
-	dw BlueSkyMailDesc  ; 0099
-	dw MusicMailDesc    ; 009A
-	dw MirageMailDesc   ; 009B
+	dw FlowerMailDesc   ; 006F
+	dw SurfMailDesc     ; 0070
+	dw LiteBlueMailDesc ; 0071
+	dw PortraitMailDesc ; 0072
+	dw LovelyMailDesc   ; 0073
+	dw EonMailDesc      ; 0074
+	dw MorphMailDesc    ; 0075
+	dw BlueSkyMailDesc  ; 0076
+	dw MusicMailDesc    ; 0077
+	dw MirageMailDesc   ; 0078
 
-	dw PoisonGuardDesc  ; 0014 -> POISON_GUARD
-	dw BurnGuardDesc    ; 0028 -> BURN_GUARD
-	dw FreezeGuardDesc  ; 002D -> FREEZE_GUARD
-	dw SleepGuardDesc   ; 004A -> SLEEP_GUARD
-	dw ParlyzGuardDesc  ; 0054 -> PARLYZ_GUARD
-	dw ConfuseGuardDesc ; 0066 -> CONFUSEGUARD
+	dw PoisonGuardDesc  ; 0079
+	dw BurnGuardDesc    ; 007A
+	dw FreezeGuardDesc  ; 007B
+	dw SleepGuardDesc   ; 007C
+	dw ParlyzGuardDesc  ; 007D
+	dw ConfuseGuardDesc ; 007E
 
-	dw DampRockDesc     ; 0075 -> DAMP_ROCK
-	dw HeatRockDesc     ; 0076 -> HEAT_ROCK
-	dw SmoothRockDesc   ; 0079 -> SMOOTH_ROCK
-	dw IcyRockDesc      ; 007B -> ICY_ROCK
+	dw DampRockDesc     ; 007F
+	dw HeatRockDesc     ; 0080
+	dw SmoothRockDesc   ; 0081
+	dw IcyRockDesc      ; 0082
 
-	dw LightClayDesc    ; 007C -> LIGHT_CLAY
-	dw GripClawDesc     ; 007D -> GRIP_CLAW
+	dw LightClayDesc    ; 0083
+	dw GripClawDesc     ; 0084
 
-	dw SafariLureDesc   ; 0082 -> SAFARI_LURE
+	dw SafariLureDesc   ; 0085
 
-	dw RadianceOrbDesc  ; 0070 -> RADIANCE_ORB
+	dw RadianceOrbDesc  ; 0086
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -221,7 +221,7 @@ ItemDescriptionsKeyItems:
 	dw PassDesc         ; 0113
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
-	dw PokeFluteDesc    ; 0031 -> POKE_FLUTE
+	dw PokeFluteDesc    ; 0116
 .IndirectEnd:
 
 ItemDescriptionsBalls:
