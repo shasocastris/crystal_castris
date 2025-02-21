@@ -5,6 +5,8 @@ ItemDescriptions:
 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, ItemDescriptionsKeyItems
 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse Table
 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, ItemDescriptionsBalls
+	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse Table
+	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, ItemDescriptionsBerries
 	indirect_table_end
 
 ItemDescriptions1:
@@ -52,25 +54,6 @@ ItemDescriptions1:
 
 	dw SacredAshDesc    ; 0023
 	dw MysticDewDesc    ; 0024
-
-	dw BerryDesc        ; 008E
-	dw GoldBerryDesc    ; 008F
-	dw MysteryBerryDesc ; 007E
-	dw MiracleBerryDesc ; 005D
-	dw PsnCureBerryDesc ; 003A
-	dw PrzCureBerryDesc ; 003E
-	dw BurntBerryDesc   ; 003F
-	dw IceBerryDesc     ; 0040
-	dw BitterBerryDesc  ; 0043
-	dw MintBerryDesc    ; 0044
-
-	dw AttackUpBerryDesc    ; 0083 -> ATK_UP_BERRY
-	dw DefenseUpBerryDesc   ; 0086 -> DEF_UP_BERRY
-	dw SpeedUpBerryDesc     ; 008C -> SPD_UP_BERRY
-	dw SpAttackUpBerryDesc  ; 0090 -> SPA_UP_BERRY
-	dw SpDefenseUpBerryDesc ; 0091 -> SPF_UP_BERRY
-	dw AccuracyUpBerryDesc  ; 009C -> ACC_UP_BERRY
-	dw EvasionUpBerryDesc   ; 009D -> EVN_UP_BERRY
 
 	dw BerryJuiceDesc   ; 0025
 
@@ -156,14 +139,6 @@ ItemDescriptions1:
 	dw BrickPieceDesc   ; 006B
 	dw SlowpokeTailDesc ; 006C
 
-	dw WhtApricornDesc  ; 0051
-	dw RedApricornDesc  ; 0045
-	dw BluApricornDesc  ; 0049
-	dw BlkApricornDesc  ; 0053
-	dw YlwApricornDesc  ; 004C
-	dw GrnApricornDesc  ; 004D
-	dw PnkApricornDesc  ; 0055
-
 	dw NormalBoxDesc    ; 006D
 	dw GorgeousBoxDesc  ; 006E
 
@@ -237,6 +212,35 @@ ItemDescriptionsBalls:
 	dw MoonBallDesc   ; 0209
 	dw LoveBallDesc   ; 020A
 	dw ParkBallDesc   ; 020B
+.IndirectEnd:
+
+ItemDescriptionsBerries:
+	dw BerryDesc        ; 0300
+	dw GoldBerryDesc    ; 0301
+	dw MysteryBerryDesc ; 0302
+	dw MiracleBerryDesc ; 0303
+	dw PsnCureBerryDesc ; 0304
+	dw PrzCureBerryDesc ; 0305
+	dw BurntBerryDesc   ; 0306
+	dw IceBerryDesc     ; 0307
+	dw BitterBerryDesc  ; 0308
+	dw MintBerryDesc    ; 0309
+
+	dw AttackUpBerryDesc    ; 030A
+	dw DefenseUpBerryDesc   ; 030B
+	dw SpeedUpBerryDesc     ; 030C
+	dw SpAttackUpBerryDesc  ; 030D
+	dw SpDefenseUpBerryDesc ; 030E
+	dw AccuracyUpBerryDesc  ; 030F
+	dw EvasionUpBerryDesc   ; 0310
+
+	dw WhtApricornDesc  ; 0311
+	dw RedApricornDesc  ; 0312
+	dw BluApricornDesc  ; 0313
+	dw BlkApricornDesc  ; 0314
+	dw YlwApricornDesc  ; 0315
+	dw GrnApricornDesc  ; 0316
+	dw PnkApricornDesc  ; 0317
 .IndirectEnd:
 
 PotionDesc:
@@ -382,74 +386,6 @@ SacredAshDesc:
 MysticDewDesc:
 	db   "Fully restores HP,"
 	next "PP & status.@"
-
-BerryDesc:
-	db   "A self-restore"
-	next "item for 10HP.@"
-
-GoldBerryDesc:
-	db   "A self-restore"
-	next "item for 30HP.@"
-
-MysteryBerryDesc:
-	db   "A self-restore"
-	next "item for 5 PP.@"
-
-MiracleBerryDesc:
-	db   "Self-cure for all"
-	next "status problems.@"
-
-PsnCureBerryDesc:
-	db   "A self-cure for"
-	next "poison.@"
-
-PrzCureBerryDesc:
-	db   "A self-cure for"
-	next "paralysis.@"
-
-BurntBerryDesc:
-	db   "A self-cure for"
-	next "frostbite.@"
-
-IceBerryDesc:
-	db   "A self-heal for a"
-	next "burn.@"
-
-BitterBerryDesc:
-	db   "A self-cure for"
-	next "confusion.@"
-
-MintBerryDesc:
-	db   "A self-awakening"
-	next "for sleep.@"
-
-AttackUpBerryDesc:
-	db   "Raises Attack in"
-	next "a pinch.@"
-
-DefenseUpBerryDesc:
-	db   "Raises Defense in"
-	next "a pinch.@"
-
-SpeedUpBerryDesc:
-	db   "Raises Speed in"
-	next "a pinch.@"
-
-SpAttackUpBerryDesc:
-	db   "Raises Sp.Atk in"
-	next "a pinch.@"
-
-SpDefenseUpBerryDesc:
-	db   "Raises Sp.Def in"
-	next "a pinch.@"
-
-AccuracyUpBerryDesc:
-	db   "Raises Accuracy in"
-	next "a pinch.@"
-
-EvasionUpBerryDesc:
-	db   "Raises Evasion in"
-	next "a pinch.@"
 
 BerryJuiceDesc:
 	db   "Restores #MON"
@@ -721,29 +657,6 @@ SlowpokeTailDesc:
 	db   "Very tasty. Sell"
 	next "high.@"
 
-WhtApricornDesc:
-	db   "A white APRICORN.@"
-
-RedApricornDesc:
-	db   "A red APRICORN.@"
-
-BluApricornDesc:
-	db   "A blue APRICORN.@"
-
-BlkApricornDesc:
-	db   "A black APRICORN."
-	next "@"
-
-YlwApricornDesc:
-	db   "A yellow APRICORN.@"
-
-GrnApricornDesc:
-	db   "A green APRICORN.@"
-
-PnkApricornDesc:
-	db   "A pink APRICORN."
-	next "@"
-
 NormalBoxDesc:
 	db   "Open it and see"
 	next "what's inside.@"
@@ -986,6 +899,97 @@ LoveBallDesc:
 ParkBallDesc:
 	db   "The Bug-Catching"
 	next "Contest BALL.@"
+
+BerryDesc:
+	db   "A self-restore"
+	next "item for 10HP.@"
+
+GoldBerryDesc:
+	db   "A self-restore"
+	next "item for 30HP.@"
+
+MysteryBerryDesc:
+	db   "A self-restore"
+	next "item for 5 PP.@"
+
+MiracleBerryDesc:
+	db   "Self-cure for all"
+	next "status problems.@"
+
+PsnCureBerryDesc:
+	db   "A self-cure for"
+	next "poison.@"
+
+PrzCureBerryDesc:
+	db   "A self-cure for"
+	next "paralysis.@"
+
+BurntBerryDesc:
+	db   "A self-cure for"
+	next "frostbite.@"
+
+IceBerryDesc:
+	db   "A self-heal for a"
+	next "burn.@"
+
+BitterBerryDesc:
+	db   "A self-cure for"
+	next "confusion.@"
+
+MintBerryDesc:
+	db   "A self-awakening"
+	next "for sleep.@"
+
+AttackUpBerryDesc:
+	db   "Raises Attack in"
+	next "a pinch.@"
+
+DefenseUpBerryDesc:
+	db   "Raises Defense in"
+	next "a pinch.@"
+
+SpeedUpBerryDesc:
+	db   "Raises Speed in"
+	next "a pinch.@"
+
+SpAttackUpBerryDesc:
+	db   "Raises Sp.Atk in"
+	next "a pinch.@"
+
+SpDefenseUpBerryDesc:
+	db   "Raises Sp.Def in"
+	next "a pinch.@"
+
+AccuracyUpBerryDesc:
+	db   "Raises Accuracy in"
+	next "a pinch.@"
+
+EvasionUpBerryDesc:
+	db   "Raises Evasion in"
+	next "a pinch.@"
+
+WhtApricornDesc:
+	db   "A white APRICORN.@"
+
+RedApricornDesc:
+	db   "A red APRICORN.@"
+
+BluApricornDesc:
+	db   "A blue APRICORN.@"
+
+BlkApricornDesc:
+	db   "A black APRICORN."
+	next "@"
+
+YlwApricornDesc:
+	db   "A yellow APRICORN.@"
+
+GrnApricornDesc:
+	db   "A green APRICORN.@"
+
+PnkApricornDesc:
+	db   "A pink APRICORN."
+	next "@"
 
 QuestionMarkDesc:
 	db   "?@"

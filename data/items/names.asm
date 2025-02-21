@@ -44,25 +44,6 @@ ItemNames::
 	li "SACRED ASH"   ; 0023
 	li "MYSTIC DEW"   ; 0024
 
-	li "BERRY"        ; 008E
-	li "GOLD BERRY"   ; 008F
-	li "MYSTERYBERRY" ; 007E
-	li "MIRACLEBERRY" ; 005D
-	li "PSNCUREBERRY" ; 003A
-	li "PRZCUREBERRY" ; 003E
-	li "BURNT BERRY"  ; 003F
-	li "ICE BERRY"    ; 0040
-	li "BITTER BERRY" ; 0043
-	li "MINT BERRY"   ; 0044
-
-	li "ATK UP BERRY" ; 0083
-	li "DEF UP BERRY" ; 0086
-	li "SPD UP BERRY" ; 008C
-	li "SPA UP BERRY" ; 0090
-	li "SPF UP BERRY" ; 0091
-	li "ACC UP BERRY" ; 009C
-	li "EVN UP BERRY" ; 009D
-
 	li "BERRY JUICE"  ; 0025
 
 	li "REPEL"        ; 0026
@@ -146,14 +127,6 @@ ItemNames::
 	li "BRICK PIECE"  ; 006B
 	li "SLOWPOKETAIL" ; 006C
 
-	li "WHT APRICORN" ; 0051
-	li "RED APRICORN" ; 0045
-	li "BLU APRICORN" ; 0049
-	li "BLK APRICORN" ; 0053
-	li "YLW APRICORN" ; 004C
-	li "GRN APRICORN" ; 004D
-	li "PNK APRICORN" ; 0055
-
 	li "NORMAL BOX"   ; 006D
 	li "GORGEOUS BOX" ; 006E
 
@@ -230,3 +203,33 @@ BallNames::
 	li "LOVE BALL"   ; 020A
 	li "PARK BALL"   ; 020B
 	assert_list_length NUM_BALL_ITEM_POCKET
+
+BerryNames::
+	list_start BerryNames
+	li "BERRY"        ; 0300
+	li "GOLD BERRY"   ; 0301
+	li "MYSTERYBERRY" ; 0302
+	li "MIRACLEBERRY" ; 0303
+	li "PSNCUREBERRY" ; 0304
+	li "PRZCUREBERRY" ; 0305
+	li "BURNT BERRY"  ; 0306
+	li "ICE BERRY"    ; 0307
+	li "BITTER BERRY" ; 0308
+	li "MINT BERRY"   ; 0309
+
+	li "ATK UP BERRY" ; 030A
+	li "DEF UP BERRY" ; 030B
+	li "SPD UP BERRY" ; 030C
+	li "SPA UP BERRY" ; 030D
+	li "SPF UP BERRY" ; 030E
+	li "ACC UP BERRY" ; 030F
+	li "EVN UP BERRY" ; 0310
+
+	li "WHT APRICORN" ; 0311
+	li "RED APRICORN" ; 0312
+	li "BLU APRICORN" ; 0313
+	li "BLK APRICORN" ; 0314
+	li "YLW APRICORN" ; 0315
+	li "GRN APRICORN" ; 0316
+	li "PNK APRICORN" ; 0317
+	assert_list_length NUM_BERRY_ITEM_POCKET

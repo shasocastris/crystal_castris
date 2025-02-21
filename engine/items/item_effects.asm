@@ -26,6 +26,8 @@ ItemEffects:
 	indirect_entries (FIRST_KEY_ITEM - 1) + NUM_KEY_ITEM_POCKET, ItemEffectsKeyItems
 	indirect_entries FIRST_BALL_ITEM - 1 ; sparse table
 	indirect_entries (FIRST_BALL_ITEM - 1) + NUM_BALL_ITEM_POCKET, ItemEffectsBalls
+	indirect_entries FIRST_BERRY_ITEM - 1 ; sparse table
+	indirect_entries (FIRST_BERRY_ITEM - 1) + NUM_BERRY_ITEM_POCKET, ItemEffectsBerries
 	indirect_table_end
 
 ItemEffects1:
@@ -72,25 +74,6 @@ ItemEffects1:
 
 	dw SacredAshEffect     ; SACRED_ASH
 	dw SacredAshEffect     ; MYSTIC_DEW
-
-	dw RestoreHPEffect     ; BERRY
-	dw RestoreHPEffect     ; GOLD_BERRY
-	dw RestorePPEffect     ; MYSTERYBERRY
-	dw StatusHealingEffect ; MIRACLEBERRY
-	dw StatusHealingEffect ; PSNCUREBERRY
-	dw StatusHealingEffect ; PRZCUREBERRY
-	dw StatusHealingEffect ; BURNT_BERRY
-	dw StatusHealingEffect ; ICE_BERRY
-	dw BitterBerryEffect   ; BITTER_BERRY
-	dw StatusHealingEffect ; MINT_BERRY
-
-	dw NoEffect            ; ATK_UP_BERRY
-	dw NoEffect            ; DEF_UP_BERRY
-	dw NoEffect            ; SPD_UP_BERRY
-	dw NoEffect            ; SPA_UP_BERRY
-	dw NoEffect            ; SPF_UP_BERRY
-	dw NoEffect            ; ACC_UP_BERRY
-	dw NoEffect            ; EVN_UP_BERRY
 
 	dw RestoreHPEffect     ; BERRY_JUICE
 
@@ -176,14 +159,6 @@ ItemEffects1:
 	dw NoEffect            ; BRICK_PIECE
 	dw NoEffect            ; SLOWPOKETAIL
 
-	dw NoEffect            ; WHT_APRICORN
-	dw NoEffect            ; RED_APRICORN
-	dw NoEffect            ; BLU_APRICORN
-	dw NoEffect            ; BLK_APRICORN
-	dw NoEffect            ; YLW_APRICORN
-	dw NoEffect            ; GRN_APRICORN
-	dw NoEffect            ; PNK_APRICORN
-
 	dw NormalBoxEffect     ; NORMAL_BOX
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 
@@ -257,6 +232,35 @@ ItemEffectsBalls:
 	dw PokeBallEffect ; MOON_BALL
 	dw PokeBallEffect ; LOVE_BALL
 	dw PokeBallEffect ; PARK_BALL
+.IndirectEnd:
+
+ItemEffectsBerries:
+	dw RestoreHPEffect     ; BERRY
+	dw RestoreHPEffect     ; GOLD_BERRY
+	dw RestorePPEffect     ; MYSTERYBERRY
+	dw StatusHealingEffect ; MIRACLEBERRY
+	dw StatusHealingEffect ; PSNCUREBERRY
+	dw StatusHealingEffect ; PRZCUREBERRY
+	dw StatusHealingEffect ; BURNT_BERRY
+	dw StatusHealingEffect ; ICE_BERRY
+	dw BitterBerryEffect   ; BITTER_BERRY
+	dw StatusHealingEffect ; MINT_BERRY
+
+	dw NoEffect            ; ATK_UP_BERRY
+	dw NoEffect            ; DEF_UP_BERRY
+	dw NoEffect            ; SPD_UP_BERRY
+	dw NoEffect            ; SPA_UP_BERRY
+	dw NoEffect            ; SPF_UP_BERRY
+	dw NoEffect            ; ACC_UP_BERRY
+	dw NoEffect            ; EVN_UP_BERRY
+
+	dw NoEffect            ; WHT_APRICORN
+	dw NoEffect            ; RED_APRICORN
+	dw NoEffect            ; BLU_APRICORN
+	dw NoEffect            ; BLK_APRICORN
+	dw NoEffect            ; YLW_APRICORN
+	dw NoEffect            ; GRN_APRICORN
+	dw NoEffect            ; PNK_APRICORN
 .IndirectEnd:
 
 PokeBallEffect:
