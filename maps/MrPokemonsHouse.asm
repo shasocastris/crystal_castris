@@ -58,15 +58,15 @@ MrPokemonsHouse_MrPokemonScript:
 	end
 
 .RedScale:
-    checkevent EVENT_GOT_LIGHT_BALL_FROM_MR_POKEMON
+    checkevent EVENT_GOT_SAFARI_LURE_FROM_MR_POKEMON
     iftrue .cancel
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem LIGHT_BALL
+	verbosegiveitem SAFARI_LURE
 	iffalse .full
 	takeitem RED_SCALE
-	setevent EVENT_GOT_LIGHT_BALL_FROM_MR_POKEMON
+	setevent EVENT_GOT_SAFARI_LURE_FROM_MR_POKEMON
 	writetext MrPokemonText_UsePokedexOnMurkrow
 .cancel
 	end

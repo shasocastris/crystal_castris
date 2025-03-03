@@ -61,6 +61,7 @@ if DEF(_DEBUG)
 	giveitem RARE_CANDY, 99
 	giveitem MAX_REPEL, 99
 	giveitem ESCAPE_ROPE, 99
+	giveitem POKE_BALL, 99
 	giveitem MASTER_BALL, 99
 	giveitem BICYCLE
 	giveitem GOOD_ROD
@@ -82,6 +83,7 @@ if DEF(_DEBUG)
 	giveitem GRIP_CLAW
 	giveitem HEAT_ROCK
 	giveitem SLEEP_GUARD
+	giveitem SAFARI_LURE
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE
