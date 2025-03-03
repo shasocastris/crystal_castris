@@ -7,17 +7,97 @@ Route16FuchsiaSpeechHouse_MapScripts:
 	def_callbacks
 
 Route16FuchsiaSpeechHouseSuperNerdScript:
-	jumptextfaceplayer Route16FuchsiaSpeechHouseSuperNerdText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_POKE_FLUTE
+	iftrue .pokeflute
+	writetext Route16FuchsiaSpeechExperienceText
+	yesorno
+	iffalse .no
+	writetext Route16FuchsiaPokeFluteMtSilverText
+	promptbutton
+	verbosegiveitem POKE_FLUTE
+	setevent EVENT_GOT_POKE_FLUTE
+.pokeflute:
+	writetext PokeFluteExplanationText
+	waitbutton
+	closetext
+	end
+
+.no:
+	writetext Route16FuchsiaSpeechPokeFluteUsefulText
+	waitbutton
+	closetext
+	end
 
 Route16FuchsiaSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
-Route16FuchsiaSpeechHouseSuperNerdText:
-	text "If you cruise down"
-	line "CYCLING ROAD, you"
+Route16FuchsiaSpeechExperienceText:
+	text "You're visiting"
+	line "all the way from"
+	cont "JOHTO?"
 
-	para "will end up in"
-	line "FUCHSIA CITY."
+	para "Not many people"
+	line "come this way,"
+	cont "much less someone"
+	cont "from so far away."
+
+	para "Since you are"
+	line "traveling so much,"
+
+	para "may I share one of"
+	line "my experiences"
+	cont "with you?"
+	done
+
+Route16FuchsiaPokeFluteMtSilverText:
+	text "This, my friend,"
+	line "is the legendary"
+	cont "POKé FLUTE!"
+
+	para "I was doing some"
+	line "mapping at the"
+	cont "base of Mt. Silver"
+
+	para "and stumbled upon"
+	line "this under some"
+	cont "ancient rubble."
+
+	para "But I don't have"
+	line "the needed musical"
+	cont "talent to play it."
+
+	para "Since you're still"
+	line "adventuring, I"
+	cont "want you to have"
+	cont "it instead."
+	done
+
+PokeFluteExplanationText:
+	text "According to my"
+	line "research, this can"
+	cont "wake up #MON"
+	cont "from even the"
+	cont "deepest sleep!"
+
+	para "It should even"
+	line "work while your"
+	cont "#MON are in"
+	cont "battle."
+
+	para "Use it wisely!"
+
+	para "And if you ever"
+	line "wake up something"
+	cont "interesting, don't"
+	cont "forget to take"
+	cont "notes for me, OK?"
+	done
+
+Route16FuchsiaSpeechPokeFluteUsefulText:
+	text "Shucks, it's a"
+	line "really good story."
 	done
 
 Route16FuchsiaSpeechHouse_MapEvents:
