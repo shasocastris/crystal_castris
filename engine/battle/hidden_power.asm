@@ -103,3 +103,30 @@ HiddenPowerDamage:
 	pop af
 	ld d, a
 	ret
+
+GetHiddenPowerType::
+; Type:
+
+	; Def & 3
+	ld a, [bc]
+	and %0011
+	ld d, a
+
+	; + (Atk & 3) << 2
+	ld a, [bc]
+	and %0011 << 4
+	swap a
+	add a
+	add a
+	or d
+
+; Skip Normal
+	inc a
+
+; Skip unused types
+	cp UNUSED_TYPES
+	jr c, .done
+	add UNUSED_TYPES_END - UNUSED_TYPES
+.done
+	ld e, a
+	ret

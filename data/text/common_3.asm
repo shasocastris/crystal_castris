@@ -142,170 +142,51 @@ _PocketIsFullText::
 	line "is full…"
 	prompt
 
-_SeerSeeAllText::
+_PokeSeerQuestion::
 	text "I see all."
 	line "I know all…"
 
 	para "Certainly, I know"
 	line "of your #MON!"
+
+	para "Would you like to"
+	line "know what Hidden"
+	cont "Power your"
+	cont "#mon has?"
 	done
 
-_SeerCantTellAThingText::
-	text "Whaaaat? I can't"
-	line "tell a thing!"
-
-	para "How could I not"
-	line "know of this?"
+_PokeSeerWhichMon::
+	text "Which #mon's"
+	line "secret shall I"
+	cont "reveal?"
 	done
 
-_SeerNameLocationText::
-	text "Hm… I see you met"
-	line "@"
-	text_ram wSeerNickname
-	text " here:"
-	cont "@"
-	text_ram wSeerCaughtLocation
-	text "!"
-	prompt
+_PokeSeerCancel::
+	text "…Fine then…"
 
-_SeerTimeLevelText::
-	text "The time was"
-	line "@"
-	text_ram wSeerTimeOfDay
-	text "!"
+	para "Leave the skills"
+	line "of your #mon a"
+	cont "secret."
+	done
 
-	para "Its level was @"
-	text_ram wSeerCaughtLevelString
-	text "!"
+_PokeSeerNoMon::
+	text "How can I tell"
+	line "what Hidden Power"
+	cont "your #mon has,"
+
+	para "if you have no"
+	line "#mon?"
+	done
+
+_PokeSeerAnswer::
+	text "…Hm, yes…"
+
+	para "Its Hidden Power"
+	line "is @"
+	text_ram wStringBuffer1
+	text "-type!"
 
 	para "Am I good or what?"
-	prompt
-
-_SeerTradeText::
-	text "Hm… @"
-	text_ram wSeerNickname
-	text_start
-	line "came from @"
-	text_ram wSeerOT
-	text_start
-	cont "in a trade?"
-
-	para "@"
-	text_ram wSeerCaughtLocation
-	text_start
-	line "was where @"
-	text_ram wSeerOT
-	text_start
-	cont "met @"
-	text_ram wSeerNickname
-	text "!"
-	prompt
-
-_SeerNoLocationText::
-	text "What!? Incredible!"
-
-	para "I don't understand"
-	line "how, but it is"
-
-	para "incredible!"
-	line "You are special."
-
-	para "I can't tell where"
-	line "you met it, but it"
-	cont "was at level @"
-	text_ram wSeerCaughtLevelString
-	text "."
-
-	para "Am I good or what?"
-	prompt
-
-_SeerEggText::
-	text "Hey!"
-
-	para "That's an EGG!"
-
-	para "You can't say that"
-	line "you've met it yet…"
-	done
-
-_SeerDoNothingText::
-	text "Fufufu! I saw that"
-	line "you'd do nothing!"
-	done
-
-_SeerMoreCareText::
-	text "Incidentally…"
-
-	para "It would be wise"
-	line "to raise your"
-
-	para "#MON with a"
-	line "little more care."
-	done
-
-_SeerMoreConfidentText::
-	text "Incidentally…"
-
-	para "It seems to have"
-	line "grown a little."
-
-	para "@"
-	text_ram wSeerNickname
-	text " seems"
-	line "to be becoming"
-	cont "more confident."
-	done
-
-_SeerMuchStrengthText::
-	text "Incidentally…"
-
-	para "@"
-	text_ram wSeerNickname
-	text " has"
-	line "grown. It's gained"
-	cont "much strength."
-	done
-
-_SeerMightyText::
-	text "Incidentally…"
-
-	para "It certainly has"
-	line "grown mighty!"
-
-	para "This @"
-	text_ram wSeerNickname
-	text_start
-	line "must have come"
-
-	para "through numerous"
-	line "#MON battles."
-
-	para "It looks brimming"
-	line "with confidence."
-	done
-
-_SeerImpressedText::
-	text "Incidentally…"
-
-	para "I'm impressed by"
-	line "your dedication."
-
-	para "It's been a long"
-	line "time since I've"
-
-	para "seen a #MON as"
-	line "mighty as this"
-	cont "@"
-	text_ram wSeerNickname
-	text "."
-
-	para "I'm sure that"
-	line "seeing @"
-	text_ram wSeerNickname
-	text_start
-
-	para "in battle would"
-	line "excite anyone."
 	done
 
 _CongratulationsYourPokemonText::
