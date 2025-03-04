@@ -154,6 +154,7 @@ BattleTurn:
 	ld [wCurDamage + 1], a
 
 	call HandleBerserkGene
+	call HandleRadiantStatBoost
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
 
@@ -404,6 +405,70 @@ HandleBerserkGene:
 	call SwitchTurnCore
 	ld hl, BecameConfusedText
 	jmp StdBattleTextbox
+
+HandleRadiantStatBoost:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .reverse
+
+	call .player
+	jr .enemy
+
+.reverse
+	call .enemy
+	; fallthrough
+
+.player
+	call SetPlayerTurn
+	ld de, wPartyMon1Item
+	ld a, [wCurBattleMon]
+	ld b, a
+	jr .go
+
+.enemy
+	call SetEnemyTurn
+	ld de, wOTPartyMon1Item
+	ld a, [wCurOTMon]
+	ld b, a
+	; fallthrough
+
+.go
+	push de
+	push bc
+	farcall GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	push hl
+	call GetItemIndexFromID
+	cphl16 RADIANCE_ORB
+	pop hl
+	pop bc
+	pop de
+	ret nz
+
+	xor a
+	ld [hl], a
+
+	ld h, d
+	ld l, e
+	ld a, b
+	call GetPartyLocation
+	push af
+	call GetBattleVarAddr
+	push hl
+	push af
+	pop hl
+	ld [hl], a
+	ld de, FOCUS_ENERGY
+	call Call_PlayBattleAnim
+	ld hl, BattleText_RadianceOrb
+	call StdBattleTextbox
+	pop af
+	xor a
+	ld [hl], a
+	farcall BattleCommand_RadiantStatsBoost
+	pop af
+	ret
 
 EnemyTriesToFlee:
 	ld a, [wLinkMode]

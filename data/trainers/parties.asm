@@ -373,24 +373,30 @@ Rival1Group:
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (15)
-	db "?@", TRAINERTYPE_MOVES
+	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 34
 	dw SNEASEL
+	dw RADIANCE_ORB
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
 	db 36
 	dw GOLBAT
+	dw NO_ITEM
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
 	db 34
 	dw MAGNETON
+	dw NO_ITEM
 	dw THUNDERSHOCK, SONICBOOM, THUNDER_WAVE, SWIFT
 	db 35
 	dw HAUNTER
+	dw NO_ITEM
 	dw MEAN_LOOK, CURSE, SHADOW_BALL, CONFUSE_RAY
 	db 35
 	dw KADABRA
+	dw NO_ITEM
 	dw DISABLE, PSYBEAM, RECOVER, FUTURE_SIGHT
 	db 38
 	dw FERALIGATR
+	dw NO_ITEM
 	dw RAGE, WATER_GUN, SCARY_FACE, SLASH
 	db -1 ; end
 
@@ -776,8 +782,6 @@ YoungsterGroup:
 
 	end_list_items
 
-SECTION "Enemy Trainer Parties 2", ROMX
-
 SchoolboyGroup:
 	next_list_item ; SCHOOLBOY (1), National Park
 	db "JACK@", TRAINERTYPE_NORMAL
@@ -1003,6 +1007,8 @@ SchoolboyGroup:
 	db -1 ; end
 
 	end_list_items
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1), Violet Gym

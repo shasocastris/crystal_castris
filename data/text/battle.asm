@@ -1117,3 +1117,12 @@ PeltedByHailText:
 	text "<USER>"
 	line "is pelted by HAIL!"
 	prompt
+
+BattleText_RadianceOrb:
+	text "<USER>"
+	line "shines with an"
+	cont "inner radiance!"
+
+	para "Its power is now"
+	line "beyond compare!"
+	prompt

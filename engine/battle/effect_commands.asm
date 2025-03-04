@@ -4622,6 +4622,39 @@ BattleCommand_AllStatsUp:
 	call BattleCommand_SpecialDefenseUp
 	jmp   BattleCommand_StatUpMessage
 
+BattleCommand_RadiantStatsBoost:
+; allstatsup
+
+; Attack
+	call BattleCommand_AttackUp2
+	call BattleCommand_AttackUp2
+	call BattleCommand_AttackUp2
+
+; Defense
+	call BattleCommand_DefenseUp2
+	call BattleCommand_DefenseUp2
+	call BattleCommand_DefenseUp2
+
+; Special Attack
+	call BattleCommand_SpecialAttackUp2
+	call BattleCommand_SpecialAttackUp2
+	call BattleCommand_SpecialAttackUp2
+
+; Special Defense
+	call BattleCommand_SpecialDefenseUp2
+	call BattleCommand_SpecialDefenseUp2
+	call BattleCommand_SpecialDefenseUp2
+
+; Speed
+	call BattleCommand_SpeedUp2
+	call BattleCommand_SpeedUp2
+	call BattleCommand_SpeedUp2
+
+; Evasion
+	call BattleCommand_EvasionUp2
+	call BattleCommand_EvasionUp2
+	jp BattleCommand_EvasionUp2
+
 ResetMiss:
 	xor a
 	ld [wAttackMissed], a

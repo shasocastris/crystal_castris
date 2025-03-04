@@ -7,7 +7,7 @@
 	db ROCK, GROUND ; type
 	db 40 ; catch rate
 	db 134 ; base exp
-	dw NO_ITEM, MIST_STONE ; items
+	dw RADIANCE_ORB, RADIANCE_ORB ; items
 	db GENDER_F50 ; gender ratio
 	INCBIN "gfx/pokemon/graveler/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
