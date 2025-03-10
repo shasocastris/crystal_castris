@@ -626,8 +626,8 @@ _PokegearAskWhoCallText::
 	done
 
 _PokegearPressButtonText::
-	text "Press any button"
-	line "to exit."
+	text "A: Resets Clock"
+	line "B: Exits #GEAR"
 	done
 
 _PokegearAskDeleteText::
