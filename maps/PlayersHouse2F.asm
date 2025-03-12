@@ -85,6 +85,8 @@ if DEF(_DEBUG)
 	giveitem SLEEP_GUARD
 	giveitem SAFARI_LURE
 	giveitem RADIANCE_ORB
+	giveitem MYSTIC_DEW
+	giveitem MAX_ELIXER
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
 	setflag ENGINE_HIVEBADGE

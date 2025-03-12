@@ -73,7 +73,7 @@ ItemEffects1:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 
 	dw SacredAshEffect     ; SACRED_ASH
-	dw SacredAshEffect     ; MYSTIC_DEW
+	dw RestorePPEffect     ; MYSTIC_DEW
 
 	dw RestoreHPEffect     ; BERRY_JUICE
 
@@ -2398,6 +2398,8 @@ RestorePPEffect:
 .loop2
 	ld a, [wTempRestorePPItem]
 	call GetItemIndexFromID
+	cphl16 MYSTIC_DEW
+	jmp z, Elixer_RestorePPofAllMoves
 	cphl16 MAX_ELIXER
 	jmp z, Elixer_RestorePPofAllMoves
 	cphl16 ELIXER
@@ -2608,6 +2610,12 @@ RestorePP:
 	ld a, [wTempRestorePPItem]
 	push hl
 	call GetItemIndexFromID
+	cphl16 MYSTIC_DEW
+	pop hl
+	jr z, .mystic_dew
+	ld a, [wTempRestorePPItem]
+	push hl
+	call GetItemIndexFromID
 	cphl16 MAX_ETHER
 	pop hl
 	jr z, .restore_all
@@ -2631,6 +2639,13 @@ RestorePP:
 	ld b, a
 
 .restore_all
+	ld a, [hl]
+	and PP_UP_MASK
+	or b
+	ld [hl], a
+	ret
+
+.mystic_dew
 	ld a, [hl]
 	and PP_UP_MASK
 	or b
@@ -2676,6 +2691,38 @@ SacredAshEffect:
 	cp $1
 	ret nz
 	jr UseDisposableItem
+
+MysticDewEffect: ; MAX_ELIXER + FULL_RESTORE
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jmp c, StatusHealer_ExitMenu
+
+	call IsMonFainted
+	jmp z, StatusHealer_NoEffect
+
+	call IsMonAtFullHealth
+	jmp nc, FullyHealStatus
+	call .MysticDew
+	jmp StatusHealer_Jumptable
+
+.MysticDew:
+	xor a
+	ld [wLowHealthAlarm], a
+	call ReviveFullHP
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	xor a
+	ld [hli], a
+	ld [hl], a
+	call HealStatus
+	call BattlemonRestoreHealth
+	call HealHP_SFX_GFX
+	ld a, PARTYMENUTEXT_HEAL_HP
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+	call UseDisposableItem
+	xor a
+	ret
 
 NormalBoxEffect:
 	ld c, DECOFLAG_SILVER_TROPHY_DOLL
