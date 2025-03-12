@@ -73,7 +73,7 @@ ItemEffects1:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 
 	dw SacredAshEffect     ; SACRED_ASH
-	dw RestorePPEffect     ; MYSTIC_DEW
+	dw MysticDewEffect     ; MYSTIC_DEW
 
 	dw RestoreHPEffect     ; BERRY_JUICE
 
@@ -2693,35 +2693,8 @@ SacredAshEffect:
 	jr UseDisposableItem
 
 MysticDewEffect: ; MAX_ELIXER + FULL_RESTORE
-	ld b, PARTYMENUACTION_HEALING_ITEM
-	call UseItem_SelectMon
-	jmp c, StatusHealer_ExitMenu
-
-	call IsMonFainted
-	jmp z, StatusHealer_NoEffect
-
-	call IsMonAtFullHealth
-	jmp nc, FullyHealStatus
-	call .MysticDew
-	jmp StatusHealer_Jumptable
-
-.MysticDew:
-	xor a
-	ld [wLowHealthAlarm], a
-	call ReviveFullHP
-	ld a, MON_STATUS
-	call GetPartyParamLocation
-	xor a
-	ld [hli], a
-	ld [hl], a
-	call HealStatus
-	call BattlemonRestoreHealth
-	call HealHP_SFX_GFX
-	ld a, PARTYMENUTEXT_HEAL_HP
-	ld [wPartyMenuActionText], a
-	call ItemActionTextWaitButton
-	call UseDisposableItem
-	xor a
+	call FullRestoreEffect
+	call RestorePPEffect
 	ret
 
 NormalBoxEffect:
