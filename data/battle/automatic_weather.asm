@@ -11,12 +11,17 @@ MACRO auto_weather_map
 	db \2 ; AUTOMATIC_* weather index
 ENDM
 	auto_weather_map TIN_TOWER_ROOF, AUTOMATIC_SUN
+	auto_weather_map SEAFOAM_GYM, AUTOMATIC_SUN
 	auto_weather_map SILVER_CAVE_UNDERBELLY, AUTOMATIC_SUN
 	auto_weather_map ROUTE_43, AUTOMATIC_RAIN
 	auto_weather_map LAKE_OF_RAGE, AUTOMATIC_RAIN
+	auto_weather_map CERULEAN_GYM, AUTOMATIC_RAIN
 	auto_weather_map SILVER_CAVE_ROOM_2, AUTOMATIC_RAIN
+	auto_weather_map OLIVINE_GYM, AUTOMATIC_SANDSTORM
 	auto_weather_map ROUTE_45, AUTOMATIC_SANDSTORM
+	auto_weather_map PEWTER_GYM, AUTOMATIC_SANDSTORM
 	auto_weather_map SILVER_CAVE_ROOM_1, AUTOMATIC_SANDSTORM
+	auto_weather_map MAHOGANY_GYM, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_1F, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B1F, AUTOMATIC_HAIL
 	auto_weather_map ICE_PATH_B2F_MAHOGANY_SIDE, AUTOMATIC_HAIL
