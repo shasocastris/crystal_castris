@@ -4,31 +4,36 @@ BTTrainerClassGenders:
 ; entries correspond to trainer classes
 	table_width 1
 	db MALE   ; FALKNER
-	db FEMALE ; WHITNEY
 	db FEMALE ; BUGSY
+	db FEMALE ; WHITNEY
 	db MALE   ; MORTY
-	db MALE   ; PRYCE
-	db FEMALE ; JASMINE
 	db MALE   ; CHUCK
+	db FEMALE ; JASMINE
+	db MALE   ; PRYCE
 	db FEMALE ; CLAIR
-	db MALE   ; RIVAL1
-	db MALE   ; POKEMON_PROF
-	db FEMALE ; WILL
-	db MALE   ; CAL
-	db MALE   ; BRUNO
-	db FEMALE ; KAREN
-	db MALE   ; KOGA
-	db MALE   ; CHAMPION
 	db MALE   ; BROCK
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
-	db MALE   ; SCIENTIST
 	db FEMALE ; ERIKA
+	db FEMALE ; JANINE
+	db FEMALE ; SABRINA
+	db MALE   ; BLAINE
+	db MALE   ; BLUE
+	db FEMALE ; WILL
+	db MALE   ; KOGA
+	db MALE   ; BRUNO
+	db FEMALE ; KAREN
+	db MALE   ; CHAMPION
+	db MALE   ; RIVAL1
+	db MALE   ; RIVAL2
+	db MALE   ; POKEMON_PROF
+	db MALE   ; CAL
+	db MALE   ; RED
+	db MALE   ; SCIENTIST
 	db MALE   ; YOUNGSTER
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BIRD_KEEPER
 	db FEMALE ; LASS
-	db FEMALE ; JANINE
 	db MALE   ; COOLTRAINERM
 	db FEMALE ; COOLTRAINERF
 	db FEMALE ; BEAUTY
@@ -37,18 +42,15 @@ BTTrainerClassGenders:
 	db MALE   ; GENTLEMAN
 	db FEMALE ; SKIER
 	db FEMALE ; TEACHER
-	db FEMALE ; SABRINA
 	db MALE   ; BUG_CATCHER
 	db MALE   ; FISHER
 	db MALE   ; SWIMMERM
 	db FEMALE ; SWIMMERF
 	db MALE   ; SAILOR
 	db MALE   ; SUPER_NERD
-	db MALE   ; RIVAL2
 	db MALE   ; GUITARIST
 	db MALE   ; HIKER
 	db MALE   ; BIKER
-	db MALE   ; BLAINE
 	db MALE   ; BURGLAR
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER
@@ -65,8 +67,6 @@ BTTrainerClassGenders:
 	db FEMALE ; KIMONO_GIRL
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
-	db MALE   ; RED
-	db MALE   ; BLUE
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	db FEMALE ; KRIS

@@ -4,31 +4,36 @@ TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 3
 	dba FalknerGroup
-	dba WhitneyGroup
 	dba BugsyGroup
+	dba WhitneyGroup
 	dba MortyGroup
-	dba PryceGroup
-	dba JasmineGroup
 	dba ChuckGroup
+	dba JasmineGroup
+	dba PryceGroup
 	dba ClairGroup
-	dba Rival1Group
-	dba PokemonProfGroup
-	dba WillGroup
-	dba PKMNTrainerGroup
-	dba BrunoGroup
-	dba KarenGroup
-	dba KogaGroup
-	dba ChampionGroup
 	dba BrockGroup
 	dba MistyGroup
 	dba LtSurgeGroup
-	dba ScientistGroup
 	dba ErikaGroup
+	dba JanineGroup
+	dba SabrinaGroup
+	dba BlaineGroup
+	dba BlueGroup
+	dba WillGroup
+	dba KogaGroup
+	dba BrunoGroup
+	dba KarenGroup
+	dba ChampionGroup
+	dba Rival1Group
+	dba Rival2Group
+	dba PokemonProfGroup
+	dba PKMNTrainerGroup
+	dba RedGroup
+	dba ScientistGroup
 	dba YoungsterGroup
 	dba SchoolboyGroup
 	dba BirdKeeperGroup
 	dba LassGroup
-	dba JanineGroup
 	dba CooltrainerMGroup
 	dba CooltrainerFGroup
 	dba BeautyGroup
@@ -37,18 +42,15 @@ TrainerGroups:
 	dba GentlemanGroup
 	dba SkierGroup
 	dba TeacherGroup
-	dba SabrinaGroup
 	dba BugCatcherGroup
 	dba FisherGroup
 	dba SwimmerMGroup
 	dba SwimmerFGroup
 	dba SailorGroup
 	dba SuperNerdGroup
-	dba Rival2Group
 	dba GuitaristGroup
 	dba HikerGroup
 	dba BikerGroup
-	dba BlaineGroup
 	dba BurglarGroup
 	dba FirebreatherGroup
 	dba JugglerGroup
@@ -65,8 +67,6 @@ TrainerGroups:
 	dba KimonoGirlGroup
 	dba TwinsGroup
 	dba PokefanFGroup
-	dba RedGroup
-	dba BlueGroup
 	dba OfficerGroup
 	dba GruntFGroup
 	dba MysticalmanGroup

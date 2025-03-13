@@ -4,31 +4,36 @@ TrainerPicPointers::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 3
 	dba FalknerPic
-	dba WhitneyPic
 	dba BugsyPic
-	dba MortyPic
-	dba PrycePic
-	dba JasminePic
+	dba WhitneyPic
 	dba ChuckPic
+	dba MortyPic
+	dba JasminePic
+	dba PrycePic
 	dba ClairPic
-	dba Rival1Pic
-	dba PokemonProfPic
-	dba WillPic
-	dba CalPic
-	dba BrunoPic
-	dba KarenPic
-	dba KogaPic
-	dba ChampionPic
 	dba BrockPic
 	dba MistyPic
 	dba LtSurgePic
-	dba ScientistPic
 	dba ErikaPic
+	dba JaninePic
+	dba SabrinaPic
+	dba BlainePic
+	dba BluePic
+	dba WillPic
+	dba KogaPic
+	dba BrunoPic
+	dba KarenPic
+	dba ChampionPic
+	dba Rival1Pic
+	dba Rival2Pic
+	dba PokemonProfPic
+	dba CalPic
+	dba RedPic
+	dba ScientistPic
 	dba YoungsterPic
 	dba SchoolboyPic
 	dba BirdKeeperPic
 	dba LassPic
-	dba JaninePic
 	dba CooltrainermPic
 	dba CooltrainerfPic
 	dba BeautyPic
@@ -37,18 +42,15 @@ TrainerPicPointers::
 	dba GentlemanPic
 	dba SkierPic
 	dba TeacherPic
-	dba SabrinaPic
 	dba BugCatcherPic
 	dba FisherPic
 	dba SwimmermPic
 	dba SwimmerfPic
 	dba SailorPic
 	dba SuperNerdPic
-	dba Rival2Pic
 	dba GuitaristPic
 	dba HikerPic
 	dba BikerPic
-	dba BlainePic
 	dba BurglarPic
 	dba FirebreatherPic
 	dba JugglerPic
@@ -65,8 +67,6 @@ TrainerPicPointers::
 	dba KimonoGirlPic
 	dba TwinsPic
 	dba PokefanfPic
-	dba RedPic
-	dba BluePic
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
