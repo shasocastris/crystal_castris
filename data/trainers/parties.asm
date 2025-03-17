@@ -11,12 +11,14 @@ SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
 	next_list_item ; FALKNER (1)
-	db "FALKNER@", TRAINERTYPE_MOVES
+	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
 	db 7
 	dw PIDGEY
+	dw NO_ITEM
 	dw TACKLE, MUD_SLAP, NO_MOVE, NO_MOVE
 	db 9
 	dw PIDGEOTTO
+	dw NO_ITEM
 	dw TACKLE, MUD_SLAP, GUST, NO_MOVE
 	db -1 ; end
 
@@ -376,7 +378,7 @@ Rival1Group:
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 34
 	dw SNEASEL
-	dw RADIANCE_ORB
+	dw NO_ITEM
 	dw QUICK_ATTACK, SCREECH, FAINT_ATTACK, FURY_CUTTER
 	db 36
 	dw GOLBAT

@@ -126,12 +126,12 @@ KantoGrassWildMons:
 	dbw 45, KADABRA
 	; day
 	dbw 44, GRAVELER
-	dbw 42, GRAVELER
-	dbw 43, GRAVELER
-	dbw 44, GRAVELER
-	dbw 45, GRAVELER
-	dbw 45, GRAVELER
-	dbw 45, GRAVELER
+	dbw 42, RHYDON
+	dbw 43, STEELIX
+	dbw 44, CROBAT
+	dbw 45, SANDSLASH
+	dbw 45, KADABRA
+	dbw 45, KADABRA
 	; nite
 	dbw 44, CROBAT
 	dbw 44, GRAVELER
