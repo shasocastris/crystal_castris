@@ -6,6 +6,10 @@
 DEF NUM_STAT_PAGES EQU const_value
 
 DEF STAT_PAGE_MASK EQU %00000011
+	const_def 4
+	const STATS_SCREEN_PLACE_FRONTPIC ; 4
+	const STATS_SCREEN_ANIMATE_MON    ; 5
+	const STATS_SCREEN_ANIMATE_EGG    ; 6
 
 StatsScreenInit:
 	ld hl, StatsScreenMain
@@ -54,7 +58,7 @@ StatsScreenMain:
 	call JumpTable
 	call StatsScreen_WaitAnim
 	ld a, [wJumptableIndex]
-	bit 7, a
+	bit JUMPTABLE_EXIT_F, a
 	jr z, .loop
 	ret
 
@@ -70,9 +74,9 @@ StatsScreenPointerTable:
 
 StatsScreen_WaitAnim:
 	ld hl, wStatsScreenFlags
-	bit 6, [hl]
+	bit STATS_SCREEN_ANIMATE_EGG, [hl]
 	jr nz, .try_anim
-	bit 5, [hl]
+	bit STATS_SCREEN_ANIMATE_MON, [hl]
 	jr nz, .finish
 	jmp DelayFrame
 
@@ -80,27 +84,27 @@ StatsScreen_WaitAnim:
 	farcall SetUpPokeAnim
 	jr nc, .finish
 	ld hl, wStatsScreenFlags
-	res 6, [hl]
+	res STATS_SCREEN_ANIMATE_EGG, [hl]
 .finish
 	ld hl, wStatsScreenFlags
-	res 5, [hl]
+	res STATS_SCREEN_ANIMATE_MON, [hl]
 	farjp HDMATransferTilemapToWRAMBank3
 
 StatsScreen_SetJumptableIndex:
 	ld a, [wJumptableIndex]
-	and $80
+	and JUMPTABLE_EXIT
 	or h
 	ld [wJumptableIndex], a
 	ret
 
 StatsScreen_Exit:
 	ld hl, wJumptableIndex
-	set 7, [hl]
+	set JUMPTABLE_EXIT_F, [hl]
 	ret
 
 MonStatsInit:
 	ld hl, wStatsScreenFlags
-	res 6, [hl]
+	res STATS_SCREEN_ANIMATE_EGG, [hl]
 	call ClearBGPalettes
 	call ClearTilemap
 	farcall HDMATransferTilemapToWRAMBank3
@@ -110,7 +114,7 @@ MonStatsInit:
 	jr z, .egg
 	call StatsScreen_InitUpperHalf
 	ld hl, wStatsScreenFlags
-	set 4, [hl]
+	set STATS_SCREEN_PLACE_FRONTPIC, [hl]
 	ld h, 4
 	jr StatsScreen_SetJumptableIndex
 
@@ -164,7 +168,7 @@ if DEF(_DEBUG)
 	hlcoord 8, 17
 	rst PlaceString
 	ld hl, wStatsScreenFlags
-	set 5, [hl]
+	set STATS_SCREEN_ANIMATE_MON, [hl]
 	pop hl
 	pop de
 	pop bc
@@ -183,7 +187,7 @@ endc
 StatsScreen_LoadPage:
 	call StatsScreen_LoadGFX
 	ld hl, wStatsScreenFlags
-	res 4, [hl]
+	res STATS_SCREEN_PLACE_FRONTPIC, [hl]
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
@@ -475,7 +479,7 @@ StatsScreen_LoadGFX:
 	call .PageTilemap
 	call .LoadPals
 	ld hl, wStatsScreenFlags
-	bit 4, [hl]
+	bit STATS_SCREEN_PLACE_FRONTPIC, [hl]
 	jmp z, SetDefaultBGPAndOBP
 	jmp StatsScreen_PlaceFrontpic
 
@@ -495,7 +499,7 @@ StatsScreen_LoadGFX:
 	farcall LoadStatsScreenPals
 	call DelayFrame
 	ld hl, wStatsScreenFlags
-	set 5, [hl]
+	set STATS_SCREEN_ANIMATE_MON, [hl]
 	ret
 
 .PageTilemap:
@@ -506,7 +510,7 @@ StatsScreen_LoadGFX:
 
 .Jumptable:
 ; entries correspond to *_PAGE constants
-	table_width 2, StatsScreen_LoadGFX.Jumptable
+	table_width 2
 	dw LoadPinkPage
 	dw LoadGreenPage
 	dw LoadBluePage
@@ -882,7 +886,7 @@ StatsScreen_PlaceFrontpic:
 
 .AnimateMon:
 	ld hl, wStatsScreenFlags
-	set 5, [hl]
+	set STATS_SCREEN_ANIMATE_MON, [hl]
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID
 	ld a, l
@@ -939,7 +943,7 @@ StatsScreen_PlaceFrontpic:
 	lb de, $0, ANIM_MON_MENU
 	predef LoadMonAnimation
 	ld hl, wStatsScreenFlags
-	set 6, [hl]
+	set STATS_SCREEN_ANIMATE_EGG, [hl]
 	ret
 
 StatsScreen_GetAnimationParam:
@@ -1060,7 +1064,7 @@ endc
 	hlcoord 1, 9
 	rst PlaceString
 	ld hl, wStatsScreenFlags
-	set 5, [hl]
+	set STATS_SCREEN_ANIMATE_MON, [hl]
 	call SetDefaultBGPAndOBP
 	call DelayFrame
 	hlcoord 0, 0
@@ -1123,7 +1127,7 @@ StatsScreen_AnimateEgg:
 	ld d, $0
 	predef LoadMonAnimation
 	ld hl, wStatsScreenFlags
-	set 6, [hl]
+	set STATS_SCREEN_ANIMATE_EGG, [hl]
 	ret
 
 StatsScreen_LoadPageIndicators:
