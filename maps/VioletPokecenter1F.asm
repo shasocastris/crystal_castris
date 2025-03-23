@@ -16,22 +16,20 @@ VioletPokecenterNurse:
 VioletPokecenter1F_ElmsAideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
+	checkevent EVENT_REFUSED_TO_TAKE_TOGEPI_FROM_ELMS_AIDE
 	iftrue .SecondTimeAsking
 	writetext VioletPokecenterElmsAideFavorText
-.AskTakeEgg:
+.AskTakeTogepi:
 	yesorno
-	iffalse .RefusedEgg
+	iffalse .RefusedTogepi
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	giveegg TOGEPI, EGG_LEVEL
-	getstring STRING_BUFFER_4, .eggname
-	scall .AideGivesEgg
-	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	givepoke TOGEPI, MIN_LEVEL
+	setevent EVENT_GOT_TOGEPI_FROM_ELMS_AIDE
 	clearevent EVENT_ELMS_AIDE_IN_LAB
-	clearevent EVENT_TOGEPI_HATCHED
+	clearevent EVENT_TOGEPI_EVOLVED
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
-	writetext VioletPokecenterElmsAideGiveEggText
+	writetext VioletPokecenterElmsAideGiveTogepiText
 	waitbutton
 	closetext
 	readvar VAR_FACING
@@ -52,29 +50,22 @@ VioletPokecenter1F_ElmsAideScript:
 	waitsfx
 	end
 
-.eggname
-	db "EGG@"
-
-.AideGivesEgg:
-	jumpstd ReceiveTogepiEggScript
-	end
-
 .PartyFull:
 	writetext VioletCityElmsAideFullPartyText
 	waitbutton
 	closetext
 	end
 
-.RefusedEgg:
+.RefusedTogepi:
 	writetext VioletPokecenterElmsAideRefuseText
 	waitbutton
 	closetext
-	setevent EVENT_REFUSED_TO_TAKE_EGG_FROM_ELMS_AIDE
+	setevent EVENT_REFUSED_TO_TAKE_TOGEPI_FROM_ELMS_AIDE
 	end
 
 .SecondTimeAsking:
-	writetext VioletPokecenterElmsAideAskEggText
-	sjump .AskTakeEgg
+	writetext VioletPokecenterElmsAideAskTogepiText
+	sjump .AskTakeTogepi
 
 VioletPokecenter1FGameboyKidScript:
 	jumptextfaceplayer VioletPokecenter1FGameboyKidText
@@ -113,28 +104,35 @@ VioletPokecenterElmsAideFavorText:
 	para "He has another"
 	line "favor to ask."
 
-	para "Would you take the"
-	line "#MON EGG?"
+	para "The EGG hatched"
+	line "into a new baby"
+	cont "#MON, TOGEPI!"
+
+	para "Will you bring it"
+	line "with you on your"
+	cont "adventures?"
 	done
 
-VioletPokecenterElmsAideGiveEggText:
+VioletPokecenterElmsAideGiveTogepiText:
 	text "We discovered that"
-	line "a #MON will not"
+	line "some #MON will"
+	cont "not evolve unless"
 
-	para "hatch until it"
-	line "grows in the EGG."
+	para "they have a strong"
+	line "bond with their"
+	cont "trainer."
 
-	para "It also has to be"
-	line "with other active"
-	cont "#MON to hatch."
+	para "There are lots of"
+	line "ways for #MON"
+	cont "to become happy,"
+	cont "like battling and"
+	cont "grooming."
 
-	para "<PLAY_G>, you're"
-	line "the only person"
-	cont "we can rely on."
-
-	para "Please call PROF."
-	line "ELM when that EGG"
-	cont "hatches!"
+	para "Please make sure"
+	line "to care for TOGEPI"
+	cont "and make sure to"
+	cont "call PROF. ELM"
+	cont "when it evolves!"
 	done
 
 VioletCityElmsAideFullPartyText:
@@ -144,7 +142,7 @@ VioletCityElmsAideFullPartyText:
 
 	para "I'll wait here"
 	line "while you make"
-	cont "room for the EGG."
+	cont "room for TOGEPI."
 	done
 
 VioletPokecenterElmsAideRefuseText:
@@ -152,9 +150,9 @@ VioletPokecenterElmsAideRefuseText:
 	line "asked for you…"
 	done
 
-VioletPokecenterElmsAideAskEggText:
+VioletPokecenterElmsAideAskTogepiText:
 	text "<PLAY_G>, will you"
-	line "take the EGG?"
+	line "take TOGEPI?"
 	done
 
 VioletPokecenter1FGameboyKidText:

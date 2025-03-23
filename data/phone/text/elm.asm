@@ -48,21 +48,21 @@ ElmPhoneAssistantText:
 	line "in VIOLET CITY."
 	done
 
-ElmPhoneHowIsTheEggText:
+ElmPhoneHowIsTogepiText:
 	text "Hello, <PLAY_G>?"
 
-	para "How's the EGG? Has"
+	para "How is TOGEPI? Has"
 	line "anything changed?"
 
 	para "If anything hap-"
 	line "pens, please call."
 	done
 
-ElmPhoneEggHatchedText:
+ElmPhoneTogepiEvolvedText:
 	text "Hello, <PLAY_G>?"
-	line "How is the EGG?"
+	line "How is TOGEPI?"
 
-	para "What? It hatched?"
+	para "What? It evolved?"
 	line "Wow! What kind of"
 	cont "#MON is it?"
 
@@ -70,27 +70,29 @@ ElmPhoneEggHatchedText:
 	line "me now!"
 	done
 
-ElmPhoneDiscoveredHatchTimeText:
+ElmPhoneDiscoveredHappinessText:
 	text "Hello, <PLAY_G>?"
 
 	para "I just made a new"
 	line "discovery."
 
-	para "The time it takes"
-	line "for an EGG to"
+	para "Many #MON"
+	line "need a strong bond"
 
-	para "hatch depends on"
-	line "the #MON."
+	para "with a trainer to"
+	line "evolve."
 	done
 
-ElmPhoneInvestigatingEggMovesText:
+ElmPhoneInvestigatingHappinessMovesText:
 	text "Hello, <PLAY_G>?"
 
 	para "It's still a"
 	line "mystery what kinds"
 
-	para "of moves hatched"
-	line "#MON have."
+	para "of moves #MON"
+	line "have if they"
+	cont "evolve via"
+	cont "happiness."
 
 	para "We're investigat-"
 	line "ing that now."
