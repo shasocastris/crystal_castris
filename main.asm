@@ -501,7 +501,6 @@ INCLUDE "engine/movie/title.asm"
 SECTION "mobile45", ROMX
 
 INCLUDE "mobile/mobile_45_sprite_engine.asm"
-INCLUDE "mobile/mobile_45_stadium.asm"
 
 
 SECTION "mobile46", ROMX
@@ -648,7 +647,6 @@ INCLUDE "data/battle_tower/unknown.asm"
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
-INCLUDE "engine/events/odd_egg.asm"
 
 
 SECTION "Newbox", ROMX
