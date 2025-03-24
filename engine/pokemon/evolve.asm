@@ -63,9 +63,6 @@ EvolveAfterBattle_MasterLoop:
 
 	ld b, a
 
-	cp EVOLVE_TRADE
-	jr z, .trade
-
 	ld a, [wLinkMode]
 	and a
 	jmp nz, .dont_evolve_check
