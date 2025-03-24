@@ -1,9 +1,7 @@
 ; PrintDayCareText.TextTable indexes
 	const_def
 	const DAYCARETEXT_MAN_INTRO
-	const DAYCARETEXT_MAN_INTRO_EGG
 	const DAYCARETEXT_LADY_INTRO
-	const DAYCARETEXT_LADY_INTRO_EGG
 	const DAYCARETEXT_WHICH_ONE
 	const DAYCARETEXT_DEPOSIT
 	const DAYCARETEXT_CANT_BREED_EGG
@@ -95,11 +93,7 @@ DayCareLady:
 	jmp PrintDayCareText
 
 DayCareLadyIntroText:
-	bit DAYCARELADY_ACTIVE_F, [hl]
-	jr nz, .okay
 	set DAYCARELADY_ACTIVE_F, [hl]
-	inc a
-.okay
 	call PrintDayCareText
 	jmp YesNoBox
 
@@ -261,9 +255,7 @@ PrintDayCareText:
 .TextTable:
 ; entries correspond to DAYCARETEXT_* constants
 	dw .DayCareManIntroText ; 00
-	dw .DayCareManIntroEggText ; 01
 	dw .DayCareLadyIntroText ; 02
-	dw .DayCareLadyIntroEggText ; 03
 	dw .WhatShouldIRaiseText ; 04
 	dw .IllRaiseYourMonText ; 05
 	dw .CantAcceptEggText ; 06
@@ -285,16 +277,8 @@ PrintDayCareText:
 	text_far _DayCareManIntroText
 	text_end
 
-.DayCareManIntroEggText:
-	text_far _DayCareManIntroEggText
-	text_end
-
 .DayCareLadyIntroText:
 	text_far _DayCareLadyIntroText
-	text_end
-
-.DayCareLadyIntroEggText:
-	text_far _DayCareLadyIntroEggText
 	text_end
 
 .WhatShouldIRaiseText:

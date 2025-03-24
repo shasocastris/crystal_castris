@@ -23,32 +23,20 @@ DayCareEggCheckCallback:
 DayCareManScript_Inside:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_ODD_EGG
-	iftrue .AlreadyHaveOddEgg
-	writetext DayCareManText_GiveOddEgg
+	checkevent EVENT_GOT_LUCKY_EGG
+	iftrue .AlreadyHaveLuckyEgg
+	writetext DayCareManText_GiveLuckyEggText
 	promptbutton
-	closetext
-	readvar VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-	special GiveOddEgg
-	opentext
-	writetext DayCareText_GotOddEgg
+	verbosegiveitem LUCKY_EGG
 	playsound SFX_KEY_ITEM
 	waitsfx
-	writetext DayCareText_DescribeOddEgg
+	writetext DayCareText_DescribeLuckyEggText
 	waitbutton
 	closetext
-	setevent EVENT_GOT_ODD_EGG
+	setevent EVENT_GOT_LUCKY_EGG
 	end
 
-.PartyFull:
-	opentext
-	writetext DayCareText_PartyFull
-	waitbutton
-	closetext
-	end
-
-.AlreadyHaveOddEgg:
+.AlreadyHaveLuckyEgg:
 	special DayCareMan
 	waitbutton
 	closetext
@@ -57,73 +45,114 @@ DayCareManScript_Inside:
 DayCareLadyScript:
 	faceplayer
 	opentext
-	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
-	iftrue .HusbandWasLookingForYou
+	checkevent EVENT_GOT_LUCKY_EGG
+	iffalse .AskGrampsForLuckyEgg
 	special DayCareLady
 	waitbutton
 	closetext
 	end
-
-.HusbandWasLookingForYou:
-	writetext Text_GrampsLookingForYou
+.AskGrampsForLuckyEgg
+	writetext AskGrampsForLuckyEggText
 	waitbutton
 	closetext
 	end
 
-DayCareBookshelf:
-	jumpstd DifficultBookshelfScript
+DayCareCoupleStories1:
+	jumptext DayCareCoupleStories1_Text
 
-Text_GrampsLookingForYou:
-	text "Gramps was looking"
-	line "for you."
-	done
+DayCareCoupleStories2:
+	jumptext DayCareCoupleStories2_Text
 
-DayCareManText_GiveOddEgg:
+DayCareManText_GiveLuckyEggText:
 	text "I'm the DAY-CARE"
 	line "MAN."
 
-	para "Do you know about"
-	line "EGGS?"
+	para "Do you know what"
+	line "a LUCKY EGG is?"
 
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
+	para "If you give it to"
+	line "a #MON, it will"
+	cont "grow much faster"
+	cont "than normal."
 
 	para "How incredible is"
 	line "that?"
 
-	para "Well, wouldn't you"
-	line "like this EGG?"
+	para "Wouldn't you like"
+	line "one for yourself?"
 
 	para "Then fine, this is"
 	line "yours to keep!"
 	done
 
-DayCareText_GotOddEgg:
-	text "<PLAYER> received"
-	line "ODD EGG!"
+DayCareText_DescribeLuckyEggText:
+	text "That was being"
+	line "held by a rare"
+	cont "#MON Gramms and"
+	cont "I once met on"
+	cont "Route 44."
+
+	para "PROF. ELM thought"
+	line "it was a #MON"
+	cont "EGG, but it is"
+	cont "just an item"
+	cont "#MON can hold."
+
+	para "Hopefully it has"
+	line "some use for a"
+	cont "trainer like"
+	cont "yourself."
 	done
 
-DayCareText_DescribeOddEgg:
-	text "I found that when"
-	line "I was caring for"
+AskGrampsForLuckyEggText:
+	text "I can raise a"
+	line "#MON for you."
 
-	para "someone's #MON"
-	line "before."
+	para "But first, you"
+	line "should talk to"
+	cont "Gramps."
 
-	para "But the trainer"
-	line "didn't want the"
-
-	para "EGG, so I'd kept"
-	line "it around."
+	para "He has a nice gift"
+	line "for you."
 	done
 
-DayCareText_PartyFull:
-	text "You've no room for"
-	line "this."
+DayCareCoupleStories1_Text:
+	text "Stories from the"
+	line "DAY-CARE couple:"
+
+	para "The PSYBEAM from"
+	line "our GIRAFARIG had"
+	cont "no effect on a"
+	cont "VILEPLUME we tried"
+	cont "to capture."
+
+	para "It, along with"
+	line "GENGAR, are both"
+	cont "part DARK-type."
+
+	para "And we just found"
+	line "out that DRAGONITE"
+	cont "is part NORMAL!"
+
+	para "Are there other"
+	line "#MON that were"
+	cont "typed incorrectly?"
+	done
+
+DayCareCoupleStories2_Text:
+	text "Stories from the"
+	line "DAY-CARE couple:"
+
+	para "Exploring MT."
+	line "MORTAR was much"
+	cont "easier with a"
+	cont "#MON that knew"
+	cont "FLASH."
+
+	para "Moves that sharply"
+	line "lower accuracy are"
+	cont "quite handy in"
+	cont "tough battles!"
 	done
 
 DayCare_MapEvents:
@@ -138,8 +167,8 @@ DayCare_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
-	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
+	bg_event  0,  1, BGEVENT_READ, DayCareCoupleStories1
+	bg_event  1,  1, BGEVENT_READ, DayCareCoupleStories2
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE

@@ -1322,24 +1322,18 @@ _MomJustDoWhatYouCanText::
 
 _DayCareManIntroText::
 	text "I'm the DAY-CARE"
-	line "MAN. Want me to"
-	cont "raise a #MON?"
-	done
+	line "MAN. Have you"
+	cont "been using that"
+	cont "LUCKY EGG?"
 
-_DayCareManIntroEggText::
-	text "I'm the DAY-CARE"
-	line "MAN. Do you know"
-	cont "about EGGS?"
+	para "I once trained a"
+	line "#MON that held"
+	cont "one, and I was"
+	cont "amazed at how fast"
+	cont "it grew!"
 
-	para "I was raising"
-	line "#MON with my"
-	cont "wife, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible is"
-	line "that?"
+	para "But enough of my"
+	line "reminiscing."
 
 	para "So, want me to"
 	line "raise a #MON?"
@@ -1347,29 +1341,23 @@ _DayCareManIntroEggText::
 
 _DayCareLadyIntroText::
 	text "I'm the DAY-CARE"
-	line "LADY."
+	line "LADY. Gramps and I"
+	cont "were pretty good"
+	cont "trainers when we"
+	cont "were younger."
 
-	para "Should I raise a"
-	line "#MON for you?"
-	done
+	para "We've seen many"
+	line "different #MON"
+	cont "over the years."
 
-_DayCareLadyIntroEggText::
-	text "I'm the DAY-CARE"
-	line "LADY. Do you know"
-	cont "about EGGS?"
+	para "There are stories"
+	line "about them in the"
+	cont "books on those"
+	cont "shelves."
 
-	para "My husband and I"
-	line "were raising some"
-	cont "#MON, you see."
-
-	para "We were shocked to"
-	line "find an EGG!"
-
-	para "How incredible"
-	line "could that be?"
-
-	para "Should I raise a"
-	line "#MON for you?"
+	para "Now then, should I"
+	line "raise a #MON"
+	cont "for you?"
 	done
 
 _WhatShouldIRaiseText::
