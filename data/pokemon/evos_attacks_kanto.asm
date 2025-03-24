@@ -974,7 +974,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	dbww EVOLVE_TRADE, -1, ALAKAZAM
+	dbww EVOLVE_ITEM, MIST_STONE, ALAKAZAM
 	db 0 ; no more evolutions
 	dbw 1, TELEPORT
 	dbw 1, KINESIS
@@ -1018,7 +1018,7 @@ MachopEvosAttacks:
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	dbww EVOLVE_TRADE, -1, MACHAMP
+	dbww EVOLVE_ITEM, MIST_STONE, MACHAMP
 	db 0 ; no more evolutions
 	dbw 1, LOW_KICK
 	dbw 1, LEER
@@ -1132,7 +1132,7 @@ GeodudeEvosAttacks:
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	dbww EVOLVE_TRADE, -1, GOLEM
+	dbww EVOLVE_ITEM, MIST_STONE, GOLEM
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, DEFENSE_CURL
@@ -1385,7 +1385,7 @@ GastlyEvosAttacks:
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	dbww EVOLVE_TRADE, -1, GENGAR
+	dbww EVOLVE_ITEM, MIST_STONE, GENGAR
 	db 0 ; no more evolutions
 	dbw 1, HYPNOSIS
 	dbw 1, LICK

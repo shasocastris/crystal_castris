@@ -72,7 +72,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, b
 	cp EVOLVE_ITEM
-	jmp z, .item
+	jr z, .item
 
 	ld a, [wForceEvolution]
 	and a
@@ -88,9 +88,6 @@ EvolveAfterBattle_MasterLoop:
 ; EVOLVE_STAT
 	call GetEvoLevel
 	jmp c, .skip_evolution_species_parameter_byte
-
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
 
 	push hl
 	ld de, wTempMonAttack
@@ -114,9 +111,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
 	jmp c, .skip_evolution_species_parameter_byte
-
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species_parameter_byte
 
 	call GetNextEvoAttackByte
 	cp TR_ANYTIME
@@ -142,9 +136,6 @@ EvolveAfterBattle_MasterLoop:
 	jmp z, .skip_evolution_species_parameter_word
 
 	and a
-	jmp z, .skip_evolution_species_parameter_word
-
-	call IsMonHoldingEverstone
 	jmp z, .skip_evolution_species_parameter_word
 
 	call GetEvoItem
@@ -176,8 +167,6 @@ EvolveAfterBattle_MasterLoop:
 .level
 	call GetEvoLevel
 	jmp c, .skip_evolution_species
-	call IsMonHoldingEverstone
-	jmp z, .skip_evolution_species
 
 .proceed
 	ld a, [wTempMonLevel]
@@ -405,18 +394,6 @@ CancelEvolution:
 	call PrintText
 	call ClearTilemap
 	jmp EvolveAfterBattle_MasterLoop
-
-IsMonHoldingEverstone:
-	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
-	call GetItemIndexFromID
-	cphl16 EVERSTONE
-	pop hl
-	ret
 
 CongratulationsYourPokemonText:
 	text_far _CongratulationsYourPokemonText

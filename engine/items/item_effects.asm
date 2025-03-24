@@ -124,7 +124,7 @@ ItemEffects1:
 	dw StatusHealingEffect ; MIRACLEBERRY
 	dw NoEffect            ; PEARL
 	dw NoEffect            ; BIG_PEARL
-	dw NoEffect            ; EVERSTONE
+	dw EvoStoneEffect      ; MIST_STONE
 	dw NoEffect            ; SPELL_TAG
 	dw RestoreHPEffect     ; RAGECANDYBAR
 	dw NoEffect            ; MIRACLE_SEED
@@ -1162,13 +1162,6 @@ EvoStoneEffect:
 
 	ld a, MON_ITEM
 	call GetPartyParamLocation
-
-	ld a, [hl]
-	push hl
-	call GetItemIndexFromID
-	cphl16 EVERSTONE
-	pop hl
-	jr z, .NoEffect
 
 	ld a, TRUE
 	ld [wForceEvolution], a

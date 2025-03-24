@@ -98,14 +98,14 @@ ProfElmScript:
 	iftrue ElmGiveTicketScript
 ElmCheckMasterBall:
 	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-	iftrue ElmCheckEverstone
+	iftrue ElmCheckMistStone
 	checkflag ENGINE_RISINGBADGE
 	iftrue ElmGiveMasterBallScript
-ElmCheckEverstone:
-	checkevent EVENT_GOT_EVERSTONE_FROM_ELM
+ElmCheckMistStone:
+	checkevent EVENT_GOT_MIST_STONE_FROM_ELM
 	iftrue ElmScript_CallYou
 	checkevent EVENT_SHOWED_TOGETIC_TO_ELM
-	iftrue ElmGiveEverstoneScript
+	iftrue ElmGiveMistStoneScript
 	checkevent EVENT_TOLD_ELM_ABOUT_TOGETIC_OVER_THE_PHONE
 	iffalse ElmCheckTogepiEvolved
 	loadmonindex 1, TOGETIC
@@ -376,21 +376,21 @@ ShowElmTogeticScript:
 	promptbutton
 	writetext ShowElmTogeticText3
 	promptbutton
-ElmGiveEverstoneScript:
-	writetext ElmGiveEverstoneText1
+ElmGiveMistStoneScript:
+	writetext ElmGiveMistStoneText1
 	promptbutton
-	verbosegiveitem EVERSTONE
-	iffalse ElmScript_NoRoomForEverstone
-	writetext ElmGiveEverstoneText2
+	verbosegiveitem MIST_STONE
+	iffalse ElmScript_NoRoomForMistStone
+	writetext ElmGiveMistStoneText2
 	waitbutton
 	closetext
-	setevent EVENT_GOT_EVERSTONE_FROM_ELM
+	setevent EVENT_GOT_MIST_STONE_FROM_ELM
 	end
 
 ElmScript_CallYou:
 	writetext ElmText_CallYou
 	waitbutton
-ElmScript_NoRoomForEverstone:
+ElmScript_NoRoomForMistStone:
 	closetext
 	end
 
@@ -1097,7 +1097,7 @@ ShowElmTogeticText3:
 	cont "to be done."
 	done
 
-ElmGiveEverstoneText1:
+ElmGiveMistStoneText1:
 	text "Thanks, <PLAY_G>!"
 	line "You're helping"
 
@@ -1109,9 +1109,9 @@ ElmGiveEverstoneText1:
 	cont "our appreciation."
 	done
 
-ElmGiveEverstoneText2:
-	text "That's an"
-	line "EVERSTONE."
+ElmGiveMistStoneText2:
+	text "That's a"
+	line "MIST STONE."
 
 	para "Some species of"
 	line "#MON evolve"
@@ -1119,13 +1119,15 @@ ElmGiveEverstoneText2:
 	para "when they grow to"
 	line "certain levels."
 
-	para "A #MON holding"
-	line "the EVERSTONE"
-	cont "won't evolve."
+	para "Others evolve"
+	line "when exposed to"
+	cont "certain items."
 
-	para "Give it to a #-"
-	line "MON you don't want"
-	cont "to evolve."
+	para "You'll have to"
+	line "experiment to find"
+	cont "out which #MON"
+	cont "evolve using a"
+	cont "MIST STONE."
 	done
 
 ElmText_CallYou:

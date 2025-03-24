@@ -95,7 +95,7 @@ ItemNames::
 	li "MIRACLEBERRY" ; 005D
 	li "PEARL"        ; 005E
 	li "BIG PEARL"    ; 005F
-	li "EVERSTONE"    ; 0060
+	li "MIST STONE"    ; 0060
 	li "SPELL TAG"    ; 0061
 	li "RAGECANDYBAR" ; 0062
 	li "MIRACLE SEED" ; 0063
