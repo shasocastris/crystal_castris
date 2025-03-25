@@ -633,12 +633,6 @@ NEXTU
 wHallOfFameTemp:: hall_of_fame wHallOfFameTemp
 
 NEXTU
-; odd egg
-wOddEgg:: party_struct wOddEgg
-wOddEggName:: ds MON_NAME_LENGTH
-wOddEggOT:: ds NAME_LENGTH
-
-NEXTU
 ; debug tileset color picker
 wDebugLightTileColor:: ds 2
 wDebugDarkTileColor::  ds 2
@@ -1153,8 +1147,6 @@ wMobileMonMiscSpecies::
 wcd2a:: db
 
 UNION
-wTempOddEggNickname:: ds MON_NAME_LENGTH
-NEXTU
 wcd2b:: ds 1
 wcd2c:: ds 1
 wcd2d:: ds 1
@@ -2492,9 +2484,6 @@ wPokedexShowPointerAddr:: dw
 wPokedexShowPointerBank:: db
 
 NEXTU
-wUnusedEggHatchFlag:: db
-
-NEXTU
 ; enemy party
 wOTPartyData::
 wOTPlayerName:: ds NAME_LENGTH
@@ -3033,34 +3022,21 @@ wFirstUnownSeen:: db
 
 wDayCareMan::
 ; bit 7: active
-; bit 6: egg ready
-; bit 5: monsters are compatible
 ; bit 0: monster 1 in day-care
 	db
 
-wBreedMon1Nickname:: ds MON_NAME_LENGTH
-wBreedMon1OT:: ds NAME_LENGTH
-wBreedMon1:: box_struct wBreedMon1
+wDayCareMon1Nickname:: ds MON_NAME_LENGTH
+wDayCareMon1OT:: ds NAME_LENGTH
+wDayCareMon1:: box_struct wDayCareMon1
 
 wDayCareLady::
 ; bit 7: active
 ; bit 0: monster 2 in day-care
 	db
 
-wStepsToEgg::
-	db
-wBreedMotherOrNonDitto::
-;  z: yes
-; nz: no
-	db
-
-wBreedMon2Nickname:: ds MON_NAME_LENGTH
-wBreedMon2OT:: ds NAME_LENGTH
-wBreedMon2:: box_struct wBreedMon2
-
-wEggMonNickname:: ds MON_NAME_LENGTH
-wEggMonOT:: ds NAME_LENGTH
-wEggMon:: box_struct wEggMon
+wDayCareMon2Nickname:: ds MON_NAME_LENGTH
+wDayCareMon2OT:: ds NAME_LENGTH
+wDayCareMon2:: box_struct wDayCareMon2
 
 wBugContestSecondPartySpecies:: db
 wContestMon:: party_struct wContestMon

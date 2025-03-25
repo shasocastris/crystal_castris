@@ -33,7 +33,7 @@ INCLUDE "engine/events/overworld.asm"
 INCLUDE "engine/items/items.asm"
 INCLUDE "engine/battle/anim_hp_bar.asm"
 INCLUDE "engine/pokemon/move_mon.asm"
-INCLUDE "engine/pokemon/breedmon_level_growth.asm"
+INCLUDE "engine/pokemon/daycaremon_level_growth.asm"
 INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/events/bug_contest/display_stats.asm"
 INCLUDE "engine/items/item_effects.asm"
@@ -86,7 +86,7 @@ INCLUDE "engine/events/mom.asm"
 INCLUDE "engine/events/daycare.asm"
 INCLUDE "engine/events/print_unown.asm"
 INCLUDE "engine/events/print_photo.asm"
-INCLUDE "engine/pokemon/breeding.asm"
+INCLUDE "engine/pokemon/daycaremons.asm"
 
 
 SECTION "Roofs", ROMX

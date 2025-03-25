@@ -706,7 +706,7 @@ _BreedAskNicknameText::
 
 _LeftWithDayCareLadyText::
 	text "It's @"
-	text_ram wBreedMon2Nickname
+	text_ram wDayCareMon2Nickname
 	text_start
 	line "that was left with"
 	cont "the DAY-CARE LADY."
@@ -714,13 +714,13 @@ _LeftWithDayCareLadyText::
 
 _LeftWithDayCareManText::
 	text "It's @"
-	text_ram wBreedMon1Nickname
+	text_ram wDayCareMon1Nickname
 	text_start
 	line "that was left with"
 	cont "the DAY-CARE MAN."
 	done
 
-_BreedBrimmingWithEnergyText::
+_BrimmingWithEnergyText::
 	text "It's brimming with"
 	line "energy."
 	prompt

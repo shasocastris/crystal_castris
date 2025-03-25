@@ -93,7 +93,7 @@ GetMonSpecies:
 	cp BOXMON
 	jr z, .boxmon
 	cp TEMPMON
-	jr z, .breedmon
+	jr z, .daycaremon
 	; WILDMON
 
 .partymon
@@ -109,8 +109,8 @@ GetMonSpecies:
 	di
 	jp @
 
-.breedmon
-	ld a, [wBreedMon1Species]
+.daycaremon
+	ld a, [wDayCareMon1Species]
 	jr .done2
 
 .done

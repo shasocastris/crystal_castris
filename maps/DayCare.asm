@@ -6,19 +6,6 @@ DayCare_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, DayCareEggCheckCallback
-
-DayCareEggCheckCallback:
-	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
-	iftrue .PutDayCareManOutside
-	clearevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
-	setevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
-	endcallback
-
-.PutDayCareManOutside:
-	setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
-	clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
-	endcallback
 
 DayCareManScript_Inside:
 	faceplayer
@@ -171,5 +158,5 @@ DayCare_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, DayCareCoupleStories2
 
 	def_object_events
-	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE
+	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, -1
 	object_event  5,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DayCareLadyScript, -1
