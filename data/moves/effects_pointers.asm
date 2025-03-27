@@ -40,7 +40,6 @@ MoveEffectsPointers:
 	dw TriAttack
 	dw NormalHit
 	dw OHKOHit
-	dw RazorWind
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
@@ -89,7 +88,6 @@ MoveEffectsPointers:
 	dw Splash
 	dw Disable
 	dw StaticDamage
-	dw Psywave
 	dw Counter
 	dw Encore
 	dw PainSplit

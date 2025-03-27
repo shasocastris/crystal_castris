@@ -1232,7 +1232,6 @@ TrapTarget:
 	endmove
 
 SuperFang:
-Psywave:
 StaticDamage:
 	checkobedience
 	usedmovetext
