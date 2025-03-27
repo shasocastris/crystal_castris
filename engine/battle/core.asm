@@ -779,7 +779,7 @@ TryEnemyFlee:
 	jr c, .Flee
 
 	call BattleRandom
-	add a
+	cp 20 percent ; 20 percent chance for OftenFleeMons to flee
 	jr nc, .Stay
 
 	push af
@@ -790,7 +790,7 @@ TryEnemyFlee:
 	jr c, .Flee
 
 	ld a, d
-	cp 20 percent ; double the value because of the previous add a, a
+	cp 5 percent ; 5 percent chance for SometimesFleeMons to flee
 	jr nc, .Stay
 
 	ld de, 2
