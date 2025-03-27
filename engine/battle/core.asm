@@ -3657,7 +3657,7 @@ TryToRunAwayFromBattle:
 
 	xor a
 	ldh [hMultiplicand + 0], a
-	ld a, 32
+	ld a, 4
 	ldh [hMultiplier], a
 	call Multiply
 	ldh a, [hProduct + 2]
@@ -3684,7 +3684,7 @@ TryToRunAwayFromBattle:
 .loop
 	dec c
 	jr z, .cant_escape_2
-	ld b, 30
+	ld b, 5
 	ldh a, [hQuotient + 3]
 	add b
 	ldh [hQuotient + 3], a
