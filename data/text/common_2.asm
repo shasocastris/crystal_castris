@@ -753,6 +753,21 @@ _BreedShowsInterestText::
 	text "."
 	prompt
 
+_VeryHappyText::
+	text "It looks very"
+	line "happy!"
+	prompt
+
+_PlayingAroundText::
+	text "It's playing"
+	line "around."
+	prompt
+
+_GrowingStrongText::
+	text "It's growing"
+	line "strong!"
+	prompt
+
 _EmptyMailboxText::
 	text "There's no MAIL"
 	line "here."
