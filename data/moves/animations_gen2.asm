@@ -85,6 +85,8 @@ BattleAnimationsGen2::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
+	dw BattleAnim_Moonblast
+	dw BattleAnim_PlayRough
 .IndirectEnd::
 
 BattleAnim_Sketch:
@@ -289,6 +291,7 @@ BattleAnim_Conversion2:
 	anim_wait 48
 	anim_ret
 
+BattleAnim_Moonblast:
 BattleAnim_Aeroblast:
 	anim_2gfx BATTLE_ANIM_GFX_BEAM, BATTLE_ANIM_GFX_AEROBLAST
 	anim_bgp $1b
@@ -1109,6 +1112,7 @@ BattleAnim_Encore:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_PlayRough:
 BattleAnim_Pursuit:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_if_param_equal $1, .pursued

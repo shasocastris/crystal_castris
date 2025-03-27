@@ -431,7 +431,8 @@ TogepiEvosAttacks:
 	dbw 18, SWEET_KISS
 	dbw 25, ENCORE
 	dbw 31, SAFEGUARD
-	dbw 38, DOUBLE_EDGE
+	dbw 38, PLAY_ROUGH
+	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
@@ -442,7 +443,8 @@ TogeticEvosAttacks:
 	dbw 18, SWEET_KISS
 	dbw 25, ENCORE
 	dbw 31, SAFEGUARD
-	dbw 38, DOUBLE_EDGE
+	dbw 38, PLAY_ROUGH
+	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
@@ -526,7 +528,7 @@ MarillEvosAttacks:
 	dbw 10, WATER_GUN
 	dbw 15, ROLLOUT
 	dbw 21, BUBBLEBEAM
-	dbw 28, DOUBLE_EDGE
+	dbw 28, PLAY_ROUGH
 	dbw 36, RAIN_DANCE
 	db 0 ; no more level-up moves
 
@@ -541,7 +543,7 @@ AzumarillEvosAttacks:
 	dbw 10, WATER_GUN
 	dbw 15, ROLLOUT
 	dbw 25, BUBBLEBEAM
-	dbw 36, DOUBLE_EDGE
+	dbw 36, PLAY_ROUGH
 	dbw 48, RAIN_DANCE
 	db 0 ; no more level-up moves
 
@@ -852,7 +854,7 @@ SnubbullEvosAttacks:
 	dbw 13, BITE
 	dbw 19, LICK
 	dbw 26, ROAR
-	dbw 34, RAGE
+	dbw 34, PLAY_ROUGH
 	dbw 43, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -865,7 +867,7 @@ GranbullEvosAttacks:
 	dbw 13, BITE
 	dbw 19, LICK
 	dbw 28, ROAR
-	dbw 38, RAGE
+	dbw 38, PLAY_ROUGH
 	dbw 51, TAKE_DOWN
 	db 0 ; no more level-up moves
 
