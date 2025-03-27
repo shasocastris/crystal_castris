@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db FAIRY, FAIRY ; type
-	db 75 ; catch rate
+	db 25 ; catch rate
 	db 178 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F75 ; gender ratio

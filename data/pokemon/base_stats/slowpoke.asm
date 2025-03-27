@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC_TYPE ; type
-	db 190 ; catch rate
+	db 63 ; catch rate
 	db 99 ; base exp
 	dw NO_ITEM, KINGS_ROCK ; items
 	db GENDER_F50 ; gender ratio

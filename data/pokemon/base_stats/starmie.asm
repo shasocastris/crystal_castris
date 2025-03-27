@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, PSYCHIC_TYPE ; type
-	db 60 ; catch rate
+	db 20 ; catch rate
 	db 207 ; base exp
 	dw STARDUST, STAR_PIECE ; items
 	db GENDER_UNKNOWN ; gender ratio

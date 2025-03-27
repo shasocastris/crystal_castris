@@ -5,7 +5,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db NORMAL, NORMAL ; type
-	db 25 ; catch rate
+	db 8 ; catch rate
 	db 154 ; base exp
 	dw LEFTOVERS, LEFTOVERS ; items
 	db GENDER_F12_5 ; gender ratio
