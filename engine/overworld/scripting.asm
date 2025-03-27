@@ -106,7 +106,6 @@ ScriptCommandTable:
 	dw Script_checktime                  ; 2b
 	dw Script_checkpoke                  ; 2c
 	dw Script_givepoke                   ; 2d
-	dw Script_giveegg                    ; 2e
 	dw Script_givepokemail               ; 2f
 	dw Script_checkpokemail              ; 30
 	dw Script_checkevent                 ; 31
@@ -1897,22 +1896,6 @@ Script_givepoke:
 .ok
 	farcall GivePoke
 	ld a, b
-	ld [wScriptVar], a
-	ret
-
-Script_giveegg:
-; if no room in the party, return 0 in wScriptVar; else, return 2
-
-	xor a ; PARTYMON
-	ld [wScriptVar], a
-	ld [wMonType], a
-	call LoadScriptPokemonID
-	ld [wCurPartySpecies], a
-	rst GetScriptByte
-	ld [wCurPartyLevel], a
-	farcall GiveEgg
-	ret nc
-	ld a, 2
 	ld [wScriptVar], a
 	ret
 

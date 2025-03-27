@@ -315,13 +315,6 @@ MACRO givepoke
 	endc
 ENDM
 
-	const giveegg_command ; $2e
-MACRO giveegg
-	db giveegg_command
-	dw \1 ; pkmn
-	db \2 ; level
-ENDM
-
 	const givepokemail_command ; $2f
 MACRO givepokemail
 	db givepokemail_command
