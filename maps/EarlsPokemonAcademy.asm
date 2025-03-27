@@ -67,58 +67,79 @@ AcademyBlackboard:
 	loadmenu .BlackboardMenuHeader
 	_2dmenu
 	closewindow
-	ifequal 1, .Poison
-	ifequal 2, .Paralysis
-	ifequal 3, .Sleep
-	ifequal 4, .Burn
-	ifequal 5, .Freeze
+	ifequal 1, .Wrap
+	ifequal 2, .Constrict
+	ifequal 3, .Bind
+	ifequal 4, .FireSpin
+	ifequal 5, .Whirlpool
+	ifequal 6, .RazorWind
+	ifequal 7, .Clamp
+	ifequal 8, .Psywave
 	closetext
 	end
 
-.Poison:
-	writetext AcademyPoisonText
+.Wrap:
+	writetext AcademyWrapText
 	waitbutton
 	sjump .Loop
 
-.Paralysis:
-	writetext AcademyParalysisText
+.Constrict:
+	writetext AcademyConstrictText
 	waitbutton
 	sjump .Loop
 
-.Sleep:
-	writetext AcademySleepText
+.Bind:
+	writetext AcademyBindText
 	waitbutton
 	sjump .Loop
 
-.Burn:
-	writetext AcademyBurnText
+.FireSpin:
+	writetext AcademyFireSpinText
 	waitbutton
 	sjump .Loop
 
-.Freeze:
-	writetext AcademyFreezeText
+.Whirlpool:
+	writetext AcademyWhirlpoolText
+	waitbutton
+	sjump .Loop
+
+.RazorWind:
+	writetext AcademyRazorWindText
+	waitbutton
+	sjump .Loop
+
+.Clamp:
+	writetext AcademyClampText
+	waitbutton
+	sjump .Loop
+
+.Psywave:
+	writetext AcademyPsywaveText
 	waitbutton
 	sjump .Loop
 
 .BlackboardMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 11, 8
+	menu_coords 0, 0, 16, 8
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	dn 3, 2 ; rows, columns
+	dn 3, 3 ; rows, columns
 	db 5 ; spacing
 	dba .Text
 	dbw BANK(@), NULL
 
 .Text:
-	db "PSN@"
-	db "PAR@"
-	db "SLP@"
-	db "BRN@"
-	db "FRZ@"
+	db "WRP@"
+	db "CON@"
+	db "BND@"
+	db "FSP@"
+	db "WHL@"
+	db "RZW@"
+	db "CLM@"
+	db "PSW@"
 	db "QUIT@"
 
 AcademyNotebook:
@@ -225,13 +246,14 @@ AcademyEarlNoMoreToTeachText:
 	done
 
 EarlsPokemonAcademyYoungster1Text:
-	text "I'm taking notes"
-	line "of the teacher's"
-	cont "lecture."
+	text "The moves shown"
+	line "on the blackboard"
+	cont "are really useful."
 
-	para "I'd better copy"
-	line "the stuff on the"
-	cont "blackboard too."
+	para "They also stop"
+	line "trainers from"
+	cont "switching out"
+	cont "their #MON."
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
@@ -261,74 +283,79 @@ EarlsPokemonAcademyYoungster2Text:
 
 AcademyBlackboardText:
 	text "The blackboard"
-	line "describes #MON"
+	line "describes moves"
 
-	para "status changes in"
-	line "battle."
+	para "that keep wild"
+	line "#MON from"
+	cont "fleeting battle."
 	done
 
-AcademyPoisonText:
-	text "If poisoned, a"
-	line "#MON steadily"
-	cont "loses HP."
-
-	para "Poison lingers"
-	line "after the battle,"
-
-	para "and HP is lost as"
-	line "you walk."
-
-	para "To cure it, use an"
-	line "ANTIDOTE."
+AcademyWrapText:
+	text "WRAP: A normal-"
+	line "type trapping move"
+	cont "learned by many"
+	cont "#MON."
 	done
 
-AcademyParalysisText:
-	text "Paralysis reduces"
-	line "speed and may"
-	cont "prevent movement."
-
-	para "It remains after"
-	line "battle, so use"
-	cont "a PARLYZ HEAL."
+AcademyConstrictText:
+	text "CONSTRICT is a"
+	line "GRASS-type move"
+	cont "known to some"
+	cont "WATER and POISON"
+	cont "#MON."
 	done
 
-AcademySleepText:
-	text "If asleep, your"
-	line "#MON can't make"
-	cont "a move."
-
-	para "A sleeping #MON"
-	line "doesn't wake up"
-	cont "after battle."
-
-	para "Wake it up with"
-	line "an AWAKENING."
+AcademyBindText:
+	text "BIND is a rare"
+	line "technique that is"
+	cont "BUG-type."
 	done
 
-AcademyBurnText:
-	text "A burn steadily"
-	line "consumes HP."
-
-	para "It also reduces"
-	line "attack power."
-
-	para "A burn lingers"
-	line "after battle."
-
-	para "Use a BURN HEAL as"
-	line "the cure."
+AcademyFireSpinText:
+	text "FIRE SPIN is a"
+	line "learned by most"
+	cont "FIRE types, but"
+	cont "often only when"
+	cont "they are already"
+	cont "quite strong."
 	done
 
-AcademyFreezeText:
-	text "If your #MON is"
-	line "frozen, it can't"
-	cont "do a thing."
+AcademyWhirlpoolText:
+	text "WHIRLPOOL is a"
+	line "rumored WATER-type"
+	cont "trapping move that"
+	cont "no known #MON"
+	cont "learns naturally."
+	done
 
-	para "It remains frozen"
-	line "after battle."
+AcademyRazorWindText:
+	text "RAZOR WIND was"
+	line "once thought to be"
+	cont "a two-turn move."
 
-	para "Thaw it out with"
-	line "an ICE HEAL."
+	para "Further evidence"
+	line "shows it is a"
+	cont "FLYING-type"
+	cont "trapping move."
+	done
+
+AcademyClampText:
+	text "CLAMP is a"
+	line "trapping move of"
+	cont "the newly"
+	cont "discovered STEEL"
+	cont "type."
+	done
+
+AcademyPsywaveText:
+	text "PSYWAVE was once"
+	line "only learned via"
+	cont "TM."
+
+	para "It is really a"
+	line "PSYCHIC move often"
+	cont "known by PSYCHIC"
+	cont "and GHOST #MON."
 	done
 
 AcademyNotebookText:
