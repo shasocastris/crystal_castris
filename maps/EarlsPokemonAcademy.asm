@@ -257,15 +257,23 @@ EarlsPokemonAcademyYoungster1Text:
 	done
 
 EarlsPokemonAcademyGameboyKid1Text:
-	text "I traded my best"
-	line "#MON to the"
-	cont "guy beside me."
+	text "Trainers only"
+	line "battle #MON"
+	cont "until they faint."
+
+	para "If a #MON dies"
+	line "in battle, hoards"
+	cont "of others might"
+	cont "start to rampage."
 	done
 
 EarlsPokemonAcademyGameboyKid2Text:
-	text "Huh? The #MON I"
-	line "just got is hold-"
-	cont "ing something!"
+	text "There is a legend"
+	line "that #MON join"
+	cont "trainers because"
+	cont "they won't grow as"
+	cont "much without a"
+	cont "human partner."
 	done
 
 EarlsPokemonAcademyYoungster2Text:
