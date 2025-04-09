@@ -2,25 +2,17 @@
 	const POKECENTER2F_TRADE_RECEPTIONIST
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_TIME_CAPSULE_RECEPTIONIST
-	const POKECENTER2F_OFFICER
 
 Pokecenter2F_MapScripts:
 	def_scene_scripts
-	scene_script Pokecenter2FCheckMysteryGiftScene,      SCENE_POKECENTER2F_CHECK_MYSTERY_GIFT
+	scene_script Pokecenter2FNoopScene,                  SCENE_POKECENTER2F_NOOP
 	scene_script Pokecenter2FLeaveTradeCenterScene,      SCENE_POKECENTER2F_LEAVE_TRADE_CENTER
 	scene_script Pokecenter2FLeaveColosseumScene,        SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 	scene_script Pokecenter2FLeaveTimeCapsuleScene,      SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE
 
 	def_callbacks
 
-Pokecenter2FCheckMysteryGiftScene:
-	special CheckMysteryGift
-	ifequal $0, .done
-	clearevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iftrue .done
-	sdefer Pokecenter2F_AppearMysteryGiftDeliveryGuy
-.done
+Pokecenter2FNoopScene:
 	end
 
 Pokecenter2FLeaveTradeCenterScene:
@@ -33,11 +25,6 @@ Pokecenter2FLeaveColosseumScene:
 
 Pokecenter2FLeaveTimeCapsuleScene:
 	sdefer Script_LeftTimeCapsule
-	end
-
-Pokecenter2F_AppearMysteryGiftDeliveryGuy:
-	appear POKECENTER2F_OFFICER
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	end
 
 Script_TradeCenterClosed:
@@ -274,7 +261,7 @@ Script_LeftCableTradeCenter:
 	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
 	applymovement POKECENTER2F_TRADE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	setscene SCENE_POKECENTER2F_CHECK_MYSTERY_GIFT
+	setscene SCENE_POKECENTER2F_NOOP
 	setmapscene TRADE_CENTER, SCENE_TRADECENTER_INITIALIZE
 	end
 
@@ -283,7 +270,7 @@ Script_LeftCableColosseum:
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
 	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
-	setscene SCENE_POKECENTER2F_CHECK_MYSTERY_GIFT
+	setscene SCENE_POKECENTER2F_NOOP
 	setmapscene COLOSSEUM, SCENE_COLOSSEUM_INITIALIZE
 	end
 
@@ -307,39 +294,6 @@ Script_LeftTimeCapsule:
 Pokecenter2FLinkRecordSign:
 	reanchormap
 	special DisplayLinkRecord
-	closetext
-	end
-
-Pokecenter2FOfficerScript:
-	faceplayer
-	opentext
-	checkevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
-	iftrue .AlreadyGotGift
-	writetext Text_MysteryGiftDeliveryGuy_Intro
-	yesorno
-	iffalse .RefusedGift
-	writetext Text_MysteryGiftDeliveryGuy_HereYouGo
-	promptbutton
-	waitsfx
-	special GetMysteryGiftItem
-	iffalse .BagIsFull
-	itemnotify
-	setevent EVENT_MYSTERY_GIFT_DELIVERY_GUY
-.AlreadyGotGift:
-	writetext Text_MysteryGiftDeliveryGuy_Outro
-	waitbutton
-	closetext
-	end
-
-.BagIsFull:
-	writetext Text_MysteryGiftDeliveryGuy_NoRoom
-	waitbutton
-	closetext
-	end
-
-.RefusedGift:
-	writetext Text_MysteryGiftDeliveryGuy_SaidNo
-	waitbutton
 	closetext
 	end
 
@@ -487,39 +441,6 @@ Text_BattleRoomClosed:
 	cont "being adjusted."
 	done
 
-Text_MysteryGiftDeliveryGuy_Intro:
-	text "Hello! You're"
-	line "<PLAYER>, right?"
-
-	para "I have some-"
-	line "thing for you."
-	done
-
-Text_MysteryGiftDeliveryGuy_HereYouGo:
-	text "Here you go!"
-	done
-
-Text_MysteryGiftDeliveryGuy_Outro:
-	text "We hope to serve"
-	line "you again."
-	done
-
-Text_MysteryGiftDeliveryGuy_NoRoom:
-	text "Oh, you have no"
-	line "space for this."
-
-	para "Stop in at any"
-	line "#MON CENTER"
-
-	para "across the country"
-	line "to pick it up."
-	done
-
-Text_MysteryGiftDeliveryGuy_SaidNo:
-	text "No? That's very"
-	line "strange…"
-	done
-
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -538,4 +459,3 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
-	object_event  1,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY

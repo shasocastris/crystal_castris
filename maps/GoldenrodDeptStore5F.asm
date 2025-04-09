@@ -101,21 +101,80 @@ GoldenrodDeptStore5FReceptionistScript:
 	closetext
 	end
 
-Carrie:
+GoldenrodDeptStore5FMysteryGiftCarrieScript:
 	faceplayer
 	opentext
-	special GameboyCheck
-	ifnotequal GBCHECK_CGB, .NotGBC ; This is a dummy check from Gold/Silver
-	writetext GoldenrodDeptStore5FCarrieMysteryGiftExplanationText
+	checkflag ENGINE_DAILY_MYSTERY_GIFT
+	iftrue .NoGift
+	writetext MysteryGiftText
+	yesorno
+	iffalse .Decline
+	readvar VAR_ITEM_POCKET
+	ifgreater 36, .ItemsNearlyFull
+	readvar VAR_BALL_POCKET
+	ifgreater 8, .BallsNearlyFull
+.AskSave
+	setflag ENGINE_DAILY_MYSTERY_GIFT
+if !DEF(_DEBUG)
+	writetext MysteryGift_SaveGame
+	yesorno
+	iffalse .Decline
+	special TryQuickSave
+	iffalse .Decline
+endc
+	writetext MysteryGiftLinkUp
+	playsound SFX_MOVE_DELETED
+	waitsfx
+	scall FindMysteryGiftItem
+	iffalse .NoRoom
+	scall FindMysteryGiftItem
+	iffalse .NoRoom
+	scall FindMysteryGiftItem
+	iffalse .NoRoom
+	writetext MysteryGiftReceivedText
 	waitbutton
 	closetext
-	special UnlockMysteryGift
+	turnobject LAST_TALKED, DOWN
 	end
 
-.NotGBC:
-	writetext GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText
+.NoRoom
+	writetext MysterGiftNoRoom
 	waitbutton
 	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+
+.NoGift
+	writetext NoMysteryGiftText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+
+.Decline
+	clearflag ENGINE_DAILY_MYSTERY_GIFT
+	writetext DeclineMysteryGiftText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+
+.ItemsNearlyFull
+	writetext MysteryGiftItemPocketWarningText
+	waitbutton
+	jump .AskContinueAnyway
+
+.BallsNearlyFull
+	writetext MysteryGiftBallPocketWarningText
+	waitbutton
+.AskContinueAnyway
+	writetext MysteryGiftAnywayText
+	yesorno
+	iffalse .Decline
+	jump .AskSave
+
+FindMysteryGiftItem:
+	jumpstd MysteryGiftCarrieScript
 	end
 
 GoldenrodDeptStore5FLassScript:
@@ -173,18 +232,89 @@ GoldenrodDeptStore5FReceptionistThereAreTMsPerfectForMonText:
 	line "your #MON."
 	done
 
-GoldenrodDeptStore5FCarrieMysteryGiftExplanationText:
-	text "MYSTERY GIFT."
+MysteryGiftText:
+	text "Oh, hello there!"
+	line "You know, people"
+	cont "are so careless"
+	cont "in this store."
 
-	para "With just a"
-	line "little beep, you"
-	cont "get a gift."
+	para "I keep finding"
+	line "items left on"
+	cont "shelves and under"
+	cont "displays."
+
+	para "Would you like a"
+	line "MYSTERY GIFT of"
+	cont "some of the things"
+	cont "I found today?"
 	done
 
-GoldenrodDeptStore5FCarrieMysteryGiftRequiresGBCText:
-	text "The MYSTERY GIFT"
-	line "option requires a"
-	cont "Game Boy Color."
+MysteryGift_SaveGame:
+	text "You need to save"
+	line "your game before"
+	cont "you can receive"
+	cont "your MYSTERY GIFT"
+	cont "'kay?"
+	done
+
+MysteryGiftLinkUp:
+	text "Okay! Let me grab"
+	line "what I found from"
+	cont "my bag!"
+	done
+
+MysterGiftNoRoom:
+	text "Oh! Your PACK is"
+	line "completely full."
+
+	para "Make some space"
+	line "and I can give you"
+	cont "what I found."
+	done
+
+MysteryGiftItemPocketWarningText:
+	text "…You don't have"
+	line "much space in your"
+	cont "ITEM POCKET."
+	done
+
+MysteryGiftBallPocketWarningText:
+	text "…You don't have"
+	line "much space in your"
+	cont "BALL POCKET."
+	done
+
+MysteryGiftAnywayText:
+	text "Do you want your"
+	line "MYSTERY GIFT"
+	cont "anyway?"
+	done
+
+MysteryGiftReceivedText:
+	text "There you go!"
+
+	para "I'm here every"
+	line "day shopping, so I"
+	cont "find new things"
+	cont "all the time."
+
+	para "Check back"
+	line "tomorrow, okay?"
+	done
+
+NoMysteryGiftText:
+	text "I haven't found"
+	line "anything else yet."
+
+	para "Maybe check back"
+	line "tomorrow if you're"
+	cont "still interested."
+	done
+
+DeclineMysteryGiftText:
+	text "That's fine. I'll"
+	line "probably just turn"
+	cont "it in later."
 	done
 
 GoldenrodDeptStore5FLassText:
@@ -234,5 +364,5 @@ GoldenrodDeptStore5F_MapEvents:
 	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FLassScript, -1
 	object_event  6,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Mike, -1
 	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FPokefanMScript, -1
-	object_event  9,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Carrie, -1
+	object_event  9,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FMysteryGiftCarrieScript, -1
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

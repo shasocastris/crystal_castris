@@ -2,16 +2,14 @@
 	const_def
 	const MAINMENU_NEW_GAME               ; 0
 	const MAINMENU_CONTINUE               ; 1
-	const MAINMENU_MYSTERY                ; 2
-	const MAINMENU_MYSTERY_STUDIUM        ; 3
-	const MAINMENU_STUDIUM                ; 4
+	const MAINMENU_MYSTERY_STUDIUM        ; 2
+	const MAINMENU_STUDIUM                ; 3
 
 	; MainMenu.Strings and MainMenu.Jumptable indexes
 	const_def
 	const MAINMENUITEM_CONTINUE       ; 0
 	const MAINMENUITEM_NEW_GAME       ; 1
 	const MAINMENUITEM_OPTION         ; 2
-	const MAINMENUITEM_MYSTERY_GIFT   ; 3
 
 MainMenu:
 .loop
@@ -55,13 +53,11 @@ MainMenu:
 	db "CONTINUE@"
 	db "NEW GAME@"
 	db "OPTION@"
-	db "MYSTERY GIFT@"
 .Jumptable:
 ; entries correspond to MAINMENUITEM_* constants
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Option
-	dw MainMenu_MysteryGift
 
 MainMenuItems:
 ; entries correspond to MAINMENU_* constants
@@ -79,20 +75,11 @@ MainMenuItems:
 	db MAINMENUITEM_OPTION
 	db -1
 
-	; MAINMENU_MYSTERY
-	db 4
-	db MAINMENUITEM_CONTINUE
-	db MAINMENUITEM_NEW_GAME
-	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
-	db -1
-
 	; MAINMENU_MYSTERY_STUDIUM
 	db 5
 	db MAINMENUITEM_CONTINUE
 	db MAINMENUITEM_NEW_GAME
 	db MAINMENUITEM_OPTION
-	db MAINMENUITEM_MYSTERY_GIFT
 	db -1
 
 	; MAINMENU_STUDIUM
@@ -119,8 +106,6 @@ MainMenu_GetWhichMenu:
 	ld a, [sNumDailyMysteryGiftPartnerIDs]
 	cp -1 ; locked?
 	call CloseSRAM
-	jr nz, .mystery_gift
-	; This check makes no difference.
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
 	ld a, MAINMENU_CONTINUE
@@ -128,16 +113,6 @@ MainMenu_GetWhichMenu:
 .ok
 .ok2
 	ld a, MAINMENU_CONTINUE
-	ret
-
-.mystery_gift
-	; This check makes no difference.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
-	jr z, .ok3
-.ok3
-.ok4
-	ld a, MAINMENU_MYSTERY
 	ret
 
 MainMenuJoypadLoop:
@@ -263,6 +238,3 @@ MainMenu_Option:
 
 MainMenu_Continue:
 	farjp Continue
-
-MainMenu_MysteryGift:
-	farjp MysteryGift
