@@ -6,8 +6,8 @@ WhirlIslandSW_MapScripts:
 
 	def_callbacks
 
-WhirlIslandSWUltraBall:
-	itemball ULTRA_BALL
+WhirlIslandSWMistStone:
+	itemball MIST_STONE
 
 WhirlIslandSW_MapEvents:
 	db 0, 0 ; filler
@@ -24,4 +24,4 @@ WhirlIslandSW_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event 15,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandSWUltraBall, EVENT_WHIRL_ISLAND_SW_ULTRA_BALL
+	object_event 15,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, WhirlIslandSWMistStone, EVENT_WHIRL_ISLAND_SW_MIST_STONE
