@@ -81,3 +81,137 @@ CheckForHiddenItems:
 	call GetFarByte
 	inc hl
 	ret
+
+RockItemEncounter:
+	ld hl, .RockItems
+.loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
+	sub [hl]
+	jr c, .got_item
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+.got_item
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.done
+	call GetItemIDFromIndex
+	ld [wScriptVar], a
+	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
+
+.RockItems
+	dbw 1, MIST_STONE
+	dbw 1, MOON_STONE
+	dbw 1, FIRE_STONE
+	dbw 1, NUGGET
+	dbw 1, IRON
+	dbw 1, CALCIUM
+	dbw 1, ZINC
+	dbw 1, ZINC    ; placeholder for LIGHT_CLAY
+	dbw 1, ZINC    ; placeholder for SMOOTH_ROCK
+	dbw 2, HARD_STONE
+	dbw 2, METAL_COAT
+	dbw 2, SOFT_SAND
+	dbw 2, BRIGHTPOWDER
+	dbw 2, KINGS_ROCK
+	dbw 2, THICK_CLUB
+	db -1
+
+TreeItemEncounter:
+	ld hl, .TreeItems
+.loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
+	sub [hl]
+	jr c, .got_item
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+.got_item
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.done
+	call GetItemIDFromIndex
+	ld [wScriptVar], a
+	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
+
+.TreeItems
+	dbw 1, LEAF_STONE
+	dbw 1, SUN_STONE
+	dbw 1, BIG_MUSHROOM
+	dbw 1, PROTEIN
+	dbw 1, LUCKY_EGG
+	dbw 1, LUCKY_EGG    ; placeholder for GRIP_CLAW
+	dbw 1, LUCKY_EGG    ; placeholder for HEAT_ROCK
+	dbw 2, MIRACLE_SEED
+	dbw 2, SILVERPOWDER
+	dbw 2, POISON_BARB
+	dbw 2, CHARCOAL
+	dbw 2, STICK
+	dbw 2, MIRACLEBERRY
+	dbw 2, TINYMUSHROOM
+	dbw 2, GOLD_LEAF
+	dbw 2, SILVER_LEAF
+	db -1
+
+FishItemEncounter:
+	ld hl, .FishItems
+.loop
+	ld a, [hl]
+	inc a
+	jr z, .end_of_table
+	call Random
+	sub [hl]
+	jr c, .got_item
+	inc hl
+	inc hl
+	inc hl
+	jr .loop
+.got_item
+	inc hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+.done
+	call GetItemIDFromIndex
+	ld [wScriptVar], a
+	ret
+.end_of_table
+	ld hl, NO_ITEM
+	jr .done
+
+.FishItems:
+	dbw 1, WATER_STONE
+	dbw 1, THUNDERSTONE
+	dbw 1, DRAGON_SCALE
+	dbw 1, BIG_PEARL
+	dbw 1, STAR_PIECE
+	dbw 1, CARBOS
+	dbw 1, CARBOS    ; placeholder for DAMP_ROCK
+	dbw 1, CARBOS    ; placeholder for ICY_ROCK
+	dbw 2, MYSTIC_WATER
+	dbw 2, DRAGON_FANG
+	dbw 2, MAGNET
+	dbw 2, NEVERMELTICE
+	dbw 2, ULTRA_BALL
+	dbw 2, SLOWPOKETAIL
+	dbw 2, STARDUST
+	dbw 2, PEARL
+	db -1
