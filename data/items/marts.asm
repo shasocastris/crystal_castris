@@ -117,11 +117,12 @@ MartGoldenrod3F:
 	dw X_ACCURACY
 
 MartGoldenrod4F:
-	db 5 ; # items
+	db 6 ; # items
 	dw PROTEIN
 	dw IRON
 	dw CARBOS
 	dw CALCIUM
+	dw ZINC
 	dw HP_UP
 
 MartGoldenrod5F1:
@@ -302,12 +303,13 @@ MartCeladon4F:
 	dw SURF_MAIL
 
 MartCeladon5F1:
-	db 5 ; # items
+	db 6 ; # items
 	dw HP_UP
 	dw PROTEIN
 	dw IRON
 	dw CARBOS
 	dw CALCIUM
+	dw ZINC
 
 MartCeladon5F2:
 	db 7 ; # items
