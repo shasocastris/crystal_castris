@@ -105,39 +105,17 @@ ChangeHappiness:
 INCLUDE "data/events/happiness_changes.asm"
 
 StepHappiness::
-; Raise the party's happiness by 1 point every other step cycle.
-
-	ld hl, wHappinessStepCount
-	ld a, [hl]
-	inc a
-	and 1
-	ld [hl], a
-	ret nz
-
-	ld de, wPartyCount
-	ld a, [de]
+; Raise the party's happiness by HAPPINESS_STEP point every other step cycle.
+	ld a, [wPartyCount]
+.loop
 	and a
 	ret z
-
-	ld c, a
-	ld hl, wPartyMon1Happiness
-.loop
-	inc de
-	ld a, [de]
-	cp EGG
-	jr z, .next
-	inc [hl]
-	jr nz, .next
-	ld [hl], $ff
-
-.next
-	push de
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	pop de
-	dec c
-	jr nz, .loop
-	ret
+	dec a
+	ld [wCurPartyMon], a
+	ld c, HAPPINESS_STEP
+	call ChangeHappiness
+	ld a, [wCurPartyMon]
+	jr .loop
 
 DayCareStep::
 ; Raise the experience of Day-Care Pokémon every step cycle.
