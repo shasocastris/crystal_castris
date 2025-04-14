@@ -7,7 +7,7 @@
 	db PSYCHIC_TYPE, PSYCHIC_TYPE ; type
 	db 3 ; catch rate
 	db 220 ; base exp
-	dw NO_ITEM, BERSERK_GENE ; items
+	dw MIRACLEBERRY, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/mewtwo/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)

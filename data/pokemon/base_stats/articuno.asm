@@ -7,7 +7,7 @@
 	db ICE, FLYING ; type
 	db 3 ; catch rate
 	db 215 ; base exp
-	dw NO_ITEM, NO_ITEM ; items
+	dw MIRACLEBERRY, MIRACLEBERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/articuno/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)

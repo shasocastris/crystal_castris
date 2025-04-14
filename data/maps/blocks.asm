@@ -897,4 +897,7 @@ BattleTowerOutside_Blocks:
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.ablk"
 
+SeafoamCaves_Blocks:
+	INCBIN "maps/SeafoamCaves.ablk"
+
 ENDSECTION
