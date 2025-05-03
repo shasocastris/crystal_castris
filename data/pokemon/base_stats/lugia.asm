@@ -4,10 +4,10 @@
 	evs  0,   0,   0,   0,   0,   3
 	;   hp  atk  def  spd  sat  sdf
 
-	db PSYCHIC_TYPE, FLYING ; type
+	db PSYCHIC_TYPE, DRAGON ; type
 	db 3 ; catch rate
 	db 220 ; base exp
-	dw NO_ITEM, NO_ITEM ; items
+	dw SACRED_ASH, SACRED_ASH ; items
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/lugia/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
