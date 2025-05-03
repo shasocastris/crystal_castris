@@ -487,6 +487,11 @@ EnduredText:
 	line "ENDURED the hit!"
 	prompt
 
+EnduredFriendshipText:
+	text "<TARGET>"
+	line "held on for you!"
+	prompt
+
 InLoveWithText:
 	text "<USER>"
 	line "is in love with"
