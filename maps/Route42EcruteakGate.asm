@@ -13,8 +13,17 @@ Route42EcruteakGateOfficerText:
 	text "MT.MORTAR is like"
 	line "a maze inside."
 
-	para "Be careful. Don't"
-	line "get lost in there."
+	para "Be careful. Both"
+	line "it and ROUTE 42"
+	cont "are full of very"
+	cont "powerful #MON."
+
+	para "We recommend that"
+	line "trainers get at"
+	cont "least 6 BADGES"
+	cont "before attempting"
+	cont "to get to MAHOGANY"
+	cont "TOWN."
 	done
 
 Route42EcruteakGate_MapEvents:
@@ -31,4 +40,4 @@ Route42EcruteakGate_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateOfficerScript, -1
+	object_event  8,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route42EcruteakGateOfficerScript, -1
