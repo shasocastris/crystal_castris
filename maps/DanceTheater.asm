@@ -283,12 +283,24 @@ SurfGuySurfExplanationText:
 	para "It's a move that"
 	line "lets #MON swim"
 	cont "across water."
+
+	para "And so you know,"
+	line "it has to be used"
+	cont "on a #MON that"
+	cont "is large enough"
+	cont "to hold you."
 	done
 
 SurfGuyElegantKimonoGirlsText:
 	text "I wish my #MON"
 	line "were as elegant as"
 	cont "the KIMONO GIRLS…"
+
+	para "Maybe I need to"
+	line "teach SURF to a"
+    cont "#MON more"
+    cont "suited for the"
+    cont "move."
 	done
 
 RhydonText:
