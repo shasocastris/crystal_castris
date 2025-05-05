@@ -16,7 +16,7 @@ PewterGymBrockScript:
 	writetext BrockIntroText
 	waitbutton
 	closetext
-	winlosstext BrockWinLossText, 0
+	winlosstext BrockWinLossText, BrockLossText
 	loadtrainer BROCK, BROCK1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -109,6 +109,11 @@ BrockWinLossText:
 
 	para "Go ahead--take"
 	line "this BADGE."
+	done
+
+BrockLossText:
+	text "Cracked under"
+	line "pressure."
 	done
 
 ReceivedBoulderBadgeText:

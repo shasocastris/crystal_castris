@@ -48,7 +48,7 @@ WillScript_Battle:
 	writetext WillScript_WillBeforeText
 	waitbutton
 	closetext
-	winlosstext WillScript_WillBeatenText, 0
+	winlosstext WillScript_WillBeatenText, WillLossText
 	loadtrainer WILL, WILL1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -107,6 +107,11 @@ WillScript_WillBeforeText:
 WillScript_WillBeatenText:
 	text "I… I can't…"
 	line "believe it…"
+	done
+
+WillLossText:
+	text "The mind bends…"
+	line "yours broke."
 	done
 
 WillScript_WillDefeatText:

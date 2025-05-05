@@ -15,7 +15,7 @@ ViridianGymBlueScript:
 	writetext LeaderBlueBeforeText
 	waitbutton
 	closetext
-	winlosstext LeaderBlueWinText, 0
+	winlosstext LeaderBlueWinText, LeaderBlueLossText
 	loadtrainer BLUE, BLUE1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -106,6 +106,11 @@ LeaderBlueWinText:
 	para "Tch, all right…"
 	line "Here, take this--"
 	cont "it's EARTHBADGE."
+	done
+
+LeaderBlueLossText:
+	text "You're not ready"
+	line "for this."
 	done
 
 Text_ReceivedEarthBadge:

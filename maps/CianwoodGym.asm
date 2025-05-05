@@ -43,7 +43,7 @@ CianwoodGymChuckScript:
 	writetext ChuckIntroText3
 	waitbutton
 	closetext
-	winlosstext ChuckLossText, 0
+	winlosstext ChuckWinLossText, ChuckLossText
 	loadtrainer CHUCK, CHUCK1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -189,13 +189,18 @@ ChuckIntroText3:
 	line "do battle!"
 	done
 
-ChuckLossText:
+ChuckWinLossText:
 	text "Wha? Huh?"
 	line "I lost?"
 
 	para "How about that!"
 	line "You're worthy of"
 	cont "STORMBADGE!"
+	done
+
+ChuckLossText:
+	text "Guess I flexed too"
+	line "hard…"
 	done
 
 GetStormBadgeText:

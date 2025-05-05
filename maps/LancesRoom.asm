@@ -55,7 +55,7 @@ LancesRoomLanceScript:
 	writetext LanceBattleIntroText
 	waitbutton
 	closetext
-	winlosstext LanceBattleWinText, 0
+	winlosstext LanceBattleWinText, LanceLossText
 	setlasttalked LANCESROOM_LANCE
 	loadtrainer CHAMPION, LANCE
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
@@ -253,6 +253,11 @@ LanceBattleWinText:
 
 	para "of a great new"
 	line "CHAMPION!"
+	done
+
+LanceLossText:
+	text "You need more of"
+	line "that spark."
 	done
 
 LanceBattleAfterText:

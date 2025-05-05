@@ -32,7 +32,7 @@ VioletGymFalknerScript:
 	writetext FalknerIntroText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossText, 0
+	winlosstext FalknerWinLossText, FalknerLossText
 	loadtrainer FALKNER, FALKNER1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -181,6 +181,11 @@ FalknerWinLossText:
 	para "It's the official"
 	line "#MON LEAGUE"
 	cont "ZEPHYRBADGE."
+	done
+
+FalknerLossText:
+	text "Even the wind"
+	line "changes course."
 	done
 
 FalknerWinLossRematch1Text:

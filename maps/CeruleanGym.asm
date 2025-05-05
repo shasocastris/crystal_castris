@@ -64,7 +64,7 @@ CeruleanGymMistyScript:
 	writetext MistyIntroText
 	waitbutton
 	closetext
-	winlosstext MistyWinLossText, 0
+	winlosstext MistyWinLossText, MistyLossText
 	loadtrainer MISTY, MISTY1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -261,6 +261,11 @@ MistyWinLossText:
 
 	para "Here you go. It's"
 	line "CASCADEBADGE."
+	done
+
+MistyLossText:
+	text "Hope you brought"
+	line "floaties."
 	done
 
 ReceivedCascadeBadgeText:

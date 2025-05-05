@@ -38,7 +38,7 @@ EcruteakGymMortyScript:
 	writetext MortyIntroText
 	waitbutton
 	closetext
-	winlosstext MortyWinLossText, 0
+	winlosstext MortyWinLossText, MortyLossText
 	loadtrainer MORTY, MORTY1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -232,6 +232,11 @@ MortyWinLossText:
 
 	para "All right. This"
 	line "BADGE is yours."
+	done
+
+MortyLossText:
+	text "The veil thickens"
+	line "around you."
 	done
 
 Text_ReceivedFogBadge:

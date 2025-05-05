@@ -48,7 +48,7 @@ KarenScript_Battle:
 	writetext KarenScript_KarenBeforeText
 	waitbutton
 	closetext
-	winlosstext KarenScript_KarenBeatenText, 0
+	winlosstext KarenScript_KarenBeatenText, KarenLossText
 	loadtrainer KAREN, KAREN1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -106,6 +106,11 @@ KarenScript_KarenBeatenText:
 	text "Well, aren't you"
 	line "good. I like that"
 	cont "in a trainer."
+	done
+
+KarenLossText:
+	text "Weak hearts fall"
+	line "the hardest."
 	done
 
 KarenScript_KarenDefeatText:

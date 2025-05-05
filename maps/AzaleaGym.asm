@@ -29,7 +29,7 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_INeverLose
 	waitbutton
 	closetext
-	winlosstext BugsyText_ResearchIncomplete, 0
+	winlosstext BugsyText_ResearchIncomplete, BugsyLossText
 	loadtrainer BUGSY, BUGSY1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -182,6 +182,10 @@ BugsyText_ResearchIncomplete:
 
 	para "OK, you win. Take"
 	line "this BADGE."
+	done
+
+BugsyLossText:
+	text "Bugging out, huh?"
 	done
 
 Text_ReceivedHiveBadge:

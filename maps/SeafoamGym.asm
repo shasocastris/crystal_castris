@@ -19,7 +19,7 @@ SeafoamGymBlaineScript:
 	writetext BlaineIntroText
 	waitbutton
 	closetext
-	winlosstext BlaineWinLossText, 0
+	winlosstext BlaineWinLossText, BlaineLossText
 	loadtrainer BLAINE, BLAINE1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -95,6 +95,11 @@ BlaineWinLossText:
 
 	para "You've earned"
 	line "VOLCANOBADGE!"
+	done
+
+BlaineLossText:
+	text "Ashes to ashes,"
+	line "kid."
 	done
 
 ReceivedVolcanoBadgeText:
