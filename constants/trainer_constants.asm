@@ -31,7 +31,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const FALKNER2
-;	const FALKNER3
+	const FALKNER3
 
 	trainerclass BUGSY ; 2
 	const BUGSY1

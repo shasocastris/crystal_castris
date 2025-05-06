@@ -21,10 +21,6 @@ VioletGym_MapScripts:
     endcallback
 
 VioletGymFalknerScript:
-;	readvar VAR_BADGES
-;	ifequal NUM_BADGES, .Rematch2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .Rematch1
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_FALKNER
@@ -45,9 +41,12 @@ VioletGymFalknerScript:
 	setflag ENGINE_ZEPHYRBADGE
 	readvar VAR_BADGES
 	scall VioletGymActivateRockets
+	setflag ENGINE_BEAT_FALKNER
 .FightDone:
 	changeblock 4, 15, $1C ; door
 	changeblock 5, 15, $1C ; door
+	checkflag ENGINE_BEAT_FALKNER
+	iffalse .FalknerRematch
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD
@@ -71,25 +70,51 @@ VioletGymFalknerScript:
 	closetext
 	end
 
-.Rematch1
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_FALKNER
-	iftrue .Rematch1Done
-	writetext FalknerRematch1Text
+.FalknerRematch
+	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
+	iftrue .BeatEliteFourRematchFalkner
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .BeatEliteFourFalkner
+	; fallthrough
+
+	writetext FalknerFirstRematchText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossRematch1Text, 0
+	winlosstext FalknerRematchWinLossText, FalknerLossText
+	loadtrainer FALKNER, FALKNER1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	sjump AfterFalknerRematch
+
+.BeatEliteFourRematchFalkner:
+	writetext FalknerThirdRematchText
+	waitbutton
+	closetext
+	winlosstext FalknerRematchWinLossText, FalknerLossText
+	loadtrainer FALKNER, FALKNER3
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	sjump AfterFalknerRematch
+
+.BeatEliteFourFalkner
+	writetext FalknerSecondRematchText
+	waitbutton
+	closetext
+	winlosstext FalknerRematchWinLossText, FalknerLossText
 	loadtrainer FALKNER, FALKNER2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_FALKNER
+	; fallthrough
+
+AfterFalknerRematch:
 	opentext
-.Rematch1Done
-	writetext FalknerRematch1DoneText
+	writetext BeatenFalknerAgainText
 	waitbutton
 	closetext
+	setflag ENGINE_BEAT_FALKNER
 	end
 
 VioletGymActivateRockets:
@@ -188,8 +213,43 @@ FalknerLossText:
 	line "changes course."
 	done
 
-FalknerWinLossRematch1Text:
-	text "Rematch WinLoss"
+FalknerFirstRematchText:
+	text "I've been training"
+	line "hard to prove that"
+	cont "my Flying-type"
+	cont "#MON can rise"
+	cont "above any trial."
+	done
+
+FalknerSecondRematchText:
+	text "I won't go down"
+	line "easily this time."
+
+	para "Prepare to be"
+	line "grounded!"
+	done
+
+FalknerThirdRematchText:
+	text "Let this be a true"
+	line "test of the skies"
+	cont "vs your strength!"
+	done
+
+FalknerRematchWinLossText:
+	text "Even in defeat, I"
+	line "feel the thrill of"
+	cont "the skies calling"
+	cont "me onward."
+	done
+
+BeatenFalknerAgainText:
+	text "You've bested me"
+	line "once again."
+
+	para "I'll keep soaring"
+	line "higher, until the"
+	cont "day I surpass even"
+	cont "you."
 	done
 
 ReceivedZephyrBadgeText:
