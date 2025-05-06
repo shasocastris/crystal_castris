@@ -1394,12 +1394,15 @@ ElmsLabTravelTip1Text:
 
 	para "Travel Tip 1:"
 
-	para "A #MON past L10"
-	line "won't obey you"
-	cont "unless you have"
-	cont "been raising its"
-	cont "happiness as well"
-	cont "as its level."
+	para "Trainers can fight"
+	line "gym leaders once a"
+	cont "day after they've"
+	cont "earned that badge."
+
+	para "Gym leaders will"
+	line "use stronger teams"
+	cont "if you have beaten"
+	cont "the Elite Four."
 	done
 
 ElmsLabTravelTip2Text:

@@ -19,7 +19,7 @@ CeladonGymErikaScript:
 	writetext ErikaBeforeBattleText
 	waitbutton
 	closetext
-	winlosstext ErikaBeatenText, 0
+	winlosstext ErikaBeatenText, ErikaLossText
 	loadtrainer ERIKA, ERIKA1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -143,6 +143,11 @@ ErikaBeatenText:
 
 	para "I shall give you"
 	line "RAINBOWBADGE…"
+	done
+
+ErikaLossText:
+	text "Even roses have"
+	line "sharp thorns…"
 	done
 
 PlayerReceivedRainbowBadgeText:

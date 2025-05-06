@@ -20,7 +20,7 @@ FuchsiaGymJanineScript:
 	writetext JanineText_DisappointYou
 	waitbutton
 	closetext
-	winlosstext JanineText_ToughOne, 0
+	winlosstext JanineText_ToughOne, JanineLossText
 	loadtrainer JANINE, JANINE1
 	startbattle
 	reloadmapafterbattle
@@ -254,6 +254,11 @@ JanineText_ToughOne:
 
 	para "Here's SOULBADGE."
 	line "Take it."
+	done
+
+JanineLossText:
+	text "Smoke hides all"
+	line "but truth."
 	done
 
 Text_ReceivedSoulBadge:

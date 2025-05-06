@@ -48,7 +48,7 @@ KogaScript_Battle:
 	writetext KogaScript_KogaBeforeText
 	waitbutton
 	closetext
-	winlosstext KogaScript_KogaBeatenText, 0
+	winlosstext KogaScript_KogaBeatenText, KogaLossText
 	loadtrainer KOGA, KOGA1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -112,6 +112,11 @@ KogaScript_KogaBeatenText:
 	text "Ah!"
 	line "You have proven"
 	cont "your worth!"
+	done
+
+KogaLossText:
+	text "Poison exploits"
+	line "every weakness."
 	done
 
 KogaScript_KogaDefeatText:

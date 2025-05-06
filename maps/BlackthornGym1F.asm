@@ -50,7 +50,7 @@ BlackthornGymClairScript:
 	writetext ClairIntroText
 	waitbutton
 	closetext
-	winlosstext ClairWinText, 0
+	winlosstext ClairWinText, ClairLossText
 	loadtrainer CLAIR, CLAIR1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -192,6 +192,11 @@ ClairWinText:
 	para "I don't believe"
 	line "it. There must be"
 	cont "some mistake…"
+	done
+
+ClairLossText:
+	text "Still not worthy"
+	line "of dragons."
 	done
 
 ClairText_GoToDragonsDen:

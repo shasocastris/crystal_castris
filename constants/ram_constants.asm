@@ -354,6 +354,32 @@ DEF CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 ; wDailyFlags3::
 	const DAILYFLAGS3_MYSTERY_GIFT_F                      ; 0
 	const DAILYFLAGS3_CIANWOOD_PHOTOGRAPH                 ; 1
+	const DAILYFLAGS3_UNUSED_FLAG_2                       ; 2
+	const DAILYFLAGS3_UNUSED_FLAG_3                       ; 3
+	const DAILYFLAGS3_UNUSED_FLAG_4                       ; 4
+	const DAILYFLAGS3_UNUSED_FLAG_5                       ; 5
+	const DAILYFLAGS3_UNUSED_FLAG_6                       ; 6
+	const DAILYFLAGS3_UNUSED_FLAG_7                       ; 7
+
+; wDailyFlags4::
+	const DAILYFLAGS4_BEAT_FALKNER_F                      ; 0
+	const DAILYFLAGS4_BEAT_BUGSY_F                        ; 1
+	const DAILYFLAGS4_BEAT_WHITNEY_F                      ; 2
+	const DAILYFLAGS4_BEAT_MORTY_F                        ; 3
+	const DAILYFLAGS4_BEAT_CHUCK_F                        ; 4
+	const DAILYFLAGS4_BEAT_JASMINE_F                      ; 5
+	const DAILYFLAGS4_BEAT_PRYCE_F                        ; 6
+	const DAILYFLAGS4_BEAT_CLAIR_F                        ; 7
+
+; wDailyFlags5::
+	const DAILYFLAGS5_BEAT_BROCK_F                        ; 0
+	const DAILYFLAGS5_BEAT_MISTY_F                        ; 1
+	const DAILYFLAGS5_BEAT_LTSURGE_F                      ; 2
+	const DAILYFLAGS5_BEAT_ERIKA_F                        ; 3
+	const DAILYFLAGS5_BEAT_JANINE_F                       ; 4
+	const DAILYFLAGS5_BEAT_SABRINA_F                      ; 5
+	const DAILYFLAGS5_BEAT_BLAINE_F                       ; 6
+	const DAILYFLAGS5_BEAT_BLUE_F                         ; 7
 
 ; wSwarmFlags::
 	const_def

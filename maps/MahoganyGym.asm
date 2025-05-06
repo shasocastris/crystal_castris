@@ -29,7 +29,7 @@ MahoganyGymPryceScript:
 	writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext PryceText_Impressed, 0
+	winlosstext PryceText_Impressed, PryceLossText
 	loadtrainer PRYCE, PRYCE1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
@@ -197,6 +197,11 @@ PryceText_Impressed:
 
 	para "You are worthy of"
 	line "this BADGE!"
+	done
+
+PryceLossText:
+	text "Winter is always"
+	line "coming!"
 	done
 
 Text_ReceivedGlacierBadge:

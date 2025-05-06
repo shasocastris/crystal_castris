@@ -2922,9 +2922,11 @@ wWhichMomItemSet:: db
 wMomItemTriggerBalance:: ds 3
 
 wDailyResetTimer:: dw
-wDailyFlags1:: db
+wDailyFlags1:: ds 2
 wDailyFlags2:: db
 wDailyFlags3:: db
+wDailyFlags4:: db
+wDailyFlags5:: db
 wSwarmFlags:: db
 wTimerEventStartDay:: db
 
@@ -2940,7 +2942,7 @@ wUnusedTwoDayTimer:: db
 wUnusedTwoDayTimerStartDate:: db
 
 wMobileOrCable_LastSelection:: db
-	ds 9
+	ds 8
 wBuenasPassword:: db
 wBlueCardBalance:: db
 wDailyRematchFlags:: ds 4

@@ -114,6 +114,11 @@ BrunoScript_BrunoBeatenText:
 	line "lose?"
 	done
 
+BrunoLossText:
+	text "You gave your all."
+	line "Respect."
+	done
+
 BrunoScript_BrunoDefeatText:
 	text "Having lost, I"
 	line "have no right to"
