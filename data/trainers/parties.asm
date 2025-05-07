@@ -998,7 +998,7 @@ Rival2Group:
 PokemonProfGroup:
 
 PKMNTrainerGroup:
-	next_list_item ; CAL (1)
+	next_list_item ; CAL (1), unused ???
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 12
 	dw CHIKORITA
@@ -1699,13 +1699,13 @@ LassGroup:
 	dw GRANBULL
 	db -1 ; end
 
-	next_list_item ; LASS (12), Olivine Lighthouse
+	next_list_item ; LASS (12), unused ???
 	db "CONNIE@", TRAINERTYPE_NORMAL
 	db 26
 	dw MARILL
 	db -1 ; end
 
-	next_list_item ; LASS (13), Olivine Lighthouse
+	next_list_item ; LASS (13), unused ???
 	db "CONNIE@", TRAINERTYPE_NORMAL
 	db 26
 	dw MARILL
@@ -2334,7 +2334,7 @@ PokemaniacGroup:
 	dw NIDOKING
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (8), unused ???
+	next_list_item ; POKEMANIAC (8), SS Aqua
 	db "ETHAN@", TRAINERTYPE_NORMAL
 	db 38
 	dw RHYHORN
@@ -2590,7 +2590,7 @@ GruntMGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (24), unused ???
+	next_list_item ; GRUNTM (24), Goldenrod Tunnel
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 30
 	dw KOFFING
@@ -3658,7 +3658,7 @@ SuperNerdGroup:
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (8), unused ???
+	next_list_item ; SUPER_NERD (8), Route 25
 	db "PAT@", TRAINERTYPE_NORMAL
 	db 44
 	dw PORYGON
@@ -3867,7 +3867,7 @@ HikerGroup:
 	dw GRAVELER
 	db -1 ; end
 
-	next_list_item ; HIKER (14), unused ???
+	next_list_item ; HIKER (14), SS Aqua
 	db "NOLAND@", TRAINERTYPE_NORMAL
 	db 38
 	dw SANDSLASH
@@ -4080,13 +4080,13 @@ FirebreatherGroup:
 	dw MAGMAR
 	db -1 ; end
 
-	next_list_item ; FIREBREATHER (2), Burned Tower
+	next_list_item ; FIREBREATHER (2), unused ???
 	db "DICK@", TRAINERTYPE_NORMAL
 	db 21
 	dw CHARMELEON
 	db -1 ; end
 
-	next_list_item ; FIREBREATHER (3), Burned Tower
+	next_list_item ; FIREBREATHER (3), unused ???
 	db "NED@", TRAINERTYPE_NORMAL
 	db 18
 	dw KOFFING
@@ -4173,7 +4173,7 @@ JugglerGroup:
 	dw ELECTRODE
 	db -1 ; end
 
-	next_list_item ; JUGGLER (4), Route 35
+	next_list_item ; JUGGLER (4), unused ???
 	db "IRWIN@", TRAINERTYPE_NORMAL
 	db 8
 	dw VOLTORB
@@ -4185,7 +4185,7 @@ JugglerGroup:
 	dw VOLTORB
 	db -1 ; end
 
-	next_list_item ; JUGGLER (5), Route 35
+	next_list_item ; JUGGLER (5), unused ???
 	db "IRWIN@", TRAINERTYPE_NORMAL
 	db 22
 	dw VOLTORB
@@ -4197,7 +4197,7 @@ JugglerGroup:
 	dw ELECTRODE
 	db -1 ; end
 
-	next_list_item ; JUGGLER (6), Route 35
+	next_list_item ; JUGGLER (6), unused ???
 	db "IRWIN@", TRAINERTYPE_NORMAL
 	db 22
 	dw VOLTORB
@@ -4212,7 +4212,7 @@ JugglerGroup:
 	end_list_items
 
 BlackbeltGroup:
-	next_list_item ; BLACKBELT_T (1), Route 45
+	next_list_item ; BLACKBELT_T (1), unused ???
 	db "KENJI@", TRAINERTYPE_NORMAL
 	db 33
 	dw ONIX
@@ -4231,7 +4231,7 @@ BlackbeltGroup:
 	dw DOUBLE_KICK, MEDITATE, JUMP_KICK, FOCUS_ENERGY
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (3), Route 45
+	next_list_item ; BLACKBELT_T (3), unused ???
 	db "KENJI@", TRAINERTYPE_MOVES
 	db 40
 	dw ONIX
@@ -5197,14 +5197,14 @@ PokefanMGroup:
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANM (10), Route 39
+	next_list_item ; POKEFANM (10), unused ???
 	db "DEREK@", TRAINERTYPE_ITEM
 	db 23
 	dw PIKACHU
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANM (11), Route 39
+	next_list_item ; POKEFANM (11), unused ???
 	db "DEREK@", TRAINERTYPE_ITEM
 	db 44
 	dw PIKACHU
@@ -5372,7 +5372,7 @@ TwinsGroup:
 	dw THUNDER_WAVE, TWISTER, ICE_BEAM, HEADBUTT
 	db -1 ; end
 
-	next_list_item ; TWINS (10), Dragon's Den
+	next_list_item ; TWINS (10), unused ???
 	db "LEA & PIA@", TRAINERTYPE_MOVES
 	db 46
 	dw DRATINI
@@ -5399,14 +5399,14 @@ PokefanFGroup:
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANF (3), National Park
+	next_list_item ; POKEFANF (3), unused ???
 	db "BEVERLY@", TRAINERTYPE_ITEM
 	db 22
 	dw SNUBBULL
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANF (4), National Park
+	next_list_item ; POKEFANF (4), unused ???
 	db "BEVERLY@", TRAINERTYPE_ITEM
 	db 36
 	dw GRANBULL
@@ -5522,7 +5522,7 @@ MysticalmanGroup:
 	end_list_items
 
 KrisGroup:
-	next_list_item; KRIS (1), unused ???
+	next_list_item; KRIS (1)
 	db "KRIS@", TRAINERTYPE_NORMAL
 	db 12
 	dw CHIKORITA
