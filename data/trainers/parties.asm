@@ -12,18 +12,14 @@ SECTION "Enemy Trainer Parties 1", ROMX
 FalknerGroup:
 	next_list_item ; FALKNER (1)
 	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
-	db 11
+	db 10
 	dw DODUO
 	dw BERRY
 	dw PECK, MUD_SLAP, PURSUIT, RAGE
-	db 13
-	dw BUTTERFREE
-	dw FOCUS_BAND
-	dw TACKLE, POISONPOWDER, CONFUSION, STRING_SHOT
 	db 12
-	dw FARFETCH_D
-	dw STICK
-	dw SWIFT, ROCK_SMASH, GUST, MUD_SLAP
+	dw ZUBAT
+	dw FOCUS_BAND
+	dw LEECH_LIFE, SUPERSONIC, GUST, BITE
 	db 13
 	dw PIDGEOTTO
 	dw GOLD_BERRY
@@ -639,25 +635,19 @@ ChampionGroup:
 Rival1Group:
 	next_list_item ; RIVAL1 (1)
 	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw ZUBAT
-	db 7
+	db 6
 	dw CHIKORITA
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (2)
 	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw ZUBAT
-	db 7
+	db 6
 	dw CYNDAQUIL
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (3)
 	db "?@", TRAINERTYPE_NORMAL
-	db 5
-	dw ZUBAT
-	db 7
+	db 6
 	dw TOTODILE
 	db -1 ; end
 
@@ -1124,14 +1114,10 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (2), Route 30
 	db "MIKEY@", TRAINERTYPE_NORMAL
-	db 4
-	dw ODDISH
 	db 3
 	dw PIDGEY
 	db 5
 	dw RATTATA
-	db 4
-	dw MARILL
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (3), Route 32
@@ -1221,19 +1207,6 @@ YoungsterGroup:
 	db 45
 	dw RATICATE
 	dw HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
-	db -1 ; end
-
-	next_list_item ; YOUNGSTER (14), Route 36
-	db "ARTHUR@", TRAINERTYPE_ITEM
-	db 13
-	dw LARVITAR
-	dw NO_ITEM
-	db 14
-	dw ONIX
-	dw HARD_STONE
-	db 12
-	dw RHYHORN
-	dw NO_ITEM
 	db -1 ; end
 
 	end_list_items
@@ -1470,8 +1443,6 @@ BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1), Violet Gym
 	db "ROD@", TRAINERTYPE_NORMAL
 	db 9
-	dw PIDGEY
-	db 9
 	dw HOOTHOOT
 	db 9
 	dw SPEAROW
@@ -1479,8 +1450,6 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (2), Violet Gym
 	db "ABE@", TRAINERTYPE_NORMAL
-	db 11
-	dw HOPPIP
 	db 11
 	dw NATU
 	db -1 ; end
@@ -1730,14 +1699,10 @@ LassGroup:
 	dw GRANBULL
 	db -1 ; end
 
-	next_list_item ; LASS (12), Route 36
-	db "NONI@", TRAINERTYPE_NORMAL
-	db 8
-	dw VULPIX
-	db 9
-	dw MAREEP
-	db 10
-	dw HOOTHOOT
+	next_list_item ; LASS (12), unused ???
+	db "CONNIE@", TRAINERTYPE_NORMAL
+	db 26
+	dw MARILL
 	db -1 ; end
 
 	next_list_item ; LASS (13), unused ???
@@ -1918,24 +1883,24 @@ CooltrainerMGroup:
 	dw SAND_ATTACK, POISON_STING, SLASH, SWIFT
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (13), Route 31
+	next_list_item ; COOLTRAINERM (13), unused ???
 	db "ERICK@", TRAINERTYPE_NORMAL
-	db 5
-	dw HOPPIP
-	db 5
-	dw POLIWAG
-	db 6
-	dw GASTLY
+	db 12
+	dw BULBASAUR
+	db 12
+	dw CHARMANDER
+	db 12
+	dw SQUIRTLE
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (14), Route 29
+	next_list_item ; COOLTRAINERM (14), unused ???
 	db "ANDY@", TRAINERTYPE_NORMAL
-	db 4
-	dw SPINARAK
-	db 4
-	dw SENTRET
-	db 5
-	dw MARILL
+	db 12
+	dw BULBASAUR
+	db 12
+	dw CHARMANDER
+	db 12
+	dw SQUIRTLE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (15), unused ???
@@ -2740,14 +2705,6 @@ SkierGroup:
 	end_list_items
 
 TeacherGroup:
-	next_list_item ; TEACHER (1), Route 29
-	db "TUSCANY@", TRAINERTYPE_NORMAL
-	db 6
-	dw MR__MIME
-	db 8
-	dw CLEFAIRY
-	db -1 ; end
-
 	next_list_item ; TEACHER (1), Route 15
 	db "COLETTE@", TRAINERTYPE_NORMAL
 	db 44
@@ -2773,13 +2730,13 @@ TeacherGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1), Route 30
 	db "DON@", TRAINERTYPE_NORMAL
-	db 5
-	dw SPINARAK
-	db 5
-	dw LEDYBA
+	db 4
+	dw CATERPIE
+	db 4
+	dw CATERPIE
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (2), Route 2
+	next_list_item ; BUG_CATCHER (2), Route 30
 	db "ROB@", TRAINERTYPE_NORMAL
 	db 39
 	dw BEEDRILL
@@ -2799,13 +2756,13 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (4), Route 31
 	db "WADE@", TRAINERTYPE_NORMAL
-	db 4
+	db 3
+	dw CATERPIE
+	db 3
 	dw CATERPIE
 	db 4
-	dw CATERPIE
-	db 5
 	dw WEEDLE
-	db 5
+	db 3
 	dw CATERPIE
 	db -1 ; end
 
@@ -2820,7 +2777,7 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (6), Azalea Gym
-	db "AL@", TRAINERTYPE_NORMAL
+	db "AL@", TRAINERTYPE_MOVES
 	db 15
 	dw PINECO
 	db 15
@@ -3645,14 +3602,10 @@ SailorGroup:
 	end_list_items
 
 SuperNerdGroup:
-	next_list_item ; SUPER_NERD (1), Ruins of Alph
+	next_list_item ; SUPER_NERD (1), unused ???
 	db "STAN@", TRAINERTYPE_NORMAL
-	db 9
-	dw HOUNDOUR
-	db 10
+	db 24
 	dw GRIMER
-	db 9
-	dw MAGNEMITE
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2), Goldenrod Tunnel
@@ -4963,30 +4916,28 @@ ExecutiveFGroup:
 SageGroup:
 	next_list_item ; SAGE (1), Sprout Tower
 	db "CHOW@", TRAINERTYPE_NORMAL
-	db 6
+	db 4
 	dw BELLSPROUT
-	db 6
+	db 4
 	dw BELLSPROUT
-	db 7
-	dw NATU
+	db 4
+	dw BELLSPROUT
 	db -1 ; end
 
 	next_list_item ; SAGE (2), Sprout Tower
 	db "NICO@", TRAINERTYPE_NORMAL
-	db 6
+	db 4
 	dw BELLSPROUT
-	db 7
+	db 4
 	dw BELLSPROUT
-	db 6
-	dw GASTLY
+	db 4
+	dw BELLSPROUT
 	db -1 ; end
 
 	next_list_item ; SAGE (3), Sprout Tower
 	db "JIN@", TRAINERTYPE_NORMAL
 	db 8
 	dw BELLSPROUT
-	db 8
-	dw GASTLY
 	db -1 ; end
 
 	next_list_item ; SAGE (4), Sprout Tower
@@ -5019,11 +4970,11 @@ SageGroup:
 
 	next_list_item ; SAGE (7), Sprout Tower
 	db "EDMOND@", TRAINERTYPE_NORMAL
-	db 6
+	db 4
 	dw BELLSPROUT
-	db 6
-	dw HOOTHOOT
-	db 7
+	db 4
+	dw BELLSPROUT
+	db 4
 	dw BELLSPROUT
 	db -1 ; end
 
@@ -5031,18 +4982,16 @@ SageGroup:
 	db "NEAL@", TRAINERTYPE_NORMAL
 	db 8
 	dw BELLSPROUT
-	db 8
-	dw NATU
 	db -1 ; end
 
 	next_list_item ; SAGE (9), Sprout Tower
 	db "LI@", TRAINERTYPE_NORMAL
 	db 9
-	dw HAUNTER
+	dw BELLSPROUT
 	db 9
-	dw NOCTOWL
+	dw BELLSPROUT
 	db 12
-	dw WEEPINBELL
+	dw HOOTHOOT
 	db -1 ; end
 
 	next_list_item ; SAGE (10), Tin Tower
