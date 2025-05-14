@@ -230,8 +230,8 @@ DEF KRIS EQU __trainer_class__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK ; unused
-	const ANDY ; unused
+	const ERICK
+	const ANDY
 	const TYLER ; unused
 	const SEAN
 	const KEVIN
@@ -343,6 +343,7 @@ DEF KRIS EQU __trainer_class__
 	const CLARISSA
 
 	trainerclass TEACHER ; 27
+	const TUSCANY
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
