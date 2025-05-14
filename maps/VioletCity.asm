@@ -249,6 +249,13 @@ VioletGymNoticeText:
 	cont "exit a gym until"
 	cont "they have the"
 	cont "gym's badge."
+
+	para "Trainers seeking"
+	line "to fight FALKNER"
+	cont "should consider"
+	cont "battling the ELDER"
+	cont "in SPROUT TOWER to"
+	cont "test their skills."
 	done
 
 VioletCity_MapEvents:
