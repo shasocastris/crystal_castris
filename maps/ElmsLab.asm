@@ -340,7 +340,6 @@ ElmAfterTheftScript:
 	promptbutton
 	setevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	setflag ENGINE_MOBILE_SYSTEM
-	setmapscene ROUTE_29, SCENE_ROUTE29_CATCH_TUTORIAL
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
 	writetext ElmAfterTheftText6
@@ -480,6 +479,7 @@ AideScript_GivePotion:
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
+	setevent EVENT_BEAT_COOLTRAINERM_ANDY
 	end
 
 AideScript_WalkBalls1:
@@ -508,6 +508,7 @@ AideScript_GiveYouBalls:
 	itemnotify
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
+	clearevent EVENT_BEAT_COOLTRAINERM_ANDY
 	end
 
 AideScript_ReceiveTheBalls:

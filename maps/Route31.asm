@@ -219,8 +219,14 @@ Route31Sign:
 DarkCaveSign:
 	jumptext DarkCaveSignText
 
-Route31CooltrainerMScript:
-	jumptextfaceplayer Route31CooltrainerMText
+TrainerCooltrainermErick:
+	trainer COOLTRAINERM, ERICK, EVENT_BEAT_COOLTRAINERM_ERICK, CooltrainermErickSeenText, CooltrainermErickBeatenText, 0, .Script
+.Script:
+	opentext
+	writetext CooltrainermErickAfterText
+	waitbutton
+	closetext
+	end
 
 Route31FruitTree:
 	fruittree FRUITTREE_ROUTE_31
@@ -231,7 +237,24 @@ Route31Potion:
 Route31PokeBall:
 	itemball POKE_BALL
 
-Route31CooltrainerMText:
+CooltrainermErickSeenText:
+    text "Ugh! DARK CAVE is"
+    line "right there, but"
+    cont "it's pitch black!"
+
+    para "I'm so frustrated!"
+    line "Let's battle to"
+    cont "blow off steam!"
+    done
+
+CooltrainermErickBeatenText:
+	text "If I can't beat"
+    line "you, I'm clearly"
+    cont "not ready to go in"
+    cont "there!"
+    done
+
+CooltrainermErickAfterText:
 	text "DARK CAVE…"
 
 	para "If #MON could"
@@ -399,7 +422,7 @@ Route31_MapEvents:
 	object_event 17,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
 	object_event  9,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
 	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
-	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
+	object_event 33,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerCooltrainermErick, -1
 	object_event 16,  7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
 	object_event 29,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
 	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
