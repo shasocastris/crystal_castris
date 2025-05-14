@@ -570,8 +570,10 @@ CopScript:
 	closetext
 	applymovement ELMSLAB_OFFICER, OfficerLeavesMovement
 	disappear ELMSLAB_OFFICER
-	setscene SCENE_ELMSLAB_NOOP
-	end
+	pause 10
+	applymovement PLAYER, MeetCopScript_GiveEgg
+	opentext
+	sjump ElmAfterTheftScript
 
 ElmsLabWindow:
 	opentext
@@ -661,6 +663,10 @@ MeetCopScript_WalkUp:
 	step UP
 	step UP
 	turn_head RIGHT
+	step_end
+
+MeetCopScript_GiveEgg:
+	turn_head_up
 	step_end
 
 OfficerLeavesMovement:
