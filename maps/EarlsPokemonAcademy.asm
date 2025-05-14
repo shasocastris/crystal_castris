@@ -27,6 +27,14 @@ AcademyEarl:
 	iffalse .Done
 	writetext AcademyEarlTeachHowToRaiseWellText
 	waitbutton
+	checkevent EVENT_GOT_GRIP_CLAW_FROM_EARL
+	iftrue .Done
+	writetext AcademyEarlGraduationText
+	waitbutton
+	verbosegiveitem GRIP_CLAW
+	setevent EVENT_GOT_GRIP_CLAW_FROM_EARL
+	writetext AcademyEarlGripClawText
+	waitbutton
 	closetext
 	end
 
@@ -243,6 +251,28 @@ AcademyEarlNoMoreToTeachText:
 
 	para "Good to #MON"
 	line "you must be!"
+	done
+
+AcademyEarlGraduationText:
+	text "Succeeded in class"
+	line "you have! Graduate"
+	cont "now you do!"
+
+	para "Diploma I have"
+	line "not, but gift I"
+	cont "freely give!"
+	done
+
+AcademyEarlGripClawText:
+	text "GRIP CLAW that is!"
+
+	para "Trap wild #MON"
+	line "for longer that"
+	cont "will!"
+
+	para "Very useful for"
+	line "your journey, I"
+	cont "foresee!"
 	done
 
 EarlsPokemonAcademyYoungster1Text:
