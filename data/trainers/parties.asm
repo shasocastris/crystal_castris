@@ -635,19 +635,25 @@ ChampionGroup:
 Rival1Group:
 	next_list_item ; RIVAL1 (1)
 	db "?@", TRAINERTYPE_NORMAL
-	db 6
+	db 5
+	dw ZUBAT
+	db 7
 	dw CHIKORITA
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (2)
 	db "?@", TRAINERTYPE_NORMAL
-	db 6
+	db 5
+	dw ZUBAT
+	db 7
 	dw CYNDAQUIL
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (3)
 	db "?@", TRAINERTYPE_NORMAL
-	db 6
+	db 5
+	dw ZUBAT
+	db 7
 	dw TOTODILE
 	db -1 ; end
 
@@ -1114,10 +1120,14 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (2), Route 30
 	db "MIKEY@", TRAINERTYPE_NORMAL
+	db 4
+	dw ODDISH
 	db 3
 	dw PIDGEY
 	db 5
 	dw RATTATA
+	db 4
+	dw MARILL
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (3), Route 32
@@ -1883,24 +1893,24 @@ CooltrainerMGroup:
 	dw SAND_ATTACK, POISON_STING, SLASH, SWIFT
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (13), unused ???
+	next_list_item ; COOLTRAINERM (13), Route 31
 	db "ERICK@", TRAINERTYPE_NORMAL
-	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	db 5
+	dw HOPPIP
+	db 5
+	dw POLIWAG
+	db 6
+	dw GASTLY
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (14), unused ???
+	next_list_item ; COOLTRAINERM (14), Route 29
 	db "ANDY@", TRAINERTYPE_NORMAL
-	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	db 4
+	dw SPINARAK
+	db 4
+	dw SENTRET
+	db 5
+	dw MARILL
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (15), unused ???
@@ -2705,6 +2715,14 @@ SkierGroup:
 	end_list_items
 
 TeacherGroup:
+	next_list_item ; TEACHER (1), Route 29
+	db "TUSCANY@", TRAINERTYPE_NORMAL
+	db 6
+	dw MR__MIME
+	db 8
+	dw CLEFAIRY
+	db -1 ; end
+
 	next_list_item ; TEACHER (1), Route 15
 	db "COLETTE@", TRAINERTYPE_NORMAL
 	db 44
@@ -2730,13 +2748,13 @@ TeacherGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1), Route 30
 	db "DON@", TRAINERTYPE_NORMAL
-	db 4
-	dw CATERPIE
-	db 4
-	dw CATERPIE
+	db 5
+	dw SPINARAK
+	db 5
+	dw LEDYBA
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (2), Route 30
+	next_list_item ; BUG_CATCHER (2), Route 2
 	db "ROB@", TRAINERTYPE_NORMAL
 	db 39
 	dw BEEDRILL
@@ -2756,13 +2774,13 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (4), Route 31
 	db "WADE@", TRAINERTYPE_NORMAL
-	db 3
-	dw CATERPIE
-	db 3
+	db 4
 	dw CATERPIE
 	db 4
+	dw CATERPIE
+	db 5
 	dw WEEDLE
-	db 3
+	db 5
 	dw CATERPIE
 	db -1 ; end
 
@@ -2777,7 +2795,7 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (6), Azalea Gym
-	db "AL@", TRAINERTYPE_MOVES
+	db "AL@", TRAINERTYPE_NORMAL
 	db 15
 	dw PINECO
 	db 15
