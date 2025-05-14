@@ -13,7 +13,7 @@ Route30BerryHousePokefanMScript:
 	iftrue .GotBerry
 	writetext Route30BerrySpeechHouseMonEatBerriesText
 	promptbutton
-	verbosegiveitem BERRY
+	verbosegiveitem ATK_UP_BERRY
 	iffalse .NoRoom
 	setevent EVENT_GOT_BERRY_FROM_ROUTE_30_HOUSE
 .GotBerry:
@@ -28,20 +28,32 @@ Route30BerryHouseBookshelf:
 
 Route30BerrySpeechHouseMonEatBerriesText:
 	text "You know, #MON"
-	line "eat BERRIES."
+	line "can have their"
+	cont "stats boosted when"
+	cont "they eat BERRIES."
 
-	para "Well, my #MON"
-	line "got healthier by"
-	cont "eating a BERRY."
+	para "Try giving one of"
+	line "your #MON this"
+	cont "ATK UP BERRY to"
+	cont "hold."
 
-	para "Here. I'll share"
-	line "one with you!"
+	para "It will increase"
+	line "its ATTACK in a"
+	cont "pinch!"
 	done
 
 Route30BerrySpeechHouseCheckTreesText:
-	text "Check trees for"
-	line "BERRIES. They just"
-	cont "drop right off."
+	text "There is a hidden"
+	line "grove with more of"
+	cont "these types of"
+	cont "BERRIES somewhere"
+	cont "in CHERRYGROVE"
+	cont "CITY."
+
+	para "I've also heard"
+	line "rumors of others"
+	cont "growing south of"
+	cont "BLACKTHORN CITY."
 	done
 
 Route30BerryHouse_MapEvents:
