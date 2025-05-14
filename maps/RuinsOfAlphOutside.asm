@@ -3,7 +3,7 @@
 	const RUINSOFALPHOUTSIDE_SCIENTIST
 	const RUINSOFALPHOUTSIDE_FISHER
 	const RUINSOFALPHOUTSIDE_YOUNGSTER2
-	const RUINSOFALPHOUTSIDE_YOUNGSTER3
+	const RUINSOFALPHOUTSIDE_SUPER_NERD
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -90,18 +90,18 @@ RuinsOfAlphOutsideYoungster1Script:
 	closetext
 	end
 
-RuinsOfAlphOutsideYoungster2Script:
-	faceplayer
+TrainerSuperNerdStan:
+	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanSeenText, SuperNerdStanBeatenText, 0, .Script
+.Script:
 	opentext
-	writetext RuinsOfAlphOutsideYoungster2Text
+	writetext SuperNerdStanAfterBattleText
 	waitbutton
 	closetext
-	turnobject RUINSOFALPHOUTSIDE_YOUNGSTER3, UP
+	turnobject RUINSOFALPHOUTSIDE_SUPER_NERD, UP
 	end
 
 TrainerPsychicNathan:
 	trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
-
 .Script:
 	opentext
 	writetext PsychicNathanAfterBattleText
@@ -225,14 +225,27 @@ RuinsOfAlphOutsideYoungster1Text:
 	line "our secret codes."
 	done
 
-RuinsOfAlphOutsideYoungster2Text:
+SuperNerdStanSeenText:
 	text "A… H… E… A… D…"
 	line "Hmm…"
 
 	para "What?"
 
 	para "I'm decoding this"
-	line "message!"
+	line "message! Go find"
+	cont "your own!"
+	done
+
+SuperNerdStanBeatenText:
+	text "I would have"
+	line "eventually figured"
+	cont "it out."
+	done
+
+SuperNerdStanAfterBattleText:
+	text "Fine, I guess you"
+	line "can try and decode"
+	cont "this message too."
 	done
 
 RuinsOfAlphOutside_MapEvents:
@@ -265,4 +278,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 11, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
 	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
 	object_event 14, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
-	object_event 12,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event 12,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdStan, -1

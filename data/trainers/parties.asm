@@ -12,14 +12,18 @@ SECTION "Enemy Trainer Parties 1", ROMX
 FalknerGroup:
 	next_list_item ; FALKNER (1)
 	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
-	db 10
+	db 11
 	dw DODUO
 	dw BERRY
 	dw PECK, MUD_SLAP, PURSUIT, RAGE
-	db 12
-	dw ZUBAT
+	db 13
+	dw BUTTERFREE
 	dw FOCUS_BAND
-	dw LEECH_LIFE, SUPERSONIC, GUST, BITE
+	dw TACKLE, POISONPOWDER, CONFUSION, STRING_SHOT
+	db 12
+	dw FARFETCH_D
+	dw STICK
+	dw SWIFT, ROCK_SMASH, GUST, MUD_SLAP
 	db 13
 	dw PIDGEOTTO
 	dw GOLD_BERRY
@@ -1219,6 +1223,19 @@ YoungsterGroup:
 	dw HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
+	next_list_item ; YOUNGSTER (14), Route 36
+	db "ARTHUR@", TRAINERTYPE_ITEM
+	db 13
+	dw LARVITAR
+	dw NO_ITEM
+	db 14
+	dw ONIX
+	dw HARD_STONE
+	db 12
+	dw RHYHORN
+	dw NO_ITEM
+	db -1 ; end
+
 	end_list_items
 
 SchoolboyGroup:
@@ -1453,6 +1470,8 @@ BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1), Violet Gym
 	db "ROD@", TRAINERTYPE_NORMAL
 	db 9
+	dw PIDGEY
+	db 9
 	dw HOOTHOOT
 	db 9
 	dw SPEAROW
@@ -1460,6 +1479,8 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (2), Violet Gym
 	db "ABE@", TRAINERTYPE_NORMAL
+	db 11
+	dw HOPPIP
 	db 11
 	dw NATU
 	db -1 ; end
@@ -1709,10 +1730,14 @@ LassGroup:
 	dw GRANBULL
 	db -1 ; end
 
-	next_list_item ; LASS (12), unused ???
-	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 26
-	dw MARILL
+	next_list_item ; LASS (12), Route 36
+	db "NONI@", TRAINERTYPE_NORMAL
+	db 8
+	dw VULPIX
+	db 9
+	dw MAREEP
+	db 10
+	dw HOOTHOOT
 	db -1 ; end
 
 	next_list_item ; LASS (13), unused ???
@@ -3620,10 +3645,14 @@ SailorGroup:
 	end_list_items
 
 SuperNerdGroup:
-	next_list_item ; SUPER_NERD (1), unused ???
+	next_list_item ; SUPER_NERD (1), Ruins of Alph
 	db "STAN@", TRAINERTYPE_NORMAL
-	db 24
+	db 9
+	dw HOUNDOUR
+	db 10
 	dw GRIMER
+	db 9
+	dw MAGNEMITE
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2), Goldenrod Tunnel
@@ -4934,28 +4963,30 @@ ExecutiveFGroup:
 SageGroup:
 	next_list_item ; SAGE (1), Sprout Tower
 	db "CHOW@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
-	dw BELLSPROUT
+	db 7
+	dw NATU
 	db -1 ; end
 
 	next_list_item ; SAGE (2), Sprout Tower
 	db "NICO@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
+	db 7
 	dw BELLSPROUT
-	db 4
-	dw BELLSPROUT
+	db 6
+	dw GASTLY
 	db -1 ; end
 
 	next_list_item ; SAGE (3), Sprout Tower
 	db "JIN@", TRAINERTYPE_NORMAL
 	db 8
 	dw BELLSPROUT
+	db 8
+	dw GASTLY
 	db -1 ; end
 
 	next_list_item ; SAGE (4), Sprout Tower
@@ -4988,11 +5019,11 @@ SageGroup:
 
 	next_list_item ; SAGE (7), Sprout Tower
 	db "EDMOND@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
-	dw BELLSPROUT
-	db 4
+	db 6
+	dw HOOTHOOT
+	db 7
 	dw BELLSPROUT
 	db -1 ; end
 
@@ -5000,16 +5031,18 @@ SageGroup:
 	db "NEAL@", TRAINERTYPE_NORMAL
 	db 8
 	dw BELLSPROUT
+	db 8
+	dw NATU
 	db -1 ; end
 
 	next_list_item ; SAGE (9), Sprout Tower
 	db "LI@", TRAINERTYPE_NORMAL
 	db 9
-	dw BELLSPROUT
+	dw HAUNTER
 	db 9
-	dw BELLSPROUT
+	dw NOCTOWL
 	db 12
-	dw HOOTHOOT
+	dw WEEPINBELL
 	db -1 ; end
 
 	next_list_item ; SAGE (10), Tin Tower

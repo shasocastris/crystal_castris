@@ -8,6 +8,7 @@
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
 	const ROUTE36_SUICUNE
+	const ROUTE36_LASS2
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -15,23 +16,12 @@ Route36_MapScripts:
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
 
 Route36Noop1Scene:
 	end
 
 Route36Noop2Scene:
 	end
-
-Route36ArthurCallback:
-	readvar VAR_WEEKDAY
-	ifequal THURSDAY, .ArthurAppears
-	disappear ROUTE36_ARTHUR
-	endcallback
-
-.ArthurAppears:
-	appear ROUTE36_ARTHUR
-	endcallback
 
 Route36SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -289,9 +279,17 @@ TrainerSchoolboyAlan1:
 	jumpstd PackFullMScript
 	end
 
+TrainerLassNoni:
+	trainer LASS, NONI, EVENT_BEAT_LASS_NONI, LassNoniSeenText, LassNoniBeatenText, 0, .Script
+.Script:
+	opentext
+	writetext LassNoniAfterBattleText
+	waitbutton
+	closetext
+	end
+
 TrainerPsychicMark:
 	trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script
-
 .Script:
 	opentext
 	writetext PsychicMarkAfterBattleText
@@ -303,35 +301,32 @@ ArthurScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
-	iftrue .AlreadyGotStone
+	iftrue ArthurGaveStoneScript
 	readvar VAR_WEEKDAY
-	ifnotequal THURSDAY, ArthurNotThursdayScript
-	checkevent EVENT_MET_ARTHUR_OF_THURSDAY
-	iftrue .MetArthur
-	writetext MeetArthurText
-	promptbutton
-	setevent EVENT_MET_ARTHUR_OF_THURSDAY
-.MetArthur:
+	ifequal THURSDAY, .GiveHardStone
+	writetext ArthurSeenText
+	waitbutton
+	closetext
+	winlosstext ArthurBeatenText, ArthurWinsText
+	loadtrainer YOUNGSTER, ARTHUR
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveHardStone:
 	writetext ArthurGivesGiftText
 	promptbutton
 	verbosegiveitem HARD_STONE
-	iffalse .BagFull
+	iffalse ArthurDoneScript
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
 	writetext ArthurGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.AlreadyGotStone:
-	writetext ArthurThursdayText
+ArthurGaveStoneScript:
+	writetext ArthurGaveStoneText
 	waitbutton
-.BagFull:
-	closetext
-	end
-
-ArthurNotThursdayScript:
-	writetext ArthurNotThursdayText
-	waitbutton
+ArthurDoneScript:
 	closetext
 	end
 
@@ -511,6 +506,23 @@ Route36LassText_ClearedSudowoodo:
 	line "really a #MON?"
 	done
 
+LassNoniSeenText:
+	text "You're going to"
+	line "look at the weird"
+	cont "tree?"
+	done
+
+LassNoniBeatenText:
+	text "Better you than"
+	line "me!"
+	done
+
+LassNoniAfterBattleText:
+	text "I'm not sure if I"
+	line "want to evolve my"
+	cont "#MON or not."
+	done
+
 PsychicMarkSeenText:
 	text "I'm going to read"
 	line "your thoughts!"
@@ -548,17 +560,43 @@ SchoolboyAlanBooksText:
 	cont "reading books."
 	done
 
-MeetArthurText:
+ArthurSeenText:
 	text "ARTHUR: Who are"
 	line "you?"
 
 	para "I'm ARTHUR of"
 	line "Thursday."
+
+    para "That's when I hand"
+    line "out HARD STONES to"
+    cont "anybody who asks."
+
+	para "Today? You'll have"
+	line "to battle for it."
+	done
+
+ArthurBeatenText:
+	text "Well done."
+	done
+
+ArthurWinsText:
+	text "Come back another"
+	line "day."
 	done
 
 ArthurGivesGiftText:
 	text "Here. You can have"
 	line "this."
+	done
+
+ArthurGaveStoneText:
+	text "ARTHUR: I'm the"
+	line "second son out of"
+    cont "seven children."
+
+	para "Don't tell MONICA,"
+	line "but SANTOS is my"
+	cont "favorite sibling."
 	done
 
 ArthurGaveGiftText:
@@ -570,20 +608,6 @@ ArthurGaveGiftText:
 
 	para "It pumps up rock-"
 	line "type attacks."
-	done
-
-ArthurThursdayText:
-	text "ARTHUR: I'm ARTHUR"
-	line "of Thursday. I'm"
-
-	para "the second son out"
-	line "of seven children."
-	done
-
-ArthurNotThursdayText:
-	text "ARTHUR: Today's"
-	line "not Thursday. How"
-	cont "disappointing."
 	done
 
 Route36SignText:
@@ -655,3 +679,4 @@ Route36_MapEvents:
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
+	object_event 40,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 5, TrainerLassNoni, -1
