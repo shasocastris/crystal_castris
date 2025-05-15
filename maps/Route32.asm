@@ -206,7 +206,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH2
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 2
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -214,7 +213,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH3
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 3
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -222,7 +220,6 @@ TrainerFisherRalph1:
 	loadtrainer FISHER, RALPH4
 	startbattle
 	reloadmapafterbattle
-	loadmem wRalphFightCount, 4
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
@@ -326,7 +323,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ2
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 2
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
@@ -334,7 +330,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ3
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 3
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
@@ -342,7 +337,6 @@ TrainerPicnickerLiz1:
 	loadtrainer PICNICKER, LIZ4
 	startbattle
 	reloadmapafterbattle
-	loadmem wLizFightCount, 4
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
