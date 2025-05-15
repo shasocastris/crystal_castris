@@ -21,7 +21,6 @@ Route32_MapScripts:
 	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route32FriedaCallback
 
 Route32Noop1Scene:
 	end
@@ -31,16 +30,6 @@ Route32Noop2Scene:
 
 Route32Noop3Scene:
 	end
-
-Route32FriedaCallback:
-	readvar VAR_WEEKDAY
-	ifequal FRIDAY, .FriedaAppears
-	disappear ROUTE32_FRIEDA
-	endcallback
-
-.FriedaAppears:
-	appear ROUTE32_FRIEDA
-	endcallback
 
 Route32CooltrainerMScript:
 	faceplayer
@@ -72,7 +61,30 @@ Route32CooltrainerMContinueScene:
 	end
 
 .GotMiracleSeed:
+	checkevent EVENT_BEAT_COOLTRAINERM_TYLER
+	iftrue .Route32CooltrainerMAfterBattleScript
 	writetext Route32CooltrainerMText_ExperiencesShouldBeUseful
+	waitbutton
+	writetext Route32CooltrainerMText_WouldYouLikeToBattle
+	yesorno
+	iffalse .Refused
+	writetext Route32CooltrainerMText_ShowMeWhatYouGot
+	waitbutton
+	closetext
+	winlosstext Route32CooltrainerMBeatenText, 0
+	loadtrainer COOLTRAINERM, TYLER
+	startbattle
+	reloadmapafterbattle
+	opentext
+.Route32CooltrainerMAfterBattleScript
+	setevent EVENT_BEAT_COOLTRAINERM_TYLER
+	writetext Route32CooltrainerMText_AfterBattle
+	waitbutton
+	closetext
+	end
+
+.Refused:
+	writetext Route32CooltrainerMText_MaybeSomeOtherTime
 	waitbutton
 .BagFull:
 	closetext
@@ -188,43 +200,34 @@ TrainerFisherRalph1:
 .Rematch:
 	scall .RematchStd
 	winlosstext FisherRalph1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	iftrue .LoadFight4
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_FISHER_RALPH
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_ECRUTEAK
-	iftrue .LoadFight1
 	loadtrainer FISHER, RALPH1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer FISHER, RALPH2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer FISHER, RALPH3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer FISHER, RALPH4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer FISHER, RALPH5
+	loadtrainer FISHER, RALPH4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
@@ -305,43 +308,34 @@ TrainerPicnickerLiz1:
 .Rematch:
 	scall .RematchStd
 	winlosstext PicnickerLiz1BeatenText, 0
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight3
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .LoadFight2
+	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
-	iftrue .LoadFight1
+	iftrue .LoadFight2
 	loadtrainer PICNICKER, LIZ1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer PICNICKER, LIZ2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer PICNICKER, LIZ3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer PICNICKER, LIZ4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_LIZ_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer PICNICKER, LIZ5
+	loadtrainer PICNICKER, LIZ4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
@@ -409,35 +403,32 @@ FriedaScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
-	iftrue .Friday
+	iftrue FriedaGaveBarbScript
 	readvar VAR_WEEKDAY
-	ifnotequal FRIDAY, .NotFriday
-	checkevent EVENT_MET_FRIEDA_OF_FRIDAY
-	iftrue .MetFrieda
-	writetext MeetFriedaText
-	promptbutton
-	setevent EVENT_MET_FRIEDA_OF_FRIDAY
-.MetFrieda:
+	ifequal FRIDAY, .GivePoisonBarb
+	writetext FriedaSeenText
+	waitbutton
+	closetext
+	winlosstext FriedaBeatenText, FriedaWinsText
+	loadtrainer LASS, FRIEDA
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GivePoisonBarb:
 	writetext FriedaGivesGiftText
 	promptbutton
 	verbosegiveitem POISON_BARB
-	iffalse .Done
+	iffalse FriedaDoneScript
 	setevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
 	writetext FriedaGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.Friday:
-	writetext FriedaFridayText
+FriedaGaveBarbScript:
+	writetext FriedaGaveBarbScriptText
 	waitbutton
-.Done:
-	closetext
-	end
-
-.NotFriday:
-	writetext FriedaNotFridayText
-	waitbutton
+FriedaDoneScript:
 	closetext
 	end
 
@@ -541,6 +532,51 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 
 	para "should be useful"
 	line "for your journey."
+	done
+
+Route32CooltrainerMText_WouldYouLikeToBattle:
+	text "Hey, since you"
+	line "beat FALKNER, do"
+	cont "you want to have a"
+	cont "quick battle?"
+
+	para "It'll be fun!"
+	done
+
+Route32CooltrainerMText_ShowMeWhatYouGot:
+	text "That's what I"
+	line "like to hear!"
+
+	para "Get ready and"
+	line "show me what"
+	cont "you've got!"
+	done
+
+Route32CooltrainerMBeatenText:
+	text "Whoa! You're"
+	line "stronger than"
+	cont "you look!"
+	done
+
+Route32CooltrainerMText_AfterBattle:
+	text "That was a"
+	line "good battle!"
+
+	para "I see how you got"
+	line "got your first"
+	cont "badge."
+	done
+
+Route32CooltrainerMText_MaybeSomeOtherTime:
+	text "Oh, that's too"
+	line "bad."
+
+	para "Your #MON seem"
+	line "tired. Rest up and"
+	cont "come back!"
+
+	para "I'll be training"
+	line "right here."
 	done
 
 Text_MillionDollarSlowpokeTail:
@@ -753,19 +789,42 @@ Text_RoarOutro:
 	line "FROM A GOOD ROAR!"
 	done
 
-MeetFriedaText:
-	text "FRIEDA: Yahoo!"
-	line "It's Friday!"
+FriedaSeenText:
+	text "FRIEDA: Hiya! What"
+	line "day do you like?"
 
-	para "I'm FRIEDA of"
-	line "Friday!"
+	para "I love Friday. No"
+	line "doubt about it!"
 
-	para "Nice to meet you!"
+	para "Don't you think"
+	line "it's great too?"
+
+	para "Too bad we met on"
+	line "a different day."
+
+	para "Now we have to"
+	line "battle!"
+	done
+
+FriedaBeatenText:
+	text "It's so boring"
+	line "when it's not!"
+	done
+
+FriedaWinsText:
+	text "I won? Wicked!"
 	done
 
 FriedaGivesGiftText:
-	text "Here's a POISON"
-	line "BARB for you!"
+	text "Yahoo! Here's a"
+	line "POISON BARB for"
+	cont "you!"
+	done
+
+FriedaGaveBarbScriptText:
+	text "It's so boring"
+	line "when it's not"
+	cont "FRIDAY!"
 	done
 
 FriedaGaveGiftText:
@@ -780,25 +839,6 @@ FriedaGaveGiftText:
 	para "You'll be shocked"
 	line "how good it makes"
 	cont "poison moves!"
-	done
-
-FriedaFridayText:
-	text "FRIEDA: Hiya! What"
-	line "day do you like?"
-
-	para "I love Friday. No"
-	line "doubt about it!"
-
-	para "Don't you think"
-	line "it's great too?"
-	done
-
-FriedaNotFridayText:
-	text "FRIEDA: Isn't it"
-	line "Friday today?"
-
-	para "It's so boring"
-	line "when it's not!"
 	done
 
 Route32SignText:
@@ -836,7 +876,7 @@ Route32_MapEvents:
 	bg_event  9,  1, BGEVENT_READ, Route32RuinsSign
 	bg_event 10, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
-	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
+	bg_event  6, 75, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 
 	def_object_events

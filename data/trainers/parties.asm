@@ -1124,10 +1124,10 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (2), Route 30
 	db "MIKEY@", TRAINERTYPE_NORMAL
-	db 4
-	dw ODDISH
 	db 3
 	dw PIDGEY
+	db 4
+	dw ODDISH
 	db 5
 	dw RATTATA
 	db 4
@@ -1140,15 +1140,21 @@ YoungsterGroup:
 	dw RATTATA
 	db 10
 	dw ZUBAT
+	db 10
+	dw MAREEP
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (4), Route 32
 	db "GORDON@", TRAINERTYPE_NORMAL
+	db 10
+	dw ODDISH
+	db 10
+	dw GASTLY
 	db 12
 	dw WOOPER
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (5), Route 32
+	next_list_item ; YOUNGSTER (5), Route 34
 	db "SAMUEL@", TRAINERTYPE_NORMAL
 	db 9
 	dw RATTATA
@@ -1170,7 +1176,7 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (7), Route 30
 	db "JOEY@", TRAINERTYPE_NORMAL
-	db 18
+	db 12
 	dw RATTATA
 	db -1 ; end
 
@@ -1209,18 +1215,12 @@ YoungsterGroup:
 	dw CROBAT
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (13), Route 30
-	db "JOEY@", TRAINERTYPE_MOVES
-	db 36
-	dw RATICATE
-	dw TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, PURSUIT
-	db -1 ; end
-
 	next_list_item ; YOUNGSTER (14), Route 30
-	db "JOEY@", TRAINERTYPE_MOVES
+	db "JOEY@", TRAINERTYPE_ITEM_MOVES
 	db 45
 	dw RATICATE
-	dw HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
+	dw FOCUS_BAND
+	dw HYPER_BEAM, EXTREMESPEED, HYPER_FANG, PURSUIT
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (14), Route 36
@@ -1575,11 +1575,11 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (13), Route 32
 	db "PETER@", TRAINERTYPE_NORMAL
-	db 8
-	dw PIDGEY
-	db 8
+	db 10
 	dw PIDGEY
 	db 10
+	dw HOOTHOOT
+	db 11
 	dw SPEAROW
 	db -1 ; end
 
@@ -1740,10 +1740,14 @@ LassGroup:
 	dw HOOTHOOT
 	db -1 ; end
 
-	next_list_item ; LASS (13), unused ???
-	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 26
-	dw MARILL
+	next_list_item ; LASS (13), Route 32
+	db "FRIEDA@", TRAINERTYPE_NORMAL
+	db 12
+	dw ZUBAT
+	db 14
+	dw EKANS
+	db 16
+	dw NIDORINA
 	db -1 ; end
 
 	next_list_item ; LASS (14), Route 38
@@ -1938,14 +1942,14 @@ CooltrainerMGroup:
 	dw MARILL
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (15), unused ???
+	next_list_item ; COOLTRAINERM (15), Route 32
 	db "TYLER@", TRAINERTYPE_NORMAL
 	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	dw STANTLER
+	db 13
+	dw TANGELA
+	db 14
+	dw CORSOLA
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (16), SS Aqua
@@ -2859,18 +2863,6 @@ BugCatcherGroup:
 	dw METAPOD
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (11), Route 31
-	db "WADE@", TRAINERTYPE_NORMAL
-	db 17
-	dw BUTTERFREE
-	db 17
-	dw BUTTERFREE
-	db 18
-	dw BEEDRILL
-	db 17
-	dw BUTTERFREE
-	db -1 ; end
-
 	next_list_item ; BUG_CATCHER (12), Route 2
 	db "DOUG@", TRAINERTYPE_NORMAL
 	db 41
@@ -2949,19 +2941,19 @@ BugCatcherGroup:
 FisherGroup:
 	next_list_item ; FISHER (1), Route 32
 	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db 6
-	dw MAGIKARP
-	db 6
-	dw MAGIKARP
+	db 9
+	dw TENTACOOL
+	db 11
+	dw KRABBY
 	db 18
-	dw MAGIKARP
-	db 6
 	dw MAGIKARP
 	db -1 ; end
 
 	next_list_item ; FISHER (2), Route 32
 	db "RALPH@", TRAINERTYPE_NORMAL
 	db 12
+	dw HORSEA
+	db 13
 	dw GOLDEEN
 	db -1 ; end
 
@@ -2985,7 +2977,7 @@ FisherGroup:
 	db "HENRY@", TRAINERTYPE_NORMAL
 	db 10
 	dw POLIWAG
-	db 10
+	db 12
 	dw POLIWAG
 	db -1 ; end
 
@@ -3087,16 +3079,12 @@ FisherGroup:
 	dw GYARADOS
 	db -1 ; end
 
-	next_list_item ; FISHER (16), Route 32
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 21
-	dw GOLDEEN
-	db -1 ; end
-
 	next_list_item ; FISHER (17), Route 32
 	db "RALPH@", TRAINERTYPE_NORMAL
 	db 21
 	dw QWILFISH
+	db 23
+	dw HORSEA
 	db 23
 	dw GOLDEEN
 	db -1 ; end
@@ -3154,15 +3142,20 @@ FisherGroup:
 	db "RALPH@", TRAINERTYPE_NORMAL
 	db 36
 	dw QWILFISH
+	db 38
+	dw SEADRA
 	db 39
 	dw GOLDEEN
 	db -1 ; end
 
 	next_list_item ; FISHER (24), Route 32
 	db "RALPH@", TRAINERTYPE_MOVES
-	db 42
+	db 45
 	dw QWILFISH
 	dw TOXIC, MINIMIZE, SURF, PIN_MISSILE
+	db 45
+	dw SEADRA
+	dw SMOKESCREEN, TWISTER, AURORA_BEAM, OCTAZOOKA
 	db 47
 	dw SEAKING
 	dw ENDURE, FLAIL, FURY_ATTACK, WATERFALL
@@ -4511,6 +4504,10 @@ PicnickerGroup:
 	next_list_item ; PICNICKER (1), Route 32
 	db "LIZ@", TRAINERTYPE_NORMAL
 	db 11
+	dw NIDORAN_M
+	db 11
+	dw BELLSPROUT
+	db 12
 	dw NIDORAN_F
 	db -1 ; end
 
@@ -4579,14 +4576,6 @@ PicnickerGroup:
 	dw PONYTA
 	db 20
 	dw PONYTA
-	db -1 ; end
-
-	next_list_item ; PICNICKER (11), Route 32
-	db "LIZ@", TRAINERTYPE_NORMAL
-	db 18
-	dw WEEPINBELL
-	db 18
-	dw NIDORINA
 	db -1 ; end
 
 	next_list_item ; PICNICKER (12), Route 32
@@ -4732,6 +4721,10 @@ CamperGroup:
 	next_list_item ; CAMPER (1), Route 32
 	db "ROLAND@", TRAINERTYPE_NORMAL
 	db 11
+	dw LEDYBA
+	db 11
+	dw PIDGEY
+	db 13
 	dw NIDORAN_M
 	db -1 ; end
 
