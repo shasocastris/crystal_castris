@@ -12,7 +12,7 @@ Route33LassScript:
 	jumptextfaceplayer Route33LassText
 
 TrainerHikerAnthony:
-	trainer HIKER, ANTHONY2, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
+	trainer HIKER, ANTHONY1, EVENT_BEAT_HIKER_ANTHONY, HikerAnthony2SeenText, HikerAnthony2BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_ANTHONY
@@ -44,21 +44,12 @@ TrainerHikerAnthony:
 .Rematch:
 	scall .RematchStd
 	winlosstext HikerAnthony2BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftrue .LoadFight1
-	loadtrainer HIKER, ANTHONY2
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_HIKER_ANTHONY
+	iftrue .LoadFight2
 	loadtrainer HIKER, ANTHONY1
 	startbattle
 	reloadmapafterbattle
@@ -66,21 +57,21 @@ TrainerHikerAnthony:
 	end
 
 .LoadFight2:
-	loadtrainer HIKER, ANTHONY3
+	loadtrainer HIKER, ANTHONY2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
 .LoadFight3:
-	loadtrainer HIKER, ANTHONY4
+	loadtrainer HIKER, ANTHONY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
 	end
 
 .LoadFight4:
-	loadtrainer HIKER, ANTHONY5
+	loadtrainer HIKER, ANTHONY4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH

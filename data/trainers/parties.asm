@@ -1795,15 +1795,15 @@ LassGroup:
 CooltrainerMGroup:
 	next_list_item ; COOLTRAINERM (1), Union Cave
 	db "NICK@", TRAINERTYPE_MOVES
-	db 32
-	dw CHARMANDER
-	dw EMBER, SMOKESCREEN, RAGE, SCARY_FACE
-	db 32
-	dw SQUIRTLE
-	dw WITHDRAW, WATER_GUN, BITE, CURSE
-	db 32
-	dw BULBASAUR
-	dw LEECH_SEED, POISONPOWDER, SLEEP_POWDER, RAZOR_LEAF
+	db 36
+	dw CHARIZARD
+	dw FLAMETHROWER, WING_ATTACK, ANCIENTPOWER, BITE
+	db 36
+	dw BLASTOISE
+	dw SURF, CONFUSION, BITE, FLAIL
+	db 36
+	dw VENUSAUR
+	dw PETAL_DANCE, SLUDGE, SLEEP_POWDER, LIGHT_SCREEN
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (2), Lake of Rage
@@ -2001,14 +2001,18 @@ CooltrainerMGroup:
 CooltrainerFGroup:
 	next_list_item ; COOLTRAINERF (1), Union Cave
 	db "GWEN@", TRAINERTYPE_NORMAL
-	db 32
+	db 33
 	dw EEVEE
-	db 27
+	db 33
 	dw FLAREON
-	db 27
+	db 33
 	dw VAPOREON
-	db 27
+	db 33
 	dw JOLTEON
+	db 33
+	dw UMBREON
+	db 33
+	dw ESPEON
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (2), Lake of Rage
@@ -2129,7 +2133,13 @@ CooltrainerFGroup:
 	next_list_item ; COOLTRAINERF (15), Union Cave
 	db "EMMA@", TRAINERTYPE_NORMAL
 	db 34
-	dw POLIWHIRL
+	dw POLITOED
+	db 34
+	dw ELECTABUZZ
+	db 34
+	dw MAGMAR
+	db 34
+	dw JYNX
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (16), Route 44
@@ -2329,22 +2339,41 @@ BeautyGroup:
 PokemaniacGroup:
 	next_list_item ; POKEMANIAC (1), Union Cave
 	db "LARRY@", TRAINERTYPE_NORMAL
-	db 12
+	db 14
 	dw SLOWPOKE
+	db 14
+	dw PORYGON
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (2), Union Cave
-	db "ANDREW@", TRAINERTYPE_NORMAL
-	db 29
+	db "ANDREW@", TRAINERTYPE_ITEM
+	db 34
+	dw DITTO
+	dw NO_ITEM
+	db 36
 	dw MAROWAK
-	db 29
-	dw MAROWAK
+	dw THICK_CLUB
+	db 37
+	dw FARFETCH_D
+	dw STICK
+	db 35
+	dw CHANSEY
+	dw LUCKY_PUNCH
+	db 35
+	dw PIKACHU
+	dw LIGHT_BALL
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (3), Union Cave
 	db "CALVIN@", TRAINERTYPE_NORMAL
 	db 32
 	dw KANGASKHAN
+	db 32
+	dw TAUROS
+	db 32
+	dw BLISSEY
+	db 32
+	dw SNORLAX
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (4), Route 42
@@ -3343,24 +3372,24 @@ SwimmerMGroup:
 	dw QUAGSIRE
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (19), unused ???
+	next_list_item ; SWIMMERM (19), Union Cave
 	db "JAMES@", TRAINERTYPE_NORMAL
-	db 16
-	dw STARYU
-	db 22
+	db 34
+	dw TENTACRUEL
+	db 37
 	dw STARMIE
-	db 20
-	dw HORSEA
+	db 35
+	dw SEADRA
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (20), unused ???
+	next_list_item ; SWIMMERM (20), Union Cave
 	db "LEWIS@", TRAINERTYPE_NORMAL
-	db 16
-	dw STARYU
-	db 22
-	dw STARMIE
-	db 20
-	dw HORSEA
+	db 33
+	dw GOLDUCK
+	db 34
+	dw KINGLER
+	db 34
+	dw OCTILLERY
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (21), Cerulean Gym
@@ -3434,10 +3463,14 @@ SwimmerFGroup:
 	dw DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (8), unused ???
+	next_list_item ; SWIMMERF (8), Union Cave
 	db "LISA@", TRAINERTYPE_NORMAL
 	db 34
 	dw JYNX
+	db 34
+	dw QWILFISH
+	db 34
+	dw QUAGSIRE
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (9), unused ???
@@ -3656,14 +3689,14 @@ SuperNerdGroup:
 	dw GRIMER
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (3), unused ???
+	next_list_item ; SUPER_NERD (3), Union Cave
 	db "GREGG@", TRAINERTYPE_NORMAL
 	db 24
 	dw MAGNEMITE
 	db 24
-	dw MAGNEMITE
+	dw QUAGSIRE
 	db 24
-	dw MAGNEMITE
+	dw GLOOM
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (4), unused ???
@@ -3783,45 +3816,51 @@ GuitaristGroup:
 HikerGroup:
 	next_list_item ; HIKER (1), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 20
+	db 14
 	dw GEODUDE
-	db 22
-	dw MACHAMP
+	db 14
+	dw CUBONE
+	db 14
+	dw MACHOP
 	db -1 ; end
 
 	next_list_item ; HIKER (2), Union Cave
 	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db 5
-	dw GEODUDE
 	db 8
 	dw GEODUDE
 	db 10
+	dw GEODUDE
+	db 12
 	dw GEODUDE
 	db -1 ; end
 
 	next_list_item ; HIKER (3), Union Cave
 	db "PHILLIP@", TRAINERTYPE_NORMAL
 	db 28
-	dw GEODUDE
-	db 28
-	dw GEODUDE
-	db 28
 	dw GRAVELER
+	db 28
+	dw DUGTRIO
+	db 28
+	dw QUAGSIRE
 	db -1 ; end
 
 	next_list_item ; HIKER (4), Union Cave
 	db "LEONARD@", TRAINERTYPE_NORMAL
 	db 28
-	dw GEODUDE
+	dw GOLEM
 	db 30
-	dw MACHOP
+	dw PARASECT
+	db 30
+	dw MACHAMP
 	db -1 ; end
 
 	next_list_item ; HIKER (5), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 14
+	db 20
 	dw GEODUDE
-	db 14
+	db 20
+	dw CUBONE
+	db 20
 	dw MACHOP
 	db -1 ; end
 
@@ -3887,13 +3926,13 @@ HikerGroup:
 	dw GEODUDE
 	db -1 ; end
 
-	next_list_item ; HIKER (12), Route 33
+	next_list_item ; HIKER (21), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 30
+	db 36
 	dw GRAVELER
-	db 33
-	dw GRAVELER
-	db 35
+	db 36
+	dw MAROWAK
+	db 39
 	dw MACHOKE
 	db -1 ; end
 
@@ -3943,6 +3982,8 @@ HikerGroup:
 
 	next_list_item ; HIKER (18), Union Cave
 	db "DANIEL@", TRAINERTYPE_NORMAL
+	db 12
+	dw SANDSHREW
 	db 14
 	dw ONIX
 	db -1 ; end
@@ -3966,17 +4007,20 @@ HikerGroup:
 	dw ONIX
 	db -1 ; end
 
-	next_list_item ; HIKER (21), Route 33
-	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 36
-	dw GRAVELER
-	db 36
-	dw GRAVELER
-	db 39
-	dw MACHOKE
+	next_list_item ; HIKER (22), unused ???
+	db "ANTHONY@", TRAINERTYPE_MOVES
+	db 44
+	dw GOLEM
+	dw EARTHQUAKE, SELFDESTRUCT, DEFENSE_CURL, ROLLOUT
+	db 44
+	dw MAROWAK
+	dw BONEMERANG, ROCK_SLIDE, SKULL_BASH, SWORDS_DANCE
+	db 47
+	dw MACHAMP
+	dw CROSS_CHOP, ICE_PUNCH, HEADBUTT, THUNDERPUNCH
 	db -1 ; end
 
-	next_list_item ; HIKER (22), Route 33
+	next_list_item ; HIKER (22), unused ???
 	db "ANTHONY@", TRAINERTYPE_MOVES
 	db 41
 	dw GRAVELER
@@ -4146,9 +4190,9 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (5), Union Cave
 	db "BILL@", TRAINERTYPE_NORMAL
-	db 8
-	dw KOFFING
-	db 8
+	db 10
+	dw SLUGMA
+	db 10
 	dw KOFFING
 	db -1 ; end
 
@@ -4164,6 +4208,10 @@ FirebreatherGroup:
 	db "RAY@", TRAINERTYPE_NORMAL
 	db 11
 	dw VULPIX
+	db 11
+	dw GROWLITHE
+	db 11
+	dw HOUNDOUR
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (8), SS Aqua
