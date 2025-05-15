@@ -149,7 +149,6 @@ DEF KRIS EQU __trainer_class__
 	const OWEN
 	const JASON
 	const JOEY4
-	const JOEY5
 	const ARTHUR
 
 	trainerclass SCHOOLBOY ; 1d
@@ -205,7 +204,7 @@ DEF KRIS EQU __trainer_class__
 	const BRIDGET
 	const ALICE
 	const KRISE
-	const CONNIE1
+	const CONNIE
 	const LINDA
 	const LAURA
 	const SHANNON
@@ -213,7 +212,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA1
 	const ELLEN
 	const NONI
-	const CONNIE3 ; unused
+	const FRIEDA
 	const DANA2
 	const DANA3
 	const DANA4
@@ -234,7 +233,7 @@ DEF KRIS EQU __trainer_class__
 	const BRIAN
 	const ERICK
 	const ANDY
-	const TYLER ; unused
+	const TYLER
 	const SEAN
 	const KEVIN
 	const STEVE ; unused
@@ -361,12 +360,11 @@ DEF KRIS EQU __trainer_class__
 	const ARNIE1
 	const KEN
 	const WADE2
-	const WADE3
 	const DOUG
 	const ARNIE2
 	const ARNIE3
+	const WADE3
 	const WADE4
-	const WADE5
 	const ARNIE4
 	const ARNIE5
 	const WAYNE
@@ -388,14 +386,13 @@ DEF KRIS EQU __trainer_class__
 	const STEPHEN
 	const BARNEY
 	const RALPH2
-	const RALPH3
 	const TULLY2
 	const TULLY3
 	const WILTON2
 	const SCOTT
 	const WILTON3
+	const RALPH3
 	const RALPH4
-	const RALPH5
 	const TULLY4
 
 	trainerclass SWIMMERM ; 2a
@@ -578,7 +575,6 @@ DEF KRIS EQU __trainer_class__
 	const GINA2
 	const ERIN1
 	const LIZ2
-	const LIZ3
 	const HEIDI
 	const EDNA
 	const GINA3
@@ -588,8 +584,8 @@ DEF KRIS EQU __trainer_class__
 	const TANYA
 	const TIFFANY3
 	const ERIN3
+	const LIZ3
 	const LIZ4
-	const LIZ5
 	const GINA4
 	const GINA5
 	const TIFFANY4

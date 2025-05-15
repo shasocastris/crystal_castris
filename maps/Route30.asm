@@ -69,44 +69,34 @@ TrainerYoungsterJoey:
 .Rematch:
 	scall .RematchStd
 	winlosstext YoungsterJoey1BeatenText, 0
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight3
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_YOUNGSTER_JOEY
 	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_GOLDENROD
-	iftrue .LoadFight1
 	loadtrainer YOUNGSTER, JOEY1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer YOUNGSTER, JOEY2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer YOUNGSTER, JOEY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer YOUNGSTER, JOEY4
-	startbattle
-	reloadmapafterbattle
-	loadmem wJoeyFightCount, 4
-	clearflag ENGINE_JOEY_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer YOUNGSTER, JOEY5
+	loadtrainer YOUNGSTER, JOEY4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOEY_READY_FOR_REMATCH
