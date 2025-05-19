@@ -272,7 +272,7 @@ MovesGen2:
 	move EFFECT_SUNNY_DAY,           0, FIRE,          STATUS,    90,  5,   0      ;SUNNY_DAY
 	move EFFECT_SP_DEF_DOWN_HIT,    80, DARK,          PHYSICAL, 100, 15,  20      ;CRUNCH
 	move EFFECT_MIRROR_COAT,         1, PSYCHIC_TYPE,  SPECIAL,  100, 20,   0      ;MIRROR_COAT
-	move EFFECT_PSYCH_UP,            0, NORMAL,        STATUS,   100, 10,   0      ;PSYCH_UP
+	move EFFECT_SP_ATK_UP_2,         0, NORMAL,        STATUS,   100, 10,   0      ;PSYCH_UP
 	move EFFECT_PRIORITY_HIT,       80, NORMAL,        PHYSICAL, 100, 10,   0      ;EXTREMESPEED
 	move EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100, 10,  10      ;ANCIENTPOWER
 	move EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20      ;SHADOW_BALL
