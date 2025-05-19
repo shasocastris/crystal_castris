@@ -218,6 +218,10 @@ DEF NUM_HOF_TEAMS EQU 30
 	const ATK_LT_DEF
 	const ATK_EQ_DEF
 
+; Learn move upon evo trigger
+	const_def MAX_LEVEL + 1
+	const LEARN_EVO_MOVE
+
 ; wild data
 
 DEF NUM_GRASSMON EQU 7 ; data/wild/*_grass.asm table size

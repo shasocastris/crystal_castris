@@ -358,12 +358,14 @@ CaterpieEvosAttacks:
 MetapodEvosAttacks:
 	dbbw EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, HARDEN
 	dbw 1, HARDEN
 	dbw 15, HEADBUTT
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, CONFUSION
 	dbw 1, CONFUSION
 	dbw 13, POISONPOWDER
 	dbw 14, STUN_SPORE

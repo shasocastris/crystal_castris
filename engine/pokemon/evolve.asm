@@ -405,9 +405,14 @@ LearnLevelMoves:
 	and a
 	jr z, .done
 
+	cp LEARN_EVO_MOVE
+	jr z, .get_move
+
 	ld b, a
 	ld a, [wCurPartyLevel]
 	cp b
+
+.get_move
 	call GetNextEvoAttackByte
 	ld e, a
 	call GetNextEvoAttackByte
@@ -479,6 +484,8 @@ FillMoves:
 	and a
 	jr z, .done
 	ld b, a
+	cp LEARN_EVO_MOVE
+	jr z, .CheckMove
 	ld a, [wCurPartyLevel]
 	cp b
 	jr c, .done
