@@ -248,7 +248,6 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
-	call LearnEvolutionMove
 	call LearnLevelMoves
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
@@ -333,48 +332,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wMonTriedToEvolve]
 	and a
 	jmp nz, RestartMapMusic
-	ret
-
-LearnEvolutionMove:
-	ld a, [wTempSpecies]
-	ld [wCurPartySpecies], a
-	call GetPokemonIndexFromID
-	ld b, h
-	ld c, l
-	ld hl, EvolutionMovesPointers
-	ld a, BANK(EvolutionMovesPointers)
-	call LoadIndirectPointer
-
-	push hl
-	call GetFarWord
-	cphl16 NO_MOVE
-	jr z, .has_move
-	call GetMoveIDFromIndex
-	ld d, a
-	ld hl, wPartyMon1Moves
-	ld a, [wCurPartyMon]
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-
-	ld b, NUM_MOVES
-.check_move
-	call GetNextEvoAttackByte
-	cp d
-	jr z, .has_move
-	dec b
-	jr nz, .check_move
-
-	ld a, d
-	ld [wPutativeTMHMMove], a
-	ld [wNamedObjectIndex], a
-	call GetMoveName
-	call CopyName1
-	predef LearnMove
-
-.has_move
-	pop hl
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:
