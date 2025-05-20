@@ -23,10 +23,10 @@ PUSHS
 SECTION "Moves Gen 1", ROMX
 
 MovesGen1:
-	move EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0      ;POUND
+	move EFFECT_NORMAL_HIT,         40, FAIRY,         PHYSICAL, 100, 35,   0      ;POUND
 	move EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0      ;KARATE_CHOP
-	move EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 10,   0      ;DOUBLESLAP
-	move EFFECT_MULTI_HIT,          18, NORMAL,        PHYSICAL,  85, 15,   0      ;COMET_PUNCH
+	move EFFECT_MULTI_HIT,          15, FAIRY,         PHYSICAL,  85, 10,   0      ;DOUBLESLAP
+	move EFFECT_MULTI_HIT,          18, FAIRY,         PHYSICAL,  85, 15,   0      ;COMET_PUNCH
 	move EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0      ;MEGA_PUNCH
 	move EFFECT_PAY_DAY,            40, NORMAL,        PHYSICAL, 100, 20,   0      ;PAY_DAY
 	move EFFECT_BURN_HIT,           75, FIRE,          PHYSICAL, 100, 15,  10      ;FIRE_PUNCH
