@@ -145,6 +145,7 @@ BayleefEvosAttacks:
 
 MeganiumEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PETAL_DANCE
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 8, RAZOR_LEAF
@@ -154,6 +155,7 @@ MeganiumEvosAttacks:
 	dbw 23, SYNTHESIS
 	dbw 27, LEECH_SEED
 	dbw 31, BODY_SLAM
+	dbw 31, PETAL_DANCE
 	dbw 36, COUNTER
 	dbw 41, LIGHT_SCREEN
 	dbw 46, ANCIENTPOWER
@@ -200,6 +202,7 @@ QuilavaEvosAttacks:
 
 TyphlosionEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, KARATE_CHOP
 	dbw 1, TACKLE
 	dbw 1, LEER
 	dbw 6, SMOKESCREEN
@@ -209,6 +212,7 @@ TyphlosionEvosAttacks:
 	dbw 21, QUICK_ATTACK
 	dbw 26, FORESIGHT
 	dbw 31, FLAME_WHEEL
+	dbw 31, KARATE_CHOP
 	dbw 38, THRASH
 	dbw 45, SWIFT
 	dbw 53, SUBMISSION
@@ -254,6 +258,7 @@ CroconawEvosAttacks:
 
 FeraligatrEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, CRUNCH
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 7, RAGE
@@ -263,6 +268,7 @@ FeraligatrEvosAttacks:
 	dbw 21, BITE
 	dbw 24, THRASH
 	dbw 28, SCARY_FACE
+	dbw 29, CRUNCH
 	dbw 38, SLASH
 	dbw 42, ROCK_SLIDE
 	dbw 47, SCREECH
@@ -288,6 +294,7 @@ SentretEvosAttacks:
 
 FurretEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, AGILITY
 	dbw 1, SCRATCH
 	dbw 5, DEFENSE_CURL
 	dbw 8, PURSUIT
@@ -404,6 +411,7 @@ SpinarakEvosAttacks:
 
 AriadosEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DIG
 	dbw 1, POISON_STING
 	dbw 1, STRING_SHOT
 	dbw 6, SCARY_FACE
@@ -425,6 +433,7 @@ AriadosEvosAttacks:
 
 CrobatEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, TOXIC
 	dbw 1, LEECH_LIFE
 	dbw 6, SUPERSONIC
 	dbw 9, GUST
@@ -526,6 +535,7 @@ TogepiEvosAttacks:
 
 TogeticEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WING_ATTACK
 	dbw 1, GROWL
 	dbw 1, CHARM
 	dbw 4, PECK
@@ -611,6 +621,7 @@ FlaaffyEvosAttacks:
 
 AmpharosEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, THUNDERPUNCH
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 9, THUNDERSHOCK
@@ -689,6 +700,7 @@ SudowoodoEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PERISH_SONG
 	dbw 1, WATER_GUN
 	dbw 21, BUBBLEBEAM
 	dbw 31, HYPNOSIS
@@ -854,6 +866,7 @@ QuagsireEvosAttacks:
 
 EspeonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, CONFUSION
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
@@ -871,6 +884,7 @@ EspeonEvosAttacks:
 
 UmbreonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PURSUIT
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
@@ -1036,6 +1050,7 @@ GligarEvosAttacks:
 
 SteelixEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, IRON_TAIL
 	dbw 1, TACKLE
 	dbw 1, SCREECH
 	dbw 10, BIND
@@ -1109,6 +1124,7 @@ QwilfishEvosAttacks:
 
 ScizorEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, METAL_CLAW
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
 	dbw 6, FOCUS_ENERGY
@@ -1262,6 +1278,7 @@ SwinubEvosAttacks:
 
 PiloswineEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ICY_WIND
 	dbw 1, HORN_ATTACK
 	dbw 10, POWDER_SNOW
 	dbw 14, ANCIENTPOWER
@@ -1269,7 +1286,7 @@ PiloswineEvosAttacks:
 	dbw 24, BITE
 	dbw 28, TAKE_DOWN
 	dbw 32, ROCK_SLIDE
-	dbw 32, FURY_ATTACK
+	dbw 32, ICY_WIND
 	dbw 42, MIST
 	dbw 49, EARTHQUAKE
 	dbw 56, BLIZZARD
@@ -1312,6 +1329,7 @@ RemoraidEvosAttacks:
 
 OctilleryEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, OCTAZOOKA
 	dbw 1, WATER_GUN
 	dbw 6, HAZE
 	dbw 11, CONSTRICT
@@ -1441,6 +1459,7 @@ PhanpyEvosAttacks:
 
 DonphanEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FURY_ATTACK
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 9, DEFENSE_CURL
@@ -1514,6 +1533,7 @@ TyrogueEvosAttacks:
 
 HitmontopEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, ROLLING_KICK
 	dbw 1, ROLLING_KICK
 	dbw 7, FOCUS_ENERGY
 	dbw 13, PURSUIT

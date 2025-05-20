@@ -200,6 +200,7 @@ IvysaurEvosAttacks:
 
 VenusaurEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, STRENGTH
 	dbw 1, TACKLE
 	dbw 4, GROWL
 	dbw 7, LEECH_SEED
@@ -211,6 +212,7 @@ VenusaurEvosAttacks:
 	dbw 22, RAZOR_LEAF
 	dbw 26, RAZOR_WIND
 	dbw 29, SWEET_SCENT
+	dbw 31, STRENGTH
 	dbw 36, PETAL_DANCE
 	dbw 41, GROWTH
 	dbw 47, SAFEGUARD
@@ -263,6 +265,7 @@ CharmeleonEvosAttacks:
 
 CharizardEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FLY
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 7, EMBER
@@ -273,6 +276,7 @@ CharizardEvosAttacks:
 	dbw 27, SCARY_FACE
 	dbw 31, ANCIENTPOWER
 	dbw 34, FLAMETHROWER
+	dbw 35, FLY
 	dbw 36, WING_ATTACK
 	dbw 40, BELLY_DRUM
 	dbw 44, SLASH
@@ -328,6 +332,7 @@ WartortleEvosAttacks:
 
 BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SURF
 	dbw 1, TACKLE
 	dbw 4, TAIL_WHIP
 	dbw 7, BUBBLE
@@ -340,6 +345,7 @@ BlastoiseEvosAttacks:
 	dbw 28, MIST
 	dbw 31, PROTECT
 	dbw 34, FLAIL
+	dbw 35, SURF
 	dbw 42, RAIN_DANCE
 	dbw 48, FORESIGHT
 	dbw 55, SKULL_BASH
@@ -359,6 +365,8 @@ MetapodEvosAttacks:
 	dbbw EVOLVE_LEVEL, 10, BUTTERFREE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, HARDEN
+	dbw 1, TACKLE
+	dbw 1, STRING_SHOT
 	dbw 1, HARDEN
 	dbw 15, HEADBUTT
 	db 0 ; no more level-up moves
@@ -366,6 +374,9 @@ MetapodEvosAttacks:
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, CONFUSION
+	dbw 1, TACKLE
+	dbw 1, STRING_SHOT
+	dbw 1, HARDEN
 	dbw 1, CONFUSION
 	dbw 13, POISONPOWDER
 	dbw 14, STUN_SPORE
@@ -388,12 +399,19 @@ WeedleEvosAttacks:
 KakunaEvosAttacks:
 	dbbw EVOLVE_LEVEL, 10, BEEDRILL
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, HARDEN
+	dbw 1, POISON_STING
+	dbw 1, STRING_SHOT
 	dbw 1, HARDEN
 	dbw 15, HEADBUTT
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FURY_ATTACK
+	dbw 1, POISON_STING
+	dbw 1, STRING_SHOT
+	dbw 1, HARDEN
 	dbw 1, FURY_ATTACK
 	dbw 15, FOCUS_ENERGY
 	dbw 20, TWINEEDLE
@@ -480,6 +498,7 @@ RattataEvosAttacks:
 
 RaticateEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SCARY_FACE
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 4, FURY_SWIPES
@@ -550,6 +569,7 @@ EkansEvosAttacks:
 
 ArbokEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SLUDGE
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 9, POISON_STING
@@ -590,6 +610,7 @@ PikachuEvosAttacks:
 
 RaichuEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, THUNDERBOLT
 	dbw 1, THUNDER_WAVE
 	dbw 1, DOUBLE_TEAM
 	dbw 1, IRON_TAIL
@@ -616,6 +637,7 @@ SandshrewEvosAttacks:
 
 SandslashEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DIG
 	dbw 1, SCRATCH
 	dbw 6, DEFENSE_CURL
 	dbw 9, RAPID_SPIN
@@ -961,6 +983,7 @@ VenonatEvosAttacks:
 
 VenomothEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PIN_MISSILE
 	dbw 1, TACKLE
 	dbw 1, DISABLE
 	dbw 1, FORESIGHT
@@ -998,6 +1021,7 @@ DiglettEvosAttacks:
 
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DIG
 	dbw 1, SCRATCH
 	dbw 5, GROWL
 	dbw 9, MAGNITUDE
@@ -1033,6 +1057,7 @@ MeowthEvosAttacks:
 
 PersianEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SWIFT
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 11, BITE
@@ -1112,6 +1137,7 @@ MankeyEvosAttacks:
 
 PrimeapeEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, RAGE
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 9, LOW_KICK
@@ -1196,6 +1222,7 @@ PoliwhirlEvosAttacks:
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SUBMISSION
 	dbw 1, WATER_GUN
 	dbw 21, BUBBLEBEAM
 	dbw 31, HYPNOSIS
@@ -1216,6 +1243,7 @@ AbraEvosAttacks:
 KadabraEvosAttacks:
 	dbww EVOLVE_ITEM, MIST_STONE, ALAKAZAM
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, KINESIS
 	dbw 1, TELEPORT
 	dbw 9, ENCORE
 	dbw 15, KINESIS
@@ -1234,6 +1262,7 @@ KadabraEvosAttacks:
 
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, KINESIS
 	dbw 1, TELEPORT
 	dbw 9, ENCORE
 	dbw 15, KINESIS
@@ -1290,6 +1319,7 @@ MachokeEvosAttacks:
 
 MachampEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, STRENGTH
 	dbw 1, LOW_KICK
 	dbw 1, LEER
 	dbw 8, FOCUS_ENERGY
@@ -1376,6 +1406,7 @@ TentacoolEvosAttacks:
 
 TentacruelEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WRAP
 	dbw 1, POISON_STING
 	dbw 6, SUPERSONIC
 	dbw 12, CONSTRICT
@@ -1461,6 +1492,7 @@ PonytaEvosAttacks:
 
 RapidashEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FURY_ATTACK
 	dbw 1, TACKLE
 	dbw 4, GROWL
 	dbw 8, TAIL_WHIP
@@ -1500,6 +1532,7 @@ SlowpokeEvosAttacks:
 
 SlowbroEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WITHDRAW
 	dbw 1, CURSE
 	dbw 1, TACKLE
 	dbw 6, GROWL
@@ -1533,6 +1566,7 @@ MagnemiteEvosAttacks:
 
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, TRI_ATTACK
 	dbw 1, TACKLE
 	dbw 1, THUNDERSHOCK
 	dbw 1, SUPERSONIC
@@ -1739,6 +1773,7 @@ HaunterEvosAttacks:
 
 GengarEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, FAINT_ATTACK
 	dbw 1, HYPNOSIS
 	dbw 1, LICK
 	dbw 8, SPITE
@@ -1886,6 +1921,7 @@ ExeggcuteEvosAttacks:
 
 ExeggutorEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, STOMP
 	dbw 1, BARRAGE
 	dbw 1, HYPNOSIS
 	dbw 1, CONFUSION
@@ -1942,6 +1978,7 @@ MarowakEvosAttacks:
 
 HitmonleeEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, DOUBLE_KICK
 	dbw 1, DOUBLE_KICK
 	dbw 6, MEDITATE
 	dbw 11, ROLLING_KICK
@@ -1960,6 +1997,7 @@ HitmonleeEvosAttacks:
 
 HitmonchanEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, COMET_PUNCH
 	dbw 1, COMET_PUNCH
 	dbw 7, AGILITY
 	dbw 13, PURSUIT
@@ -2011,6 +2049,7 @@ KoffingEvosAttacks:
 
 WeezingEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SLUDGE_BOMB
 	dbw 1, POISON_GAS
 	dbw 1, TACKLE
 	dbw 9, SMOG
@@ -2174,6 +2213,7 @@ GoldeenEvosAttacks:
 
 SeakingEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WATERFALL
 	dbw 1, PECK
 	dbw 1, TAIL_WHIP
 	dbw 10, SUPERSONIC
@@ -2345,6 +2385,7 @@ MagikarpEvosAttacks:
 
 GyaradosEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, BITE
 	dbw 1, THRASH
 	dbw 1, BITE
 	dbw 25, DRAGON_RAGE
@@ -2399,6 +2440,7 @@ EeveeEvosAttacks:
 
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WATER_GUN
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
@@ -2416,6 +2458,7 @@ VaporeonEvosAttacks:
 
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, THUNDERSHOCK
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
@@ -2433,6 +2476,7 @@ JolteonEvosAttacks:
 
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, EMBER
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
@@ -2483,6 +2527,7 @@ OmanyteEvosAttacks:
 
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, OMASTAR
 	dbw 1, CONSTRICT
 	dbw 1, WITHDRAW
 	dbw 13, BITE
@@ -2519,6 +2564,7 @@ KabutoEvosAttacks:
 
 KabutopsEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SLASH
 	dbw 1, SCRATCH
 	dbw 1, HARDEN
 	dbw 10, ABSORB
@@ -2644,6 +2690,7 @@ DragonairEvosAttacks:
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WING_ATTACK
 	dbw 1, WRAP
 	dbw 1, LEER
 	dbw 1, THUNDER_WAVE
