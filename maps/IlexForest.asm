@@ -10,6 +10,8 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_YOUNGSTER3
+	const ILEXFOREST_YOUNGSTER4
 
 IlexForest_MapScripts:
 	def_scene_scripts
@@ -391,6 +393,26 @@ TrainerBugCatcherWayne:
 .Script:
 	opentext
 	writetext BugCatcherWayneAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperDale:
+	trainer CAMPER, DALE, EVENT_BEAT_CAMPER_DALE, CamperDaleSeenText, CamperDaleBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperDaleAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperHarvey:
+	trainer CAMPER, HARVEY, EVENT_BEAT_CAMPER_HARVEY, CamperHarveySeenText, CamperHarveyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperHarveyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -933,6 +955,47 @@ BugCatcherWayneAfterBattleText:
 	cont "places too."
 	done
 
+CamperDaleSeenText:
+	text "Camping in ILEX"
+	line "FOREST is the best"
+	cont "way to escape the"
+	cont "busy city life!"
+	done
+
+CamperDaleBeatenText:
+	text "Whoa! You showed"
+	line "no mercy at all!"
+	done
+
+CamperDaleAfterBattleText:
+	text "The forest holds"
+	line "many secrets, so"
+	cont "stay alert as you"
+	cont "explore deeper!"
+	done
+
+CamperHarveySeenText:
+	text "I've been mapping"
+	line "this forest for"
+	cont "days!"
+
+	para "Let me show you"
+	line "what my #MON"
+	cont "learned!"
+	done
+
+CamperHarveyBeatenText:
+	text "My map just got"
+	line "a new mark:"
+	cont "DEFEAT SPOT"
+	done
+
+CamperHarveyAfterBattleText:
+	text "I swear the trees"
+	line "actually move at"
+	cont "night!"
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
@@ -963,3 +1026,5 @@ IlexForest_MapEvents:
 	object_event  9, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestXAttack, EVENT_ILEX_FOREST_X_ATTACK
 	object_event 17,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestAntidote, EVENT_ILEX_FOREST_ANTIDOTE
 	object_event 27,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event  3, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperDale, -1
+	object_event 29,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperHarvey, -1
