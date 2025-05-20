@@ -34,7 +34,7 @@ YoungsterJoey_ImportantBattleScript:
 	turnobject ROUTE30_YOUNGSTER1, UP
 	closetext
 	playsound SFX_TACKLE
-	applymovement ROUTE30_MONSTER1, Route30_MikeysRattataAttacksMovement
+	applymovement ROUTE30_MONSTER1, Route30_MikeysSentretAttacksMovement
 	special RestartMapMusic
 	end
 
@@ -235,7 +235,7 @@ Route30_JoeysRattataAttacksMovement:
 	big_step DOWN
 	step_end
 
-Route30_MikeysRattataAttacksMovement:
+Route30_MikeysSentretAttacksMovement:
 	fix_facing
 	big_step DOWN
 	big_step UP

@@ -16,10 +16,6 @@ FalknerGroup:
 	dw DODUO
 	dw BERRY
 	dw PECK, MUD_SLAP, PURSUIT, RAGE
-	db 13
-	dw BUTTERFREE
-	dw FOCUS_BAND
-	dw TACKLE, POISONPOWDER, CONFUSION, STRING_SHOT
 	db 12
 	dw FARFETCH_D
 	dw STICK
@@ -63,10 +59,6 @@ FalknerGroup:
 BugsyGroup:
 	next_list_item ; BUGSY (1)
 	db "BUGSY@", TRAINERTYPE_ITEM_MOVES
-	db 17
-	dw PINECO
-	dw BERRY_JUICE
-	dw SPIKES, SELFDESTRUCT, PIN_MISSILE, TAKE_DOWN
 	db 15
 	dw KAKUNA
 	dw NO_ITEM
@@ -782,7 +774,7 @@ Rival1Group:
 	dw THIEF, ICE_PUNCH, SCREECH, COUNTER
 	db 39
 	dw TYPHLOSION
-	dw THUNDER_PUNCH, THRASH, SMOKESCREEN, FLAME_WHEEL
+	dw THUNDERPUNCH, THRASH, SMOKESCREEN, FLAME_WHEEL
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (12)
@@ -845,7 +837,7 @@ Rival1Group:
 	dw DISABLE, PSYCHIC_M, RECOVER, FUTURE_SIGHT
 	db 46
 	dw TYPHLOSION
-	dw THUNDER_PUNCH, THRASH, SMOKESCREEN, FLAME_WHEEL
+	dw THUNDERPUNCH, THRASH, SMOKESCREEN, FLAME_WHEEL
 	db -1 ; end
 
 	next_list_item ; RIVAL1 (15)
@@ -1128,12 +1120,8 @@ YoungsterGroup:
 	db "MIKEY@", TRAINERTYPE_NORMAL
 	db 3
 	dw PIDGEY
-	db 4
-	dw ODDISH
 	db 5
-	dw RATTATA
-	db 4
-	dw MARILL
+	dw SENTRET
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (3), Route 32
@@ -1481,7 +1469,7 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (2), Violet Gym
 	db "ABE@", TRAINERTYPE_NORMAL
-	db 11
+	db 9
 	dw HOPPIP
 	db 11
 	dw NATU
@@ -2466,6 +2454,8 @@ PokemaniacGroup:
 GruntMGroup:
 	next_list_item ; GRUNTM (1), Slowpoke Well
 	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 16
+	dw GRIMER
 	db 17
 	dw KOFFING
 	db -1 ; end
@@ -2476,8 +2466,8 @@ GruntMGroup:
 	dw RATTATA
 	db 11
 	dw ZUBAT
-	db 11
-	dw ZUBAT
+	db 14
+	dw DROWZEE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (3), Goldenrod Radio Tower
@@ -2701,7 +2691,7 @@ GruntMGroup:
 	db 11
 	dw RATTATA
 	db 11
-	dw RATTATA
+	dw HOUNDOUR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (30), unused ???
@@ -2864,6 +2854,8 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (7), Azalea Gym
 	db "JOSH@", TRAINERTYPE_NORMAL
+	db 14
+	dw VENONAT
 	db 16
 	dw PARAS
 	db -1 ; end
