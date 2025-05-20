@@ -116,7 +116,7 @@ MovesGen1:
 	move EFFECT_FLY,                60, GROUND,        PHYSICAL, 100, 10,   0      ;DIG
 	move EFFECT_TOXIC,               0, POISON,        STATUS,    85, 10,   0      ;TOXIC
 	move EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE,  SPECIAL,  100, 25,  10      ;CONFUSION
-	move EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE,  SPECIAL,  100, 10,  10      ;PSYCHIC_TYPE_M
+	move EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC_TYPE,  SPECIAL,  100, 10,  10      ;PSYCHIC_M
 	move EFFECT_SLEEP,               0, PSYCHIC_TYPE,  STATUS,    60, 20,   0      ;HYPNOSIS
 	move EFFECT_ATTACK_UP,           0, PSYCHIC_TYPE,  STATUS,   100, 40,   0      ;MEDITATE
 	move EFFECT_SPEED_UP_2,          0, PSYCHIC_TYPE,  STATUS,   100, 30,   0      ;AGILITY
@@ -282,8 +282,8 @@ MovesGen2:
 	move EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0      ;BEAT_UP
 	move EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,         SPECIAL,  100, 15,  30      ;MOONBLAST
 	move EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,         PHYSICAL,  90, 10,  10      ;PLAY_ROUGH
-	move EFFECT_BURN,                0, FIRE,          STATUS,   100, 20,   0      ;WILL_O_WISP
-	move EFFECT_FREEZE,              0, ICE,           STATUS,   100, 20,   0      ;SUDDEN_CHILL
+	move EFFECT_BURN,                0, FIRE,          STATUS,    85, 20,   0      ;WILL_O_WISP
+	move EFFECT_FREEZE,              0, ICE,           STATUS,    85, 20,   0      ;SUDDEN_CHILL
 	move EFFECT_HAIL,                0, ICE,           STATUS,   100, 10,   0      ;HAIL
 .IndirectEnd::
 
