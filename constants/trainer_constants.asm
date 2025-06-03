@@ -577,7 +577,6 @@ DEF KRIS EQU __trainer_class__
 	const LIZ2
 	const HEIDI
 	const EDNA
-	const GINA3
 	const TIFFANY1
 	const TIFFANY2
 	const ERIN2
@@ -586,8 +585,8 @@ DEF KRIS EQU __trainer_class__
 	const ERIN3
 	const LIZ3
 	const LIZ4
+	const GINA3
 	const GINA4
-	const GINA5
 	const TIFFANY4
 
 	trainerclass CAMPER ; 38
@@ -603,15 +602,14 @@ DEF KRIS EQU __trainer_class__
 	const DALE
 	const TED
 	const TODD2
-	const TODD3
 	const THOMAS ; unused
 	const LEROY ; unused
 	const DAVID ; unused
 	const JOHN ; unused
 	const JERRY
 	const SPENCER
+	const TODD3
 	const TODD4
-	const TODD5
 	const QUENTIN
 
 	trainerclass EXECUTIVEF ; 39

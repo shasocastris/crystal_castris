@@ -1153,7 +1153,7 @@ YoungsterGroup:
 	db 10
 	dw SPEAROW
 	db 10
-	dw SPEAROW
+	dw DROWZEE
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (6), Route 34
@@ -4559,8 +4559,8 @@ PicnickerGroup:
 	db "GINA@", TRAINERTYPE_NORMAL
 	db 11
 	dw HOPPIP
-	db 11
-	dw HOPPIP
+	db 13
+	dw ODDISH
 	db 15
 	dw BULBASAUR
 	db -1 ; end
@@ -4607,9 +4607,9 @@ PicnickerGroup:
 	next_list_item ; PICNICKER (9), Route 34
 	db "GINA@", TRAINERTYPE_NORMAL
 	db 17
-	dw HOPPIP
-	db 17
-	dw HOPPIP
+	dw SKIPLOOM
+	db 19
+	dw ODDISH
 	db 21
 	dw IVYSAUR
 	db -1 ; end
@@ -4646,16 +4646,6 @@ PicnickerGroup:
 	dw NIDORINA
 	db 41
 	dw RAICHU
-	db -1 ; end
-
-	next_list_item ; PICNICKER (15), Route 34
-	db "GINA@", TRAINERTYPE_NORMAL
-	db 32
-	dw SKIPLOOM
-	db 32
-	dw SKIPLOOM
-	db 35
-	dw IVYSAUR
 	db -1 ; end
 
 	next_list_item ; PICNICKER (16), Route 43
@@ -4732,24 +4722,24 @@ PicnickerGroup:
 	next_list_item ; PICNICKER (24), Route 34
 	db "GINA@", TRAINERTYPE_NORMAL
 	db 36
-	dw SKIPLOOM
+	dw JUMPLUFF
 	db 36
-	dw SKIPLOOM
+	dw GLOOM
 	db 39
-	dw IVYSAUR
+	dw VENUSAUR
 	db -1 ; end
 
 	next_list_item ; PICNICKER (25), Route 34
 	db "GINA@", TRAINERTYPE_MOVES
-	db 40
+	db 44
 	dw JUMPLUFF
-	dw STUN_SPORE, SUNNY_DAY, LEECH_SEED, COTTON_SPORE
-	db 40
-	dw JUMPLUFF
-	dw SUNNY_DAY, SLEEP_POWDER, LEECH_SEED, COTTON_SPORE
+	dw SPORE, GIGA_DRAIN, LEECH_SEED, PAY_DAY
+	db 44
+	dw BELLOSSOM
+	dw SYNTHESIS, SLEEP_POWDER, PETAL_DANCE, FLASH
 	db 46
 	dw VENUSAUR
-	dw SOLARBEAM, RAZOR_LEAF, HEADBUTT, MUD_SLAP
+	dw SOLARBEAM, SUNNY_DAY, SLUDGE_BOMB, EARTHQUAKE
 	db -1 ; end
 
 	next_list_item ; PICNICKER (26), Route 43
@@ -4774,6 +4764,8 @@ CamperGroup:
 
 	next_list_item ; CAMPER (2), Route 34
 	db "TODD@", TRAINERTYPE_NORMAL
+	db 15
+	dw GEODUDE
 	db 17
 	dw PSYDUCK
 	db -1 ; end
@@ -4852,19 +4844,9 @@ CamperGroup:
 	db "TODD@", TRAINERTYPE_NORMAL
 	db 21
 	dw GEODUDE
-	db 21
-	dw GEODUDE
+	db 24
+	dw KADABRA
 	db 28
-	dw PSYDUCK
-	db -1 ; end
-
-	next_list_item ; CAMPER (13), Route 34
-	db "TODD@", TRAINERTYPE_NORMAL
-	db 28
-	dw GEODUDE
-	db 28
-	dw GEODUDE
-	db 32
 	dw PSYDUCK
 	db -1 ; end
 
@@ -4937,27 +4919,27 @@ CamperGroup:
 	db 36
 	dw GRAVELER
 	db 36
-	dw GRAVELER
+	dw KADABRA
 	db 36
 	dw SLUGMA
 	db 39
-	dw PSYDUCK
+	dw GOLDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (21), Route 34
 	db "TODD@", TRAINERTYPE_MOVES
+	db 41
+	dw GOLEM
+	dw SELFDESTRUCT, EARTHQUAKE, ROCK_THROW, FIRE_PUNCH
 	db 40
-	dw GRAVELER
-	dw SELFDESTRUCT, ROCK_THROW, HARDEN, MAGNITUDE
-	db 40
-	dw GRAVELER
-	dw SELFDESTRUCT, ROCK_THROW, HARDEN, MAGNITUDE
+	dw ALAKAZAM
+	dw PSYCHIC_M, KINESIS, SHADOW_BALL, PSYCH_UP
 	db 44
 	dw MAGCARGO
-	dw ROCK_THROW, HARDEN, AMNESIA, FLAMETHROWER
+	dw ROCK_THROW, SUNNY_DAY, AMNESIA, FLAMETHROWER
 	db 41
 	dw GOLDUCK
-	dw DISABLE, PSYCHIC_M, SURF, PSYCH_UP
+	dw ICE_BEAM, PSYCHIC_M, SURF, PSYCH_UP
 	db -1 ; end
 
 	next_list_item ; CAMPER (22), Route 45
@@ -5265,6 +5247,9 @@ PokefanMGroup:
 	next_list_item ; POKEFANM (7), Route 34
 	db "BRANDON@", TRAINERTYPE_ITEM
 	db 16
+	dw JIGGLYPUFF
+	dw BERRY
+	db 16
 	dw SNUBBULL
 	dw BERRY
 	db -1 ; end
@@ -5535,9 +5520,10 @@ PokefanFGroup:
 
 OfficerGroup:
 	next_list_item ; OFFICER (1), Route 34
-	db "KEITH@", TRAINERTYPE_NORMAL
-	db 21
-	dw GROWLITHE
+	db "KEITH@", TRAINERTYPE_MOVES
+	db 22
+	dw ARCANINE
+	dw FLAMETHROWER, IRON_TAIL, FIRE_SPIN, BITE
 	db -1 ; end
 
 	next_list_item ; OFFICER (2), Route 35
