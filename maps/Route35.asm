@@ -153,43 +153,34 @@ TrainerBugCatcherArnie:
 .WantsBattle:
 	scall Route35RematchM
 	winlosstext BugCatcherArnieBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .LoadFight1
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_BUG_CATCHER_ARNIE
+	iftrue .LoadFight2
 	loadtrainer BUG_CATCHER, ARNIE1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer BUG_CATCHER, ARNIE2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer BUG_CATCHER, ARNIE3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer BUG_CATCHER, ARNIE4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer BUG_CATCHER, ARNIE5
+	loadtrainer BUG_CATCHER, ARNIE4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ARNIE_READY_FOR_REMATCH
