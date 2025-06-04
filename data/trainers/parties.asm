@@ -1233,6 +1233,8 @@ SchoolboyGroup:
 	db "JACK@", TRAINERTYPE_NORMAL
 	db 15
 	dw ODDISH
+	db 16
+	dw LARVITAR
 	db 18
 	dw VOLTORB
 	db -1 ; end
@@ -1253,6 +1255,8 @@ SchoolboyGroup:
 	db "ALAN@", TRAINERTYPE_NORMAL
 	db 20
 	dw TANGELA
+	db 20
+	dw YANMA
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (4), Route 15
@@ -1313,6 +1317,8 @@ SchoolboyGroup:
 	db "CHAD@", TRAINERTYPE_NORMAL
 	db 23
 	dw MR__MIME
+	db 23
+	dw WOBBUFFET
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (11), SS Aqua
@@ -1335,24 +1341,22 @@ SchoolboyGroup:
 	db "JACK@", TRAINERTYPE_NORMAL
 	db 17
 	dw ODDISH
+	db 19
+	dw LARVITAR
 	db 21
 	dw VOLTORB
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (14), National Park
+	next_list_item ; SCHOOLBOY (19), National Park
 	db "JACK@", TRAINERTYPE_NORMAL
-	db 34
+	db 36
 	dw GLOOM
 	db 38
+	dw PUPITAR
+	db 40
+	dw ARCANINE
+	db 40
 	dw ELECTRODE
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (15), Route 36
-	db "ALAN@", TRAINERTYPE_NORMAL
-	db 21
-	dw TANGELA
-	db 21
-	dw YANMA
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (16), Route 36
@@ -1367,45 +1371,6 @@ SchoolboyGroup:
 	dw YANMA
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (17), Route 38
-	db "CHAD@", TRAINERTYPE_NORMAL
-	db 23
-	dw MR__MIME
-	db 23
-	dw MAGNEMITE
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (18), Route 38
-	db "CHAD@", TRAINERTYPE_NORMAL
-	db 33
-	dw MR__MIME
-	db 38
-	dw MAGNETON
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (19), National Park
-	db "JACK@", TRAINERTYPE_NORMAL
-	db 36
-	dw GLOOM
-	db 40
-	dw GROWLITHE
-	db 40
-	dw ELECTRODE
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (20), National Park
-	db "JACK@", TRAINERTYPE_MOVES
-	db 42
-	dw ELECTRODE
-	dw SCREECH, SONICBOOM, ROLLOUT, LIGHT_SCREEN
-	db 42
-	dw GROWLITHE
-	dw SUNNY_DAY, LEER, TAKE_DOWN, FLAME_WHEEL
-	db 45
-	dw VILEPLUME
-	dw SOLARBEAM, SLEEP_POWDER, ACID, MOONLIGHT
-	db -1 ; end
-
 	next_list_item ; SCHOOLBOY (21), Route 36
 	db "ALAN@", TRAINERTYPE_NORMAL
 	db 33
@@ -1416,6 +1381,42 @@ SchoolboyGroup:
 	dw QUAGSIRE
 	db 36
 	dw YANMA
+	db -1 ; end
+
+	next_list_item ; SCHOOLBOY (18), Route 38
+	db "CHAD@", TRAINERTYPE_NORMAL
+	db 33
+	dw MR__MIME
+	db 35
+	dw WOBBUFFET
+	db 38
+	dw MAGNETON
+	db -1 ; end
+
+	next_list_item ; SCHOOLBOY (23), Route 38
+	db "CHAD@", TRAINERTYPE_NORMAL
+	db 36
+	dw MR__MIME
+	db 38
+	dw WOBBUFFET
+	db 41
+	dw MAGNETON
+	db -1 ; end
+
+	next_list_item ; SCHOOLBOY (20), National Park
+	db "JACK@", TRAINERTYPE_MOVES
+	db 42
+	dw ELECTRODE
+	dw SCREECH, SONICBOOM, ROLLOUT, LIGHT_SCREEN
+	db 42
+	dw PUPITAR
+	dw ANCIENTPOWER, THRASH, SANDSTORM, MUD_SLAP
+	db 42
+	dw ARCANINE
+	dw SUNNY_DAY, LEER, TAKE_DOWN, FLAME_WHEEL
+	db 45
+	dw VILEPLUME
+	dw SOLARBEAM, SLEEP_POWDER, ACID, MOONLIGHT
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (22), Route 36
@@ -1434,19 +1435,14 @@ SchoolboyGroup:
 	dw TAIL_WHIP, SLAM, AMNESIA, EARTHQUAKE
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (23), Route 38
-	db "CHAD@", TRAINERTYPE_NORMAL
-	db 36
-	dw MR__MIME
-	db 41
-	dw MAGNETON
-	db -1 ; end
-
 	next_list_item ; SCHOOLBOY (24), Route 38
 	db "CHAD@", TRAINERTYPE_MOVES
 	db 41
 	dw MR__MIME
 	dw PSYCHIC_M, LIGHT_SCREEN, REFLECT, ENCORE
+	db 43
+	dw WOBBUFFET
+	dw COUNTER, MIRROR_COAT, SAFEGUARD, DESTINY_BOND
 	db 46
 	dw MAGNETON
 	dw ZAP_CANNON, THUNDER_WAVE, LOCK_ON, SWIFT
@@ -1502,9 +1498,9 @@ BirdKeeperGroup:
 	db 18
 	dw DODUO
 	db 20
-	dw DODUO
+	dw PIDGEOTTO
 	db 21
-	dw DODUO
+	dw NOCTOWL
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (6), Olivine Lighthouse
@@ -1652,6 +1648,8 @@ LassGroup:
 	db "KRISE@", TRAINERTYPE_NORMAL
 	db 15
 	dw ODDISH
+	db 17
+	dw NATU
 	db 18
 	dw CUBONE
 	db -1 ; end
@@ -2951,6 +2949,19 @@ BugCatcherGroup:
 	dw PARAS
 	db 12
 	dw VENONAT
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (20), Route 37
+	db "SUNNY@", TRAINERTYPE_ITEM
+	db 24
+	dw CHINCHOU
+	dw NO_ITEM
+	db 24
+	dw FLAAFFY
+	dw NO_ITEM
+	db 24
+	dw RAICHU
+	dw MAGNET
 	db -1 ; end
 
 	end_list_items
@@ -4466,7 +4477,10 @@ PsychicGroup:
 	db "GREG@", TRAINERTYPE_MOVES
 	db 21
 	dw DROWZEE
-	dw HYPNOSIS, DISABLE, DREAM_EATER, NO_MOVE
+	dw HYPNOSIS, DISABLE, DREAM_EATER, CONFUSION
+	db 21
+	dw GIRAFARIG
+	dw CONFUSION, AMNESIA, STOMP, AGILITY
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (6), Route 39
@@ -4475,7 +4489,7 @@ PsychicGroup:
 	dw SLOWPOKE
 	dw TACKLE, GROWL, WATER_GUN, NO_MOVE
 	db 24
-	dw SLOWPOKE
+	dw SLOWKING
 	dw CURSE, BODY_SLAM, WATER_GUN, CONFUSION
 	db -1 ; end
 
@@ -4483,10 +4497,10 @@ PsychicGroup:
 	db "MARK@", TRAINERTYPE_MOVES
 	db 16
 	dw ABRA
-	dw TELEPORT, FLASH, NO_MOVE, NO_MOVE
+	dw TELEPORT, FLASH, PSYWAVE, NO_MOVE
 	db 16
-	dw ABRA
-	dw TELEPORT, FLASH, NO_MOVE, NO_MOVE
+	dw DROWZEE
+	dw CONFUSION, DISABLE, HYPNOSIS, POUND
 	db 18
 	dw KADABRA
 	dw TELEPORT, KINESIS, CONFUSION, NO_MOVE
@@ -5189,12 +5203,21 @@ PokefanMGroup:
 	db 17
 	dw RAICHU
 	dw BERRY
+	db 18
+	dw WIGGLYTUFF
+	dw BERRY
+	db 20
+	dw QUAGSIRE
+	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (2), Route 39
 	db "DEREK@", TRAINERTYPE_ITEM
 	db 21
 	dw PIKACHU
+	dw BERRY
+	db 21
+	dw PHANPY
 	dw BERRY
 	db -1 ; end
 
@@ -5470,12 +5493,18 @@ PokefanFGroup:
 	db 17
 	dw SNUBBULL
 	dw BERRY
+	db 17
+	dw FURRET
+	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANF (2), Route 39
 	db "RUTH@", TRAINERTYPE_ITEM
 	db 21
 	dw PIKACHU
+	dw BERRY
+	db 21
+	dw GRANBULL
 	dw BERRY
 	db -1 ; end
 
@@ -5516,6 +5545,12 @@ PokefanFGroup:
 	db "JAIME@", TRAINERTYPE_ITEM
 	db 20
 	dw MEOWTH
+	dw BERRY
+	db 20
+	dw PSYDUCK
+	dw BERRY
+	db 20
+	dw NIDOKING
 	dw BERRY
 	db -1 ; end
 

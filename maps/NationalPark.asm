@@ -108,43 +108,34 @@ TrainerSchoolboyJack1:
 .Rematch:
 	scall .RematchStd
 	winlosstext SchoolboyJack1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftrue .LoadFight1
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_SCHOOLBOY_JACK
+	iftrue .LoadFight2
 	loadtrainer SCHOOLBOY, JACK1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer SCHOOLBOY, JACK2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer SCHOOLBOY, JACK3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JACK_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer SCHOOLBOY, JACK4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JACK_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer SCHOOLBOY, JACK5
+	loadtrainer SCHOOLBOY, JACK4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JACK_READY_FOR_REMATCH

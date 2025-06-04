@@ -171,12 +171,8 @@ DEF KRIS EQU __trainer_class__
 	const CHAD2
 	const CHAD3
 	const JACK4
-	const JACK5
 	const ALAN4
-	const ALAN5
 	const CHAD4
-	const CHAD5
-	const DEVIN
 
 	trainerclass BIRD_KEEPER ; 1e
 	const ROD
@@ -367,6 +363,7 @@ DEF KRIS EQU __trainer_class__
 	const WADE4
 	const ARNIE4
 	const WAYNE
+	const SUNNY
 
 	trainerclass FISHER ; 29
 	const JUSTIN

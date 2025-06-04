@@ -57,24 +57,20 @@ SunnyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_MAGNET_FROM_SUNNY
-	iftrue SunnySundayScript
+	iftrue SunnyGaveMagnetScript
 	readvar VAR_WEEKDAY
-	ifnotequal SUNDAY, SunnyNotSundayScript
-	checkevent EVENT_MET_SUNNY_OF_SUNDAY
-	iftrue .MetSunny
-	writetext MeetSunnyText
+	ifequal SUNDAY, .GiveMagnet
+	writetext SunnySeenText
+	waitbutton
+	closetext
+	winlosstext SunnyBeatenText, SunnyWinsText
+	loadtrainer BUG_CATCHER, SUNNY
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveMagnet:
+	writetext SunnyGivesGiftText
 	promptbutton
-	setevent EVENT_MET_SUNNY_OF_SUNDAY
-.MetSunny:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Kris
-	writetext SunnyGivesGiftText1
-	promptbutton
-	sjump .next
-.Kris:
-	writetext SunnyGivesGiftText2
-	promptbutton
-.next
 	verbosegiveitem MAGNET
 	iffalse SunnyDoneScript
 	setevent EVENT_GOT_MAGNET_FROM_SUNNY
@@ -83,16 +79,10 @@ SunnyScript:
 	closetext
 	end
 
-SunnySundayScript:
+SunnyGaveMagnetScript:
 	writetext SunnySundayText
 	waitbutton
 SunnyDoneScript:
-	closetext
-	end
-
-SunnyNotSundayScript:
-	writetext SunnyNotSundayText
-	waitbutton
 	closetext
 	end
 
@@ -168,21 +158,30 @@ PsychicGregAfterBattleText:
 	cont "battle techniques."
 	done
 
-MeetSunnyText:
+SunnySeenText:
 	text "SUNNY: Hi!"
 
 	para "I'm SUNNY of Sun-"
-	line "day, meaning it's"
-	cont "Sunday today!"
+	line "day!"
+
+	para "If it was my"
+	line "favorite day, I"
+	cont "would give you a"
+	cont "really nice gift!"
+
+	para "But since it's not"
+	line "let's battle!"
 	done
 
-SunnyGivesGiftText1:
-	text "I was told to give"
-	line "you this if I saw"
-	cont "you!"
+SunnyBeatenText:
+	text "Wow, good job!"
 	done
 
-SunnyGivesGiftText2:
+SunnyWinsText:
+	text "Perhaps next time."
+	done
+
+SunnyGivesGiftText:
 	text "I was told to give"
 	line "you this if I saw"
 	cont "you!"
@@ -220,12 +219,6 @@ SunnySundayText:
 
 	para "They're all older"
 	line "than me!"
-	done
-
-SunnyNotSundayText:
-	text "SUNNY: Isn't today"
-	line "Sunday?"
-	cont "Um… I forgot!"
 	done
 
 Route37SignText:

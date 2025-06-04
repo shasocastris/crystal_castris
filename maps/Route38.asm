@@ -65,43 +65,34 @@ TrainerLassDana1:
 .DanaRematch:
 	scall .Rematch
 	winlosstext LassDana1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_CIANWOOD
-	iftrue .LoadFight1
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_LASS_DANA
+	iftrue .LoadFight2
 	loadtrainer LASS, DANA1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer LASS, DANA2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer LASS, DANA3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer LASS, DANA4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_DANA_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer LASS, DANA5
+	loadtrainer LASS, DANA4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_DANA_READY_FOR_REMATCH
@@ -185,43 +176,34 @@ TrainerSchoolboyChad1:
 .ChadRematch:
 	scall .Rematch
 	winlosstext SchoolboyChad1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftrue .LoadFight1
+	iftrue .LoadFight3
+	checkevent EVENT_BEAT_SCHOOLBOY_CHAD
+	iftrue .LoadFight2
 	loadtrainer SCHOOLBOY, CHAD1
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
+.LoadFight2:
 	loadtrainer SCHOOLBOY, CHAD2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer SCHOOLBOY, CHAD3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer SCHOOLBOY, CHAD4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_CHAD_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer SCHOOLBOY, CHAD5
+	loadtrainer SCHOOLBOY, CHAD4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_CHAD_READY_FOR_REMATCH
