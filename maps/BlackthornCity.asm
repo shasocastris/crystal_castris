@@ -14,20 +14,9 @@ BlackthornCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback
-	callback MAPCALLBACK_OBJECTS, BlackthornCitySantosCallback
 
 BlackthornCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
-	endcallback
-
-BlackthornCitySantosCallback:
-	readvar VAR_WEEKDAY
-	ifequal SATURDAY, .SantosAppears
-	disappear BLACKTHORNCITY_SANTOS
-	endcallback
-
-.SantosAppears:
-	appear BLACKTHORNCITY_SANTOS
 	endcallback
 
 BlackthornSuperNerdScript:
@@ -89,35 +78,32 @@ SantosScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_SPELL_TAG_FROM_SANTOS
-	iftrue .Saturday
+	iftrue SantosGaveSpellTagScript
 	readvar VAR_WEEKDAY
-	ifnotequal SATURDAY, .NotSaturday
-	checkevent EVENT_MET_SANTOS_OF_SATURDAY
-	iftrue .MetSantos
-	writetext MeetSantosText
-	promptbutton
-	setevent EVENT_MET_SANTOS_OF_SATURDAY
-.MetSantos:
+	ifequal SATURDAY, .GiveSpellTag
+	writetext SantosSeenText
+	waitbutton
+	closetext
+	winlosstext SantosBeatenText, SantosWinsText
+	loadtrainer POKEMANIAC, SANTOS
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveSpellTag:
 	writetext SantosGivesGiftText
 	promptbutton
 	verbosegiveitem SPELL_TAG
-	iffalse .Done
+	iffalse SantosDoneScript
 	setevent EVENT_GOT_SPELL_TAG_FROM_SANTOS
 	writetext SantosGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.Saturday:
+SantosGaveSpellTagScript:
 	writetext SantosSaturdayText
 	waitbutton
-.Done:
-	closetext
-	end
-
-.NotSaturday:
-	writetext SantosNotSaturdayText
-	waitbutton
+SantosDoneScript:
 	closetext
 	end
 
@@ -224,12 +210,26 @@ BlackthornYoungsterText:
 	cont "of BLACKTHORN."
 	done
 
-MeetSantosText:
+SantosSeenText:
 	text "SANTOS: …"
 
-	para "It's Saturday…"
-
 	para "I'm SANTOS of"
+	line "Saturday…"
+
+	para "I suppose we must"
+	line "battle…"
+	done
+
+SantosBeatenText:
+	text "…That's fine…"
+	done
+
+SantosWinsText:
+	text "SANTOS: …"
+
+	para "It's over…"
+
+	para "Come back on"
 	line "Saturday…"
 	done
 
@@ -257,11 +257,6 @@ SantosSaturdayText:
 
 	para "I won't have any"
 	line "more gifts…"
-	done
-
-SantosNotSaturdayText:
-	text "SANTOS: Today's"
-	line "not Saturday…"
 	done
 
 BlackthornCooltrainerF2Text:

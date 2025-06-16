@@ -23,16 +23,11 @@ Route29Noop2Scene:
 	end
 
 Route29TuscanyCallback:
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .DoesTuscanyAppear
-
-.TuscanyDisappears:
+	checkflag ENGINE_POKEDEX
+	iftrue .TuscanyAppears
 	disappear ROUTE29_TUSCANY
 	endcallback
-
-.DoesTuscanyAppear:
-	readvar VAR_WEEKDAY
-	ifnotequal TUESDAY, .TuscanyDisappears
+.TuscanyAppears:
 	appear ROUTE29_TUSCANY
 	endcallback
 
@@ -168,15 +163,18 @@ TuscanyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_POLKADOT_BOW_FROM_TUSCANY
-	iftrue TuscanyTuesdayScript
+	iftrue TuscanyGaveBowScript
 	readvar VAR_WEEKDAY
-	ifnotequal TUESDAY, TuscanyNotTuesdayScript
-	checkevent EVENT_MET_TUSCANY_OF_TUESDAY
-	iftrue .MetTuscany
-	writetext MeetTuscanyText
-	promptbutton
-	setevent EVENT_MET_TUSCANY_OF_TUESDAY
-.MetTuscany:
+	ifequal TUESDAY, .GivePolkadotBow
+	writetext TuscanySeenText
+	waitbutton
+	closetext
+	winlosstext TuscanyBeatenText, TuscanyWinsText
+	loadtrainer TEACHER, TUSCANY
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GivePolkadotBow:
 	writetext TuscanyGivesGiftText
 	promptbutton
 	verbosegiveitem POLKADOT_BOW
@@ -187,16 +185,10 @@ TuscanyScript:
 	closetext
 	end
 
-TuscanyTuesdayScript:
-	writetext TuscanyTuesdayText
+TuscanyGaveBowScript:
+	writetext TuscanyGaveBowText
 	waitbutton
 TuscanyDoneScript:
-	closetext
-	end
-
-TuscanyNotTuesdayScript:
-	writetext TuscanyNotTuesdayText
-	waitbutton
 	closetext
 	end
 
@@ -339,41 +331,51 @@ Route29CooltrainerMText_WaitingForMorning:
 	line "morning."
 	done
 
-MeetTuscanyText:
-	text "TUSCANY: I do be-"
-	line "lieve that this is"
+TuscanySeenText:
+	text "TUSCANY: Tuesday's"
+	line "my special day!"
 
-	para "the first time"
-	line "we've met?"
+	para "That's when I give"
+	line "away POLKADOT BOWS"
+	cont "to nice trainers!"
 
-	para "Please allow me to"
-	line "introduce myself."
+	para "Too bad it's not"
+	line "Tuesday, huh?"
 
-	para "I am TUSCANY of"
-	line "Tuesday."
+	para "Tell you what--"
+	line "beat me and I'll"
+	cont "make an exception!"
+	done
+
+TuscanyBeatenText:
+	text "Oh, your #MON"
+	line "are wonderful!"
+	done
+
+TuscanyWinsText:
+	text "I guess I'll keep"
+	line "my bow…"
 	done
 
 TuscanyGivesGiftText:
-	text "By way of intro-"
-	line "duction, please"
-
-	para "accept this gift,"
-	line "a PINK BOW."
+	text "TUSCANY: Here you"
+	line "go! This will look"
+	cont "perfect on one of"
+	cont "your #MON!"
 	done
 
 TuscanyGaveGiftText:
-	text "TUSCANY: Wouldn't"
-	line "you agree that it"
-	cont "is most adorable?"
+	text "A lovely piece,"
+	line "wouldn't you say?"
 
 	para "It strengthens"
-	line "normal-type moves."
+	line "fairy-type moves."
 
-	para "I am certain it"
-	line "will be of use."
+	para "Make sure to put"
+	line "it to good use!"
 	done
 
-TuscanyTuesdayText:
+TuscanyGaveBowText:
 	text "TUSCANY: Have you"
 	line "met MONICA, my"
 	cont "older sister?"
@@ -383,12 +385,6 @@ TuscanyTuesdayText:
 
 	para "I am the second of"
 	line "seven children."
-	done
-
-TuscanyNotTuesdayText:
-	text "TUSCANY: Today is"
-	line "not Tuesday. That"
-	cont "is unfortunate…"
 	done
 
 Route29Sign1Text:
