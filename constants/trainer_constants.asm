@@ -150,6 +150,7 @@ DEF KRIS EQU __trainer_class__
 	const JASON
 	const JOEY4
 	const JOEY5
+	const ARTHUR
 
 	trainerclass SCHOOLBOY ; 1d
 	const JACK1
@@ -216,6 +217,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA3
 	const DANA4
 	const DANA5
+	const FRIEDA
 
 	trainerclass COOLTRAINERM ; 20
 	const NICK
@@ -280,6 +282,7 @@ DEF KRIS EQU __trainer_class__
 	const THERESA ; unused
 	const VALERIE
 	const OLIVIA
+	const MONICA
 
 	trainerclass POKEMANIAC ; 23
 	const LARRY
@@ -297,6 +300,7 @@ DEF KRIS EQU __trainer_class__
 	const ZACH
 	const BRENT4
 	const MILLER
+	const SANTOS
 
 	trainerclass GRUNTM ; 24
 	const GRUNTM_1
@@ -343,6 +347,7 @@ DEF KRIS EQU __trainer_class__
 	const CLARISSA
 
 	trainerclass TEACHER ; 27
+	const TUSCANY
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
@@ -367,6 +372,7 @@ DEF KRIS EQU __trainer_class__
 	const ARNIE4
 	const ARNIE5
 	const WAYNE
+	const SUNNY
 
 	trainerclass FISHER ; 29
 	const JUSTIN
@@ -614,6 +620,7 @@ DEF KRIS EQU __trainer_class__
 	const TODD4
 	const TODD5
 	const QUENTIN
+	const WESLEY
 
 	trainerclass EXECUTIVEF ; 39
 	const EXECUTIVEF_1

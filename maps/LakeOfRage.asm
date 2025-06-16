@@ -19,7 +19,6 @@ LakeOfRage_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, LakeOfRageFlypointCallback
-	callback MAPCALLBACK_OBJECTS, LakeOfRageWesleyCallback
 
 LakeOfRageNoop1Scene:
 	end
@@ -29,16 +28,6 @@ LakeOfRageNoop2Scene:
 
 LakeOfRageFlypointCallback:
 	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	endcallback
-
-LakeOfRageWesleyCallback:
-	readvar VAR_WEEKDAY
-	ifequal WEDNESDAY, .WesleyAppears
-	disappear LAKEOFRAGE_WESLEY
-	endcallback
-
-.WesleyAppears:
-	appear LAKEOFRAGE_WESLEY
 	endcallback
 
 LakeOfRageLanceScript:
@@ -187,15 +176,18 @@ WesleyScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_BLACKBELT_FROM_WESLEY
-	iftrue WesleyWednesdayScript
+	iftrue WesleyGaveBlackbeltScript
 	readvar VAR_WEEKDAY
-	ifnotequal WEDNESDAY, WesleyNotWednesdayScript
-	checkevent EVENT_MET_WESLEY_OF_WEDNESDAY
-	iftrue .MetWesley
-	writetext MeetWesleyText
-	promptbutton
-	setevent EVENT_MET_WESLEY_OF_WEDNESDAY
-.MetWesley:
+	ifequal WEDNESDAY, .GiveBlackbelt
+	writetext WesleySeenText
+	waitbutton
+	closetext
+	winlosstext WesleyBeatenText, WesleyWinsText
+	loadtrainer CAMPER, WESLEY
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveBlackbelt:
 	writetext WesleyGivesGiftText
 	promptbutton
 	verbosegiveitem BLACKBELT_I
@@ -206,16 +198,10 @@ WesleyScript:
 	closetext
 	end
 
-WesleyWednesdayScript:
+WesleyGaveBlackbeltScript:
 	writetext WesleyWednesdayText
 	waitbutton
 WesleyDoneScript:
-	closetext
-	end
-
-WesleyNotWednesdayScript:
-	writetext WesleyNotWednesdayText
-	waitbutton
 	closetext
 	end
 
@@ -442,7 +428,7 @@ CooltrainerfLoisAfterBattleText:
 	cont "pink BUTTERFREE."
 	done
 
-MeetWesleyText:
+WesleySeenText:
 	text "WESLEY: Well, how"
 	line "do you do?"
 
@@ -451,6 +437,22 @@ MeetWesleyText:
 
 	para "I'm WESLEY of"
 	line "Wednesday."
+
+	para "Since you're a"
+	line "fellow trainer,"
+
+	para "Shall we have a"
+	line "proper #MON"
+	cont "battle?"
+	done
+
+WesleyBeatenText:
+	text "A most enjoyable"
+	line "match!"
+	done
+
+WesleyWinsText:
+	text "A decent showing."
 	done
 
 WesleyGivesGiftText:
@@ -474,12 +476,6 @@ WesleyWednesdayText:
 
 	para "Or did you just"
 	line "get lucky?"
-	done
-
-WesleyNotWednesdayText:
-	text "WESLEY: Today's"
-	line "not Wednesday."
-	cont "That's too bad."
 	done
 
 LakeOfRageSignText:

@@ -16,18 +16,6 @@ Route40_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route40MonicaCallback
-
-Route40MonicaCallback:
-	clearevent EVENT_BATTLE_TOWER_OPEN_CIVILIANS
-	readvar VAR_WEEKDAY
-	ifequal MONDAY, .MonicaAppears
-	disappear ROUTE40_MONICA
-	endcallback
-
-.MonicaAppears:
-	appear ROUTE40_MONICA
-	endcallback
 
 TrainerSwimmerfElaine:
 	trainer SWIMMERF, ELAINE, EVENT_BEAT_SWIMMERF_ELAINE, SwimmerfElaineSeenText, SwimmerfElaineBeatenText, 0, .Script
@@ -85,35 +73,32 @@ MonicaScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
-	iftrue .Monday
+	iftrue MonicaGaveSharpBeakScript
 	readvar VAR_WEEKDAY
-	ifnotequal MONDAY, .NotMonday
-	checkevent EVENT_MET_MONICA_OF_MONDAY
-	iftrue .MetMonica
-	writetext MeetMonicaText
-	promptbutton
-	setevent EVENT_MET_MONICA_OF_MONDAY
-.MetMonica:
+	ifequal MONDAY, .GiveSharpBeak
+	writetext MonicaSeenText
+	waitbutton
+	closetext
+	winlosstext MonicaBeatenText, MonicaWinsText
+	loadtrainer BEAUTY, MONICA
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveSharpBeak:
 	writetext MonicaGivesGiftText
 	promptbutton
 	verbosegiveitem SHARP_BEAK
-	iffalse .done
+	iffalse MonicaDoneScript
 	setevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
 	writetext MonicaGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.Monday:
+MonicaGaveSharpBeakScript:
 	writetext MonicaMondayText
 	waitbutton
-.done:
-	closetext
-	end
-
-.NotMonday:
-	writetext MonicaNotMondayText
-	waitbutton
+MonicaDoneScript:
 	closetext
 	end
 
@@ -252,11 +237,25 @@ Route40StandingYoungsterText:
 	line "badly at all."
 	done
 
-MeetMonicaText:
+MonicaSeenText:
 	text "MONICA: Glad to"
 	line "meet you. I'm"
 
 	para "MONICA of Monday."
+
+	para "It's not my day,"
+	line "though, so get"
+	cont "ready to battle!"
+	done
+
+MonicaBeatenText:
+	text "That was a lovely"
+	line "battle!"
+	done
+
+MonicaWinsText:
+	text "Maybe just come"
+	line "see me on Monday."
 	done
 
 MonicaGivesGiftText:
@@ -286,12 +285,6 @@ MonicaMondayText:
 
 	para "See if you could"
 	line "find them all!"
-	done
-
-MonicaNotMondayText:
-	text "MONICA: I don't"
-	line "think today is"
-	cont "Monday. How sad…"
 	done
 
 Route40SignText:

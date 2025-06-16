@@ -15,23 +15,12 @@ Route36_MapScripts:
 	scene_script Route36Noop2Scene, SCENE_ROUTE36_SUICUNE
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route36ArthurCallback
 
 Route36Noop1Scene:
 	end
 
 Route36Noop2Scene:
 	end
-
-Route36ArthurCallback:
-	readvar VAR_WEEKDAY
-	ifequal THURSDAY, .ArthurAppears
-	disappear ROUTE36_ARTHUR
-	endcallback
-
-.ArthurAppears:
-	appear ROUTE36_ARTHUR
-	endcallback
 
 Route36SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -303,35 +292,32 @@ ArthurScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
-	iftrue .AlreadyGotStone
+	iftrue ArthurGaveStoneScript
 	readvar VAR_WEEKDAY
-	ifnotequal THURSDAY, ArthurNotThursdayScript
-	checkevent EVENT_MET_ARTHUR_OF_THURSDAY
-	iftrue .MetArthur
-	writetext MeetArthurText
-	promptbutton
-	setevent EVENT_MET_ARTHUR_OF_THURSDAY
-.MetArthur:
+	ifequal THURSDAY, .GiveHardStone
+	writetext ArthurSeenText
+	waitbutton
+	closetext
+	winlosstext ArthurBeatenText, ArthurWinsText
+	loadtrainer YOUNGSTER, ARTHUR
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GiveHardStone:
 	writetext ArthurGivesGiftText
 	promptbutton
 	verbosegiveitem HARD_STONE
-	iffalse .BagFull
+	iffalse ArthurDoneScript
 	setevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
 	writetext ArthurGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.AlreadyGotStone:
-	writetext ArthurThursdayText
+ArthurGaveStoneScript:
+	writetext ArthurGaveStoneText
 	waitbutton
-.BagFull:
-	closetext
-	end
-
-ArthurNotThursdayScript:
-	writetext ArthurNotThursdayText
-	waitbutton
+ArthurDoneScript:
 	closetext
 	end
 
@@ -548,17 +534,43 @@ SchoolboyAlanBooksText:
 	cont "reading books."
 	done
 
-MeetArthurText:
+ArthurSeenText:
 	text "ARTHUR: Who are"
 	line "you?"
 
 	para "I'm ARTHUR of"
 	line "Thursday."
+
+    para "That's when I hand"
+    line "out HARD STONES to"
+    cont "anybody who asks."
+
+	para "Today? You'll have"
+	line "to battle for it."
+	done
+
+ArthurBeatenText:
+	text "Well done."
+	done
+
+ArthurWinsText:
+	text "Come back another"
+	line "day."
 	done
 
 ArthurGivesGiftText:
 	text "Here. You can have"
 	line "this."
+	done
+
+ArthurGaveStoneText:
+	text "ARTHUR: I'm the"
+	line "second son out of"
+    cont "seven children."
+
+	para "Don't tell MONICA,"
+	line "but SANTOS is my"
+	cont "favorite sibling."
 	done
 
 ArthurGaveGiftText:
@@ -570,20 +582,6 @@ ArthurGaveGiftText:
 
 	para "It pumps up rock-"
 	line "type attacks."
-	done
-
-ArthurThursdayText:
-	text "ARTHUR: I'm ARTHUR"
-	line "of Thursday. I'm"
-
-	para "the second son out"
-	line "of seven children."
-	done
-
-ArthurNotThursdayText:
-	text "ARTHUR: Today's"
-	line "not Thursday. How"
-	cont "disappointing."
 	done
 
 Route36SignText:

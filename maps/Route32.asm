@@ -21,7 +21,6 @@ Route32_MapScripts:
 	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, Route32FriedaCallback
 
 Route32Noop1Scene:
 	end
@@ -31,16 +30,6 @@ Route32Noop2Scene:
 
 Route32Noop3Scene:
 	end
-
-Route32FriedaCallback:
-	readvar VAR_WEEKDAY
-	ifequal FRIDAY, .FriedaAppears
-	disappear ROUTE32_FRIEDA
-	endcallback
-
-.FriedaAppears:
-	appear ROUTE32_FRIEDA
-	endcallback
 
 Route32CooltrainerMScript:
 	faceplayer
@@ -415,35 +404,32 @@ FriedaScript:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
-	iftrue .Friday
+	iftrue FriedaGaveBarbScript
 	readvar VAR_WEEKDAY
-	ifnotequal FRIDAY, .NotFriday
-	checkevent EVENT_MET_FRIEDA_OF_FRIDAY
-	iftrue .MetFrieda
-	writetext MeetFriedaText
-	promptbutton
-	setevent EVENT_MET_FRIEDA_OF_FRIDAY
-.MetFrieda:
+	ifequal FRIDAY, .GivePoisonBarb
+	writetext FriedaSeenText
+	waitbutton
+	closetext
+	winlosstext FriedaBeatenText, FriedaWinsText
+	loadtrainer LASS, FRIEDA
+	startbattle
+	reloadmapafterbattle
+	opentext
+.GivePoisonBarb:
 	writetext FriedaGivesGiftText
 	promptbutton
 	verbosegiveitem POISON_BARB
-	iffalse .Done
+	iffalse FriedaDoneScript
 	setevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
 	writetext FriedaGaveGiftText
 	waitbutton
 	closetext
 	end
 
-.Friday:
-	writetext FriedaFridayText
+FriedaGaveBarbScript:
+	writetext FriedaGaveBarbScriptText
 	waitbutton
-.Done:
-	closetext
-	end
-
-.NotFriday:
-	writetext FriedaNotFridayText
-	waitbutton
+FriedaDoneScript:
 	closetext
 	end
 
@@ -759,19 +745,42 @@ Text_RoarOutro:
 	line "FROM A GOOD ROAR!"
 	done
 
-MeetFriedaText:
-	text "FRIEDA: Yahoo!"
-	line "It's Friday!"
+FriedaSeenText:
+	text "FRIEDA: Hiya! What"
+	line "day do you like?"
 
-	para "I'm FRIEDA of"
-	line "Friday!"
+	para "I love Friday. No"
+	line "doubt about it!"
 
-	para "Nice to meet you!"
+	para "Don't you think"
+	line "it's great too?"
+
+	para "Too bad we met on"
+	line "a different day."
+
+	para "Now we have to"
+	line "battle!"
+	done
+
+FriedaBeatenText:
+	text "It's so boring"
+	line "when it's not!"
+	done
+
+FriedaWinsText:
+	text "I won? Wicked!"
 	done
 
 FriedaGivesGiftText:
-	text "Here's a POISON"
-	line "BARB for you!"
+	text "Yahoo! Here's a"
+	line "POISON BARB for"
+	cont "you!"
+	done
+
+FriedaGaveBarbScriptText:
+	text "It's so boring"
+	line "when it's not"
+	cont "FRIDAY!"
 	done
 
 FriedaGaveGiftText:
@@ -786,25 +795,6 @@ FriedaGaveGiftText:
 	para "You'll be shocked"
 	line "how good it makes"
 	cont "poison moves!"
-	done
-
-FriedaFridayText:
-	text "FRIEDA: Hiya! What"
-	line "day do you like?"
-
-	para "I love Friday. No"
-	line "doubt about it!"
-
-	para "Don't you think"
-	line "it's great too?"
-	done
-
-FriedaNotFridayText:
-	text "FRIEDA: Isn't it"
-	line "Friday today?"
-
-	para "It's so boring"
-	line "when it's not!"
 	done
 
 Route32SignText:
@@ -842,7 +832,7 @@ Route32_MapEvents:
 	bg_event  9,  1, BGEVENT_READ, Route32RuinsSign
 	bg_event 10, 84, BGEVENT_READ, Route32UnionCaveSign
 	bg_event 12, 73, BGEVENT_READ, Route32PokecenterSign
-	bg_event 12, 67, BGEVENT_ITEM, Route32HiddenGreatBall
+	bg_event  1, 71, BGEVENT_ITEM, Route32HiddenGreatBall
 	bg_event 11, 40, BGEVENT_ITEM, Route32HiddenSuperPotion
 
 	def_object_events
