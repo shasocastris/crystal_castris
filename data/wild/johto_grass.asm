@@ -594,7 +594,7 @@ JohtoGrassWildMons:
 	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 33, RATICATE
-	dbw 31, GOLBAT
+	dbw 33, GOLBAT
 	dbw 33, MACHOKE
 	dbw 31, RHYHORN
 	dbw 33, GRAVELER
@@ -602,7 +602,7 @@ JohtoGrassWildMons:
 	dbw 37, CLEFABLE
 	; day
 	dbw 33, RATICATE
-	dbw 31, GOLBAT
+	dbw 33, GOLBAT
 	dbw 33, MACHOKE
 	dbw 31, RHYHORN
 	dbw 33, GRAVELER
@@ -610,7 +610,7 @@ JohtoGrassWildMons:
 	dbw 37, CLEFABLE
 	; nite
 	dbw 33, RATICATE
-	dbw 31, GOLBAT
+	dbw 33, GOLBAT
 	dbw 33, AZUMARILL
 	dbw 31, RHYHORN
 	dbw 33, GRAVELER
@@ -621,7 +621,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
 	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 31, GRAVELER
+	dbw 33, GRAVELER
 	dbw 33, RATICATE
 	dbw 35, MACHOKE
 	dbw 33, RHYHORN
@@ -629,7 +629,7 @@ JohtoGrassWildMons:
 	dbw 35, CLEFAIRY
 	dbw 35, CLEFABLE
 	; day
-	dbw 31, GRAVELER
+	dbw 33, GRAVELER
 	dbw 33, RATICATE
 	dbw 35, MACHOKE
 	dbw 33, RHYHORN
@@ -637,7 +637,7 @@ JohtoGrassWildMons:
 	dbw 35, CLEFAIRY
 	dbw 35, CLEFABLE
 	; nite
-	dbw 31, GRAVELER
+	dbw 33, GRAVELER
 	dbw 33, RATICATE
 	dbw 35, RHYHORN
 	dbw 33, GOLBAT
@@ -677,24 +677,24 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_B1F
 	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 30, GOLBAT
-	dbw 34, GOLBAT
+	dbw 32, GOLBAT
+	dbw 36, GOLBAT
 	dbw 34, RHYHORN
 	dbw 32, MACHOKE
 	dbw 32, GRAVELER
 	dbw 36, CLEFAIRY
 	dbw 36, CLEFABLE
 	; day
-	dbw 30, GOLBAT
-	dbw 34, GOLBAT
+	dbw 32, GOLBAT
+	dbw 36, GOLBAT
 	dbw 34, RHYHORN
 	dbw 32, MACHOKE
 	dbw 32, GRAVELER
 	dbw 36, CLEFAIRY
 	dbw 36, CLEFABLE
 	; nite
-	dbw 30, GOLBAT
-	dbw 30, GOLBAT
+	dbw 32, GOLBAT
+	dbw 36, GOLBAT
 	dbw 34, RHYHORN
 	dbw 32, AZUMARILL
 	dbw 32, GRAVELER
@@ -1573,7 +1573,7 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_42
 	db 100 percent, 100 percent, 100 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 31, ARBOK
+	dbw 33, ARBOK
 	dbw 33, FEAROW
 	dbw 35, STANTLER
 	dbw 37, RATICATE
@@ -1581,7 +1581,7 @@ JohtoGrassWildMons:
 	dbw 37, FEAROW
 	dbw 37, FEAROW
 	; day
-	dbw 31, ARBOK
+	dbw 33, ARBOK
 	dbw 33, FEAROW
 	dbw 35, STANTLER
 	dbw 32, RATICATE
@@ -1589,7 +1589,7 @@ JohtoGrassWildMons:
 	dbw 37, FEAROW
 	dbw 37, FEAROW
 	; nite
-	dbw 31, STANTLER
+	dbw 33, STANTLER
 	dbw 33, GOLBAT
 	dbw 35, RATICATE
 	dbw 37, AZUMARILL
