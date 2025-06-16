@@ -83,7 +83,6 @@ TrainerFisherTully:
 	loadtrainer FISHER, TULLY2
 	startbattle
 	reloadmapafterbattle
-	loadmem wTullyFightCount, 2
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
@@ -91,7 +90,6 @@ TrainerFisherTully:
 	loadtrainer FISHER, TULLY3
 	startbattle
 	reloadmapafterbattle
-	loadmem wTullyFightCount, 3
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
