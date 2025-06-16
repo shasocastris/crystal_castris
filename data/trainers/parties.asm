@@ -1209,6 +1209,19 @@ YoungsterGroup:
 	dw HYPER_BEAM, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
+	next_list_item ; YOUNGSTER (14), Route 36
+	db "ARTHUR@", TRAINERTYPE_ITEM
+	db 13
+	dw LARVITAR
+	dw NO_ITEM
+	db 14
+	dw ONIX
+	dw HARD_STONE
+	db 12
+	dw RHYHORN
+	dw NO_ITEM
+	db -1 ; end
+
 	end_list_items
 
 SchoolboyGroup:
@@ -1751,6 +1764,16 @@ LassGroup:
 	dw DISABLE, SURF, PSYCHIC_M, SCREECH
 	db -1 ; end
 
+	next_list_item ; LASS (13), Route 32
+	db "FRIEDA@", TRAINERTYPE_NORMAL
+	db 12
+	dw ZUBAT
+	db 14
+	dw EKANS
+	db 16
+	dw NIDORINA
+	db -1 ; end
+
 	end_list_items
 
 CooltrainerMGroup:
@@ -2285,6 +2308,22 @@ BeautyGroup:
 	dw CORSOLA
 	db -1 ; end
 
+	next_list_item ; BEAUTY (18), Route 40
+	db "MONICA@", TRAINERTYPE_ITEM
+	db 34
+	dw NOCTOWL
+	dw NO_ITEM
+	db 37
+	dw FARFETCH_D
+	dw NO_ITEM
+	db 38
+	dw DODRIO
+	dw SHARP_BEAK
+	db 38
+	dw TOGETIC
+	dw NO_ITEM
+	db -1 ; end
+
 	end_list_items
 
 PokemaniacGroup:
@@ -2389,6 +2428,30 @@ PokemaniacGroup:
 	dw NIDOKING
 	db 21
 	dw NIDOQUEEN
+	db -1 ; end
+
+	next_list_item ; POKEMANIAC (16), Blackthorn City
+	db "SANTOS@", TRAINERTYPE_ITEM_MOVES
+	db 46
+	dw MISDREAVUS
+	dw SPELL_TAG
+	dw SHADOW_BALL, PSYCHIC_M, ZAP_CANNON, CONFUSE_RAY
+	db 46
+	dw NINETALES
+	dw NO_ITEM
+	dw FIRE_BLAST, WILL_O_WISP, FAINT_ATTACK, DOUBLE_TEAM
+	db 46
+	dw PARASECT
+	dw NO_ITEM
+	dw GIGA_DRAIN, SPORE, LEECH_LIFE, PSYBEAM
+	db 46
+	dw MAROWAK
+	dw THICK_CLUB
+	dw SKULL_BASH, BONEMERANG, THRASH, PERISH_SONG
+	db 48
+	dw GENGAR
+	dw SPELL_TAG
+	dw HYPNOSIS, DREAM_EATER, CURSE, CONFUSE_RAY
 	db -1 ; end
 
 	end_list_items
@@ -2705,6 +2768,14 @@ SkierGroup:
 	end_list_items
 
 TeacherGroup:
+	next_list_item ; TEACHER (1), Route 29
+	db "TUSCANY@", TRAINERTYPE_NORMAL
+	db 6
+	dw MR__MIME
+	db 8
+	dw CLEFAIRY
+	db -1 ; end
+
 	next_list_item ; TEACHER (1), Route 15
 	db "COLETTE@", TRAINERTYPE_NORMAL
 	db 44
@@ -2899,6 +2970,19 @@ BugCatcherGroup:
 	dw LEDYBA
 	db 12
 	dw PARAS
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (20), Route 37
+	db "SUNNY@", TRAINERTYPE_ITEM
+	db 24
+	dw CHINCHOU
+	dw NO_ITEM
+	db 24
+	dw FLAAFFY
+	dw NO_ITEM
+	db 24
+	dw RAICHU
+	dw MAGNET
 	db -1 ; end
 
 	end_list_items
@@ -4880,6 +4964,22 @@ CamperGroup:
 	dw PRIMEAPE
 	db 36
 	dw TAUROS
+	db -1 ; end
+
+	next_list_item ; CAMPER (23), Lake of Rage
+	db "WESLEY@", TRAINERTYPE_ITEM
+	db 42
+	dw PRIMEAPE
+	dw NO_ITEM
+	db 45
+	dw POLIWRATH
+	dw BLACKBELT_I
+	db 43
+	dw MACHAMP
+	dw NO_ITEM
+	db 44
+	dw HERACROSS
+	dw BLACKBELT_I
 	db -1 ; end
 
 	end_list_items
