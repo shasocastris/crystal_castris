@@ -455,7 +455,7 @@ DEF KRIS EQU __trainer_class__
 	const HUEY4
 
 	trainerclass SUPER_NERD ; 2d
-	const STAN
+	const STAN ; unused
 	const ERIC
 	const GREGG ; unused
 	const JAY ; unused
