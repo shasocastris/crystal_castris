@@ -149,7 +149,6 @@ DEF KRIS EQU __trainer_class__
 	const OWEN
 	const JASON
 	const JOEY4
-	const JOEY5
 	const ARTHUR
 
 	trainerclass SCHOOLBOY ; 1d
@@ -174,7 +173,6 @@ DEF KRIS EQU __trainer_class__
 	const JACK4
 	const JACK5
 	const ALAN4
-	const ALAN5
 	const CHAD4
 	const CHAD5
 
@@ -368,9 +366,7 @@ DEF KRIS EQU __trainer_class__
 	const ARNIE2
 	const ARNIE3
 	const WADE4
-	const WADE5
 	const ARNIE4
-	const ARNIE5
 	const WAYNE
 	const SUNNY
 
@@ -398,7 +394,6 @@ DEF KRIS EQU __trainer_class__
 	const SCOTT
 	const WILTON3
 	const RALPH4
-	const RALPH5
 	const TULLY4
 
 	trainerclass SWIMMERM ; 2a
@@ -502,7 +497,6 @@ DEF KRIS EQU __trainer_class__
 	const PARRY2
 	const PARRY3
 	const ANTHONY4
-	const ANTHONY5
 
 	trainerclass BIKER ; 30
 	const BIKER_BENNY ; unused
@@ -592,9 +586,7 @@ DEF KRIS EQU __trainer_class__
 	const TIFFANY3
 	const ERIN3
 	const LIZ4
-	const LIZ5
 	const GINA4
-	const GINA5
 	const TIFFANY4
 
 	trainerclass CAMPER ; 38
@@ -618,7 +610,6 @@ DEF KRIS EQU __trainer_class__
 	const JERRY
 	const SPENCER
 	const TODD4
-	const TODD5
 	const QUENTIN
 	const WESLEY
 

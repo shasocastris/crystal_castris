@@ -83,43 +83,26 @@ TrainerCamperTodd1:
 .Rematch:
 	scall .RematchStd
 	winlosstext CamperTodd1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_CIANWOOD
-	iftrue .LoadFight1
-	loadtrainer CAMPER, TODD1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer CAMPER, TODD2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer CAMPER, TODD3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer CAMPER, TODD4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TODD_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer CAMPER, TODD5
+	loadtrainer CAMPER, TODD4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TODD_READY_FOR_REMATCH
@@ -192,43 +175,26 @@ TrainerPicnickerGina1:
 .Rematch:
 	scall .RematchStd
 	winlosstext PicnickerGina1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_MAHOGANY
-	iftrue .LoadFight1
-	loadtrainer PICNICKER, GINA1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer PICNICKER, GINA2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer PICNICKER, GINA3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GINA_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer PICNICKER, GINA4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GINA_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer PICNICKER, GINA5
+	loadtrainer PICNICKER, GINA4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GINA_READY_FOR_REMATCH

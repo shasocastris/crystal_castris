@@ -177,43 +177,26 @@ TrainerFisherRalph1:
 .Rematch:
 	scall .RematchStd
 	winlosstext FisherRalph1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_LAKE_OF_RAGE
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
-	iftrue .LoadFight1
-	loadtrainer FISHER, RALPH1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer FISHER, RALPH2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer FISHER, RALPH3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer FISHER, RALPH4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_RALPH_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer FISHER, RALPH5
+	loadtrainer FISHER, RALPH4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_RALPH_READY_FOR_REMATCH
@@ -294,43 +277,26 @@ TrainerPicnickerLiz1:
 .Rematch:
 	scall .RematchStd
 	winlosstext PicnickerLiz1BeatenText, 0
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight3
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .LoadFight2
-	checkflag ENGINE_FLYPOINT_ECRUTEAK
-	iftrue .LoadFight1
-	loadtrainer PICNICKER, LIZ1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_LIZ_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer PICNICKER, LIZ2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer PICNICKER, LIZ3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer PICNICKER, LIZ4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_LIZ_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer PICNICKER, LIZ5
+	loadtrainer PICNICKER, LIZ4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_LIZ_READY_FOR_REMATCH

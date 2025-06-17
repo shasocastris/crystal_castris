@@ -1160,11 +1160,11 @@ YoungsterGroup:
 	dw RATTATA
 	db -1 ; end
 
-	next_list_item ; YOUNGSTER (8), Route 30
+	next_list_item ; YOUNGSTER (13), Route 30
 	db "JOEY@", TRAINERTYPE_MOVES
-	db 26
+	db 36
 	dw RATICATE
-	dw TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, SCARY_FACE
+	dw TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (9), Route 3
@@ -1193,13 +1193,6 @@ YoungsterGroup:
 	dw SANDSLASH
 	db 40
 	dw CROBAT
-	db -1 ; end
-
-	next_list_item ; YOUNGSTER (13), Route 30
-	db "JOEY@", TRAINERTYPE_MOVES
-	db 36
-	dw RATICATE
-	dw TAIL_WHIP, QUICK_ATTACK, HYPER_FANG, PURSUIT
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (14), Route 30
@@ -1351,17 +1344,18 @@ SchoolboyGroup:
 	dw YANMA
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (16), Route 36
+	next_list_item ; SCHOOLBOY (21), Route 36
 	db "ALAN@", TRAINERTYPE_NORMAL
-	db 24
+	db 33
 	dw NATU
-	db 27
+	db 33
 	dw TANGELA
-	db 24
+	db 36
 	dw QUAGSIRE
-	db 30
+	db 36
 	dw YANMA
 	db -1 ; end
+
 
 	next_list_item ; SCHOOLBOY (17), Route 38
 	db "CHAD@", TRAINERTYPE_NORMAL
@@ -1400,18 +1394,6 @@ SchoolboyGroup:
 	db 45
 	dw VILEPLUME
 	dw SOLARBEAM, SLEEP_POWDER, ACID, MOONLIGHT
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (21), Route 36
-	db "ALAN@", TRAINERTYPE_NORMAL
-	db 33
-	dw NATU
-	db 33
-	dw TANGELA
-	db 36
-	dw QUAGSIRE
-	db 36
-	dw YANMA
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (22), Route 36
@@ -2887,37 +2869,6 @@ BugCatcherGroup:
 	dw METAPOD
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (11), Route 31
-	db "WADE@", TRAINERTYPE_NORMAL
-	db 17
-	dw BUTTERFREE
-	db 17
-	dw BUTTERFREE
-	db 18
-	dw BEEDRILL
-	db 17
-	dw BUTTERFREE
-	db -1 ; end
-
-	next_list_item ; BUG_CATCHER (12), Route 2
-	db "DOUG@", TRAINERTYPE_NORMAL
-	db 41
-	dw ARIADOS
-	db -1 ; end
-
-	next_list_item ; BUG_CATCHER (13), Route 35
-	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 23
-	dw VENONAT
-	db -1 ; end
-
-	next_list_item ; BUG_CATCHER (14), Route 35
-	db "ARNIE@", TRAINERTYPE_MOVES
-	db 34
-	dw VENOMOTH
-	dw DISABLE, SUPERSONIC, CONFUSION, LEECH_LIFE
-	db -1 ; end
-
 	next_list_item ; BUG_CATCHER (15), Route 31
 	db "WADE@", TRAINERTYPE_MOVES
 	db 29
@@ -2934,6 +2885,25 @@ BugCatcherGroup:
 	dw CONFUSION, SLEEP_POWDER, SUPERSONIC, WHIRLWIND
 	db -1 ; end
 
+	next_list_item ; BUG_CATCHER (12), Route 2
+	db "DOUG@", TRAINERTYPE_NORMAL
+	db 41
+	dw ARIADOS
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (13), Route 35
+	db "ARNIE@", TRAINERTYPE_NORMAL
+	db 23
+	dw VENONAT
+	db -1 ; end
+
+	next_list_item ; BUG_CATCHER (17), Route 35
+	db "ARNIE@", TRAINERTYPE_MOVES
+	db 44
+	dw VENOMOTH
+	dw GUST, SUPERSONIC, PSYBEAM, LEECH_LIFE
+	db -1 ; end
+
 	next_list_item ; BUG_CATCHER (16), Route 31
 	db "WADE@", TRAINERTYPE_MOVES
 	db 36
@@ -2948,13 +2918,6 @@ BugCatcherGroup:
 	db 41
 	dw BUTTERFREE
 	dw PSYBEAM, SLEEP_POWDER, GUST, WHIRLWIND
-	db -1 ; end
-
-	next_list_item ; BUG_CATCHER (17), Route 35
-	db "ARNIE@", TRAINERTYPE_MOVES
-	db 44
-	dw VENOMOTH
-	dw GUST, SUPERSONIC, PSYBEAM, LEECH_LIFE
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (18), Route 35
@@ -3134,11 +3097,11 @@ FisherGroup:
 	dw GOLDEEN
 	db -1 ; end
 
-	next_list_item ; FISHER (17), Route 32
+	next_list_item ; FISHER (23), Route 32
 	db "RALPH@", TRAINERTYPE_NORMAL
-	db 21
+	db 36
 	dw QWILFISH
-	db 23
+	db 39
 	dw GOLDEEN
 	db -1 ; end
 
@@ -3189,14 +3152,6 @@ FisherGroup:
 	db 46
 	dw REMORAID
 	dw PSYBEAM, AURORA_BEAM, BUBBLEBEAM, HYPER_BEAM
-	db -1 ; end
-
-	next_list_item ; FISHER (23), Route 32
-	db "RALPH@", TRAINERTYPE_NORMAL
-	db 36
-	dw QWILFISH
-	db 39
-	dw GOLDEEN
 	db -1 ; end
 
 	next_list_item ; FISHER (24), Route 32
@@ -3827,10 +3782,10 @@ GuitaristGroup:
 HikerGroup:
 	next_list_item ; HIKER (1), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 20
+	db 14
 	dw GEODUDE
-	db 22
-	dw MACHAMP
+	db 14
+	dw MACHOP
 	db -1 ; end
 
 	next_list_item ; HIKER (2), Union Cave
@@ -3863,9 +3818,9 @@ HikerGroup:
 
 	next_list_item ; HIKER (5), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 14
+	db 20
 	dw GEODUDE
-	db 14
+	db 22
 	dw MACHOP
 	db -1 ; end
 
@@ -3931,13 +3886,13 @@ HikerGroup:
 	dw GEODUDE
 	db -1 ; end
 
-	next_list_item ; HIKER (12), Route 33
+	next_list_item ; HIKER (21), Route 33
 	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 30
+	db 36
 	dw GRAVELER
-	db 33
+	db 36
 	dw GRAVELER
-	db 35
+	db 39
 	dw MACHOKE
 	db -1 ; end
 
@@ -4008,16 +3963,6 @@ HikerGroup:
 	db "PARRY@", TRAINERTYPE_NORMAL
 	db 35
 	dw ONIX
-	db -1 ; end
-
-	next_list_item ; HIKER (21), Route 33
-	db "ANTHONY@", TRAINERTYPE_NORMAL
-	db 36
-	dw GRAVELER
-	db 36
-	dw GRAVELER
-	db 39
-	dw MACHOKE
 	db -1 ; end
 
 	next_list_item ; HIKER (22), Route 33
@@ -4626,13 +4571,13 @@ PicnickerGroup:
 	dw NIDORINA
 	db -1 ; end
 
-	next_list_item ; PICNICKER (12), Route 32
+	next_list_item ; PICNICKER (22), Route 32
 	db "LIZ@", TRAINERTYPE_NORMAL
-	db 23
+	db 29
 	dw WEEPINBELL
-	db 23
+	db 32
 	dw NIDORINO
-	db 26
+	db 32
 	dw NIDOQUEEN
 	db -1 ; end
 
@@ -4652,13 +4597,13 @@ PicnickerGroup:
 	dw RAICHU
 	db -1 ; end
 
-	next_list_item ; PICNICKER (15), Route 34
+	next_list_item ; PICNICKER (24), Route 34
 	db "GINA@", TRAINERTYPE_NORMAL
-	db 32
+	db 36
 	dw SKIPLOOM
-	db 32
+	db 36
 	dw SKIPLOOM
-	db 35
+	db 39
 	dw IVYSAUR
 	db -1 ; end
 
@@ -4710,16 +4655,6 @@ PicnickerGroup:
 	dw DOUBLE_TEAM, STOMP, FIRE_SPIN, SUNNY_DAY
 	db -1 ; end
 
-	next_list_item ; PICNICKER (22), Route 32
-	db "LIZ@", TRAINERTYPE_NORMAL
-	db 29
-	dw WEEPINBELL
-	db 32
-	dw NIDORINO
-	db 32
-	dw NIDOQUEEN
-	db -1 ; end
-
 	next_list_item ; PICNICKER (23), Route 32
 	db "LIZ@", TRAINERTYPE_MOVES
 	db 36
@@ -4731,16 +4666,6 @@ PicnickerGroup:
 	db 39
 	dw NIDOQUEEN
 	dw EARTHQUAKE, DOUBLE_KICK, TAIL_WHIP, BODY_SLAM
-	db -1 ; end
-
-	next_list_item ; PICNICKER (24), Route 34
-	db "GINA@", TRAINERTYPE_NORMAL
-	db 36
-	dw SKIPLOOM
-	db 36
-	dw SKIPLOOM
-	db 39
-	dw IVYSAUR
 	db -1 ; end
 
 	next_list_item ; PICNICKER (25), Route 34
@@ -4854,13 +4779,15 @@ CamperGroup:
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (13), Route 34
+	next_list_item ; CAMPER (20), Route 34
 	db "TODD@", TRAINERTYPE_NORMAL
-	db 28
-	dw GEODUDE
-	db 28
-	dw GEODUDE
-	db 32
+	db 36
+	dw GRAVELER
+	db 36
+	dw GRAVELER
+	db 36
+	dw SLUGMA
+	db 39
 	dw PSYDUCK
 	db -1 ; end
 
@@ -4926,18 +4853,6 @@ CamperGroup:
 	dw SANDSLASH
 	db 23
 	dw ZUBAT
-	db -1 ; end
-
-	next_list_item ; CAMPER (20), Route 34
-	db "TODD@", TRAINERTYPE_NORMAL
-	db 36
-	dw GRAVELER
-	db 36
-	dw GRAVELER
-	db 36
-	dw SLUGMA
-	db 39
-	dw PSYDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (21), Route 34

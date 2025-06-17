@@ -186,43 +186,26 @@ TrainerSchoolboyAlan1:
 .ChooseRematch:
 	scall .Rematch
 	winlosstext SchoolboyAlan1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight4
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight3
 	checkflag ENGINE_FLYPOINT_BLACKTHORN
-	iftrue .LoadFight2
+	iftrue .LoadFight4
 	checkflag ENGINE_FLYPOINT_OLIVINE
-	iftrue .LoadFight1
-	loadtrainer SCHOOLBOY, ALAN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer SCHOOLBOY, ALAN2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer SCHOOLBOY, ALAN3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
-	loadtrainer SCHOOLBOY, ALAN4
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ALAN_READY_FOR_REMATCH
-	end
-
 .LoadFight4:
-	loadtrainer SCHOOLBOY, ALAN5
+	loadtrainer SCHOOLBOY, ALAN4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ALAN_READY_FOR_REMATCH
