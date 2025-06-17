@@ -1525,7 +1525,7 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (12), Route 27
 	db "JOSE@", TRAINERTYPE_NORMAL
-	db 44
+	db 41
 	dw FARFETCH_D
 	db -1 ; end
 
@@ -1541,7 +1541,7 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (14), Route 27
 	db "JOSE@", TRAINERTYPE_NORMAL
-	db 41
+	db 44
 	dw FARFETCH_D
 	db -1 ; end
 

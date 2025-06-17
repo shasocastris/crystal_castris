@@ -57,7 +57,7 @@ TrainerPsychicGilbert:
 	end
 
 TrainerBirdKeeperJose2:
-	trainer BIRD_KEEPER, JOSE2, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
+	trainer BIRD_KEEPER, JOSE1, EVENT_BEAT_BIRD_KEEPER_JOSE2, BirdKeeperJose2SeenText, BirdKeeperJose2BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BIRDKEEPER_JOSE
@@ -89,24 +89,16 @@ TrainerBirdKeeperJose2:
 .WantsBattle:
 	scall .Rematch
 	winlosstext BirdKeeperJose2BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer BIRD_KEEPER, JOSE2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_JOSE_READY_FOR_REMATCH
 	end
 
-.LoadFight1:
-	loadtrainer BIRD_KEEPER, JOSE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_JOSE_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
+.LoadFight3:
 	loadtrainer BIRD_KEEPER, JOSE3
 	startbattle
 	reloadmapafterbattle
@@ -210,24 +202,16 @@ TrainerCooltrainerfReena:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainerfReenaBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer COOLTRAINERF, REENA1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_REENA_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer COOLTRAINERF, REENA2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_REENA_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer COOLTRAINERF, REENA3
 	startbattle
 	reloadmapafterbattle

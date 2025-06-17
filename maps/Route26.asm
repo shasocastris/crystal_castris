@@ -54,25 +54,17 @@ TrainerCooltrainermGaven3:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainermGaven3BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer COOLTRAINERM, GAVEN3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer COOLTRAINERM, GAVEN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer COOLTRAINERM, GAVEN2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
+	end
+
+.LoadFight3:
+	loadtrainer COOLTRAINERM, GAVEN3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_GAVEN_READY_FOR_REMATCH
@@ -147,24 +139,16 @@ TrainerCooltrainerfBeth1:
 .WantsBattle:
 	scall .Rematch
 	winlosstext CooltrainerfBeth1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
 	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer COOLTRAINERF, BETH1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BETH_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer COOLTRAINERF, BETH2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BETH_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer COOLTRAINERF, BETH3
 	startbattle
 	reloadmapafterbattle
