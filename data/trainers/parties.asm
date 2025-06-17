@@ -1090,18 +1090,18 @@ ScientistGroup:
 
 	next_list_item ; SCIENTIST (4), Goldenrod Radio Tower
 	db "MARC@", TRAINERTYPE_NORMAL
-	db 33
-	dw MAGNEMITE
-	db 33
-	dw MAGNEMITE
-	db 33
-	dw MAGNEMITE
+	db 45
+	dw MAGNETON
+	db 45
+	dw MAGNETON
+	db 45
+	dw MAGNETON
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (5), Goldenrod Radio Tower
 	db "RICH@", TRAINERTYPE_MOVES
-	db 36
-	dw PORYGON
+	db 48
+	dw PORYGON2
 	dw CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
 	db -1 ; end
 
@@ -2473,78 +2473,78 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (3), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 29
+	db 41
 	dw RATICATE
-	db 29
+	db 41
 	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (4), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 28
-	dw GRIMER
-	db 28
-	dw GRIMER
-	db 30
+	db 40
+	dw MUK
+	db 40
+	dw MUK
+	db 42
 	dw MUK
 	db -1 ; end
 
 	next_list_item ; GRUNTM (5), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw RATTATA
-	db 26
-	dw RATTATA
-	db 28
-	dw RATTATA
-	db 28
-	dw RATTATA
-	db 28
-	dw RATTATA
+	db 38
+	dw RATICATE
+	db 38
+	dw RATICATE
+	db 40
+	dw RATICATE
+	db 40
+	dw RATICATE
+	db 40
+	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (6), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
-	dw ZUBAT
-	db 32
-	dw ZUBAT
+	db 44
+	dw GOLBAT
+	db 44
+	dw GOLBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (7), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 28
-	dw KOFFING
-	db 28
-	dw GRIMER
-	db 28
-	dw ZUBAT
-	db 28
-	dw RATTATA
+	db 40
+	dw WEEZING
+	db 40
+	dw MUK
+	db 40
+	dw GOLBAT
+	db 40
+	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (8), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
+	db 44
 	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (9), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 29
+	db 41
 	dw RATICATE
-	db 32
-	dw KOFFING
+	db 44
+	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (10), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 27
-	dw ZUBAT
-	db 29
+	db 39
 	dw GOLBAT
-	db 27
-	dw GRIMER
+	db 41
+	dw GOLBAT
+	db 39
+	dw MUK
 	db -1 ; end
 
 	next_list_item ; GRUNTM (11), Goldenrod Tunnel
@@ -2565,23 +2565,23 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (13), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 33
-	dw RATTATA
+	db 45
+	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (14), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 29
+	db 41
 	dw RATICATE
-	db 29
+	db 41
 	dw GOLBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (15), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
-	dw GRIMER
-	db 28
+	db 44
+	dw MUK
+	db 40
 	dw WEEZING
 	db -1 ; end
 
@@ -4370,15 +4370,24 @@ BlackbeltGroup:
 ExecutiveMGroup:
 	next_list_item ; EXECUTIVEM (1), Goldenrod Radio Tower
 	db "EXECUTIVE@", TRAINERTYPE_MOVES
-	db 40
-	dw HOUNDOUR
-	dw EMBER, ROAR, BITE, FAINT_ATTACK
-	db 40
-	dw KOFFING
-	dw TACKLE, SLUDGE, SMOKESCREEN, HAZE
-	db 42
+	db 44
+	dw PORYGON2
+	dw TRI_ATTACK, PSYCHIC_M, HYPER_BEAM, TOXIC
+	db 44
+	dw MAGNETON
+	dw THUNDERBOLT, SPIKE_CANNON, THUNDER_WAVE, FLASH
+	db 44
+	dw SLOWBRO
+	dw PSYCHIC_M, SURF, AMNESIA, FLAMETHROWER
+	db 44
+	dw CLEFABLE
+	dw MOONBLAST, DREAM_EATER, ICE_BEAM, SING
+	db 45
+	dw WEEZING
+	dw EXPLOSION, SLUDGE_BOMB, SMOKESCREEN, ZAP_CANNON
+	db 45
 	dw HOUNDOOM
-	dw EMBER, SMOG, BITE, FAINT_ATTACK
+	dw FLAMETHROWER, CRUNCH, SOLARBEAM, SUNNY_DAY
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (2), Goldenrod Radio Tower
@@ -4386,28 +4395,37 @@ ExecutiveMGroup:
 	db 44
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
+	db 44
+	dw KANGASKHAN
+	dw BODY_SLAM, SAFEGUARD, STRENGTH, FIRE_PUNCH
+	db 44
+	dw ELECTRODE
+	dw THUNDER, ROLLOUT, EXPLOSION, SONICBOOM
+	db 44
+	dw RHYDON
+	dw EARTHQUAKE, ROCK_SLIDE, CRUNCH, HORN_DRILL
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (3), Goldenrod Radio Tower
 	db "EXECUTIVE@", TRAINERTYPE_MOVES
 	db 36
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
+	dw WEEZING
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db 36
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
+	dw WEEZING
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db 36
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
+	dw WEEZING
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db 39
 	dw WEEZING
-	dw TACKLE, EXPLOSION, SLUDGE, SMOKESCREEN
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db 36
-	dw KOFFING
-	dw TACKLE, SELFDESTRUCT, SLUDGE, SMOKESCREEN
+	dw WEEZING
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db 36
-	dw KOFFING
-	dw TACKLE, SMOG, SLUDGE, SMOKESCREEN
+	dw WEEZING
+	dw PSYWAVE, EXPLOSION, SLUDGE, SMOKESCREEN
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
@@ -4952,15 +4970,21 @@ CamperGroup:
 ExecutiveFGroup:
 	next_list_item ; EXECUTIVEF (1), Goldenrod Radio Tower
 	db "EXECUTIVE@", TRAINERTYPE_MOVES
-	db 39
+	db 44
 	dw ARBOK
-	dw WRAP, POISON_STING, BITE, GLARE
-	db 39
+	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
+	db 44
 	dw VILEPLUME
-	dw ABSORB, SWEET_SCENT, SLEEP_POWDER, ACID
-	db 39
+	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
+	db 46
 	dw MURKROW
-	dw PECK, PURSUIT, HAZE, NIGHT_SHADE
+	dw PECK, PURSUIT, HAZE, NO_MOVE
+	db 45
+	dw HYPNO
+	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
+	db 45
+	dw MUK
+	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout
@@ -5540,8 +5564,12 @@ GruntFGroup:
 
 	next_list_item ; GRUNTF (2), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
+	db 44
 	dw ARBOK
+	db 44
+	dw MUK
+	db 44
+	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; GRUNTF (3), Goldenrod Tunnel
@@ -5554,14 +5582,14 @@ GruntFGroup:
 
 	next_list_item ; GRUNTF (4), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 26
-	dw EKANS
-	db 28
-	dw ODDISH
-	db 26
-	dw EKANS
-	db 29
+	db 38
+	dw ARBOK
+	db 40
 	dw GLOOM
+	db 38
+	dw MUK
+	db 41
+	dw VILEPLUME
 	db -1 ; end
 
 	next_list_item ; GRUNTF (5), Team Rocket's Hideout
