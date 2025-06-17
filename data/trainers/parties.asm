@@ -2833,12 +2833,12 @@ BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1), Route 30
 	db "DON@", TRAINERTYPE_NORMAL
 	db 4
-	dw CATERPIE
+	dw LEDYBA
 	db 4
-	dw CATERPIE
+	dw SPINARAK
 	db -1 ; end
 
-	next_list_item ; BUG_CATCHER (2), Route 30
+	next_list_item ; BUG_CATCHER (2), Route 2
 	db "ROB@", TRAINERTYPE_NORMAL
 	db 39
 	dw BEEDRILL
