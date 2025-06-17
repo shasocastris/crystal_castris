@@ -186,9 +186,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_43
 	db 10 percent ; encounter rate
-	dbw 20, MAGIKARP
-	dbw 15, MAGIKARP
-	dbw 10, REMORAID
+	dbw 30, STARYU
+	dbw 30, REMORAID
+	dbw 35, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_44
@@ -249,9 +249,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons LAKE_OF_RAGE
 	db 20 percent ; encounter rate
-	dbw 15, MAGIKARP
-	dbw 20, GYARADOS
-	dbw 25, GYARADOS
+	dbw 30, MAGIKARP
+	dbw 30, GYARADOS
+	dbw 35, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons BLACKTHORN_CITY

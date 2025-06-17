@@ -102,16 +102,16 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_26
 	db 6 percent ; encounter rate
-	dbw 30, DEWGONG
-	dbw 25, STARMIE
-	dbw 30, OCTILLERY
+	dbw 40, DEWGONG
+	dbw 35, STARMIE
+	dbw 40, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_27
 	db 6 percent ; encounter rate
-	dbw 30, TENTACRUEL
-	dbw 25, CLOYSTER
-	dbw 30, GYARADOS
+	dbw 40, TENTACRUEL
+	dbw 35, CLOYSTER
+	dbw 40, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28

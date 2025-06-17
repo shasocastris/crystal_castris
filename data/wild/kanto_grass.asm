@@ -761,56 +761,56 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_26
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 28, DODUO
-	dbw 28, SANDSLASH
-	dbw 32, PONYTA
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 30, ARBOK
+	dbw 38, DODRIO
+	dbw 38, SANDSLASH
+	dbw 42, RAPIDASH
+	dbw 40, ARBOK
+	dbw 40, DODRIO
+	dbw 40, HERACROSS
 	dbw 3, BULBASAUR
 	; day
-	dbw 28, DODUO
-	dbw 28, SANDSLASH
-	dbw 32, PONYTA
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 30, ARBOK
+	dbw 38, DODRIO
+	dbw 38, SANDSLASH
+	dbw 42, RAPIDASH
+	dbw 40, ARBOK
+	dbw 40, DODRIO
+	dbw 40, HERACROSS
 	dbw 3, CHARMANDER
 	; nite
-	dbw 28, NOCTOWL
-	dbw 28, RATICATE
+	dbw 38, NOCTOWL
+	dbw 38, RATICATE
 	dbw 32, NOCTOWL
-	dbw 30, RATICATE
-	dbw 30, QUAGSIRE
-	dbw 30, QUAGSIRE
+	dbw 40, RATICATE
+	dbw 40, QUAGSIRE
+	dbw 40, QUAGSIRE
 	dbw 3, SQUIRTLE
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_27
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 28, DODUO
-	dbw 28, ARBOK
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 32, PONYTA
-	dbw 30, DODRIO
+	dbw 38, DODRIO
+	dbw 38, ARBOK
+	dbw 40, WEEPINBELL
+	dbw 40, POLITOED
+	dbw 42, RAPIDASH
+	dbw 40, HERACROSS
 	dbw 3, CHIKORITA
 	; day
-	dbw 28, DODUO
-	dbw 28, ARBOK
-	dbw 30, RATICATE
-	dbw 30, DODUO
-	dbw 32, PONYTA
-	dbw 30, DODRIO
+	dbw 38, DODRIO
+	dbw 38, ARBOK
+	dbw 40, WEEPINBELL
+	dbw 40, POLITOED
+	dbw 42, RAPIDASH
+	dbw 40, HERACROSS
 	dbw 3, CYNDAQUIL
 	; nite
-	dbw 28, QUAGSIRE
-	dbw 28, NOCTOWL
-	dbw 30, RATICATE
-	dbw 30, QUAGSIRE
-	dbw 32, NOCTOWL
-	dbw 32, NOCTOWL
+	dbw 38, QUAGSIRE
+	dbw 38, NOCTOWL
+	dbw 40, GLOOM
+	dbw 40, ARIADOS
+	dbw 42, HYPNO
+	dbw 42, HYPNO
 	dbw 3, TOTODILE
 	end_grass_wildmons
 

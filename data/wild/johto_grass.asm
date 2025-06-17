@@ -1491,7 +1491,7 @@ JohtoGrassWildMons:
 	; morn
 	dbw 13, LEDIAN
 	dbw 14, VULPIX
-	dbw 15, PIDGEOTTO
+	dbw 15, DODUO
 	dbw 16, SNUBBULL
 	dbw 15, FLAAFFY
 	dbw 15, FEAROW
@@ -1499,7 +1499,7 @@ JohtoGrassWildMons:
 	; day
 	dbw 13, LEDIAN
 	dbw 14, GROWLITHE
-	dbw 15, PIDGEOTTO
+	dbw 15, DODUO
 	dbw 16, SNUBBULL
 	dbw 15, FLAAFFY
 	dbw 15, FEAROW
@@ -1601,29 +1601,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, FURRET
-	dbw 16, PIDGEOTTO
-	dbw 16, FARFETCH_D
-	dbw 15, FLAAFFY
-	dbw 17, RATICATE
-	dbw 17, VULPIX
-	dbw 17, VULPIX
+	dbw 35, FURRET
+	dbw 36, PIDGEOT
+	dbw 36, FARFETCH_D
+	dbw 35, AMPHAROS
+	dbw 37, RATICATE
+	dbw 37, NINETALES
+	dbw 37, NINETALES
 	; day
-	dbw 15, FURRET
-	dbw 16, PIDGEOTTO
-	dbw 16, FARFETCH_D
-	dbw 15, FURRET
-	dbw 17, RATICATE
-	dbw 17, GROWLITHE
-	dbw 17, GROWLITHE
+	dbw 35, FURRET
+	dbw 36, PIDGEOT
+	dbw 36, FARFETCH_D
+	dbw 35, FURRET
+	dbw 37, RATICATE
+	dbw 37, ARCANINE
+	dbw 37, ARCANINE
 	; nite
-	dbw 15, VENOMOTH
-	dbw 16, NOCTOWL
-	dbw 16, RATICATE
-	dbw 17, GIRAFARIG
-	dbw 17, MISDREAVUS
-	dbw 17, HOUNDOUR
-	dbw 17, HOUNDOUR
+	dbw 35, VENOMOTH
+	dbw 36, NOCTOWL
+	dbw 36, RATICATE
+	dbw 37, GIRAFARIG
+	dbw 37, MISDREAVUS
+	dbw 37, HOUNDOOM
+	dbw 37, HOUNDOOM
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44
