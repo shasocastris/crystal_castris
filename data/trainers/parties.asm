@@ -1527,8 +1527,12 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (12), Route 27
 	db "JOSE@", TRAINERTYPE_NORMAL
-	db 41
+	db 49
 	dw FARFETCH_D
+	db 49
+	dw DODRIO
+	db 49
+	dw SKARMORY
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (13), Route 32
@@ -1543,8 +1547,12 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (14), Route 27
 	db "JOSE@", TRAINERTYPE_NORMAL
-	db 44
+	db 52
 	dw FARFETCH_D
+	db 52
+	dw DODRIO
+	db 52
+	dw SKARMORY
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (15), Route 13
@@ -1563,9 +1571,15 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (17), Route 27
 	db "JOSE@", TRAINERTYPE_MOVES
-	db 48
+	db 56
 	dw FARFETCH_D
 	dw FURY_ATTACK, DETECT, FLY, SLASH
+	db 56
+	dw DODRIO
+	dw TRI_ATTACK, DRILL_PECK, FAINT_ATTACK, FLAIL
+	db 56
+	dw SKARMORY
+	dw STEEL_WING, WHIRLWIND, SPIKES, DRILL_PECK
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (18), Route 44
@@ -1794,28 +1808,28 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (6), Route 26
 	db "GAVEN@", TRAINERTYPE_MOVES
-	db 42
+	db 48
 	dw VICTREEBEL
 	dw WRAP, TOXIC, ACID, RAZOR_LEAF
-	db 42
+	db 48
 	dw KINGLER
 	dw BUBBLEBEAM, STOMP, GUILLOTINE, PROTECT
-	db 42
+	db 48
 	dw FLAREON
 	dw SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (7), Route 26
 	db "GAVEN@", TRAINERTYPE_ITEM_MOVES
-	db 47
+	db 53
 	dw VICTREEBEL
 	dw NO_ITEM
 	dw GIGA_DRAIN, TOXIC, SLUDGE_BOMB, RAZOR_LEAF
-	db 47
+	db 53
 	dw KINGLER
 	dw KINGS_ROCK
 	dw SURF, STOMP, GUILLOTINE, BLIZZARD
-	db 47
+	db 53
 	dw FLAREON
 	dw NO_ITEM
 	dw FLAMETHROWER, QUICK_ATTACK, BITE, FIRE_SPIN
@@ -1833,45 +1847,48 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (9), Route 26
 	db "JAKE@", TRAINERTYPE_MOVES
-	db 40
+	db 46
 	dw PARASECT
 	dw LEECH_LIFE, SPORE, SLASH, SWORDS_DANCE
-	db 42
+	db 48
 	dw GOLDUCK
 	dw CONFUSION, SCREECH, PSYCH_UP, FURY_SWIPES
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (10), Route 26
 	db "GAVEN@", TRAINERTYPE_MOVES
-	db 39
+	db 45
 	dw VICTREEBEL
 	dw WRAP, TOXIC, ACID, RAZOR_LEAF
-	db 39
+	db 45
 	dw KINGLER
 	dw BUBBLEBEAM, STOMP, GUILLOTINE, PROTECT
-	db 39
+	db 45
 	dw FLAREON
 	dw SAND_ATTACK, QUICK_ATTACK, BITE, FIRE_SPIN
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (11), Route 27
 	db "BLAKE@", TRAINERTYPE_MOVES
-	db 40
+	db 48
 	dw MAGNETON
 	dw THUNDERBOLT, SUPERSONIC, SWIFT, SCREECH
-	db 38
+	db 46
 	dw QUAGSIRE
 	dw WATER_GUN, SLAM, AMNESIA, EARTHQUAKE
-	db 38
-	dw EXEGGCUTE
+	db 46
+	dw EXEGGUTOR
 	dw LEECH_SEED, CONFUSION, SLEEP_POWDER, SOLARBEAM
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (12), Route 27
-	db "BRIAN@", TRAINERTYPE_MOVES
-	db 42
+	db "BRIAN@", TRAINERTYPE_NORMAL
+	db 48
 	dw SANDSLASH
-	dw SAND_ATTACK, POISON_STING, SLASH, SWIFT
+	db 48
+	dw BELLOSSOM
+	db 48
+	dw STANTLER
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (13), unused ???
@@ -2023,28 +2040,28 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (8), Route 26
 	db "JOYCE@", TRAINERTYPE_MOVES
-	db 44
-	dw PIKACHU
+	db 50
+	dw RAICHU
 	dw QUICK_ATTACK, DOUBLE_TEAM, THUNDERBOLT, THUNDER
-	db 39
+	db 45
 	dw BLASTOISE
 	dw BITE, CURSE, SURF, RAIN_DANCE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (9), Route 26
 	db "BETH@", TRAINERTYPE_MOVES
-	db 44
+	db 50
 	dw RAPIDASH
 	dw STOMP, FIRE_SPIN, FURY_ATTACK, AGILITY
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (10), Route 27
 	db "REENA@", TRAINERTYPE_NORMAL
-	db 38
+	db 46
 	dw STARMIE
-	db 40
+	db 48
 	dw NIDOQUEEN
-	db 38
+	db 46
 	dw STARMIE
 	db -1 ; end
 
@@ -2063,7 +2080,7 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (12), Route 26
 	db "BETH@", TRAINERTYPE_MOVES
-	db 47
+	db 53
 	dw RAPIDASH
 	dw STOMP, FIRE_SPIN, FURY_ATTACK, AGILITY
 	db -1 ; end
@@ -2112,7 +2129,7 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (18), Route 26
 	db "BETH@", TRAINERTYPE_ITEM_MOVES
-	db 52
+	db 58
 	dw RAPIDASH
 	dw FOCUS_BAND
 	dw STOMP, FIRE_SPIN, FURY_ATTACK, FIRE_BLAST
@@ -2120,25 +2137,25 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (19), Route 27
 	db "REENA@", TRAINERTYPE_NORMAL
-	db 41
+	db 49
 	dw STARMIE
-	db 44
+	db 52
 	dw NIDOQUEEN
-	db 41
+	db 49
 	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (20), Route 27
 	db "REENA@", TRAINERTYPE_ITEM_MOVES
-	db 46
+	db 54
 	dw STARMIE
 	dw NO_ITEM
 	dw DOUBLE_TEAM, PSYCHIC_M, WATERFALL, CONFUSE_RAY
-	db 48
+	db 56
 	dw NIDOQUEEN
 	dw PINK_BOW
 	dw EARTHQUAKE, DOUBLE_KICK, TOXIC, BODY_SLAM
-	db 46
+	db 54
 	dw STARMIE
 	dw NO_ITEM
 	dw BLIZZARD, PSYCHIC_M, WATERFALL, RECOVER
@@ -3171,11 +3188,11 @@ FisherGroup:
 
 	next_list_item ; FISHER (21)), Route 26
 	db "SCOTT@", TRAINERTYPE_NORMAL
-	db 36
+	db 44
 	dw QWILFISH
-	db 36
+	db 44
 	dw QWILFISH
-	db 41
+	db 47
 	dw SEAKING
 	db -1 ; end
 
@@ -4528,17 +4545,21 @@ PsychicGroup:
 
 	next_list_item ; PSYCHIC_T (9), Route 26
 	db "RICHARD@", TRAINERTYPE_NORMAL
-	db 44
+	db 48
+	dw JYNX
+	db 48
+	dw XATU
+	db 50
 	dw ESPEON
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (10), Route 27
 	db "GILBERT@", TRAINERTYPE_NORMAL
-	db 36
+	db 44
 	dw STARMIE
-	db 36
-	dw EXEGGCUTE
-	db 41
+	db 44
+	dw EXEGGUTOR
+	db 49
 	dw GIRAFARIG
 	db -1 ; end
 
