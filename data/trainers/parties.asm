@@ -1365,11 +1365,11 @@ SchoolboyGroup:
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SCHOOLBOY (18), Route 38
+	next_list_item ; SCHOOLBOY (23), Route 38
 	db "CHAD@", TRAINERTYPE_NORMAL
-	db 33
+	db 36
 	dw MR__MIME
-	db 38
+	db 41
 	dw MAGNETON
 	db -1 ; end
 
@@ -1410,14 +1410,6 @@ SchoolboyGroup:
 	db 42
 	dw QUAGSIRE
 	dw TAIL_WHIP, SLAM, AMNESIA, EARTHQUAKE
-	db -1 ; end
-
-	next_list_item ; SCHOOLBOY (23), Route 38
-	db "CHAD@", TRAINERTYPE_NORMAL
-	db 36
-	dw MR__MIME
-	db 41
-	dw MAGNETON
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (24), Route 38
@@ -1714,16 +1706,6 @@ LassGroup:
 	db 26
 	dw PSYDUCK
 	dw SCRATCH, TAIL_WHIP, DISABLE, CONFUSION
-	db -1 ; end
-
-	next_list_item ; LASS (15), Route 38
-	db "DANA@", TRAINERTYPE_MOVES
-	db 35
-	dw PSYDUCK
-	dw SCRATCH, DISABLE, CONFUSION, SCREECH
-	db 35
-	dw AMPHAROS
-	dw TACKLE, THUNDERSHOCK, THUNDER_WAVE, COTTON_SPORE
 	db -1 ; end
 
 	next_list_item ; LASS (16), Route 38
@@ -3856,10 +3838,8 @@ HikerGroup:
 
 	next_list_item ; HIKER (9), Route 45
 	db "PARRY@", TRAINERTYPE_NORMAL
-	db 42
+	db 35
 	dw ONIX
-	db 40
-	dw SWINUB
 	db -1 ; end
 
 	next_list_item ; HIKER (10), Route 45
@@ -3947,6 +3927,14 @@ HikerGroup:
 	db -1 ; end
 
 	next_list_item ; HIKER (19), Route 45
+	db "PARRY@", TRAINERTYPE_NORMAL
+	db 42
+	dw ONIX
+	db 40
+	dw SWINUB
+	db -1 ; end
+
+	next_list_item ; HIKER (20), Route 45
 	db "PARRY@", TRAINERTYPE_MOVES
 	db 42
 	dw PILOSWINE
@@ -3957,12 +3945,6 @@ HikerGroup:
 	db 46
 	dw STEELIX
 	dw DIG, IRON_TAIL, SANDSTORM, SLAM
-	db -1 ; end
-
-	next_list_item ; HIKER (20), Route 45
-	db "PARRY@", TRAINERTYPE_NORMAL
-	db 35
-	dw ONIX
 	db -1 ; end
 
 	next_list_item ; HIKER (22), Route 33
@@ -4241,7 +4223,7 @@ JugglerGroup:
 	end_list_items
 
 BlackbeltGroup:
-	next_list_item ; BLACKBELT_T (1), unused ???
+	next_list_item ; BLACKBELT_T (1)
 	db "KENJI@", TRAINERTYPE_NORMAL
 	db 33
 	dw ONIX
@@ -4311,7 +4293,7 @@ BlackbeltGroup:
 	dw PRIMEAPE
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (8), Route 45
+	next_list_item ; BLACKBELT_T (8), unused ???
 	db "KENJI@", TRAINERTYPE_NORMAL
 	db 34
 	dw MACHOKE
@@ -4609,16 +4591,22 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (16), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 38
+	db 24
 	dw CLEFAIRY
 	dw ENCORE, SING, DOUBLESLAP, MINIMIZE
+	db 24
+	dw BUTTERFREE
+	dw LEECH_LIFE, CONFUSION, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; PICNICKER (17), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 45
+	db 38
 	dw CLEFAIRY
-	dw ENCORE, DOUBLESLAP, MINIMIZE, METRONOME
+	dw ENCORE, SING, DOUBLESLAP, MINIMIZE
+	db 38
+	dw BUTTERFREE
+	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; PICNICKER (18), Route 46
@@ -4637,9 +4625,12 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (20), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 24
+	db 45
 	dw CLEFAIRY
-	dw ENCORE, SING, DOUBLESLAP, MINIMIZE
+	dw ENCORE, DOUBLESLAP, MINIMIZE, METRONOME
+	db 45
+	dw BUTTERFREE
+	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; PICNICKER (21), Route 46
@@ -4686,6 +4677,9 @@ PicnickerGroup:
 	db 52
 	dw CLEFAIRY
 	dw METRONOME, ENCORE, MOONLIGHT, MINIMIZE
+	db 52
+	dw BUTTERFREE
+	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	end_list_items

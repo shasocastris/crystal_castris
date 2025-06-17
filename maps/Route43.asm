@@ -75,33 +75,25 @@ TrainerPokemaniacBrent:
 .WantsBattle:
 	scall .Rematch
 	winlosstext PokemaniacBrentBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
+	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .LoadFight1
-	loadtrainer POKEMANIAC, BRENT1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_BRENT_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer POKEMANIAC, BRENT2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BRENT_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer POKEMANIAC, BRENT3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_BRENT_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
+.LoadFight4:
 	loadtrainer POKEMANIAC, BRENT4
 	startbattle
 	reloadmapafterbattle
@@ -157,15 +149,15 @@ TrainerFisherMarvin:
 	end
 
 TrainerPicnickerTiffany:
-	trainer PICNICKER, TIFFANY3, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
+	trainer PICNICKER, TIFFANY1, EVENT_BEAT_PICNICKER_TIFFANY, PicnickerTiffanySeenText, PicnickerTiffanyBeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_PICNICKER_TIFFANY
 	opentext
 	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
-	iftrue .HasPinkBow
+	checkflag ENGINE_TIFFANY_HAS_SILVERPOWDER
+	iftrue .HasSilverpowder
 	checkcellnum PHONE_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
 	checkpoke CLEFAIRY
@@ -191,26 +183,11 @@ TrainerPicnickerTiffany:
 .WantsBattle:
 	scall .Rematch
 	winlosstext PicnickerTiffanyBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
+	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight1
-	loadtrainer PICNICKER, TIFFANY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer PICNICKER, TIFFANY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer PICNICKER, TIFFANY2
 	startbattle
 	reloadmapafterbattle
@@ -218,18 +195,25 @@ TrainerPicnickerTiffany:
 	end
 
 .LoadFight3:
+	loadtrainer PICNICKER, TIFFANY3
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
+	end
+
+.LoadFight4:
 	loadtrainer PICNICKER, TIFFANY4
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	end
 
-.HasPinkBow:
+.HasSilverpowder:
 	scall .Gift
-	verbosegiveitem PINK_BOW
+	verbosegiveitem SILVERPOWDER
 	iffalse .NoRoom
-	clearflag ENGINE_TIFFANY_HAS_PINK_BOW
-	setevent EVENT_TIFFANY_GAVE_PINK_BOW
+	clearflag ENGINE_TIFFANY_HAS_SILVERPOWDER
+	setevent EVENT_TIFFANY_GAVE_SILVERPOWDER
 	sjump .NumberAccepted
 
 .NoRoom:

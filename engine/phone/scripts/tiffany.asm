@@ -5,7 +5,7 @@ TiffanyPhoneCalleeScript:
 	farscall PhoneScript_AnswerPhone_Female
 	checkflag ENGINE_TIFFANY_TUESDAY_AFTERNOON
 	iftrue .NotTuesday
-	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
+	checkflag ENGINE_TIFFANY_HAS_SILVERPOWDER
 	iftrue .HasItem
 	readvar VAR_WEEKDAY
 	ifnotequal TUESDAY, .NotTuesday
@@ -32,11 +32,11 @@ TiffanyPhoneCallerScript:
 	iftrue .Generic
 	checkflag ENGINE_TIFFANY_TUESDAY_AFTERNOON
 	iftrue .Generic
-	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
+	checkflag ENGINE_TIFFANY_HAS_SILVERPOWDER
 	iftrue .Generic
 	farscall PhoneScript_Random3
 	ifequal 0, TiffanyWantsBattle
-	checkevent EVENT_TIFFANY_GAVE_PINK_BOW
+	checkevent EVENT_TIFFANY_GAVE_SILVERPOWDER
 	iftrue .PinkBow
 	farscall PhoneScript_Random2
 	ifequal 0, TiffanyHasPinkBow
@@ -92,6 +92,6 @@ TiffanysFamilyMembers:
 	farsjump TiffanyItsAwful
 
 TiffanyHasPinkBow:
-	setflag ENGINE_TIFFANY_HAS_PINK_BOW
+	setflag ENGINE_TIFFANY_HAS_SILVERPOWDER
 	getlandmarkname STRING_BUFFER_5, LANDMARK_ROUTE_43
 	farsjump PhoneScript_FoundItem_Female

@@ -67,33 +67,25 @@ TrainerFisherTully:
 .WantsBattle:
 	scall .Rematch
 	winlosstext FisherTullyBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
+	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
-	iftrue .LoadFight1
-	loadtrainer FISHER, TULLY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_TULLY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer FISHER, TULLY2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer FISHER, TULLY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_TULLY_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
+.LoadFight4:
 	loadtrainer FISHER, TULLY4
 	startbattle
 	reloadmapafterbattle

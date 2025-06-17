@@ -47,24 +47,16 @@ TrainerBirdKeeperVance1:
 .WantsBattle:
 	scall Route44RematchM
 	winlosstext BirdKeeperVance1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer BIRD_KEEPER, VANCE1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_VANCE_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer BIRD_KEEPER, VANCE2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_VANCE_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer BIRD_KEEPER, VANCE3
 	startbattle
 	reloadmapafterbattle
@@ -180,24 +172,16 @@ TrainerFisherWilton1:
 .WantsBattle:
 	scall Route44RematchM
 	winlosstext FisherWilton1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer FISHER, WILTON1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_WILTON_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer FISHER, WILTON2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_WILTON_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer FISHER, WILTON3
 	startbattle
 	reloadmapafterbattle

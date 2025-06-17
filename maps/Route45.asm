@@ -21,7 +21,7 @@ Route45_MapScripts:
 	def_callbacks
 
 TrainerBlackbeltKenji:
-	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
+	trainer BLACKBELT_T, KENJI1, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_BLACKBELT_KENJI
@@ -43,7 +43,7 @@ TrainerBlackbeltKenji:
 	askforphonenumber PHONE_BLACKBELT_KENJI
 	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
-	gettrainername STRING_BUFFER_3, BLACKBELT_T, KENJI3
+	gettrainername STRING_BUFFER_3, BLACKBELT_T, KENJI1
 	scall Route45RegisteredNumberM
 	sjump Route45NumberAcceptedM
 
@@ -144,7 +144,7 @@ TrainerHikerMichael:
 	end
 
 TrainerHikerParry:
-	trainer HIKER, PARRY3, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
+	trainer HIKER, PARRY1, EVENT_BEAT_HIKER_PARRY, HikerParry3SeenText, HikerParry3BeatenText, 0, .Script
 
 .Script:
 	loadvar VAR_CALLERID, PHONE_HIKER_PARRY
@@ -174,25 +174,17 @@ TrainerHikerParry:
 .WantsBattle:
 	scall Route45RematchM
 	winlosstext HikerParry3BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer HIKER, PARRY3
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_PARRY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
-	loadtrainer HIKER, PARRY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_PARRY_READY_FOR_REMATCH
-	end
-
-.LoadFight2:
+	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer HIKER, PARRY2
+	startbattle
+	reloadmapafterbattle
+	clearflag ENGINE_PARRY_READY_FOR_REMATCH
+	end
+
+.LoadFight3:
+	loadtrainer HIKER, PARRY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_PARRY_READY_FOR_REMATCH

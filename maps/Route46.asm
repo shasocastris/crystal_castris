@@ -52,24 +52,16 @@ TrainerPicnickerErin1:
 .WantsBattle:
 	scall Route46RematchF
 	winlosstext PicnickerErin1BeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight2
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight1
-	loadtrainer PICNICKER, ERIN1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_ERIN_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	checkevent EVENT_CLEARED_RADIO_TOWER
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer PICNICKER, ERIN2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ERIN_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer PICNICKER, ERIN3
 	startbattle
 	reloadmapafterbattle

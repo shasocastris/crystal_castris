@@ -46,33 +46,25 @@ TrainerSailorHuey:
 .WantsBattle:
 	scall .Rematch
 	winlosstext SailorHueyBeatenText, 0
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
-	iftrue .LoadFight3
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .LoadFight2
+	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	iftrue .LoadFight4
 	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .LoadFight1
-	loadtrainer SAILOR, HUEY1
-	startbattle
-	reloadmapafterbattle
-	clearflag ENGINE_HUEY_READY_FOR_REMATCH
-	end
-
-.LoadFight1:
+	iftrue .LoadFight3
+; fallthrough
 	loadtrainer SAILOR, HUEY2
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
 	end
 
-.LoadFight2:
+.LoadFight3:
 	loadtrainer SAILOR, HUEY3
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_HUEY_READY_FOR_REMATCH
 	end
 
-.LoadFight3:
+.LoadFight4:
 	loadtrainer SAILOR, HUEY4
 	startbattle
 	reloadmapafterbattle

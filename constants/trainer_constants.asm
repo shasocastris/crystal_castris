@@ -174,7 +174,6 @@ DEF KRIS EQU __trainer_class__
 	const JACK5
 	const ALAN4
 	const CHAD4
-	const CHAD5
 
 	trainerclass BIRD_KEEPER ; 1e
 	const ROD
@@ -214,7 +213,6 @@ DEF KRIS EQU __trainer_class__
 	const DANA2
 	const DANA3
 	const DANA4
-	const DANA5
 	const FRIEDA
 
 	trainerclass COOLTRAINERM ; 20
@@ -533,14 +531,14 @@ DEF KRIS EQU __trainer_class__
 	const IRWIN4 ; unused
 
 	trainerclass BLACKBELT_T ; 34
-	const KENJI1 ; unused
+	const KENJI1
 	const YOSHI
 	const KENJI2 ; unused
 	const LAO
 	const NOB
 	const KIYO
 	const LUNG
-	const KENJI3
+	const KENJI3 ; unused
 	const WAI
 
 	trainerclass EXECUTIVEM ; 35
