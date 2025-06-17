@@ -2388,9 +2388,11 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (15), Mt Mortar
 	db "MILLER@", TRAINERTYPE_NORMAL
-	db 21
+	db 45
 	dw NIDOKING
-	db 21
+	db 45
+	dw UMBREON
+	db 45
 	dw NIDOQUEEN
 	db -1 ; end
 
@@ -3727,15 +3729,27 @@ SuperNerdGroup:
 	next_list_item ; SUPER_NERD (13), Mt Mortar
 	db "HUGH@", TRAINERTYPE_MOVES
 	db 47
+	dw AMPHAROS
+	dw THUNDERPUNCH, BODY_SLAM, STRENGTH, THUNDER_WAVE
+	db 47
+	dw SANDSLASH
+	dw METAL_CLAW, DIG, SWIFT, CUT
+	db 47
 	dw SEADRA
 	dw SMOKESCREEN, TWISTER, SURF, WATERFALL
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (14), Mt Mortar
 	db "MARKUS@", TRAINERTYPE_MOVES
-	db 23
-	dw SLOWPOKE
-	dw CURSE, WATER_GUN, GROWL, STRENGTH
+	db 45
+	dw BELLOSSOM
+	dw PETAL_DANCE, STUN_SPORE, GROWTH, SYNTHESIS
+	db 45
+	dw SLOWBRO
+	dw CURSE, IRON_TAIL, EARTHQUAKE, STRENGTH
+	db 45
+	dw SLOWKING
+	dw AMNESIA, SURF, PSYCHIC_M, FLAMETHROWER
 	db -1 ; end
 
 	end_list_items
@@ -4277,10 +4291,12 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (6), Mt Mortar
 	db "KIYO@", TRAINERTYPE_NORMAL
-	db 41
+	db 50
 	dw HITMONLEE
-	db 41
+	db 50
 	dw HITMONCHAN
+	db 50
+	dw HITMONTOP
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (7), Cianwood Gym

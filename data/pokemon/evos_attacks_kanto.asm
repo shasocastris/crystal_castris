@@ -698,8 +698,8 @@ NidoqueenEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, SCRATCH
-	dbw 1, DOUBLE_KICK
 	dbw 1, TAIL_WHIP
+	dbw 1, DOUBLE_KICK
 	dbw 23, BODY_SLAM
 	dbw 33, EARTHQUAKE
 	dbw 43, SLUDGE_BOMB
@@ -750,8 +750,8 @@ NidokingEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, HORN_ATTACK
-	dbw 1, DOUBLE_KICK
 	dbw 1, POISON_STING
+	dbw 1, DOUBLE_KICK
 	dbw 23, THRASH
 	dbw 33, EARTHQUAKE
 	dbw 43, SLUDGE_BOMB
