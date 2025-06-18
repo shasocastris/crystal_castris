@@ -440,13 +440,13 @@ CrobatEvosAttacks:
 	dbw 12, BITE
 	dbw 15, QUICK_ATTACK
 	dbw 19, CONFUSE_RAY
-	dbw 25, WHIRLWIND
-	dbw 30, WING_ATTACK
-	dbw 36, PURSUIT
-	dbw 42, MEAN_LOOK
+	dbw 25, WING_ATTACK
+	dbw 30, FAINT_ATTACK
+	dbw 36, MEAN_LOOK
+	dbw 42, SLUDGE_BOMB
 	dbw 48, SCREECH
 	dbw 55, HAZE
-	dbw 60, FAINT_ATTACK
+	dbw 60, CRUNCH
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:

@@ -850,13 +850,13 @@ ZubatEvosAttacks:
 	dbw 12, BITE
 	dbw 15, QUICK_ATTACK
 	dbw 19, CONFUSE_RAY
-	dbw 23, WHIRLWIND
-	dbw 27, WING_ATTACK
-	dbw 32, PURSUIT
-	dbw 36, MEAN_LOOK
+	dbw 23, WING_ATTACK
+	dbw 27, FAINT_ATTACK
+	dbw 32, MEAN_LOOK
+	dbw 36, SLUDGE_BOMB
 	dbw 41, SCREECH
 	dbw 46, HAZE
-	dbw 50, FAINT_ATTACK
+	dbw 50, CRUNCH
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
@@ -868,13 +868,13 @@ GolbatEvosAttacks:
 	dbw 12, BITE
 	dbw 15, QUICK_ATTACK
 	dbw 19, CONFUSE_RAY
-	dbw 25, WHIRLWIND
-	dbw 30, WING_ATTACK
-	dbw 36, PURSUIT
-	dbw 42, MEAN_LOOK
+	dbw 25, WING_ATTACK
+	dbw 30, FAINT_ATTACK
+	dbw 36, MEAN_LOOK
+	dbw 42, SLUDGE_BOMB
 	dbw 48, SCREECH
 	dbw 55, HAZE
-	dbw 60, FAINT_ATTACK
+	dbw 60, CRUNCH
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -1882,6 +1882,7 @@ VoltorbEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 9, SCREECH
+	dbw 13, SPARK
 	dbw 17, SONICBOOM
 	dbw 23, SELFDESTRUCT
 	dbw 29, ROLLOUT
@@ -1896,6 +1897,7 @@ ElectrodeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 9, SCREECH
+	dbw 13, SPARK
 	dbw 17, SONICBOOM
 	dbw 23, SELFDESTRUCT
 	dbw 29, ROLLOUT
