@@ -197,67 +197,92 @@ VictoryRoadRivalBattleExitMovement2:
 	step_end
 
 VictoryRoadRivalBeforeText:
-	text "Hold it."
+	para "So you're taking the"
+	line "#MON LEAGUE"
+	cont "challenge too?"
 
-	para "…Are you going to"
-	line "take the #MON"
-	cont "LEAGUE challenge?"
+	para "…I won't laugh at"
+	line "you this time."
 
-	para "…Don't make me"
-	line "laugh."
+	para "I've been thinking"
+	line "about what makes a"
+	cont "trainer strong."
 
-	para "You're so much"
-	line "weaker than I am."
+	para "It's not just about"
+	line "having powerful"
+	cont "#MON, is it?"
 
-	para "I'm not like I was"
-	line "before."
+	para "I've been watching"
+	line "how you battle."
+	cont "How your #MON"
+	cont "fight for you."
 
-	para "I now have the"
-	line "best and strongest"
-
-	para "#MON with me."
-	line "I'm invincible!"
+	para "I want to understand"
+	line "that bond."
 
 	para "<PLAYER>!"
-	line "I challenge you!"
+	line "Show me what true"
+	cont "strength looks like!"
 	done
 
 VictoryRoadRivalDefeatText:
-	text "…I couldn't win…"
+	text "…I lost again."
 
-	para "I gave it every-"
-	line "thing I had…"
+	para "But this time…"
+	line "I think I understand"
+	cont "why."
 
-	para "What you possess,"
-	line "and what I lack…"
+	para "My #MON fought"
+	line "hard, but yours…"
+	cont "they fought with"
+	cont "their hearts."
 
-	para "I'm beginning to"
-	line "understand what"
+	para "That dragon master"
+	line "was right, wasn't he?"
 
-	para "that dragon master"
-	line "said to me…"
+	para "True strength comes"
+	line "from the bond between"
+	cont "trainer and #MON."
 	done
 
 VictoryRoadRivalAfterText:
-	text "…I haven't given up"
+	text "I'm not giving up"
 	line "on becoming the"
-	cont "greatest trainer…"
+	cont "greatest trainer."
 
-	para "I'm going to find"
-	line "out why I can't"
+	para "But I need to change"
+	line "how I think about"
+	cont "strength."
 
-	para "win and become"
-	line "stronger…"
+	para "It's not about having"
+	line "the most powerful"
+	cont "#MON."
 
-	para "When I do, I will"
-	line "challenge you."
+	para "It's about bringing"
+	line "out the best in"
+	cont "every #MON."
 
-	para "And I'll beat you"
-	line "down with all my"
-	cont "power."
+	para "Even the ones I"
+	line "used to think were"
+	cont "weak."
 
-	para "…Humph! You keep"
-	line "at it until then."
+	para "GOLBAT evolving"
+	line "into CROBAT is a"
+	cont "perfect example."
+
+	para "When I figure this"
+	line "out completely,"
+	cont "I'll challenge you"
+	cont "again."
+
+	para "And next time, we'll"
+	line "both be fighting"
+	cont "with everything we"
+	cont "have."
+
+	para "…Thanks, <PLAYER>."
+	line "For showing me what"
+	cont "I was missing."
 	done
 
 VictoryRoadRivalVictoryText:

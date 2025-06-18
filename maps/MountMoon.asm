@@ -91,70 +91,101 @@ MountMoonRivalTextBefore:
 	line "<PLAYER>."
 
 	para "…Since I lost to"
-	line "you, I thought"
+	line "you, I've been"
+	cont "traveling with my"
+	cont "#MON differently."
 
-	para "about what I was"
-	line "lacking with my"
-	cont "#MON…"
+	para "Instead of just"
+	line "pushing them to"
+	cont "be stronger…"
 
-	para "And we came up"
-	line "with an answer."
+	para "I've been trying"
+	line "to understand what"
+	cont "each of them needs."
 
-	para "<PLAYER>, now we'll"
-	line "show you!"
+	para "Some wanted to play."
+	line "Others needed rest."
+	cont "I never noticed"
+	cont "before."
+
+	para "<PLAYER>, now I"
+	line "want to show you"
+	cont "what we've learned"
+	cont "together!"
 	done
 
 MountMoonRivalTextWin:
 	text "<……> <……> <……>"
 
-	para "I thought I raised"
-	line "my #MON to be"
+	para "Even though I lost,"
+	line "my #MON fought"
+	cont "harder than ever."
 
-	para "the best they"
-	line "could be…"
+	para "They're not just"
+	line "obeying me anymore."
+	cont "They're choosing"
+	cont "to fight with me."
 
-	para "…But it still"
-	line "wasn't enough…"
+	para "I think I'm finally"
+	line "starting to understand"
+	cont "what you've known"
+	cont "all along."
 	done
 
 MountMoonRivalTextAfter:
 	text "<……> <……> <……>"
 
-	para "…You won, fair"
-	line "and square."
+	para "…You won, and I"
+	line "can accept that now."
 
-	para "I admit it. But"
-	line "this isn't the"
-	cont "end."
+	para "But more importantly,"
+	line "I saw how happy my"
+	cont "#MON looked"
+	cont "during that battle."
 
-	para "I'm going to be"
-	line "the greatest #-"
-	cont "MON trainer ever."
+	para "Even the ones that"
+	line "fainted were trying"
+	cont "their best for me."
 
-	para "Because these guys"
-	line "are behind me."
+	para "I used to think"
+	line "weak #MON were"
+	cont "holding me back."
+
+	para "But there are no"
+	line "weak #MON, are"
+	cont "there? Just trainers"
+	cont "who don't understand."
 
 	para "…Listen, <PLAYER>."
 
-	para "One of these days"
-	line "I'm going to prove"
+	para "I still want to be"
+	line "the greatest trainer."
+	cont "But now I know the"
+	cont "right way to do it."
 
-	para "how good I am by"
-	line "beating you."
+	para "Together with all"
+	line "my #MON. Not just"
+	cont "the strongest ones."
 	done
 
 MountMoonRivalTextLoss:
 	text "<……> <……> <……>"
 
-	para "I've repaid my"
-	line "debt to you."
+	para "My #MON and I"
+	line "have come so far"
+	cont "together."
 
-	para "With my #MON,"
-	line "I'm going to beat"
+	para "I can see it in"
+	line "their eyes now."
+	cont "They trust me."
 
-	para "the CHAMPION and"
-	line "become the world's"
-	cont "greatest trainer."
+	para "And I trust them"
+	line "to give everything"
+	cont "they have."
+
+	para "This is what real"
+	line "partnership feels"
+	cont "like, isn't it?"
 	done
 
 MountMoon_MapEvents:

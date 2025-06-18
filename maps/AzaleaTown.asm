@@ -254,8 +254,13 @@ AzaleaTownRivalBeforeText:
 	cont "lying."
 
 	para "You're not joking?"
-	line "Then let's see how"
-	cont "good you are."
+	line "Then your #MON"
+	cont "must be tougher than"
+	cont "I thought."
+
+	para "Let's see which of"
+	line "us has the most"
+	cont "powerful team!"
 	done
 
 AzaleaTownRivalWinText:
@@ -276,27 +281,26 @@ AzaleaTownRivalAfterText:
 	line "It doesn't matter"
 	cont "who or what."
 
-	para "I'm going to be"
-	line "strong and wipe"
-	cont "out the weak."
+	para "The weak ones slow"
+	line "down the strong."
+	cont "They're just dead"
+	cont "weight."
 
 	para "That goes for TEAM"
 	line "ROCKET too."
 
-	para "They act big and"
-	line "tough in a group."
+	para "They act tough in"
+	line "groups, but they're"
+	cont "nothing but weak"
+	cont "cowards."
 
-	para "But get them"
-	line "alone, and they're"
-	cont "weak."
-
-	para "I hate them all."
+	para "I'm going to build"
+	line "the ultimate team."
+	cont "Pure strength."
 
 	para "You stay out of my"
-	line "way. A weakling"
-
-	para "like you is only a"
-	line "distraction."
+	line "way. I don't have"
+	cont "time for weaklings."
 	done
 
 AzaleaTownRivalLossText:

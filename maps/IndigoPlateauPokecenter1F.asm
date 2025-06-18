@@ -227,49 +227,84 @@ PlateauRivalText1:
 
 	para "You're going to"
 	line "take the #MON"
+	cont "LEAGUE challenge"
+	cont "now?"
 
-	para "LEAGUE challenge"
-	line "now?"
+	para "Perfect timing."
+	line "I've been waiting"
+	cont "for this moment."
 
-	para "That's not going"
-	line "to happen."
+	para "I have a team now"
+	line "that I truly"
+	cont "understand."
 
-	para "My super-well-"
-	line "trained #MON"
+	para "Each of my #MON"
+	line "has grown stronger"
+	cont "because I learned"
+	cont "to see their potential."
 
-	para "are going to pound"
-	line "you."
+	para "Even the ones I"
+	line "used to overlook"
+	cont "have surprised me."
 
 	para "<PLAYER>!"
-	line "I challenge you!"
+	line "Let's have the"
+	cont "battle we've both"
+	cont "been training for!"
 	done
 
 PlateauRivalWinText:
 	text "…"
 
-	para "OK--I lost…"
+	para "That was an amazing"
+	line "battle."
+
+	para "Win or lose, I'm"
+	line "proud of how far"
+	cont "we've all come."
 	done
 
 PlateauRivalText2:
-	text "…Darn… I still"
-	line "can't win…"
+	text "…I can live with"
+	line "that loss."
 
-	para "I… I have to think"
-	line "more about my"
-	cont "#MON…"
+	para "My #MON gave"
+	line "everything they"
+	cont "had, and so did I."
 
-	para "Humph! Try not to"
-	line "lose!"
+	para "That's all any"
+	line "trainer can ask"
+	cont "for."
+
+	para "You know what?"
+	line "I think my #MON"
+	cont "are proud of me"
+	cont "too."
+
+	para "Good luck against"
+	line "the ELITE FOUR."
+	cont "You've earned this"
+	cont "chance."
 	done
 
 PlateauRivalLoseText:
 	text "…"
 
-	para "Whew…"
-	line "With my partners,"
+	para "We did it…"
+	line "We actually did it."
 
-	para "I'm going to be"
-	line "the CHAMPION!"
+	para "My #MON and I"
+	line "fought as one team."
+
+	para "I finally understand"
+	line "what it means to"
+	cont "bring out the best"
+	cont "in every #MON."
+
+	para "Thanks, <PLAYER>."
+	line "You taught me that"
+	cont "strength isn't about"
+	cont "power alone."
 	done
 
 TeleportGuyText1:

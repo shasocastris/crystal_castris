@@ -459,8 +459,13 @@ CherrygroveRivalText_Seen:
 	para "Well, I too, have"
 	line "a good #MON."
 
+	para "No, not just good--"
+	line "I picked the STRONGEST"
+	cont "one available!"
+
 	para "I'll show you"
-	line "what I mean!"
+	line "what real power"
+	cont "looks like!"
 	done
 
 RivalCherrygroveWinText:
@@ -474,9 +479,13 @@ CherrygroveRivalText_YouLost:
 	para "My name's ???."
 
 	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
+	line "the world's most"
+	cont "powerful #MON"
 	cont "trainer."
+
+	para "Only the strongest"
+	line "#MON deserve to"
+	cont "fight alongside me."
 	done
 
 RivalCherrygroveLossText:

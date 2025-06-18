@@ -290,25 +290,50 @@ RivalText_Training1:
 	line "battle you now…"
 
 	para "My #MON aren't"
-	line "ready to beat you."
+	line "ready yet."
 
-	para "I can't push them"
-	line "too hard now."
+	para "Not because they're"
+	line "weak, but because"
+	cont "I need to understand"
+	cont "them better."
 
-	para "I have to be dis-"
-	line "ciplined to become"
+	para "I've been learning"
+	line "to listen to what"
+	cont "they're trying to"
+	cont "tell me."
 
-	para "the greatest #-"
-	line "MON trainer…"
+	para "Some of them have"
+	line "been with me since"
+	cont "the beginning, but"
+	cont "I never really…"
+
+	para "I have to be more"
+	line "patient to become"
+	cont "the trainer they"
+	cont "deserve."
 	done
 
 RivalText_Training2:
 	text "…"
 
-	para "Whew…"
+	para "Thanks for giving"
+	line "me space to think."
 
-	para "Learn to stay out"
-	line "of my way…"
+	para "I'm starting to see"
+	line "things differently"
+	cont "now."
+
+	para "Each of my #MON"
+	line "has their own"
+	cont "personality."
+
+	para "I used to just see"
+	line "them as tools for"
+	cont "becoming stronger."
+
+	para "But they're more"
+	line "than that, aren't"
+	cont "they?"
 	done
 
 CooltrainermDarinSeenText:

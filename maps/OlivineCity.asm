@@ -170,35 +170,32 @@ OlivineCityRivalText:
 
 	para "You again?"
 
-	para "There's no need to"
-	line "panic. I don't"
+	para "I don't waste time"
+	line "on weak trainers"
+	cont "anymore."
 
-	para "bother with wimps"
-	line "like you."
+	para "The GYM LEADER"
+	line "isn't even here."
+	cont "She's at the"
+	cont "LIGHTHOUSE."
 
-	para "Speaking of weak-"
-	line "lings, the city's"
+	para "Taking care of some"
+	line "sick #MON, I heard."
 
-	para "GYM LEADER isn't"
-	line "here."
+	para "…Hmph. What's the"
+	line "point? If a #MON"
+	cont "can't battle, then…"
 
-	para "Supposedly taking"
-	line "care of a sick"
+	para "…"
 
-	para "#MON at the"
-	line "LIGHTHOUSE."
+	para "Why would someone"
+	line "spend so much time"
+	cont "on something like"
+	cont "that?"
 
-	para "Humph! Boo-hoo!"
-	line "Just let sick"
-	cont "#MON go!"
-
-	para "A #MON that"
-	line "can't battle is"
-	cont "worthless!"
-
-	para "Why don't you go"
-	line "train at the"
-	cont "LIGHTHOUSE?"
+	para "Whatever. Go train"
+	line "at the LIGHTHOUSE"
+	cont "if you want."
 
 	para "Who knows. It may"
 	line "make you a bit"

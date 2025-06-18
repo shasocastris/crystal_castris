@@ -161,22 +161,24 @@ BurnedTowerRival_BeforeText:
 	para "…Oh, it's you."
 
 	para "I came looking for"
-	line "some legendary"
-
-	para "#MON that they"
-	line "say roosts here."
+	line "legendary #MON."
+	cont "The most powerful"
+	cont "ones in existence."
 
 	para "But there's"
 	line "nothing here!"
 
-	para "Nothing after all"
-	line "the trouble of"
+	para "Just some weak"
+	line "wild #MON hiding"
+	cont "in the shadows."
 
-	para "coming to this"
-	line "dump? No way!"
+	para "What a waste of"
+	line "time! It's all"
+	cont "your fault somehow!"
 
-	para "It's all your"
-	line "fault!"
+	para "Fine! I'll prove my"
+	line "#MON are the"
+	cont "strongest right now!"
 	done
 
 BurnedTowerRival_WinText:
@@ -219,6 +221,11 @@ BurnedTowerRival_AfterText2:
 	line "you are!"
 
 	para "Serves you right!"
+
+	para "You'll never catch"
+	line "anything truly"
+	cont "powerful acting"
+	cont "like that."
 	done
 
 BurnedTower1FEusineIntroText:

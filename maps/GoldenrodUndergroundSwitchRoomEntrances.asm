@@ -664,24 +664,24 @@ UndergroundRivalRetreatMovement2:
 UndergroundRivalBeforeText:
 	text "Hold it!"
 
-	para "I saw you, so I"
-	line "tailed you."
+	para "I followed you here."
+	line "Can't let you handle"
+	cont "TEAM ROCKET alone."
 
-	para "I don't need you"
-	line "underfoot while I"
+	para "…Wait. You actually"
+	line "beat me before."
+	cont "More than once."
 
-	para "take care of TEAM"
-	line "ROCKET."
+	para "How? My #MON"
+	line "are individually"
+	cont "stronger than yours."
 
-	para "…Wait a second."
-	line "You beat me be-"
-	cont "fore, didn't you?"
+	para "But I always repay"
+	line "my debts."
 
-	para "That was just a"
-	line "fluke."
-
-	para "But I repay my"
-	line "debts!"
+	para "This time I'll show"
+	line "you what happens when"
+	cont "power is used right!"
 	done
 
 UndergroundRivalWinText:
@@ -698,39 +698,38 @@ UndergroundRivalWinText:
 	done
 
 UndergroundRivalAfterText:
-	text "…I don't under-"
-	line "stand…"
+text "…Why do I keep"
+	line "losing?"
 
-	para "Is what that LANCE"
-	line "guy said true?"
+	para "I have the strongest"
+	line "#MON. I train"
+	cont "them harder than"
+	cont "anyone."
 
-	para "That I don't treat"
-	line "#MON properly?"
+	para "So why…?"
+
+	para "That LANCE guy said"
+	line "something about how"
+	cont "I treat my #MON."
+
+	para "But I give them the"
+	line "best training, the"
+	cont "best items…"
 
 	para "Love…"
 
 	para "Trust…"
 
-	para "Are they really"
-	line "what I lack?"
+	para "Are those really"
+	line "more important than"
+	cont "raw power?"
 
-	para "Are they keeping"
-	line "me from winning?"
+	para "I… I need to think"
+	line "about this."
 
-	para "I… I just don't"
-	line "understand."
-
-	para "But it's not going"
-	line "to end here."
-
-	para "Not now. Not"
-	line "because of this."
-
-	para "I won't give up my"
-	line "dream of becoming"
-
-	para "the world's best"
-	line "#MON trainer!"
+	para "But I won't give up"
+	line "my dream. I'll find"
+	cont "the answer somehow."
 	done
 
 UndergroundRivalLossText:
