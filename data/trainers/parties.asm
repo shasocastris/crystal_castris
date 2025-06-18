@@ -1957,14 +1957,14 @@ CooltrainerMGroup:
 	dw MARILL
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (15), unused ???
+	next_list_item ; COOLTRAINERM (15), Route 32
 	db "TYLER@", TRAINERTYPE_NORMAL
 	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	dw STANTLER
+	db 13
+	dw TANGELA
+	db 14
+	dw CORSOLA
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (16), SS Aqua

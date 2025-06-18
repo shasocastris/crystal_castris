@@ -61,7 +61,30 @@ Route32CooltrainerMContinueScene:
 	end
 
 .GotMiracleSeed:
+	checkevent EVENT_BEAT_COOLTRAINERM_TYLER
+	iftrue .Route32CooltrainerMAfterBattleScript
 	writetext Route32CooltrainerMText_ExperiencesShouldBeUseful
+	waitbutton
+	writetext Route32CooltrainerMText_WouldYouLikeToBattle
+	yesorno
+	iffalse .Refused
+	writetext Route32CooltrainerMText_ShowMeWhatYouGot
+	waitbutton
+	closetext
+	winlosstext Route32CooltrainerMBeatenText, 0
+	loadtrainer COOLTRAINERM, TYLER
+	startbattle
+	reloadmapafterbattle
+	opentext
+.Route32CooltrainerMAfterBattleScript
+	setevent EVENT_BEAT_COOLTRAINERM_TYLER
+	writetext Route32CooltrainerMText_AfterBattle
+	waitbutton
+	closetext
+	end
+
+.Refused:
+	writetext Route32CooltrainerMText_MaybeSomeOtherTime
 	waitbutton
 .BagFull:
 	closetext
@@ -493,6 +516,51 @@ Route32CooltrainerMText_ExperiencesShouldBeUseful:
 
 	para "should be useful"
 	line "for your journey."
+	done
+
+Route32CooltrainerMText_WouldYouLikeToBattle:
+	text "Hey, since you"
+	line "beat FALKNER, do"
+	cont "you want to have a"
+	cont "quick battle?"
+
+	para "It'll be fun!"
+	done
+
+Route32CooltrainerMText_ShowMeWhatYouGot:
+	text "That's what I"
+	line "like to hear!"
+
+	para "Get ready and"
+	line "show me what"
+	cont "you've got!"
+	done
+
+Route32CooltrainerMBeatenText:
+	text "Whoa! You're"
+	line "stronger than"
+	cont "you look!"
+	done
+
+Route32CooltrainerMText_AfterBattle:
+	text "That was a"
+	line "good battle!"
+
+	para "I see how you got"
+	line "got your first"
+	cont "badge."
+	done
+
+Route32CooltrainerMText_MaybeSomeOtherTime:
+	text "Oh, that's too"
+	line "bad."
+
+	para "Your #MON seem"
+	line "tired. Rest up and"
+	cont "come back!"
+
+	para "I'll be training"
+	line "right here."
 	done
 
 Text_MillionDollarSlowpokeTail:

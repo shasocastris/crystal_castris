@@ -230,7 +230,7 @@ DEF KRIS EQU __trainer_class__
 	const BRIAN
 	const ERICK
 	const ANDY
-	const TYLER ; unused
+	const TYLER
 	const SEAN
 	const KEVIN
 	const STEVE ; unused

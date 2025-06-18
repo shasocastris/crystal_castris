@@ -459,12 +459,13 @@ CherrygroveRivalText_Seen:
 	para "Well, I too, have"
 	line "a good #MON."
 
-	para "No, not just good--"
-	line "I picked the STRONGEST"
-	cont "one available!"
+	para "No, not just good-"
+	line "I picked the most"
+	cont "powerful one they"
+	cont "had!"
 
 	para "I'll show you"
-	line "what real power"
+	line "what real strength"
 	cont "looks like!"
 	done
 
