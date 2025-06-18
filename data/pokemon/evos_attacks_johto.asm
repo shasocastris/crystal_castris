@@ -1628,8 +1628,8 @@ BlisseyEvosAttacks:
 RaikouEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, LEER
-	dbw 1, BITE
-	dbw 11, SPARK
+	dbw 1, SPARK
+	dbw 11, BITE
 	dbw 21, FLASH
 	dbw 31, EXTREMESPEED
 	dbw 41, THUNDERBOLT
@@ -1643,8 +1643,8 @@ RaikouEvosAttacks:
 EnteiEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, LEER
-	dbw 1, BITE
-	dbw 11, FLAME_WHEEL
+	dbw 1, FLAME_WHEEL
+	dbw 11, BITE
 	dbw 21, HEADBUTT
 	dbw 31, FIRE_SPIN
 	dbw 41, FLAMETHROWER
@@ -1658,8 +1658,8 @@ EnteiEvosAttacks:
 SuicuneEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, LEER
-	dbw 1, BITE
-	dbw 11, BUBBLEBEAM
+	dbw 1, BUBBLEBEAM
+	dbw 11, BITE
 	dbw 21, RAIN_DANCE
 	dbw 31, GUST
 	dbw 41, ICE_BEAM
