@@ -413,8 +413,8 @@ DEF KRIS EQU __trainer_class__
 	const RICK ; unused
 	const CAMERON
 	const SETH
-	const JAMES ; unused
-	const LEWIS ; unused
+	const JAMES
+	const LEWIS
 	const PARKER
 
 	trainerclass SWIMMERF ; 2b
@@ -425,7 +425,7 @@ DEF KRIS EQU __trainer_class__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA ; unused
+	const LISA
 	const JILL ; unused
 	const MARY ; unused
 	const KATIE ; unused

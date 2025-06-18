@@ -26,7 +26,6 @@
 	const EVENT_GOT_HM04_STRENGTH
 	const EVENT_GOT_HM05_FLASH
 	const EVENT_GOT_HM06_WHIRLPOOL
-	const_skip ; unused
 ; Rods
 	const EVENT_GOT_OLD_ROD
 	const EVENT_GOT_GOOD_ROD
@@ -198,6 +197,7 @@
 	const EVENT_LAKE_OF_RAGE_HIDDEN_RARE_CANDY
 	const EVENT_LAKE_OF_RAGE_HIDDEN_MAX_POTION
 	const EVENT_SILVER_CAVE_OUTSIDE_HIDDEN_FULL_RESTORE
+	const EVENT_UNION_CAVE_1F_HIDDEN_FULL_RESTORE
 ; Crystal-exclusive events in Johto
 	const EVENT_MET_FLORIA
 	const EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
@@ -208,7 +208,7 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
-; Unused: next 1 events
+; Unused: next 0 events
 
 	const_next 200
 ; Kanto story events
@@ -1090,6 +1090,7 @@
 	const EVENT_UNION_CAVE_B1F_X_DEFEND
 	const EVENT_UNION_CAVE_B2F_ELIXER
 	const EVENT_UNION_CAVE_B2F_HYPER_POTION
+	const EVENT_UNION_CAVE_B2F_DAMP_ROCK
 	const EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION
 	const EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
 	const EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER
@@ -1370,7 +1371,7 @@
 ; (In pokegold the previous 4 event flags were not defined,
 ; but in pokecrystal the 'const_next 1900' is redundant.)
 
-	const_next 1910
+	const_next 1911
 ; Kanto people
 	const EVENT_ROUTE_24_ROCKET
 	const EVENT_CERULEAN_GYM_ROCKET

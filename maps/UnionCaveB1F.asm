@@ -3,6 +3,7 @@
 	const UNIONCAVEB1F_POKEFAN_M2
 	const UNIONCAVEB1F_SUPER_NERD1
 	const UNIONCAVEB1F_SUPER_NERD2
+	const UNIONCAVEB1F_SUPER_NERD3
 	const UNIONCAVEB1F_POKE_BALL1
 	const UNIONCAVEB1F_BOULDER
 	const UNIONCAVEB1F_POKE_BALL2
@@ -28,6 +29,16 @@ TrainerPokemaniacCalvin:
 .Script:
 	opentext
 	writetext PokemaniacCalvinAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSuperNerdGregg:
+	trainer SUPER_NERD, GREGG, EVENT_BEAT_SUPER_NERD_GREGG, SuperNerdGreggSeenText, SuperNerdGreggBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SuperNerdGreggAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -146,6 +157,35 @@ PokemaniacCalvinAfterBattleText:
 	cont "PROF.ELM."
 	done
 
+SuperNerdGreggSeenText:
+    text "I've explored"
+    line "every cave and"
+    cont "ruin for rare"
+    cont "#MON!"
+
+    para "Let me show you"
+    line "what I've found"
+    cont "in my travels!"
+    done
+
+SuperNerdGreggBeatenText:
+    text "Incredible!"
+    line "Your #MON are"
+    cont "discoveries by"
+    cont "themselves!"
+    done
+
+SuperNerdGreggAfterBattleText:
+    text "Your #MON are"
+    line "as amazing as"
+    cont "the ones I found"
+    cont "deep in MT.MOON!"
+
+    para "I'll journey to"
+    line "new regions to"
+    cont "find more."
+    done
+
 UnionCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -165,6 +205,7 @@ UnionCaveB1F_MapEvents:
 	object_event 16,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerLeonard, -1
 	object_event  5, 32, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacAndrew, -1
 	object_event 17, 30, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacCalvin, -1
+	object_event  5, 23, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdGregg, -1
 	object_event  2, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FTMSwift, EVENT_UNION_CAVE_B1F_TM_SWIFT
 	object_event  7, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBoulder, -1
 	object_event 17, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_X_DEFEND

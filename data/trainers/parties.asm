@@ -60,9 +60,9 @@ BugsyGroup:
 	next_list_item ; BUGSY (1)
 	db "BUGSY@", TRAINERTYPE_ITEM_MOVES
 	db 15
-	dw METAPOD
+	dw KAKUNA
 	dw NO_ITEM
-	dw TACKLE, LEECH_LIFE, HARDEN, HEADBUTT
+	dw POISON_STING, LEECH_LIFE, HARDEN, HEADBUTT
 	db 17
 	dw ARIADOS
 	dw BERRY
@@ -1248,9 +1248,6 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (14), Route 36
 	db "ARTHUR@", TRAINERTYPE_ITEM
-	db 13
-	dw LARVITAR
-	dw NO_ITEM
 	db 14
 	dw ONIX
 	dw HARD_STONE
@@ -3454,24 +3451,24 @@ SwimmerMGroup:
 	dw QUAGSIRE
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (19), unused ???
+	next_list_item ; SWIMMERM (19), Union Cave
 	db "JAMES@", TRAINERTYPE_NORMAL
-	db 16
-	dw STARYU
-	db 22
+	db 34
+	dw TENTACRUEL
+	db 37
 	dw STARMIE
-	db 20
-	dw HORSEA
+	db 35
+	dw SEADRA
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (20), unused ???
+	next_list_item ; SWIMMERM (20), Union Cave
 	db "LEWIS@", TRAINERTYPE_NORMAL
-	db 16
-	dw STARYU
-	db 22
-	dw STARMIE
-	db 20
-	dw HORSEA
+	db 33
+	dw GOLDUCK
+	db 34
+	dw KINGLER
+	db 34
+	dw OCTILLERY
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (21), Cerulean Gym
@@ -3545,10 +3542,14 @@ SwimmerFGroup:
 	dw DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (8), unused ???
+	next_list_item ; SWIMMERF (8), Union Cave
 	db "LISA@", TRAINERTYPE_NORMAL
 	db 34
 	dw JYNX
+	db 34
+	dw QWILFISH
+	db 34
+	dw QUAGSIRE
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (9), unused ???
@@ -3763,14 +3764,14 @@ SuperNerdGroup:
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (3), unused ???
+	next_list_item ; SUPER_NERD (3), Union Cave
 	db "GREGG@", TRAINERTYPE_NORMAL
 	db 24
 	dw MAGNEMITE
 	db 24
-	dw GRIMER
+	dw QUAGSIRE
 	db 24
-	dw VOLTORB
+	dw GLOOM
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (4), unused ???
