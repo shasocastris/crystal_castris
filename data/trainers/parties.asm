@@ -1744,10 +1744,14 @@ LassGroup:
 	dw GRANBULL
 	db -1 ; end
 
-	next_list_item ; LASS (12), unused ???
-	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 26
-	dw MARILL
+	next_list_item ; LASS (12), Route 36
+	db "NONI@", TRAINERTYPE_NORMAL
+	db 8
+	dw VULPIX
+	db 9
+	dw MAREEP
+	db 10
+	dw HOOTHOOT
 	db -1 ; end
 
 	next_list_item ; LASS (13), unused ???
@@ -1933,24 +1937,24 @@ CooltrainerMGroup:
 	dw STANTLER
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (13), unused ???
+	next_list_item ; COOLTRAINERM (13), Route 31
 	db "ERICK@", TRAINERTYPE_NORMAL
-	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	db 5
+	dw HOPPIP
+	db 5
+	dw POLIWAG
+	db 6
+	dw GASTLY
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERM (14), unused ???
+	next_list_item ; COOLTRAINERM (14), Route 29
 	db "ANDY@", TRAINERTYPE_NORMAL
-	db 12
-	dw BULBASAUR
-	db 12
-	dw CHARMANDER
-	db 12
-	dw SQUIRTLE
+	db 4
+	dw SPINARAK
+	db 4
+	dw SENTRET
+	db 5
+	dw MARILL
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (15), unused ???

@@ -8,6 +8,7 @@
 	const ROUTE36_ARTHUR
 	const ROUTE36_FLORIA
 	const ROUTE36_SUICUNE
+	const ROUTE36_LASS2
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -258,9 +259,17 @@ TrainerSchoolboyAlan1:
 	jumpstd PackFullMScript
 	end
 
+TrainerLassNoni:
+	trainer LASS, NONI, EVENT_BEAT_LASS_NONI, LassNoniSeenText, LassNoniBeatenText, 0, .Script
+.Script:
+	opentext
+	writetext LassNoniAfterBattleText
+	waitbutton
+	closetext
+	end
+
 TrainerPsychicMark:
 	trainer PSYCHIC_T, MARK, EVENT_BEAT_PSYCHIC_MARK, PsychicMarkSeenText, PsychicMarkBeatenText, 0, .Script
-
 .Script:
 	opentext
 	writetext PsychicMarkAfterBattleText
@@ -477,6 +486,23 @@ Route36LassText_ClearedSudowoodo:
 	line "really a #MON?"
 	done
 
+LassNoniSeenText:
+	text "You're going to"
+	line "look at the weird"
+	cont "tree?"
+	done
+
+LassNoniBeatenText:
+	text "Better you than"
+	line "me!"
+	done
+
+LassNoniAfterBattleText:
+	text "I'm not sure if I"
+	line "want to evolve my"
+	cont "#MON or not."
+	done
+
 PsychicMarkSeenText:
 	text "I'm going to read"
 	line "your thoughts!"
@@ -633,3 +659,4 @@ Route36_MapEvents:
 	object_event 46,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event 33, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event 21,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
+	object_event 40,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 5, TrainerLassNoni, -1

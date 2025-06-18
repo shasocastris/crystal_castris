@@ -208,7 +208,7 @@ DEF KRIS EQU __trainer_class__
 	const MICHELLE
 	const DANA1
 	const ELLEN
-	const CONNIE2 ; unused
+	const NONI
 	const CONNIE3 ; unused
 	const DANA2
 	const DANA3
@@ -228,8 +228,8 @@ DEF KRIS EQU __trainer_class__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK ; unused
-	const ANDY ; unused
+	const ERICK
+	const ANDY
 	const TYLER ; unused
 	const SEAN
 	const KEVIN
