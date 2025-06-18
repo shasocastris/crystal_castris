@@ -1026,6 +1026,12 @@ PKMNTrainerGroup:
 	dw TYPHLOSION
 	db 60
 	dw FERALIGATR
+	db 60
+	dw AMPHAROS
+	db 60
+	dw HITMONTOP
+	db 60
+	dw ESPEON
 	db -1 ; end
 
 	end_list_items
@@ -1171,29 +1177,29 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (9), Route 3
 	db "WARREN@", TRAINERTYPE_NORMAL
-	db 42
+	db 52
 	dw FEAROW
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (10), Route 3
 	db "JIMMY@", TRAINERTYPE_NORMAL
-	db 40
+	db 50
 	dw RATICATE
-	db 40
+	db 50
 	dw ARBOK
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (11), Route 11
 	db "OWEN@", TRAINERTYPE_NORMAL
-	db 42
-	dw GROWLITHE
+	db 52
+	dw ARCANINE
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (12), Route 11
 	db "JASON@", TRAINERTYPE_NORMAL
-	db 40
+	db 50
 	dw SANDSLASH
-	db 40
+	db 50
 	dw CROBAT
 	db -1 ; end
 
@@ -1230,13 +1236,13 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (2), Route 15
 	db "KIPP@", TRAINERTYPE_NORMAL
-	db 33
-	dw VOLTORB
-	db 33
-	dw MAGNEMITE
-	db 38
-	dw VOLTORB
-	db 38
+	db 43
+	dw ELECTRODE
+	db 43
+	dw MAGNETON
+	db 48
+	dw ELECTRODE
+	db 48
 	dw MAGNETON
 	db -1 ; end
 
@@ -1248,55 +1254,55 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (4), Route 15
 	db "JOHNNY@", TRAINERTYPE_NORMAL
-	db 35
-	dw BELLSPROUT
-	db 38
-	dw WEEPINBELL
-	db 40
+	db 45
+	dw VILEPLUME
+	db 48
+	dw BELLOSSOM
+	db 50
 	dw VICTREEBEL
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (5), Route 1
 	db "DANNY@", TRAINERTYPE_NORMAL
-	db 38
+	db 48
 	dw JYNX
-	db 38
+	db 48
 	dw ELECTABUZZ
-	db 38
+	db 48
 	dw MAGMAR
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (6), Route 15
 	db "TOMMY@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw XATU
-	db 41
+	db 51
 	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (7), Route 25
 	db "DUDLEY@", TRAINERTYPE_NORMAL
-	db 42
-	dw ODDISH
+	db 52
+	dw BELLOSSOM
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (8), Route 25
 	db "JOE@", TRAINERTYPE_NORMAL
-	db 40
+	db 50
 	dw TANGELA
-	db 40
+	db 50
 	dw VAPOREON
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (9), Route 15
 	db "BILLY@", TRAINERTYPE_NORMAL
-	db 33
-	dw PARAS
-	db 33
-	dw PARAS
-	db 33
-	dw POLIWHIRL
-	db 42
+	db 43
+	dw PARASECT
+	db 43
+	dw SUNFLORA
+	db 43
+	dw POLIWRATH
+	db 52
 	dw DITTO
 	db -1 ; end
 
@@ -1495,33 +1501,33 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (8), Route 4
 	db "HANK@", TRAINERTYPE_NORMAL
-	db 43
+	db 53
 	dw FEAROW
-	db 41
+	db 51
 	dw PIDGEOT
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (9), Route 14
 	db "ROY@", TRAINERTYPE_NORMAL
-	db 40
+	db 50
 	dw NOCTOWL
-	db 42
+	db 52
 	dw FEAROW
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (10), Route 18
 	db "BORIS@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw DELIBIRD
-	db 34
+	db 44
 	dw XATU
-	db 39
+	db 49
 	dw DODRIO
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (11), Route 18
 	db "BOB@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw NOCTOWL
 	db -1 ; end
 
@@ -1557,15 +1563,15 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (15), Route 13
 	db "PERRY@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw FARFETCH_D
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (16), Route 13
 	db "BRET@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw PIDGEOTTO
-	db 39
+	db 49
 	dw FEAROW
 	db -1 ; end
 
@@ -1656,21 +1662,21 @@ LassGroup:
 
 	next_list_item ; LASS (7), Route 25
 	db "LAURA@", TRAINERTYPE_NORMAL
-	db 34
-	dw GLOOM
-	db 38
-	dw PIDGEOTTO
-	db 38
+	db 44
+	dw FERALIGATR
+	db 48
+	dw PIDGEOT
+	db 48
 	dw BELLOSSOM
 	db -1 ; end
 
 	next_list_item ; LASS (8), Route 25
 	db "SHANNON@", TRAINERTYPE_NORMAL
-	db 35
-	dw NIDORINA
-	db 35
+	db 45
+	dw NIDOQUEEN
+	db 45
 	dw DEWGONG
-	db 39
+	db 49
 	dw PARASECT
 	db -1 ; end
 
@@ -1696,9 +1702,9 @@ LassGroup:
 
 	next_list_item ; LASS (11), Route 25
 	db "ELLEN@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw WIGGLYTUFF
-	db 41
+	db 51
 	dw GRANBULL
 	db -1 ; end
 
@@ -1933,11 +1939,11 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (17), Route 25
 	db "KEVIN@", TRAINERTYPE_NORMAL
-	db 46
-	dw RHYHORN
-	db 42
+	db 56
+	dw RHYDON
+	db 52
 	dw CHARIZARD
-	db 42
+	db 52
 	dw BLASTOISE
 	db -1 ; end
 
@@ -2097,9 +2103,9 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (14), Route 1
 	db "QUINN@", TRAINERTYPE_NORMAL
-	db 46
-	dw IVYSAUR
-	db 46
+	db 56
+	dw VENUSAUR
+	db 56
 	dw STARMIE
 	db -1 ; end
 
@@ -2740,7 +2746,7 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (31), Route 24
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw GOLBAT
 	db -1 ; end
 
@@ -2813,16 +2819,16 @@ TeacherGroup:
 
 	next_list_item ; TEACHER (1), Route 15
 	db "COLETTE@", TRAINERTYPE_NORMAL
-	db 44
+	db 54
 	dw CLEFABLE
 	db -1 ; end
 
 	next_list_item ; TEACHER (2), Route 15
 	db "HILLARY@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw AIPOM
-	db 44
-	dw CUBONE
+	db 54
+	dw MAROWAK
 	db -1 ; end
 
 	next_list_item ; TEACHER (3), SS Aqua
@@ -2844,19 +2850,19 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (2), Route 2
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw BEEDRILL
-	db 39
+	db 49
 	dw BUTTERFREE
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (3), Route 2
 	db "ED@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw VENOMOTH
-	db 36
+	db 46
 	dw BUTTERFREE
-	db 36
+	db 46
 	dw BEEDRILL
 	db -1 ; end
 
@@ -2940,7 +2946,7 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (12), Route 2
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw ARIADOS
 	db -1 ; end
 
@@ -3024,17 +3030,17 @@ FisherGroup:
 
 	next_list_item ; FISHER (3), Route 21
 	db "ARNOLD@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw TENTACRUEL
 	db -1 ; end
 
 	next_list_item ; FISHER (4), Route 12
 	db "KYLE@", TRAINERTYPE_NORMAL
-	db 34
+	db 44
 	dw GOLDUCK
-	db 38
+	db 48
 	dw POLIWHIRL
-	db 38
+	db 48
 	dw SEAKING
 	db -1 ; end
 
@@ -3120,31 +3126,31 @@ FisherGroup:
 
 	next_list_item ; FISHER (13), Route 12
 	db "MARTIN@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw OCTILLERY
-	db 39
+	db 49
 	dw KINGLER
 	db -1 ; end
 
 	next_list_item ; FISHER (14), Route 12
 	db "STEPHEN@", TRAINERTYPE_NORMAL
-	db 30
+	db 40
 	dw MAGIKARP
-	db 30
+	db 44
 	dw GYARADOS
-	db 38
+	db 48
 	dw QWILFISH
-	db 38
+	db 48
 	dw TENTACRUEL
 	db -1 ; end
 
 	next_list_item ; FISHER (15), Route 12
 	db "BARNEY@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw QWILFISH
-	db 36
+	db 46
 	dw CORSOLA
-	db 36
+	db 46
 	dw GYARADOS
 	db -1 ; end
 
@@ -3244,9 +3250,9 @@ FisherGroup:
 SwimmerMGroup:
 	next_list_item ; SWIMMERM (1), Route 19
 	db "HAROLD@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw OCTILLERY
-	db 36
+	db 46
 	dw SEADRA
 	db -1 ; end
 
@@ -3364,21 +3370,21 @@ SwimmerMGroup:
 
 	next_list_item ; SWIMMERM (14), Route 19
 	db "JEROME@", TRAINERTYPE_NORMAL
-	db 32
+	db 42
 	dw SEADRA
-	db 34
+	db 44
 	dw LANTURN
-	db 36
+	db 46
 	dw TENTACRUEL
-	db 34
+	db 44
 	dw SLOWBRO
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (15), Route 19
 	db "TUCKER@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw VAPOREON
-	db 41
+	db 51
 	dw CLOYSTER
 	db -1 ; end
 
@@ -3394,17 +3400,17 @@ SwimmerMGroup:
 
 	next_list_item ; SWIMMERM (17), Route 20
 	db "CAMERON@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw AZUMARILL
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (18), Route 21
 	db "SETH@", TRAINERTYPE_NORMAL
-	db 35
+	db 45
 	dw STARMIE
-	db 35
+	db 45
 	dw OCTILLERY
-	db 39
+	db 49
 	dw QUAGSIRE
 	db -1 ; end
 
@@ -3525,7 +3531,7 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (12), Route 19
 	db "DAWN@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw SEAKING
 	db -1 ; end
 
@@ -3537,19 +3543,19 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (14), Route 20
 	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 35
+	db 45
 	dw AZUMARILL
-	db 35
+	db 45
 	dw VAPOREON
-	db 39
+	db 49
 	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (15), Route 20
 	db "LORI@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw CLOYSTER
-	db 39
+	db 49
 	dw STARMIE
 	db -1 ; end
 
@@ -3561,13 +3567,13 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (17), Route 21
 	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 34
+	db 44
 	dw MANTINE
-	db 34
+	db 44
 	dw LAPRAS
-	db 34
+	db 44
 	dw TENTACRUEL
-	db 34
+	db 44
 	dw DEWGONG
 	db -1 ; end
 
@@ -3743,25 +3749,25 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (6), Route 8
 	db "SAM@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw WEEZING
-	db 41
+	db 51
 	dw MUK
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (7), Route 8
 	db "TOM@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw NINETALES
-	db 39
+	db 49
 	dw LICKITUNG
-	db 39
+	db 49
 	dw MAGNETON
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (8), Route 25
 	db "PAT@", TRAINERTYPE_NORMAL
-	db 44
+	db 54
 	dw PORYGON2
 	db -1 ; end
 
@@ -3970,11 +3976,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (13), Route 9
 	db "TIM@", TRAINERTYPE_NORMAL
-	db 38
+	db 48
 	dw MACHAMP
-	db 38
+	db 48
 	dw DUGTRIO
-	db 38
+	db 48
 	dw GOLEM
 	db -1 ; end
 
@@ -3988,27 +3994,27 @@ HikerGroup:
 
 	next_list_item ; HIKER (15), Route 9
 	db "SIDNEY@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw DUGTRIO
-	db 39
+	db 49
 	dw ONIX
 	db -1 ; end
 
 	next_list_item ; HIKER (16), Route 13
 	db "KENNY@", TRAINERTYPE_NORMAL
-	db 33
+	db 43
 	dw SANDSLASH
-	db 35
+	db 45
 	dw DONPHAN
-	db 38
+	db 48
 	dw GOLEM
-	db 35
+	db 45
 	dw GLIGAR
 	db -1 ; end
 
 	next_list_item ; HIKER (17), Route 10
 	db "JIM@", TRAINERTYPE_NORMAL
-	db 42
+	db 52
 	dw MACHAMP
 	db -1 ; end
 
@@ -4077,61 +4083,61 @@ BikerGroup:
 
 	next_list_item ; BIKER (3), Route 8
 	db "DWAYNE@", TRAINERTYPE_NORMAL
-	db 33
+	db 43
 	dw MAGMAR
-	db 34
+	db 44
 	dw MURKROW
-	db 35
+	db 45
 	dw FEAROW
-	db 36
+	db 46
 	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; BIKER (4), Route 8
 	db "HARRIS@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw FLAREON
 	db -1 ; end
 
 	next_list_item ; BIKER (5), Route 8
 	db "ZEKE@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw MURKROW
-	db 39
+	db 49
 	dw MUK
 	db -1 ; end
 
 	next_list_item ; BIKER (6), Route 18
 	db "CHARLES@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw MAGMAR
-	db 36
+	db 46
 	dw CHARIZARD
-	db 36
+	db 46
 	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; BIKER (7), Route 17
 	db "RILEY@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; BIKER (8), Route 17
 	db "JOEL@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw WEEZING
-	db 39
+	db 49
 	dw MAGMAR
 	db -1 ; end
 
 	next_list_item ; BIKER (9), Route 17
 	db "GLENN@", TRAINERTYPE_NORMAL
-	db 34
+	db 44
 	dw FEAROW
-	db 36
+	db 46
 	dw MAGMAR
-	db 39
+	db 49
 	dw WEEZING
 	db -1 ; end
 
@@ -4175,12 +4181,12 @@ BurglarGroup:
 FirebreatherGroup:
 	next_list_item ; FIREBREATHER (1), Route 3
 	db "OTIS@", TRAINERTYPE_NORMAL
-	db 35
+	db 45
 	dw MAGMAR
-	db 39
+	db 49
 	dw WEEZING
-	db 35
-	dw PONYTA
+	db 45
+	dw RAPIDASH
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (2), unused ???
@@ -4201,9 +4207,9 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (4), Route 3
 	db "BURT@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw WEEZING
-	db 39
+	db 49
 	dw MAGCARGO
 	db -1 ; end
 
@@ -4493,17 +4499,17 @@ PsychicGroup:
 
 	next_list_item ; PSYCHIC_T (3), Route 11
 	db "HERMAN@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw XATU
-	db 36
+	db 46
 	dw MR__MIME
-	db 36
+	db 46
 	dw EXEGGUTOR
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (4), Route 11
 	db "FIDEL@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw XATU
 	db -1 ; end
 
@@ -4622,15 +4628,15 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (6), Route 4
 	db "HOPE@", TRAINERTYPE_NORMAL
-	db 41
-	dw FLAAFFY
+	db 51
+	dw AMPHAROS
 	db -1 ; end
 
 	next_list_item ; PICNICKER (7), Route 4
 	db "SHARON@", TRAINERTYPE_NORMAL
-	db 38
+	db 48
 	dw FURRET
-	db 40
+	db 50
 	dw RAPIDASH
 	db -1 ; end
 
@@ -4678,17 +4684,17 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (13), Route 9
 	db "HEIDI@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw JUMPLUFF
-	db 39
+	db 49
 	dw NIDOQUEEN
 	db -1 ; end
 
 	next_list_item ; PICNICKER (14), Route 9
 	db "EDNA@", TRAINERTYPE_NORMAL
-	db 36
+	db 46
 	dw NIDORINA
-	db 41
+	db 51
 	dw RAICHU
 	db -1 ; end
 
@@ -4836,25 +4842,25 @@ CamperGroup:
 
 	next_list_item ; CAMPER (6), Route 25
 	db "LLOYD@", TRAINERTYPE_NORMAL
-	db 41
+	db 51
 	dw NIDOKING
 	db -1 ; end
 
 	next_list_item ; CAMPER (7), Route 9
 	db "DEAN@", TRAINERTYPE_NORMAL
-	db 40
+	db 50
 	dw GOLDUCK
-	db 38
+	db 48
 	dw SANDSLASH
 	db -1 ; end
 
 	next_list_item ; CAMPER (8), Route 9
 	db "SID@", TRAINERTYPE_NORMAL
-	db 39
+	db 49
 	dw DUGTRIO
-	db 35
+	db 45
 	dw PRIMEAPE
-	db 35
+	db 45
 	dw POLIWRATH
 	db -1 ; end
 
@@ -5293,50 +5299,50 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (3), Route 10
 	db "ROBERT@", TRAINERTYPE_ITEM
-	db 40
+	db 50
 	dw QUAGSIRE
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (4), Route 13
 	db "JOSHUA@", TRAINERTYPE_ITEM
-	db 28
+	db 38
 	dw PIKACHU
 	dw BERRY
-	db 28
+	db 38
 	dw PIKACHU
 	dw BERRY
-	db 28
+	db 38
 	dw PIKACHU
 	dw BERRY
-	db 28
+	db 38
 	dw RAICHU
 	dw BERRY
-	db 28
+	db 38
 	dw PIKACHU
 	dw BERRY
-	db 28
+	db 38
 	dw PIKACHU
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (5), Route 14
 	db "CARTER@", TRAINERTYPE_ITEM
-	db 35
-	dw BULBASAUR
+	db 45
+	dw VENUSAUR
 	dw BERRY
-	db 35
-	dw CHARMANDER
+	db 45
+	dw CHARIZARD
 	dw BERRY
-	db 35
-	dw SQUIRTLE
+	db 45
+	dw BLASTOISE
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (6), Route 14
 	db "TREVOR@", TRAINERTYPE_ITEM
-	db 40
-	dw PSYDUCK
+	db 50
+	dw GOLDUCK
 	dw BERRY
 	db -1 ; end
 
@@ -5383,27 +5389,27 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (12), Route 13
 	db "ALEX@", TRAINERTYPE_ITEM
-	db 35
+	db 45
 	dw NIDOKING
 	dw BERRY
-	db 35
+	db 45
 	dw SLOWKING
 	dw BERRY
-	db 35
+	db 45
 	dw SEAKING
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (13), Route 6
 	db "REX@", TRAINERTYPE_ITEM
-	db 42
+	db 52
 	dw DONPHAN
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (14), Route 6
 	db "ALLAN@", TRAINERTYPE_ITEM
-	db 42
+	db 52
 	dw URSARING
 	dw BERRY
 	db -1 ; end
