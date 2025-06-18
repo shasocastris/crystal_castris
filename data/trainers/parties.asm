@@ -5195,7 +5195,7 @@ MediumGroup:
 	db "MARTHA@", TRAINERTYPE_NORMAL
 	db 22
 	dw GASTLY
-	db 24
+	db 25
 	dw PARAS
 	db 24
 	dw HAUNTER
