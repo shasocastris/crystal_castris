@@ -3,6 +3,8 @@
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL1
 	const DARKCAVEBLACKTHORNENTRANCE_POKE_BALL2
 	const DARKCAVEBLACKTHORNENTRANCE_MEW
+	const DARKCAVEBLACKTHORNENTRANCE_BLACKBELT
+	const DARKCAVEBLACKTHORNENTRANCE_SUPER_NERD
 
 DarkCaveBlackthornEntrance_MapScripts:
 	def_scene_scripts
@@ -61,11 +63,99 @@ DarkCaveBlackthornEntrancePharmacistScript:
 	closetext
 	end
 
+TrainerBlackbeltDomun:
+	trainer BLACKBELT_T, DOMUN, EVENT_BEAT_BLACKBELT_DOMUN, BlackbeltDomunSeenText, BlackbeltDomunBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BlackbeltDomunAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSupernerdDave:
+	trainer SUPER_NERD, DAVE, EVENT_BEAT_SUPER_NERD_DAVE, SupernerdDaveSeenText, SupernerdDaveBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SupernerdDaveAfterBattleText
+	waitbutton
+	closetext
+	end
+
 DarkCaveBlackthornEntranceRevive:
 	itemball REVIVE
 
 DarkCaveBlackthornEntranceMistStone:
 	itemball MIST_STONE
+
+BlackbeltDomunSeenText:
+	text "This cave is the"
+	line "perfect training"
+	cont "ground!"
+
+	para "Dark, rocky, and"
+	line "full of wild"
+	cont "#MON!"
+
+	para "Let me show you"
+	line "real power!"
+	done
+
+BlackbeltDomunBeatenText:
+	text "Your spirit burns"
+	line "bright!"
+	done
+
+BlackbeltDomunAfterBattleText:
+	text "I come here from"
+	line "BLACKTHORN to"
+	cont "train in darkness."
+
+	para "Fighting without"
+	line "sight sharpens"
+	cont "all other senses!"
+
+	para "The dragon masters"
+	line "aren't the only"
+	cont "tough trainers"
+	cont "in this city!"
+	done
+
+SupernerdDaveSeenText:
+	text "Fascinating! This"
+	line "cave connects to"
+	cont "Route 31!"
+
+	para "I'm studying how"
+	line "#MON navigate"
+	cont "in total darkness."
+
+	para "Care to be a test"
+	line "subject?"
+	done
+
+SupernerdDaveBeatenText:
+	text "Remarkable data!"
+	done
+
+SupernerdDaveAfterBattleText:
+	text "Did you know some"
+	line "#MON use echo-"
+	cont "location here?"
+
+	para "ZUBAT family and"
+	line "others have"
+	cont "adapted perfectly!"
+
+	para "The cave's unique"
+	line "environment makes"
+	cont "it a natural lab!"
+
+	para "I'm documenting"
+	line "every species I"
+	cont "encounter here."
+	done
 
 DarkCaveBlackthornEntrancePharmacistText1:
 	text "Whoa! You startled"
@@ -111,3 +201,5 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event 21, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceRevive, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_REVIVE
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceMistStone, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_MIST_STONE
 	object_event 15, 10, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Mew, EVENT_DARK_CAVE_MEW
+	object_event 22, 21, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltDomun, -1
+	object_event  8, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSupernerdDave, -1

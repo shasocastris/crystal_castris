@@ -209,7 +209,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA1
 	const ELLEN
 	const NONI
-	const CONNIE3 ; unused
+	const CONNIE3 ; unused, Dark Cave, Violet
 	const DANA2
 	const DANA3
 	const DANA4
@@ -457,8 +457,8 @@ DEF KRIS EQU __trainer_class__
 	const STAN
 	const ERIC
 	const GREGG
-	const JAY ; unused
-	const DAVE ; unused
+	const JAY ; unused, Dark Cave, Violet
+	const DAVE
 	const SAM
 	const TOM
 	const PAT
@@ -497,8 +497,8 @@ DEF KRIS EQU __trainer_class__
 	const ANTHONY4
 
 	trainerclass BIKER ; 30
-	const BIKER_BENNY ; unused
-	const KAZU ; unused
+	const BIKER_BENNY ; unused, Route 18
+	const KAZU ; unused, Route 18
 	const DWAYNE
 	const HARRIS
 	const ZEKE
@@ -533,7 +533,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BLACKBELT_T ; 34
 	const KENJI1
 	const YOSHI
-	const KENJI2 ; unused
+	const DOMUN
 	const LAO
 	const NOB
 	const KIYO
@@ -602,7 +602,7 @@ DEF KRIS EQU __trainer_class__
 	const TODD2
 	const TODD3
 	const THOMAS
-	const LEROY ; unused
+	const LEROY ; unused, Dark Cave, Violet
 	const DAVID ; unused
 	const JOHN ; unused
 	const JERRY

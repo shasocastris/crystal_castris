@@ -3786,10 +3786,14 @@ SuperNerdGroup:
 	dw MAGNEMITE
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (5), unused ???
+	next_list_item ; SUPER_NERD (5), Dark Cave, Blackthorn Entrance
 	db "DAVE@", TRAINERTYPE_NORMAL
 	db 29
 	dw DITTO
+	db 27
+	dw CROBAT
+	db 31
+	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (6), Route 8
@@ -4385,8 +4389,8 @@ BlackbeltGroup:
 	dw DOUBLE_KICK, MEDITATE, JUMP_KICK, FOCUS_ENERGY
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (3), unused ???
-	db "KENJI@", TRAINERTYPE_MOVES
+	next_list_item ; BLACKBELT_T (3), Dark Cave, Blackthorn Entrance
+	db "DOMUN@", TRAINERTYPE_MOVES
 	db 40
 	dw ONIX
 	dw BIND, ROCK_THROW, TOXIC, DIG
