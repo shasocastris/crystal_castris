@@ -3750,9 +3750,11 @@ SailorGroup:
 	end_list_items
 
 SuperNerdGroup:
-	next_list_item ; SUPER_NERD (1), unused ???
+	next_list_item ; SUPER_NERD (1)
 	db "STAN@", TRAINERTYPE_NORMAL
-	db 24
+	db 32
+	dw HOUNDOOM
+	db 32
 	dw GRIMER
 	db -1 ; end
 
@@ -4905,16 +4907,20 @@ CamperGroup:
 	dw POLIWRATH
 	db -1 ; end
 
-	next_list_item ; CAMPER (9), unused ???
+	next_list_item ; CAMPER (9), Ilex Forest
 	db "HARVEY@", TRAINERTYPE_NORMAL
-	db 18
-	dw NIDORINO
+	db 11
+    dw ODDISH
+    db 11
+    dw BELLSPROUT
+    db 13
+    dw HOOTHOOT
 	db -1 ; end
 
-	next_list_item ; CAMPER (10), unused ???
+	next_list_item ; CAMPER (10), Ilex Forest
 	db "DALE@", TRAINERTYPE_NORMAL
-	db 18
-	dw NIDORINO
+	db 15
+    dw FURRET
 	db -1 ; end
 
 	next_list_item ; CAMPER (11), Route 46

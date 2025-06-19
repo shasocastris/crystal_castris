@@ -27,8 +27,63 @@ SlowpokeWellB2FGymGuideScript:
 	closetext
 	end
 
+TrainerSuperNerdStan:
+	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, SuperNerdStanText, SuperNerdStanBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SuperNerdStanAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SlowpokeWellB2FTMRainDance:
 	itemball TM_RAIN_DANCE
+
+SuperNerdStanText:
+	text "Whoa! How did you"
+	line "get down here?"
+
+	para "I've been studying"
+	line "the underground"
+
+	para "ecosystem of this"
+	line "well for weeks!"
+
+	para "My HOUNDOOM can"
+	line "smell different"
+
+	para "mineral deposits,"
+	line "and GRIMER absorbs"
+	cont "toxins."
+
+	para "Care for a battle"
+	line "in the depths?"
+	done
+
+SuperNerdStanBeatenText:
+	text "Incredible! Your"
+	line "technique echoes"
+	cont "through the well!"
+	done
+
+SuperNerdStanAfterBattleText:
+	text "The SLOWPOKE here"
+	line "have such unique"
+
+	para "behavior patterns"
+	line "compared to"
+	cont "surface ones."
+
+	para "I think the water"
+	line "affects their"
+
+	para "psychic growth!"
+
+	para "This underground"
+	line "place is a"
+	cont "natural lab!"
+	done
 
 SlowpokeWellB2FGymGuideText:
 	text "I'm waiting to see"
@@ -72,3 +127,4 @@ SlowpokeWellB2F_MapEvents:
 	def_object_events
 	object_event  5,  4, SPRITE_GYM_GUIDE, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SlowpokeWellB2FGymGuideScript, -1
 	object_event 15,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB2FTMRainDance, EVENT_SLOWPOKE_WELL_B2F_TM_RAIN_DANCE
+	object_event 16,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdStan, -1
