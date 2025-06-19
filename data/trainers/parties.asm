@@ -3357,22 +3357,20 @@ SwimmerMGroup:
 	dw KRABBY
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (9), unused ???
+	next_list_item ; SWIMMERM (9), Route 41
 	db "HAL@", TRAINERTYPE_NORMAL
-	db 29
+	db 24
 	dw SEEL
-	db 30
-	dw DEWGONG
-	db 29
-	dw SEEL
+	db 35
+	dw GOLDEEN
+	db 24
+	dw CROCONAW
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (10), unused ???
+	next_list_item ; SWIMMERM (10), Cianwood City
 	db "PATON@", TRAINERTYPE_NORMAL
-	db 32
-	dw PILOSWINE
-	db 32
-	dw PILOSWINE
+	db 27
+	dw LANTURN
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (11), unused ???
@@ -3552,22 +3550,26 @@ SwimmerFGroup:
 	dw QUAGSIRE
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (9), unused ???
+	next_list_item ; SWIMMERF (9), Route 41
 	db "JILL@", TRAINERTYPE_NORMAL
-	db 34
-	dw DEWGONG
+	db 28
+	dw LAPRAS
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (10), unused ???
+	next_list_item ; SWIMMERF (10), Route 41
 	db "MARY@", TRAINERTYPE_NORMAL
 	db 24
-	dw SEAKING
+	dw STARMIE
+	db 24
+	dw AZUMARILL
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (11), unused ???
+	next_list_item ; SWIMMERF (11), Cianwood City
 	db "KATIE@", TRAINERTYPE_NORMAL
-	db 40
-	dw DEWGONG
+	db 25
+	dw QUAGSIRE
+	db 25
+	dw POLITOED
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (12), Route 19

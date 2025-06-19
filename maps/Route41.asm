@@ -9,6 +9,9 @@
 	const ROUTE41_SWIMMER_GIRL3
 	const ROUTE41_SWIMMER_GIRL4
 	const ROUTE41_SWIMMER_GIRL5
+	const ROUTE41_SWIMMER_GIRL6
+	const ROUTE41_SWIMMER_GIRL7
+	const ROUTE41_OLIVINE_RIVAL6
 
 Route41_MapScripts:
 	def_scene_scripts
@@ -111,6 +114,36 @@ TrainerSwimmermMathew:
 .Script:
 	opentext
 	writetext SwimmermMathewAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfJill:
+	trainer SWIMMERF, JILL, EVENT_BEAT_SWIMMERF_JILL, SwimmerfJillSeenText, SwimmerfJillBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfJillAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfMary:
+	trainer SWIMMERF, MARY, EVENT_BEAT_SWIMMERF_MARY, SwimmerfMarySeenText, SwimmerfMaryBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfMaryAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermHal:
+	trainer SWIMMERM, HAL, EVENT_BEAT_SWIMMERM_HAL, SwimmermHalSeenText, SwimmermHalBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermHalAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -327,6 +360,110 @@ SwimmerfWendyAfterBattleText:
 	line "it's scary."
 	done
 
+SwimmerfJillSeenText:
+	text "The waters around"
+	line "the WHIRL ISLANDS"
+	cont "are so mysterious!"
+
+	para "I love swimming"
+	line "here, but these"
+	cont "currents are wild!"
+
+	para "Let's battle while"
+	line "we float!"
+	done
+
+SwimmerfJillBeatenText:
+	text "The waves got the"
+	line "better of me!"
+	done
+
+SwimmerfJillAfterBattleText:
+	text "I've heard strange"
+	line "sounds coming from"
+	cont "those islands…"
+
+	para "Like a beautiful,"
+	line "haunting song that"
+	cont "echoes over the"
+	cont "water."
+
+	para "Maybe it's just"
+	line "the wind through"
+	cont "the caves?"
+	done
+
+SwimmerfMarySeenText:
+	text "These whirlpools"
+	line "are incredible!"
+
+	para "I train my #MON"
+	line "to swim through"
+	cont "them!"
+
+	para "Want to see how"
+	line "strong we are?"
+	done
+
+SwimmerfMaryBeatenText:
+	text "You're as powerful"
+	line "as these pools!"
+	done
+
+SwimmerfMaryAfterBattleText:
+	text "Swimming near"
+	line "WHIRL ISLANDS has"
+
+	para "made my #MON"
+	line "much tougher!"
+
+	para "Strong currents"
+	line "are like natural"
+	cont "training gear!"
+
+	para "But I stay away"
+	line "from the really"
+	cont "big ones…"
+	done
+
+SwimmermHalSeenText:
+	text "I'm exploring"
+	line "every inch of"
+	cont "these waters!"
+
+	para "WHIRL ISLANDS"
+	line "hold so many"
+	cont "secrets!"
+
+	para "But first, let's"
+	line "battle!"
+	done
+
+SwimmermHalBeatenText:
+	text "You navigated that"
+	line "perfectly!"
+	done
+
+SwimmermHalAfterBattleText:
+	text "I've been mapping"
+	line "the pools and"
+	cont "underwater caves."
+
+	para "There are passages"
+	line "that lead deep"
+	cont "into the islands!"
+
+	para "Legend says some-"
+	line "thing amazing"
+
+	para "rests in the heart"
+	line "of these islands…"
+
+	para "But getting there"
+	line "safely? That's"
+	cont "the challenge!"
+	done
+
 Route41_MapEvents:
 	db 0, 0 ; filler
 
@@ -352,3 +489,6 @@ Route41_MapEvents:
 	object_event 27, 34, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
 	object_event 44, 28, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfKara, -1
 	object_event  9, 50, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfWendy, -1
+	object_event  1,  7, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfJill, -1
+	object_event  3, 27, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfMary, -1
+	object_event  2, 46, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSwimmermHal, -1

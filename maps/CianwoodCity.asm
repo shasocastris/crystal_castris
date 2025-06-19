@@ -11,6 +11,8 @@
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
+    const CIANWOODCITY_SWIMMER_GIRL
+	const CIANWOODCITY_OLIVINE_RIVAL
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -106,6 +108,26 @@ CianwoodCityChucksWife:
 	writetext ChucksWifeChubbyText
 	waitbutton
 .Done:
+	closetext
+	end
+
+TrainerSwimmerfKatie:
+	trainer SWIMMERF, KATIE, EVENT_BEAT_SWIMMERF_KATIE, SwimmerfKatieSeenText, SwimmerfKatieBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfKatieAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermPaton:
+	trainer SWIMMERM, PATON, EVENT_BEAT_SWIMMERM_PATON, SwimmermPatonSeenText, SwimmermPatonBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermPatonAfterBattleText
+	waitbutton
 	closetext
 	end
 
@@ -377,6 +399,69 @@ CianwoodPokeSeerSignText:
 	line "AHEAD"
 	done
 
+SwimmerfKatieSeenText:
+	text "I swim here to"
+	line "train for the gym!"
+
+	para "CHUCK's #MON"
+	line "are so tough!"
+
+	para "Want to help me"
+	line "practice?"
+	done
+
+SwimmerfKatieBeatenText:
+	text "I need more ocean"
+	line "training!"
+	done
+
+SwimmerfKatieAfterBattleText:
+	text "The waters around"
+	line "CIANWOOD are"
+	cont "perfect for"
+	cont "training!"
+
+	para "Strong currents"
+	line "and big waves"
+	cont "build endurance."
+
+	para "No wonder CHUCK"
+	line "built his gym"
+	cont "here by the sea!"
+	done
+
+SwimmermPatonSeenText:
+	text "The pharmacy here"
+	line "makes the best"
+	cont "medicine!"
+
+	para "I swim daily to"
+	line "stay healthy and"
+	cont "avoid needing it!"
+
+	para "Care to race?"
+	done
+
+SwimmermPatonBeatenText:
+	text "Maybe I do need"
+	line "that medicine!"
+	done
+
+SwimmermPatonAfterBattleText:
+	text "CIANWOOD's ocean"
+	line "air is so fresh"
+	cont "and clean!"
+
+	para "Between swimming"
+	line "and the sea"
+	cont "breeze, I never"
+	cont "get sick!"
+
+	para "This city knows"
+	line "the secret to"
+	cont "good health!"
+	done
+
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -415,3 +500,5 @@ CianwoodCity_MapEvents:
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event 25, 15, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKatie, -1
+	object_event 22, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPaton, -1
