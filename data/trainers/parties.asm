@@ -4953,14 +4953,14 @@ CamperGroup:
 
 	next_list_item ; CAMPER (14), unused ???
 	db "THOMAS@", TRAINERTYPE_NORMAL
-	db 40
-	dw GRAVELER
-	db 44
-	dw GRAVELER
-	db 48
-	dw GOLBAT
-	db 51
-	dw GOLDUCK
+	db 15
+	dw GEODUDE
+	db 15
+	dw GEODUDE
+	db 18
+	dw ZUBAT
+	db 16
+	dw PSYDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (15), unused ???
@@ -5596,13 +5596,11 @@ TwinsGroup:
 	db -1 ; end
 
 	next_list_item ; TWINS (10), unused ???
-	db "LEA & PIA@", TRAINERTYPE_MOVES
-	db 46
-	dw DRATINI
-	dw THUNDER_WAVE, TWISTER, ICE_BEAM, HEADBUTT
-	db 46
-	dw DRATINI
-	dw THUNDER_WAVE, TWISTER, FLAMETHROWER, HEADBUTT
+	db "SAM & PAM@", TRAINERTYPE_NORMAL
+	db 16
+	dw CUBONE
+	db 16
+	dw PHANPY
 	db -1 ; end
 
 	end_list_items
@@ -5622,10 +5620,10 @@ PokefanFGroup:
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANF (3), unused ???
-	db "BEVERLY@", TRAINERTYPE_ITEM
-	db 22
-	dw SNUBBULL
+	next_list_item ; POKEFANF (3), National Park
+	db "JACKIE@", TRAINERTYPE_ITEM
+	db 17
+	dw BUTTERFREE
 	dw BERRY
 	db -1 ; end
 

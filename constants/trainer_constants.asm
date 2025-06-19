@@ -601,7 +601,7 @@ DEF KRIS EQU __trainer_class__
 	const TED
 	const TODD2
 	const TODD3
-	const THOMAS ; unused
+	const THOMAS
 	const LEROY ; unused
 	const DAVID ; unused
 	const JOHN ; unused
@@ -677,12 +677,12 @@ DEF KRIS EQU __trainer_class__
 	const MEGANDPEG1
 	const MEGANDPEG2
 	const LEAANDPIA1
-	const LEAANDPIA2 ; unused
+	const SAMANDPAM
 
 	trainerclass POKEFANF ; 40
 	const BEVERLY1
 	const RUTH
-	const BEVERLY2 ; unused
+	const JACKIE
 	const BEVERLY3 ; unused
 	const GEORGIA
 	const JAIME

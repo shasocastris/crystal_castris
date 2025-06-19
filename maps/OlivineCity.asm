@@ -179,14 +179,13 @@ OlivineCityRivalText:
 	cont "She's at the"
 	cont "LIGHTHOUSE."
 
-	para "Taking care of some"
-	line "sick #MON, I heard."
+	para "Taking care of a"
+	line "sick #MON."
 
 	para "…Hmph. What's the"
-	line "point? If a #MON"
-	cont "can't battle, then…"
-
-	para "…"
+	line "point? If a"
+	cont "#MON can't"
+	cont "battle, then…"
 
 	para "Why would someone"
 	line "spend so much time"

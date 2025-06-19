@@ -13,6 +13,9 @@
 	const NATIONALPARK_POKE_BALL1
 	const NATIONALPARK_GAMEBOY_KID
 	const NATIONALPARK_POKE_BALL2
+	const NATIONALPARK_TWIN1
+	const NATIONALPARK_TWIN2
+	const NATIONALPARK_YOUNGSTER4
 
 NationalPark_MapScripts:
 	def_scene_scripts
@@ -276,6 +279,26 @@ TrainerLassKrise:
 	closetext
 	end
 
+TrainerTwinsSamandpam1:
+	trainer TWINS, SAMANDPAM, EVENT_BEAT_TWINS_SAM_AND_PAM, TwinsSamandpam1SeenText, TwinsSamandpam1BeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext TwinsSamandpam1AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperThomas:
+	trainer CAMPER, THOMAS, EVENT_BEAT_CAMPER_THOMAS, CamperThomasSeenText, CamperThomasBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperThomasAfterBattleText
+	waitbutton
+	closetext
+	end
+
 NationalParkRelaxationSquareSign:
 	jumptext NationalParkRelaxationSquareText
 
@@ -476,6 +499,78 @@ LassKriseAfterBattleText:
 	cont "because I'm cute!"
 	done
 
+TwinsSamandpam1SeenText:
+	text "SAM: Hey, it's a"
+	line "trainer!"
+
+	para "PAM: Let's battle"
+	line "together!"
+
+	para "SAM & PAM: We're"
+	line "practicing our"
+	cont "teamwork!"
+	done
+
+TwinsSamandpam1BeatenText:
+	text "SAM & PAM: We need"
+	line "more practice!"
+	done
+
+TwinsSamandpam1AfterBattleText:
+	text "SAM: Battling in"
+	line "the park is so"
+	cont "much fun!"
+
+	para "PAM: All the wild"
+	line "#MON here watch"
+	cont "our battles!"
+
+	para "SAM: Maybe they're"
+	line "learning from us?"
+
+	para "PAM: Or maybe"
+	line "they're just"
+	cont "curious!"
+	done
+
+CamperThomasSeenText:
+	text "I've been camping"
+	line "in the National"
+	cont "Park for days!"
+
+	para "My #MON and I"
+	line "have gotten really"
+	cont "close to nature!"
+
+	para "Want to see what"
+	line "we've learned out"
+	cont "here?"
+	done
+
+CamperThomasBeatenText:
+	text "Guess we need more"
+	line "outdoor training!"
+	done
+
+CamperThomasAfterBattleText:
+	text "Camping here has"
+	line "taught me so much"
+
+	para "about #MON in"
+	line "their natural"
+	cont "habitat!"
+
+	para "The Bug Catching"
+	line "Contest isn't the"
+
+	para "only reason to"
+	line "visit this park!"
+
+	para "It's a great place"
+	line "to bond with your"
+	cont "#MON team!"
+	done
+
 NationalParkRelaxationSquareText:
 	text "RELAXATION SQUARE"
 	line "NATIONAL PARK"
@@ -532,3 +627,6 @@ NationalPark_MapEvents:
 	object_event 35, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkParlyzHeal, EVENT_NATIONAL_PARK_PARLYZ_HEAL
 	object_event 26,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NationalParkGameboyKidScript, -1
 	object_event  1, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, NationalParkTMDig, EVENT_NATIONAL_PARK_TM_DIG
+	object_event 23, 44, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 0, TrainerTwinsSamandpam1, -1
+	object_event 24, 44, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 0, TrainerTwinsSamandpam1, -1
+	object_event  3, 35, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperThomas, -1
