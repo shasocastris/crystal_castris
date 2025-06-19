@@ -3375,14 +3375,14 @@ SwimmerMGroup:
 	dw LANTURN
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (11), unused ???
+	next_list_item ; SWIMMERM (11), Mt Mortar
 	db "DARYL@", TRAINERTYPE_NORMAL
-	db 29
-	dw SHELLDER
-	db 30
-	dw CLOYSTER
-	db 29
-	dw SHELLDER
+	db 47
+	dw GYARADOS
+	db 48
+	dw KINGLER
+	db 45
+	dw POLIWRATH
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (12), unused ???
@@ -3580,10 +3580,14 @@ SwimmerFGroup:
 	dw SEAKING
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (13), unused ???
+	next_list_item ; SWIMMERF (13), Mt Mortar
 	db "TARA@", TRAINERTYPE_NORMAL
-	db 24
-	dw SEAKING
+	db 45
+	dw DEWGONG
+	db 46
+	dw LAPRAS
+	db 47
+	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (14), Route 20
@@ -3604,10 +3608,14 @@ SwimmerFGroup:
 	dw STARMIE
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (16), unused ???
+	next_list_item ; SWIMMERF (16), Mt Mortar
 	db "JODY@", TRAINERTYPE_NORMAL
-	db 24
-	dw SEAKING
+	db 44
+	dw GOLDUCK
+	db 46
+	dw QUAGSIRE
+	db 48
+	dw SLOWKING
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (17), Route 21

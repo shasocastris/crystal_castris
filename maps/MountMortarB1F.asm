@@ -6,6 +6,9 @@
 	const MOUNTMORTARB1F_POKE_BALL3
 	const MOUNTMORTARB1F_POKE_BALL4
 	const MOUNTMORTARB1F_POKE_BALL5
+	const MOUNTMORTARB1F_SWIMMER_GIRL1
+	const MOUNTMORTARB1F_SWIMMER_GIRL2
+	const MOUNTMORTARB1F_SWIMMER_GUY
 
 MountMortarB1F_MapScripts:
 	def_scene_scripts
@@ -47,6 +50,36 @@ MountMortarB1FKiyoScript:
 
 .NoRoom:
 	writetext MountMortarB1FKiyoFullPartyText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfTara:
+	trainer SWIMMERF, TARA, EVENT_BEAT_SWIMMERF_TARA, SwimmerfTaraSeenText, SwimmerfTaraBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfTaraAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmerfJody:
+	trainer SWIMMERF, JODY, EVENT_BEAT_SWIMMERF_JODY, SwimmerfJodySeenText, SwimmerfJodyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfJodyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermDaryl:
+	trainer SWIMMERM, DARYL, EVENT_BEAT_SWIMMERM_DARYL, SwimmermDarylSeenText, SwimmermDarylBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermDarylAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -132,6 +165,96 @@ MountMortarB1FKiyoFullPartyText:
 	line "in your party!"
 	done
 
+SwimmerfTaraSeenText:
+	text "These pools are"
+	line "amazing for"
+	cont "training!"
+
+	para "Cold water makes"
+	line "my #MON tough!"
+
+	para "Want to test your"
+	line "endurance?"
+	done
+
+SwimmerfTaraBeatenText:
+	text "You're as tough"
+	line "as these waters!"
+	done
+
+SwimmerfTaraAfterBattleText:
+	text "Cave swimming is"
+	line "so different from"
+	cont "the ocean!"
+
+	para "No currents or"
+	line "waves, just pure"
+	cont "resistance!"
+
+	para "Physical training"
+	line "works for #MON"
+	cont "and trainers!"
+	done
+
+SwimmerfJodySeenText:
+	text "I came here to"
+	line "find rare #MON"
+	cont "in these pools!"
+
+	para "The water is so"
+	line "refreshing after"
+	cont "hiking!"
+
+	para "Let's battle to"
+	line "warm up!"
+	done
+
+SwimmerfJodyBeatenText:
+	text "That heated me up!"
+	done
+
+SwimmerfJodyAfterBattleText:
+	text "Cave pools create"
+	line "unique habitats!"
+
+	para "Even if I don't"
+	line "catch anything,"
+	cont "training is worth"
+	cont "it!"
+	done
+
+SwimmermDarylSeenText:
+	text "This cave has the"
+	line "most challenging"
+	cont "swimming spots!"
+
+	para "Deep pools, narrow"
+	line "passages, cold"
+	cont "temperatures!"
+
+	para "Perfect for"
+	line "serious training!"
+	done
+
+SwimmermDarylBeatenText:
+	text "You've got serious"
+	line "skills!"
+	done
+
+SwimmermDarylAfterBattleText:
+	text "I've swam in every"
+	line "major water body"
+	cont "in JOHTO!"
+
+	para "But these cave"
+	line "pools are the"
+	cont "ultimate test!"
+
+	para "No sunlight, echo"
+	line "sounds, freezing"
+	cont "water!"
+	done
+
 MountMortarB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -152,3 +275,6 @@ MountMortarB1F_MapEvents:
 	object_event 34, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FFullRestore, EVENT_MOUNT_MORTAR_B1F_FULL_RESTORE
 	object_event 32,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FMaxEther, EVENT_MOUNT_MORTAR_B1F_MAX_ETHER
 	object_event 21, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortarB1FPPUp, EVENT_MOUNT_MORTAR_B1F_PP_UP
+	object_event 27,  7, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfTara, -1
+	object_event 12, 22, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfJody, -1
+	object_event 27, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermDaryl, -1

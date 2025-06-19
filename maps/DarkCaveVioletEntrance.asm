@@ -170,6 +170,7 @@ CamperLeroyAfterBattleText:
 	para "Away from all the"
 	line "hustle and bustle"
 	cont "of the cities!"
+	done
 
 DarkCaveVioletEntrance_MapEvents:
 	db 0, 0 ; filler
