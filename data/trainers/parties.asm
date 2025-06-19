@@ -1751,10 +1751,12 @@ LassGroup:
 	dw HOOTHOOT
 	db -1 ; end
 
-	next_list_item ; LASS (13), unused ???
-	db "CONNIE@", TRAINERTYPE_NORMAL
-	db 26
-	dw MARILL
+	next_list_item ; LASS (5), Dark Cave, Violet
+	db "MARGE@", TRAINERTYPE_NORMAL
+	db 20
+	dw AZUMARILL
+	db 20
+	dw FLAAFFY
 	db -1 ; end
 
 	next_list_item ; LASS (14), Route 38
@@ -3778,11 +3780,11 @@ SuperNerdGroup:
 	dw GLOOM
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (4), unused ???
+	next_list_item ; SUPER_NERD (4), Dark Cave, Violet
 	db "JAY@", TRAINERTYPE_NORMAL
-	db 27
+	db 18
 	dw KOFFING
-	db 27
+	db 22
 	dw MAGNEMITE
 	db -1 ; end
 
@@ -4969,16 +4971,12 @@ CamperGroup:
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (15), unused ???
+	next_list_item ; CAMPER (15), Dark Cave, Violet
 	db "LEROY@", TRAINERTYPE_NORMAL
-	db 40
-	dw GRAVELER
-	db 44
-	dw GRAVELER
-	db 48
-	dw GOLBAT
-	db 51
-	dw GOLDUCK
+	db 19
+	dw SLUGMA
+	db 21
+	dw PSYDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (16), unused ???

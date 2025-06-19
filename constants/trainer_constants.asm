@@ -209,7 +209,7 @@ DEF KRIS EQU __trainer_class__
 	const DANA1
 	const ELLEN
 	const NONI
-	const CONNIE3 ; unused, Dark Cave, Violet
+	const MARGE
 	const DANA2
 	const DANA3
 	const DANA4
@@ -457,7 +457,7 @@ DEF KRIS EQU __trainer_class__
 	const STAN
 	const ERIC
 	const GREGG
-	const JAY ; unused, Dark Cave, Violet
+	const JAY
 	const DAVE
 	const SAM
 	const TOM
@@ -602,7 +602,7 @@ DEF KRIS EQU __trainer_class__
 	const TODD2
 	const TODD3
 	const THOMAS
-	const LEROY ; unused, Dark Cave, Violet
+	const LEROY
 	const DAVID ; unused
 	const JOHN ; unused
 	const JERRY

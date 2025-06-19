@@ -11,14 +11,44 @@
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL6
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL7
 	const DARKCAVEVIOLETENTRANCE_POKE_BALL8
-; LASS 31, 14
-; SUPER_NERD 10, 24
-; CAMPER 22, 31
+	const DARKCAVEVIOLETENTRANCE_LASS
+	const DARKCAVEVIOLETENTRANCE_SUPER_NERD
+	const DARKCAVEVIOLETENTRANCE_YOUNGSTER
 
 DarkCaveVioletEntrance_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+TrainerLassMarge:
+	trainer LASS, MARGE, EVENT_BEAT_LASS_MARGE, LassMargeSeenText, LassMargeBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext LassMargeAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSupernerdJay:
+	trainer SUPER_NERD, JAY, EVENT_BEAT_SUPER_NERD_JAY, SuperNerdJaySeenText, SuperNerdJayBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SuperNerdJayAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperLeroy:
+	trainer CAMPER, LEROY, EVENT_BEAT_CAMPER_LEROY, CamperLeroySeenText, CamperLeroyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperLeroyAfterBattleText
+	waitbutton
+	closetext
+	end
 
 DarkCaveVioletEntranceEther:
 	itemball ETHER
@@ -56,6 +86,91 @@ DarkCaveVioletEntranceHiddenMoonStone:
 DarkCaveVioletEntranceHiddenMaxRepel:
 	hiddenitem MAX_REPEL, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_MAX_REPEL
 
+LassMargeSeenText:
+	text "Oh thank goodness!"
+	line "Another person!"
+
+	para "I've been lost in"
+	line "here for hours!"
+
+	para "Maybe if I battle"
+	line "you, someone will"
+	cont "hear us!"
+	done
+
+LassMargeBeatenText:
+	text "At least I'm not"
+	line "alone anymore!"
+	done
+
+LassMargeAfterBattleText:
+	text "These tunnels all"
+	line "look the same in"
+	cont "the dark!"
+
+	para "Do you know the"
+	line "way out? I just"
+	cont "want to go home!"
+
+	para "Next time I'm"
+	line "bringing a MAP!"
+	done
+
+SuperNerdJaySeenText:
+	text "Excellent! Another"
+	line "cave explorer!"
+
+	para "I'm mapping every"
+	line "passage and"
+	cont "cataloging the"
+	cont "#MON here!"
+
+	para "Let's compare our"
+	line "findings!"
+	done
+
+SuperNerdJayBeatenText:
+	text "Fascinating battle"
+	line "techniques!"
+	done
+
+SuperNerdJayAfterBattleText:
+	text "This cave system"
+	line "is incredible!"
+
+	para "Multiple entrances"
+	line "and underground,"
+	cont "all stih rare"
+	cont "#MON."
+	done
+
+CamperLeroySeenText:
+	text "Ah, the peace and"
+	line "quiet of the cave!"
+
+	para "No crowds, no"
+	line "noise, just me"
+	cont "and my #MON!"
+
+	para "Though I guess"
+	line "you'll do for"
+	cont "company!"
+	done
+
+CamperLeroyBeatenText:
+	text "That was a nice"
+	line "break from the"
+	cont "silence!"
+	done
+
+CamperLeroyAfterBattleText:
+	text "I love camping in"
+	line "places like this."
+
+	para "Away from all the"
+	line "hustle and bustle"
+	cont "of the cities!"
+
 DarkCaveVioletEntrance_MapEvents:
 	db 0, 0 ; filler
 
@@ -88,3 +203,9 @@ DarkCaveVioletEntrance_MapEvents:
 	object_event 18, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceRevive, EVENT_DARK_CAVE_VIOLET_ENTRANCE_REVIVE
 	object_event  4, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceProtein, EVENT_DARK_CAVE_VIOLET_ENTRANCE_PROTEIN
 	object_event 12, 32, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceKingsRock, EVENT_DARK_CAVE_VIOLET_ENTRANCE_KINGS_ROCK
+	object_event 31, 14, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 3, TrainerLassMarge, -1
+	object_event 10, 24, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 3, TrainerSupernerdJay, -1
+	object_event 22, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperLeroy, -1
+; LASS 31, 14
+; SUPER_NERD 10, 24
+; CAMPER 22, 31
