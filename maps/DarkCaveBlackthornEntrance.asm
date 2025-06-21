@@ -73,12 +73,12 @@ TrainerBlackbeltDomun:
 	closetext
 	end
 
-TrainerSupernerdDave:
-	trainer SUPER_NERD, DAVE, EVENT_BEAT_SUPER_NERD_DAVE, SupernerdDaveSeenText, SupernerdDaveBeatenText, 0, .Script
+TrainerSuperNerdDave:
+	trainer SUPER_NERD, DAVE, EVENT_BEAT_SUPER_NERD_DAVE, SuperNerdDaveSeenText, SuperNerdDaveBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdDaveAfterBattleText
+	writetext SuperNerdDaveAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -122,7 +122,7 @@ BlackbeltDomunAfterBattleText:
 	cont "in this city!"
 	done
 
-SupernerdDaveSeenText:
+SuperNerdDaveSeenText:
 	text "Fascinating! This"
 	line "cave connects to"
 	cont "Route 31!"
@@ -135,11 +135,11 @@ SupernerdDaveSeenText:
 	line "subject?"
 	done
 
-SupernerdDaveBeatenText:
+SuperNerdDaveBeatenText:
 	text "Remarkable data!"
 	done
 
-SupernerdDaveAfterBattleText:
+SuperNerdDaveAfterBattleText:
 	text "Did you know some"
 	line "#MON use echo-"
 	cont "location here?"
@@ -202,4 +202,4 @@ DarkCaveBlackthornEntrance_MapEvents:
 	object_event  7, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveBlackthornEntranceMistStone, EVENT_DARK_CAVE_BLACKTHORN_ENTRANCE_MIST_STONE
 	object_event 15, 10, SPRITE_MEW, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, Mew, EVENT_DARK_CAVE_MEW
 	object_event 22, 21, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltDomun, -1
-	object_event  8, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSupernerdDave, -1
+	object_event  8, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdDave, -1

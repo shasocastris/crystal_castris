@@ -7,8 +7,8 @@ MountMortar1FOutside_MapScripts:
 
 	def_callbacks
 
-MountMortar1FOutsideEther:
-	itemball ETHER
+MountMortar1FOutsideMaxEther:
+	itemball MAX_ETHER
 
 MountMortar1FOutsideRevive:
 	itemball REVIVE
@@ -33,8 +33,8 @@ MountMortar1FOutside_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event 25, 22, BGEVENT_ITEM, MountMortar1FOutsideHiddenHyperPotion
+	bg_event 36, 29, BGEVENT_ITEM, MountMortar1FOutsideHiddenHyperPotion
 
 	def_object_events
-	object_event 13, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideEther, EVENT_MOUNT_MORTAR_1F_OUTSIDE_ETHER
+	object_event 13, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideMaxEther, EVENT_MOUNT_MORTAR_1F_OUTSIDE_MAX_ETHER
 	object_event 31, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMortar1FOutsideRevive, EVENT_MOUNT_MORTAR_1F_OUTSIDE_REVIVE

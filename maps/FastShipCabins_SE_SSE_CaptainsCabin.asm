@@ -199,12 +199,12 @@ TrainerPokefanfGeorgia:
 	closetext
 	end
 
-TrainerSupernerdShawn:
-	trainer SUPER_NERD, SHAWN, EVENT_BEAT_SUPER_NERD_SHAWN, SupernerdShawnSeenText, SupernerdShawnBeatenText, 0, .Script
+TrainerSuperNerdShawn:
+	trainer SUPER_NERD, SHAWN, EVENT_BEAT_SUPER_NERD_SHAWN, SuperNerdShawnSeenText, SuperNerdShawnBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdShawnAfterBattleText
+	writetext SuperNerdShawnAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -431,18 +431,18 @@ PokefanfGeorgiaAfterBattleText:
 	cont "of DAY-CARE!"
 	done
 
-SupernerdShawnSeenText:
+SuperNerdShawnSeenText:
 	text "What kinds of #"
 	line "BALLS do you have"
 	cont "with you?"
 	done
 
-SupernerdShawnBeatenText:
+SuperNerdShawnBeatenText:
 	text "Wait! Stop! Don't!"
 	line "Please!"
 	done
 
-SupernerdShawnAfterBattleText:
+SuperNerdShawnAfterBattleText:
 	text "You should use the"
 	line "right BALLS to fit"
 	cont "the situation."
@@ -481,4 +481,4 @@ FastShipCabins_SE_SSE_CaptainsCabin_MapEvents:
 	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerPsychicRodney, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmJeremy, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
 	object_event  5,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanfGeorgia, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	object_event  1, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdShawn, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event  1, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdShawn, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND

@@ -41,22 +41,22 @@ TrainerBikerZeke:
 	closetext
 	end
 
-TrainerSupernerdSam:
-	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
+TrainerSuperNerdSam:
+	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SuperNerdSamSeenText, SuperNerdSamBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdSamAfterBattleText
+	writetext SuperNerdSamAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSupernerdTom:
-	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SupernerdTomSeenText, SupernerdTomBeatenText, 0, .Script
+TrainerSuperNerdTom:
+	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SuperNerdTomSeenText, SuperNerdTomBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdTomAfterBattleText
+	writetext SuperNerdTomAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -123,32 +123,32 @@ BikerZekeAfterBattleText:
 	cont "from now on…"
 	done
 
-SupernerdSamSeenText:
+SuperNerdSamSeenText:
 	text "How does the MAG-"
 	line "NET TRAIN work?"
 	done
 
-SupernerdSamBeatenText:
+SuperNerdSamBeatenText:
 	text "I just want to see"
 	line "the MAGNET TRAIN…"
 	done
 
-SupernerdSamAfterBattleText:
+SuperNerdSamAfterBattleText:
 	text "The power of mag-"
 	line "nets is awesome!"
 	done
 
-SupernerdTomSeenText:
+SuperNerdTomSeenText:
 	text "Hm… You've got"
 	line "many GYM BADGES."
 	done
 
-SupernerdTomBeatenText:
+SuperNerdTomBeatenText:
 	text "Just as I thought…"
 	line "You're tough!"
 	done
 
-SupernerdTomAfterBattleText:
+SuperNerdTomAfterBattleText:
 	text "GYM BADGES no"
 	line "longer give you"
 	cont "advantages in"
@@ -183,6 +183,6 @@ Route8_MapEvents:
 	object_event 10,  8, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1
 	object_event 10,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerBikerHarris, -1
 	object_event 10, 10, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerBikerZeke, -1
-	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
-	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
+	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdSam, -1
+	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSuperNerdTom, -1
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1

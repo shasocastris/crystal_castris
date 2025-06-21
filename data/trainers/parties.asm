@@ -3852,21 +3852,24 @@ SuperNerdGroup:
 	dw VULPIX
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (11), unused ???
+	next_list_item ; SUPER_NERD (11), Mt Mortar
 	db "RUSS@", TRAINERTYPE_NORMAL
-	db 33
-	dw MAGNEMITE
-	db 33
-	dw MAGNEMITE
-	db 33
+	db 46
+	dw CROBAT
+	db 45
 	dw MAGNETON
+	db 48
+	dw ALAKAZAM
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (12), unused ???
-	db "NORTON@", TRAINERTYPE_MOVES
-	db 36
-	dw PORYGON
-	dw CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
+	next_list_item ; SUPER_NERD (12), Mt Mortar
+	db "NORTON@", TRAINERTYPE_NORMAL
+	db 45
+	dw PORYGON2
+	db 47
+	dw XATU
+	db 48
+	dw ELECTRODE
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (13), Mt Mortar
@@ -4452,10 +4455,14 @@ BlackbeltGroup:
 	dw PRIMEAPE
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (8), unused ???
-	db "KENJI@", TRAINERTYPE_NORMAL
-	db 34
+	next_list_item ; BLACKBELT_T (8), Mt Mortar
+	db "TAKESHI@", TRAINERTYPE_NORMAL
+	db 46
 	dw MACHOKE
+	db 47
+	dw TYPHLOSION
+	db 45
+	dw SUDOWOODO
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (9), SS Aqua

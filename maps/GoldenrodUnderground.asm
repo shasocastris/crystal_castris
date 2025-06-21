@@ -111,22 +111,22 @@ GoldenrodUndergroundCheckDayOfWeekCallback:
 	appear GOLDENRODUNDERGROUND_GRANNY
 	endcallback
 
-TrainerSupernerdEric:
-	trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SupernerdEricSeenText, SupernerdEricBeatenText, 0, .Script
+TrainerSuperNerdEric:
+	trainer SUPER_NERD, ERIC, EVENT_BEAT_SUPER_NERD_ERIC, SuperNerdEricSeenText, SuperNerdEricBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdEricAfterBattleText
+	writetext SuperNerdEricAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerSupernerdTeru:
-	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SupernerdTeruSeenText, SupernerdTeruBeatenText, 0, .Script
+TrainerSuperNerdTeru:
+	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SuperNerdTeruSeenText, SuperNerdTeruBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdTeruAfterBattleText
+	writetext SuperNerdTeruAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -412,7 +412,7 @@ GoldenrodUndergroundHiddenSuperPotion:
 GoldenrodUndergroundHiddenAntidote:
 	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
 
-SupernerdEricSeenText:
+SuperNerdEricSeenText:
 	text "I got booted out"
 	line "of the GAME COR-"
 	cont "NER."
@@ -422,17 +422,17 @@ SupernerdEricSeenText:
 	cont "#MON…"
 	done
 
-SupernerdEricBeatenText:
+SuperNerdEricBeatenText:
 	text "…Grumble…"
 	done
 
-SupernerdEricAfterBattleText:
+SuperNerdEricAfterBattleText:
 	text "I guess I have to"
 	line "do things fair and"
 	cont "square…"
 	done
 
-SupernerdTeruSeenText:
+SuperNerdTeruSeenText:
 	text "Do you consider"
 	line "type alignments in"
 	cont "battle?"
@@ -444,11 +444,11 @@ SupernerdTeruSeenText:
 	line "in battle."
 	done
 
-SupernerdTeruBeatenText:
+SuperNerdTeruBeatenText:
 	text "Ow, ow, ow!"
 	done
 
-SupernerdTeruAfterBattleText:
+SuperNerdTeruAfterBattleText:
 	text "I know my #MON"
 	line "type alignments."
 
@@ -662,8 +662,8 @@ GoldenrodUnderground_MapEvents:
 	bg_event 17,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote
 
 	def_object_events
-	object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1
-	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1
+	object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdEric, -1
+	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdTeru, -1
 	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
 	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
 	object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE

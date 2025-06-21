@@ -464,8 +464,8 @@ DEF KRIS EQU __trainer_class__
 	const PAT
 	const SHAWN
 	const TERU
-	const RUSS ; unused
-	const NORTON ; unused
+	const RUSS
+	const NORTON
 	const HUGH
 	const MARKUS
 
@@ -531,14 +531,14 @@ DEF KRIS EQU __trainer_class__
 	const IRWIN4 ; unused
 
 	trainerclass BLACKBELT_T ; 34
-	const KENJI1
+	const KENJI
 	const YOSHI
 	const DOMUN
 	const LAO
 	const NOB
 	const KIYO
 	const LUNG
-	const KENJI3 ; unused
+	const TAKESHI
 	const WAI
 
 	trainerclass EXECUTIVEM ; 35

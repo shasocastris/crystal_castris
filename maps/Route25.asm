@@ -136,12 +136,12 @@ TrainerLassShannon:
 	closetext
 	end
 
-TrainerSupernerdPat:
-	trainer SUPER_NERD, PAT, EVENT_BEAT_SUPER_NERD_PAT, SupernerdPatSeenText, SupernerdPatBeatenText, 0, .Script
+TrainerSuperNerdPat:
+	trainer SUPER_NERD, PAT, EVENT_BEAT_SUPER_NERD_PAT, SuperNerdPatSeenText, SuperNerdPatBeatenText, 0, .Script
 
 .Script:
 	opentext
-	writetext SupernerdPatAfterBattleText
+	writetext SuperNerdPatAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -351,7 +351,7 @@ LassShannonAfterBattleText:
 	line "I have no regrets."
 	done
 
-SupernerdPatSeenText:
+SuperNerdPatSeenText:
 	text "Mufufufu…"
 
 	para "I have nothing to"
@@ -365,12 +365,12 @@ SupernerdPatSeenText:
 	line "all the battles."
 	done
 
-SupernerdPatBeatenText:
+SuperNerdPatBeatenText:
 	text "Aren't you tired"
 	line "at all?"
 	done
 
-SupernerdPatAfterBattleText:
+SuperNerdPatAfterBattleText:
 	text "I'm sorry… I won't"
 	line "cheat anymore…"
 	done
@@ -439,6 +439,6 @@ Route25_MapEvents:
 	object_event 22,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassLaura, -1
 	object_event 25,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperLloyd, -1
 	object_event 28, 11, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassShannon, -1
-	object_event 31,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSupernerdPat, -1
+	object_event 31,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdPat, -1
 	object_event 37,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainermKevin, -1
 	object_event 32,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Protein, EVENT_ROUTE_25_PROTEIN
