@@ -5484,7 +5484,7 @@ PokefanMGroup:
 
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1), unused ???
-	db "NAOKO@", TRAINERTYPE_NORMAL
+	db "SAKI@", TRAINERTYPE_NORMAL
 	db 24
 	dw SKIPLOOM
 	db 24
@@ -5531,6 +5531,18 @@ KimonoGirlGroup:
 	dw JOLTEON
 	dw KINGS_ROCK
 	dw THUNDERSHOCK, FLAIL, QUICK_ATTACK, SAND_ATTACK
+	db -1 ; end
+
+	next_list_item ; KIMONO_GIRL (7), unused ???
+	db "SAKI@", TRAINERTYPE_NORMAL
+	db 24
+	dw YUKI
+	db -1 ; end
+
+	next_list_item ; KIMONO_GIRL (8), unused ???
+	db "HANA@", TRAINERTYPE_NORMAL
+	db 24
+	dw EEVEE
 	db -1 ; end
 
 	end_list_items

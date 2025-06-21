@@ -660,12 +660,14 @@ DEF KRIS EQU __trainer_class__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3e
-	const NAOKO_UNUSED ; unused
+	const SAKI ; unused, Sylveon, Mt Moon
 	const NAOKO
 	const SAYO
 	const ZUKI
 	const KUNI
 	const MIKI
+	const YUKI ; unused, Glaceon, Ice Path
+	const HANA ; unused, Leafeon, Viridian Forest
 
 	trainerclass TWINS ; 3f
 	const AMYANDMAY1
