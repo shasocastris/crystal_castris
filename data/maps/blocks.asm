@@ -681,6 +681,9 @@ EcruteakTinTowerEntrance_Blocks:
 GoldenrodGameCorner_Blocks:
 	INCBIN "maps/GoldenrodGameCorner.ablk"
 
+GoldenrodGlitterAndGrace_Blocks:
+	INCBIN "maps/GoldenrodGlitterAndGrace.ablk"
+
 Route35NationalParkGate_Blocks:
 	INCBIN "maps/Route35NationalParkGate.ablk"
 

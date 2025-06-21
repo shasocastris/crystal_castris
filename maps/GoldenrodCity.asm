@@ -263,6 +263,9 @@ GoldenrodCityPokecenterSign:
 GoldenrodCityFlowerShopSign:
 	jumptext GoldenrodCityFlowerShopSignText
 
+GoldenrodBeautySchoolSign:
+	jumptext GoldenrodBeautySchoolSignText
+
 GoldenrodCityMoveTutorEnterGameCornerMovement:
 	step RIGHT
 	step RIGHT
@@ -505,6 +508,13 @@ GoldenrodCityFlowerShopSignText:
 	line "FLOWER SHOP"
 	done
 
+GoldenrodBeautySchoolSignText:
+	text "Glitter & Grace"
+
+    para "Where Beauties and"
+    line "#MON Shine!"
+	done
+
 GoldenrodCityMoveTutorAskTeachAMoveText:
 	text "I can teach your"
 	line "#MON amazing"
@@ -586,6 +596,7 @@ GoldenrodCity_MapEvents:
 	warp_event  9,  5, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 8
 	warp_event 11, 29, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 5
 	warp_event 15, 27, GOLDENROD_POKECENTER_1F, 1
+	warp_event 26, 15, GOLDENROD_GLITTER_AND_GRACE, 1
 
 	def_coord_events
 
@@ -600,8 +611,10 @@ GoldenrodCity_MapEvents:
 	bg_event 12,  7, BGEVENT_READ, GoldenrodCityNameRaterSign
 	bg_event  8,  6, BGEVENT_READ, GoldenrodCityUndergroundSignNorth
 	bg_event 12, 30, BGEVENT_READ, GoldenrodCityUndergroundSignSouth
+	bg_event 17, 27, BGEVENT_UP, GoldenrodCityPokecenterSign
 	bg_event 16, 27, BGEVENT_UP, GoldenrodCityPokecenterSign
 	bg_event 30,  6, BGEVENT_READ, GoldenrodCityFlowerShopSign
+	bg_event 27, 16, BGEVENT_READ, GoldenrodBeautySchoolSign
 
 	def_object_events
 	object_event  7, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityPokefanMScript, EVENT_GOLDENROD_CITY_CIVILIANS
