@@ -83,4 +83,5 @@ MapScenes::
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var VIOLET_CITY,                                 wVioletCitySceneID
+	scene_var GOLDENROD_GLITTER_AND_GRACE,                 wGlitterAndGraceSceneID
 	db -1 ; end

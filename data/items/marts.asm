@@ -35,6 +35,7 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartGlitterAndGrace
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -369,6 +370,13 @@ MartUnderground:
 	dw ENERGY_ROOT
 	dw HEAL_POWDER
 	dw REVIVAL_HERB
+
+MartGlitterAndGrace:
+	db 4 ; # items
+	dw BERRY_JUICE
+	dw FRESH_WATER
+	dw MINT_BERRY
+	dw POKE_DOLL
 
 DefaultMart:
 	db 2 ; # items

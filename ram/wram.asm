@@ -2848,6 +2848,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wVioletCitySceneID::                              db
+wGlitterAndGraceSceneID::                         db
 
 ; fight counts
 
