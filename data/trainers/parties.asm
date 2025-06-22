@@ -4974,7 +4974,7 @@ CamperGroup:
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (14), unused ???
+	next_list_item ; CAMPER (14), National Park
 	db "THOMAS@", TRAINERTYPE_NORMAL
 	db 15
 	dw GEODUDE
@@ -5626,7 +5626,7 @@ TwinsGroup:
 	dw THUNDER_WAVE, TWISTER, ICE_BEAM, HEADBUTT
 	db -1 ; end
 
-	next_list_item ; TWINS (10), unused ???
+	next_list_item ; TWINS (10), National Park
 	db "SAM & PAM@", TRAINERTYPE_NORMAL
 	db 16
 	dw CUBONE
