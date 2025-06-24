@@ -263,16 +263,16 @@ DEF KRIS EQU __trainer_class__
 	trainerclass BEAUTY ; 22
 	const VICTORIA
 	const SAMANTHA
-	const JULIE ; unused, Glitter and Grace
-	const JACLYN ; unused, Glitter and Grace
-	const BRENDA ; unused, Glitter and Grace
+	const JULIE
+	const JACLYN
+	const BRENDA ; unused
 	const CASSIE
-	const CAROLINE ; unused, Glitter and Grace
-	const CARLENE ; unused, Glitter and Grace
-	const JESSICA ; unused, Glitter and Grace
-	const RACHAEL ; unused, Glitter and Grace
-	const ANGELICA ; unused, Glitter and Grace
-	const KENDRA ; unused
+	const CAROLINE
+	const CARLENE
+	const JESSICA
+	const RACHAEL
+	const ANGELICA
+	const KENDRA
 	const VERONICA ; unused
 	const JULIA
 	const THERESA ; unused
@@ -405,7 +405,7 @@ DEF KRIS EQU __trainer_class__
 	const MATHEW
 	const HAL
 	const PATON
-	const DARYL ; unused
+	const DARYL
 	const WALTER ; unused
 	const TONY ; unused
 	const JEROME
@@ -430,10 +430,10 @@ DEF KRIS EQU __trainer_class__
 	const MARY
 	const KATIE
 	const DAWN
-	const TARA ; unused
+	const TARA
 	const NICOLE
 	const LORI
-	const JODY ; unused
+	const JODY
 	const NIKKI
 	const DIANA
 	const BRIANA
