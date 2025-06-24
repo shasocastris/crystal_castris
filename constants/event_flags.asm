@@ -208,9 +208,10 @@
 	const EVENT_GAVE_GS_BALL_TO_KURT
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
+	const EVENT_GOT_FREEZE_GUARD
 ; Unused: next 0 events
 
-	const_next 200
+	const_next 300
 ; Kanto story events
 	const EVENT_GOT_NUGGET_FROM_GUY
 	const EVENT_RETURNED_MACHINE_PART
@@ -274,7 +275,7 @@
 	const EVENT_DANA_GAVE_THUNDERSTONE
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_SILVERPOWDER
-; Unused: next 339 events
+; Unused: next 239 events
 
 	const_next 600
 ; Kurt Apricorn events

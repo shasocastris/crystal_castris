@@ -47,7 +47,23 @@ BlackthornGramps1Script:
 	jumptextfaceplayer BlackthornGrampsRefusesEntryText
 
 BlackthornGramps2Script:
-	jumptextfaceplayer BlackthornGrampsGrantsEntryText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_FREEZE_GUARD
+	iftrue .GotFreezeGuard
+	writetext BlackthornGramps2Text
+	promptbutton
+	verbosegiveitem FREEZE_GUARD
+	setevent EVENT_GOT_FREEZE_GUARD
+	writetext BlackthornGramps2GaveFreezeGuardText
+	closetext
+	end
+
+.GotFreezeGuard:
+	writetext BlackthornGrampsGrantsEntryText
+	waitbutton
+	closetext
+	end
 
 BlackthornBlackBeltScript:
 	faceplayer
@@ -173,6 +189,18 @@ BlackthornGrampsRefusesEntryText:
 
 	para "here."
 	line "Please leave."
+	done
+
+BlackthornGramps2Text:
+	text "Dragon masters use"
+	line "this to help fight"
+	cont "ICE types."
+	done
+
+BlackthornGramps2GaveFreezeGuardText:
+	text "You might have"
+	line "some use for it"
+	cont "soon."
 	done
 
 BlackthornGrampsGrantsEntryText:
