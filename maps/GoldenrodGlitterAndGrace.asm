@@ -166,65 +166,59 @@ GoldenrodGlitterAndGraceClerkText:
 	done
 
 AngelicaIntroducesGlitterAndGraceText:
-	text "Welcome to"
-	line "GLITTER & GRACE"
-	cont "Academy!"
+	text "Excuse me! This"
+	line "is a private"
+	cont "academy!"
 
-	para "I'm ANGELICA, the"
-	line "head instructor"
-	cont "here."
+	para "We don't allow"
+	line "random visitors"
+	cont "to just…"
 
-	para "We teach the art"
-	line "of beauty and"
-	cont "#MON elegance!"
+	para "Wait! You have"
+	line "#MON with you!"
+	cont "You're a trainer!"
 
-	para "Feel free to"
-	line "challenge our"
-	cont "students and"
-	cont "learn from them!"
+	para "I'm ANGELICA, head"
+	line "of GLITTER &"
+	cont "GRACE Academy!"
 
-	para "When you're ready"
-	line "for the ultimate"
-	cont "test, come see"
-	cont "me!"
+	para "We teach beauty"
+	line "and #MON"
+	cont "elegance here!"
+
+	para "If you can defeat"
+	line "all our students"
+	cont "and then me,"
+
+	para "I'll give you a"
+	line "special prize!"
+
+	para "Think you're up"
+	line "for the challenge?"
 	done
 
 AngelicaBeatTheOthersText:
-	text "I can sense you"
-	line "haven't faced all"
-	cont "our students yet!"
+	text "You haven't faced"
+	line "all our students"
+	cont "yet?"
 
-	para "True mastery comes"
-	line "from experiencing"
-	cont "every lesson we"
-	cont "offer!"
-
-	para "Return when you've"
-	line "learned from each"
-	cont "of our talented"
-	cont "instructors!"
+	para "Keep going, I can"
+	line "see you've learned"
+	cont "a lot."
 	done
 
 BeautyAngelicaSeenText:
-	text "Excellent! You've"
-	line "learned from all"
-	cont "our instructors!"
+	text "Wow, you've really"
+	line "taken what being a"
+	cont "Beauty means to"
+	cont "heart."
 
-	para "Now face the"
-	line "final test of"
-	cont "true beauty"
-	cont "mastery!"
-
-	para "I'll show you"
-	line "what years of"
-	cont "training can"
-	cont "achieve!"
+	para "Let's bring out"
+	line "the final polish!"
 	done
 
 BeautyAngelicaBeatenText:
-	text "Magnificent! You"
-	line "have mastered our"
-	cont "teachings!"
+	text "Magnificent!"
 	done
 
 BeautyAngelicaLossText:
@@ -251,67 +245,44 @@ AngelicaGaveLightClayText:
 	para "Use it to protect"
 	line "your #MON with"
 	cont "style and grace!"
-
-	para "You're always"
-	line "welcome here at"
-	cont "GLITTER & GRACE!"
 	done
 
 AngelicaLightClayText:
-	text "LIGHT CLAY will"
-	line "serve you well"
-	cont "in battles!"
-
-	para "Remember to"
-	line "combine power"
-	cont "with elegance!"
-
-	para "That's the true"
-	line "beauty way!"
+	text "Have you come up"
+	line "with elegant ways"
+	cont "to use your LIGHT"
+	cont "CLAY?"
 	done
 
 BeautyKendraSeenText:
-	text "Welcome to our"
-	line "dance studio!"
-
-	para "Grace and rhythm"
-	line "are essential for"
-	cont "Contest success!"
+	text "Dancing builds the"
+	line "bond between me"
+	cont "and my #MON."
 
 	para "Let me show you"
-	line "perfect form!"
+	line "our moves!"
 	done
 
 BeautyKendraBeatenText:
-	text "Your moves were"
-	line "flawless!"
+	text "You were flawless!"
 	done
 
 BeautyKendraAfterBattleText:
 	text "Dancing teaches"
-	line "coordination"
-	cont "between trainer"
-	cont "and #MON!"
+	line "coordination and"
+	cont "style."
 
-	para "The rhythm helps"
-	line "with Contest"
-	cont "timing too!"
-
-	para "Practice makes"
-	line "perfect!"
+	para "It helps with"
+	line "battles too!"
 	done
 
 BeautyJaclynSeenText:
-	text "Oh! A visitor"
-	line "during our"
-	cont "rehearsal!"
+	text "I'm practicing"
+	line "my dance routine"
+	cont "with my #MON."
 
-	para "Watch how we move"
-	line "in perfect sync"
-	cont "with our #MON!"
-
-	para "Battle is just"
-	line "another dance!"
+	para "I guess we can"
+	line "battle too!"
 	done
 
 BeautyJaclynBeatenText:
@@ -320,14 +291,9 @@ BeautyJaclynBeatenText:
 	done
 
 BeautyJaclynAfterBattleText:
-	text "Every Contest"
-	line "performance is"
-	cont "like a dance!"
-
-	para "The key is making"
-	line "it look effortless"
-	cont "even when it's"
-	cont "challenging!"
+	text "Synchronized"
+	line "movement makes"
+	cont "us stronger!"
 
 	para "You have natural"
 	line "rhythm!"
@@ -341,9 +307,6 @@ BeautyRachaelSeenText:
 
 	para "Want to join our"
 	line "fitness routine?"
-
-	para "Battle is great"
-	line "cardio!"
 	done
 
 BeautyRachaelBeatenText:
@@ -361,74 +324,55 @@ BeautyRachaelAfterBattleText:
 	line "have shinier"
 	cont "coats and more"
 	cont "energy!"
-
-	para "Fitness is the"
-	line "foundation of"
-	cont "true beauty!"
 	done
 
 BeautyJessicaSeenText:
 	text "Building stamina"
 	line "is crucial for"
-	cont "Contest endurance!"
-
-	para "Beauty isn't just"
-	line "looks - it's"
-	cont "strength too!"
+	cont "endurance."
 
 	para "Let's work up a"
 	line "sweat!"
 	done
 
 BeautyJessicaBeatenText:
-	text "Great workout!"
+	text "Now I'm pumped!"
 	done
 
 BeautyJessicaAfterBattleText:
-	text "Physical fitness"
-	line "helps with long"
-	cont "Contest rounds!"
-
-	para "Strong #MON"
-	line "perform better"
-	cont "in all categories!"
-
-	para "Beauty comes from"
-	line "health and"
-	cont "vitality!"
+	text "A strong trainer"
+	line "means stronger"
+	cont "#MON!"
 	done
 
 BeautyCarleneSeenText:
-	text "Oh! I was just"
-	line "changing into my"
-	cont "practice outfit!"
+	text "Ugh! Can't you"
+	line "see I'm trying"
+	cont "to rest?!"
 
-	para "Being beautiful"
-	line "is exhausting"
-	cont "work!"
+	para "I was changing"
+	line "clothes and"
+	cont "relaxing!"
 
-	para "But I can still"
-	line "battle!"
+	para "Fine! If you"
+	line "must interrupt,"
+	cont "let's battle!"
 	done
 
 BeautyCarleneBeatenText:
-	text "I need a longer"
-	line "break!"
+	text "Now I'm even more"
+	line "tired!"
 	done
 
 BeautyCarleneAfterBattleText:
-	text "Even beauty"
-	line "experts need"
-	cont "rest time!"
+	text "Beauty work is"
+	line "exhausting!"
 
-	para "Taking breaks"
-	line "prevents burnout"
-	cont "and keeps you"
-	cont "fresh!"
+	para "A girl needs her"
+	line "rest time!"
 
-	para "Self-care is"
-	line "just as important"
-	cont "as #MON care!"
+	para "Next time, knock"
+	line "first!"
 	done
 
 BeautyJulieSeenText:
@@ -437,9 +381,6 @@ BeautyJulieSeenText:
 
 	para "I see… a battle in"
 	line "your near future!"
-
-	para "Let the stars"
-	line "guide us!"
 	done
 
 BeautyJulieBeatenText:
@@ -448,11 +389,7 @@ BeautyJulieBeatenText:
 	done
 
 BeautyJulieAfterBattleText:
-	text "Mystic arts help"
-	line "predict Contest"
-	cont "judge preferences!"
-
-	para "Reading auras"
+	text "Reading auras"
 	line "reveals which"
 	cont "#MON appeal"
 	cont "most!"
@@ -469,9 +406,6 @@ BeautyCarolineSeenText:
 	para "This GROWLITHE's"
 	line "coat needs just"
 	cont "the right touch!"
-
-	para "Battle me when"
-	line "I'm finished!"
 	done
 
 BeautyCarolineBeatenText:
@@ -479,24 +413,19 @@ BeautyCarolineBeatenText:
 	done
 
 BeautyCarolineAfterBattleText:
-	text "Proper grooming"
-	line "brings out a"
-	cont "#MON's natural"
-	cont "beauty!"
-
-	para "Each species"
+	text "Each species"
 	line "needs different"
-	cont "care techniques!"
+	cont "care techniques."
 
-	para "A well-groomed"
-	line "#MON is a"
-	cont "confident"
-	cont "#MON!"
+	para "And when they are"
+	line "well groomed,"
+	cont "#MON are much"
+	cont "happier."
 	done
 
 GoldenrodGlitterAndGraceGrowlitheText:
-	text "Grrr ...."
-	line "WOOF WOOF"
+	text "GROWLITHE: Gruff!"
+	line "Growl growl!"
 	done
 
 GoldenrodGlitterAndGrace_MapEvents:

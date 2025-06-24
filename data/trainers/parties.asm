@@ -2242,16 +2242,17 @@ BeautyGroup:
 	dw SCRATCH, GROWL, BITE, SLASH
 	db -1 ; end
 
-	next_list_item ; BEAUTY (3), unused ???
+	next_list_item ; BEAUTY (3), Glitter & Grace
 	db "JULIE@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 23
+	dw WIGGLYTUFF
 	db -1 ; end
 
-	next_list_item ; BEAUTY (4), unused ???
-	db "JACLYN@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	next_list_item ; BEAUTY (4), Glitter & Grace
+	db "JACLYN@", TRAINERTYPE_ITEM
+	db 23
+	dw GRANBULL
+	dw LIGHT_CLAY
 	db -1 ; end
 
 	next_list_item ; BEAUTY (5), unused ???
@@ -2268,44 +2269,48 @@ BeautyGroup:
 	dw BUTTERFREE
 	db -1 ; end
 
-	next_list_item ; BEAUTY (7), unused ???
+	next_list_item ; BEAUTY (7), Glitter & Grace
 	db "CAROLINE@", TRAINERTYPE_NORMAL
-	db 36
-	dw MARILL
-	db 39
-	dw SEEL
-	db 36
-	dw MARILL
+	db 23
+	dw AZUMARILL
 	db -1 ; end
 
-	next_list_item ; BEAUTY (8), unused ???
+	next_list_item ; BEAUTY (8), Glitter & Grace
 	db "CARLENE@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 21
+	dw SKIPLOOM
+	db 21
+	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; BEAUTY (9), unused ???
+	next_list_item ; BEAUTY (9), Glitter & Grace
 	db "JESSICA@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 21
+	dw FURRET
+	db 21
+	dw MEOWTH
 	db -1 ; end
 
-	next_list_item ; BEAUTY (10), unused ???
+	next_list_item ; BEAUTY (10), Glitter & Grace
 	db "RACHAEL@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 21
+	dw CLEFAIRY
+	db 21
+	dw MACHOP
 	db -1 ; end
 
-	next_list_item ; BEAUTY (11), unused ???
-	db "ANGELICA@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	next_list_item ; BEAUTY (11), Glitter & Grace
+	db "ANGELICA@", TRAINERTYPE_ITEM_MOVES
+	db 26
+	dw MR__MIME
+	dw LIGHT_CLAY
+    dw CONFUSION, DOUBLESLAP, LIGHT_SCREEN, REFLECT
 	db -1 ; end
 
-	next_list_item ; BEAUTY (12), unused ???
+	next_list_item ; BEAUTY (12), Glitter & Grace
 	db "KENDRA@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 23
+	dw BELLOSSOM
 	db -1 ; end
 
 	next_list_item ; BEAUTY (13), unused ???
