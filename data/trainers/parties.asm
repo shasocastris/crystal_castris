@@ -5286,22 +5286,34 @@ MediumGroup:
 	dw HAUNTER
 	db -1 ; end
 
-	next_list_item ; MEDIUM (3), unused ???
-	db "BETHANY@", TRAINERTYPE_NORMAL
+	next_list_item ; MEDIUM (3), Bethany
+	db "BETHANY@", TRAINERTYPE_MOVES
+	db 28
+	dw MISDREAVUS
+	dw SHADOW_BALL, TOXIC, PSYBEAM, CURSE
 	db 30
-	dw HAUNTER
+	dw CROBAT
+	dw TOXIC, SLUDGE_BOMB, CONFUSE_RAY, WING_ATTACK
 	db -1 ; end
 
-	next_list_item ; MEDIUM (4), unused ???
-	db "MARGRET@", TRAINERTYPE_NORMAL
+	next_list_item ; MEDIUM (4), Margret
+	db "MARGRET@", TRAINERTYPE_MOVES
+	db 28
+	dw MISDREAVUS
+	dw CONFUSE_RAY, SHADOW_BALL, DESTINY_BOND, CURSE
 	db 30
-	dw HAUNTER
+	dw JYNX
+	dw SWEET_KISS, LOVELY_KISS, ICE_PUNCH, PSYCHIC_M
 	db -1 ; end
 
-	next_list_item ; MEDIUM (5), unused ???
-	db "ETHEL@", TRAINERTYPE_NORMAL
-	db 30
+	next_list_item ; MEDIUM (5), Ethel
+	db "ETHEL@", TRAINERTYPE_MOVES
+	db 28
 	dw HAUNTER
+	dw HYPNOSIS, DREAM_EATER, NIGHT_SHADE, CURSE
+	db 30
+	dw PARASECT
+	dw SPORE, LEECH_LIFE, PURSUIT, LIGHT_SCREEN
 	db -1 ; end
 
 	next_list_item ; MEDIUM (6), Saffron Gym
