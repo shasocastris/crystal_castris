@@ -497,8 +497,8 @@ DEF KRIS EQU __trainer_class__
 	const ANTHONY4
 
 	trainerclass BIKER ; 30
-	const BIKER_BENNY ; unused, Route 18
-	const KAZU ; unused, Route 18
+	const BIKER_BENNY
+	const KAZU
 	const DWAYNE
 	const HARRIS
 	const ZEKE

@@ -3,6 +3,8 @@
 	const ROUTE17_BIKER2
 	const ROUTE17_BIKER3
 	const ROUTE17_BIKER4
+	const ROUTE17_BIKER5
+	const ROUTE17_BIKER6
 
 Route17_MapScripts:
 	def_scene_scripts
@@ -51,6 +53,26 @@ TrainerBikerGlenn:
 .Script:
 	opentext
 	writetext BikerGlennAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerBenny:
+	trainer BIKER, BIKER_BENNY, EVENT_BEAT_BIKER_BENNY, BikerBennySeenText, BikerBennyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerBennyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBikerKazu:
+	trainer BIKER, KAZU, EVENT_BEAT_BIKER_KAZU, BikerKazuSeenText, BikerKazuBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerKazuAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -126,6 +148,47 @@ BikerCharlesAfterBattleText:
 	cont "Take it easy!"
 	done
 
+BikerBennySeenText:
+	text "This road is for"
+	line "serious cyclists"
+	cont "only!"
+	done
+
+BikerBennyBeatenText:
+	text "You earned your"
+	line "stripes!"
+	done
+
+BikerBennyAfterBattleText:
+	text "CYCLING ROAD"
+	line "separates the pros"
+	cont "from the rookies!"
+
+	para "You've got what"
+	line "it takes, kid!"
+	done
+
+BikerKazuSeenText:
+	text "Nice ride! But can"
+	line "you handle the"
+	cont "downhill rush?"
+	done
+
+BikerKazuBeatenText:
+	text "You've mastered"
+	line "the slope!"
+	done
+
+BikerKazuAfterBattleText:
+	text "The key to"
+	line "CYCLING ROAD is"
+	cont "balance and speed!"
+
+	para "Too much of either"
+	line "and you'll wipe"
+	cont "out!"
+	done
+
 Route17_MapEvents:
 	db 0, 0 ; filler
 
@@ -144,3 +207,5 @@ Route17_MapEvents:
 	object_event  9, 68, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBikerJoel, -1
 	object_event  3, 53, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerGlenn, -1
 	object_event  6, 80, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1
+	object_event 12, 12, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerBenny, -1
+	object_event 18, 50, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerKazu, -1

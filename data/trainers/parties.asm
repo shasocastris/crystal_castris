@@ -4128,24 +4128,24 @@ HikerGroup:
 	end_list_items
 
 BikerGroup:
-	next_list_item ; BIKER (1), unused ???
+	next_list_item ; BIKER (1), Route 17
 	db "BENNY@", TRAINERTYPE_NORMAL
-	db 24
-	dw KOFFING
-	db 24
-	dw KOFFING
-	db 24
-	dw KOFFING
+	db 40
+	dw WEEZING
+	db 39
+	dw MAGMAR
+	db 41
+	dw ELECTRODE
 	db -1 ; end
 
-	next_list_item ; BIKER (2), unused ???
+	next_list_item ; BIKER (2), Route 17
 	db "KAZU@", TRAINERTYPE_NORMAL
-	db 24
-	dw KOFFING
-	db 24
-	dw KOFFING
-	db 24
-	dw KOFFING
+	db 39
+	dw VENOMOTH
+	db 40
+	dw ELECTABUZZ
+	db 41
+	dw CROBAT
 	db -1 ; end
 
 	next_list_item ; BIKER (3), Route 8
@@ -4174,7 +4174,7 @@ BikerGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; BIKER (6), Route 18
+	next_list_item ; BIKER (6), Route 17
 	db "CHARLES@", TRAINERTYPE_NORMAL
 	db 46
 	dw MAGMAR
