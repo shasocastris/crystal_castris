@@ -5691,9 +5691,12 @@ PokefanFGroup:
 
 	next_list_item ; POKEFANF (6), Route 39
 	db "JAIME@", TRAINERTYPE_ITEM
-	db 20
+	db 21
 	dw MEOWTH
 	dw BERRY
+	db 24
+	dw TAUROS
+	dw PARLYZ_GUARD
 	db -1 ; end
 
 	end_list_items

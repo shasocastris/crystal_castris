@@ -142,10 +142,10 @@ TrainerPsychicNorman:
 TrainerPokefanfJaime:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_POKEFANF_JAIME
+	iftrue JaimeGaveParalyzGuardScript
 	checktime NITE
 	iffalse .NotNight
-	checkevent EVENT_BEAT_POKEFANF_JAIME
-	iftrue .Beaten
 	writetext PokefanfJaimeSeenText
 	waitbutton
 	closetext
@@ -153,19 +153,27 @@ TrainerPokefanfJaime:
 	loadtrainer POKEFANF, JAIME
 	startbattle
 	reloadmapafterbattle
+	opentext
+.GiveParalyzGuard
+	writetext JaimeGivesParalyzGuardText
+	promptbutton
+	verbosegiveitem PARLYZ_GUARD
+	iffalse JaimeDoneScript
 	setevent EVENT_BEAT_POKEFANF_JAIME
-	closetext
-	end
-
-.Beaten:
-	writetext PokefanfJaimeAfterBattleText
+	writetext JaimeGaveParalyzGuardText
 	waitbutton
 	closetext
 	end
-
 .NotNight:
 	writetext PokefanfJaimeHopeItGetsDarkText
 	waitbutton
+	closetext
+	end
+
+JaimeGaveParalyzGuardScript:
+	writetext PokefanfJaimeAfterBattleText
+	waitbutton
+JaimeDoneScript:
 	closetext
 	end
 
@@ -314,6 +322,23 @@ PokefanfJaimeAfterBattleText:
 
 	para "training here than"
 	line "anywhere else."
+	done
+
+JaimeGivesParalyzGuardText:
+	text "I'm impressed. You"
+	line "should take this."
+
+	para "It will keep your"
+	line "#MON from"
+	cont "being paralyzed in"
+	cont "battle."
+	done
+
+JaimeGaveParalyzGuardText:
+	text "You might catch"
+	line "other trainers off"
+	cont "guard if it's used"
+	cont "correctly."
 	done
 
 Route39SignText:
