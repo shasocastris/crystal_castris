@@ -197,10 +197,10 @@ TrainerFirebreatherWalt:
 TrainerOfficerDirk:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_OFFICER_DIRK
+	iftrue DirkGaveBurnGuardScript
 	checktime NITE
 	iffalse .NotNight
-	checkevent EVENT_BEAT_OFFICER_DIRK
-	iftrue .AfterBattle
 	playmusic MUSIC_OFFICER_ENCOUNTER
 	writetext OfficerDirkSeenText
 	waitbutton
@@ -209,21 +209,33 @@ TrainerOfficerDirk:
 	loadtrainer OFFICER, DIRK
 	startbattle
 	reloadmapafterbattle
+	opentext
+.GiveBurnGuard
+	writetext DirkGivesBurnGuardText
+	promptbutton
+	verbosegiveitem BURN_GUARD
+	iffalse DirkDoneScript
 	setevent EVENT_BEAT_OFFICER_DIRK
-	closetext
-	end
-
-.AfterBattle:
-	writetext OfficerDirkAfterBattleText
+	writetext DirkGaveBurnGuardText
 	waitbutton
 	closetext
 	end
-
 .NotNight:
 	writetext OfficerDirkPrettyToughText
 	waitbutton
 	closetext
 	end
+
+DirkGaveBurnGuardScript:
+	writetext OfficerDirkAfterBattleText
+	waitbutton
+DirkDoneScript:
+	closetext
+	end
+
+
+
+
 
 Route35Sign:
 	jumptext Route35SignText
@@ -416,6 +428,21 @@ OfficerDirkPrettyToughText:
 
 	para "You could go any-"
 	line "where safely."
+	done
+
+DirkGivesBurnGuardText:
+	text "Take this as an"
+	line "apology for the"
+	cont "accusation."
+
+	para "A #MON that"
+	line "holds it won't get"
+	cont "burned."
+	done
+
+DirkGaveBurnGuardText:
+	text "Make sure not to"
+	line "abuse it!"
 	done
 
 Route35SignText:
