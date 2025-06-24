@@ -3390,24 +3390,24 @@ SwimmerMGroup:
 	dw POLIWRATH
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (12), unused ???
+	next_list_item ; SWIMMERM (12), Route 19
 	db "WALTER@", TRAINERTYPE_NORMAL
-	db 18
-	dw HORSEA
-	db 18
-	dw HORSEA
-	db 24
-	dw SEADRA
+	db 46
+	dw POLIWRATH
+	db 44
+	dw TENTACRUEL
+	db 48
+	dw LAPRAS
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (13), unused ???
+	next_list_item ; SWIMMERM (13), Route 20
 	db "TONY@", TRAINERTYPE_NORMAL
-	db 16
-	dw STARYU
-	db 22
+	db 45
+	dw GOLDUCK
+	db 47
 	dw STARMIE
-	db 20
-	dw HORSEA
+	db 49
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (14), Route 19
@@ -3430,14 +3430,14 @@ SwimmerMGroup:
 	dw CLOYSTER
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (16), unused ???
+	next_list_item ; SWIMMERM (16), Route 21
 	db "RICK@", TRAINERTYPE_NORMAL
-	db 16
-	dw TENTACOOL
-	db 22
-	dw STARMIE
-	db 20
-	dw HORSEA
+	db 44
+	dw DEWGONG
+	db 46
+	dw QUAGSIRE
+	db 51
+	dw KINGDRA
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (17), Route 20

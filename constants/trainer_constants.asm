@@ -406,11 +406,11 @@ DEF KRIS EQU __trainer_class__
 	const HAL
 	const PATON
 	const DARYL
-	const WALTER ; unused
-	const TONY ; unused
+	const WALTER
+	const TONY
 	const JEROME
 	const TUCKER
-	const RICK ; unused
+	const RICK
 	const CAMERON
 	const SETH
 	const JAMES

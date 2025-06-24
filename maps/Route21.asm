@@ -2,6 +2,7 @@
 	const ROUTE21_SWIMMER_GIRL
 	const ROUTE21_SWIMMER_GUY
 	const ROUTE21_FISHER
+;	const ROUTE21_SWIMMER_GUY2
 
 Route21_MapScripts:
 	def_scene_scripts
@@ -34,6 +35,16 @@ TrainerFisherArnold:
 .Script:
 	opentext
 	writetext FisherArnoldAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermRick:
+	trainer SWIMMERM, RICK, EVENT_BEAT_SWIMMERM_RICK, SwimmermRickSeenText, SwimmermRickBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermRickAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -84,6 +95,40 @@ FisherArnoldAfterBattleText:
 	line "to fishing…"
 	done
 
+SwimmermRickSeenText:
+	text "Dude, the waves"
+	line "are perfect today!"
+
+	para "My #MON and I"
+	line "are totally in"
+	cont "sync with the sea."
+
+	para "Let's ride the"
+	line "tide together!"
+	done
+
+SwimmermRickBeatenText:
+	text "Totally wiped out!"
+	done
+
+SwimmermRickAfterBattleText:
+	text "No worries, man."
+	line "Sometimes you ride"
+	cont "the wave…"
+
+	para "…and sometimes"
+	line "the wave rides"
+	cont "you!"
+
+	para "The ocean teaches"
+	line "you to go with"
+	cont "the flow."
+
+	para "Your #MON have"
+	line "that same chill"
+	cont "vibe. Respect!"
+	done
+
 Route21_MapEvents:
 	db 0, 0 ; filler
 
@@ -97,3 +142,4 @@ Route21_MapEvents:
 	object_event 11, 16, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
 	object_event  2, 30, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSeth, -1
 	object_event 14, 22, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherArnold, -1
+;	object_event  8, 27, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, TrainerSwimmermRick, -1

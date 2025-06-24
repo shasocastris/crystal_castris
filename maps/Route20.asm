@@ -2,6 +2,7 @@
 	const ROUTE20_SWIMMER_GIRL1
 	const ROUTE20_SWIMMER_GIRL2
 	const ROUTE20_SWIMMER_GUY
+;	const ROUTE21_SWIMMER_GUY2
 
 Route20_MapScripts:
 	def_scene_scripts
@@ -39,6 +40,16 @@ TrainerSwimmermCameron:
 .Script:
 	opentext
 	writetext SwimmermCameronAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermTony:
+	trainer SWIMMERM, TONY, EVENT_BEAT_SWIMMERM_TONY, SwimmermTonySeenText, SwimmermTonyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermTonyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -99,6 +110,37 @@ SwimmermCameronAfterBattleText:
 	cont "ponds and rivers."
 	done
 
+SwimmermTonySeenText:
+	text "Yo! I'm training"
+	line "for the SEAFOAM"
+	cont "SWIMMING LEAGUE!"
+
+	para "My #MON are as"
+	line "fast as torpedoes!"
+
+	para "Wanna see?"
+	done
+
+SwimmermTonyBeatenText:
+	text "Whoa! You really"
+	line "made a splash!"
+	done
+
+SwimmermTonyAfterBattleText:
+	text "That was awesome!"
+	line "Your #MON have"
+	cont "serious speed!"
+
+	para "I gotta train"
+	line "harder if I want"
+
+	para "to make it to the"
+	line "championships!"
+
+	para "Maybe we can race"
+	line "again sometime!"
+	done
+
 CinnabarGymSignText:
 	text "What does this"
 	line "sign say?"
@@ -123,3 +165,4 @@ Route20_MapEvents:
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
 	object_event 45, 13, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
 	object_event 12, 13, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+;	object_event  6,  7, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, TrainerSwimmermTony, -1

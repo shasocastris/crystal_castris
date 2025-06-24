@@ -5,6 +5,7 @@
 	const ROUTE19_SWIMMER_GUY3
 	const ROUTE19_FISHER1
 	const ROUTE19_FISHER2
+;	const ROUTE21_SWIMMER_GUY5
 
 Route19_MapScripts:
 	def_scene_scripts
@@ -60,6 +61,16 @@ TrainerSwimmermTucker:
 .Script:
 	opentext
 	writetext SwimmermTuckerAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerSwimmermWalter:
+	trainer SWIMMERM, WALTER, EVENT_BEAT_SWIMMERM_WALTER, SwimmermWalterSeenText, SwimmermWalterBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermWalterAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -181,6 +192,32 @@ SwimmermJeromeAfterBattleText:
 	cont "love the sea."
 	done
 
+SwimmermWalterSeenText:
+	text "I've been swimming"
+	line "these waters for"
+	cont "over twenty years!"
+
+	para "Let's see if your"
+	line "#MON can keep"
+	cont "up!"
+	done
+
+SwimmermWalterBeatenText:
+	text "Even the strongest"
+	line "currents can be"
+	cont "overcome…"
+	done
+
+SwimmermWalterAfterBattleText:
+	text "Swimming builds"
+	line "incredible endur-"
+	cont "ance, both for me"
+	cont "and my #MON."
+
+	para "Rain or shine, the"
+	line "sea is our home."
+	done
+
 Route19Fisher1Text:
 	text "Sorry. This road"
 	line "is closed for"
@@ -247,3 +284,4 @@ Route19_MapEvents:
 	object_event  8, 23, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerSwimmermTucker, -1
 	object_event  9,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, Route19Fisher1Script, -1
 	object_event 11,  5, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, Route19Fisher2Script, -1
+;	object_event  5, 32, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, TrainerSwimmermWalter, -1
