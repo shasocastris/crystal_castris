@@ -5,6 +5,7 @@
 	const ROUTE12_FISHER4
 	const ROUTE12_POKE_BALL1
 	const ROUTE12_POKE_BALL2
+	const ROUTE15_BEAUTY
 
 Route12_MapScripts:
 	def_scene_scripts
@@ -47,6 +48,16 @@ TrainerFisherBarney:
 .Script:
 	opentext
 	writetext FisherBarneyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyTheresa:
+	trainer BEAUTY, THERESA, EVENT_BEAT_BEAUTY_THERESA, BeautyTheresaSeenText, BeautyTheresaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BeautyTheresaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -149,6 +160,37 @@ FisherKyleAfterBattleText:
 	cont "an angler like me."
 	done
 
+BeautyTheresaSeenText:
+	text "Welcome to one of"
+	line "KANTO's most"
+	cont "scenic routes!"
+
+	para "I come here often"
+	line "to relax and"
+	cont "train."
+
+	para "Care to join me"
+	line "for a battle?"
+	done
+
+BeautyTheresaBeatenText:
+	text "What a refreshing"
+	line "battle!"
+	done
+
+BeautyTheresaAfterBattleText:
+	text "There's something"
+	line "magical about"
+	cont "this area."
+
+	para "The fresh air and"
+	line "natural beauty"
+	cont "energize my team!"
+
+	para "It's the perfect"
+	line "training spot!"
+	done
+
 Route12SignText:
 	text "ROUTE 12"
 
@@ -175,8 +217,9 @@ Route12_MapEvents:
 
 	def_object_events
 	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherMartin, -1
-	object_event 14, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherStephen, -1
+	object_event 11, 49, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherStephen, -1
 	object_event 10, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerFisherBarney, -1
 	object_event  6,  7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherKyle, -1
 	object_event  5, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Calcium, EVENT_ROUTE_12_CALCIUM
 	object_event  5, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Nugget, EVENT_ROUTE_12_NUGGET
+	object_event 13, 23, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_TRAINER, 1, TrainerBeautyTheresa, -1

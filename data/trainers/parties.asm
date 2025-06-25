@@ -2255,10 +2255,14 @@ BeautyGroup:
 	dw LIGHT_CLAY
 	db -1 ; end
 
-	next_list_item ; BEAUTY (5), unused ???
+	next_list_item ; BEAUTY (5), Route 13
 	db "BRENDA@", TRAINERTYPE_NORMAL
-	db 20
-	dw FURRET
+	db 46
+	dw CLEFABLE
+	db 48
+	dw WIGGLYTUFF
+	db 50
+	dw PERSIAN
 	db -1 ; end
 
 	next_list_item ; BEAUTY (6), SS Aqua
@@ -2313,10 +2317,14 @@ BeautyGroup:
 	dw BELLOSSOM
 	db -1 ; end
 
-	next_list_item ; BEAUTY (13), unused ???
+	next_list_item ; BEAUTY (13), Route 14
 	db "VERONICA@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 48
+	dw WIGGLYTUFF
+	db 48
+	dw FURRET
+	db 50
+	dw NINETALES
 	db -1 ; end
 
 	next_list_item ; BEAUTY (14), Celadon Gym
@@ -2329,10 +2337,12 @@ BeautyGroup:
 	dw PARASECT
 	db -1 ; end
 
-	next_list_item ; BEAUTY (15), unused ???
+	next_list_item ; BEAUTY (15), Route 12
 	db "THERESA@", TRAINERTYPE_NORMAL
-	db 18
-	dw SENTRET
+	db 50
+	dw BELLOSSOM
+	db 48
+	dw AZUMARILL
 	db -1 ; end
 
 	next_list_item ; BEAUTY (16), Route 38

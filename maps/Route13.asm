@@ -4,6 +4,7 @@
 	const ROUTE13_POKEFAN_M1
 	const ROUTE13_POKEFAN_M2
 	const ROUTE13_POKEFAN_M3
+	const ROUTE13_BEAUTY
 
 Route13_MapScripts:
 	def_scene_scripts
@@ -56,6 +57,16 @@ TrainerHikerKenny:
 .Script:
 	opentext
 	writetext HikerKennyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyBrenda:
+	trainer BEAUTY, BRENDA, EVENT_BEAT_BEAUTY_BRENDA, BeautyBrendaSeenText, BeautyBrendaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BeautyBrendaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -184,6 +195,31 @@ Route13DirectionsSignText:
 	line "CITY"
 	done
 
+BeautyBrendaSeenText:
+	text "Oh my! What a"
+	line "cute trainer you"
+	cont "are!"
+
+	para "Let's have a fun"
+	line "battle together!"
+	done
+
+BeautyBrendaBeatenText:
+	text "You're so strong"
+	line "and stylish too!"
+	done
+
+BeautyBrendaAfterBattleText:
+	text "I'm traveling to"
+	line "find the most"
+	cont "beautiful spots"
+	cont "in KANTO!"
+
+	para "The ocean views"
+	line "here are simply"
+	cont "divine!"
+	done
+
 Route13_MapEvents:
 	db 0, 0 ; filler
 
@@ -203,3 +239,4 @@ Route13_MapEvents:
 	object_event 32,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmJoshua, -1
 	object_event 14, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerHikerKenny, -1
 	object_event 25,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmAlex, -1
+	object_event 52, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_TRAINER, 1, TrainerBeautyBrenda, -1

@@ -265,7 +265,7 @@ DEF KRIS EQU __trainer_class__
 	const SAMANTHA
 	const JULIE
 	const JACLYN
-	const BRENDA ; unused
+	const BRENDA
 	const CASSIE
 	const CAROLINE
 	const CARLENE
@@ -273,9 +273,9 @@ DEF KRIS EQU __trainer_class__
 	const RACHAEL
 	const ANGELICA
 	const KENDRA
-	const VERONICA ; unused
+	const VERONICA
 	const JULIA
-	const THERESA ; unused
+	const THERESA
 	const VALERIE
 	const OLIVIA
 	const MONICA
@@ -514,8 +514,8 @@ DEF KRIS EQU __trainer_class__
 
 	trainerclass FIREBREATHER ; 32
 	const OTIS
-	const DICK ; unused
-	const NED ; unused
+	const DICK ; unused, Cinnabar Mansion
+	const NED ; unused, Cinnabar Mansion
 	const BURT
 	const BILL
 	const WALT

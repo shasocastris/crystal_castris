@@ -3,6 +3,7 @@
 	const ROUTE14_YOUNGSTER
 	const ROUTE14_POKEFAN_M2
 	const ROUTE14_KIM
+	const ROUTE14_BEAUTY
 
 Route14_MapScripts:
 	def_scene_scripts
@@ -43,6 +44,16 @@ TrainerPokefanmTrevor:
 .Script:
 	opentext
 	writetext PokefanmTrevorAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyVeronica:
+	trainer BEAUTY, VERONICA, EVENT_BEAT_BEAUTY_VERONICA, BeautyVeronicaSeenText, BeautyVeronicaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BeautyVeronicaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -110,6 +121,36 @@ PokefanmTrevorAfterBattleText:
 	line "got my #MON…"
 	done
 
+BeautyVeronicaSeenText:
+	text "This route has"
+	line "such gorgeous"
+	cont "scenery!"
+
+	para "Perfect for a"
+	line "photoshoot with"
+	cont "my team!"
+
+	para "Want to be in my"
+	line "next picture?"
+	done
+
+BeautyVeronicaBeatenText:
+	text "That was picture"
+	line "perfect!"
+	done
+
+BeautyVeronicaAfterBattleText:
+	text "I'm a traveling"
+	line "photographer!"
+
+	para "I capture the"
+	line "beauty of trainers"
+	cont "and their teams."
+
+	para "You'd make a"
+	line "wonderful subject!"
+	done
+
 Route14_MapEvents:
 	db 0, 0 ; filler
 
@@ -124,3 +165,4 @@ Route14_MapEvents:
 	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
 	object_event  6, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
 	object_event  7,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
+	object_event  5, 22, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyVeronica, -1
