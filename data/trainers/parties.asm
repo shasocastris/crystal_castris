@@ -1034,16 +1034,6 @@ Rival2Group:
 PokemonProfGroup:
 
 PKMNTrainerGroup:
-	next_list_item ; CAL (1), unused ???
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 12
-	dw CHIKORITA
-	db 12
-	dw CYNDAQUIL
-	db 12
-	dw TOTODILE
-	db -1 ; end
-
 	next_list_item ; CAL (2)
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 36
@@ -1465,8 +1455,6 @@ SchoolboyGroup:
 
 	end_list_items
 
-SECTION "Enemy Trainer Parties 2", ROMX
-
 BirdKeeperGroup:
 	next_list_item ; BIRD_KEEPER (1), Violet Gym
 	db "ROD@", TRAINERTYPE_NORMAL
@@ -1640,6 +1628,8 @@ BirdKeeperGroup:
 	db -1 ; end
 
 	end_list_items
+
+SECTION "Enemy Trainer Parties 2", ROMX
 
 LassGroup:
 	next_list_item ; LASS (1), Goldenrod Gym
@@ -2354,7 +2344,7 @@ BeautyGroup:
 	db 26
 	dw MR__MIME
 	dw LIGHT_CLAY
-    dw CONFUSION, DOUBLESLAP, LIGHT_SCREEN, REFLECT
+	dw CONFUSION, DOUBLESLAP, LIGHT_SCREEN, REFLECT
 	db -1 ; end
 
 	next_list_item ; BEAUTY (12), Glitter & Grace
@@ -4430,15 +4420,24 @@ JugglerGroup:
 	db -1 ; end
 
 	next_list_item ; JUGGLER (5), unused ???
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 22
-	dw VOLTORB
-	db 27
-	dw VOLTORB
-	db 32
-	dw VOLTORB
-	db 36
-	dw ELECTRODE
+	next_list_item ; JUGGLER LEVI
+	db "LEVI@", TRAINERTYPE_ITEM_MOVES
+	db 47
+	dw ALAKAZAM
+	dw TWISTEDSPOON
+	dw PSYCHIC_M, RECOVER, FIRE_PUNCH, ICE_PUNCH
+	db 46
+	dw HYPNO
+	dw BRIGHTPOWDER
+	dw PSYCHIC_M, HYPNOSIS, DREAM_EATER, THUNDER_WAVE
+	db 48
+	dw MR__MIME
+	dw LIGHT_CLAY
+	dw PSYCHIC_M, BARRIER, LIGHT_SCREEN, BATON_PASS
+	db 49
+	dw ESPEON
+	dw SCOPE_LENS
+	dw PSYCHIC_M, MORNING_SUN, SHADOW_BALL, SWIFT
 	db -1 ; end
 
 	next_list_item ; JUGGLER CALEB, Victory Road
@@ -5014,17 +5013,17 @@ CamperGroup:
 	next_list_item ; CAMPER (9), Ilex Forest
 	db "HARVEY@", TRAINERTYPE_NORMAL
 	db 11
-    dw ODDISH
-    db 11
-    dw BELLSPROUT
-    db 13
-    dw HOOTHOOT
+	dw ODDISH
+	db 11
+	dw BELLSPROUT
+	db 13
+	dw HOOTHOOT
 	db -1 ; end
 
 	next_list_item ; CAMPER (10), Ilex Forest
 	db "DALE@", TRAINERTYPE_NORMAL
 	db 15
-    dw FURRET
+	dw FURRET
 	db -1 ; end
 
 	next_list_item ; CAMPER (11), Route 46
@@ -5075,28 +5074,36 @@ CamperGroup:
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (16), unused ???
-	db "DAVID@", TRAINERTYPE_NORMAL
-	db 40
-	dw GRAVELER
-	db 44
-	dw GRAVELER
+	next_list_item ; CAMPER (16), Route 2
+	db "DAVID@", TRAINERTYPE_MOVES
+	db 46
+	dw BUTTERFREE
+	dw SLEEP_POWDER, PSYCHIC_M, GIGA_DRAIN, STUN_SPORE
+	db 47
+	dw PIDGEOT
+	dw WING_ATTACK, STEEL_WING, QUICK_ATTACK, WHIRLWIND
+	db 45
+	dw BEEDRILL
+	dw TWINEEDLE, SLUDGE_BOMB, PURSUIT, AGILITY
 	db 48
-	dw GOLBAT
-	db 51
-	dw GOLDUCK
+	dw VENOMOTH
+	dw PSYCHIC_M, SLEEP_POWDER, GIGA_DRAIN, TOXIC
 	db -1 ; end
 
-	next_list_item ; CAMPER (17), unused ???
-	db "JOHN@", TRAINERTYPE_NORMAL
-	db 40
-	dw GRAVELER
-	db 44
-	dw GRAVELER
+	next_list_item ; CAMPER (17), Route 2
+	db "JOHN@", TRAINERTYPE_MOVES
+	db 47
+	dw RATICATE
+	dw HYPER_FANG, SHADOW_BALL, THUNDER, SUPER_FANG
 	db 48
-	dw GOLBAT
-	db 51
-	dw GOLDUCK
+	dw FEAROW
+	dw DRILL_PECK, STEEL_WING, MIRROR_MOVE, AGILITY
+	db 46
+	dw NOCTOWL
+	dw PSYCHIC_M, HYPNOSIS, DREAM_EATER, REFLECT
+	db 49
+	dw CROBAT
+	dw SLUDGE_BOMB, FLY, CONFUSE_RAY, TOXIC
 	db -1 ; end
 
 	next_list_item ; CAMPER (18), Pewter Gym
@@ -5532,18 +5539,40 @@ PokefanMGroup:
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANM (10), unused ???
-	db "DEREK@", TRAINERTYPE_ITEM
-	db 23
-	dw PIKACHU
+	next_list_item ; POKEFANM (10), Route 8
+	db "JERRED@", TRAINERTYPE_ITEM
+	db 44
+	dw CLEFABLE
+	dw BERRY
+	db 45
+	dw WIGGLYTUFF
+	dw BERRY
+	db 46
+	dw BLISSEY
+	dw BERRY
+	db 47
+	dw FURRET
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANM (11), unused ???
-	db "DEREK@", TRAINERTYPE_ITEM
-	db 44
-	dw PIKACHU
+	next_list_item ; POKEFANM (11), Route 12
+	db "JORDAN@", TRAINERTYPE_ITEM_MOVES
+	db 46
+	dw RAICHU
 	dw BERRY
+	dw THUNDERBOLT, SEISMIC_TOSS, DOUBLE_TEAM, THUNDER_WAVE
+	db 47
+	dw JOLTEON
+	dw BERRY
+	dw THUNDERBOLT, SHADOW_BALL, DOUBLE_KICK, PIN_MISSILE
+	db 45
+	dw MAGNETON
+	dw BERRY
+	dw THUNDERBOLT, TRI_ATTACK, LOCK_ON, ZAP_CANNON
+	db 48
+	dw ELECTRODE
+	dw BERRY
+	dw THUNDER, EXPLOSION, LIGHT_SCREEN, SWIFT
 	db -1 ; end
 
 	next_list_item ; POKEFANM (12), Route 13

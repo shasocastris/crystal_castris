@@ -5,6 +5,7 @@
 	const ROUTE8_SUPER_NERD1
 	const ROUTE8_SUPER_NERD2
 	const ROUTE8_FRUIT_TREE
+	const ROUTE8_POKEFAN_M
 
 Route8_MapScripts:
 	def_scene_scripts
@@ -60,6 +61,16 @@ TrainerSuperNerdTom:
 	waitbutton
 	closetext
 	end
+
+TrainerPokefanMJerred:
+    trainer POKEFANM, JERRED, EVENT_BEAT_POKEFANM_JERRED, PokefanMJerredSeenText, PokefanMJerredBeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext PokefanMJerredAfterBattleText
+    waitbutton
+    closetext
+    end
 
 Route8LockedDoor:
 	jumptext Route8LockedDoorText
@@ -155,6 +166,34 @@ SuperNerdTomAfterBattleText:
 	cont "battles."
 	done
 
+PokefanMJerredSeenText:
+    text "I just love cute"
+    line "#MON so much!"
+
+    para "My collection of"
+    line "adorable #MON"
+    cont "is the best!"
+
+    para "Want to see them"
+    line "in action?"
+    done
+
+PokefanMJerredBeatenText:
+    text "Even in defeat,"
+    line "they're still"
+    cont "adorable!"
+    done
+
+PokefanMJerredAfterBattleText:
+    text "Cuteness isn't"
+    line "everything in"
+    cont "battle, I guess."
+
+    para "But my #MON are"
+    line "still the cutest"
+    cont "around!"
+    done
+
 Route8LockedDoorText:
 	text "It's locked…"
 	done
@@ -186,3 +225,4 @@ Route8_MapEvents:
 	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdSam, -1
 	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSuperNerdTom, -1
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	object_event 16, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokefanMJerred, -1

@@ -7,6 +7,8 @@
 	const ROUTE2_POKE_BALL3
 	const ROUTE2_POKE_BALL4
 	const ROUTE2_FRUIT_TREE
+	const ROUTE2_CAMPER1
+	const ROUTE2_CAMPER2
 
 Route2_MapScripts:
 	def_scene_scripts
@@ -39,6 +41,26 @@ TrainerBugCatcherDoug:
 .Script:
 	opentext
 	writetext BugCatcherDougAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperDavid:
+	trainer CAMPER, DAVID, EVENT_BEAT_CAMPER_DAVID, CamperDavidSeenText, CamperDavidBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperDavidAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCamperJohn:
+	trainer CAMPER, JOHN, EVENT_BEAT_CAMPER_JOHN, CamperJohnSeenText, CamperJohnBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CamperJohnAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -130,6 +152,55 @@ BugCatcherDougAfterBattleText:
 	line "feel!"
 	done
 
+CamperDavidSeenText:
+	text "I've been camping"
+	line "in VIRIDIAN FOREST"
+	cont "for years now!"
+
+	para "My bug #MON"
+	line "have evolved into"
+	cont "quite the team!"
+	done
+
+CamperDavidBeatenText:
+	text "Incredible! That"
+	line "was amazing!"
+	done
+
+CamperDavidAfterBattleText:
+	text "The forest here is"
+	line "very different"
+	cont "than it was three"
+	cont "years ago."
+
+	para "I think it's from"
+	line "all the strong"
+	cont "trainers passing"
+	cont "through!"
+	done
+
+CamperJohnSeenText:
+	text "I started camping"
+	line "here with just a"
+	cont "RATTATA years ago."
+
+	para "Look how far we've"
+	line "come together!"
+	done
+
+CamperJohnBeatenText:
+	text "You've really"
+	line "mastered the art"
+	cont "of #MON!"
+	done
+
+CamperJohnAfterBattleText:
+	text "I can see your"
+	line "bond with your"
+	cont "team is incredibly"
+	cont "strong!"
+	done
+
 Route2SignText:
 	text "ROUTE 2"
 
@@ -170,3 +241,5 @@ Route2_MapEvents:
 	object_event 19,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Carbos, EVENT_ROUTE_2_CARBOS
 	object_event 14, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
 	object_event 10, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	object_event  8, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCamperDavid, -1
+	object_event  6, 26, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerCamperJohn, -1

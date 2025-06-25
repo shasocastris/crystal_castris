@@ -62,6 +62,16 @@ TrainerBeautyTheresa:
 	closetext
 	end
 
+TrainerPokefanMJordan:
+    trainer POKEFANM, JORDAN, EVENT_BEAT_POKEFANM_JORDAN, PokefanMJordanSeenText, PokefanMJordanBeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext PokefanMJordanAfterBattleText
+    waitbutton
+    closetext
+    end
+
 Route12Sign:
 	jumptext Route12SignText
 
@@ -191,6 +201,36 @@ BeautyTheresaAfterBattleText:
 	line "training spot!"
 	done
 
+PokefanMJordanSeenText:
+    text "I'm a huge fan of"
+    line "ELECTRIC #MON!"
+
+    para "Their sparks and"
+    line "energy just make"
+    cont "me so happy!"
+
+    para "Check out my"
+    line "shocking team!"
+    done
+
+PokefanMJordanBeatenText:
+    text "That was"
+    line "electrifying!"
+    done
+
+PokefanMJordanAfterBattleText:
+    text "ELECTRIC #MON"
+    line "are amazing!"
+
+    para "They're full of"
+    line "energy and always"
+    cont "ready to battle!"
+
+    para "Plus, they help"
+    line "me save on my"
+    cont "electric bill!"
+    done
+
 Route12SignText:
 	text "ROUTE 12"
 
@@ -223,3 +263,4 @@ Route12_MapEvents:
 	object_event  5, 43, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Calcium, EVENT_ROUTE_12_CALCIUM
 	object_event  5, 51, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12Nugget, EVENT_ROUTE_12_NUGGET
 	object_event 13, 23, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_AZURE, OBJECTTYPE_TRAINER, 1, TrainerBeautyTheresa, -1
+	object_event  5, 32, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPokefanMJordan, -1

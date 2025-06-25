@@ -5,6 +5,7 @@
 	const ROUTE13_POKEFAN_M2
 	const ROUTE13_POKEFAN_M3
 	const ROUTE13_BEAUTY
+	const ROUTE26_POKEFANF
 
 Route13_MapScripts:
 	def_scene_scripts
@@ -67,6 +68,16 @@ TrainerBeautyBrenda:
 .Script:
 	opentext
 	writetext BeautyBrendaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanfSonia:
+	trainer POKEFANF, SONIA, EVENT_BEAT_GENTLEMAN_VIRGIL, PokefanfSoniaSeenText, PokefanfSoniaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext PokefanfSoniaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -220,6 +231,35 @@ BeautyBrendaAfterBattleText:
 	cont "divine!"
 	done
 
+PokefanfSoniaSeenText:
+	para "I've been coming"
+	line "here to train with"
+
+	para "my #MON for"
+	line "years!"
+
+	para "They're all so"
+	line "precious! Let me"
+	cont "show you!"
+	done
+
+PokefanfSoniaBeatenText:
+	text "Aww! My cuties"
+	line "tried their best!"
+	done
+
+PokefanfSoniaAfterBattleText:
+	text "Have you visited"
+	line "the house of the"
+	cont "WEEKDAY siblings?"
+
+	para "MONICA usually "
+	line "leaves notes with"
+
+	para "where they all"
+	line "are."
+	done
+
 Route13_MapEvents:
 	db 0, 0 ; filler
 
@@ -240,3 +280,4 @@ Route13_MapEvents:
 	object_event 14, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerHikerKenny, -1
 	object_event 25,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmAlex, -1
 	object_event 52, 10, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_TRAINER, 1, TrainerBeautyBrenda, -1
+	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPokefanfSonia, -1

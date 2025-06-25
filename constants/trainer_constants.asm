@@ -121,7 +121,6 @@ DEF KRIS EQU __trainer_class__
 	trainerclass POKEMON_PROF ; 18
 
 	trainerclass CAL ; 19
-	const CAL1 ; unused
 	const CAL2
 	const CAL3
 
@@ -529,7 +528,7 @@ DEF KRIS EQU __trainer_class__
 	const FRITZ
 	const HORTON
 	const CLIFF
-	const LEVI ; unused, Route 13 - 4, 4 (swap w/ SONIA)
+	const LEVI
 	const CALEB
 
 	trainerclass BLACKBELT_T ; 34
@@ -605,8 +604,8 @@ DEF KRIS EQU __trainer_class__
 	const TODD3
 	const THOMAS
 	const LEROY
-	const DAVID ; unused, Route 2 - 6, 26
-	const JOHN ; unused, Route 2 - 8, 13
+	const DAVID
+	const JOHN
 	const JERRY
 	const SPENCER
 	const TODD4
@@ -655,8 +654,8 @@ DEF KRIS EQU __trainer_class__
 	const BRANDON
 	const JEREMY
 	const COLIN
-	const DEREK2 ; unused, Route 8 - 16, 11
-	const DEREK3 ; unused, Route 12 - 5, 32
+	const JERRED
+	const JORDAN
 	const ALEX
 	const REX
 	const ALLAN
