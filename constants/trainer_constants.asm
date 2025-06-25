@@ -335,7 +335,7 @@ DEF KRIS EQU __trainer_class__
 	const PRESTON
 	const EDWARD
 	const GREGORY
-	const VIRGIL ; unused
+	const VIRGIL
 	const ALFRED
 
 	trainerclass SKIER ; 26
@@ -682,10 +682,10 @@ DEF KRIS EQU __trainer_class__
 	const SAMANDPAM
 
 	trainerclass POKEFANF ; 40
-	const BEVERLY1
+	const BEVERLY
 	const RUTH
 	const JACKIE
-	const BEVERLY3 ; unused
+	const SONIA
 	const GEORGIA
 	const JAIME
 

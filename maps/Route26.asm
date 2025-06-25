@@ -7,6 +7,8 @@
 	const ROUTE26_FISHER
 	const ROUTE26_FRUIT_TREE
 	const ROUTE26_POKE_BALL
+	const ROUTE26_GENTLEMAN
+	const ROUTE26_POKEFANF
 
 Route26_MapScripts:
 	def_scene_scripts
@@ -203,6 +205,26 @@ TrainerFisherScott:
 	closetext
 	end
 
+TrainerGentlemanVirgil:
+	trainer GENTLEMAN, VIRGIL, EVENT_BEAT_GENTLEMAN_VIRGIL, GentlemanVirgilSeenText, GentlemanVirgilBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GentlemanVirgilAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanfSonia:
+	trainer POKEFANF, SONIA, EVENT_BEAT_GENTLEMAN_VIRGIL, PokefanfSoniaSeenText, PokefanfSoniaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext PokefanfSoniaAfterBattleText
+	waitbutton
+	closetext
+	end
+
 Route26Sign:
 	jumptext Route26SignText
 
@@ -363,6 +385,57 @@ FisherScottAfterBattleText:
 	line "give up."
 	done
 
+GentlemanVirgilSeenText:
+	text "Ah, a young trainer!"
+	line "How delightful!"
+
+	para "Would you care to"
+	line "engage in a proper"
+	cont "gentleman's duel?"
+	done
+
+GentlemanVirgilBeatenText:
+	text "Splendid! What an"
+	line "excellent match!"
+	done
+
+GentlemanVirgilAfterBattleText:
+	text "Your #MON show"
+	line "superb training."
+
+	para "Keep up the"
+	line "exemplary work!"
+	done
+
+PokefanfSoniaSeenText:
+	para "I've been coming"
+	line "here to train with"
+
+	para "my #MON for"
+	line "years!"
+
+	para "They're all so"
+	line "precious! Let me"
+	cont "show you!"
+	done
+
+PokefanfSoniaBeatenText:
+	text "Aww! My cuties"
+	line "tried their best!"
+	done
+
+PokefanfSoniaAfterBattleText:
+	text "Have you visited"
+	line "the house of the"
+	cont "WEEKDAY siblings?"
+
+	para "MONICA usually "
+	line "leaves notes with"
+
+	para "where they all"
+	line "are."
+	done
+
 Route26SignText:
 	text "ROUTE 26"
 
@@ -392,3 +465,5 @@ Route26_MapEvents:
 	object_event 10, 92, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherScott, -1
 	object_event 14, 54, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26FruitTree, -1
 	object_event  9, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26MaxElixer, EVENT_ROUTE_26_MAX_ELIXER
+	object_event 17, 66, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGentlemanVirgil, -1
+	object_event  2, 82, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerPokefanfSonia, -1

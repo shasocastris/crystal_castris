@@ -2829,10 +2829,14 @@ GentlemanGroup:
 	dw AMPHAROS
 	db -1 ; end
 
-	next_list_item ; GENTLEMAN (4), unused ???
+	next_list_item ; GENTLEMAN (4), Route 26
 	db "VIRGIL@", TRAINERTYPE_NORMAL
-	db 24
-	dw PONYTA
+	db 44
+	dw MACHAMP
+	db 45
+	dw FARFETCH_D
+	db 47
+	dw RAPIDASH
 	db -1 ; end
 
 	next_list_item ; GENTLEMAN (5), Olivine Lighthouse
@@ -5685,11 +5689,17 @@ PokefanFGroup:
 	dw BERRY
 	db -1 ; end
 
-	next_list_item ; POKEFANF (4), unused ???
-	db "BEVERLY@", TRAINERTYPE_ITEM
-	db 36
+	next_list_item ; POKEFANF (4), Route 26
+	db "SONIA@", TRAINERTYPE_ITEM
+	db 46
 	dw GRANBULL
-	dw BERRY
+	dw GOLD_BERRY
+	db 46
+	dw SKARMORY
+	dw NO_ITEM
+	db 47
+	dw BLISSEY
+	dw LEFTOVERS
 	db -1 ; end
 
 	next_list_item ; POKEFANF (5), SS Aqua
