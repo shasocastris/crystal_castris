@@ -6,6 +6,11 @@
 	const VICTORYROAD_POKE_BALL4
 	const VICTORYROAD_POKE_BALL5
 	const VICTORYROAD_MOLTRES
+	const VICTORYROAD_JUGGLER1
+	const VICTORYROAD_JUGGLER2
+	const VICTORYROAD_COOLTRAINERM
+	const VICTORYROAD_COOLTRAINERF1
+	const VICTORYROAD_COOLTRAINERF2
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -128,6 +133,56 @@ Moltres:
 MoltresText:
 	text "Gyaaas!"
 	done
+
+TrainerJugglerCliff:
+	trainer JUGGLER, CLIFF, EVENT_BEAT_JUGGLER_CLIFF, JugglerCliffSeenText, JugglerCliffBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext JugglerCliffAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerJugglerCaleb:
+	trainer JUGGLER, CALEB, EVENT_BEAT_JUGGLER_CALEB, JugglerCalebSeenText, JugglerCalebBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext JugglerCalebAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainermSteve:
+	trainer COOLTRAINERM, STEVE, EVENT_BEAT_COOLTRAINERM_STEVE, CooltrainermSteveSeenText, CooltrainermSteveBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CooltrainermSteveAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfGalen:
+	trainer COOLTRAINERF, GALEN, EVENT_BEAT_COOLTRAINERF_GALEN, CooltrainerfGalenSeenText, CooltrainerfGalenBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CooltrainerfGalenAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfKelsey:
+	trainer COOLTRAINERF, KELSEY, EVENT_BEAT_COOLTRAINERF_KELSEY, CooltrainerfKelseySeenText, CooltrainerfKelseyBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CooltrainerfKelseyAfterBattleText
+	waitbutton
+	closetext
+	end
 
 VictoryRoadTMEarthquake:
 	itemball TM_EARTHQUAKE
@@ -296,6 +351,133 @@ VictoryRoadRivalVictoryText:
 	line "thing else."
 	done
 
+CooltrainermSteveSeenText:
+	text "I've been training"
+	line "here for months to"
+	cont "challenge the"
+	cont "ELITE FOUR!"
+
+	para "Let me test my"
+	line "skills against"
+	cont "yours!"
+	done
+
+CooltrainermSteveBeatenText:
+	text "Impressive! You"
+	line "have real talent!"
+	done
+
+CooltrainermSteveAfterBattleText:
+	text "The #MON here"
+	line "are incredibly"
+	cont "strong."
+
+	para "Training with them"
+	line "has made my team"
+	cont "much tougher!"
+	done
+
+CooltrainerfGalenSeenText:
+	text "Only the strongest"
+	line "trainers make it"
+	cont "this far."
+
+	para "Show me what you"
+	line "can do!"
+	done
+
+CooltrainerfGalenBeatenText:
+	text "You really are"
+	line "championship"
+	cont "material!"
+	done
+
+CooltrainerfGalenAfterBattleText:
+	text "VICTORY ROAD is"
+	line "the ultimate test"
+	cont "for any trainer."
+
+	para "You've proven you"
+	line "belong here!"
+	done
+
+CooltrainerfKelseySeenText:
+	text "I can see the"
+	line "determination in"
+	cont "your eyes!"
+
+	para "But determination"
+	line "alone won't be"
+	cont "enough here!"
+	done
+
+CooltrainerfKelseyBeatenText:
+	text "Your #MON fight"
+	line "with such spirit!"
+	done
+
+CooltrainerfKelseyAfterBattleText:
+	text "The bond between"
+	line "you and your"
+	cont "#MON is clear."
+
+	para "That's what makes"
+	line "a true champion!"
+	done
+
+JugglerCliffSeenText:
+	text "Watch closely!"
+	line "My #MON are as"
+	cont "unpredictable as"
+	cont "my juggling!"
+
+	para "Can you keep up"
+	line "with the show?"
+	done
+
+JugglerCliffBeatenText:
+	text "The show must"
+	line "go on... even"
+	cont "after a loss!"
+	done
+
+JugglerCliffAfterBattleText:
+	text "Juggling and"
+	line "#MON training"
+	cont "both require"
+	cont "perfect timing!"
+
+	para "You've mastered"
+	line "that skill!"
+	done
+
+JugglerCalebSeenText:
+	text "Prepare to be"
+	line "amazed by my"
+	cont "spectacular"
+	cont "#MON tricks!"
+
+	para "This will be a"
+	line "performance you'll"
+	cont "never forget!"
+	done
+
+JugglerCalebBeatenText:
+	text "What a twist!"
+	line "The audience has"
+	cont "become the star!"
+	done
+
+JugglerCalebAfterBattleText:
+	text "A good performer"
+	line "knows when they've"
+	cont "been upstaged."
+
+	para "Bravo! That was"
+	line "a magnificent"
+	cont "battle!"
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -327,3 +509,8 @@ VictoryRoad_MapEvents:
 	object_event 15, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadFullHeal, EVENT_VICTORY_ROAD_FULL_HEAL
 	object_event  7, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadHPUp, EVENT_VICTORY_ROAD_HP_UP
 	object_event 10, 50, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Moltres, EVENT_VICTORY_ROAD_MOLTRES
+	object_event  5, 54, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerJugglerCliff, -1
+	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerJugglerCaleb, -1
+	object_event 15, 40, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermSteve, -1
+	object_event 10, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfGalen, -1
+	object_event  6, 64, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfKelsey, -1

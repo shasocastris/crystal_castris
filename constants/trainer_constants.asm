@@ -233,7 +233,7 @@ DEF KRIS EQU __trainer_class__
 	const TYLER
 	const SEAN
 	const KEVIN
-	const STEVE ; unused
+	const STEVE
 	const ALLEN
 	const DARIN
 
@@ -259,6 +259,8 @@ DEF KRIS EQU __trainer_class__
 	const REENA2
 	const REENA3
 	const CARA
+	const GALEN
+	const KELSEY
 
 	trainerclass BEAUTY ; 22
 	const VICTORIA
@@ -526,9 +528,9 @@ DEF KRIS EQU __trainer_class__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2 ; unused
-	const IRWIN3 ; unused
-	const IRWIN4 ; unused
+	const CLIFF
+	const LEVI ; unused, Route 13 - 4, 4 (swap w/ SONIA)
+	const CALEB
 
 	trainerclass BLACKBELT_T ; 34
 	const KENJI
@@ -603,8 +605,8 @@ DEF KRIS EQU __trainer_class__
 	const TODD3
 	const THOMAS
 	const LEROY
-	const DAVID ; unused
-	const JOHN ; unused
+	const DAVID ; unused, Route 2 - 6, 26
+	const JOHN ; unused, Route 2 - 8, 13
 	const JERRY
 	const SPENCER
 	const TODD4
@@ -653,8 +655,8 @@ DEF KRIS EQU __trainer_class__
 	const BRANDON
 	const JEREMY
 	const COLIN
-	const DEREK2 ; unused
-	const DEREK3 ; unused
+	const DEREK2 ; unused, Route 8 - 16, 11
+	const DEREK3 ; unused, Route 12 - 5, 32
 	const ALEX
 	const REX
 	const ALLAN
