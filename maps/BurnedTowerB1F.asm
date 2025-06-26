@@ -231,7 +231,8 @@ BurnedTowerB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7, 15, BURNED_TOWER_1F, 14
+	warp_event 10,  8, BURNED_TOWER_1F, 3
+	warp_event  7, 15, BURNED_TOWER_1F, 4
 
 	def_coord_events
 	coord_event 10,  6, SCENE_BURNEDTOWERB1F_RELEASE_THE_BEASTS, ReleaseTheBeasts

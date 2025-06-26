@@ -169,16 +169,14 @@ BurnedTowerRival_BeforeText:
 	line "nothing here!"
 
 	para "Just some weak"
-	line "wild #MON hiding"
-	cont "in the shadows."
+	line "wild #MON"
+	cont "hiding in the"
+	cont "shadows."
 
-	para "What a waste of"
-	line "time! It's all"
-	cont "your fault somehow!"
-
-	para "Fine! I'll prove my"
-	line "#MON are the"
-	cont "strongest right now!"
+	para "Fine! I'll prove"
+	line "my #MON are"
+	cont "the strongest"
+	cont "right now!"
 	done
 
 BurnedTowerRival_WinText:
@@ -276,6 +274,7 @@ BurnedTower1FMortyText:
 	para "EUSINE is here, so"
 	line "I've decided to"
 
+
 	para "investigate the"
 	line "TOWER with him."
 	done
@@ -287,6 +286,7 @@ BurnedTower1F_MapEvents:
 	warp_event  9, 15, ECRUTEAK_CITY, 13
 	warp_event 10, 15, ECRUTEAK_CITY, 13
 	warp_event 10,  9, BURNED_TOWER_B1F, 1
+    warp_event  7, 15, BURNED_TOWER_B1F, 2
 
 	def_coord_events
 	coord_event 11,  9, SCENE_BURNEDTOWER1F_RIVAL_BATTLE, BurnedTowerRivalBattleScript

@@ -255,8 +255,8 @@ AzaleaTownRivalBeforeText:
 
 	para "You're not joking?"
 	line "Then your #MON"
-	cont "must be tougher than"
-	cont "I thought."
+	cont "must be tougher"
+	cont "than I thought."
 
 	para "Let's see which of"
 	line "us has the most"
@@ -290,8 +290,8 @@ AzaleaTownRivalAfterText:
 	line "ROCKET too."
 
 	para "They act tough in"
-	line "groups, but they're"
-	cont "nothing but weak"
+	line "groups, but they"
+	cont "are nothing but"
 	cont "cowards."
 
 	para "I'm going to build"
@@ -300,7 +300,8 @@ AzaleaTownRivalAfterText:
 
 	para "You stay out of my"
 	line "way. I don't have"
-	cont "time for weaklings."
+	cont "time for your"
+	cont "nonsense."
 	done
 
 AzaleaTownRivalLossText:

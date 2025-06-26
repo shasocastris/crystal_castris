@@ -2983,7 +2983,7 @@ BugCatcherGroup:
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (6), Azalea Gym
-	db "AL@", TRAINERTYPE_MOVES
+	db "AL@", TRAINERTYPE_NORMAL
 	db 15
 	dw PINECO
 	db 15
@@ -5269,7 +5269,7 @@ SageGroup:
 	db 4
 	dw GASTLY
 	db 4
-	dw XATU
+	dw NATU
 	db -1 ; end
 
 	next_list_item ; SAGE (8), Sprout Tower
