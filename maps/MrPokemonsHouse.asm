@@ -350,7 +350,7 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "strange ball I got"
+	line "useful item I got"
 	cont "during my travels."
 	done
 

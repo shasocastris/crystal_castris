@@ -370,11 +370,11 @@ BeautyOliviaAfterBattleText:
 	text "MOOMOO MILK is"
 	line "good for beauty"
 
-	para "and health, but"
-	line "inconveniently,"
+	para "and health, and"
+	line "conveniently, they"
 
-	para "they only sell a"
-	line "bottle at a time."
+	para "now sell a dozen"
+	line "bottles at a time."
 	done
 
 Route38SignText:

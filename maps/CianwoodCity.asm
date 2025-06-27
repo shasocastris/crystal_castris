@@ -11,8 +11,11 @@
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_EUSINE
 	const CIANWOODCITY_SUICUNE
-    const CIANWOODCITY_SWIMMER_GIRL
-	const CIANWOODCITY_OLIVINE_RIVAL
+    const CIANWOODCITY_SWIMMER_GIRL1
+	const CIANWOODCITY_OLIVINE_RIVAL1
+    const CIANWOODCITY_SWIMMER_GIRL2
+	const CIANWOODCITY_OLIVINE_RIVAL2
+    const CIANWOODCITY_SWIMMER_GIRL3
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -129,6 +132,15 @@ TrainerSwimmermPaton:
 	writetext SwimmermPatonAfterBattleText
 	waitbutton
 	closetext
+	end
+
+CianwoodCityTrainerSwimmerfJill:
+	end
+
+CianwoodCityTrainerSwimmermHal:
+	end
+
+CianwoodCityTrainerSwimmerfMary:
 	end
 
 CianwoodCityYoungster:
@@ -502,3 +514,6 @@ CianwoodCity_MapEvents:
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	object_event 25, 15, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKatie, -1
 	object_event 22, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPaton, -1
+	object_event 31,  7, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmerfJill, -1
+	object_event 32, 46, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmermHal, -1
+	object_event 33, 27, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmerfMary, -1
