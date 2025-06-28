@@ -465,7 +465,7 @@ VoltorbExplodingTrap:
 	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon VOLTORB, 23
+	loadwildmon ELECTRODE, 41
 	startbattle
 	end
 
@@ -476,7 +476,7 @@ GeodudeExplodingTrap:
 	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon GEODUDE, 21
+	loadwildmon GRAVELER, 41
 	startbattle
 	end
 
@@ -487,7 +487,7 @@ KoffingExplodingTrap:
 	special FadeInPalettes_EnableDynNoApply
 	setlasttalked -1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon KOFFING, 21
+	loadwildmon WEEZING, 41
 	startbattle
 	end
 

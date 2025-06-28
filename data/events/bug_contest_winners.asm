@@ -21,60 +21,60 @@ BugContestantPointers:
 
 BugContestant_BugCatcherDon:
 	db BUG_CATCHER, DON
-	dw KAKUNA,     300
-	dw METAPOD,    285
-	dw CATERPIE,   226
+	dw KAKUNA,     600
+	dw METAPOD,    585
+	dw CATERPIE,   526
 
 BugContestant_BugCatcherEd:
 	db BUG_CATCHER, ED
-	dw BUTTERFREE, 286
-	dw BUTTERFREE, 251
-	dw CATERPIE,   237
+	dw BUTTERFREE, 586
+	dw BUTTERFREE, 551
+	dw CATERPIE,   537
 
 BugContestant_CooltrainerMNick:
 	db COOLTRAINERM, NICK
-	dw SCYTHER,    357
-	dw BUTTERFREE, 349
-	dw PINSIR,     368
+	dw SCYTHER,    657
+	dw BUTTERFREE, 649
+	dw PINSIR,     668
 
 BugContestant_PokefanMWilliam:
 	db POKEFANM, WILLIAM
-	dw PINSIR,     332
-	dw BUTTERFREE, 324
-	dw VENONAT,    321
+	dw PINSIR,     632
+	dw BUTTERFREE, 624
+	dw VENONAT,    621
 
 BugContestant_BugCatcherBenny:
 	db BUG_CATCHER, BUG_CATCHER_BENNY
-	dw BUTTERFREE, 318
-	dw WEEDLE,     295
-	dw CATERPIE,   285
+	dw BUTTERFREE, 618
+	dw WEEDLE,     595
+	dw CATERPIE,   585
 
 BugContestant_CamperBarry:
 	db CAMPER, BARRY
-	dw PINSIR,     366
-	dw VENONAT,    329
-	dw KAKUNA,     314
+	dw PINSIR,     666
+	dw VENONAT,    629
+	dw KAKUNA,     614
 
 BugContestant_PicnickerCindy:
 	db PICNICKER, CINDY
-	dw BUTTERFREE, 341
-	dw METAPOD,    301
-	dw CATERPIE,   264
+	dw BUTTERFREE, 641
+	dw METAPOD,    601
+	dw CATERPIE,   564
 
 BugContestant_BugCatcherJosh:
 	db BUG_CATCHER, JOSH
-	dw SCYTHER,    326
-	dw BUTTERFREE, 292
-	dw METAPOD,    282
+	dw SCYTHER,    626
+	dw BUTTERFREE, 592
+	dw METAPOD,    582
 
 BugContestant_YoungsterSamuel:
 	db YOUNGSTER, SAMUEL
-	dw WEEDLE,     270
-	dw PINSIR,     282
-	dw CATERPIE,   251
+	dw WEEDLE,     570
+	dw PINSIR,     582
+	dw CATERPIE,   551
 
 BugContestant_SchoolboyKipp:
 	db SCHOOLBOY, KIPP
-	dw VENONAT,    267
-	dw PARAS,      254
-	dw KAKUNA,     259
+	dw VENONAT,    567
+	dw PARAS,      554
+	dw KAKUNA,     559

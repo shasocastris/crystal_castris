@@ -331,8 +331,8 @@ BugContestResultsScript:
 	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
 	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
 	clearevent EVENT_CONTEST_OFFICER_HAS_MIST_STONE
+	clearevent EVENT_CONTEST_OFFICER_HAS_MIRACLEBERRY
 	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	opentext
 	farwritetext ContestResults_ReadyToJudgeText
 	waitbutton
@@ -344,8 +344,8 @@ BugContestResultsScript:
 	farwritetext ContestResults_ConsolationPrizeText
 	promptbutton
 	waitsfx
-	verbosegiveitem BERRY
-	iffalse BugContestResults_NoRoomForBerry
+	verbosegiveitem GOLD_BERRY
+	iffalse BugContestResults_NoRoomForGoldBerry
 
 BugContestResults_DidNotWin:
 	farwritetext ContestResults_DidNotWinText
@@ -415,11 +415,11 @@ BugContestResults_SecondPlace:
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_ThirdPlace:
-	getitemname STRING_BUFFER_4, GOLD_BERRY
+	getitemname STRING_BUFFER_4, MIRACLEBERRY
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
-	verbosegiveitem GOLD_BERRY
-	iffalse BugContestResults_NoRoomForGoldBerry
+	verbosegiveitem MIRACLEBERRY
+	iffalse BugContestResults_NoRoomForMiracleBerry
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
 BugContestResults_NoRoomForSunStone:
@@ -434,16 +434,16 @@ BugContestResults_NoRoomForMistStone:
 	setevent EVENT_CONTEST_OFFICER_HAS_MIST_STONE
 	sjump BugContestResults_ReturnAfterWinnersPrize
 
+BugContestResults_NoRoomForMiracleBerry:
+	farwritetext BugContestPrizeNoRoomText
+	promptbutton
+	setevent EVENT_CONTEST_OFFICER_HAS_MIRACLEBERRY
+	sjump BugContestResults_ReturnAfterWinnersPrize
+
 BugContestResults_NoRoomForGoldBerry:
 	farwritetext BugContestPrizeNoRoomText
 	promptbutton
 	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	sjump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_NoRoomForBerry:
-	farwritetext BugContestPrizeNoRoomText
-	promptbutton
-	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	sjump BugContestResults_DidNotWin
 
 BugContestResults_CopyContestantsToResults:

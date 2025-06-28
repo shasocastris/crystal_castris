@@ -10,7 +10,7 @@ MACRO ugdoor
 	DEF UGDOOR_\1_YCOORD EQU \3
 ENDM
 
-	;      id,  x,  y
+	;	  id,  x,  y
 	ugdoor  1,  6, 16
 	ugdoor  2,  6, 10
 	ugdoor  3,  6,  2
@@ -664,24 +664,27 @@ UndergroundRivalRetreatMovement2:
 UndergroundRivalBeforeText:
 	text "Hold it!"
 
-	para "I followed you here."
-	line "Can't let you handle"
-	cont "TEAM ROCKET alone."
+	para "I followed you"
+	line "here. Can't let"
+	cont "you handle TEAM"
+	cont "ROCKET alone."
 
-	para "…Wait. You actually"
-	line "beat me before."
-	cont "More than once."
+	para "…Wait. You beat"
+	line "me before. More"
+	cont "than once."
 
 	para "How? My #MON"
-	line "are individually"
-	cont "stronger than yours."
+	line "are stronger"
+	cont "than yours."
 
-	para "But I always repay"
-	line "my debts."
+	para "But I always"
+	line "repay my debts."
 
-	para "This time I'll show"
-	line "you what happens when"
-	cont "power is used right!"
+	para "This time I'll"
+	line "show you what"
+	cont "happens when"
+	cont "power is used"
+	cont "right!"
 	done
 
 UndergroundRivalWinText:
@@ -698,38 +701,40 @@ UndergroundRivalWinText:
 	done
 
 UndergroundRivalAfterText:
-text "…Why do I keep"
+	text "…Why do I keep"
 	line "losing?"
 
-	para "I have the strongest"
+	para "I have the best"
 	line "#MON. I train"
 	cont "them harder than"
 	cont "anyone."
 
 	para "So why…?"
 
-	para "That LANCE guy said"
-	line "something about how"
-	cont "I treat my #MON."
+	para "That LANCE guy"
+	line "said something"
+	cont "about how I treat"
+	cont "my #MON."
 
-	para "But I give them the"
-	line "best training, the"
-	cont "best items…"
+	para "But I give them"
+	line "the best training,"
+	cont "the best items…"
 
 	para "Love…"
 
 	para "Trust…"
 
 	para "Are those really"
-	line "more important than"
-	cont "raw power?"
+	line "more important"
+	cont "than raw power?"
 
-	para "I… I need to think"
-	line "about this."
+	para "I… I need to"
+	line "think about this."
 
-	para "But I won't give up"
-	line "my dream. I'll find"
-	cont "the answer somehow."
+	para "But I won't give"
+	line "up my dream. I'll"
+	cont "find the answer"
+	cont "somehow."
 	done
 
 UndergroundRivalLossText:

@@ -5309,7 +5309,7 @@ SageGroup:
 	db -1 ; end
 
 	next_list_item ; SAGE (11), Tin Tower
-	db "MASA@", TRAINERTYPE_NORMAL
+	db "MASA@", TRAINERTYPE_ITEM_MOVES
 	db 45
 	dw XATU
 	dw KINGS_ROCK
@@ -5329,7 +5329,7 @@ SageGroup:
 	db -1 ; end
 
 	next_list_item ; SAGE (12), Tin Tower
-	db "KOJI@", TRAINERTYPE_NORMAL
+	db "KOJI@", TRAINERTYPE_ITEM_MOVES
 	db 45
 	dw XATU
 	dw LEFTOVERS

@@ -140,7 +140,7 @@ SuperNerdJayAfterBattleText:
 
 	para "Multiple entrances"
 	line "and underground,"
-	cont "all stih rare"
+	cont "all with rare"
 	cont "#MON."
 	done
 
