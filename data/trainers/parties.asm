@@ -10,7 +10,7 @@
 SECTION "Enemy Trainer Parties 1", ROMX
 
 FalknerGroup:
-	next_list_item ; FALKNER (1)
+	next_list_item ; FALKNER (1), Violet Gym
 	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
 	db 10
 	dw DODUO
@@ -26,7 +26,7 @@ FalknerGroup:
 	dw QUICK_ATTACK, MUD_SLAP, WING_ATTACK, RAZOR_WIND
 	db -1 ; end
 
-	next_list_item ; FALKNER (2)
+	next_list_item ; FALKNER (2), Violet Gym
 	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
 	db 54
 	dw FEAROW
@@ -46,7 +46,7 @@ FalknerGroup:
 	dw SKY_ATTACK, MUD_SLAP, BODY_SLAM, EXTREMESPEED
 	db -1 ; end
 
-	next_list_item ; FALKNER (3)
+	next_list_item ; FALKNER (3), Violet Gym
 	db "FALKNER@", TRAINERTYPE_ITEM_MOVES
 	db 70
 	dw PIDGEOT
@@ -57,7 +57,7 @@ FalknerGroup:
 	end_list_items
 
 BugsyGroup:
-	next_list_item ; BUGSY (1)
+	next_list_item ; BUGSY (1), Azalea Gym
 	db "BUGSY@", TRAINERTYPE_ITEM_MOVES
 	db 15
 	dw KAKUNA
@@ -76,7 +76,7 @@ BugsyGroup:
 	end_list_items
 
 WhitneyGroup:
-	next_list_item ; WHITNEY (1)
+	next_list_item ; WHITNEY (1), Goldenrod Gym
 	db "WHITNEY@", TRAINERTYPE_ITEM_MOVES
 	db 20
 	dw TEDDIURSA
@@ -99,7 +99,7 @@ WhitneyGroup:
 	end_list_items
 
 MortyGroup:
-	next_list_item ; MORTY (1)
+	next_list_item ; MORTY (1), Ecruteak Gym
 	db "MORTY@", TRAINERTYPE_ITEM_MOVES
 	db 26
 	dw GASTLY
@@ -122,7 +122,7 @@ MortyGroup:
 	end_list_items
 
 ChuckGroup:
-	next_list_item ; CHUCK (1)
+	next_list_item ; CHUCK (1), Cianwood Gym
 	db "CHUCK@", TRAINERTYPE_ITEM_MOVES
 	db 33
 	dw PRIMEAPE
@@ -145,7 +145,7 @@ ChuckGroup:
 	end_list_items
 
 JasmineGroup:
-	next_list_item ; JASMINE (1), MAGNETON, Forretress, Scizor, Steelix, Skarmory
+	next_list_item ; JASMINE (1), Olivine Gym
 	db "JASMINE@", TRAINERTYPE_ITEM_MOVES
 	db 38
 	dw SKARMORY
@@ -172,7 +172,7 @@ JasmineGroup:
 	end_list_items
 
 PryceGroup:
-	next_list_item ; PRYCE (1)
+	next_list_item ; PRYCE (1), Mahogany Gym
 	db "PRYCE@", TRAINERTYPE_ITEM_MOVES
 	db 44
 	dw CLOYSTER
@@ -199,7 +199,7 @@ PryceGroup:
 	end_list_items
 
 ClairGroup:
-	next_list_item ; CLAIR (1), LAPRAS
+	next_list_item ; CLAIR (1), Blackthorn Gym
 	db "CLAIR@", TRAINERTYPE_ITEM_MOVES
 	db 45
 	dw DRAGONAIR
@@ -230,7 +230,7 @@ ClairGroup:
 	end_list_items
 
 BrockGroup:
-	next_list_item ; BROCK (1)
+	next_list_item ; BROCK (1), Pewter Gym
 	db "BROCK@", TRAINERTYPE_ITEM_MOVES
 	db 53
 	dw ONIX
@@ -261,7 +261,7 @@ BrockGroup:
 	end_list_items
 
 MistyGroup:
-	next_list_item ; MISTY (1)
+	next_list_item ; MISTY (1), Cerulean Gym
 	db "MISTY@", TRAINERTYPE_ITEM_MOVES
 	db 54
 	dw GOLDUCK
@@ -292,7 +292,7 @@ MistyGroup:
 	end_list_items
 
 LtSurgeGroup:
-	next_list_item ; LT_SURGE (1)
+	next_list_item ; LT_SURGE (1), Vermillion Gym
 	db "LT.SURGE@", TRAINERTYPE_ITEM_MOVES
 	db 53
 	dw RAICHU
@@ -323,7 +323,7 @@ LtSurgeGroup:
 	end_list_items
 
 ErikaGroup:
-	next_list_item ; ERIKA (1)
+	next_list_item ; ERIKA (1), Celadon Gym
 	db "ERIKA@", TRAINERTYPE_ITEM_MOVES
 	db 51
 	dw TANGELA
@@ -354,7 +354,7 @@ ErikaGroup:
 	end_list_items
 
 JanineGroup:
-	next_list_item ; JANINE (1)
+	next_list_item ; JANINE (1), Fuchsia Gym
 	db "JANINE@", TRAINERTYPE_ITEM_MOVES
 	db 54
 	dw CROBAT
@@ -385,7 +385,7 @@ JanineGroup:
 	end_list_items
 
 SabrinaGroup:
-	next_list_item ; SABRINA (1)
+	next_list_item ; SABRINA (1), Saffron Gym
 	db "SABRINA@", TRAINERTYPE_ITEM_MOVES
 	db 56
 	dw ESPEON
@@ -416,7 +416,7 @@ SabrinaGroup:
 	end_list_items
 
 BlaineGroup:
-	next_list_item ; BLAINE (1)
+	next_list_item ; BLAINE (1), Seafoam Gym
 	db "BLAINE@", TRAINERTYPE_ITEM_MOVES
 	db 58
 	dw FLAREON
@@ -447,7 +447,7 @@ BlaineGroup:
 	end_list_items
 
 BlueGroup:
-	next_list_item ; BLUE (1)
+	next_list_item ; BLUE (1), Viridian Gym
 	db "BLUE@", TRAINERTYPE_ITEM_MOVES
 	db 68
 	dw PIDGEOT
@@ -478,7 +478,7 @@ BlueGroup:
 	end_list_items
 
 WillGroup:
-	next_list_item ; WILL (1)
+	next_list_item ; WILL (1), Indigo Plateau
 	db "WILL@", TRAINERTYPE_ITEM_MOVES
 	db 48
 	dw XATU
@@ -509,7 +509,7 @@ WillGroup:
 	end_list_items
 
 KogaGroup:
-	next_list_item ; KOGA (1)
+	next_list_item ; KOGA (1), Indigo Plateau
 	db "KOGA@", TRAINERTYPE_ITEM_MOVES
 	db 50
 	dw FORRETRESS
@@ -540,7 +540,7 @@ KogaGroup:
 	end_list_items
 
 BrunoGroup:
-	next_list_item ; BRUNO (1)
+	next_list_item ; BRUNO (1), Indigo Plateau
 	db "BRUNO@", TRAINERTYPE_ITEM_MOVES
 	db 51
 	dw HITMONTOP
@@ -571,7 +571,7 @@ BrunoGroup:
 	end_list_items
 
 KarenGroup:
-	next_list_item ; KAREN (1)
+	next_list_item ; KAREN (1), Indigo Plateau
 	db "KAREN@", TRAINERTYPE_ITEM_MOVES
 	db 51
 	dw UMBREON
@@ -602,7 +602,7 @@ KarenGroup:
 	end_list_items
 
 ChampionGroup:
-	next_list_item ; CHAMPION (1)
+	next_list_item ; CHAMPION (1), Indigo Plateau
 	db "LANCE@", TRAINERTYPE_ITEM_MOVES
 	db 53
 	dw GYARADOS
@@ -633,7 +633,7 @@ ChampionGroup:
 	end_list_items
 
 Rival1Group:
-	next_list_item ; RIVAL1 (1)
+	next_list_item ; RIVAL1 (1), Cherrygrove City
 	db "?@", TRAINERTYPE_NORMAL
 	db 7
 	dw ZUBAT
@@ -641,7 +641,7 @@ Rival1Group:
 	dw CHIKORITA
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (2)
+	next_list_item ; RIVAL1 (2), Cherrygrove City
 	db "?@", TRAINERTYPE_NORMAL
 	db 7
 	dw ZUBAT
@@ -649,7 +649,7 @@ Rival1Group:
 	dw CYNDAQUIL
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (3)
+	next_list_item ; RIVAL1 (3), Cherrygrove City
 	db "?@", TRAINERTYPE_NORMAL
 	db 7
 	dw ZUBAT
@@ -657,37 +657,37 @@ Rival1Group:
 	dw TOTODILE
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (4)
+	next_list_item ; RIVAL1 (4), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
 	db 15
 	dw GASTLY
-	db 10
+	db 20
 	dw ZUBAT
-	db 17
+	db 18
 	dw BAYLEEF
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (5)
+	next_list_item ; RIVAL1 (5), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
 	db 15
 	dw GASTLY
 	db 20
 	dw ZUBAT
-	db 17
+	db 18
 	dw QUILAVA
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (6)
+	next_list_item ; RIVAL1 (6), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
 	db 15
 	dw GASTLY
 	db 20
 	dw ZUBAT
-	db 17
+	db 18
 	dw CROCONAW
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (7)
+	next_list_item ; RIVAL1 (7), Burned Tower
 	db "?@", TRAINERTYPE_MOVES
 	db 25
 	dw HAUNTER
@@ -695,15 +695,15 @@ Rival1Group:
 	db 22
 	dw MAGNEMITE
 	dw TACKLE, THUNDERSHOCK, SUPERSONIC, SONICBOOM
-	db 24
+	db 27
 	dw GOLBAT
 	dw LEECH_LIFE, SUPERSONIC, BITE, CONFUSE_RAY
-	db 27
+	db 24
 	dw BAYLEEF
 	dw GROWL, REFLECT, RAZOR_LEAF, POISONPOWDER
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (8)
+	next_list_item ; RIVAL1 (8), Burned Tower
 	db "?@", TRAINERTYPE_MOVES
 	db 25
 	dw HAUNTER
@@ -719,7 +719,7 @@ Rival1Group:
 	dw LEER, SMOKESCREEN, EMBER, QUICK_ATTACK
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (9)
+	next_list_item ; RIVAL1 (9), Burned Tower
 	db "?@", TRAINERTYPE_MOVES
 	db 25
 	dw HAUNTER
@@ -735,7 +735,7 @@ Rival1Group:
 	dw LEER, RAGE, WATER_GUN, BITE
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (10)
+	next_list_item ; RIVAL1 (10), Goldenrod Underground
 	db "?@", TRAINERTYPE_MOVES
 	db 36
 	dw SNEASEL
@@ -754,7 +754,7 @@ Rival1Group:
 	dw REFLECT, RAZOR_LEAF, POISONPOWDER, BODY_SLAM
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (11)
+	next_list_item ; RIVAL1 (11), Goldenrod Underground
 	db "?@", TRAINERTYPE_MOVES
 	db 36
 	dw SNEASEL
@@ -769,11 +769,11 @@ Rival1Group:
 	dw HAUNTER
 	dw LICK, MEAN_LOOK, CURSE, SHADOW_BALL
 	db 39
-	dw QUILAVA
+	dw TYPHLOSION
 	dw SMOKESCREEN, EMBER, QUICK_ATTACK, FLAME_WHEEL
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (12)
+	next_list_item ; RIVAL1 (12), Goldenrod Underground
 	db "?@", TRAINERTYPE_MOVES
 	db 36
 	dw SNEASEL
@@ -792,7 +792,7 @@ Rival1Group:
 	dw RAGE, WATER_GUN, BITE, SCARY_FACE
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (13)
+	next_list_item ; RIVAL1 (13), Victory Road
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -814,7 +814,7 @@ Rival1Group:
 	dw REFLECT, RAZOR_LEAF, POISONPOWDER, BODY_SLAM
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (14)
+	next_list_item ; RIVAL1 (14), Victory Road
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -836,7 +836,7 @@ Rival1Group:
 	dw SMOKESCREEN, EMBER, QUICK_ATTACK, FLAME_WHEEL
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (15)
+	next_list_item ; RIVAL1 (15), Victory Road
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -861,7 +861,7 @@ Rival1Group:
 	end_list_items
 
 Rival2Group:
-	next_list_item ; RIVAL2 (1)
+	next_list_item ; RIVAL2 (1), Mt Moon
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 60
 	dw JOLTEON
@@ -889,7 +889,7 @@ Rival2Group:
 	dw PETAL_DANCE, EARTHQUAKE, BODY_SLAM, SAFEGUARD
 	db -1 ; end
 
-	next_list_item ; RIVAL2 (2)
+	next_list_item ; RIVAL2 (2), Mt Moon
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 60
 	dw UMBREON
@@ -917,7 +917,7 @@ Rival2Group:
 	dw FLAMETHROWER, THUNDERPUNCH, EARTHQUAKE, SMOKESCREEN
 	db -1 ; end
 
-	next_list_item ; RIVAL2 (3)
+	next_list_item ; RIVAL2 (3), Mt Moon
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 60
 	dw ESPEON
@@ -945,7 +945,7 @@ Rival2Group:
 	dw SURF, ICE_BEAM, EARTHQUAKE, SCARY_FACE
 	db -1 ; end
 
-	next_list_item ; RIVAL2 (4)
+	next_list_item ; RIVAL2 (4), Indigo Plateau
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 64
 	dw SCIZOR
@@ -973,7 +973,7 @@ Rival2Group:
 	dw PETAL_DANCE, EARTHQUAKE, BODY_SLAM, SAFEGUARD
 	db -1 ; end
 
-	next_list_item ; RIVAL2 (5)
+	next_list_item ; RIVAL2 (5), Indigo Plateau
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 64
 	dw UMBREON
@@ -1001,7 +1001,7 @@ Rival2Group:
 	dw FLAMETHROWER, THUNDERPUNCH, EARTHQUAKE, SMOKESCREEN
 	db -1 ; end
 
-	next_list_item ; RIVAL2 (6)
+	next_list_item ; RIVAL2 (6), Indigo Plateau
 	db "?@", TRAINERTYPE_ITEM_MOVES
 	db 64
 	dw SNEASEL
@@ -1034,7 +1034,7 @@ Rival2Group:
 PokemonProfGroup:
 
 PKMNTrainerGroup:
-	next_list_item ; CAL (2)
+	next_list_item ; CAL (2), Viridian City
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 36
 	dw BAYLEEF
@@ -1044,7 +1044,7 @@ PKMNTrainerGroup:
 	dw CROCONAW
 	db -1 ; end
 
-	next_list_item ; CAL (3)
+	next_list_item ; CAL (3), Viridian City
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 60
 	dw MEGANIUM
@@ -1063,7 +1063,7 @@ PKMNTrainerGroup:
 	end_list_items
 
 RedGroup:
-	next_list_item ; RED (1)
+	next_list_item ; RED (1), Mt Silver
 	db "RED@", TRAINERTYPE_ITEM_MOVES
 	db 98
 	dw PIKACHU
@@ -2674,7 +2674,7 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (11), Goldenrod Tunnel
+	next_list_item ; GRUNTM (11), Goldenrod Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 28
 	dw MUK
@@ -2712,7 +2712,7 @@ GruntMGroup:
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (16), Team Rocket Hideout
+	next_list_item ; GRUNTM (16), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 32
 	dw RATICATE
@@ -2724,13 +2724,13 @@ GruntMGroup:
 	dw TAUROS
 	db -1 ; end
 
-	next_list_item ; GRUNTM (17), Team Rocket Hideout
+	next_list_item ; GRUNTM (17), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 34
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (18), Team Rocket Hideout
+	next_list_item ; GRUNTM (18), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 33
 	dw RATICATE
@@ -2740,7 +2740,7 @@ GruntMGroup:
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (19), Team Rocket Hideout
+	next_list_item ; GRUNTM (19), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 34
 	dw VENOMOTH
@@ -2748,7 +2748,7 @@ GruntMGroup:
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (20), Team Rocket Hideout, security
+	next_list_item ; GRUNTM (20), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 33
 	dw HYPNO
@@ -2756,7 +2756,7 @@ GruntMGroup:
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (21), Team Rocket Hideout, security
+	next_list_item ; GRUNTM (21), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 32
 	dw GOLBAT
@@ -2778,7 +2778,7 @@ GruntMGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (24), Goldenrod Tunnel
+	next_list_item ; GRUNTM (24), Goldenrod Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 30
 	dw GRIMER
@@ -2786,7 +2786,7 @@ GruntMGroup:
 	dw KOFFING
 	db -1 ; end
 
-	next_list_item ; GRUNTM (25), Goldenrod Tunnel
+	next_list_item ; GRUNTM (25), Goldenrod Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 29
 	dw KOFFING
@@ -2808,7 +2808,7 @@ GruntMGroup:
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (28), Team Rocket Hideout
+	next_list_item ; GRUNTM (28), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 35
 	dw RATICATE
@@ -4261,7 +4261,7 @@ BikerGroup:
 	end_list_items
 
 BurglarGroup:
-	next_list_item ; BURGLAR (1), Goldenrod Tunnel
+	next_list_item ; BURGLAR (1), Goldenrod Underground
 	db "DUNCAN@", TRAINERTYPE_NORMAL
 	db 28
 	dw KOFFING
@@ -4271,7 +4271,7 @@ BurglarGroup:
 	dw CHARMELEON
 	db -1 ; end
 
-	next_list_item ; BURGLAR (2), Goldenrod Tunnel
+	next_list_item ; BURGLAR (2), Goldenrod Underground
 	db "EDDIE@", TRAINERTYPE_MOVES
 	db 32
 	dw ARCANINE
@@ -4624,7 +4624,7 @@ ExecutiveMGroup:
 	db 37
 	dw RATICATE
 	db 38
-	dw KOFFING
+	dw WEEZING
 	db -1 ; end
 
 	end_list_items
@@ -5368,7 +5368,7 @@ MediumGroup:
 	dw HAUNTER
 	db -1 ; end
 
-	next_list_item ; MEDIUM (3), Bethany
+	next_list_item ; MEDIUM (3), Cianwood City
 	db "BETHANY@", TRAINERTYPE_MOVES
 	db 28
 	dw MISDREAVUS
@@ -5378,7 +5378,7 @@ MediumGroup:
 	dw TOXIC, SLUDGE_BOMB, CONFUSE_RAY, WING_ATTACK
 	db -1 ; end
 
-	next_list_item ; MEDIUM (4), Margret
+	next_list_item ; MEDIUM (4), Cianwood City
 	db "MARGRET@", TRAINERTYPE_MOVES
 	db 28
 	dw MISDREAVUS
@@ -5388,7 +5388,7 @@ MediumGroup:
 	dw SWEET_KISS, LOVELY_KISS, ICE_PUNCH, PSYCHIC_M
 	db -1 ; end
 
-	next_list_item ; MEDIUM (5), Ethel
+	next_list_item ; MEDIUM (5), Cianwood City
 	db "ETHEL@", TRAINERTYPE_MOVES
 	db 28
 	dw HAUNTER
@@ -5859,7 +5859,7 @@ GruntFGroup:
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; GRUNTF (3), Goldenrod Tunnel
+	next_list_item ; GRUNTF (3), Goldenrod Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 30
 	dw GLOOM
@@ -5906,7 +5906,7 @@ MysticalmanGroup:
 	end_list_items
 
 KrisGroup:
-	next_list_item; KRIS (1)
+	next_list_item; KRIS (1), unused ???
 	db "KRIS@", TRAINERTYPE_NORMAL
 	db 12
 	dw CHIKORITA
