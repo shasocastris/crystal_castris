@@ -4419,7 +4419,6 @@ JugglerGroup:
 	dw PSYCHIC_M, RECOVER, THUNDERPUNCH, FIRE_PUNCH
 	db -1 ; end
 
-	next_list_item ; JUGGLER (5), unused ???
 	next_list_item ; JUGGLER LEVI
 	db "LEVI@", TRAINERTYPE_ITEM_MOVES
 	db 47

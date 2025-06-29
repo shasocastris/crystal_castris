@@ -56,7 +56,6 @@ VictoryRoadRivalRight:
 	end
 
 VictoryRoadRivalNext:
-	turnobject PLAYER, DOWN
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext VictoryRoadRivalBeforeText
@@ -252,9 +251,9 @@ VictoryRoadRivalBattleExitMovement2:
 	step_end
 
 VictoryRoadRivalBeforeText:
-	para "So you're taking the"
-	line "#MON LEAGUE"
-	cont "challenge too?"
+	text "…Are you going to"
+	line "take the #MON"
+	cont "LEAGUE challenge?"
 
 	para "…I won't laugh at"
 	line "you this time."
@@ -263,28 +262,31 @@ VictoryRoadRivalBeforeText:
 	line "about what makes a"
 	cont "trainer strong."
 
-	para "It's not just about"
-	line "having powerful"
-	cont "#MON, is it?"
+	para "It's not just"
+	line "about having"
+	cont "powerful #MON,"
+	cont "is it?"
 
 	para "I've been watching"
 	line "how you battle."
 	cont "How your #MON"
 	cont "fight for you."
 
-	para "I want to understand"
-	line "that bond."
+	para "I want to"
+	line "understand that"
+	cont "bond."
 
 	para "<PLAYER>!"
 	line "Show me what true"
-	cont "strength looks like!"
+	cont "strength looks"
+	cont "like!"
 	done
 
 VictoryRoadRivalDefeatText:
 	text "…I lost again."
 
 	para "But this time…"
-	line "I think I understand"
+	line "I think I now know"
 	cont "why."
 
 	para "My #MON fought"
@@ -293,11 +295,14 @@ VictoryRoadRivalDefeatText:
 	cont "their hearts."
 
 	para "That dragon master"
-	line "was right, wasn't he?"
+	line "was right, wasn't"
+	cont "he?"
 
-	para "True strength comes"
-	line "from the bond between"
-	cont "trainer and #MON."
+	para "True strength"
+	line "comes from the"
+	cont "bond between"
+	cont "trainers and their"
+	cont "#MON."
 	done
 
 VictoryRoadRivalAfterText:
@@ -305,17 +310,18 @@ VictoryRoadRivalAfterText:
 	line "on becoming the"
 	cont "greatest trainer."
 
-	para "But I need to change"
-	line "how I think about"
-	cont "strength."
+	para "But I need to"
+	line "change how I think"
+	cont "about strength."
 
-	para "It's not about having"
-	line "the most powerful"
+	para "It's not about"
+	line "having the most"
+	cont "powerful #MON."
+
+	para "It's about"
+	line "bringing out the"
+	cont "best in every"
 	cont "#MON."
-
-	para "It's about bringing"
-	line "out the best in"
-	cont "every #MON."
 
 	para "Even the ones I"
 	line "used to think were"
@@ -330,14 +336,15 @@ VictoryRoadRivalAfterText:
 	cont "I'll challenge you"
 	cont "again."
 
-	para "And next time, we'll"
-	line "both be fighting"
-	cont "with everything we"
+	para "And next time,"
+	line "we'll all be"
+	cont "fighting with"
+	cont "everything we"
 	cont "have."
 
 	para "…Thanks, <PLAYER>."
-	line "For showing me what"
-	cont "I was missing."
+	line "For showing me"
+	cont "what I was lacked."
 	done
 
 VictoryRoadRivalVictoryText:
