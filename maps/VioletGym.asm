@@ -71,34 +71,6 @@ VioletGymFalknerScript:
 	end
 
 .FalknerRematch
-	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
-	iftrue .BeatEliteFourRematchFalkner
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .BeatEliteFourFalkner
-	; fallthrough
-
-	writetext FalknerFirstRematchText
-	waitbutton
-	closetext
-	winlosstext FalknerRematchWinLossText, FalknerLossText
-	loadtrainer FALKNER, FALKNER1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	sjump AfterFalknerRematch
-
-.BeatEliteFourRematchFalkner:
-	writetext FalknerThirdRematchText
-	waitbutton
-	closetext
-	winlosstext FalknerRematchWinLossText, FalknerLossText
-	loadtrainer FALKNER, FALKNER3
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	sjump AfterFalknerRematch
-
-.BeatEliteFourFalkner
 	writetext FalknerSecondRematchText
 	waitbutton
 	closetext
@@ -107,9 +79,6 @@ VioletGymFalknerScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
-	; fallthrough
-
-AfterFalknerRematch:
 	opentext
 	writetext BeatenFalknerAgainText
 	waitbutton

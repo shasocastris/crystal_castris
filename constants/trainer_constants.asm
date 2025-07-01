@@ -31,67 +31,86 @@ DEF KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const FALKNER2
-	const FALKNER3
 
 	trainerclass BUGSY ; 2
 	const BUGSY1
+	const BUGSY2
 
 	trainerclass WHITNEY ; 3
 	const WHITNEY1
+	const WHITNEY2
 
 	trainerclass MORTY ; 4
 	const MORTY1
+	const MORTY2
 
 	trainerclass CHUCK ; 5
 	const CHUCK1
+	const CHUCK2
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
+	const JASMINE2
 
 	trainerclass PRYCE ; 7
 	const PRYCE1
+	const PRYCE2
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const CLAIR2
 
 	trainerclass BROCK ; 9
 	const BROCK1
+	const BROCK2
 
 	trainerclass MISTY ; a
 	const MISTY1
+	const MISTY2
 
 	trainerclass LT_SURGE ; b
 	const LT_SURGE1
+	const LT_SURGE2
 
 	trainerclass ERIKA ; c
 	const ERIKA1
+	const ERIKA2
 
 	trainerclass JANINE ; d
 	const JANINE1
+	const JANINE2
 
 	trainerclass SABRINA ; e
 	const SABRINA1
+	const SABRINA2
 
 	trainerclass BLAINE ; f
 	const BLAINE1
+	const BLAINE2
 
 	trainerclass BLUE ; 10
 	const BLUE1
+	const BLUE2
 
 	trainerclass WILL ; 11
 	const WILL1
+	const WILL2
 
 	trainerclass KOGA ; 12
 	const KOGA1
+	const KOGA2
 
 	trainerclass BRUNO ; 13
 	const BRUNO1
+	const BRUNO2
 
 	trainerclass KAREN ; 14
 	const KAREN1
+	const KAREN2
 
 	trainerclass CHAMPION ; 15
-	const LANCE
+	const LANCE1
+	const LANCE2
 
 	trainerclass RIVAL1 ; 16
 	const RIVAL1_1_CHIKORITA

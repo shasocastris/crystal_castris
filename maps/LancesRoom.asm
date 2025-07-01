@@ -57,13 +57,13 @@ LancesRoomLanceScript:
 	closetext
 	winlosstext LanceBattleWinText, LanceLossText
 	setlasttalked LANCESROOM_LANCE
-	loadtrainer CHAMPION, LANCE
+	loadtrainer CHAMPION, LANCE1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
-	clearevent EVENT_BEAT_FALKNER
+	clearflag ENGINE_BEAT_FALKNER
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
