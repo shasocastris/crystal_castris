@@ -42,9 +42,12 @@ MahoganyGymPryceScript:
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
+	setflag ENGINE_BEAT_PRYCE
 .FightDone:
 	changeblock 4, 17, $1C ; door
 	changeblock 5, 17, $1C ; door
+	checkflag ENGINE_BEAT_PRYCE
+	iffalse .PryceRematch
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE
@@ -61,6 +64,22 @@ MahoganyGymPryceScript:
 	waitbutton
 	closetext
 	end
+
+.PryceRematch
+    writetext PryceRematchText
+    waitbutton
+    closetext
+    winlosstext PryceRematchWinLossText, PryceLossText
+    loadtrainer PRYCE, PRYCE2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenPryceAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_PRYCE
+    end
 
 PryceScript_Defeat:
 	writetext PryceText_CherishYourPokemon
@@ -245,6 +264,31 @@ PryceText_CherishYourPokemon:
 	para "Cherish your time"
 	line "together!"
 	done
+
+PryceRematchText:
+    text "Ice and snow have"
+    line "taught me patience"
+    cont "and endurance."
+
+    para "My team has only"
+    line "grown colder and"
+    cont "more powerful!"
+    done
+
+PryceRematchWinLossText:
+    text "Like ice in spring"
+    line "I accept this"
+    cont "melting defeat."
+    done
+
+BeatenPryceAgainText:
+    text "You have bested"
+    line "this old trainer"
+    cont "once more."
+
+    para "Your spirit keeps"
+    line "me young at heart."
+    done
 
 BoarderRonaldSeenText:
 	text "I'll frostbite"

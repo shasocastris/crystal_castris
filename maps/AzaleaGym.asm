@@ -42,9 +42,12 @@ AzaleaGymBugsyScript:
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets
+	setflag ENGINE_BEAT_BUGSY
 .FightDone:
 	changeblock 4, 15, $03 ; door
 	changeblock 5, 15, $03 ; door
+	checkflag ENGINE_BEAT_BUGSY
+	iffalse .BugsyRematch
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
@@ -67,6 +70,22 @@ AzaleaGymBugsyScript:
 .NoRoomForFuryCutter:
 	closetext
 	end
+
+.BugsyRematch
+    writetext BugsyRematchText
+    waitbutton
+    closetext
+    winlosstext BugsyRematchWinLossText, BugsyLossText
+    loadtrainer BUGSY, BUGSY2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenBugsyAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_BUGSY
+    end
 
 AzaleaGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -240,6 +259,30 @@ BugsyText_BugMonsAreDeep:
 	para "Study your favor-"
 	line "ites thoroughly."
 	done
+
+BugsyRematchText:
+    text "My bug #MON"
+    line "have trained deep"
+    cont "in Ilex Forest!"
+
+    para "Time to show their"
+    line "true power!"
+    done
+
+BugsyRematchWinLossText:
+    text "Amazing! Your bond"
+    line "with your #MON"
+    cont "is inspiring!"
+    done
+
+BeatenBugsyAgainText:
+    text "You beat me again!"
+
+    para "This loss will"
+    line "only make my bug"
+    cont "#MON and I"
+    cont "stronger!"
+    done
 
 BugCatcherBennySeenText:
 	text "Bug #MON evolve"

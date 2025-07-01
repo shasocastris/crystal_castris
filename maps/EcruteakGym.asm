@@ -54,9 +54,12 @@ EcruteakGymMortyScript:
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
+	setflag ENGINE_BEAT_MORTY
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
+	checkflag ENGINE_BEAT_MORTY
+	iffalse .MortyRematch
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
@@ -79,6 +82,22 @@ EcruteakGymMortyScript:
 .NoRoomForShadowBall:
 	closetext
 	end
+
+.MortyRematch
+    writetext MortyRematchText
+    waitbutton
+    closetext
+    winlosstext MortyRematchWinLossText, MortyLossText
+    loadtrainer MORTY, MORTY2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenMortyAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_MORTY
+    end
 
 EcruteakGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -286,6 +305,31 @@ MortyFightDoneText:
 	para "I envy you for"
 	line "that…"
 	done
+
+MortyRematchText:
+    text "The spirits have"
+    line "whispered of your"
+    cont "return."
+
+    para "My ghosts and I"
+    line "have prepared for"
+    cont "this moment."
+    done
+
+MortyRematchWinLossText:
+    text "The spirits speak"
+    line "of your strength"
+    cont "and courage."
+    done
+
+BeatenMortyAgainText:
+    text "You have proven"
+    line "your worth again."
+
+    para "Your bond with"
+    line "#MON exceeds"
+    cont "this world."
+    done
 
 SageJeffreySeenText:
 	text "I spent the spring"

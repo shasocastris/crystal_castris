@@ -39,9 +39,12 @@ OlivineGymJasmineScript:
 	setflag ENGINE_MINERALBADGE
 	readvar VAR_BADGES
 	scall OlivineGymActivateRockets
+	setflag ENGINE_BEAT_JASMINE
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door
+	checkflag ENGINE_BEAT_JASMINE
+	iffalse .JasmineRematch
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech
@@ -60,6 +63,22 @@ OlivineGymJasmineScript:
 .NoRoomForIronTail:
 	closetext
 	end
+
+.JasmineRematch
+    writetext JasmineRematchText
+    waitbutton
+    closetext
+    winlosstext JasmineRematchWinLossText, JasmineLossText
+    loadtrainer JASMINE, JASMINE2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenJasmineAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_JASMINE
+    end
 
 OlivineGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -171,6 +190,30 @@ Jasmine_GoodLuck:
 	line "how to say this,"
 	cont "but good luck…"
 	done
+
+JasmineRematchText:
+    text "I've studied steel"
+    line "#MON from all"
+    cont "the world."
+
+    para "My team has become"
+    line "much stronger and"
+    cont "more refined."
+    done
+
+JasmineRematchWinLossText:
+    text "Your skill has"
+    line "grown so much"
+    cont "since we met."
+    done
+
+BeatenJasmineAgainText:
+    text "You've won again."
+
+    para "I can see why"
+    line "Amphy was so fond"
+    cont "of you."
+    done
 
 OlivineGymGuideText:
 	text "JASMINE uses the"

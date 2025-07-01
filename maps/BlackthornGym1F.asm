@@ -10,15 +10,6 @@ BlackthornGym1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, BlackthornGym1FBouldersCallback
-;    callback MAPCALLBACK_TILES, .BlackthornGymLocked
-
-;.BlackthornGymLocked:
-;	checkevent EVENT_BEAT_CLAIR
-;	iftrue .UnlockGym
-;	changeblock 4, 17, $2D ; floor
-;	changeblock 5, 17, $2D ; floor
-;.UnlockGym
-;    endcallback
 
 BlackthornGym1FBouldersCallback:
 	checkevent EVENT_BEAT_CLAIR
@@ -70,6 +61,7 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
+	setflag ENGINE_BEAT_CLAIR
 	end
 
 .FightDone:
@@ -79,6 +71,8 @@ BlackthornGymClairScript:
 	end
 
 .AlreadyGotBadge:
+	checkflag ENGINE_BEAT_CLAIR
+	iffalse .ClairRematch
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
@@ -106,6 +100,22 @@ BlackthornGymClairScript:
 	waitbutton
 	closetext
 	end
+
+.ClairRematch
+    writetext ClairRematchText
+    waitbutton
+    closetext
+    winlosstext ClairRematchWinLossText, ClairLossText
+    loadtrainer CLAIR, CLAIR2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenClairAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_CLAIR
+    end
 
 TrainerCooltrainermPaul:
 	trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
@@ -301,6 +311,30 @@ BlackthornGymClairText_League:
 	para "Give it every-"
 	line "thing you've got."
 	done
+
+ClairRematchText:
+    text "You think your"
+    line "training is enough"
+    cont "to face me again?"
+
+    para "I won't hold back!"
+    done
+
+ClairRematchWinLossText:
+    text "Your mastery is"
+    line "undeniable. Even"
+    cont "dragons bow to you."
+    done
+
+BeatenClairAgainText:
+    text "Magnificent! You"
+    line "truly are a master"
+    cont "trainer!"
+
+    para "I see why Lance"
+    line "speaks so highly"
+    cont "of you."
+    done
 
 CooltrainermPaulSeenText:
 	text "Your first battle"

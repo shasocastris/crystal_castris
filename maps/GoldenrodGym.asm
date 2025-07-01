@@ -48,9 +48,12 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_BEAUTY_SAMANTHA
 	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
+	setflag ENGINE_BEAT_WHITNEY
 .FightDone:
 	changeblock 2, 17, $03 ; door
 	changeblock 3, 17, $03 ; door
+	checkflag ENGINE_BEAT_WHITNEY
+	iffalse .WhitneyRematch
 	opentext
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
@@ -90,6 +93,23 @@ GoldenrodGymWhitneyScript:
 .NoRoomForAttract:
 	closetext
 	end
+
+.WhitneyRematch
+    opentext
+    writetext WhitneyRematchText
+    waitbutton
+    closetext
+    winlosstext WhitneyRematchWinLossText, WhitneyLossText
+    loadtrainer WHITNEY, WHITNEY2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenWhitneyAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_WHITNEY
+    end
 
 GoldenrodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -276,6 +296,30 @@ WhitneyGoodCryText:
 	para "Come for a visit"
 	line "again! Bye-bye!"
 	done
+
+WhitneyRematchText:
+    text "I've been working"
+    line "super hard with"
+    cont "my #MON!"
+
+    para "This time, I won't"
+    line "cry if I lose!"
+    done
+
+WhitneyRematchWinLossText:
+    text "That was such a"
+    line "fun battle! You're"
+    cont "incredible!"
+    done
+
+BeatenWhitneyAgainText:
+    text "Wow! You beat me"
+    line "again!"
+
+    para "I'm not even sad!"
+    line "That battle was"
+    cont "so exciting!"
+    done
 
 LassCarrieSeenText:
 	text "Don't let my"

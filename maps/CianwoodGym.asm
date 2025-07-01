@@ -56,9 +56,12 @@ CianwoodGymChuckScript:
 	setflag ENGINE_STORMBADGE
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
+	setflag ENGINE_BEAT_CHUCK
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
+	checkflag ENGINE_BEAT_CHUCK
+	iffalse .ChuckRematch
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
@@ -81,6 +84,22 @@ CianwoodGymChuckScript:
 .BagFull:
 	closetext
 	end
+
+.ChuckRematch
+    writetext ChuckRematchText
+    waitbutton
+    closetext
+    winlosstext ChuckRematchWinLossText, ChuckLossText
+    loadtrainer CHUCK, CHUCK2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    opentext
+    writetext BeatenChuckAgainText
+    waitbutton
+    closetext
+    setflag ENGINE_BEAT_CHUCK
+    end
 
 CianwoodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -202,6 +221,30 @@ ChuckLossText:
 	text "Guess I flexed too"
 	line "hard…"
 	done
+
+ChuckRematchText:
+    text "I've trained under"
+    line "waterfalls day"
+    cont "and night!"
+
+    para "Are you ready to"
+    line "face the new"
+    cont "heights of power?"
+    done
+
+ChuckRematchWinLossText:
+    text "Your strength"
+    line "continues to amaze"
+    cont "me! Well fought!"
+    done
+
+BeatenChuckAgainText:
+    text "You've beaten me"
+    line "again! Incredible!"
+
+    para "Your training must"
+    line "be truly intense!"
+    done
 
 GetStormBadgeText:
 	text "<PLAYER> received"

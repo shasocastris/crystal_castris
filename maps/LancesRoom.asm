@@ -64,6 +64,13 @@ LancesRoomLanceScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
 	clearflag ENGINE_BEAT_FALKNER
+	clearflag ENGINE_BEAT_BUGSY
+	clearflag ENGINE_BEAT_WHITNEY
+	clearflag ENGINE_BEAT_MORTY
+	clearflag ENGINE_BEAT_CHUCK
+	clearflag ENGINE_BEAT_JASMINE
+	clearflag ENGINE_BEAT_PRYCE
+	clearflag ENGINE_BEAT_CLAIR
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton

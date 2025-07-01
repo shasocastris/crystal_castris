@@ -71,7 +71,7 @@ VioletGymFalknerScript:
 	end
 
 .FalknerRematch
-	writetext FalknerSecondRematchText
+	writetext FalknerRematchText
 	waitbutton
 	closetext
 	winlosstext FalknerRematchWinLossText, FalknerLossText
@@ -182,26 +182,18 @@ FalknerLossText:
 	line "changes course."
 	done
 
-FalknerFirstRematchText:
+FalknerRematchText:
 	text "I've been training"
 	line "hard to prove that"
 	cont "my Flying-type"
 	cont "#MON can rise"
-	cont "above any trial."
-	done
+	cont "above any trials,"
 
-FalknerSecondRematchText:
-	text "I won't go down"
+	para "so I won't go down"
 	line "easily this time."
 
 	para "Prepare to be"
 	line "grounded!"
-	done
-
-FalknerThirdRematchText:
-	text "Let this be a true"
-	line "test of the skies"
-	cont "vs your strength!"
 	done
 
 FalknerRematchWinLossText:
