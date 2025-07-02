@@ -120,7 +120,7 @@ ENDM
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
 	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
-	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
+	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const ICE_PATH_1F,                                 20, 18 ; 61
