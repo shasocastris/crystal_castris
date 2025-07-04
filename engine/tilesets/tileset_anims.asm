@@ -90,6 +90,16 @@ TilesetJohtoAnim::
 	dw WhirlpoolFrames4, AnimateWhirlpoolTile
 	dw NULL,  DoNothing ; WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $77, ReadTileToAnimBuffer
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileDown
+	dw NULL,  DoNothing
+	dw vTiles2 tile $77, WriteTileFromAnimBuffer
+	dw NULL,  DoNothing
 	dw NULL,  DoneTileAnimation
 
 TilesetPortAnim::
