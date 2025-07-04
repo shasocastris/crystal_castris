@@ -108,7 +108,8 @@ ChikoritaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
-	dbw 8, RAZOR_LEAF
+	dbw 6, RAZOR_LEAF
+	dbw 9, CONSTRICT
 	dbw 12, REFLECT
 	dbw 15, POISONPOWDER
 	dbw 18, FLAIL
@@ -128,7 +129,8 @@ BayleefEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
-	dbw 8, RAZOR_LEAF
+	dbw 6, RAZOR_LEAF
+	dbw 9, CONSTRICT
 	dbw 12, REFLECT
 	dbw 15, POISONPOWDER
 	dbw 19, FLAIL
@@ -148,7 +150,8 @@ MeganiumEvosAttacks:
 	dbw LEARN_EVO_MOVE, PETAL_DANCE
 	dbw 1, TACKLE
 	dbw 1, GROWL
-	dbw 8, RAZOR_LEAF
+	dbw 6, RAZOR_LEAF
+	dbw 9, CONSTRICT
 	dbw 12, REFLECT
 	dbw 15, POISONPOWDER
 	dbw 19, FLAIL
@@ -169,13 +172,13 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, LEER
-	dbw 6, SMOKESCREEN
-	dbw 9, FURY_SWIPES
-	dbw 12, EMBER
+	dbw 6, EMBER
+	dbw 9, FIRE_SPIN
+	dbw 12, SMOKESCREEN
 	dbw 16, REVERSAL
 	dbw 19, QUICK_ATTACK
-	dbw 23, FORESIGHT
-	dbw 27, FLAME_WHEEL
+	dbw 23, FLAME_WHEEL
+	dbw 27, FORESIGHT
 	dbw 31, THRASH
 	dbw 36, SWIFT
 	dbw 41, SUBMISSION
@@ -187,13 +190,13 @@ QuilavaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, LEER
-	dbw 6, SMOKESCREEN
-	dbw 9, FURY_SWIPES
-	dbw 12, EMBER
+	dbw 6, EMBER
+	dbw 9, FIRE_SPIN
+	dbw 12, SMOKESCREEN
 	dbw 17, REVERSAL
 	dbw 21, QUICK_ATTACK
-	dbw 26, FORESIGHT
-	dbw 31, FLAME_WHEEL
+	dbw 26, FLAME_WHEEL
+	dbw 31, FORESIGHT
 	dbw 37, THRASH
 	dbw 42, SWIFT
 	dbw 48, SUBMISSION
@@ -205,13 +208,13 @@ TyphlosionEvosAttacks:
 	dbw LEARN_EVO_MOVE, KARATE_CHOP
 	dbw 1, TACKLE
 	dbw 1, LEER
-	dbw 6, SMOKESCREEN
-	dbw 9, FURY_SWIPES
-	dbw 12, EMBER
+	dbw 6, EMBER
+	dbw 9, FIRE_SPIN
+	dbw 12, SMOKESCREEN
 	dbw 17, REVERSAL
 	dbw 21, QUICK_ATTACK
-	dbw 26, FORESIGHT
-	dbw 31, FLAME_WHEEL
+	dbw 26, FLAME_WHEEL
+	dbw 31, FORESIGHT
 	dbw 35, KARATE_CHOP
 	dbw 38, THRASH
 	dbw 45, SWIFT
@@ -224,9 +227,9 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 7, RAGE
+	dbw 6, WATER_GUN
 	dbw 10, RAZOR_WIND
-	dbw 13, WATER_GUN
+	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 20, BITE
 	dbw 23, THRASH
@@ -243,9 +246,9 @@ CroconawEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 7, RAGE
+	dbw 6, WATER_GUN
 	dbw 10, RAZOR_WIND
-	dbw 13, WATER_GUN
+	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 21, BITE
 	dbw 24, THRASH
@@ -261,9 +264,9 @@ FeraligatrEvosAttacks:
 	dbw LEARN_EVO_MOVE, CRUNCH
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 7, RAGE
+	dbw 6, WATER_GUN
 	dbw 10, RAZOR_WIND
-	dbw 13, WATER_GUN
+	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 21, BITE
 	dbw 24, THRASH
