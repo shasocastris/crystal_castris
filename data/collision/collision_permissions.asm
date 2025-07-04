@@ -115,7 +115,7 @@ CollisionPermissionTable::
 	db LAND_TILE         ; 6f
 	db LAND_TILE         ; COLL_WARP_CARPET_DOWN
 	db LAND_TILE         ; COLL_DOOR
-	db LAND_TILE         ; COLL_LADDER
+	db LAND_TILE | WATER_TILE        ; COLL_LADDER
 	db LAND_TILE         ; COLL_STAIRCASE_73
 	db LAND_TILE         ; COLL_CAVE_74
 	db LAND_TILE         ; COLL_DOOR_75
