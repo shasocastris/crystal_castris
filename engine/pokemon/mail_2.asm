@@ -76,9 +76,6 @@ endc
 	vc_patch_end
 	ret z
 	ld a, [wJumptableIndex]
-	push af
-	farcall PrintMailAndExit ; printer
-	pop af
 	ld [wJumptableIndex], a
 	jr .loop
 

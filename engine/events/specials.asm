@@ -96,11 +96,6 @@ OverworldTownMap:
 	farcall _TownMap
 	jmp ExitAllMenus
 
-UnownPrinter:
-	call FadeToMenu
-	farcall _UnownPrinter
-	jmp ExitAllMenus
-
 DisplayLinkRecord:
 	call FadeToMenu
 	farcall _DisplayLinkRecord
@@ -342,11 +337,6 @@ FadeOutMusic:
 Diploma:
 	call FadeToMenu
 	farcall _Diploma
-	jmp ExitAllMenus
-
-PrintDiploma:
-	call FadeToMenu
-	farcall _PrintDiploma
 	jmp ExitAllMenus
 
 TrainerHouse:

@@ -310,7 +310,6 @@ ROMX $75
 	"16-bit ID stuff"
 ROMX $77
 	"Unown Font"
-	"Print Party"
 	"Tileset Data 7"
 	"bank77"
 	"Pokégear GFX"

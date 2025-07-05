@@ -94,7 +94,6 @@ Music:
 	dba Music_ContestResults
 	dba Music_BugCatchingContest
 	dba Music_LakeOfRageRocketRadio
-	dba Music_Printer
 	dba Music_PostCredits
 ; new to Crystal
 	dba Music_Clair
