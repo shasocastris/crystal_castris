@@ -932,18 +932,14 @@ _CGB_PokedexSearchOption:
 
 _CGB_PackPals:
 ; pack pals
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial_male
-
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .tutorial_male
+	jr z, .male
 
 	ld hl, .KrisPackPals
 	jr .got_gender
 
-.tutorial_male
+.male
 	ld hl, .ChrisPackPals
 
 .got_gender

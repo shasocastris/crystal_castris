@@ -250,17 +250,11 @@ StubbedTrainerRankings_TMsHMsTaught:
 
 StubbedTrainerRankings_Battles:
 	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
-	ret z
 	ld hl, sTrainerRankingBattles
 	jmp StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_WildBattles:
 	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL ; Exclude the Dude’s tutorial battle
-	ret z
 	ld hl, sTrainerRankingWildBattles
 	jmp StubbedTrainerRankings_Increment3Byte
 

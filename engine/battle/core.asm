@@ -54,9 +54,7 @@ DoBattle:
 	call SafeLoadTempTilemapToTilemap
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
-	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, .debug
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -113,7 +111,7 @@ DoBattle:
 	call StartAutomaticBattleWeather
 	jp BattleTurn
 
-.tutorial_debug
+.debug
 	jmp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
@@ -4838,8 +4836,6 @@ BattleMenu:
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jr z, .ok
-	cp BATTLETYPE_TUTORIAL
-	jr z, .ok
 	call EmptyBattleTextbox
 	call UpdateBattleHuds
 	call EmptyBattleTextbox
@@ -4901,8 +4897,6 @@ BattleMenu_Pack:
 	call LoadStandardMenuHeader
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
 
@@ -4956,9 +4950,7 @@ BattleMenu_Pack:
 	ldh [hBGMapMode], a
 	call _LoadBattleFontsHPBar
 	call ClearSprites
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	call nz, GetBattleMonBackpic
+	call GetBattleMonBackpic
 	call GetEnemyMonFrontpic
 	ld a, $1
 	ld [wMenuCursorY], a
@@ -8803,13 +8795,6 @@ InitBattleDisplay:
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
 
-; Special exception for Dude.
-	ld b, BANK(DudeBackpic)
-	ld hl, DudeBackpic
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .Decompress
-
 ; What gender are we?
 	ld a, [wPlayerSpriteSetupFlags]
 	bit PLAYERSPRITESETUP_FEMALE_TO_MALE_F, a
@@ -8826,7 +8811,6 @@ GetTrainerBackpic:
 	ld b, BANK(ChrisBackpic)
 	ld hl, ChrisBackpic
 
-.Decompress:
 	ld de, vTiles2 tile $31
 	ld c, 7 * 7
 	predef_jump DecompressGet2bpp

@@ -156,7 +156,6 @@ ScriptCommandTable:
 	dw Script_loadtrainer                ; 5e
 	dw Script_startbattle                ; 5f
 	dw Script_reloadmapafterbattle       ; 60
-	dw Script_catchtutorial              ; 61
 	dw Script_trainertext                ; 62
 	dw Script_trainerflagaction          ; 63
 	dw Script_winlosstext                ; 64
@@ -1100,13 +1099,6 @@ Script_startbattle:
 	and ~BATTLERESULT_BITMASK
 	ld [wScriptVar], a
 	ret
-
-Script_catchtutorial:
-	rst GetScriptByte
-	ld [wBattleType], a
-	call BufferScreen
-	farcall CatchTutorial
-	jr Script_reloadmap
 
 Script_reloadmapafterbattle:
 	ld hl, wBattleScriptFlags

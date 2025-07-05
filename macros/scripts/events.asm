@@ -613,12 +613,6 @@ MACRO reloadmapafterbattle
 	db reloadmapafterbattle_command
 ENDM
 
-	const catchtutorial_command ; $61
-MACRO catchtutorial
-	db catchtutorial_command
-	db \1 ; byte
-ENDM
-
 	const trainertext_command ; $62
 MACRO trainertext
 	db trainertext_command

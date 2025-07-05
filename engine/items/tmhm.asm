@@ -329,10 +329,6 @@ TMHM_ScrollPocket:
 	jmp TMHM_ShowTMMoveDescription
 
 TMHM_DisplayPocketItems:
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jmp z, Tutorial_TMHMPocket
-
 	hlcoord 5, 2
 	lb bc, 10, 15
 	ld a, " "
@@ -451,14 +447,6 @@ TMHM_GetCurrentPocketPosition:
 	jr nz, .loop
 	dec hl
 	dec c
-	ret
-
-Tutorial_TMHMPocket:
-	hlcoord 9, 3
-	push de
-	ld de, TMHM_CancelString
-	rst PlaceString
-	pop de
 	ret
 
 TMHM_PlaySFX_ReadText2:
