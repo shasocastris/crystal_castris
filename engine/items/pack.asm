@@ -926,7 +926,7 @@ DepositSellInitPackBuffers:
 DepositSellPack:
 .loop
 	call .RunJumptable
-	call DepositSellTutorial_InterpretJoypad
+	call DepositSell_InterpretJoypad
 	jr c, .loop
 	ret
 
@@ -1023,7 +1023,7 @@ InitPocket:
 	call DrawPocketGFX
 	jmp WaitBGMap_DrawPackGFX
 
-DepositSellTutorial_InterpretJoypad:
+DepositSell_InterpretJoypad:
 	ld hl, wMenuJoypad
 	ld a, [hl]
 	and A_BUTTON
@@ -1081,129 +1081,6 @@ DepositSellTutorial_InterpretJoypad:
 	pop de
 	scf
 	ret
-
-TutorialPack:
-	call DepositSellInitPackBuffers
-	ld a, [wInputType]
-	or a
-	jr z, .loop
-	farcall _DudeAutoInput_RightA
-.loop
-	call .RunJumptable
-	call DepositSellTutorial_InterpretJoypad
-	jr c, .loop
-	xor a ; FALSE
-	ld [wPackUsedItem], a
-	ret
-
-.RunJumptable:
-	ld a, [wJumptableIndex]
-	ld hl, .dw
-	call Pack_GetJumptablePointer
-	jp hl
-
-.dw
-; entries correspond to *_POCKET constants
-	dw .Items
-	dw .Balls
-	dw .KeyItems
-	dw .TMHM
-	dw .Berries
-
-.Items:
-	xor a ; ITEM_POCKET
-	ld hl, .ItemsMenuHeader
-	jmp .DisplayPocket
-
-.ItemsMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 7, 1, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .ItemsMenuData
-	db 1 ; default option
-
-.ItemsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
-	db 5, 8 ; rows, columns
-	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
-	dbw 0, wDudeNumItems
-	dba PlaceMenuItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
-
-.KeyItems:
-	ld a, KEY_ITEM_POCKET
-	ld hl, .KeyItemsMenuHeader
-	jr .DisplayPocket
-
-.KeyItemsMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 7, 1, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .KeyItemsMenuData
-	db 1 ; default option
-
-.KeyItemsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
-	db 5, 8 ; rows, columns
-	db SCROLLINGMENU_ITEMS_NORMAL ; item format
-	dbw 0, wDudeNumKeyItems
-	dba PlaceMenuKeyItemName
-	dba PlaceMenuKeyItemQuantity
-	dba UpdateKeyItemDescription
-
-.TMHM:
-	ld a, TM_HM_POCKET
-	call InitPocket
-	call WaitBGMap_DrawPackGFX
-	farcall TMHMPocket
-	ld a, [wCurItem]
-	ret
-
-.Balls:
-	ld a, BALL_POCKET
-	ld hl, .BallsMenuHeader
-	jr .DisplayPocket
-
-.BallsMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 7, 1, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .BallsMenuData
-	db 1 ; default option
-
-.BallsMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
-	db 5, 8 ; rows, columns
-	db SCROLLINGMENU_ITEMS_QUANTITY ; item format
-	dbw 0, wDudeNumBalls
-	dba PlaceMenuItemBallName
-	dba PlaceMenuItemBallQuantity
-	dba UpdateItemBallDescription
-
-.Berries:
-	ld a, BERRY_POCKET
-	ld hl, .BerriesMenuHeader
-	jr .DisplayPocket
-
-.BerriesMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 7, 1, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .BerriesMenuData
-	db 1 ; default option
-
-.BerriesMenuData:
-	db STATICMENU_ENABLE_SELECT | STATICMENU_ENABLE_LEFT_RIGHT | STATICMENU_ENABLE_START | STATICMENU_WRAP | STATICMENU_CURSOR ; flags
-	db 5, 8 ; rows, columns
-	db 2 ; horizontal spacing
-	dbw 0, wDudeNumBerries
-	dba PlaceMenuItemName
-	dba PlaceMenuItemQuantity
-	dba UpdateItemDescription
-
-.DisplayPocket:
-	push hl
-	call InitPocket
-	pop hl
-	call CopyMenuHeader
-	jmp ScrollingMenu
 
 Pack_JumptableNext:
 	ld hl, wJumptableIndex

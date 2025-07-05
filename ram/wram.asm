@@ -2526,17 +2526,6 @@ wOTPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wOTPartyDataEnd::
 
-NEXTU
-; catch tutorial dude pack
-wDudeNumItems:: db
-wDudeItems:: ds 2 * 4 + 1
-
-wDudeNumBerries::
-wDudeNumKeyItems:: db
-wDudeKeyItems:: ds 18 + 1
-
-wDudeNumBalls:: db
-wDudeBalls:: ds 2 * 4 + 1
 ENDU
 
 wd430:: ; mobile

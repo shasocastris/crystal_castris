@@ -4852,10 +4852,6 @@ BattleMenu:
 
 	; Auto input: choose "ITEM"
 	ld a, [wInputType]
-	or a
-	jr z, .skip_dude_pack_select
-	farcall _DudeAutoInput_DownA
-.skip_dude_pack_select
 	call LoadBattleMenu2
 	ret c
 
@@ -4904,14 +4900,6 @@ BattleMenu_Pack:
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
-	jr .UseItem
-
-.tutorial
-	farcall TutorialPack
-	ld hl, POKE_BALL
-	call GetItemIDFromIndex
-	ld [wCurItem], a
-	call DoItemEffect
 	jr .UseItem
 
 .contest
