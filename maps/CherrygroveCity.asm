@@ -570,7 +570,6 @@ CherrygroveCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 23,  3, CHERRYGROVE_MART, 2
 	warp_event 29,  3, CHERRYGROVE_POKECENTER_1F, 1
 	warp_event 17,  7, CHERRYGROVE_GYM_SPEECH_HOUSE, 1
 	warp_event 25,  9, GUIDE_GENTS_HOUSE, 1
@@ -583,7 +582,6 @@ CherrygroveCity_MapEvents:
 	def_bg_events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign
 	bg_event 23,  9, BGEVENT_READ, GuideGentsHouseSign
-	bg_event 24,  3, BGEVENT_READ, CherrygroveCityMartSign
 	bg_event 30,  3, BGEVENT_READ, CherrygroveCityPokecenterSign
 
 	def_object_events

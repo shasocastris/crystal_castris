@@ -1,4 +1,4 @@
-	object_const_def
+    	object_const_def
 	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS
 	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_YOUNGSTER
 
@@ -43,8 +43,8 @@ CherrygroveEvolutionSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, CHERRYGROVE_CITY, 5
-	warp_event  3,  7, CHERRYGROVE_CITY, 5
+	warp_event  2,  7, CHERRYGROVE_CITY, 4
+	warp_event  3,  7, CHERRYGROVE_CITY, 4
 
 	def_coord_events
 

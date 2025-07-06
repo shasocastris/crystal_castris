@@ -270,8 +270,10 @@ FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 ViridianMart_Blocks:
 SaffronMart_Blocks:
-CherrygroveMart_Blocks:
 	INCBIN "maps/Mart.ablk"
+
+CherrygroveMart_Blocks:
+	INCBIN "maps/CherrygroveMart.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
