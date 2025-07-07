@@ -19,14 +19,6 @@ ReadTrainerParty:
 	rst ByteFill
 
 	ld a, [wOtherTrainerClass]
-	cp CAL
-	jr nz, .not_cal1
-	ld a, [wOtherTrainerID]
-	cp CAL1
-	jr z, .cal1
-.no_mystery_gift_trainer
-	ld a, [wOtherTrainerClass]
-.not_cal1
 
 	dec a
 	ld c, a
@@ -70,22 +62,6 @@ ReadTrainerParty:
 
 .done
 	jmp ComputeTrainerReward
-
-.cal1
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call OpenSRAM
-	ld a, [sMysteryGiftTrainerHouseFlag]
-	and a
-	call CloseSRAM
-	jr z, .no_mystery_gift_trainer
-	ld a, BANK(sMysteryGiftTrainer)
-	call OpenSRAM
-	ld a, TRAINERTYPE_MOVES
-	ld [wOtherTrainerType], a
-	ld de, sMysteryGiftTrainer
-	call ReadTrainerPartyPieces
-	call CloseSRAM
-	jr .done
 
 ReadTrainerPartyPieces:
 	ld h, d
@@ -241,27 +217,6 @@ Battle_GetTrainerName::
 	; fallthrough
 
 GetTrainerName::
-	ld a, c
-	cp CAL
-	jr nz, .not_cal1
-	ld a, b
-	cp CAL1
-	jr nz, .not_cal1
-
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call OpenSRAM
-	ld a, [sMysteryGiftTrainerHouseFlag]
-	and a
-	call CloseSRAM
-	jr z, .not_cal1
-
-	ld a, BANK(sMysteryGiftPartnerName)
-	call OpenSRAM
-	ld hl, sMysteryGiftPartnerName
-	call CopyTrainerName
-	jmp CloseSRAM
-
-.not_cal1
 	dec c
 	push bc
 	ld b, 0

@@ -101,11 +101,6 @@ MainMenu_GetWhichMenu:
 	cp TRUE
 	ld a, MAINMENU_CONTINUE
 	ret nz
-	ld a, BANK(sNumDailyMysteryGiftPartnerIDs)
-	call OpenSRAM
-	ld a, [sNumDailyMysteryGiftPartnerIDs]
-	cp -1 ; locked?
-	call CloseSRAM
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F, a
 	ld a, MAINMENU_CONTINUE

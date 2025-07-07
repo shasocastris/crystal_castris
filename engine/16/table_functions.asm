@@ -147,7 +147,7 @@ ItemTableGarbageCollection:
 	ld a, BANK(sBattleTowerReward)
 	call OpenSRAM
 	___conversion_bitmap_check_values .set_bit, \
-		sBattleTowerReward, sBackupMysteryGiftItem
+		sBattleTowerReward
 	pop af
 	call OpenSRAM
 
