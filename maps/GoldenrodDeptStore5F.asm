@@ -115,11 +115,11 @@ GoldenrodDeptStore5FMysteryGiftCarrieScript:
 	ifgreater 8, .BallsNearlyFull
 .AskSave
 	setflag ENGINE_DAILY_MYSTERY_GIFT
-;	writetext MysteryGift_SaveGame
-;	yesorno
-;	iffalse .Decline
-;	special TryQuickSave
-;	iffalse .Decline
+	writetext MysteryGift_SaveGame
+	yesorno
+	iffalse .Decline
+	special TryQuickSave
+	iffalse .Decline
 	writetext MysteryGiftLinkUp
 	playsound SFX_MOVE_DELETED
 	waitsfx
