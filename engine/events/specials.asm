@@ -338,10 +338,3 @@ Diploma:
 	call FadeToMenu
 	farcall _Diploma
 	jmp ExitAllMenus
-
-TrainerHouse:
-	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call OpenSRAM
-	ld a, [sMysteryGiftTrainerHouseFlag]
-	ld [wScriptVar], a
-	jmp CloseSRAM

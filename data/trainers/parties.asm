@@ -1034,17 +1034,7 @@ Rival2Group:
 PokemonProfGroup:
 
 PKMNTrainerGroup:
-	next_list_item ; CAL (2), Viridian City
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 36
-	dw BAYLEEF
-	db 36
-	dw QUILAVA
-	db 36
-	dw CROCONAW
-	db -1 ; end
-
-	next_list_item ; CAL (3), Viridian City
+	next_list_item ; CAL (1), Viridian City
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 60
 	dw MEGANIUM

@@ -121,8 +121,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass POKEMON_PROF ; 18
 
 	trainerclass CAL ; 19
-	const CAL2
-	const CAL3
+	const CAL1
 
 	trainerclass RED ; 1a
 	const RED1
