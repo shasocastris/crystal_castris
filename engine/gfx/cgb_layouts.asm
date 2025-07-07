@@ -57,7 +57,6 @@ CGBLayoutJumptable:
 	dw _CGB_PlayerOrMonFrontpicPals
 	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
-	dw _CGB_MysteryGift
 	dw _CGB_Unused1E
 	dw _CGB_Plain
 	assert_table_length NUM_SCGB_LAYOUTS
@@ -1082,39 +1081,6 @@ _CGB_TrainerOrMonFrontpicPals:
 	call WipeAttrmap
 	call ApplyAttrmap
 	jmp ApplyPals
-
-_CGB_MysteryGift:
-	ld hl, .MysteryGiftPalettes
-	ld de, wBGPals1
-	ld bc, 2 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	call ApplyPals
-	call WipeAttrmap
-	hlcoord 3, 7, wAttrmap
-	lb bc, 8, 14
-	ld a, $1
-	call FillBoxCGB
-	hlcoord 1, 5, wAttrmap
-	lb bc, 1, 18
-	ld a, $1
-	call FillBoxCGB
-	hlcoord 1, 16, wAttrmap
-	lb bc, 1, 18
-	ld a, $1
-	call FillBoxCGB
-	hlcoord 0, 0, wAttrmap
-	lb bc, 17, 2
-	ld a, $1
-	call FillBoxCGB
-	hlcoord 18, 5, wAttrmap
-	lb bc, 12, 1
-	ld a, $1
-	call FillBoxCGB
-	jmp ApplyAttrmap
-
-.MysteryGiftPalettes:
-INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 
 _CGB_Plain:
 	ld b, 8

@@ -217,7 +217,6 @@ sTrainerRankingEggsHatched:: ds 3
 sTrainerRankingMonsEvolved:: ds 3
 sTrainerRankingFruitPicked:: ds 3
 sTrainerRankingHealings:: ds 3
-sTrainerRankingMysteryGift:: ds 3
 sTrainerRankingTrades:: ds 3
 sTrainerRankingFly:: ds 3
 sTrainerRankingSurf:: ds 3

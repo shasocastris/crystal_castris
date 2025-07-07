@@ -18,7 +18,6 @@ StubbedTrainerRankings_HallOfFame2::
 	rst CopyBytes
 
 	; sTrainerRankingHealings is only a 3-byte value.
-	; One extraneous byte is copied from sTrainerRankingMysteryGift.
 	ld hl, sTrainerRankingHealings
 	ld de, sTrainerRankingHealingsHOF
 	ld bc, 4
@@ -296,11 +295,6 @@ StubbedTrainerRankings_FruitPicked:
 StubbedTrainerRankings_Healings:
 	ret ; no-optimize Stub function (Plans for functions in the future)
 	ld hl, sTrainerRankingHealings
-	jr StubbedTrainerRankings_Increment3Byte
-
-StubbedTrainerRankings_MysteryGift:
-	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld hl, sTrainerRankingMysteryGift
 	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_Trades:

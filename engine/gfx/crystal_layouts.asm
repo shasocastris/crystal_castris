@@ -20,7 +20,6 @@ GetCrystalCGBLayout:
 .Jumptable:
 	dw _CrystalCGB_MobileLayout0
 	dw _CrystalCGB_MobileLayout1
-	dw _CrystalCGB_NameCard
 
 Crystal_FillBoxCGB:
 ; This is a copy of FillBoxCGB.
@@ -48,7 +47,6 @@ Crystal_WipeAttrmap:
 
 MG_Mobile_Layout_LoadPals:
 	ld de, wBGPals1
-	ld hl, Palette_MysteryGiftMobile
 	ld bc, 5 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
@@ -101,9 +99,6 @@ MG_Mobile_Layout_CreatePalBoxes:
 	ld a, $7
 	jmp ByteFill
 
-Palette_MysteryGiftMobile:
-INCLUDE "gfx/mystery_gift/mg_mobile.pal"
-
 LoadOW_BGPal7::
 	ld hl, Palette_TextBG7
 	ld de, wBGPals1 palette PAL_BG_TEXT
@@ -117,7 +112,6 @@ INCLUDE "gfx/font/bg_text.pal"
 _CrystalCGB_MobileLayout1:
 	call MG_Mobile_Layout_LoadPals
 	ld de, wBGPals1 palette PAL_BG_TEXT
-	ld hl, .TextPalette
 	ld bc, 1 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
@@ -145,9 +139,6 @@ _CrystalCGB_MobileLayout1:
 	ldh [hCGBPalUpdate], a
 	ret
 
-.TextPalette:
-INCLUDE "gfx/mystery_gift/mobile_text.pal"
-
 .Function49480:
 	hlcoord 0, 0, wAttrmap
 	lb bc, 4, SCREEN_WIDTH
@@ -173,27 +164,6 @@ INCLUDE "gfx/mystery_gift/mobile_text.pal"
 	ret
 
 INCLUDE "engine/tilesets/tileset_palettes.asm"
-
-_CrystalCGB_NameCard:
-	ld hl, .BGPalette
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
-	call FarCopyWRAM
-	farcall ApplyPals
-	call Crystal_WipeAttrmap
-	farcall ApplyAttrmap
-	ld hl, .OBPalette
-	ld de, wOBPals1
-	ld bc, 1 palettes
-	ld a, BANK(wOBPals1)
-	jmp FarCopyWRAM
-
-.BGPalette:
-INCLUDE "gfx/mystery_gift/name_card_bg.pal"
-
-.OBPalette:
-INCLUDE "gfx/mystery_gift/name_card_ob.pal"
 
 _InitMG_Mobile_LinkTradePalMap:
 	hlcoord 0, 0, wAttrmap
