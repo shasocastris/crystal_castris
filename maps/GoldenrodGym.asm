@@ -20,7 +20,7 @@ GoldenrodGym_MapScripts:
 	changeblock 2, 17, $02 ; floor
 	changeblock 3, 17, $02 ; floor
 .UnlockGym
-    endcallback
+		endcallback
 
 GoldenrodGymNoop1Scene:
 	end
@@ -48,12 +48,11 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_BEAUTY_SAMANTHA
 	setevent EVENT_BEAT_LASS_CARRIE
 	setevent EVENT_BEAT_LASS_BRIDGET
-	setflag ENGINE_BEAT_WHITNEY
 .FightDone:
 	changeblock 2, 17, $03 ; door
 	changeblock 3, 17, $03 ; door
-	checkflag ENGINE_BEAT_WHITNEY
-	iffalse .WhitneyRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, WhitneyRematchScript
 	opentext
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
@@ -94,22 +93,32 @@ GoldenrodGymWhitneyScript:
 	closetext
 	end
 
-.WhitneyRematch
-    opentext
-    writetext WhitneyRematchText
-    waitbutton
-    closetext
-    winlosstext WhitneyRematchWinLossText, WhitneyLossText
-    loadtrainer WHITNEY, WHITNEY2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    opentext
-    writetext BeatenWhitneyAgainText
-    waitbutton
-    closetext
-    setflag ENGINE_BEAT_WHITNEY
-    end
+WhitneyRematchScript:
+	checkevent EVENT_WHITNEY_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_HEALED_MOOMOO
+	iffalse .WhitneyReject
+	opentext
+	writetext WhitneyRematchText
+	waitbutton
+	closetext
+	winlosstext WhitneyRematchWinLossText, WhitneyLossText
+	loadtrainer WHITNEY, WHITNEY2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+.RematchDone
+	opentext
+	writetext BeatenWhitneyAgainText
+	waitbutton
+	closetext
+	end
+
+.WhitneyReject
+	writetext WhitneyRejectText
+	waitbutton
+	closetext
+	end
 
 GoldenrodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -298,28 +307,47 @@ WhitneyGoodCryText:
 	done
 
 WhitneyRematchText:
-    text "I've been working"
-    line "super hard with"
-    cont "my #MON!"
-
-    para "This time, I won't"
-    line "cry if I lose!"
-    done
+	text "I've been working"
+	line "super hard with"
+	cont "my #MON!"
+	para "This time, I won't"
+	line "cry if I lose!"
+	done
 
 WhitneyRematchWinLossText:
-    text "That was such a"
-    line "fun battle! You're"
-    cont "incredible!"
-    done
+	text "That was such a"
+	line "fun battle! You're"
+	cont "incredible!"
+	done
 
 BeatenWhitneyAgainText:
-    text "Wow! You beat me"
-    line "again!"
+	text "Wow! You beat me"
+	line "again!"
 
-    para "I'm not even sad!"
-    line "That battle was"
-    cont "so exciting!"
-    done
+	para "I'm not even sad!"
+	line "That battle was"
+	cont "so exciting!"
+	done
+
+WhitneyRejectText:
+	text "Oh my! I'd love"
+	line "to have another"
+	cont "battle with you!"
+
+	para "But I heard poor"
+	line "MOOMOO at the"
+	cont "farm is really"
+	cont "sick!"
+
+	para "You should help"
+	line "heal her first."
+	cont "She needs lots of"
+	cont "BERRIES!"
+
+	para "Come back after"
+	line "you've helped"
+	cont "MOOMOO get better!"
+	done
 
 LassCarrieSeenText:
 	text "Don't let my"

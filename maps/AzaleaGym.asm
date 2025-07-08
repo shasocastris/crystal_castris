@@ -19,7 +19,7 @@ AzaleaGym_MapScripts:
 	changeblock 4, 15, $02 ; floor
 	changeblock 5, 15, $02 ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 AzaleaGymBugsyScript:
 	faceplayer
@@ -42,12 +42,11 @@ AzaleaGymBugsyScript:
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets
-	setflag ENGINE_BEAT_BUGSY
 .FightDone:
 	changeblock 4, 15, $03 ; door
 	changeblock 5, 15, $03 ; door
-	checkflag ENGINE_BEAT_BUGSY
-	iffalse .BugsyRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BugsyRematchScript
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
@@ -71,21 +70,32 @@ AzaleaGymBugsyScript:
 	closetext
 	end
 
-.BugsyRematch
-    writetext BugsyRematchText
-    waitbutton
-    closetext
-    winlosstext BugsyRematchWinLossText, BugsyLossText
-    loadtrainer BUGSY, BUGSY2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    opentext
-    writetext BeatenBugsyAgainText
-    waitbutton
-    closetext
-    setflag ENGINE_BEAT_BUGSY
-    end
+BugsyRematchScript:
+	checkevent EVENT_BUGSY_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_WON_BUG_CONTEST
+	iffalse .BugsyReject
+	writetext BugsyRematchText
+	waitbutton
+	closetext
+	winlosstext BugsyRematchWinLossText, BugsyLossText
+	loadtrainer BUGSY, BUGSY2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BUGSY_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenBugsyAgainText
+	waitbutton
+	closetext
+	end
+
+.BugsyReject
+	writetext BugsyRejectText
+	waitbutton
+	closetext
+	end
 
 AzaleaGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -261,28 +271,48 @@ BugsyText_BugMonsAreDeep:
 	done
 
 BugsyRematchText:
-    text "My bug #MON"
-    line "have trained deep"
-    cont "in Ilex Forest!"
+	text "My bug #MON"
+	line "have trained deep"
+	cont "in Ilex Forest!"
 
-    para "Time to show their"
-    line "true power!"
-    done
+	para "Time to show their"
+	line "true power!"
+	done
 
 BugsyRematchWinLossText:
-    text "Amazing! Your bond"
-    line "with your #MON"
-    cont "is inspiring!"
-    done
+	text "Amazing! Your bond"
+	line "with your #MON"
+	cont "is inspiring!"
+	done
 
 BeatenBugsyAgainText:
-    text "You beat me again!"
+	text "You beat me again!"
 
-    para "This loss will"
-    line "only make my bug"
-    cont "#MON and I"
-    cont "stronger!"
-    done
+	para "This loss will"
+	line "only make my bug"
+	cont "#MON and I"
+	cont "stronger!"
+	done
+
+BugsyRejectText:
+	text "Hey there! I'd"
+	line "love to have a"
+	cont "rematch with you!"
+
+	para "But first, you"
+	line "should experience"
+	cont "the thrill of the"
+	cont "Bug Catching"
+	cont "Contest!"
+
+	para "Win the contest"
+	line "and prove your"
+	cont "skills with Bug"
+	cont "#MON first!"
+
+	para "Then we'll our"
+	line "battle together!"
+	done
 
 BugCatcherBennySeenText:
 	text "Bug #MON evolve"

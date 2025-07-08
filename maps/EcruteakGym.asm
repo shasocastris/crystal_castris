@@ -54,12 +54,11 @@ EcruteakGymMortyScript:
 	setmapscene ECRUTEAK_TIN_TOWER_ENTRANCE, SCENE_ECRUTEAKTINTOWERENTRANCE_NOOP
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
-	setflag ENGINE_BEAT_MORTY
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
-	checkflag ENGINE_BEAT_MORTY
-	iffalse .MortyRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MortyRematchScript
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
@@ -83,7 +82,11 @@ EcruteakGymMortyScript:
 	closetext
 	end
 
-.MortyRematch
+MortyRematchScript:
+    checkevent EVENT_MORTY_REMATCH
+    iftrue .RematchDone
+    checkevent EVENT_FOUGHT_HO_OH
+    iffalse .MortyReject
     writetext MortyRematchText
     waitbutton
     closetext
@@ -92,11 +95,18 @@ EcruteakGymMortyScript:
     loadvar VAR_BATTLETYPE, BATTLETYPE_SET
     startbattle
     reloadmapafterbattle
+    setevent EVENT_MORTY_REMATCH
+.RematchDone
     opentext
     writetext BeatenMortyAgainText
     waitbutton
     closetext
-    setflag ENGINE_BEAT_MORTY
+    end
+
+.MortyReject
+    writetext MortyRejectText
+    waitbutton
+    closetext
     end
 
 EcruteakGymActivateRockets:
@@ -330,6 +340,29 @@ BeatenMortyAgainText:
     line "#MON exceeds"
     cont "this world."
     done
+
+MortyRejectText:
+	text "I sense great"
+	line "power within you,"
+	cont "but something is"
+	cont "missing…"
+
+	para "The rainbow-"
+	line "colored #MON"
+	cont "that I spoke of"
+	cont "before…"
+
+	para "You must encounter"
+	line "it first. Only"
+	cont "then will our"
+	cont "spirits be ready"
+	cont "for battle."
+
+	para "Seek out the"
+	line "legendary HO-OH."
+	cont "When you have met"
+	cont "it, return to me."
+	done
 
 SageJeffreySeenText:
 	text "I spent the spring"

@@ -535,7 +535,9 @@
 	const EVENT_SABRINA_REMATCH
 	const EVENT_BLAINE_REMATCH
 	const EVENT_BLUE_REMATCH
-; Unused: next 151 events
+; new events for rematches
+	const EVENT_WON_BUG_CONTEST
+; Unused: next 150 events
 
 	const_next 1000
 ; Trainer flags

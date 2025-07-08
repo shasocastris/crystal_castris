@@ -18,7 +18,7 @@ VioletGym_MapScripts:
 	changeblock 4, 15, $2D ; floor
 	changeblock 5, 15, $2D ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 VioletGymFalknerScript:
 	faceplayer
