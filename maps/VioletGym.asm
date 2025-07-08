@@ -41,12 +41,11 @@ VioletGymFalknerScript:
 	setflag ENGINE_ZEPHYRBADGE
 	readvar VAR_BADGES
 	scall VioletGymActivateRockets
-	setflag ENGINE_BEAT_FALKNER
 .FightDone:
 	changeblock 4, 15, $1C ; door
 	changeblock 5, 15, $1C ; door
-	checkflag ENGINE_BEAT_FALKNER
-	iffalse .FalknerRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, FalknerRematchScript
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD
@@ -70,7 +69,15 @@ VioletGymFalknerScript:
 	closetext
 	end
 
-.FalknerRematch
+FalknerRematchScript:
+	checkevent EVENT_FALKNER_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_FOUGHT_ARTICUNO
+	iffalse .FalknerReject
+	checkevent EVENT_FOUGHT_ZAPDOS
+	iffalse .FalknerReject
+	checkevent EVENT_FOUGHT_MOLTRES
+	iffalse .FalknerReject
 	writetext FalknerRematchText
 	waitbutton
 	closetext
@@ -79,11 +86,18 @@ VioletGymFalknerScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
+	setevent EVENT_FALKNER_REMATCH
+.RematchDone
 	opentext
 	writetext BeatenFalknerAgainText
 	waitbutton
 	closetext
-	setflag ENGINE_BEAT_FALKNER
+	end
+
+.FalknerReject
+	writetext FalknerRejectText
+	waitbutton
+	closetext
 	end
 
 VioletGymActivateRockets:
@@ -268,6 +282,26 @@ FalknerFightDoneText:
 
 	para "the greatest bird"
 	line "master!"
+	done
+
+FalknerRejectText:
+	text "ARTICUNO, ZAPDOS,"
+	line "MOLTRES…"
+
+	para "Until you have"
+	line "witnessed their"
+	cont "majesty firsthand,"
+
+	para "you are not ready"
+	line "to face my full"
+	cont "strength."
+
+	para "Seek them out."
+
+	para "Only then will our"
+	line "battle truly honor"
+	cont "the spirit of bird"
+	cont "#MON!"
 	done
 
 BirdKeeperRodSeenText:
