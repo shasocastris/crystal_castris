@@ -105,6 +105,9 @@ ClairRematchScript:
 	iftrue .RematchDone
 	checkevent EVENT_GOT_DRATINI
 	iffalse .ClairReject
+	loadmonindex 1, DRAGONITE
+	special FindPartyMonThatSpeciesYourTrainerID
+	iffalse .ClairRejectNoDragonite
 	writetext ClairRematchText
 	waitbutton
 	closetext
@@ -123,6 +126,12 @@ ClairRematchScript:
 
 .ClairReject
 	writetext ClairRejectText
+	waitbutton
+	closetext
+	end
+
+.ClairRejectNoDragonite
+	writetext ClairRejectNoDragoniteText
 	waitbutton
 	closetext
 	end
@@ -377,6 +386,30 @@ ClairRejectText:
 	line "have that DRATINI."
 	cont "Then we'll see if"
 	cont "you're worthy."
+	done
+
+ClairRejectNoDragoniteText:
+	text "I see you have the"
+	line "DRATINI from the"
+	cont "DRAGON SHRINE."
+
+	para "But have you truly"
+	line "bonded with it?"
+
+	para "A dragon master"
+	line "must raise their"
+	cont "dragon to its"
+	cont "full potential."
+
+	para "Return when your"
+	line "DRATINI has become"
+	cont "a mighty"
+	cont "DRAGONITE."
+
+	para "Only then will I"
+	line "recognize you as"
+	cont "a true dragon"
+	cont "trainer."
 	done
 
 CooltrainermPaulSeenText:
