@@ -19,7 +19,7 @@ MahoganyGym_MapScripts:
 	changeblock 4, 17, $2D ; floor
 	changeblock 5, 17, $2D ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 MahoganyGymPryceScript:
 	faceplayer
@@ -42,12 +42,11 @@ MahoganyGymPryceScript:
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
 	scall MahoganyGymActivateRockets
-	setflag ENGINE_BEAT_PRYCE
 .FightDone:
 	changeblock 4, 17, $1C ; door
 	changeblock 5, 17, $1C ; door
-	checkflag ENGINE_BEAT_PRYCE
-	iffalse .PryceRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, PryceRematchScript
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE
@@ -65,21 +64,44 @@ MahoganyGymPryceScript:
 	closetext
 	end
 
-.PryceRematch
-    writetext PryceRematchText
-    waitbutton
-    closetext
-    winlosstext PryceRematchWinLossText, PryceLossText
-    loadtrainer PRYCE, PRYCE2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    opentext
-    writetext BeatenPryceAgainText
-    waitbutton
-    closetext
-    setflag ENGINE_BEAT_PRYCE
-    end
+PryceRematchScript:
+	checkevent EVENT_PRYCE_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_SHARP_BEAK_FROM_MONICA
+	iffalse .PryceReject
+	checkevent EVENT_GOT_POLKADOT_BOW_FROM_TUSCANY
+	iffalse .PryceReject
+	checkevent EVENT_GOT_BLACKBELT_FROM_WESLEY
+	iffalse .PryceReject
+	checkevent EVENT_GOT_HARD_STONE_FROM_ARTHUR
+	iffalse .PryceReject
+	checkevent EVENT_GOT_POISON_BARB_FROM_FRIEDA
+	iffalse .PryceReject
+	checkevent EVENT_GOT_SPELL_TAG_FROM_SANTOS
+	iffalse .PryceReject
+	checkevent EVENT_GOT_MAGNET_FROM_SUNNY
+	iffalse .PryceReject
+	writetext PryceRematchText
+	waitbutton
+	closetext
+	winlosstext PryceRematchWinLossText, PryceLossText
+	loadtrainer PRYCE, PRYCE2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_PRYCE_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenPryceAgainText
+	waitbutton
+	closetext
+	end
+
+.PryceReject
+	writetext PryceRejectText
+	waitbutton
+	closetext
+	end
 
 PryceScript_Defeat:
 	writetext PryceText_CherishYourPokemon
@@ -266,29 +288,62 @@ PryceText_CherishYourPokemon:
 	done
 
 PryceRematchText:
-    text "Ice and snow have"
-    line "taught me patience"
-    cont "and endurance."
+	text "Ice and snow have"
+	line "taught me patience"
+	cont "and endurance."
 
-    para "My team has only"
-    line "grown colder and"
-    cont "more powerful!"
-    done
+	para "My team has only"
+	line "grown colder and"
+	cont "more powerful!"
+	done
 
 PryceRematchWinLossText:
-    text "Like ice in spring"
-    line "I accept this"
-    cont "melting defeat."
-    done
+	text "Like ice in spring"
+	line "I accept this"
+	cont "melting defeat."
+	done
 
 BeatenPryceAgainText:
-    text "You have bested"
-    line "this old trainer"
-    cont "once more."
+	text "You have bested"
+	line "this old trainer"
+	cont "once more."
 
-    para "Your spirit keeps"
-    line "me young at heart."
-    done
+	para "Your spirit keeps"
+	line "me young at heart."
+	done
+
+PryceRejectText:
+	text "Ah, you wish to"
+	line "challenge me once"
+	cont "more?"
+
+	para "But first, let me"
+	line "test your patience"
+	cont "and dedication."
+
+	para "There are seven"
+	line "siblings who give"
+	cont "gifts to worthy"
+	cont "trainers."
+
+	para "Each appears on a"
+	line "different day of"
+	cont "the week."
+
+	para "If you can show"
+	line "the perseverance"
+	cont "to visit all"
+	cont "seven,"
+
+	para "then you will have"
+	line "proven you possess"
+	cont "the experience"
+	cont "winter teaches."
+
+	para "Return when you"
+	line "have collected"
+	cont "all seven gifts."
+	done
 
 BoarderRonaldSeenText:
 	text "I'll frostbite"

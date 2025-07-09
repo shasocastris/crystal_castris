@@ -18,7 +18,7 @@ CianwoodGym_MapScripts:
 	changeblock 4, 17, $09 ; floor
 	changeblock 5, 17, $09 ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 CianwoodGymChuckScript:
 	faceplayer
@@ -56,12 +56,11 @@ CianwoodGymChuckScript:
 	setflag ENGINE_STORMBADGE
 	readvar VAR_BADGES
 	scall CianwoodGymActivateRockets
-	setflag ENGINE_BEAT_CHUCK
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
-	checkflag ENGINE_BEAT_CHUCK
-	iffalse .ChuckRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ChuckRematchScript
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
@@ -85,21 +84,32 @@ CianwoodGymChuckScript:
 	closetext
 	end
 
-.ChuckRematch
-    writetext ChuckRematchText
-    waitbutton
-    closetext
-    winlosstext ChuckRematchWinLossText, ChuckLossText
-    loadtrainer CHUCK, CHUCK2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    opentext
-    writetext BeatenChuckAgainText
-    waitbutton
-    closetext
-    setflag ENGINE_BEAT_CHUCK
-    end
+ChuckRematchScript:
+	checkevent EVENT_CHUCK_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_TYROGUE_FROM_KIYO
+	iffalse .ChuckReject
+	writetext ChuckRematchText
+	waitbutton
+	closetext
+	winlosstext ChuckRematchWinLossText, ChuckLossText
+	loadtrainer CHUCK, CHUCK2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_CHUCK_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenChuckAgainText
+	waitbutton
+	closetext
+	end
+
+.ChuckReject
+	writetext ChuckRejectText
+	waitbutton
+	closetext
+	end
 
 CianwoodGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -223,28 +233,28 @@ ChuckLossText:
 	done
 
 ChuckRematchText:
-    text "I've trained under"
-    line "waterfalls day"
-    cont "and night!"
+	text "I've trained under"
+	line "waterfalls day"
+	cont "and night!"
 
-    para "Are you ready to"
-    line "face the new"
-    cont "heights of power?"
-    done
+	para "Are you ready to"
+	line "face the new"
+	cont "heights of power?"
+	done
 
 ChuckRematchWinLossText:
-    text "Your strength"
-    line "continues to amaze"
-    cont "me! Well fought!"
-    done
+	text "Your strength"
+	line "continues to amaze"
+	cont "me! Well fought!"
+	done
 
 BeatenChuckAgainText:
-    text "You've beaten me"
-    line "again! Incredible!"
+	text "You've beaten me"
+	line "again! Incredible!"
 
-    para "Your training must"
-    line "be truly intense!"
-    done
+	para "Your training must"
+	line "be truly intense!"
+	done
 
 GetStormBadgeText:
 	text "<PLAYER> received"
@@ -289,6 +299,34 @@ ChuckAfterText:
 	para "From now on, I'm"
 	line "going to train 24"
 	cont "hours a day!"
+	done
+
+ChuckRejectText:
+	text "Hey there! You"
+	line "want a rematch?"
+
+	para "I've been training"
+	line "hard, but I heard"
+	cont "about someone"
+	cont "special…"
+
+	para "There's a KARATE"
+	line "KING training in"
+	cont "MT. MORTAR who"
+	cont "has a rare #MON."
+
+	para "If you can prove"
+	line "your fighting"
+	cont "spirit by getting"
+	cont "TYROGUE from him…"
+
+	para "Then I'll know"
+	line "you're ready for"
+	cont "my full power!"
+
+	para "Come back when"
+	line "you've earned that"
+	cont "TYROGUE!"
 	done
 
 BlackbeltYoshiSeenText:

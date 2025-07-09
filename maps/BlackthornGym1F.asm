@@ -61,7 +61,6 @@ BlackthornGymClairScript:
 	clearevent EVENT_MAHOGANY_MART_OWNERS
 	setevent EVENT_BLACKTHORN_CITY_GRAMPS_BLOCKS_DRAGONS_DEN
 	clearevent EVENT_BLACKTHORN_CITY_GRAMPS_NOT_BLOCKING_DRAGONS_DEN
-	setflag ENGINE_BEAT_CLAIR
 	end
 
 .FightDone:
@@ -71,8 +70,8 @@ BlackthornGymClairScript:
 	end
 
 .AlreadyGotBadge:
-	checkflag ENGINE_BEAT_CLAIR
-	iffalse .ClairRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ClairRematchScript
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
@@ -101,21 +100,32 @@ BlackthornGymClairScript:
 	closetext
 	end
 
-.ClairRematch
-    writetext ClairRematchText
-    waitbutton
-    closetext
-    winlosstext ClairRematchWinLossText, ClairLossText
-    loadtrainer CLAIR, CLAIR2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    opentext
-    writetext BeatenClairAgainText
-    waitbutton
-    closetext
-    setflag ENGINE_BEAT_CLAIR
-    end
+ClairRematchScript:
+	checkevent EVENT_CLAIR_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_DRATINI
+	iffalse .ClairReject
+	writetext ClairRematchText
+	waitbutton
+	closetext
+	winlosstext ClairRematchWinLossText, ClairLossText
+	loadtrainer CLAIR, CLAIR2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_CLAIR_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenClairAgainText
+	waitbutton
+	closetext
+	end
+
+.ClairReject
+	writetext ClairRejectText
+	waitbutton
+	closetext
+	end
 
 TrainerCooltrainermPaul:
 	trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
@@ -313,28 +323,61 @@ BlackthornGymClairText_League:
 	done
 
 ClairRematchText:
-    text "You think your"
-    line "training is enough"
-    cont "to face me again?"
+	text "You think your"
+	line "training is enough"
+	cont "to face me again?"
 
-    para "I won't hold back!"
-    done
+	para "I won't hold back!"
+	done
 
 ClairRematchWinLossText:
-    text "Your mastery is"
-    line "undeniable. Even"
-    cont "dragons bow to you."
-    done
+	text "Your mastery is"
+	line "undeniable. Even"
+	cont "dragons bow to you."
+	done
 
 BeatenClairAgainText:
-    text "Magnificent! You"
-    line "truly are a master"
-    cont "trainer!"
+	text "Magnificent! You"
+	line "truly are a master"
+	cont "trainer!"
 
-    para "I see why Lance"
-    line "speaks so highly"
-    cont "of you."
-    done
+	para "I see why Lance"
+	line "speaks so highly"
+	cont "of you."
+	done
+
+ClairRejectText:
+	text "So, you think"
+	line "you're ready for"
+	cont "another battle?"
+
+	para "I won't accept"
+	line "just anyone as a"
+	cont "worthy opponent."
+
+	para "Have you received"
+	line "the sacred DRATINI"
+	cont "from the DRAGON"
+	cont "SHRINE?"
+
+	para "Only those who"
+	line "have proven their"
+	cont "worth to the"
+	cont "dragon elders…"
+
+	para "And earned the"
+	line "trust of a dragon"
+	cont "#MON…"
+
+	para "Are qualified to"
+	line "face me at my"
+	cont "full strength."
+
+	para "Return when you"
+	line "have that DRATINI."
+	cont "Then we'll see if"
+	cont "you're worthy."
+	done
 
 CooltrainermPaulSeenText:
 	text "Your first battle"
