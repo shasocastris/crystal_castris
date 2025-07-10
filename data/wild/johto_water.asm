@@ -95,9 +95,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2  ; weather: rain
 	db 50 percent ; encounter rate
-	dbw 55, LANTURN
-	dbw 56, SEAKING
-	dbw 58, KINGDRA
+	dbw 75, LANTURN
+	dbw 76, SEAKING
+	dbw 78, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -263,9 +263,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent ; encounter rate
-	dbw 45, OCTILLERY
-	dbw 50, LAPRAS
-	dbw 45, STARMIE
+	dbw 65, OCTILLERY
+	dbw 70, LAPRAS
+	dbw 65, STARMIE
 	end_water_wildmons
 
 	db -1 ; end

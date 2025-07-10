@@ -817,29 +817,29 @@ KantoGrassWildMons:
 	def_grass_wildmons ROUTE_28
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 49, TANGELA
-	dbw 50, KANGASKHAN
-	dbw 50, RAPIDASH
-	dbw 52, ARBOK
-	dbw 51, DODUO
-	dbw 53, DODRIO
-	dbw 53, DODRIO
+	dbw 69, TANGELA
+	dbw 70, KANGASKHAN
+	dbw 70, RAPIDASH
+	dbw 72, ARBOK
+	dbw 71, BEEDRILL
+	dbw 73, DODRIO
+	dbw 73, DODRIO
 	; day
-	dbw 49, TANGELA
-	dbw 50, KANGASKHAN
-	dbw 50, RAPIDASH
-	dbw 52, ARBOK
-	dbw 51, DODUO
-	dbw 53, DODRIO
-	dbw 53, DODRIO
+	dbw 69, TANGELA
+	dbw 70, KANGASKHAN
+	dbw 70, RAPIDASH
+	dbw 72, ARBOK
+	dbw 71, BEEDRILL
+	dbw 73, DODRIO
+	dbw 73, DODRIO
 	; nite
-	dbw 49, TANGELA
-	dbw 50, POLIWHIRL
-	dbw 50, GOLBAT
-	dbw 50, POLIWHIRL
-	dbw 52, POLIWRATH
-	dbw 52, GOLBAT
-	dbw 52, GOLBAT
+	dbw 69, TANGELA
+	dbw 70, POLIWHIRL
+	dbw 70, HOUNDOOM
+	dbw 70, QUAGSIRE
+	dbw 72, POLIWRATH
+	dbw 72, CROBAT
+	dbw 72, CROBAT
 	end_grass_wildmons
 
 	def_grass_wildmons CERULEAN_CAVE

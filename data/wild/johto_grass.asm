@@ -1069,141 +1069,141 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_ROOM_1  ; weather: sand
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 53, STEELIX
-	dbw 54, URSARING
-	dbw 52, GOLEM
-	dbw 55, RHYDON
-	dbw 55, SANDSLASH
+	dbw 73, STEELIX
+	dbw 74, URSARING
+	dbw 72, GOLEM
+	dbw 75, RHYDON
+	dbw 75, SANDSLASH
 	dbw 25, LARVITAR
-	dbw 30, PUPITAR
+	dbw 50, PUPITAR
 	; day
-	dbw 53, GOLEM
-	dbw 54, STEELIX
-	dbw 52, SANDSLASH
-	dbw 55, URSARING
-	dbw 55, GOLEM
+	dbw 73, GOLEM
+	dbw 74, STEELIX
+	dbw 72, SANDSLASH
+	dbw 75, URSARING
+	dbw 75, GOLEM
 	dbw 25, LARVITAR
-	dbw 30, PUPITAR
+	dbw 50, PUPITAR
 	; nite
-	dbw 53, GRAVELER
-	dbw 54, SANDSLASH
-	dbw 52, GOLEM
-	dbw 52, URSARING
-	dbw 55, STEELIX
-	dbw 54, WOBBUFFET
-	dbw 54, WOBBUFFET
+	dbw 73, GRAVELER
+	dbw 74, SANDSLASH
+	dbw 72, GOLEM
+	dbw 72, URSARING
+	dbw 75, STEELIX
+	dbw 74, WOBBUFFET
+	dbw 74, WOBBUFFET
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_UNDERBELLY  ; weather: sun
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 56, MAGCARGO
-	dbw 57, MAGMAR
-	dbw 57, GOLEM
-	dbw 59, HOUNDOOM
-	dbw 56, WEEZING
-	dbw 58, FLAREON
-	dbw 58, FLAREON
+	dbw 76, MAGCARGO
+	dbw 77, MAGMAR
+	dbw 77, GOLEM
+	dbw 79, HOUNDOOM
+	dbw 76, WEEZING
+	dbw 78, FLAREON
+	dbw 78, FLAREON
 	; day
-	dbw 56, MAGMAR
-	dbw 57, MAGCARGO
-	dbw 57, WEEZING
-	dbw 59, GOLEM
-	dbw 56, HOUNDOOM
-	dbw 58, FLAREON
-	dbw 58, FLAREON
+	dbw 76, MAGMAR
+	dbw 77, MAGCARGO
+	dbw 77, WEEZING
+	dbw 79, GOLEM
+	dbw 76, HOUNDOOM
+	dbw 78, FLAREON
+	dbw 78, FLAREON
 	; nite
-	dbw 56, HOUNDOOM
-	dbw 57, GOLEM
-	dbw 57, MAGCARGO
-	dbw 59, WEEZING
-	dbw 55, MAGMAR
-	dbw 59, FLAREON
-	dbw 59, FLAREON
+	dbw 76, HOUNDOOM
+	dbw 77, GOLEM
+	dbw 77, MAGCARGO
+	dbw 79, WEEZING
+	dbw 75, MAGMAR
+	dbw 79, FLAREON
+	dbw 79, FLAREON
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_2  ; weather: rain
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 63, GOLDUCK
-	dbw 63, ELECTABUZZ
-	dbw 62, QUAGSIRE
-	dbw 61, VAPOREON
-	dbw 63, CROBAT
-	dbw 60, PARASECT
-	dbw 60, PARASECT
+	dbw 83, GOLDUCK
+	dbw 83, ELECTABUZZ
+	dbw 82, QUAGSIRE
+	dbw 81, VAPOREON
+	dbw 83, CROBAT
+	dbw 80, PARASECT
+	dbw 80, PARASECT
 	; day
-	dbw 63, GOLDUCK
-	dbw 63, ELECTABUZZ
-	dbw 62, VAPOREON
-	dbw 61, QUAGSIRE
-	dbw 62, CROBAT
-	dbw 60, PARASECT
-	dbw 60, PARASECT
+	dbw 83, GOLDUCK
+	dbw 83, ELECTABUZZ
+	dbw 82, VAPOREON
+	dbw 81, QUAGSIRE
+	dbw 82, CROBAT
+	dbw 80, PARASECT
+	dbw 80, PARASECT
 	; nite
-	dbw 63, ELECTABUZZ
-	dbw 63, QUAGSIRE
-	dbw 61, KADABRA
-	dbw 61, CROBAT
-	dbw 63, VAPOREON
-	dbw 60, MISDREAVUS
-	dbw 60, MISDREAVUS
+	dbw 83, ELECTABUZZ
+	dbw 83, QUAGSIRE
+	dbw 81, KADABRA
+	dbw 81, CROBAT
+	dbw 83, VAPOREON
+	dbw 80, MISDREAVUS
+	dbw 80, MISDREAVUS
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS ; no weather
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 63, CROBAT
-	dbw 61, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 61, CROBAT
-	dbw 63, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 67, MISDREAVUS
+	dbw 83, CROBAT
+	dbw 81, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 81, CROBAT
+	dbw 83, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 87, MISDREAVUS
 	; day
-	dbw 63, CROBAT
-	dbw 61, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 61, CROBAT
-	dbw 63, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 67, MISDREAVUS
+	dbw 83, CROBAT
+	dbw 81, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 81, CROBAT
+	dbw 83, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 87, MISDREAVUS
 	; nite
-	dbw 63, CROBAT
-	dbw 61, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 61, CROBAT
-	dbw 63, PARASECT
-	dbw 65, MISDREAVUS
-	dbw 67, MISDREAVUS
+	dbw 83, CROBAT
+	dbw 81, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 81, CROBAT
+	dbw 83, PARASECT
+	dbw 85, MISDREAVUS
+	dbw 87, MISDREAVUS
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_3  ; weather: hail
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 68, PILOSWINE
-	dbw 66, JYNX
-	dbw 67, DELIBIRD
-	dbw 68, CLOYSTER
-	dbw 69, SNEASEL
-	dbw 67, TYRANITAR
-	dbw 70, TYRANITAR
+	dbw 88, PILOSWINE
+	dbw 86, JYNX
+	dbw 87, DELIBIRD
+	dbw 88, CLOYSTER
+	dbw 89, SNEASEL
+	dbw 87, TYRANITAR
+	dbw 90, TYRANITAR
 	; day
-	dbw 68, JYNX
-	dbw 66, CLOYSTER
-	dbw 67, PILOSWINE
-	dbw 68, DELIBIRD
-	dbw 69, SNEASEL
-	dbw 67, TYRANITAR
-	dbw 70, TYRANITAR
+	dbw 88, JYNX
+	dbw 86, CLOYSTER
+	dbw 87, PILOSWINE
+	dbw 88, DELIBIRD
+	dbw 89, SNEASEL
+	dbw 87, TYRANITAR
+	dbw 90, TYRANITAR
 	; nite
-	dbw 68, SNEASEL
-	dbw 66, JYNX
-	dbw 67, TYRANITAR
-	dbw 68, CLOYSTER
-	dbw 69, PILOSWINE
-	dbw 67, DELIBIRD
-	dbw 70, DELIBIRD
+	dbw 88, SNEASEL
+	dbw 86, JYNX
+	dbw 87, TYRANITAR
+	dbw 88, CLOYSTER
+	dbw 89, PILOSWINE
+	dbw 87, DELIBIRD
+	dbw 90, DELIBIRD
 	end_grass_wildmons
 
 	def_grass_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -1713,29 +1713,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 51, TANGELA
-	dbw 52, RAPIDASH
-	dbw 52, ARBOK
-	dbw 54, BUTTERFREE
-	dbw 51, KANGASKHAN
-	dbw 53, DODRIO
-	dbw 53, DITTO
+	dbw 71, TANGELA
+	dbw 72, RAPIDASH
+	dbw 72, ARBOK
+	dbw 74, BUTTERFREE
+	dbw 71, KANGASKHAN
+	dbw 73, DODRIO
+	dbw 73, DITTO
 	; day
-	dbw 51, TANGELA
-	dbw 52, RAPIDASH
-	dbw 52, ARBOK
-	dbw 54, BEEDRILL
-	dbw 51, KANGASKHAN
-	dbw 53, DODRIO
-	dbw 53, DITTO
+	dbw 71, TANGELA
+	dbw 72, RAPIDASH
+	dbw 72, ARBOK
+	dbw 74, BEEDRILL
+	dbw 71, KANGASKHAN
+	dbw 73, DODRIO
+	dbw 73, DITTO
 	; nite
-	dbw 51, TANGELA
-	dbw 52, POLIWHIRL
-	dbw 52, HOUNDOOM
-	dbw 54, VENOMOTH
-	dbw 50, POLITOED
-	dbw 54, CROBAT
-	dbw 54, DITTO
+	dbw 71, TANGELA
+	dbw 72, POLIWHIRL
+	dbw 72, HOUNDOOM
+	dbw 74, VENOMOTH
+	dbw 70, POLITOED
+	dbw 74, CROBAT
+	dbw 74, DITTO
 	end_grass_wildmons
 
 	db -1 ; end
