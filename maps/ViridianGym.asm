@@ -32,10 +32,39 @@ ViridianGymBlueScript:
 	end
 
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BlueRematchScript
 	writetext LeaderBlueEpilogueText
 	waitbutton
 	closetext
 	end
+
+BlueRematchScript:
+    checkevent EVENT_BLUE_REMATCH
+    iftrue .RematchDone
+    readvar VAR_DEXCAUGHT
+    ifless 151, .BlueReject
+    writetext BlueRematchText
+    waitbutton
+    closetext
+    winlosstext BlueRematchWinLossText, LeaderBlueLossText
+    loadtrainer BLUE, BLUE2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_BLUE_REMATCH
+.RematchDone
+    opentext
+    writetext BeatenBlueAgainText
+    waitbutton
+    closetext
+    end
+
+.BlueReject
+    writetext BlueRejectText
+    waitbutton
+    closetext
+    end
 
 ViridianGymGuideScript:
 	faceplayer
@@ -140,6 +169,111 @@ LeaderBlueEpilogueText:
 	para "You'd better not"
 	line "lose until I beat"
 	cont "you. Got it?"
+	done
+
+BlueRematchText:
+	text "What?! You've"
+	line "caught 151 #MON"
+	cont "or more?"
+
+	para "That's… actually"
+	line "pretty impressive."
+
+	para "I have to admit,"
+	line "not many trainers"
+	cont "have that kind of"
+	cont "dedication."
+
+	para "You've really"
+	line "traveled far and"
+	cont "wide, haven't you?"
+
+	para "Alright then!"
+	line "You've earned this"
+	cont "battle!"
+
+	para "Let me show you"
+	line "what the former"
+	cont "CHAMPION can do"
+	cont "when he's serious!"
+
+	para "I won't hold back"
+	line "this time!"
+	done
+
+BlueRematchWinLossText:
+	text "What?! How did"
+	line "you…?"
+
+	para "Man… you really"
+	line "have grown as a"
+	cont "trainer."
+
+	para "I guess catching"
+	line "all those #MON"
+	cont "really did teach"
+	cont "you something."
+
+	para "You've got what it"
+	line "takes to be a true"
+	cont "#MON master."
+	done
+
+BeatenBlueAgainText:
+	text "I can't believe"
+	line "you beat me again…"
+
+	para "But I guess that's"
+	line "what happens when"
+	cont "you dedicate"
+	cont "yourself like that."
+
+	para "151 #MON is no"
+	line "small feat."
+
+	para "You've really"
+	line "proven yourself"
+	cont "as a trainer."
+
+	para "Gramps would be"
+	line "proud to see how"
+	cont "far you've come."
+
+	para "Keep it up! Maybe"
+	line "one day you'll"
+	cont "surpass even the"
+	cont "greatest masters!"
+	done
+
+BlueRejectText:
+	text "Oh, it's you."
+	line "Back for another"
+	cont "battle, huh?"
+
+	para "Heh… you think"
+	line "you're ready for"
+	cont "my full power?"
+
+	para "I've been training"
+	line "with all kinds of"
+	cont "#MON since"
+	cont "becoming CHAMPION."
+
+	para "My gramps always"
+	line "said the key to"
+	cont "being the best…"
+
+	para "Is understanding"
+	line "every species of"
+	cont "#MON."
+
+	para "Come back when"
+	line "you've caught at"
+	cont "least 151 #MON."
+
+	para "Only then will you"
+	line "have the knowledge"
+	cont "to face me!"
 	done
 
 ViridianGymGuideText:

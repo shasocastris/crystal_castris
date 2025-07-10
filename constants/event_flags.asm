@@ -537,6 +537,7 @@
 	const EVENT_BLUE_REMATCH
 ; new events for rematches
 	const EVENT_WON_BUG_CONTEST
+	const EVENT_OPENED_CERULEAN_CAVE
 ; Unused: next 150 events
 
 	const_next 1000

@@ -40,10 +40,39 @@ SaffronGymSabrinaScript:
 	end
 
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, SabrinaRematchScript
 	writetext SabrinaFightDoneText
 	waitbutton
 	closetext
 	end
+
+SabrinaRematchScript:
+    checkevent EVENT_SABRINA_REMATCH
+    iftrue .RematchDone
+    readvar VAR_UNOWNCOUNT
+    ifnotequal NUM_UNOWN, .SabrinaReject
+    writetext SabrinaRematchText
+    waitbutton
+    closetext
+    winlosstext SabrinaRematchWinLossText, SabrinaLossText
+    loadtrainer SABRINA, SABRINA2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_SABRINA_REMATCH
+.RematchDone
+    opentext
+    writetext BeatenSabrinaAgainText
+    waitbutton
+    closetext
+    end
+
+.SabrinaReject
+    writetext SabrinaRejectText
+    waitbutton
+    closetext
+    end
 
 TrainerMediumRebecca:
 	trainer MEDIUM, REBECCA, EVENT_BEAT_MEDIUM_REBECCA, MediumRebeccaSeenText, MediumRebeccaBeatenText, 0, .Script
@@ -193,6 +222,70 @@ SabrinaFightDoneText:
 
 	para "kind of psychic"
 	line "power…"
+	done
+
+SabrinaRematchText:
+	text "…Incredible."
+
+	para "My psychic senses"
+	line "detect them all…"
+	cont "Every UNOWN form."
+
+	para "You have unlocked"
+	line "the ancient"
+	cont "alphabet of"
+	cont "mystery."
+
+	para "Now you possess"
+	line "the psychic"
+	cont "attunement worthy"
+	cont "of my full power!"
+	done
+
+SabrinaRematchWinLossText:
+	text "I did not foresee"
+	line "this outcome…"
+
+	para "Your mind has"
+	line "truly evolved."
+	done
+
+BeatenSabrinaAgainText:
+	text "The ancient"
+	line "alphabet has"
+	cont "chosen you."
+
+	para "Your bond with"
+	line "the UNOWN has"
+	cont "unlocked psychic"
+	cont "potential…"
+
+	para "That even I cannot"
+	line "fully comprehend."
+	done
+
+SabrinaRejectText:
+	text "I sense you wish"
+	line "to challenge me"
+	cont "once more,"
+
+	para "but my psychic"
+	line "powers tell me"
+	cont "you are not yet"
+	cont "ready."
+
+	para "In the ancient"
+	line "RUINS OF ALPH,"
+	cont "mysterious #MON"
+	cont "spell out secrets."
+
+	para "Capture all 26"
+	line "forms of these"
+	cont "psychic symbols,"
+
+	para "and unlock the"
+	line "mental power to"
+	cont "face me."
 	done
 
 MediumRebeccaSeenText:

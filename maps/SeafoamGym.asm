@@ -39,10 +39,39 @@ SeafoamGymBlaineScript:
 	end
 
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BlaineRematchScript
 	writetext BlaineFightDoneText
 	waitbutton
 	closetext
 	end
+
+BlaineRematchScript:
+    checkevent EVENT_BLAINE_REMATCH
+    iftrue .RematchDone
+    checkevent EVENT_FOUGHT_MEWTWO
+    iffalse .BlaineReject
+    writetext BlaineRematchText
+    waitbutton
+    closetext
+    winlosstext BlaineRematchWinLossText, BlaineLossText
+    loadtrainer BLAINE, BLAINE2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_BLAINE_REMATCH
+.RematchDone
+    opentext
+    writetext BeatenBlaineAgainText
+    waitbutton
+    closetext
+    end
+
+.BlaineReject
+    writetext BlaineRejectText
+    waitbutton
+    closetext
+    end
 
 SeafoamGymGuideScript:
 	faceplayer
@@ -127,6 +156,95 @@ BlaineFightDoneText:
 
 	para "even stronger."
 	line "Just you watch!"
+	done
+
+BlaineRematchText:
+	text "So… you've faced"
+	line "MEWTWO."
+
+	para "Then you've seen"
+	line "what my research"
+	cont "helped create…"
+
+	para "A #MON born of"
+	line "pain and anger…"
+	cont "suffering from our"
+	cont "mistakes."
+
+	para "I've carried this"
+	line "guilt for years…"
+	cont "The shame burns"
+	cont "hotter than any"
+	cont "flame."
+
+	para "But if you could"
+	line "face that tortured"
+	cont "soul…"
+
+	para "Then perhaps you"
+	line "can help me find"
+	cont "redemption through"
+	cont "battle."
+
+	para "Let my fire burn"
+	line "away some of this"
+	cont "regret!"
+	done
+
+BlaineRematchWinLossText:
+	text "Your strength"
+	line "gives me hope."
+	done
+
+BeatenBlaineAgainText:
+	text "MEWTWO may have"
+	line "been born from"
+	cont "our arrogance…"
+
+	para "But trainers like"
+	line "you prove that"
+	cont "redemption is"
+	cont "possible."
+
+	para "Thank you for"
+	line "helping an old"
+	cont "scientist find"
+	cont "some peace."
+	done
+
+BlaineRejectText:
+	text "You want another"
+	line "battle? I admire"
+	cont "your passion!"
+
+	para "But first… there's"
+	line "something I must"
+	cont "know."
+
+	para "Years ago, I was"
+	line "part of a terrible"
+	cont "experiment…"
+
+	para "We created a"
+	line "#MON of"
+	cont "unimaginable"
+	cont "power…"
+
+	para "MEWTWO… born from"
+	line "our scientific"
+	cont "arrogance."
+
+	para "If you've faced"
+	line "that tortured"
+	cont "creation…"
+
+	para "Then you've seen"
+	line "the consequences"
+	cont "of playing god."
+
+	para "Return when you've"
+	line "encountered"
+	cont "MEWTWO."
 	done
 
 SeafoamGymGuideWinText:

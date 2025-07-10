@@ -39,6 +39,9 @@ TrainerPicnickerSharon:
 	closetext
 	end
 
+Route4UnusedGuyScript:
+	jumptextfaceplayer Route4UnusedGuyText
+
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText
 
@@ -108,6 +111,17 @@ PicnickerSharonAfterBattleText:
 	line "some more…"
 	done
 
+Route4UnusedGuyText:
+	text "Whoa, hold it!"
+
+	para "You can't go into"
+	line "CERULEAN CAVE."
+
+	para "You need special"
+	line "permission from"
+	cont "PROF.OAK!"
+	done
+
 MtMoonSquareSignText:
 	text "MT.MOON SQUARE"
 
@@ -132,3 +146,4 @@ Route4_MapEvents:
 	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
 	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
 	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event 40,  4, SPRITE_UNUSED_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, Route4UnusedGuyScript, EVENT_OPENED_CERULEAN_CAVE

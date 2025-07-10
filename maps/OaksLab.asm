@@ -14,6 +14,8 @@ Oak:
 	opentext
 	checkevent EVENT_OPENED_MT_SILVER
 	iftrue .CheckPokedex
+	checkevent EVENT_OPENED_CERULEAN_CAVE
+	iftrue .CheckPokedex
 	checkevent EVENT_TALKED_TO_OAK_IN_KANTO
 	iftrue .CheckBadges
 	writetext OakWelcomeKantoText
@@ -21,9 +23,11 @@ Oak:
 	setevent EVENT_TALKED_TO_OAK_IN_KANTO
 .CheckBadges:
 	readvar VAR_BADGES
-	ifequal NUM_BADGES, .OpenMtSilver
+	ifequal NUM_BADGES, .OpenCeruleanCave
 	ifequal NUM_JOHTO_BADGES, .Complain
 	sjump .AhGood
+	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
+	iftrue .OpenMtSilver
 
 .CheckPokedex:
 	writetext OakLabDexCheckText
@@ -33,6 +37,12 @@ Oak:
 	waitbutton
 	closetext
 	end
+
+.OpenCeruleanCave:
+	writetext OakOpenCeruleanCaveText
+	promptbutton
+	setevent EVENT_OPENED_CERULEAN_CAVE
+	sjump .CheckPokedex
 
 .OpenMtSilver:
 	writetext OakOpenMtSilverText
@@ -101,13 +111,62 @@ OakLabGoodbyeText:
 	cont "come visit again."
 	done
 
-OakOpenMtSilverText:
-	text "OAK: Wow! That's"
-	line "excellent!"
+OakOpenCeruleanCaveText:
+	text "OAK: Amazing work,"
+	line "<PLAY_G>!"
 
 	para "You collected the"
 	line "BADGES of GYMS in"
-	cont "KANTO. Well done!"
+	cont "both JOHTO and"
+	cont "KANTO!"
+
+	para "All 16 BADGES!"
+	line "That's a feat few"
+	cont "trainers achieve!"
+
+	para "Your dedication"
+	line "has impressed me"
+	cont "greatly."
+
+	para "I think you're"
+	line "ready for a very"
+	cont "special place…"
+
+	para "There's a cave"
+	line "near CERULEAN"
+	cont "CITY that was"
+	cont "sealed off."
+
+	para "CERULEAN CAVE is"
+	line "home to incredibly"
+	cont "powerful #MON."
+
+	para "It's been"
+	line "restricted to only"
+	cont "the most elite"
+	cont "trainers."
+
+	para "But with all 16"
+	line "BADGES, you've"
+	cont "earned the right"
+	cont "to explore it."
+
+	para "Head north from"
+	line "CERULEAN CITY."
+	cont "Good luck!"
+	done
+
+OakOpenMtSilverText:
+	text "OAK: Incredible!"
+	line "Simply incredible!"
+
+	para "You've not only"
+	line "defeated the ELITE"
+	cont "FOUR once more…"
+
+	para "But proven yourself"
+	line "as the ultimate"
+	cont "#MON trainer!"
 
 	para "I was right in my"
 	line "assessment of you."
@@ -131,7 +190,11 @@ OakOpenMtSilverText:
 	para "trainer, so it's"
 	line "off limits. But"
 
-	para "we can make an"
+	para "after defeating"
+	line "the ELITE FOUR"
+	cont "twice…"
+
+	para "We can make an"
 	line "exception in your"
 	cont "case, <PLAY_G>."
 
