@@ -262,9 +262,9 @@ ROMX $5e
 	"Crystal Sound Effects"
 ROMX $5f
 	"mobile5F"
+	"Pokedex Entries 001-064"
 ROMX $60
 	"Map Scripts 13"
-	"Pokedex Entries 001-064"
 ROMX $61
 	"Map Scripts 14"
 ROMX $62

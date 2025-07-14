@@ -41,6 +41,8 @@ KarensRoomDoorLocksBehindYouScript:
 	end
 
 KarenScript_Battle:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .KarenRematch
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_KAREN
@@ -66,8 +68,40 @@ KarenScript_Battle:
 	waitsfx
 	end
 
+.KarenRematch:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ELITE_4_KAREN
+	iftrue KarenScript_AfterBattleRematch
+	writetext KarenScript_KarenBeforeRematchText
+	waitbutton
+	closetext
+	winlosstext KarenScript_KarenBeatenText, KarenLossText
+	loadtrainer KAREN, KAREN2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ELITE_4_KAREN
+	opentext
+	writetext KarenScript_KarenDefeatRematchText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 2, $16 ; open door
+	refreshmap
+	closetext
+	setevent EVENT_KARENS_ROOM_EXIT_OPEN
+	waitsfx
+	end
+
 KarenScript_AfterBattle:
 	writetext KarenScript_KarenDefeatText
+	waitbutton
+	closetext
+	end
+
+KarenScript_AfterBattleRematch:
+	writetext KarenScript_KarenDefeatRematchText
 	waitbutton
 	closetext
 	end
@@ -134,6 +168,56 @@ KarenScript_KarenDefeatText:
 
 	para "Go on--the CHAM-"
 	line "PION is waiting."
+	done
+
+KarenScript_KarenBeforeRematchText:
+	text "Oh my, you're back"
+	line "for another dance"
+	cont "with darkness?"
+
+	para "How delightful!"
+
+	para "I've been exploring"
+	line "the deeper shadows"
+	cont "since we last met."
+
+	para "My dark #MON"
+	line "have learned to"
+	cont "embrace an even"
+	cont "more sinister"
+	cont "power."
+
+	para "Strong #MON."
+	line "Weak #MON."
+
+	para "That is only the"
+	line "selfish perception"
+	cont "of people."
+
+	para "Let me show you"
+	line "what true darkness"
+	cont "can achieve!"
+	done
+
+KarenScript_KarenDefeatRematchText:
+	text "How fascinating…"
+
+	para "You've learned to"
+	line "find light even"
+	cont "in the deepest"
+	cont "darkness."
+
+	para "That is the mark"
+	line "of a truly skilled"
+	cont "trainer."
+
+	para "You understand"
+	line "that victory comes"
+	cont "from the heart,"
+	cont "not just power."
+
+	para "Magnificent! Face"
+	line "our champion!"
 	done
 
 KarensRoom_MapEvents:
