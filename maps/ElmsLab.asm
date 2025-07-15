@@ -1402,14 +1402,10 @@ ElmsLabTravelTip1Text:
 	para "Travel Tip 1:"
 
 	para "Trainers can fight"
-	line "gym leaders once a"
-	cont "day after they've"
-	cont "earned that badge."
-
-	para "Gym leaders will"
-	line "use stronger teams"
-	cont "if you have beaten"
-	cont "the Elite Four."
+	line "gym leaders again"
+	cont "after they collect"
+	cont "all the badges in"
+	cont "JOHTO and KANTO."
 	done
 
 ElmsLabTravelTip2Text:
