@@ -1414,12 +1414,12 @@ ElmsLabTravelTip2Text:
 
 	para "Travel Tip 2:"
 
-	para "A #MON that"
-	line "faints in battle"
-	cont "or from being"
-	cont "poisoned will be"
-	cont "unhappy with its"
-	cont "trainer."
+	para "Many #MON that"
+	line "were thought to be"
+	cont "NORMAL type are"
+	cont "actually the newly"
+	cont "discovered FAIRY"
+	cont "type."
 	done
 
 ElmsLabTravelTip3Text:
@@ -1428,15 +1428,11 @@ ElmsLabTravelTip3Text:
 
 	para "Travel Tip 3:"
 
-	para "#MON are often"
-	line "happier after a"
-	cont "haircut, grooming,"
-	cont "or photograph."
-
-	para "They even get"
-	line "excited when an"
-	cont "X-item is used on"
-	cont "them in battle."
+	para "There is a seer in"
+	line "CIANWOOD CITY that"
+	cont "can reveal any"
+	cont "#MON's HIDDEN"
+	cont "POWER."
 	done
 
 ElmsLabTravelTip4Text:
@@ -1445,11 +1441,9 @@ ElmsLabTravelTip4Text:
 
 	para "Travel Tip 4:"
 
-	para "#MON with very"
-	line "high happiness "
-	cont "have been known"
-	cont "to endure hits and"
-	cont "keep fighting."
+	para "The clock can be"
+	line "reset using the"
+	cont "#GEAR."
 	done
 
 ElmsLabTravelTip5Text:

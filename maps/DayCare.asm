@@ -44,8 +44,12 @@ DayCareLadyScript:
 	waitbutton
 	closetext
 	end
-DayCareBookshelf:
-	jumpstd DifficultBookshelfScript
+
+GrammsGuide1Script:
+	jumptext GrammsGuide1Text
+
+GrammsGuide2Script:
+	jumptext GrammsGuide2Text
 
 DayCareManText_GiveLuckyEgg:
 	text "I'm the DAY-CARE"
@@ -101,6 +105,32 @@ AskGrampsForLuckyEggText:
 	line "for you."
 	done
 
+GrammsGuide1Text:
+	text "Gramms' guide on"
+	line "raising #MON"
+
+	para "#MON with very"
+	line "high happiness "
+	cont "have been known"
+	cont "to endure hits and"
+	cont "keep fighting."
+	done
+
+GrammsGuide2Text:
+	text "Gramms' guide on"
+	line "raising #MON"
+
+	para "#MON are often"
+	line "happier after a"
+	cont "haircut, grooming,"
+	cont "or photograph."
+
+	para "They even get"
+	line "excited when an"
+	cont "X-item is used on"
+	cont "them in battle."
+	done
+
 DayCare_MapEvents:
 	db 0, 0 ; filler
 
@@ -113,8 +143,8 @@ DayCare_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
-	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
+	bg_event  0,  1, BGEVENT_READ, GrammsGuide1Script
+	bg_event  1,  1, BGEVENT_READ, GrammsGuide2Script
 
 	def_object_events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, -1

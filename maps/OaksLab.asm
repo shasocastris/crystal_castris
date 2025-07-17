@@ -72,6 +72,18 @@ OaksAssistant3Script:
 OaksLabBookshelf:
 	jumpstd DifficultBookshelfScript
 
+OaksLabAdvancedStudies1:
+	jumptext OaksLabAdvancedStudies1Text
+
+OaksLabAdvancedStudies2:
+	jumptext OaksLabAdvancedStudies2Text
+
+OaksLabAdvancedStudies3:
+	jumptext OaksLabAdvancedStudies3Text
+
+OaksLabAdvancedStudies4:
+	jumptext OaksLabAdvancedStudies4Text
+
 OaksLabPoster1:
 	jumptext OaksLabPoster1Text
 
@@ -314,6 +326,53 @@ OaksLabPCText:
 	line "TOWN 8-)"
 	done
 
+OaksLabAdvancedStudies1Text:
+	text "Professor Oak's"
+	line "Advanced Studies:"
+
+	para "The HOPPIP line"
+	line "learns SPORE. The"
+	cont "JUMPLUFF I evolved"
+	cont "proved invaluable"
+	cont "while traveling"
+	cont "through JOHTO."
+	done
+
+OaksLabAdvancedStudies2Text:
+	text "Professor Oak's"
+	line "Advanced Studies:"
+
+	para "The RAZOR CLAW,"
+	line "DUBIOUS DISC, and"
+	cont "PROTECTOR are now"
+	cont "known to evolve"
+	cont "certain #MON."
+	done
+
+OaksLabAdvancedStudies3Text:
+	text "Professor Oak's"
+	line "Advanced Studies:"
+
+	para "Different types of"
+	line "ROCKs are able to"
+	cont "enhance different"
+	cont "weather effects."
+	done
+
+OaksLabAdvancedStudies4Text:
+	text "Professor Oak's"
+	line "Advanced Studies:"
+
+	para "I was told that a"
+	line "RADIANT ORB could"
+	cont "bring out the full"
+	cont "inner strength of"
+	cont "a #MON."
+
+	para "What exactly does"
+	line "that mean?"
+	done
+
 OaksLab_MapEvents:
 	db 0, 0 ; filler
 
@@ -324,10 +383,10 @@ OaksLab_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  6,  1, BGEVENT_READ, OaksLabBookshelf
-	bg_event  7,  1, BGEVENT_READ, OaksLabBookshelf
-	bg_event  8,  1, BGEVENT_READ, OaksLabBookshelf
-	bg_event  9,  1, BGEVENT_READ, OaksLabBookshelf
+	bg_event  6,  1, BGEVENT_READ, OaksLabAdvancedStudies1
+	bg_event  7,  1, BGEVENT_READ, OaksLabAdvancedStudies2
+	bg_event  8,  1, BGEVENT_READ, OaksLabAdvancedStudies3
+	bg_event  9,  1, BGEVENT_READ, OaksLabAdvancedStudies4
 	bg_event  0,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  1,  7, BGEVENT_READ, OaksLabBookshelf
 	bg_event  2,  7, BGEVENT_READ, OaksLabBookshelf
