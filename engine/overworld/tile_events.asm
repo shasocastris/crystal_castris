@@ -27,6 +27,14 @@ CheckDirectionalWarp::
 	jr z, .directional
 	cp COLL_WARP_CARPET_RIGHT
 	jr z, .directional
+	cp COLL_WARP_WATER_DOWN
+	jr z, .directional
+	cp COLL_WARP_WATER_LEFT
+	jr z, .directional
+	cp COLL_WARP_WATER_UP
+	jr z, .directional
+	cp COLL_WARP_WATER_RIGHT
+	jr z, .directional
 	scf
 	ret
 
