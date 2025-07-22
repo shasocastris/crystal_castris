@@ -99,6 +99,16 @@ TilesetJohtoAnim::
 	dw wTileAnimBuffer, ScrollTileDown
 	dw NULL,  DoNothing
 	dw vTiles2 tile $77, WriteTileFromAnimBuffer
+	dw NULL,  StandingTileFrame8
+	dw vTiles2 tile $7C, ReadTileToAnimBuffer
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileRight
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileRight
+	dw NULL,  DoNothing
+	dw wTileAnimBuffer, ScrollTileRight
+	dw NULL,  DoNothing
+	dw vTiles2 tile $7C, WriteTileFromAnimBuffer
 	dw NULL,  DoneTileAnimation
 
 TilesetPortAnim::

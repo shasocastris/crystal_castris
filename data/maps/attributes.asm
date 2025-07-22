@@ -149,12 +149,12 @@ ENDM
 	connection west, Route27, ROUTE_27, 45
 
 	map_attributes Route27, ROUTE_27, $35, NORTH | WEST | EAST
-	connection north, BlackthornPass, BLACKTHORN_PASS, -8
+	connection north, BlackthornPass, BLACKTHORN_PASS, -9
 	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
 	map_attributes BlackthornPass, BLACKTHORN_PASS, $35, SOUTH
-	connection south, Route27, ROUTE_27, 8
+	connection south, Route27, ROUTE_27, 9
 
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
