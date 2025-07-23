@@ -701,3 +701,4 @@ ENDM
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
 	map_attributes SilverCaveUnderbelly, SILVER_CAVE_UNDERBELLY, $09, 0
 	map_attributes CeruleanCave, CERULEAN_CAVE, $09, 0
+	map_attributes Route45New, ROUTE_45_NEW, $71, 0

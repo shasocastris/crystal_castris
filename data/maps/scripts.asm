@@ -401,6 +401,7 @@ INCLUDE "maps/Route35.asm"
 INCLUDE "maps/Route43.asm"
 INCLUDE "maps/Route44.asm"
 INCLUDE "maps/Route45.asm"
+INCLUDE "maps/Route45_new.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route25.asm"
 
@@ -487,5 +488,6 @@ INCLUDE "maps/SeafoamCaves.asm"
 INCLUDE "maps/SilverCaveUnderbelly.asm"
 INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/BlackthornPass.asm"
+;INCLUDE "maps/Route45_new.asm"
 
 ENDSECTION

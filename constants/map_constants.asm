@@ -157,6 +157,7 @@ ENDM
 	map_const SEAFOAM_CAVES,                               10,  9 ; 92
 	map_const SILVER_CAVE_UNDERBELLY,                      15, 18 ; 93
 	map_const CERULEAN_CAVE,                               15,  9 ; 94
+	map_const ROUTE_45_NEW,                                13, 49
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4

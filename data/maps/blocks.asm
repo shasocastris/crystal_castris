@@ -61,6 +61,9 @@ Route33_Blocks:
 Route45_Blocks:
 	INCBIN "maps/Route45.ablk"
 
+Route45New_Blocks:
+	INCBIN "maps/Route45_new.ablk"
+
 Route29_Blocks:
 	INCBIN "maps/Route29.ablk"
 
