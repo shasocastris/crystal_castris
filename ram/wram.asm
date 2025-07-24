@@ -2781,6 +2781,7 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wVioletCitySceneID::                              db
 wGlitterAndGraceSceneID::                         db
+wRoute45NewSceneID::                              db
 
 ; fight counts
 

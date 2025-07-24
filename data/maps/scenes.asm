@@ -84,4 +84,5 @@ MapScenes::
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var VIOLET_CITY,                                 wVioletCitySceneID
 	scene_var GOLDENROD_GLITTER_AND_GRACE,                 wGlitterAndGraceSceneID
+	scene_var ROUTE_45_NEW,                                wRoute45NewSceneID
 	db -1 ; end
