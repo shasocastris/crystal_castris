@@ -27,7 +27,7 @@ MovesGen1:
 	move EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0      ;KARATE_CHOP
 	move EFFECT_MULTI_HIT,          15, FAIRY,         PHYSICAL,  85, 10,   0      ;DOUBLESLAP
 	move EFFECT_MULTI_HIT,          18, FAIRY,         PHYSICAL,  85, 15,   0      ;COMET_PUNCH
-	move EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL,  85, 20,   0      ;MEGA_PUNCH
+	move EFFECT_NORMAL_HIT,         80, FAIRY,         PHYSICAL,  85, 20,   0      ;MEGA_PUNCH
 	move EFFECT_PAY_DAY,            40, NORMAL,        PHYSICAL, 100, 20,   0      ;PAY_DAY
 	move EFFECT_BURN_HIT,           75, FIRE,          PHYSICAL, 100, 15,  10      ;FIRE_PUNCH
 	move EFFECT_FREEZE_HIT,         75, ICE,           PHYSICAL, 100, 15,  10      ;ICE_PUNCH
@@ -47,7 +47,7 @@ MovesGen1:
 	move EFFECT_NORMAL_HIT,         35, GRASS,         PHYSICAL, 100, 10,   0      ;VINE_WHIP
 	move EFFECT_STOMP,              65, NORMAL,        PHYSICAL, 100, 20,  30      ;STOMP
 	move EFFECT_DOUBLE_HIT,         30, FIGHTING,      PHYSICAL, 100, 30,   0      ;DOUBLE_KICK
-	move EFFECT_NORMAL_HIT,        120, NORMAL,        PHYSICAL,  75,  5,   0      ;MEGA_KICK
+	move EFFECT_NORMAL_HIT,        120, FIGHTING,      PHYSICAL,  75,  5,   0      ;MEGA_KICK
 	move EFFECT_JUMP_KICK,          70, FIGHTING,      PHYSICAL,  95, 25,   0      ;JUMP_KICK
 	move EFFECT_FLINCH_HIT,         60, FIGHTING,      PHYSICAL,  85, 15,  30      ;ROLLING_KICK
 	move EFFECT_ACCURACY_DOWN,       0, GROUND,        STATUS,   100, 15,   0      ;SAND_ATTACK
