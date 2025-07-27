@@ -34,7 +34,7 @@ MovesGen1:
 	move EFFECT_PARALYZE_HIT,       75, ELECTRIC,      PHYSICAL, 100, 15,  10      ;THUNDERPUNCH
 	move EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0      ;SCRATCH
 	move EFFECT_NORMAL_HIT,         55, NORMAL,        PHYSICAL, 100, 30,   0      ;VICEGRIP
-	move EFFECT_OHKO,                0, NORMAL,        PHYSICAL,  30,  5,   0      ;GUILLOTINE
+	move EFFECT_NORMAL_HIT,        120, STEEl,         PHYSICAL,  80,  5,   0      ;GUILLOTINE
 	move EFFECT_TRAP_TARGET,        15, FLYING,        SPECIAL,  100, 20,   0      ;RAZOR_WIND
 	move EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 30,   0      ;SWORDS_DANCE
 	move EFFECT_NORMAL_HIT,         50, BUG,           PHYSICAL,  95, 30,   0      ;CUT
@@ -54,7 +54,7 @@ MovesGen1:
 	move EFFECT_FLINCH_HIT,         70, NORMAL,        PHYSICAL, 100, 15,  30      ;HEADBUTT
 	move EFFECT_NORMAL_HIT,         65, NORMAL,        PHYSICAL, 100, 25,   0      ;HORN_ATTACK
 	move EFFECT_MULTI_HIT,          15, NORMAL,        PHYSICAL,  85, 20,   0      ;FURY_ATTACK
-	move EFFECT_OHKO,                1, NORMAL,        PHYSICAL,  30,  5,   0      ;HORN_DRILL
+	move EFFECT_NORMAL_HIT,        120, ROCK,          PHYSICAL,  80,  5,   0      ;HORN_DRILL
 	move EFFECT_NORMAL_HIT,         35, NORMAL,        PHYSICAL,  95, 35,   0      ;TACKLE
 	move EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30      ;BODY_SLAM
 	move EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL, 100, 20,   0      ;WRAP
@@ -112,7 +112,7 @@ MovesGen1:
 	move EFFECT_THUNDER,           120, ELECTRIC,      SPECIAL,   70, 10,  30      ;THUNDER
 	move EFFECT_NORMAL_HIT,         50, ROCK,          PHYSICAL,  90, 15,   0      ;ROCK_THROW
 	move EFFECT_EARTHQUAKE,        100, GROUND,        PHYSICAL, 100, 10,   0      ;EARTHQUAKE
-	move EFFECT_OHKO,                1, GROUND,        PHYSICAL,  30,  5,   0      ;FISSURE
+	move EFFECT_NORMAL_HIT,        120, GROUND,        PHYSICAL,  85,  5,   0      ;FISSURE
 	move EFFECT_FLY,                60, GROUND,        PHYSICAL, 100, 10,   0      ;DIG
 	move EFFECT_TOXIC,               0, POISON,        STATUS,    85, 10,   0      ;TOXIC
 	move EFFECT_CONFUSE_HIT,        50, PSYCHIC_TYPE,  SPECIAL,  100, 25,  10      ;CONFUSION
