@@ -1374,7 +1374,7 @@
 	const EVENT_RANG_CLEAR_BELL_2
 	const EVENT_FLORIA_AT_FLOWER_SHOP
 	const EVENT_FLORIA_AT_SUDOWOODO
-	const EVENT_GOLDENROD_CITY_MOVE_TUTOR
+	const_skip
 	const EVENT_GOLDENROD_GAME_CORNER_MOVE_TUTOR
 ; Unused: next 0 events
 ; (In pokegold the previous 4 event flags were not defined,

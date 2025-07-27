@@ -1080,4 +1080,10 @@ MACRO givepokemove
 	assert (\3 >= 0) && (\3 < 4), "givepokemove Move Number \3 is not 0-3!"
 ENDM
 
+	const loadmoveindex_command ; $af
+MACRO loadmoveindex
+	db loadmoveindex_command
+	dw \1
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

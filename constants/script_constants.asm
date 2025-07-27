@@ -330,9 +330,3 @@ DEF NUM_UNOWN_PUZZLES EQU const_value
 	const UNOWNWORDS_HO_OH  ; 3
 DEF NUM_UNOWN_WALLS EQU const_value
 DEF UNOWN_WALL_MENU_HEADER_SIZE EQU 5
-
-; MoveTutor setval arguments
-	const_def 1
-	const MOVETUTOR_FLAMETHROWER ; 1
-	const MOVETUTOR_THUNDERBOLT  ; 2
-	const MOVETUTOR_ICE_BEAM     ; 3

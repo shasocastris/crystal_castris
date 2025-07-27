@@ -232,6 +232,7 @@ ScriptCommandTable:
 	dw Script_loaditemindex              ; ac
 	dw Script_checkmaplockeditems        ; ad
 	dw Script_givepokemove               ; ae
+	dw Script_loadmoveindex              ; af
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -2388,4 +2389,13 @@ Script_givepokemove:
 	; Set move
 	ld a, d
 	ld [hl], a
+	ret
+
+Script_loadmoveindex:
+ 	call GetScriptByte
+	ld l, a
+	call GetScriptByte
+	ld h, a
+	call GetMoveIDFromIndex
+	ld [wScriptVar], a
 	ret

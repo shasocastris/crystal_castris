@@ -52,6 +52,10 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAskTeachAMoveText
 	yesorno
 	iffalse .Refused
+
+	readvar VAR_DEXCAUGHT
+	ifless 7, .NotEnoughPokemon
+
 	special DisplayCoinCaseBalance
 	writetext GoldenrodCityMoveTutorAsk400CoinsOkayText
 	yesorno
@@ -62,27 +66,35 @@ MoveTutorScript:
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
-	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
-	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
-	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
+	ifequal 1, .Flamethrower
+	ifequal 2, .Thunderbolt
+	ifequal 3, .IceBeam
+	ifequal 4, .Softboiled
 	sjump .Incompatible
 
 .Flamethrower:
-	setval MOVETUTOR_FLAMETHROWER
+	loadmoveindex FLAMETHROWER
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .Thunderbolt:
-	setval MOVETUTOR_THUNDERBOLT
+	loadmoveindex THUNDERBOLT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .IceBeam:
-	setval MOVETUTOR_ICE_BEAM
+	loadmoveindex ICE_BEAM
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+
+.Softboiled:
+	loadmoveindex SOFTBOILED
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
@@ -90,17 +102,24 @@ MoveTutorScript:
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	menu_coords 0, 0, 15, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 5 ; items
 	db "FLAMETHROWER@"
 	db "THUNDERBOLT@"
 	db "ICE BEAM@"
+	db "SOFTBOILED@"
 	db "CANCEL@"
+
+.NotEnoughPokemon:
+	writetext GoldenrodCityMoveTutorNeedMorePokemonText
+	waitbutton
+	closetext
+	end
 
 .Refused:
 	writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText
@@ -511,8 +530,8 @@ GoldenrodCityFlowerShopSignText:
 GoldenrodBeautySchoolSignText:
 	text "Glitter & Grace"
 
-    para "Where Beauties and"
-    line "#MON Shine!"
+	para "Where Beauties and"
+	line "#MON Shine!"
 	done
 
 GoldenrodCityMoveTutorAskTeachAMoveText:
@@ -529,6 +548,27 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
 GoldenrodCityMoveTutorAsk400CoinsOkayText:
 	text "It will cost you"
 	line "400 coins. Okay?"
+	done
+
+GoldenrodCityMoveTutorNeedMorePokemonText:
+	text "Hmm, you seem like"
+	line "a promising young"
+	cont "trainer, but…"
+	
+	para "My advanced moves"
+	line "require deep"
+	cont "understanding of"
+	cont "#MON diversity."
+	
+	para "Come back when"
+	line "you've caught at"
+	cont "least 50 different"
+	cont "#MON species!"
+	
+	para "Experience with"
+	line "many #MON will"
+	cont "help you use these"
+	cont "moves effectively."
 	done
 
 GoldenrodCityMoveTutorAwwButTheyreAmazingText:
@@ -631,4 +671,4 @@ GoldenrodCity_MapEvents:
 	object_event 29, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, EVENT_GOLDENROD_CITY_MOVE_TUTOR
+	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, -1
