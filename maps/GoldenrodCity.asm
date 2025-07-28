@@ -69,7 +69,7 @@ MoveTutorScript:
 	ifequal 1, .Flamethrower
 	ifequal 2, .Thunderbolt
 	ifequal 3, .IceBeam
-	ifequal 4, .Softboiled
+;	ifequal 4, .Softboiled
 	sjump .Incompatible
 
 .Flamethrower:
@@ -93,26 +93,25 @@ MoveTutorScript:
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
-.Softboiled:
-	loadmoveindex SOFTBOILED
-	writetext GoldenrodCityMoveTutorMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+;.Softboiled:
+;	loadmoveindex SOFTBOILED
+;	writetext GoldenrodCityMoveTutorMoveText
+;	special MoveTutor
+;	ifequal FALSE, .TeachMove
+;	sjump .Incompatible
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, TEXTBOX_Y - 1
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 5 ; items
+	db 4 ; items
 	db "FLAMETHROWER@"
 	db "THUNDERBOLT@"
 	db "ICE BEAM@"
-	db "SOFTBOILED@"
 	db "CANCEL@"
 
 .NotEnoughPokemon:

@@ -67,16 +67,20 @@ MartViolet:
 	dw FLOWER_MAIL
 
 MartAzalea:
-	db 9 ; # items
-	dw CHARCOAL
-	dw POKE_BALL
+	db 13 ; # items
 	dw POTION
 	dw SUPER_POTION
 	dw ESCAPE_ROPE
 	dw REPEL
 	dw ANTIDOTE
 	dw PARLYZ_HEAL
-	dw FLOWER_MAIL
+	dw FAST_BALL
+	dw HEAVY_BALL
+	dw LEVEL_BALL
+	dw LURE_BALL
+	dw FRIEND_BALL
+	dw MOON_BALL
+	dw LOVE_BALL
 
 MartCianwood:
 	db 5 ; # items
