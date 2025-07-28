@@ -4,6 +4,7 @@
 	const KURTSHOUSE_SLOWPOKE
 	const KURTSHOUSE_KURT2
 	const KURTSHOUSE_TWIN2
+	const KURTSHOUSE_DOLL
 
 KurtsHouse_MapScripts:
 	def_scene_scripts
@@ -82,6 +83,8 @@ Kurt1:
 .NoGSBall:
 	writetext AzaleaTownKurtMoveTutorText
 	waitbutton
+	checkitem POKE_DOLL
+	iffalse .NoPokeDoll
 	writetext AzaleaTownKurtMoveTutorText2
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -90,6 +93,12 @@ Kurt1:
 	ifequal 2, .Teleport
 	ifequal 3, .Softboiled
 	sjump .Incompatible
+
+.NoPokeDoll:
+	writetext AzaleaTownKurtMoveTutorNoDoll
+	waitbutton
+	closetext
+	end
 
 .PayDay:
 	loadmoveindex PAY_DAY
@@ -127,6 +136,9 @@ Kurt1:
 	db "CANCEL@"
 
 .TeachMove:
+	writetext AzaleaTownKurtPayment
+	takeitem POKE_DOLL
+	waitbutton
 	writetext AzaleaTownTutorMoveTaught
 	waitbutton
 	closetext
@@ -308,6 +320,9 @@ KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	big_step DOWN
 	big_step DOWN
 	step_end
+
+ClefairyDollScript:
+	jumptext ClefairyDollText
 
 KurtsHouseKurtMakingBallsMustWaitText:
 	text "Hm? Who are you?"
@@ -504,6 +519,28 @@ AzaleaTownKurtMoveTutorText2:
 	cont "#MON learn?"
 	done
 
+AzaleaTownKurtPayment:
+	text "<PLAYER> gave Kurt"
+	line "the #DOLL."
+	done
+
+AzaleaTownKurtMoveTutorNoDoll:
+	text "Ah, but before I"
+	line "do, could you get"
+
+	para "a #DOLL for"
+	line "Maizie?"
+
+	para "She collects the"
+	line "ones they sell in"
+	cont "GOLDENROD CITY."
+	done
+
+ClefairyDollText:
+	text "One of Maizie's"
+	line "many #DOLLs."
+	done
+
 AzaleaTownTutorMoveTaught:
 	text "You'll definitely"
 	line "go far as a"
@@ -543,3 +580,4 @@ KurtsHouse_MapEvents:
 	object_event  6,  3, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseSlowpoke, EVENT_KURTS_HOUSE_SLOWPOKE
 	object_event 14,  3, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt2, EVENT_KURTS_HOUSE_KURT_2
 	object_event 11,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter2, EVENT_KURTS_HOUSE_GRANDDAUGHTER_2
+	object_event  7,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ClefairyDollScript, EVENT_KURTS_HOUSE_SLOWPOKE
