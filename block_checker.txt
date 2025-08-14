@@ -1,0 +1,15 @@
+function usedblocks() {
+  grep -wi "TILESET_$1" data/maps/maps.asm | \
+  sed -E 's|\tmap ([^,]+),.+|maps/\1.ablk|g' | \
+  xargs cat | xxd -c 1 -p | sort | uniq
+}
+
+function unusedblocks() {
+  usedb=$(grep -wi "TILESET_$1" data/maps/maps.asm | \
+          sed -E 's|\tmap ([^,]+),.+|maps/\1.ablk|g' | \
+          xargs cat | xxd -c 1 -p | sort | uniq | \
+          xargs -I{} printf '%d\n' 0x{})
+  allb=$(seq 0 "${usedb##*$'\n'}")
+  comm -23 <(echo "$allb") <(echo "$usedb") | \
+    xargs printf '%02x\n'
+}
