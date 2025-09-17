@@ -9,7 +9,7 @@ ManiasHouse_MapScripts:
 ManiaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	checkevent EVENT_RETURNED_SHUCKIE_TO_MANIA
 	iftrue .default_postevent
 	checkevent EVENT_GOT_SHUCKIE
 	iftrue .alreadyhaveshuckie
@@ -50,18 +50,22 @@ ManiaScript:
 
 .returnshuckie
 	writetext ManiaText_CanIHaveMyMonBack
+.MustSayYes
 	yesorno
-	iffalse .refused
+	iftrue .ReturnShuckie
+	writetext ManiaText_SameAsBeingRobbed
+	sjump .MustSayYes
+.ReturnShuckie
 	special ReturnShuckie
 	ifequal SHUCKIE_WRONG_MON, .wrong
 	ifequal SHUCKIE_REFUSED, .refused
-	ifequal SHUCKIE_HAPPY, .superhappy
-	ifequal SHUCKIE_FAINTED, .default_postevent
 	; SHUCKIE_RETURNED
 	writetext ManiaText_ThankYou
+	promptbutton
+	verbosegiveitem CLEANSE_TAG
 	waitbutton
 	closetext
-	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
+	setevent EVENT_RETURNED_SHUCKIE_TO_MANIA
 	end
 
 .wrong
@@ -70,18 +74,9 @@ ManiaScript:
 	closetext
 	end
 
-.superhappy
-	writetext ManiaText_ShuckleLikesYou
-	waitbutton
-	closetext
-	setevent EVENT_MANIA_TOOK_SHUCKIE_OR_LET_YOU_KEEP_HIM
-	end
-
 .refused
 	writetext ManiaText_SameAsBeingRobbed
-	waitbutton
-	closetext
-	end
+	sjump .MustSayYes
 
 .default_postevent
 	writetext ManiaText_HappinessSpeech
@@ -147,6 +142,14 @@ ManiaText_CanIHaveMyMonBack:
 
 ManiaText_ThankYou:
 	text "Thank you!"
+
+	para "Here's a CLEANSE"
+	line "TAG for your help."
+
+	para "If your lead"
+	line "#MON holds it,"
+	cont "you'll face fewer"
+	cont "wild encounters."
 	done
 
 ManiaText_ShuckleNotThere:
@@ -155,21 +158,13 @@ ManiaText_ShuckleNotThere:
 	cont "with you."
 	done
 
-ManiaText_ShuckleLikesYou:
-	text "My #MON has"
-	line "come to like you."
-
-	para "All right, you"
-	line "should keep it."
-
-	para "But promise to"
-	line "be good to it!"
-	done
-
 ManiaText_SameAsBeingRobbed:
 	text "Oh, no, no… That's"
 	line "the same as being"
 	cont "robbed."
+
+	para "Please, can I"
+	line "have SHUCKIE back?"
 	done
 
 ManiaText_HappinessSpeech:

@@ -126,21 +126,11 @@ ReturnShuckie:
 	jr .CheckOT
 
 .done
-	farcall CheckCurPartyMonFainted
-	jr c, .fainted
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Happiness
-	ld bc, PARTYMON_STRUCT_LENGTH
-	rst AddNTimes
-	ld a, [hl]
-	cp 150
-	ld a, SHUCKIE_HAPPY
-	jr nc, .HappyToStayWithYou
 	xor a ; REMOVE_PARTY
 	ld [wPokemonWithdrawDepositParameter], a
 	farcall RemoveMonFromParty
 	ld a, SHUCKIE_RETURNED
-.HappyToStayWithYou:
 	ld [wScriptVar], a
 	ret
 
@@ -151,10 +141,5 @@ ReturnShuckie:
 
 .DontReturn:
 	xor a ; SHUCKIE_WRONG_MON
-	ld [wScriptVar], a
-	ret
-
-.fainted
-	ld a, SHUCKIE_FAINTED
 	ld [wScriptVar], a
 	ret
