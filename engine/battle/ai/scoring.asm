@@ -387,6 +387,7 @@ AI_Smart_EffectHandlers:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_HAIL,             AI_Smart_Hail
+	dbw EFFECT_SPIKES,           AI_Smart_Spikes
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -2129,6 +2130,15 @@ AI_Smart_Hail:
 	db BLIZZARD
 	db -1 ; end
 
+AI_Smart_Spikes:
+; Greatly encourage the use of Spikes on the first turn
+    ld a, [wEnemyTurnsTaken]
+    and a
+    ret nz
+    dec [hl]
+    dec [hl]
+    dec [hl]
+    ret
 
 AI_Smart_Endure:
 ; Greatly discourage this move if the enemy already used Protect.

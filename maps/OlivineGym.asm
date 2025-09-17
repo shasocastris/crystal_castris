@@ -258,8 +258,9 @@ OlivineGymGuideText:
 	line "newly discovered"
 	cont "steel-type."
 
-	para "I don't know very"
-	line "much about it."
+	para "And be watch out"
+	line "for the SANDSTORM"
+	cont "in the gym."
 	done
 
 OlivineGymGuideWinText:

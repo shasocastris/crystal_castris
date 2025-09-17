@@ -426,12 +426,11 @@ AriadosEvosAttacks:
 	dbw 21, DIG
 	dbw 25, LEECH_LIFE
 	dbw 28, BATON_PASS
-	dbw 34, FURY_SWIPES
-	dbw 37, PSYBEAM
-	dbw 43, SPIDER_WEB
-	dbw 48, TWINEEDLE
-	dbw 53, AGILITY
-	dbw 63, PSYCHIC_M
+	dbw 34, PSYBEAM
+	dbw 37, SPIDER_WEB
+	dbw 43, TWINEEDLE
+	dbw 48, AGILITY
+	dbw 53, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
@@ -521,7 +520,7 @@ IgglybuffEvosAttacks:
 TogepiEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
 	db 0 ; no more evolutions
-	dbw 1, GROWL
+	dbw 1, DOUBLESLAP
 	dbw 1, CHARM
 	dbw 4, PECK
 	dbw 7, METRONOME
@@ -529,10 +528,10 @@ TogepiEvosAttacks:
 	dbw 18, SWEET_KISS
 	dbw 22, DISABLE
 	dbw 25, ENCORE
-	dbw 28, GROWTH
+	dbw 28, PLAY_ROUGH
 	dbw 31, SAFEGUARD
 	dbw 34, MIMIC
-	dbw 38, PLAY_ROUGH
+	dbw 38, GROWTH
 	dbw 41, MINIMIZE
 	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves
@@ -540,18 +539,18 @@ TogepiEvosAttacks:
 TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, WING_ATTACK
-	dbw 1, GROWL
+	dbw 1, DOUBLESLAP
 	dbw 1, CHARM
 	dbw 4, PECK
 	dbw 7, METRONOME
 	dbw 13, MOONLIGHT
 	dbw 18, SWEET_KISS
-	dbw 22, WING_ATTACK
+	dbw 22, DOUBLE_EDGE
 	dbw 25, ENCORE
-	dbw 28, GROWTH
+	dbw 28, PLAY_ROUGH
 	dbw 31, SAFEGUARD
 	dbw 34, HEADBUTT
-	dbw 38, PLAY_ROUGH
+	dbw 38, GROWTH
 	dbw 41, ANCIENTPOWER
 	dbw 45, MOONBLAST
 	db 0 ; no more level-up moves

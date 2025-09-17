@@ -241,7 +241,7 @@ JohtoWaterWildMons:
 	end_water_wildmons
 
 	def_water_wildmons ECRUTEAK_CITY
-	db 10 percent ; encounter rate
+	db 10 percent ; encounter rate35
 	dbw 20, POLIWAG
 	dbw 15, CHINCHOU
 	dbw 20, POLIWHIRL
@@ -249,9 +249,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons LAKE_OF_RAGE
 	db 20 percent ; encounter rate
-	dbw 30, MAGIKARP
 	dbw 30, GYARADOS
-	dbw 35, GYARADOS
+	dbw 34, GYARADOS
+	dbw 25, MAGIKARP
 	end_water_wildmons
 
 	def_water_wildmons BLACKTHORN_CITY

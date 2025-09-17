@@ -89,7 +89,7 @@ tools:
 	$(MAKE) -C tools/
 
 
-RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wtruncation=1
+RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wtruncation=1 -Wno-obsolete
 
 $(crystal_castris_obj):       RGBASMFLAGS +=
 $(crystal_castris_debug_obj): RGBASMFLAGS += -D _DEBUG
