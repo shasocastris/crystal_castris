@@ -1662,7 +1662,7 @@ SuicuneEvosAttacks:
 	dbw 1, LEER
 	dbw 1, BUBBLEBEAM
 	dbw 11, BITE
-	dbw 21, RAIN_DANCE
+	dbw 21, SURF
 	dbw 31, GUST
 	dbw 41, ICE_BEAM
 	dbw 51, MIST
