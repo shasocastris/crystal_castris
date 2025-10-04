@@ -694,11 +694,13 @@ SudowoodoEvosAttacks:
 	dbw 1, ROCK_THROW
 	dbw 1, MIMIC
 	dbw 10, FLAIL
-	dbw 19, LOW_KICK
-	dbw 28, ROCK_SLIDE
-	dbw 37, FAINT_ATTACK
-	dbw 46, SLAM
-	dbw 50, SELFDESTRUCT
+	dbw 17, LOW_KICK
+	dbw 25, ROCK_SLIDE
+	dbw 33, COUNTER
+	dbw 41, FAINT_ATTACK
+	dbw 49, SLAM
+	dbw 57, DOUBLE_EDGE
+	dbw 65, SELFDESTRUCT
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
