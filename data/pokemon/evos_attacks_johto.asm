@@ -104,7 +104,7 @@ EvosAttacksPointers2::
 .IndirectEnd::
 
 ChikoritaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 16, BAYLEEF
+	dbbw EVOLVE_LEVEL, 18, BAYLEEF
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -125,7 +125,7 @@ ChikoritaEvosAttacks:
 	db 0 ; no more level-up moves
 
 BayleefEvosAttacks:
-	dbbw EVOLVE_LEVEL, 32, MEGANIUM
+	dbbw EVOLVE_LEVEL, 36, MEGANIUM
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -137,7 +137,7 @@ BayleefEvosAttacks:
 	dbw 23, SYNTHESIS
 	dbw 27, LEECH_SEED
 	dbw 31, BODY_SLAM
-	dbw 35, COUNTER
+	dbw 34, COUNTER
 	dbw 39, LIGHT_SCREEN
 	dbw 44, ANCIENTPOWER
 	dbw 47, SAFEGUARD
@@ -158,8 +158,8 @@ MeganiumEvosAttacks:
 	dbw 23, SYNTHESIS
 	dbw 27, LEECH_SEED
 	dbw 31, BODY_SLAM
-	dbw 31, PETAL_DANCE
-	dbw 36, COUNTER
+	dbw 34, COUNTER
+	dbw 35, PETAL_DANCE
 	dbw 41, LIGHT_SCREEN
 	dbw 46, ANCIENTPOWER
 	dbw 51, SAFEGUARD
@@ -168,7 +168,7 @@ MeganiumEvosAttacks:
 	db 0 ; no more level-up moves
 
 CyndaquilEvosAttacks:
-	dbbw EVOLVE_LEVEL, 14, QUILAVA
+	dbbw EVOLVE_LEVEL, 18, QUILAVA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, LEER
@@ -242,7 +242,7 @@ TotodileEvosAttacks:
 	db 0 ; no more level-up moves
 
 CroconawEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, FERALIGATR
+	dbbw EVOLVE_LEVEL, 36, FERALIGATR
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
@@ -253,7 +253,7 @@ CroconawEvosAttacks:
 	dbw 21, BITE
 	dbw 24, THRASH
 	dbw 28, SCARY_FACE
-	dbw 34, SLASH
+	dbw 32, SLASH
 	dbw 41, ROCK_SLIDE
 	dbw 45, SCREECH
 	dbw 55, HYDRO_PUMP
@@ -271,8 +271,8 @@ FeraligatrEvosAttacks:
 	dbw 21, BITE
 	dbw 24, THRASH
 	dbw 28, SCARY_FACE
-	dbw 29, CRUNCH
-	dbw 38, SLASH
+	dbw 32, SLASH
+	dbw 35, CRUNCH
 	dbw 42, ROCK_SLIDE
 	dbw 47, SCREECH
 	dbw 58, HYDRO_PUMP
