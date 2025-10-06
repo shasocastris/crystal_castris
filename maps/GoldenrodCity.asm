@@ -54,13 +54,13 @@ MoveTutorScript:
 	iffalse .Refused
 
 	readvar VAR_DEXCAUGHT
-	ifless 7, .NotEnoughPokemon
+	ifless 50, .NotEnoughPokemon
 
 	special DisplayCoinCaseBalance
-	writetext GoldenrodCityMoveTutorAsk400CoinsOkayText
+	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
 	yesorno
 	iffalse .Refused2
-	checkcoins 400
+	checkcoins 4000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
@@ -69,7 +69,6 @@ MoveTutorScript:
 	ifequal 1, .Flamethrower
 	ifequal 2, .Thunderbolt
 	ifequal 3, .IceBeam
-;	ifequal 4, .Softboiled
 	sjump .Incompatible
 
 .Flamethrower:
@@ -92,13 +91,6 @@ MoveTutorScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
-
-;.Softboiled:
-;	loadmoveindex SOFTBOILED
-;	writetext GoldenrodCityMoveTutorMoveText
-;	special MoveTutor
-;	ifequal FALSE, .TeachMove
-;	sjump .Incompatible
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -135,7 +127,7 @@ MoveTutorScript:
 .TeachMove:
 	writetext GoldenrodCityMoveTutorIfYouUnderstandYouveMadeItText
 	promptbutton
-	takecoins 400
+	takecoins 4000
 	waitsfx
 	playsound SFX_TRANSACTION
 	special DisplayCoinCaseBalance
@@ -544,9 +536,9 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
 	line "new move?"
 	done
 
-GoldenrodCityMoveTutorAsk400CoinsOkayText:
+GoldenrodCityMoveTutorAsk4000CoinsOkayText:
 	text "It will cost you"
-	line "400 coins. Okay?"
+	line "4000 coins. Okay?"
 	done
 
 GoldenrodCityMoveTutorNeedMorePokemonText:
