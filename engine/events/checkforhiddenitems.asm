@@ -188,6 +188,7 @@ FishItemEncounter:
 .done
 	call GetItemIDFromIndex
 	ld [wScriptVar], a
+	farcall LoadFonts_NoOAMUpdate
 	ret
 .end_of_table
 	ld hl, NO_ITEM
