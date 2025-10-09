@@ -285,57 +285,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_1F
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, RATTATA
-	dbw 14, KOFFING
-	dbw 15, ABRA
-	dbw 14, ZUBAT
-	dbw 15, MAGMAR
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 16, RATTATA
+	dbw 17, KOFFING
+	dbw 18, ABRA
+	dbw 17, ZUBAT
+	dbw 18, MAGMAR
+	dbw 18, RATICATE
+	dbw 18, RATICATE
 	; day
-	dbw 13, RATTATA
-	dbw 14, KOFFING
-	dbw 15, ABRA
-	dbw 14, ZUBAT
-	dbw 15, MAGMAR
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 16, RATTATA
+	dbw 17, KOFFING
+	dbw 18, ABRA
+	dbw 17, ZUBAT
+	dbw 18, MAGMAR
+	dbw 18, RATICATE
+	dbw 18, RATICATE
 	; nite
-	dbw 13, RATTATA
-	dbw 14, KOFFING
-	dbw 15, ABRA
-	dbw 14, ZUBAT
-	dbw 15, MAGMAR
-	dbw 15, RATICATE
-	dbw 15, RATICATE
+	dbw 16, RATTATA
+	dbw 17, KOFFING
+	dbw 18, ABRA
+	dbw 17, ZUBAT
+	dbw 18, MAGMAR
+	dbw 18, RATICATE
+	dbw 18, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 14, RATTATA
-	dbw 14, KOFFING
-	dbw 16, MAGMAR
-	dbw 15, ZUBAT
-	dbw 12, ABRA
-	dbw 16, WEEZING
-	dbw 16, WEEZING
+	dbw 18, RATTATA
+	dbw 18, KOFFING
+	dbw 20, MAGMAR
+	dbw 19, ZUBAT
+	dbw 16, ABRA
+	dbw 20, WEEZING
+	dbw 20, WEEZING
 	; day
-	dbw 14, RATTATA
-	dbw 14, KOFFING
-	dbw 16, MAGMAR
-	dbw 15, ZUBAT
-	dbw 12, ABRA
-	dbw 16, WEEZING
-	dbw 16, WEEZING
+	dbw 18, RATTATA
+	dbw 18, KOFFING
+	dbw 20, MAGMAR
+	dbw 19, ZUBAT
+	dbw 16, ABRA
+	dbw 20, WEEZING
+	dbw 20, WEEZING
 	; nite
-	dbw 14, RATTATA
-	dbw 14, KOFFING
-	dbw 16, MAGMAR
-	dbw 15, ZUBAT
-	dbw 12, ABRA
-	dbw 16, WEEZING
-	dbw 16, WEEZING
+	dbw 18, RATTATA
+	dbw 18, KOFFING
+	dbw 20, MAGMAR
+	dbw 19, ZUBAT
+	dbw 16, ABRA
+	dbw 20, WEEZING
+	dbw 20, WEEZING
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
@@ -1489,85 +1489,85 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_37
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 13, LEDIAN
-	dbw 14, VULPIX
-	dbw 15, DODUO
-	dbw 16, SNUBBULL
-	dbw 15, FLAAFFY
-	dbw 15, FEAROW
-	dbw 15, FEAROW
+	dbw 15, LEDIAN
+	dbw 16, VULPIX
+	dbw 17, DODUO
+	dbw 18, SNUBBULL
+	dbw 17, FLAAFFY
+	dbw 17, FEAROW
+	dbw 17, FEAROW
 	; day
-	dbw 13, LEDIAN
-	dbw 14, GROWLITHE
-	dbw 15, DODUO
-	dbw 16, SNUBBULL
-	dbw 15, FLAAFFY
-	dbw 15, FEAROW
-	dbw 15, FEAROW
+	dbw 15, LEDIAN
+	dbw 16, GROWLITHE
+	dbw 17, DODUO
+	dbw 18, SNUBBULL
+	dbw 17, FLAAFFY
+	dbw 17, FEAROW
+	dbw 17, FEAROW
 	; nite
-	dbw 13, ARIADOS
-	dbw 14, STANTLER
-	dbw 15, DROWZEE
-	dbw 16, HOUNDOUR
-	dbw 15, NOCTOWL
-	dbw 15, FLAAFFY
-	dbw 15, FLAAFFY
+	dbw 15, ARIADOS
+	dbw 16, STANTLER
+	dbw 17, DROWZEE
+	dbw 18, HOUNDOUR
+	dbw 17, NOCTOWL
+	dbw 17, FLAAFFY
+	dbw 17, FLAAFFY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, PONYTA
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
-	dbw 13, TAUROS
-	dbw 13, MILTANK
-	dbw 13, MILTANK
+	dbw 20, PONYTA
+	dbw 20, RATICATE
+	dbw 20, MAGNEMITE
+	dbw 20, PIDGEOTTO
+	dbw 17, TAUROS
+	dbw 17, MILTANK
+	dbw 17, MILTANK
 	; day
-	dbw 16, PONYTA
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
-	dbw 13, TAUROS
-	dbw 13, MILTANK
-	dbw 13, MILTANK
+	dbw 20, PONYTA
+	dbw 20, RATICATE
+	dbw 20, MAGNEMITE
+	dbw 20, PIDGEOTTO
+	dbw 17, TAUROS
+	dbw 17, MILTANK
+	dbw 17, MILTANK
 	; nite
-	dbw 16, MEOWTH
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, NOCTOWL
-	dbw 16, MURKROW
-	dbw 16, PERSIAN
-	dbw 16, PERSIAN
+	dbw 20, MEOWTH
+	dbw 22, RATICATE
+	dbw 20, MAGNEMITE
+	dbw 22, NOCTOWL
+	dbw 20, MURKROW
+	dbw 22, PERSIAN
+	dbw 22, PERSIAN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, PONYTA
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
-	dbw 15, MILTANK
-	dbw 15, TAUROS
-	dbw 15, TAUROS
+	dbw 22, PONYTA
+	dbw 22, RATICATE
+	dbw 22, MAGNEMITE
+	dbw 22, PIDGEOTTO
+	dbw 19, MILTANK
+	dbw 19, TAUROS
+	dbw 19, TAUROS
 	; day
-	dbw 16, PONYTA
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, PIDGEOTTO
-	dbw 15, MILTANK
-	dbw 15, TAUROS
-	dbw 15, TAUROS
+	dbw 22, PONYTA
+	dbw 22, RATICATE
+	dbw 22, MAGNEMITE
+	dbw 22, PIDGEOTTO
+	dbw 19, MILTANK
+	dbw 19, TAUROS
+	dbw 19, TAUROS
 	; nite
-	dbw 16, MEOWTH
-	dbw 16, RATICATE
-	dbw 16, MAGNEMITE
-	dbw 16, NOCTOWL
-	dbw 18, MURKROW
-	dbw 18, PERSIAN
-	dbw 18, PERSIAN
+	dbw 22, MEOWTH
+	dbw 22, RATICATE
+	dbw 22, MAGNEMITE
+	dbw 22, NOCTOWL
+	dbw 25, MURKROW
+	dbw 25, PERSIAN
+	dbw 25, PERSIAN
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
