@@ -848,7 +848,7 @@ ZubatEvosAttacks:
 	dbw 6, SUPERSONIC
 	dbw 9, GUST
 	dbw 12, BITE
-	dbw 15, QUICK_ATTACK
+	dbw 15, SLUDGE
 	dbw 19, CONFUSE_RAY
 	dbw 23, WING_ATTACK
 	dbw 27, FAINT_ATTACK
@@ -866,7 +866,7 @@ GolbatEvosAttacks:
 	dbw 6, SUPERSONIC
 	dbw 9, GUST
 	dbw 12, BITE
-	dbw 15, QUICK_ATTACK
+	dbw 15, SLUDGE
 	dbw 19, CONFUSE_RAY
 	dbw 25, WING_ATTACK
 	dbw 30, FAINT_ATTACK
