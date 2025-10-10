@@ -725,14 +725,15 @@ HoppipEvosAttacks:
 	dbw 10, TACKLE
 	dbw 13, POISONPOWDER
 	dbw 13, STUN_SPORE
-	dbw 13, SPORE
+	dbw 15, SPORE
 	dbw 17, CONFUSION
-	dbw 20, LEECH_SEED
-	dbw 22, PAY_DAY
+	dbw 20, MEGA_DRAIN
+	dbw 22, LEECH_SEED
 	dbw 25, COTTON_SPORE
-	dbw 30, GIGA_DRAIN
+	dbw 30, PAY_DAY
 	dbw 34, REFLECT
 	dbw 37, AMNESIA
+	dbw 40, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -746,14 +747,15 @@ SkiploomEvosAttacks:
 	dbw 10, TACKLE
 	dbw 13, POISONPOWDER
 	dbw 13, STUN_SPORE
-	dbw 13, SPORE
+	dbw 15, SPORE
 	dbw 17, CONFUSION
-	dbw 22, LEECH_SEED
-	dbw 26, PAY_DAY
+	dbw 22, MEGA_DRAIN
+	dbw 26, LEECH_SEED
 	dbw 29, COTTON_SPORE
-	dbw 36, GIGA_DRAIN
+	dbw 36, PAY_DAY
 	dbw 41, REFLECT
-	dbw 47, AMNESIA
+	dbw 46, AMNESIA
+	dbw 51, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
@@ -766,14 +768,15 @@ JumpluffEvosAttacks:
 	dbw 10, TACKLE
 	dbw 13, POISONPOWDER
 	dbw 13, STUN_SPORE
-	dbw 13, SPORE
+	dbw 15, SPORE
 	dbw 17, CONFUSION
-	dbw 22, LEECH_SEED
-	dbw 26, PAY_DAY
+	dbw 22, MEGA_DRAIN
+	dbw 26, LEECH_SEED
 	dbw 33, COTTON_SPORE
-	dbw 40, GIGA_DRAIN
+	dbw 40, PAY_DAY
 	dbw 44, REFLECT
 	dbw 49, AMNESIA
+	dbw 54, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
