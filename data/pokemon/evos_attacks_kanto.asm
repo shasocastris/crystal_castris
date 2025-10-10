@@ -1180,6 +1180,8 @@ ArcanineEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ROAR
 	dbw 1, LEER
+	dbw 10, EMBER
+	dbw 20, TAKE_DOWN
 	dbw 30, CRUNCH
 	dbw 40, FLAME_WHEEL
 	dbw 50, EXTREMESPEED

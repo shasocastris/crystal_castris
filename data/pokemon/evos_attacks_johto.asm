@@ -707,8 +707,10 @@ PolitoedEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, PERISH_SONG
 	dbw 1, WATER_GUN
+	dbw 5, HYPNOSIS
+	dbw 15, DOUBLESLAP
 	dbw 25, BUBBLEBEAM
-	dbw 35, HYPNOSIS
+	dbw 35, BODY_SLAM
 	dbw 45, PERISH_SONG
 	dbw 55, SWAGGER
 	dbw 65, HYDRO_PUMP
