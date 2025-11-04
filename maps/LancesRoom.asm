@@ -51,19 +51,20 @@ Script_ApproachLanceFromRight:
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
 LancesRoomLanceScript:
 	turnobject LANCESROOM_LANCE, LEFT
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, LanceRematchScript
 	opentext
 	writetext LanceBattleIntroText
 	waitbutton
 	closetext
 	winlosstext LanceBattleWinText, LanceLossText
 	setlasttalked LANCESROOM_LANCE
-	loadtrainer CHAMPION, LANCE
+	loadtrainer CHAMPION, LANCE1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
-	clearevent EVENT_BEAT_FALKNER
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
@@ -125,6 +126,51 @@ LancesRoomLanceScript:
 	pause 30
 	closetext
 	applymovement LANCESROOM_MARY, LancesRoomMovementData_MaryRunsBackAndForth
+	special FadeOutToWhite
+	pause 15
+	warpfacing UP, HALL_OF_FAME, 4, 13
+	end
+
+LanceRematchScript:
+	turnobject LANCESROOM_LANCE, LEFT
+	opentext
+	writetext LanceBeforeRematchText
+	waitbutton
+	closetext
+	winlosstext LanceBeatenRematchText, LanceLossText
+	setlasttalked LANCESROOM_LANCE
+	loadtrainer CHAMPION, LANCE2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHAMPION_LANCE
+	opentext
+	writetext LanceDefeatRematchText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 0, $0b ; open door
+	refreshmap
+	closetext
+	setevent EVENT_LANCES_ROOM_EXIT_OPEN
+	musicfadeout MUSIC_BEAUTY_ENCOUNTER, 16
+	pause 30
+	turnobject LANCESROOM_LANCE, DOWN
+	pause 10
+	turnobject PLAYER, DOWN
+	opentext
+	writetext LanceRematchCongratulationsText
+	waitbutton
+	closetext
+	follow LANCESROOM_LANCE, PLAYER
+	applymovement LANCESROOM_LANCE, LancesRoomMovementData_LanceLeadsPlayerToHallOfFame
+	stopfollow
+	playsound SFX_EXIT_BUILDING
+	disappear LANCESROOM_LANCE
+	applymovement PLAYER, LancesRoomMovementData_PlayerExits
+	playsound SFX_EXIT_BUILDING
+	disappear PLAYER
 	special FadeOutToWhite
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
@@ -283,6 +329,99 @@ LanceBattleAfterText:
 	line "true now that you"
 	cont "can rematch gym"
 	cont "leaders."
+	done
+
+LanceBeforeRematchText:
+	text "So, you've returned"
+	line "to challenge me"
+	cont "once more."
+
+	para "I've been waiting"
+	line "for this moment."
+
+	para "After our last"
+	line "battle, I traveled"
+	cont "to distant lands."
+
+	para "I sought out the"
+	line "most powerful"
+	cont "dragons in"
+	cont "existence."
+
+	para "My dragon #MON"
+	line "and I have reached"
+	cont "heights of power."
+
+	para "This will be our"
+	line "ultimate test!"
+
+	para "Show me the true"
+	line "strength of a"
+	cont "#MON master!"
+	done
+
+LanceBeatenRematchText:
+	text "Incredible…"
+	line "absolutely"
+	cont "incredible!"
+
+	para "You've surpassed"
+	line "even my greatest"
+	cont "expectations."
+
+	para "This defeat…"
+	line "it doesn't sting."
+
+	para "Instead, I feel"
+	line "honored to have"
+	cont "witnessed your"
+	cont "true strength!"
+	done
+
+LanceDefeatRematchText:
+	text "Magnificent…"
+	line "absolutely"
+	cont "magnificent!"
+
+	para "You have achieved"
+	line "what few trainers"
+	cont "ever will."
+
+	para "You've conquered"
+	line "the ELITE FOUR"
+	cont "not once, but"
+	cont "twice!"
+
+	para "Your bond with"
+	line "your #MON"
+	cont "transcends even"
+	cont "my understanding."
+
+	para "You are truly"
+	line "deserving of the"
+	cont "title…"
+
+	para "#MON MASTER!"
+	done
+
+LanceRematchCongratulationsText:
+	text "LANCE: Come with"
+	line "me once more to"
+	cont "the HALL OF FAME."
+
+	para "Your second"
+	line "victory deserves"
+	cont "to be recorded"
+	cont "for all time."
+
+	para "Few trainers ever"
+	line "achieve what you"
+	cont "have accomplished"
+	cont "today."
+
+	para "Let history"
+	line "remember this"
+	cont "moment!"
 	done
 
 LancesRoomMaryOhNoOakText:

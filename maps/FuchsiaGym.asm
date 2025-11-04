@@ -44,6 +44,8 @@ FuchsiaGymJanineScript:
 	faceplayer
 	opentext
 .AfterBattle:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, JanineRematchScript
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
 	writetext JanineText_ToxicSpeech
@@ -53,6 +55,41 @@ FuchsiaGymJanineScript:
 	setevent EVENT_GOT_TM06_TOXIC
 .AfterTM:
 	writetext JanineText_ApplyMyself
+	waitbutton
+	closetext
+	end
+
+JanineRematchScript:
+	checkevent EVENT_JANINE_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_FULL_RESTORE
+	iffalse .JanineReject
+	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_X_SP_ATK
+	iffalse .JanineReject
+	checkevent EVENT_ROCK_TUNNEL_1F_HIDDEN_X_ACCURACY
+	iffalse .JanineReject
+	checkevent EVENT_ROCK_TUNNEL_1F_HIDDEN_X_DEFEND
+	iffalse .JanineReject
+	checkevent EVENT_ROCK_TUNNEL_B1F_HIDDEN_MAX_POTION
+	iffalse .JanineReject
+	writetext JanineRematchText
+	waitbutton
+	closetext
+	winlosstext JanineRematchWinLossText, JanineLossText
+	loadtrainer JANINE, JANINE2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_JANINE_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenJanineAgainText
+	waitbutton
+	closetext
+	end
+
+.JanineReject
+	writetext JanineRejectText
 	waitbutton
 	closetext
 	end
@@ -288,6 +325,66 @@ JanineText_ApplyMyself:
 	para "I want to become"
 	line "better than both"
 	cont "Father and you!"
+	done
+
+JanineRematchText:
+	text "Impressive…"
+
+	para "You found every"
+	line "hidden item in the"
+	cont "UNDERGROUND PATH"
+	cont "and ROCK TUNNEL."
+
+	para "You have earned"
+	line "the right to face"
+	cont "my secret ninja"
+	cont "techniques!"
+
+	para "Prepare yourself!"
+	done
+
+JanineRematchWinLossText:
+	text "I have been"
+	line "defeated by a"
+	cont "worthy opponent."
+	done
+
+BeatenJanineAgainText:
+	text "That battle showed"
+	line "the difference"
+	cont "between us."
+
+	para "Continue honing"
+	line "your powers of"
+	cont "observation."
+
+	para "A true ninja never"
+	line "stops learning"
+	cont "the shadows' secrets."
+	done
+
+JanineRejectText:
+	text "…You wish to test"
+	line "your skills"
+	cont "against me again?"
+
+	para "In the shadows of"
+	line "the UNDERGROUND"
+	cont "PATH and the"
+	cont "depths of ROCK"
+	cont "TUNNEL…"
+
+	para "Hidden treasures"
+	line "await those with"
+	cont "keen eyes."
+
+	para "Find all the"
+	line "secret items in"
+	cont "those dark places."
+
+	para "Only then will I"
+	line "consider your"
+	cont "request."
 	done
 
 LassAliceBeforeText:

@@ -60,6 +60,9 @@ if DEF(_DEBUG)
 	; useful items
 	giveitem RARE_CANDY, 99
 	giveitem MAX_REPEL, 99
+	giveitem MAX_ELIXER, 99
+	giveitem MAX_REVIVE, 99
+	giveitem FULL_RESTORE, 99
 	giveitem ESCAPE_ROPE, 99
 	giveitem POKE_BALL, 99
 	giveitem MASTER_BALL, 99

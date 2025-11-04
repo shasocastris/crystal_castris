@@ -275,7 +275,7 @@ StubbedTrainerRankings_WildMonsCaught:
 StubbedTrainerRankings_HookedEncounters:
 	ret ; no-optimize Stub function (Plans for functions in the future)
 	ld hl, sTrainerRankingHookedEncounters
-	jmp StubbedTrainerRankings_Increment3Byte
+	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_EggsHatched:
 	ret ; no-optimize Stub function (Plans for functions in the future)

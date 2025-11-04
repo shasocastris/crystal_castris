@@ -848,7 +848,7 @@ ZubatEvosAttacks:
 	dbw 6, SUPERSONIC
 	dbw 9, GUST
 	dbw 12, BITE
-	dbw 15, QUICK_ATTACK
+	dbw 15, SLUDGE
 	dbw 19, CONFUSE_RAY
 	dbw 23, WING_ATTACK
 	dbw 27, FAINT_ATTACK
@@ -866,7 +866,7 @@ GolbatEvosAttacks:
 	dbw 6, SUPERSONIC
 	dbw 9, GUST
 	dbw 12, BITE
-	dbw 15, QUICK_ATTACK
+	dbw 15, SLUDGE
 	dbw 19, CONFUSE_RAY
 	dbw 25, WING_ATTACK
 	dbw 30, FAINT_ATTACK
@@ -1180,6 +1180,8 @@ ArcanineEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ROAR
 	dbw 1, LEER
+	dbw 10, EMBER
+	dbw 20, TAKE_DOWN
 	dbw 30, CRUNCH
 	dbw 40, FLAME_WHEEL
 	dbw 50, EXTREMESPEED
@@ -2387,17 +2389,21 @@ MagikarpEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, GYARADOS
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
+	dbw 5, BUBBLE
 	dbw 15, TACKLE
+	dbw 25, REVERSAL
 	dbw 30, FLAIL
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, BITE
-	dbw 1, THRASH
-	dbw 1, BITE
+	dbw 1, SPLASH
+	dbw 5, BUBBLE
+	dbw 15, TACKLE
+	dbw 19, BITE
 	dbw 25, DRAGON_RAGE
-	dbw 30, LEER
+	dbw 30, THRASH
 	dbw 35, TWISTER
 	dbw 40, HYDRO_PUMP
 	dbw 45, RAIN_DANCE

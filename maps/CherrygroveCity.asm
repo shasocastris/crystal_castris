@@ -486,7 +486,7 @@ CherrygroveRivalText_YouLost:
 
 	para "Only the strongest"
 	line "#MON deserve to"
-	cont "fight alongside me."
+	cont "fight with me."
 	done
 
 RivalCherrygroveLossText:

@@ -34,7 +34,36 @@ PewterGymBrockScript:
 	end
 
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BrockRematchScript
 	writetext BrockFightDoneText
+	waitbutton
+	closetext
+	end
+
+BrockRematchScript:
+	checkevent EVENT_BROCK_REMATCH
+	iftrue .RematchDone
+	checkflag ENGINE_MT_MOON_SQUARE_CLEFAIRY
+	iffalse .BrockReject
+	writetext BrockRematchText
+	waitbutton
+	closetext
+	winlosstext BrockRematchWinLossText, BrockLossText
+	loadtrainer BROCK, BROCK2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BROCK_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenBrockAgainText
+	waitbutton
+	closetext
+	end
+
+.BrockReject
+	writetext BrockRejectText
 	waitbutton
 	closetext
 	end
@@ -147,6 +176,81 @@ BrockFightDoneText:
 	line "I'm going to be-"
 	cont "come a lot strong-"
 	cont "er too."
+	done
+
+BrockRematchText:
+	text "Wow! So you really"
+	line "saw the CLEFAIRY"
+	cont "dance at MT. MOON!"
+
+	para "Anyone who can"
+	line "witness such a"
+	cont "rare sight, must"
+	cont "be a truly"
+	cont "dedicated trainer!"
+
+	para "Let me show you"
+	line "how much stronger"
+	cont "my rock-types"
+	cont "have become!"
+	done
+
+BrockRematchWinLossText:
+	text "You have the heart"
+	line "of a true explorer"
+	cont "and trainer!"
+	done
+
+BeatenBrockAgainText:
+	text "Thanks for that"
+	line "great battle!"
+
+	para "Training with you"
+	line "has taught me a"
+	cont "lot about the bond"
+	cont "between a trainer"
+	cont "and their #MON."
+
+	para "Keep exploring and"
+	line "discovering new"
+	cont "things out there!"
+
+	para "Who knows what"
+	line "other rare sights"
+	cont "you'll find!"
+	done
+
+BrockRejectText:
+	text "Hey there! You"
+	line "want to battle"
+	cont "again?"
+
+	para "I've been training"
+	line "with rock-types"
+	cont "from all over."
+
+	para "But I heard about"
+	line "something special"
+	cont "at MT. MOON…"
+
+	para "There's a legend"
+	line "about CLEFAIRY"
+	cont "dancing under the"
+	cont "moonlight there."
+
+	para "If you've seen"
+	line "that rare sight"
+	cont "at MT. MOON"
+	cont "SQUARE…"
+
+	para "Then you'll have"
+	line "proven you're a"
+	cont "true explorer!"
+
+	para "Come back after"
+	line "you've witnessed"
+	cont "the CLEFAIRY"
+	cont "dance!"
 	done
 
 CamperJerrySeenText:

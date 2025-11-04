@@ -2834,8 +2834,6 @@ wDailyResetTimer:: dw
 wDailyFlags1:: ds 2
 wDailyFlags2:: db
 wDailyFlags3:: db
-wDailyFlags4:: db
-wDailyFlags5:: db
 wSwarmFlags:: db
 wTimerEventStartDay:: db
 
@@ -2876,7 +2874,6 @@ wPhoneList:: ds CONTACT_LIST_SIZE + 1
 wLuckyNumberShowFlag:: db
 wLuckyIDNumber:: dw
 
-wRepelType:: db
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
 wBikeStep:: dw
 wKurtApricornQuantity:: db

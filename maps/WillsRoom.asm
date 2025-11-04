@@ -41,6 +41,8 @@ WillsRoomDoorLocksBehindYouScript:
 	end
 
 WillScript_Battle:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .WillRematch
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
@@ -66,8 +68,40 @@ WillScript_Battle:
 	waitsfx
 	end
 
+.WillRematch:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ELITE_4_WILL
+	iftrue WillScript_AfterBattleRematch
+	writetext WillScript_WillBeforeRematchText
+	waitbutton
+	closetext
+	winlosstext WillScript_WillBeatenText, WillLossText
+	loadtrainer WILL, WILL2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ELITE_4_WILL
+	opentext
+	writetext WillScript_WillDefeatRematchText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 2, $16 ; open door
+	refreshmap
+	closetext
+	setevent EVENT_WILLS_ROOM_EXIT_OPEN
+	waitsfx
+	end
+
 WillScript_AfterBattle:
 	writetext WillScript_WillDefeatText
+	waitbutton
+	closetext
+	end
+
+WillScript_AfterBattleRematch:
+	writetext WillScript_WillDefeatRematchText
 	waitbutton
 	closetext
 	end
@@ -130,6 +164,49 @@ WillScript_WillDefeatText:
 
 	para "the true ferocity"
 	line "of the ELITE FOUR."
+	done
+
+WillScript_WillBeforeRematchText:
+	text "Welcome back to my"
+	line "chamber of illusion!"
+
+	para "I see you've"
+	line "returned for"
+	cont "another psychic"
+	cont "challenge."
+
+	para "My powers have"
+	line "grown stronger"
+	cont "since our last"
+	cont "encounter."
+
+	para "I've mastered new"
+	line "techniques that"
+	cont "will bend reality"
+	cont "itself!"
+
+	para "Can you see"
+	line "through my"
+	cont "enhanced illusions?"
+
+	para "Let us find out!"
+	done
+
+WillScript_WillDefeatRematchText:
+	text "Incredible! Your"
+	line "mind has grown"
+	cont "even sharper!"
+
+	para "You saw through"
+	line "every one of my"
+	cont "illusions."
+
+	para "A truly psychic"
+	line "battle of wills!"
+
+	para "Proceed to the"
+	line "next chamber,"
+	cont "worthy challenger!"
 	done
 
 WillsRoom_MapEvents:

@@ -232,7 +232,7 @@ BeautyBrendaAfterBattleText:
 	done
 
 PokefanfSoniaSeenText:
-	para "I've been coming"
+	text "I've been coming"
 	line "here to train with"
 
 	para "my #MON for"

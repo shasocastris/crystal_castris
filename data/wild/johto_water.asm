@@ -95,9 +95,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2  ; weather: rain
 	db 50 percent ; encounter rate
-	dbw 55, LANTURN
-	dbw 56, SEAKING
-	dbw 58, KINGDRA
+	dbw 75, LANTURN
+	dbw 76, SEAKING
+	dbw 78, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -165,23 +165,23 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_40
 	db 15 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, TENTACOOL
-	dbw 20, REMORAID
+	dbw 27, TENTACRUEL
+	dbw 27, LANTURN
+	dbw 22, REMORAID
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
 	db 15 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 20, REMORAID
-	dbw 20, MANTINE
+	dbw 27, TENTACRUEL
+	dbw 27, LANTURN
+	dbw 25, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
 	db 100 percent ; encounter rate
-	dbw 32, SEAKING
-	dbw 30, GOLDUCK
-	dbw 30, OCTILLERY
+	dbw 37, SEAKING
+	dbw 35, GOLDUCK
+	dbw 35, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43
@@ -228,20 +228,20 @@ JohtoWaterWildMons:
 
 	def_water_wildmons CIANWOOD_CITY
 	db 20 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, CHINCHOU
-	dbw 20, TENTACRUEL
+	dbw 26, TENTACOOL
+	dbw 24, CHINCHOU
+	dbw 30, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_CITY
 	db 15 percent ; encounter rate
 	dbw 26, TENTACOOL
-	dbw 23, CHINCHOU
+	dbw 24, CHINCHOU
 	dbw 30, TENTACRUEL
 	end_water_wildmons
 
 	def_water_wildmons ECRUTEAK_CITY
-	db 10 percent ; encounter rate
+	db 10 percent ; encounter rate35
 	dbw 20, POLIWAG
 	dbw 15, CHINCHOU
 	dbw 20, POLIWHIRL
@@ -249,9 +249,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons LAKE_OF_RAGE
 	db 20 percent ; encounter rate
-	dbw 30, MAGIKARP
 	dbw 30, GYARADOS
-	dbw 35, GYARADOS
+	dbw 34, GYARADOS
+	dbw 25, MAGIKARP
 	end_water_wildmons
 
 	def_water_wildmons BLACKTHORN_CITY
@@ -263,9 +263,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
 	db 10 percent ; encounter rate
-	dbw 45, OCTILLERY
-	dbw 50, LAPRAS
-	dbw 45, STARMIE
+	dbw 65, OCTILLERY
+	dbw 70, LAPRAS
+	dbw 65, STARMIE
 	end_water_wildmons
 
 	db -1 ; end

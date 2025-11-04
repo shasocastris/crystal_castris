@@ -57,6 +57,8 @@ EcruteakGymMortyScript:
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MortyRematchScript
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY
@@ -79,6 +81,33 @@ EcruteakGymMortyScript:
 .NoRoomForShadowBall:
 	closetext
 	end
+
+MortyRematchScript:
+    checkevent EVENT_MORTY_REMATCH
+    iftrue .RematchDone
+    checkevent EVENT_FOUGHT_HO_OH
+    iffalse .MortyReject
+    writetext MortyRematchText
+    waitbutton
+    closetext
+    winlosstext MortyRematchWinLossText, MortyLossText
+    loadtrainer MORTY, MORTY2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_MORTY_REMATCH
+.RematchDone
+    opentext
+    writetext BeatenMortyAgainText
+    waitbutton
+    closetext
+    end
+
+.MortyReject
+    writetext MortyRejectText
+    waitbutton
+    closetext
+    end
 
 EcruteakGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -285,6 +314,54 @@ MortyFightDoneText:
 
 	para "I envy you for"
 	line "that…"
+	done
+
+MortyRematchText:
+    text "The spirits have"
+    line "whispered of your"
+    cont "return."
+
+    para "My ghosts and I"
+    line "have prepared for"
+    cont "this moment."
+    done
+
+MortyRematchWinLossText:
+    text "The spirits speak"
+    line "of your strength"
+    cont "and courage."
+    done
+
+BeatenMortyAgainText:
+    text "You have proven"
+    line "your worth again."
+
+    para "Your bond with"
+    line "#MON exceeds"
+    cont "this world."
+    done
+
+MortyRejectText:
+	text "I sense great"
+	line "power within you,"
+	cont "but something is"
+	cont "missing…"
+
+	para "The rainbow-"
+	line "colored #MON"
+	cont "that I spoke of"
+	cont "before…"
+
+	para "You must encounter"
+	line "it first. Only"
+	cont "then will our"
+	cont "spirits be ready"
+	cont "for battle."
+
+	para "Seek out the"
+	line "legendary HO-OH."
+	cont "When you have met"
+	cont "it, return to me."
 	done
 
 SageJeffreySeenText:

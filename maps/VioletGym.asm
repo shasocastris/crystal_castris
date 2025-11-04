@@ -11,14 +11,12 @@ VioletGym_MapScripts:
 	callback MAPCALLBACK_TILES, .VioletGymLocked
 
 .VioletGymLocked
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .UnlockGym
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .UnlockGym
 	changeblock 4, 15, $2D ; floor
 	changeblock 5, 15, $2D ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 VioletGymFalknerScript:
 	faceplayer
@@ -41,12 +39,11 @@ VioletGymFalknerScript:
 	setflag ENGINE_ZEPHYRBADGE
 	readvar VAR_BADGES
 	scall VioletGymActivateRockets
-	setflag ENGINE_BEAT_FALKNER
 .FightDone:
 	changeblock 4, 15, $1C ; door
 	changeblock 5, 15, $1C ; door
-	checkflag ENGINE_BEAT_FALKNER
-	iffalse .FalknerRematch
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, FalknerRematchScript
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD
@@ -70,36 +67,16 @@ VioletGymFalknerScript:
 	closetext
 	end
 
-.FalknerRematch
-	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
-	iftrue .BeatEliteFourRematchFalkner
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iftrue .BeatEliteFourFalkner
-	; fallthrough
-
-	writetext FalknerFirstRematchText
-	waitbutton
-	closetext
-	winlosstext FalknerRematchWinLossText, FalknerLossText
-	loadtrainer FALKNER, FALKNER1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	sjump AfterFalknerRematch
-
-.BeatEliteFourRematchFalkner:
-	writetext FalknerThirdRematchText
-	waitbutton
-	closetext
-	winlosstext FalknerRematchWinLossText, FalknerLossText
-	loadtrainer FALKNER, FALKNER3
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	sjump AfterFalknerRematch
-
-.BeatEliteFourFalkner
-	writetext FalknerSecondRematchText
+FalknerRematchScript:
+	checkevent EVENT_FALKNER_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_FOUGHT_ARTICUNO
+	iffalse .FalknerReject
+	checkevent EVENT_FOUGHT_ZAPDOS
+	iffalse .FalknerReject
+	checkevent EVENT_FOUGHT_MOLTRES
+	iffalse .FalknerReject
+	writetext FalknerRematchText
 	waitbutton
 	closetext
 	winlosstext FalknerRematchWinLossText, FalknerLossText
@@ -107,14 +84,18 @@ VioletGymFalknerScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
-	; fallthrough
-
-AfterFalknerRematch:
+	setevent EVENT_FALKNER_REMATCH
+.RematchDone
 	opentext
 	writetext BeatenFalknerAgainText
 	waitbutton
 	closetext
-	setflag ENGINE_BEAT_FALKNER
+	end
+
+.FalknerReject
+	writetext FalknerRejectText
+	waitbutton
+	closetext
 	end
 
 VioletGymActivateRockets:
@@ -213,26 +194,18 @@ FalknerLossText:
 	line "changes course."
 	done
 
-FalknerFirstRematchText:
+FalknerRematchText:
 	text "I've been training"
 	line "hard to prove that"
 	cont "my Flying-type"
 	cont "#MON can rise"
-	cont "above any trial."
-	done
+	cont "above any trials,"
 
-FalknerSecondRematchText:
-	text "I won't go down"
+	para "so I won't go down"
 	line "easily this time."
 
 	para "Prepare to be"
 	line "grounded!"
-	done
-
-FalknerThirdRematchText:
-	text "Let this be a true"
-	line "test of the skies"
-	cont "vs your strength!"
 	done
 
 FalknerRematchWinLossText:
@@ -307,6 +280,26 @@ FalknerFightDoneText:
 
 	para "the greatest bird"
 	line "master!"
+	done
+
+FalknerRejectText:
+	text "ARTICUNO, ZAPDOS,"
+	line "MOLTRES…"
+
+	para "Until you have"
+	line "witnessed their"
+	cont "majesty firsthand,"
+
+	para "you are not ready"
+	line "to face my full"
+	cont "strength."
+
+	para "Seek them out."
+
+	para "Only then will our"
+	line "battle truly honor"
+	cont "the spirit of bird"
+	cont "#MON!"
 	done
 
 BirdKeeperRodSeenText:

@@ -4,7 +4,7 @@
 MountMoon_MapScripts:
 	def_scene_scripts
 	scene_script MountMoonRivalEncounterScene, SCENE_MOUNTMOON_RIVAL_BATTLE
-	scene_script MountMoonNoopScene,           SCENE_MOUNTMOON_NOOP
+	scene_script MountMoonNoopScene,		   SCENE_MOUNTMOON_NOOP
 
 	def_callbacks
 
@@ -93,20 +93,22 @@ MountMoonRivalTextBefore:
 	para "…Since I lost to"
 	line "you, I've been"
 	cont "traveling with my"
-	cont "#MON differently."
+	cont "#MON all over."
 
 	para "Instead of just"
 	line "pushing them to"
 	cont "be stronger…"
 
 	para "I've been trying"
-	line "to understand what"
-	cont "each of them needs."
+	line "to understand each"
+	cont "of them."
 
-	para "Some wanted to play."
-	line "Others needed rest."
-	cont "I never noticed"
-	cont "before."
+	para "Some wanted to"
+	line "play. Others need-"
+	cont "ed to rest."
+
+	para "I never noticed"
+	line "before."
 
 	para "<PLAYER>, now I"
 	line "want to show you"
@@ -117,35 +119,39 @@ MountMoonRivalTextBefore:
 MountMoonRivalTextWin:
 	text "<……> <……> <……>"
 
-	para "Even though I lost,"
-	line "my #MON fought"
-	cont "harder than ever."
+	para "My #MON fought"
+	line "harder than ever."
 
 	para "They're not just"
-	line "obeying me anymore."
+	line "obeying me."
 	cont "They're choosing"
 	cont "to fight with me."
 
-	para "I think I'm finally"
-	line "starting to understand"
-	cont "what you've known"
-	cont "all along."
+	para "I think I am"
+	line "finally starting"
+	cont "to understand what"
+	cont "you've known all"
+	cont "along."
 	done
 
 MountMoonRivalTextAfter:
 	text "<……> <……> <……>"
 
 	para "…You won, and I"
-	line "can accept that now."
+	line "can accept that"
+	cont "now."
 
-	para "But more importantly,"
-	line "I saw how happy my"
+	para "But more"
+	line "importantly, I"  
+	cont "saw how happy my"
 	cont "#MON looked"
-	cont "during that battle."
+	cont "during that"
+	cont "battle."
 
-	para "Even the ones that"
-	line "fainted were trying"
-	cont "their best for me."
+	para "Even the ones" 
+	line "that fainted were"
+	cont "trying their best"
+	cont "for me."
 
 	para "I used to think"
 	line "weak #MON were"
@@ -153,19 +159,22 @@ MountMoonRivalTextAfter:
 
 	para "But there are no"
 	line "weak #MON, are"
-	cont "there? Just trainers"
-	cont "who don't understand."
+	cont "there? Just"  
+	cont "trainers who"
+	cont "don't understand."
 
 	para "…Listen, <PLAYER>."
 
-	para "I still want to be"
-	line "the greatest trainer."
-	cont "But now I know the"
-	cont "right way to do it."
+	para "I still want to" 
+	line "be the greatest"
+	cont "trainer. But now" 
+	cont "I know the right"
+	cont "way to do it."
 
-	para "Together with all"
-	line "my #MON. Not just"
-	cont "the strongest ones."
+	para "Together with"
+	line "all my #MON."
+	cont "Not just the"
+	cont "strongest ones."
 	done
 
 MountMoonRivalTextLoss:

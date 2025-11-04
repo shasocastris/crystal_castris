@@ -38,7 +38,36 @@ VermilionGymSurgeScript:
 	end
 
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, LtSurgeRematchScript
 	writetext LtSurgeFightDoneText
+	waitbutton
+	closetext
+	end
+
+LtSurgeRematchScript:
+	checkevent EVENT_SURGE_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_OLIVINE_LIGHTHOUSE_6F_LIGHT_BALL
+	iffalse .LtSurgeReject
+	writetext LtSurgeRematchText
+	waitbutton
+	closetext
+	winlosstext LtSurgeRematchWinLossText, LtSurgeLossText
+	loadtrainer LT_SURGE, LT_SURGE2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_SURGE_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenLtSurgeAgainText
+	waitbutton
+	closetext
+	end
+
+.LtSurgeReject
+	writetext LtSurgeRejectText
 	waitbutton
 	closetext
 	end
@@ -157,6 +186,73 @@ LtSurgeFightDoneText:
 
 	para "My #MON and I"
 	line "are still at it!"
+	done
+
+LtSurgeRematchText:
+	text "Wahaha! So you"
+	line "found the LIGHT"
+	cont "BALL at OLIVINE"
+	cont "LIGHTHOUSE!"
+
+	para "That takes real"
+	line "dedication! I like"
+	cont "that in a trainer!"
+
+	para "Get ready for a"
+	line "battle that'll"
+	cont "shock you!"
+	done
+
+LtSurgeRematchWinLossText:
+	text "You've got more"
+	line "spark than I"
+	cont "gave you credit"
+	cont "for!"
+	done
+
+BeatenLtSurgeAgainText:
+	text "That was a real"
+	line "shocker of a"
+	cont "battle!"
+
+	para "You and your"
+	line "#MON have"
+	cont "serious voltage!"
+
+	para "Keep that electric"
+	line "energy flowing,"
+	cont "kid!"
+	done
+
+LtSurgeRejectText:
+	text "Hey there, kid!"
+	line "Looking for a"
+	cont "shocking rematch?"
+
+	para "But first, let me"
+	line "tell you about"
+	cont "something electric!"
+
+	para "I heard there's a"
+	line "special item at"
+	cont "the OLIVINE"
+	cont "LIGHTHOUSE…"
+
+	para "A LIGHT BALL that"
+	line "boosts electric"
+	cont "power!"
+
+	para "Any trainer who"
+	line "can find that rare"
+	cont "item…"
+
+	para "Shows they've got"
+	line "the spark to face"
+	cont "my full voltage!"
+
+	para "Come back when"
+	line "you've got that"
+	cont "LIGHT BALL!"
 	done
 
 GentlemanGregorySeenText:

@@ -403,6 +403,7 @@ BugContestResults_FirstPlace:
 	farwritetext ContestResults_PlayerWonAPrizeText
 	waitbutton
 	verbosegiveitem SUN_STONE
+	setevent EVENT_WON_BUG_CONTEST
 	iffalse BugContestResults_NoRoomForSunStone
 	sjump BugContestResults_ReturnAfterWinnersPrize
 

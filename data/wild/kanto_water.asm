@@ -116,9 +116,9 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_28
 	db 2 percent ; encounter rate
-	dbw 50, LANTURN
-	dbw 45, MANTINE
-	dbw 50, KINGDRA
+	dbw 70, LANTURN
+	dbw 65, MANTINE
+	dbw 70, KINGDRA
 	end_water_wildmons
 
 	def_water_wildmons PALLET_TOWN

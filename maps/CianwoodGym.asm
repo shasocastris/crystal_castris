@@ -18,7 +18,7 @@ CianwoodGym_MapScripts:
 	changeblock 4, 17, $09 ; floor
 	changeblock 5, 17, $09 ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 CianwoodGymChuckScript:
 	faceplayer
@@ -59,6 +59,8 @@ CianwoodGymChuckScript:
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ChuckRematchScript
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
@@ -79,6 +81,33 @@ CianwoodGymChuckScript:
 	writetext ChuckAfterText
 	waitbutton
 .BagFull:
+	closetext
+	end
+
+ChuckRematchScript:
+	checkevent EVENT_CHUCK_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_TYROGUE_FROM_KIYO
+	iffalse .ChuckReject
+	writetext ChuckRematchText
+	waitbutton
+	closetext
+	winlosstext ChuckRematchWinLossText, ChuckLossText
+	loadtrainer CHUCK, CHUCK2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_CHUCK_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenChuckAgainText
+	waitbutton
+	closetext
+	end
+
+.ChuckReject
+	writetext ChuckRejectText
+	waitbutton
 	closetext
 	end
 
@@ -203,6 +232,30 @@ ChuckLossText:
 	line "hard…"
 	done
 
+ChuckRematchText:
+	text "I've trained under"
+	line "waterfalls day"
+	cont "and night!"
+
+	para "Are you ready to"
+	line "face the new"
+	cont "heights of power?"
+	done
+
+ChuckRematchWinLossText:
+	text "Your strength"
+	line "continues to amaze"
+	cont "me! Well fought!"
+	done
+
+BeatenChuckAgainText:
+	text "You've beaten me"
+	line "again! Incredible!"
+
+	para "Your training must"
+	line "be truly intense!"
+	done
+
 GetStormBadgeText:
 	text "<PLAYER> received"
 	line "STORMBADGE."
@@ -246,6 +299,34 @@ ChuckAfterText:
 	para "From now on, I'm"
 	line "going to train 24"
 	cont "hours a day!"
+	done
+
+ChuckRejectText:
+	text "Hey there! You"
+	line "want a rematch?"
+
+	para "I've been training"
+	line "hard, but I heard"
+	cont "about someone"
+	cont "special…"
+
+	para "There's a KARATE"
+	line "KING training in"
+	cont "MT. MORTAR who"
+	cont "has a rare #MON."
+
+	para "If you can prove"
+	line "your fighting"
+	cont "spirit by getting"
+	cont "TYROGUE from him…"
+
+	para "Then I'll know"
+	line "you're ready for"
+	cont "my full power!"
+
+	para "Come back when"
+	line "you've earned that"
+	cont "TYROGUE!"
 	done
 
 BlackbeltYoshiSeenText:

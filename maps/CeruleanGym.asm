@@ -79,7 +79,36 @@ CeruleanGymMistyScript:
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MistyRematchScript
 	writetext MistyFightDoneText
+	waitbutton
+	closetext
+	end
+
+MistyRematchScript:
+	checkevent EVENT_MISTY_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_FOUGHT_LUGIA
+	iffalse .MistyReject
+	writetext MistyRematchText
+	waitbutton
+	closetext
+	winlosstext MistyRematchWinLossText, MistyLossText
+	loadtrainer MISTY, MISTY2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_MISTY_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenMistyAgainText
+	waitbutton
+	closetext
+	end
+
+.MistyReject
+	writetext MistyRejectText
 	waitbutton
 	closetext
 	end
@@ -284,6 +313,103 @@ MistyFightDoneText:
 
 	para "I can battle some"
 	line "skilled trainers."
+	done
+
+MistyRematchText:
+	text "Wow! You actually"
+	line "encountered LUGIA!"
+
+	para "The guardian of"
+	line "the seas! That's"
+	cont "so incredible!"
+
+	para "I've always"
+	line "dreamed of meeting"
+	cont "such a magnificent"
+	cont "water-type!"
+
+	para "Anyone who can"
+	line "face LUGIA must"
+	cont "understand the"
+	cont "true power of"
+	cont "water #MON!"
+
+	para "Now I can battle"
+	line "you with my full"
+	cont "strength!"
+
+	para "Let's make waves!"
+	done
+
+MistyRematchWinLossText:
+	text "Fantastic! Your"
+	line "#MON flow like"
+	cont "water in battle!"
+
+	para "I can see why"
+	line "LUGIA would"
+	cont "acknowledge your"
+	cont "strength!"
+
+	para "You've truly"
+	line "mastered the art"
+	cont "of #MON"
+	cont "training!"
+	done
+
+BeatenMistyAgainText:
+	text "That was such an"
+	line "amazing battle!"
+
+	para "Battling someone"
+	line "who's faced LUGIA"
+	cont "has taught me so"
+	cont "much!"
+
+	para "The ocean is vast"
+	line "and full of"
+	cont "mysteries…"
+
+	para "Just like the bond"
+	line "between trainers"
+	cont "and their #MON!"
+
+	para "Keep riding those"
+	line "waves of"
+	cont "adventure!"
+	done
+
+MistyRejectText:
+	text "Oh, hi! You want"
+	line "to battle again?"
+
+	para "I've been training"
+	line "my water #MON"
+	cont "in new ways!"
+
+	para "But I heard about"
+	line "something amazing…"
+
+	para "There's a legend-"
+	line "ary bird #MON"
+	cont "that commands the"
+	cont "seas themselves!"
+
+	para "LUGIA, the guardian"
+	line "of the ocean"
+	cont "depths…"
+
+	para "If you've faced"
+	line "such a powerful"
+	cont "water master…"
+
+	para "Then you'll be"
+	line "worthy of my"
+	cont "strongest team!"
+
+	para "Come back when"
+	line "you've encountered"
+	cont "LUGIA!"
 	done
 
 SwimmerfDianaSeenText:

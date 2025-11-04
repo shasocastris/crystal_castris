@@ -123,7 +123,7 @@ ENDM
 	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
-	map_const ICE_PATH_1F,                                 20, 18 ; 61
+	map_const ICE_PATH_1F,                                 20, 15 ; 61
 	map_const ICE_PATH_B1F,                                10, 18 ; 62
 	map_const ICE_PATH_B2F_MAHOGANY_SIDE,                  10,  9 ; 63
 	map_const ICE_PATH_B2F_BLACKTHORN_SIDE,                 5,  9 ; 64

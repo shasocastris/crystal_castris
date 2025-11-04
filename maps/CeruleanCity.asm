@@ -5,6 +5,7 @@
 	const CERULEANCITY_COOLTRAINER_F
 	const CERULEANCITY_FISHER
 	const CERULEANCITY_YOUNGSTER
+	const CERULEANCITY_UNUSED_GUY
 
 CeruleanCity_MapScripts:
 	def_scene_scripts
@@ -128,6 +129,9 @@ CeruleanCityYoungsterScript:
 	closetext
 	end
 
+CeruleanCityUnusedGuyScript:
+	jumptextfaceplayer CeruleanCityUnusedGuyText
+
 CeruleanCitySign:
 	jumptext CeruleanCitySignText
 
@@ -237,6 +241,17 @@ CeruleanCityYoungsterText2:
 	line "responding…"
 	done
 
+CeruleanCityUnusedGuyText:
+	text "Whoa, hold it!"
+
+	para "You can't go into"
+	line "CERULEAN CAVE."
+
+	para "You need special"
+	line "permission from"
+	cont "PROF.OAK!"
+	done
+
 CeruleanCitySignText:
 	text "CERULEAN CITY"
 
@@ -327,3 +342,4 @@ CeruleanCity_MapEvents:
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
+	object_event  0, 14, SPRITE_UNUSED_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, CeruleanCityUnusedGuyScript, EVENT_OPENED_CERULEAN_CAVE

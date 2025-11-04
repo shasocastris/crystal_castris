@@ -41,6 +41,8 @@ BrunosRoomDoorLocksBehindYouScript:
 	end
 
 BrunoScript_Battle:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .BrunoRematch
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
@@ -66,8 +68,40 @@ BrunoScript_Battle:
 	waitsfx
 	end
 
+.BrunoRematch:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ELITE_4_BRUNO
+	iftrue BrunoScript_AfterBattleRematch
+	writetext BrunoScript_BrunoBeforeRematchText
+	waitbutton
+	closetext
+	winlosstext BrunoScript_BrunoBeatenText, BrunoLossText
+	loadtrainer BRUNO, BRUNO2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ELITE_4_BRUNO
+	opentext
+	writetext BrunoScript_BrunoDefeatRematchText
+	waitbutton
+	closetext
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 2, $16 ; open door
+	refreshmap
+	closetext
+	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
+	waitsfx
+	end
+
 BrunoScript_AfterBattle:
 	writetext BrunoScript_BrunoDefeatText
+	waitbutton
+	closetext
+	end
+
+BrunoScript_AfterBattleRematch:
+	writetext BrunoScript_BrunoDefeatRematchText
 	waitbutton
 	closetext
 	end
@@ -126,6 +160,51 @@ BrunoScript_BrunoDefeatText:
 
 	para "Go face your next"
 	line "challenge!"
+	done
+
+BrunoScript_BrunoBeforeRematchText:
+	text "Hah! You've come"
+	line "back for more!"
+
+	para "Good! I've been"
+	line "training harder"
+	cont "than ever!"
+
+	para "My #MON and I"
+	line "have pushed our"
+	cont "bodies to the"
+	cont "absolute limit!"
+
+	para "We've broken"
+	line "through every"
+	cont "barrier!"
+
+	para "Our fists burn"
+	line "with the fire of"
+	cont "determination!"
+
+	para "Show me if your"
+	line "spirit can match"
+	cont "our intensity!"
+	done
+
+BrunoScript_BrunoDefeatRematchText:
+	text "Hah! Outstanding!"
+
+	para "Your fighting"
+	line "spirit burns even"
+	cont "brighter than"
+	cont "before!"
+
+	para "You've proven"
+	line "that true strength"
+	cont "comes from the"
+	cont "bond with your"
+	cont "#MON!"
+
+	para "You've earned your"
+	line "victory! Advance"
+	cont "with pride!"
 	done
 
 BrunosRoom_MapEvents:

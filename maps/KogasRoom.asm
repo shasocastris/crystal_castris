@@ -41,6 +41,8 @@ KogasRoomDoorLocksBehindYouScript:
 	end
 
 KogaScript_Battle:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .KogaRematch
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_KOGA
@@ -66,8 +68,40 @@ KogaScript_Battle:
 	waitsfx
 	end
 
+.KogaRematch:
+    faceplayer
+    opentext
+    checkevent EVENT_BEAT_ELITE_4_KOGA
+    iftrue KogaScript_AfterBattleRematch
+    writetext KogaScript_KogaBeforeRematchText
+    waitbutton
+    closetext
+    winlosstext KogaScript_KogaBeatenText, KogaLossText
+    loadtrainer KOGA, KOGA2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_BEAT_ELITE_4_KOGA
+    opentext
+    writetext KogaScript_KogaDefeatRematchText
+    waitbutton
+    closetext
+    playsound SFX_ENTER_DOOR
+    changeblock 4, 2, $16 ; open door
+    refreshmap
+    closetext
+    setevent EVENT_KOGAS_ROOM_EXIT_OPEN
+    waitsfx
+    end
+
 KogaScript_AfterBattle:
 	writetext KogaScript_KogaDefeatText
+	waitbutton
+	closetext
+	end
+
+KogaScript_AfterBattleRematch:
+	writetext KogaScript_KogaDefeatRematchText
 	waitbutton
 	closetext
 	end
@@ -131,6 +165,51 @@ KogaScript_KogaDefeatText:
 	para "Go on to the next"
 	line "room, and put your"
 	cont "abilities to test!"
+	done
+
+KogaScript_KogaBeforeRematchText:
+	text "Fwahahahaha!"
+
+	para "You dare return to"
+	line "my poisonous"
+	cont "domain?"
+
+	para "Excellent! I have"
+	line "been perfecting"
+	cont "my ninja arts!"
+
+	para "My #MON and I"
+	line "have trained in"
+	cont "even deadlier"
+	cont "techniques!"
+
+	para "Confusion, sleep,"
+	line "poison… and now"
+	cont "much worse!"
+
+	para "You will find my"
+	line "sinister methods"
+	cont "have evolved!"
+
+	para "Fwahahahaha!"
+	line "Prepare yourself!"
+	done
+
+KogaScript_KogaDefeatRematchText:
+	text "Impossible! Even"
+	line "my enhanced ninja"
+	cont "techniques failed!"
+
+	para "Your skill has"
+	line "grown beyond my"
+	cont "calculations."
+
+	para "You have truly"
+	line "mastered the art"
+	cont "of battle!"
+
+	para "Continue forward,"
+	line "ninja master!"
 	done
 
 KogasRoom_MapEvents:

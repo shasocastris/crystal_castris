@@ -10,15 +10,6 @@ BlackthornGym1F_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, BlackthornGym1FBouldersCallback
-;    callback MAPCALLBACK_TILES, .BlackthornGymLocked
-
-;.BlackthornGymLocked:
-;	checkevent EVENT_BEAT_CLAIR
-;	iftrue .UnlockGym
-;	changeblock 4, 17, $2D ; floor
-;	changeblock 5, 17, $2D ; floor
-;.UnlockGym
-;    endcallback
 
 BlackthornGym1FBouldersCallback:
 	checkevent EVENT_BEAT_CLAIR
@@ -79,6 +70,8 @@ BlackthornGymClairScript:
 	end
 
 .AlreadyGotBadge:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ClairRematchScript
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
@@ -103,6 +96,42 @@ BlackthornGymClairScript:
 
 .GotTM24:
 	writetext BlackthornGymClairText_League
+	waitbutton
+	closetext
+	end
+
+ClairRematchScript:
+	checkevent EVENT_CLAIR_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_DRATINI
+	iffalse .ClairReject
+	loadmonindex 1, DRAGONITE
+	special FindPartyMonThatSpeciesYourTrainerID
+	iffalse .ClairRejectNoDragonite
+	writetext ClairRematchText
+	waitbutton
+	closetext
+	winlosstext ClairRematchWinLossText, ClairLossText
+	loadtrainer CLAIR, CLAIR2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_CLAIR_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenClairAgainText
+	waitbutton
+	closetext
+	end
+
+.ClairReject
+	writetext ClairRejectText
+	waitbutton
+	closetext
+	end
+
+.ClairRejectNoDragonite
+	writetext ClairRejectNoDragoniteText
 	waitbutton
 	closetext
 	end
@@ -300,6 +329,87 @@ BlackthornGymClairText_League:
 
 	para "Give it every-"
 	line "thing you've got."
+	done
+
+ClairRematchText:
+	text "You think your"
+	line "training is enough"
+	cont "to face me again?"
+
+	para "I won't hold back!"
+	done
+
+ClairRematchWinLossText:
+	text "Your mastery is"
+	line "undeniable. Even"
+	cont "dragons bow to you."
+	done
+
+BeatenClairAgainText:
+	text "Magnificent! You"
+	line "truly are a master"
+	cont "trainer!"
+
+	para "I see why Lance"
+	line "speaks so highly"
+	cont "of you."
+	done
+
+ClairRejectText:
+	text "So, you think"
+	line "you're ready for"
+	cont "another battle?"
+
+	para "I won't accept"
+	line "just anyone as a"
+	cont "worthy opponent."
+
+	para "Have you received"
+	line "the sacred DRATINI"
+	cont "from the DRAGON"
+	cont "SHRINE?"
+
+	para "Only those who"
+	line "have proven their"
+	cont "worth to the"
+	cont "dragon elders…"
+
+	para "And earned the"
+	line "trust of a dragon"
+	cont "#MON…"
+
+	para "Are qualified to"
+	line "face me at my"
+	cont "full strength."
+
+	para "Return when you"
+	line "have that DRATINI."
+	cont "Then we'll see if"
+	cont "you're worthy."
+	done
+
+ClairRejectNoDragoniteText:
+	text "I see you have the"
+	line "DRATINI from the"
+	cont "DRAGON SHRINE."
+
+	para "But have you truly"
+	line "bonded with it?"
+
+	para "A dragon master"
+	line "must raise their"
+	cont "dragon to its"
+	cont "full potential."
+
+	para "Return when your"
+	line "DRATINI has become"
+	cont "a mighty"
+	cont "DRAGONITE."
+
+	para "Only then will I"
+	line "recognize you as"
+	cont "a true dragon"
+	cont "trainer."
 	done
 
 CooltrainermPaulSeenText:

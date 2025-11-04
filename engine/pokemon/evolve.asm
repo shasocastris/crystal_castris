@@ -248,7 +248,11 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
+	ld a, [wEvolutionOldSpecies]
+	push af
 	call LearnLevelMoves
+	pop af
+	ld [wEvolutionOldSpecies], a
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon
 
@@ -405,9 +409,18 @@ LearnLevelMoves:
 	and a
 	jr z, .done
 
+    ld d, a
+	ld a, [wEvolutionOldSpecies]
+	ld e, a
+	ld a, [wCurPartySpecies]
+	cp e
+	ld a, d
+	jr z, .did_not_evolve
+
 	cp LEARN_EVO_MOVE
 	jr z, .get_move
 
+.did_not_evolve
 	ld b, a
 	ld a, [wCurPartyLevel]
 	cp b
@@ -489,7 +502,7 @@ FillMoves:
 	ld a, [wCurPartyLevel]
 	cp b
 	jr c, .done
-	ld a, [wSkipMovesBeforeLevelUp]
+	ld a, [wEvolutionOldSpecies]
 	and a
 	jr z, .CheckMove
 	ld a, [wPrevPartyLevel]

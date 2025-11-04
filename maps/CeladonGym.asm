@@ -35,6 +35,8 @@ CeladonGymErikaScript:
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
 .FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ErikaRematchScript
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN
 	iftrue .GotGigaDrain
 	writetext ErikaExplainTMText
@@ -44,6 +46,33 @@ CeladonGymErikaScript:
 	setevent EVENT_GOT_TM19_GIGA_DRAIN
 .GotGigaDrain:
 	writetext ErikaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+ErikaRematchScript:
+	checkevent EVENT_ERIKA_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_POKE_FLUTE
+	iffalse .ErikaReject
+	writetext ErikaRematchText
+	waitbutton
+	closetext
+	winlosstext ErikaRematchWinLossText, ErikaLossText
+	loadtrainer ERIKA, ERIKA2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_ERIKA_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenErikaAgainText
+	waitbutton
+	closetext
+	end
+
+.ErikaReject
+	writetext ErikaRejectText
 	waitbutton
 	closetext
 	end
@@ -186,6 +215,74 @@ ErikaAfterBattleText:
 
 	para "trainers spurs me"
 	line "to do better…"
+	done
+
+ErikaRematchText:
+	text "Oh, how lovely!"
+	line "You have the"
+	cont "POKé FLUTE!"
+
+	para "Such a beautiful"
+	line "instrument that"
+	cont "brings life and"
+	cont "awakening!"
+
+	para "Someone who"
+	line "appreciates such"
+	cont "natural harmony…"
+
+	para "Is worthy of"
+	line "seeing how my"
+	cont "grass #MON"
+	cont "have blossomed!"
+	done
+
+ErikaRematchWinLossText:
+	text "Like a beautiful"
+	line "dance in my"
+	cont "garden!"
+	done
+
+BeatenErikaAgainText:
+	text "That was such a"
+	line "beautiful battle!"
+
+	para "Your #MON and"
+	line "the POKé FLUTE"
+	cont "both create"
+	cont "wonderful harmony."
+
+	para "Please visit my"
+	line "garden anytime!"
+	done
+
+ErikaRejectText:
+	text "Oh my! You'd like"
+	line "to battle again?"
+
+	para "How wonderful!"
+	line "But first…"
+
+	para "I've heard about"
+	line "a beautiful melody"
+	cont "that can awaken"
+	cont "sleeping #MON."
+
+	para "The POKé FLUTE"
+	line "creates such"
+	cont "lovely, natural"
+	cont "music…"
+
+	para "Someone who has"
+	line "that instrument"
+	cont "understands the"
+	cont "harmony between"
+	cont "trainer and"
+	cont "#MON."
+
+	para "Please return when"
+	line "you have the"
+	cont "POKé FLUTE!"
 	done
 
 LassMichelleSeenText:

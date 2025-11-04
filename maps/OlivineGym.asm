@@ -16,7 +16,7 @@ OlivineGym_MapScripts:
 	changeblock 4, 15, $10 ; floor
 	changeblock 5, 15, $10 ; floor
 .UnlockGym
-    endcallback
+	endcallback
 
 OlivineGymJasmineScript:
 	faceplayer
@@ -42,6 +42,8 @@ OlivineGymJasmineScript:
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, JasmineRematchScript
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech
@@ -58,6 +60,33 @@ OlivineGymJasmineScript:
 	writetext Jasmine_GoodLuck
 	waitbutton
 .NoRoomForIronTail:
+	closetext
+	end
+
+JasmineRematchScript:
+	checkevent EVENT_JASMINE_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_GOT_THUNDERSTONE_FROM_BILLS_GRANDPA
+	iffalse .JasmineReject
+	writetext JasmineRematchText
+	waitbutton
+	closetext
+	winlosstext JasmineRematchWinLossText, JasmineLossText
+	loadtrainer JASMINE, JASMINE2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_JASMINE_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenJasmineAgainText
+	waitbutton
+	closetext
+	end
+
+.JasmineReject
+	writetext JasmineRejectText
+	waitbutton
 	closetext
 	end
 
@@ -172,13 +201,66 @@ Jasmine_GoodLuck:
 	cont "but good luck…"
 	done
 
+JasmineRematchText:
+	text "I've studied steel"
+	line "#MON from all"
+	cont "the world."
+
+	para "My team has become"
+	line "much stronger and"
+	cont "more refined."
+	done
+
+JasmineRematchWinLossText:
+	text "Your skill has"
+	line "grown so much"
+	cont "since we met."
+	done
+
+BeatenJasmineAgainText:
+	text "You've won again."
+
+	para "I can see why"
+	line "Amphy was so fond"
+	cont "of you."
+	done
+
+JasmineRejectText:
+	text "…Um… I'd like to"
+	line "have a rematch"
+	cont "with you…"
+
+	para "But first… I"
+	line "heard there's an"
+	cont "old man in KANTO"
+	cont "who loves #MON"
+
+	para "He lives near"
+	line "CERULEAN CITY and"
+	cont "collects stories"
+	cont "about #MON…"
+
+	para "…If you could"
+	line "visit him and"
+	cont "help with his"
+	cont "collection…"
+
+	para "I'd love to hear"
+	line "about your"
+	cont "journey there…"
+
+	para "…Please come back"
+	line "when you have…"
+	done
+
 OlivineGymGuideText:
 	text "JASMINE uses the"
 	line "newly discovered"
 	cont "steel-type."
 
-	para "I don't know very"
-	line "much about it."
+	para "And be watch out"
+	line "for the SANDSTORM"
+	cont "in the gym."
 	done
 
 OlivineGymGuideWinText:

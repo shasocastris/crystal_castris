@@ -124,31 +124,13 @@ EngineFlags:
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
 
 	engine_flag wDailyFlags3, DAILYFLAGS3_MYSTERY_GIFT_F
-    engine_flag wDailyFlags3, DAILYFLAGS3_CIANWOOD_PHOTOGRAPH
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_2
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_3
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_4
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_5
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_6
-    engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_7
-
-	engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_FALKNER_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_BUGSY_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_WHITNEY_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_MORTY_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_CHUCK_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_JASMINE_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_PRYCE_F
-    engine_flag wDailyFlags4, DAILYFLAGS4_BEAT_CLAIR_F
-
-	engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_BROCK_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_MISTY_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_LTSURGE_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_ERIKA_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_JANINE_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_SABRINA_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_BLAINE_F
-    engine_flag wDailyFlags5, DAILYFLAGS5_BEAT_BLUE_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_CIANWOOD_PHOTOGRAPH
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_2
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_3
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_4
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_5
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_6
+	engine_flag wDailyFlags3, DAILYFLAGS3_UNUSED_FLAG_7
 
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F
 	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F
