@@ -196,7 +196,7 @@ BrockRematchText:
 	done
 
 BrockRematchWinLossText:
-	para "You have the heart"
+	text "You have the heart"
 	line "of a true explorer"
 	cont "and trainer!"
 	done
