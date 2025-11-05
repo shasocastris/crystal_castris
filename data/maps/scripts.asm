@@ -418,6 +418,7 @@ INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
 INCLUDE "maps/Route12.asm"
+INCLUDE "maps/CherrygroveCafe.asm"
 
 
 SECTION "Map Scripts 23", ROMX

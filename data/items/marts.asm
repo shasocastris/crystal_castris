@@ -36,6 +36,7 @@ Marts:
 	dw MartIndigoPlateau
 	dw MartUnderground
 	dw MartGlitterAndGrace
+	dw MartCherrygroveCafe
 	dw MartFlowerShop
 	assert_table_length NUM_MARTS
 
@@ -382,6 +383,12 @@ MartGlitterAndGrace:
 	dw FRESH_WATER
 	dw MINT_BERRY
 	dw POKE_DOLL
+
+MartCherrygroveCafe:
+	db 3 ; # items
+	dw RAGECANDYBAR
+	dw SODA_POP
+	dw RARE_CANDY
 
 MartFlowerShop:
 	db 3 ; # items

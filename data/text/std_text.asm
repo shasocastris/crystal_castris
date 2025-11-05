@@ -219,8 +219,8 @@ TrashCanText:
 	done
 
 PokecenterSignText:
-	text "Heal Your #MON!"
-	line "#MON CENTER"
+	text "1F #MON CENTER"
+	line "2F #MON MART"
 	done
 
 MartSignText:

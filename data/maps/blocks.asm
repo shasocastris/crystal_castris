@@ -909,4 +909,7 @@ CeruleanCave_Blocks:
 BlackthornPass_Blocks:
 	INCBIN "maps/BlackthornPass.ablk"
 
+CherrygroveCafe_Blocks:
+	INCBIN "maps/CherrygroveCafe.ablk"
+
 ENDSECTION

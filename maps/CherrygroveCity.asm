@@ -28,6 +28,9 @@ CherrygroveCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
 
+CherrygroveGuideGentTrigger:
+	applymovement PLAYER, GuideGentPlayerMovement
+	setlasttalked CHERRYGROVECITY_GRAMPS
 CherrygroveCityGuideGent:
 	faceplayer
 	opentext
@@ -256,6 +259,7 @@ GuideGentMovement1:
 	step LEFT
 	step LEFT
 	step UP
+GuideGentPlayerMovement:
 	step LEFT
 	turn_head UP
 	step_end
@@ -371,22 +375,24 @@ GuideGentPokecenterText:
 	para "your #MON in no"
 	line "time at all."
 
-	para "You'll be relying"
-	line "on them a lot, so"
-
-	para "you better learn"
-	line "about them."
-	done
-
-GuideGentMartText:
-	text "This is a #MON"
-	line "MART."
+	para "The second floor"
+	line "is the #MON"
+	cont "MART."
 
 	para "They sell BALLS"
 	line "for catching wild"
 
 	para "#MON and other"
 	line "useful items."
+	done
+
+GuideGentMartText:
+	text "Here's our local"
+	line "cafe."
+
+    para "It has a homely"
+	line "feel, but sells"
+	cont "mostly junk food…"
 	done
 
 GuideGentRoute30Text:
@@ -574,10 +580,12 @@ CherrygroveCity_MapEvents:
 	warp_event 17,  7, CHERRYGROVE_GYM_SPEECH_HOUSE, 1
 	warp_event 25,  9, GUIDE_GENTS_HOUSE, 1
 	warp_event 31, 11, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1
+	warp_event 23,  3, CHERRYGROVE_CAFE, 1
 
 	def_coord_events
 	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneNorth
 	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneSouth
+	coord_event 33,  7, 0, CherrygroveGuideGentTrigger
 
 	def_bg_events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign
