@@ -447,7 +447,7 @@ PokegearClock_Joypad:
 	call .UpdateClock
 	ld hl, hJoyLast
 	ld a, [hl]
-	and PAD_A | PAD_A | PAD_START ; Pressing A, B, or START exits Pokégear
+	and PAD_A | PAD_B | PAD_START ; Pressing A, B, or START exits Pokégear
 	jr nz, .quit
 
 	ld a, [hl]

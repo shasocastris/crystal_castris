@@ -1833,7 +1833,7 @@ HandleWeather:
 
 	call SwitchTurnCore
 	xor a
-	ld [wNumHits], a
+	ld [wBattleAfterAnim], a
 	ld de, ANIM_IN_HAIL
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
