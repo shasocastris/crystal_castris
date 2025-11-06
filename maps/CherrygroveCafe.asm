@@ -35,12 +35,10 @@ CherrygroveCafeYoungsterText:
 	done
 
 CherrygroveCafeLassText:
-	text "This was a really"
-	line "fun time."
-
-	para "Don't tell him,"
-	line "but I love to eat"
-	cont "RAGECANDYBARs."
+	text "Don't tell him I"
+	line "only came because"
+	cont "I love the taste"
+	cont "of BITTER BERRIES."
 	done
 
 CherrygroveCafeTwinText:
@@ -65,5 +63,5 @@ CherrygroveCafe_MapEvents:
 	def_object_events
 	object_event  7,  3, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeBeautyScript, -1
 	object_event  4,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeYoungsterScript, -1
-	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeLassScript, -1
-	object_event  6,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeTwinScript, -1
+	object_event  3,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeLassScript, -1
+	object_event  6,  6, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_TEAL, OBJECTTYPE_SCRIPT, 0, CherrygroveCafeTwinScript, -1

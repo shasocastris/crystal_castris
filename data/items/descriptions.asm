@@ -364,8 +364,8 @@ MoomooMilkDesc:
 	next "HP by 100.@"
 
 RageCandyBarDesc:
-	db   "Restores #MON"
-	next "HP by 20.@"
+	db   "A self-restore"
+	next "item for 50HP.@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"

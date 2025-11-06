@@ -385,9 +385,10 @@ MartGlitterAndGrace:
 	dw POKE_DOLL
 
 MartCherrygroveCafe:
-	db 3 ; # items
-	dw RAGECANDYBAR
+	db 4 ; # items
+	dw BITTER_BERRY
 	dw SODA_POP
+	dw RAGECANDYBAR
 	dw RARE_CANDY
 
 MartFlowerShop:
