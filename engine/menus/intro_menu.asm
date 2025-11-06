@@ -333,9 +333,9 @@ ConfirmContinue:
 	call DelayFrame
 	call GetJoypad
 	ld hl, hJoyPressed
-	bit A_BUTTON_F, [hl]
+	bit B_PAD_A, [hl]
 	ret nz
-	bit B_BUTTON_F, [hl]
+	bit B_PAD_B, [hl]
 	jr z, .loop
 	scf
 	ret
@@ -680,9 +680,9 @@ NamePlayer:
 	jmp InitName
 
 .Chris:
-	db "CHRIS@@@@@@"
+	dname "CHRIS", NAME_LENGTH
 .Kris:
-	db "KRIS@@@@@@@"
+	dname "KRIS", NAME_LENGTH
 
 StorePlayerName:
 	ld a, "@"
@@ -858,10 +858,10 @@ IntroSequence:
 	; fallthrough
 
 StartTitleScreen:
-	ldh a, [rSVBK]
+	ldh a, [rWBK]
 	push af
 	ld a, BANK(wLYOverrides)
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	call .TitleScreen
 	call DelayFrame
@@ -873,14 +873,14 @@ StartTitleScreen:
 	call ClearBGPalettes
 
 	pop af
-	ldh [rSVBK], a
+	ldh [rWBK], a
 
 	ld hl, rLCDC
-	res rLCDC_SPRITE_SIZE, [hl] ; 8x8
+	res B_LCDC_OBJ_SIZE, [hl] ; 8x8
 	call ClearScreen
 	call WaitBGMap2
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 	ldh [hSCX], a
@@ -984,7 +984,7 @@ TitleScreenEntrance:
 	ld hl, wJumptableIndex
 	inc [hl]
 	ld hl, rIE
-	res LCD_STAT, [hl]
+	res B_IE_STAT, [hl]
 	xor a
 	ldh [hLCDCPointer], a
 
@@ -1027,7 +1027,7 @@ TitleScreenMain:
 	call GetJoypad
 	ld hl, hJoyDown
 	ld a, [hl]
-	or ~(D_UP + B_BUTTON + SELECT)
+	or ~(PAD_UP + PAD_B + PAD_SELECT)
 	inc a
 	jr z, .delete_save_data
 
@@ -1037,7 +1037,7 @@ TitleScreenMain:
 	jr z, .reset_clock
 
 	ld a, [hl]
-	or ~(D_DOWN + B_BUTTON)
+	or ~(PAD_DOWN + PAD_B)
 	inc a
 	jr nz, .check_start
 
@@ -1048,7 +1048,7 @@ TitleScreenMain:
 ; Press Start or A to start the game.
 .check_start
 	ld a, [hl]
-	and START | A_BUTTON
+	and PAD_START | PAD_A
 	ret z
 	ld a, TITLESCREENOPTION_MAIN_MENU
 	jr .done
