@@ -331,7 +331,7 @@ TMHM_ScrollPocket:
 TMHM_DisplayPocketItems:
 	hlcoord 5, 2
 	lb bc, 10, 15
-	ld a, " "
+	ld a, ' '
 	call ClearBox
 	call TMHM_GetCurrentPocketPosition
 	ld d, $5
@@ -363,7 +363,7 @@ TMHM_DisplayPocketItems:
 	push af
 	sub NUM_TMS
 	ld [wTempTMHM], a
-	ld a, "H"
+	ld a, 'H'
 	ld [hli], a
 	ld de, wTempTMHM
 	lb bc, PRINTNUM_LEFTALIGN | 1, 2
@@ -388,7 +388,7 @@ TMHM_DisplayPocketItems:
 	jr nc, .hm2
 	ld bc, SCREEN_WIDTH + 9
 	add hl, bc
-	ld a, "×"
+	ld a, '×'
 	ld [hli], a
 	pop bc
 	push bc

@@ -40,6 +40,11 @@ RGBFIX  ?= $(RGBDS)rgbfix
 RGBGFX  ?= $(RGBDS)rgbgfx
 RGBLINK ?= $(RGBDS)rgblink
 
+RGBASMFLAGS  ?= -Weverything -Wtruncation=1
+RGBLINKFLAGS ?= -Weverything -Wtruncation=1
+RGBFIXFLAGS  ?= -Weverything
+RGBGFXFLAGS  ?= -Weverything
+
 
 ### Build targets
 
@@ -89,14 +94,15 @@ tools:
 	$(MAKE) -C tools/
 
 
-RGBASMFLAGS = -Q8 -P includes.asm -Weverything -Wtruncation=1 -Wno-obsolete
+RGBASMFLAGS += -Q8 -P includes.asm
 
 $(crystal_castris_obj):       RGBASMFLAGS +=
 $(crystal_castris_debug_obj): RGBASMFLAGS += -D _DEBUG
 $(crystal_castris_vc_obj):    RGBASMFLAGS += -D _CRYSTAL_VC
 
 %.patch: %_vc.gbc %.gbc vc/%.patch.template
-	tools/make_patch $*_vc.sym $^ $@
+# Ignore the checksums added by tools/stadium at the end of the ROM
+	tools/make_patch --ignore 0x1ffde0:0x220 $*_vc.sym $^ $@
 
 rgbdscheck.o: rgbdscheck.asm
 	$(RGBASM) -o $@ $<
@@ -123,15 +129,15 @@ $(foreach obj, $(crystal_castris_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.
 
 endif
 
-
-crystal_castris_opt         = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-crystal_castris_debug_opt   = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-crystal_castris_vc_opt      = -Cjv -t PM_CRYSTAL -i BYTE -n 0 -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+RGBFIXFLAGS += -Cjv -t PM_CRYSTAL -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
+crystal_castris.gbc:       RGBFIXFLAGS += -i BYTE -n 0
+crystal_castris_debug.gbc: RGBFIXFLAGS += -i BYTE -n 0
+crystal_castris_vc.gbc:    RGBFIXFLAGS += -i BYTE -n 0
 
 .gbc: tools/bankends
 %.gbc: $$(%_obj) layout.link
-	$(RGBLINK) -n $*.sym -m $*.map -M -l layout.link -o $@ $(filter %.o,$^)
-	$(RGBFIX) $($*_opt) $@
+	$(RGBLINK) $(RGBLINKFLAGS) -l layout.link -n $*.sym -m $*.map -M -o $@ $(filter %.o,$^)
+	$(RGBFIX) $(RGBFIXFLAGS) $@
 	tools/stadium $@
 	tools/bankends -q $(basename $@).map
 
@@ -156,17 +162,17 @@ gfx/pokemon/%/frames.asm: gfx/pokemon/%/front.animated.tilemap gfx/pokemon/%/fro
 
 ### Pokemon and trainer sprite rules
 
-gfx/pokemon/%/back.2bpp: rgbgfx += --columns
+gfx/pokemon/%/back.2bpp: RGBGFXFLAGS += --columns
 gfx/pokemon/%/back.2bpp: gfx/pokemon/%/back.png gfx/pokemon/%/normal.gbcpal
-	$(RGBGFX) $(rgbgfx) --colors gbc:$(word 2,$^) -o $@ $<
+	$(RGBGFX) $(RGBGFXFLAGS) --colors gbc:$(word 2,$^) -o $@ $<
 gfx/pokemon/%/front.2bpp: gfx/pokemon/%/front.png gfx/pokemon/%/normal.gbcpal
-	$(RGBGFX) $(rgbgfx) --colors gbc:$(word 2,$^) -o $@ $<
+	$(RGBGFX) $(RGBGFXFLAGS) --colors gbc:$(word 2,$^) -o $@ $<
 gfx/pokemon/%/normal.gbcpal: gfx/pokemon/%/front.gbcpal gfx/pokemon/%/back.gbcpal
 	tools/gbcpal $(tools/gbcpal) $@ $^
 
-gfx/trainers/%.2bpp: rgbgfx += --columns
+gfx/trainers/%.2bpp: RGBGFXFLAGS += --columns
 gfx/trainers/%.2bpp: gfx/trainers/%.png gfx/trainers/%.gbcpal
-	$(RGBGFX) $(rgbgfx) --colors gbc:$(word 2,$^) -o $@ $<
+	$(RGBGFX) $(RGBGFXFLAGS) --colors gbc:$(word 2,$^) -o $@ $<
 
 # This is a special case for kris since we don't INCBIN her palette.
 gfx/trainers/kris.2bpp: gfx/trainers/kris.png gfx/trainers/kris.gbcpal
@@ -174,14 +180,14 @@ gfx/trainers/kris.2bpp: gfx/trainers/kris.png gfx/trainers/kris.gbcpal
 
 # Egg does not have a back sprite, so it only uses front.gbcpal
 gfx/pokemon/egg/front.2bpp: gfx/pokemon/egg/front.png gfx/pokemon/egg/front.gbcpal
-gfx/pokemon/egg/front.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
+gfx/pokemon/egg/front.2bpp: RGBGFXFLAGS += --colors gbc:$(word 2,$^)
 
 # Unown letters share one normal.gbcpal
 unown_pngs := $(wildcard gfx/pokemon/unown_*/front.png) $(wildcard gfx/pokemon/unown_*/back.png)
 $(foreach png, $(unown_pngs),\
 	$(eval $(png:.png=.2bpp): $(png) gfx/pokemon/unown/normal.gbcpal))
-gfx/pokemon/unown_%/back.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
-gfx/pokemon/unown_%/front.2bpp: rgbgfx += --colors gbc:$(word 2,$^)
+gfx/pokemon/unown_%/back.2bpp: RGBGFXFLAGS += --colors gbc:$(word 2,$^)
+gfx/pokemon/unown_%/front.2bpp: RGBGFXFLAGS += --colors gbc:$(word 2,$^)
 gfx/pokemon/unown/normal.gbcpal: $(subst .png,.gbcpal,$(unown_pngs))
 	tools/gbcpal $(tools/gbcpal) $@ $^
 
@@ -198,8 +204,8 @@ gfx/pokemon/porygon2/normal.gbcpal: tools/gbcpal += --reverse
 
 gfx/trainers/swimmer_m.gbcpal: tools/gbcpal += --reverse
 
-gfx/new_game/shrink1.2bpp: rgbgfx += --columns
-gfx/new_game/shrink2.2bpp: rgbgfx += --columns
+gfx/new_game/shrink1.2bpp: RGBGFXFLAGS += --columns
+gfx/new_game/shrink2.2bpp: RGBGFXFLAGS += --columns
 
 gfx/mail/dragonite.1bpp: tools/gfx += --remove-whitespace
 gfx/mail/large_note.1bpp: tools/gfx += --remove-whitespace
@@ -209,15 +215,15 @@ gfx/mail/litebluemail_border.1bpp: tools/gfx += --remove-whitespace
 
 gfx/pokedex/pokedex.2bpp: tools/gfx += --trim-whitespace
 gfx/pokedex/pokedex_sgb.2bpp: tools/gfx += --trim-whitespace
-gfx/pokedex/question_mark.2bpp: rgbgfx += --columns
+gfx/pokedex/question_mark.2bpp: RGBGFXFLAGS += --columns
 gfx/pokedex/slowpoke.2bpp: tools/gfx += --trim-whitespace
 
-gfx/pokegear/pokegear.2bpp: rgbgfx += --trim-end 2
+gfx/pokegear/pokegear.2bpp: RGBGFXFLAGS += --trim-end 2
 gfx/pokegear/pokegear_sprites.2bpp: tools/gfx += --trim-whitespace
 
 gfx/title/crystal.2bpp: tools/gfx += --interleave --png=$<
 gfx/title/old_fg.2bpp: tools/gfx += --interleave --png=$<
-gfx/title/logo.2bpp: rgbgfx += --trim-end 4
+gfx/title/logo.2bpp: RGBGFXFLAGS += --trim-end 4
 
 gfx/trade/ball.2bpp: tools/gfx += --remove-whitespace
 gfx/trade/game_boy.2bpp: tools/gfx += --remove-duplicates --preserve=0x23,0x27
@@ -250,13 +256,13 @@ gfx/battle_anims/rocks.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/skyattack.2bpp: tools/gfx += --remove-whitespace
 gfx/battle_anims/status.2bpp: tools/gfx += --remove-whitespace
 
-gfx/player/chris.2bpp: rgbgfx += --columns
-gfx/player/chris_back.2bpp: rgbgfx += --columns
-gfx/player/kris.2bpp: rgbgfx += --columns
-gfx/player/kris_back.2bpp: rgbgfx += --columns
+gfx/player/chris.2bpp: RGBGFXFLAGS += --columns
+gfx/player/chris_back.2bpp: RGBGFXFLAGS += --columns
+gfx/player/kris.2bpp: RGBGFXFLAGS += --columns
+gfx/player/kris_back.2bpp: RGBGFXFLAGS += --columns
 
-gfx/trainer_card/chris_card.2bpp: rgbgfx += --columns
-gfx/trainer_card/kris_card.2bpp: rgbgfx += --columns
+gfx/trainer_card/chris_card.2bpp: RGBGFXFLAGS += --columns
+gfx/trainer_card/kris_card.2bpp: RGBGFXFLAGS += --columns
 gfx/trainer_card/leaders.2bpp: tools/gfx += --trim-whitespace
 
 gfx/overworld/chris_fish.2bpp: tools/gfx += --trim-whitespace
@@ -284,12 +290,12 @@ gfx/mobile/stadium2_n64.2bpp: tools/gfx += --trim-whitespace
 ### Catch-all graphics rules
 
 %.2bpp: %.png
-	$(RGBGFX) --colors dmg=e4 $(rgbgfx) -o $@ $<
+	$(RGBGFX) --colors dmg $(RGBGFXFLAGS) -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) -o $@ $@ || $$($(RM) $@ && false))
 
 %.1bpp: %.png
-	$(RGBGFX) --colors dmg=e4 $(rgbgfx) --depth 1 -o $@ $<
+	$(RGBGFX) --colors dmg $(RGBGFXFLAGS) --depth 1 -o $@ $<
 	$(if $(tools/gfx),\
 		tools/gfx $(tools/gfx) --depth 1 -o $@ $@ || $$($(RM) $@ && false))
 

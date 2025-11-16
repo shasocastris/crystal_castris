@@ -94,10 +94,10 @@ DoBattle:
 	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
-	jr z, .not_linked_2
+	jr z, not_linked_2
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
-	jr nz, .not_linked_2
+	jr nz, not_linked_2
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
@@ -4652,11 +4652,11 @@ PrintPlayerHUD:
 	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender
-	ld a, " "
+	ld a, ' '
 	jr c, .got_gender_char
-	ld a, "♂"
+	ld a, '♂'
 	jr nz, .got_gender_char
-	ld a, "♀"
+	ld a, '♀'
 
 .got_gender_char
 	hlcoord 17, 8
@@ -4670,7 +4670,7 @@ PrintPlayerHUD:
 	pop bc
 	ret nz
 	ld a, b
-	cp " "
+	cp ' '
 	jr nz, .copy_level ; male or female
 	dec hl ; genderless
 
@@ -4724,11 +4724,11 @@ DrawEnemyHUD:
 	ld a, TEMPMON
 	ld [wMonType], a
 	farcall GetGender
-	ld a, " "
+	ld a, ' '
 	jr c, .got_gender
-	ld a, "♂"
+	ld a, '♂'
 	jr nz, .got_gender
-	ld a, "♀"
+	ld a, '♀'
 
 .got_gender
 	hlcoord 9, 1
@@ -4743,7 +4743,7 @@ DrawEnemyHUD:
 	pop bc
 	jr nz, .skip_level
 	ld a, b
-	cp " "
+	cp ' '
 	jr nz, .print_level
 	dec hl
 .print_level
@@ -5326,7 +5326,7 @@ MoveSelectionScreen:
 	ld bc, SCREEN_WIDTH
 	dec a
 	rst AddNTimes
-	ld [hl], "▷"
+	ld [hl], '▷'
 
 .interpret_joypad
 	ld a, $1
@@ -5603,7 +5603,7 @@ MoveInfoBox:
 	pop hl
 	inc hl
 	inc hl
-	ld a, "/"
+	ld a, '/'
 	ld [hli], a
 	ld de, wNamedObjectIndex
 	lb bc, 1, 2
@@ -8308,7 +8308,7 @@ ReadAndPrintLinkBattleRecord:
 	ld de, wLinkBattleRecordName
 	ld bc, NAME_LENGTH - 1
 	rst CopyBytes
-	ld a, "@"
+	ld a, '@'
 	ld [de], a
 	inc de ; wLinkBattleRecordWins
 	ld bc, 6
@@ -8764,7 +8764,7 @@ InitBattleDisplay:
 
 	ld hl, wDecompressScratch
 	ld bc, TILEMAP_AREA
-	ld a, " "
+	ld a, ' '
 	rst ByteFill
 
 	ld de, wDecompressScratch
