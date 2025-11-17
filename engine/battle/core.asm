@@ -94,10 +94,10 @@ DoBattle:
 	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
-	jr z, not_linked_2
+	jr z, .not_linked_2
 	ldh a, [hSerialConnectionStatus]
 	cp USING_INTERNAL_CLOCK
-	jr nz, not_linked_2
+	jr nz, .not_linked_2
 	xor a
 	ld [wEnemySwitchMonIndex], a
 	call NewEnemyMonStatus
