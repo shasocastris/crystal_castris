@@ -1497,11 +1497,14 @@ ElmsLabTravelTip8Text:
 
 	para "Travel Tip 8:"
 
-	para "Gym leaders often"
-	line "have #MON"
-	cont "with movesets"
-	cont "unavailable to"
-	cont "normal trainers."
+	para "Wild #MON are"
+	line "prone to fleeing."
+
+	para "And be careful!"
+
+	para "Others will keep"
+	line "you trapped in an"
+	cont "encounter."
 	done
 
 ElmsResearchNotes1Text:
