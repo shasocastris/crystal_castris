@@ -90,7 +90,7 @@ DisplayDexEntry:
 	ld l, c
 	push de
 ; Print dex number
-	hlcoord 2, 8
+	hlcoord 10, 1
 	ld a, $5c ; No
 	ld [hli], a
 	ld a, $5d ; .
@@ -166,22 +166,22 @@ DisplayDexEntry:
 	lb bc, 2, (4 << 4) | 5
 	call PrintNum
 	pop de
+; place Caught ball icon
+	hlcoord 16, 1
+	ld a, $4f ; pokeball icon
+	ld [hli], a
 
 .skip_weight
 ; Page 1
 	lb bc, 5, SCREEN_WIDTH - 2
 	hlcoord 2, 11
 	call ClearBox
-	hlcoord 1, 10
+	hlcoord 1, 8
 	ld bc, SCREEN_WIDTH - 1
-	ld a, $61 ; horizontal divider
+	ld a, $55 ; horizontal divider
 	rst ByteFill
 	; page number
-	hlcoord 1, 9
-	ld a, $55
-	ld [hli], a
-	ld [hl], $55
-	hlcoord 1, 10
+	hlcoord 18, 7
 	ld a, $56 ; P.
 	ld [hli], a
 	ld [hl], $57 ; 1
@@ -207,11 +207,7 @@ DisplayDexEntry:
 	ld a, $61
 	rst ByteFill
 	; page number
-	hlcoord 1, 9
-	ld a, $55
-	ld [hli], a
-	ld [hl], $55
-	hlcoord 1, 10
+	hlcoord 18, 7
 	ld a, $56 ; P.
 	ld [hli], a
 	ld [hl], $58 ; 2

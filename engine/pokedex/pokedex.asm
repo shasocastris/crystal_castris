@@ -1206,7 +1206,6 @@ String_START_SEARCH:
 	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $4e, $3c, -1 ; START > SEARCH
 
 Pokedex_DrawDexEntryScreenBG:
-	call Pokedex_FillBackgroundColor2
 	hlcoord 0, 0
 	lb bc, 15, 18
 	call Pokedex_PlaceBorder
@@ -1217,6 +1216,29 @@ Pokedex_DrawDexEntryScreenBG:
 	ld b, 15
 	call Pokedex_FillColumn
 	ld [hl], $39
+
+; SELECT > SHINY
+
+	; SELECT > $48, $49, $4a
+	; > SHINY $62-64
+	hlcoord	1, 0
+	ld [hl], $6b ; new curved text border, left
+	inc hl
+
+	ld a, $48 ; SELECT 1
+	ld [hli], a
+	inc a ; $49, SELECT 2
+	ld [hli], a
+ 	inc a ; $4a, SELECT 3
+ 	ld [hli], a
+ 	ld a, $6d ; SHINY 1
+ 	ld [hli], a
+	inc a ; $63, SHINY 2
+	ld [hli], a
+	inc a ; $64, SHINY 2
+	ld [hli], a
+	ld [hl], $6c ; new curved text border, right
+
 	hlcoord 1, 10
 	ld bc, 19
 	ld a, $61
@@ -1231,6 +1253,12 @@ Pokedex_DrawDexEntryScreenBG:
 	hlcoord 9, 9
 	ld de, .Weight
 	call Pokedex_PlaceString
+; up/down arrow indicators
+	hlcoord 19, 0
+	ld [hl], $3f
+	hlcoord 19, 16
+	ld [hl], $40
+; place bottom row menu
 	hlcoord 0, 17
 	ld de, .MenuItems
 	call Pokedex_PlaceString
