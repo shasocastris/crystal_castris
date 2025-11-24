@@ -76,6 +76,16 @@ DoDexSearchSlowpokeFrame:
 	db -1
 
 DisplayDexEntry:
+; toggle shiny symbol
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], $70  ; shiny tile in pokedex.png
+	jr .next
+.not_shiny
+	ld [hl], " "
+.next
 	call GetPokemonName
 	hlcoord 9, 3
 	rst PlaceString ; mon species
