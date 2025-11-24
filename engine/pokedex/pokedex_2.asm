@@ -94,11 +94,14 @@ DisplayDexEntry:
 	call GetDexEntryPointer
 	ld a, b
 	push af
-	hlcoord 9, 5
+	hlcoord 9, 6
 	call PlaceFarString ; dex species
 	ld h, b
 	ld l, c
 	push de
+	hlcoord 9, 7
+	ld de, String_pokemon
+	call PlaceString
 ; Print dex number
 	hlcoord 10, 1
 	ld a, $5c ; No
@@ -226,6 +229,9 @@ DisplayDexEntry:
 	pop af
 	hlcoord 2, 11
 	jmp PlaceFarString
+
+String_pokemon:
+	db " #MON @"
 
 GetDexEntryPointer:
 ; return dex entry pointer b:de

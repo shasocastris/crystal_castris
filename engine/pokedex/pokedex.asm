@@ -1268,6 +1268,10 @@ Pokedex_DrawDexEntryScreenBG:
 	ld bc, SCREEN_WIDTH - 1
 	ld a, $55 ; horizontal divider
 	rst ByteFill
+	hlcoord 6, 5
+	ld bc, SCREEN_WIDTH - 6
+	ld a, $61 ; horizontal divider
+	rst ByteFill
 	hlcoord 1, 17
 	ld bc, 18
 	ld a, ' '
