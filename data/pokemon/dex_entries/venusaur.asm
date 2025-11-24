@@ -1,5 +1,5 @@
 	db "SEED@" ; species name
-	dw 607, 2210 ; height, weight
+	dw 607, 221 ; height, weight
 
 	db   "As it warms it-"
 	next "self and absorbs"

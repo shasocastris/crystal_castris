@@ -1,5 +1,5 @@
 	db "ROYAL@" ; species name
-	dw 607, 1750 ; height, weight
+	dw 607, 175 ; height, weight
 
 	db   "Every time it ya-"
 	next "wns, SHELLDER"

@@ -1,5 +1,5 @@
 	db "THUNDER@" ; species name
-	dw 603, 3920 ; height, weight
+	dw 603, 392 ; height, weight
 
 	db   "This rough #MON"
 	next "stores energy"

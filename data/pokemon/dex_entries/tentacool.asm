@@ -1,5 +1,5 @@
 	db "JELLYFISH@" ; species name
-	dw 211, 1000 ; height, weight
+	dw 211, 100 ; height, weight
 
 	db   "As it floats along"
 	next "on the waves, it"

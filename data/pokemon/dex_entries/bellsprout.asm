@@ -1,5 +1,5 @@
 	db "FLOWER@" ; species name
-	dw 204, 90 ; height, weight
+	dw 204, 9 ; height, weight
 
 	db   "If it notices"
 	next "anything that"

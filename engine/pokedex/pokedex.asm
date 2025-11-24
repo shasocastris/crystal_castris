@@ -1243,14 +1243,18 @@ Pokedex_DrawDexEntryScreenBG:
 	ld bc, 19
 	ld a, $61
 	rst ByteFill
+	hlcoord 1, 8
+	ld bc, SCREEN_WIDTH - 1
+	ld a, $55 ; horizontal divider
+	rst ByteFill
 	hlcoord 1, 17
 	ld bc, 18
 	ld a, ' '
 	rst ByteFill
-	hlcoord 9, 7
+	hlcoord 2, 9
 	ld de, .Height
 	call Pokedex_PlaceString
-	hlcoord 9, 9
+	hlcoord 12, 9
 	ld de, .Weight
 	call Pokedex_PlaceString
 ; up/down arrow indicators
@@ -1265,9 +1269,9 @@ Pokedex_DrawDexEntryScreenBG:
 	jmp Pokedex_PlaceFrontpicTopLeftCorner
 
 .Height:
-	db "HT  ?", $5e, "??", $5f, -1 ; HT  ?'??"
+	db "HT     ", -1 ; HT  ?'??"
 .Weight:
-	db "WT   ???lb", -1
+	db "WT    lb", -1
 .MenuItems:
 	db $3b, "  PAGE  AREA  CRY  ", -1
 

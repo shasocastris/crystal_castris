@@ -1,5 +1,5 @@
 	db "LAVA@" ; species name
-	dw 204, 770 ; height, weight
+	dw 204, 77 ; height, weight
 
 	db   "These group to-"
 	next "gether in areas"

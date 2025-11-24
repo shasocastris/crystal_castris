@@ -1,5 +1,5 @@
 	db "TIMETRAVEL@" ; species name
-	dw 200, 110 ; height, weight
+	dw 200, 11 ; height, weight
 
 	db   "Revered as a"
 	next "guardian of the"

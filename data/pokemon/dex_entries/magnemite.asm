@@ -1,5 +1,5 @@
 	db "MAGNET@" ; species name
-	dw 100, 130 ; height, weight
+	dw 100, 13 ; height, weight
 
 	db   "The electricity"
 	next "emitted by the"

@@ -1,5 +1,5 @@
 	db "TADPOLE@" ; species name
-	dw 403, 1190 ; height, weight
+	dw 403, 119 ; height, weight
 
 	db   "It can use its"
 	next "well-developed"

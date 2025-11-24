@@ -1,5 +1,5 @@
 	db "PSI@" ; species name
-	dw 211, 430 ; height, weight
+	dw 211, 43 ; height, weight
 
 	db   "It hypnotizes"
 	next "itself so that it"

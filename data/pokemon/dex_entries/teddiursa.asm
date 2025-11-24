@@ -1,5 +1,5 @@
 	db "LITTLE BEAR@" ; species name
-	dw 200, 190 ; height, weight
+	dw 200, 19 ; height, weight
 
 	db   "It always licks"
 	next "honey. Its palm"

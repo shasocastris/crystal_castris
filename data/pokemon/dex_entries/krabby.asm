@@ -1,5 +1,5 @@
 	db "RIVER CRAB@" ; species name
-	dw 104, 140 ; height, weight
+	dw 104, 14 ; height, weight
 
 	db   "If it is unable"
 	next "to find food, it"

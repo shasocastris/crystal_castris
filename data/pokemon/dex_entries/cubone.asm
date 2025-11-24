@@ -1,5 +1,5 @@
 	db "LONELY@" ; species name
-	dw 104, 140 ; height, weight
+	dw 104, 14 ; height, weight
 
 	db   "It lost its mother"
 	next "after its birth."

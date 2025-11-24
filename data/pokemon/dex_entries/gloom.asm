@@ -1,5 +1,5 @@
 	db "WEED@" ; species name
-	dw 207, 190 ; height, weight
+	dw 207, 19 ; height, weight
 
 	db   "The smell from its"
 	next "drool-like syrup"

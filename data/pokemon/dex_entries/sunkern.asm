@@ -1,5 +1,5 @@
 	db "SEED@" ; species name
-	dw 100, 40 ; height, weight
+	dw 100, 4 ; height, weight
 
 	db   "It is very weak."
 	next "Its only means of"

@@ -1,5 +1,5 @@
 	db "HERB@" ; species name
-	dw 511, 2220 ; height, weight
+	dw 511, 222 ; height, weight
 
 	db   "Anyone who stands"
 	next "beside it becomes"

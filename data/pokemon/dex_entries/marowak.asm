@@ -1,5 +1,5 @@
 	db "BONEKEEPER@" ; species name
-	dw 303, 990 ; height, weight
+	dw 303, 99 ; height, weight
 
 	db   "Somewhere in the"
 	next "world is a ceme-"

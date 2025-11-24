@@ -1,5 +1,5 @@
 	db "SCREECH@" ; species name
-	dw 204, 20 ; height, weight
+	dw 204, 2 ; height, weight
 
 	db   "It loves to watch"
 	next "people it's scar-"

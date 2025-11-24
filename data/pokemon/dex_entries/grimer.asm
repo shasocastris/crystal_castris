@@ -1,5 +1,5 @@
 	db "SLUDGE@" ; species name
-	dw 211, 660 ; height, weight
+	dw 211, 66 ; height, weight
 
 	db   "When two of these"
 	next "#MON's bodies"

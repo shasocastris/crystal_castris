@@ -1,5 +1,5 @@
 	db "SPITFIRE@" ; species name
-	dw 403, 980 ; height, weight
+	dw 403, 98 ; height, weight
 
 	db   "It moves more"
 	next "frequently in hot"

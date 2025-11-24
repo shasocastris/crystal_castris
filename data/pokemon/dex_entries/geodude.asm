@@ -1,5 +1,5 @@
 	db "ROCK@" ; species name
-	dw 104, 440 ; height, weight
+	dw 104, 44 ; height, weight
 
 	db   "Proud of their"
 	next "sturdy bodies,"

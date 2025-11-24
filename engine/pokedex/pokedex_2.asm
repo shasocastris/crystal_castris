@@ -136,11 +136,11 @@ DisplayDexEntry:
 	ld hl, sp+0
 	ld d, h
 	ld e, l
-	hlcoord 12, 7
+	hlcoord 5, 9
 	lb bc, 2, (2 << 4) | 4
 	call PrintNum
 ; Replace the decimal point with a ft symbol
-	hlcoord 14, 7
+	hlcoord 7, 9
 	ld [hl], $5e
 	pop af
 	pop hl
@@ -158,12 +158,12 @@ DisplayDexEntry:
 	or d
 	jr z, .skip_weight
 	push de
-; Print the weight, with four of the five digits in front of the decimal point
+; Print the weight
 	ld hl, sp+0
 	ld d, h
 	ld e, l
-	hlcoord 11, 9
-	lb bc, 2, (4 << 4) | 5
+	hlcoord 14, 9
+	lb bc, 2, (4 << 4) | 4
 	call PrintNum
 	pop de
 ; place Caught ball icon

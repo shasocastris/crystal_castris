@@ -1,5 +1,5 @@
 	db "TRANSPORT@" ; species name
-	dw 802, 4850 ; height, weight
+	dw 802, 485 ; height, weight
 
 	db   "This gentle"
 	next "#MON loves to"

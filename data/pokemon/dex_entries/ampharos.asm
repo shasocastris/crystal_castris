@@ -1,5 +1,5 @@
 	db "LIGHT@" ; species name
-	dw 407, 1360 ; height, weight
+	dw 407, 136 ; height, weight
 
 	db   "When it gets dark,"
 	next "the light from its"

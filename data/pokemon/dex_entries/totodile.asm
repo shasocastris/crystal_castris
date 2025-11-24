@@ -1,5 +1,5 @@
 	db "BIG JAW@" ; species name
-	dw 200, 210 ; height, weight
+	dw 200, 21 ; height, weight
 
 	db   "This rough critter"
 	next "chomps at any"

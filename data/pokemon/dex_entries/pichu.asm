@@ -1,5 +1,5 @@
 	db "TINY MOUSE@" ; species name
-	dw 100, 40 ; height, weight
+	dw 100, 4 ; height, weight
 
 	db   "It is unskilled at"
 	next "storing electric"

@@ -1,5 +1,5 @@
 	db "FAIRY@" ; species name
-	dw 200, 170 ; height, weight
+	dw 200, 17 ; height, weight
 
 	db   "Though rarely"
 	next "seen, it becomes"

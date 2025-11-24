@@ -1,5 +1,5 @@
 	db "BUBBLE JET@" ; species name
-	dw 303, 640 ; height, weight
+	dw 303, 64 ; height, weight
 
 	db   "As it uses the"
 	next "fins on the tip"

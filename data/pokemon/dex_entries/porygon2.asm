@@ -1,5 +1,5 @@
 	db "VIRTUAL@" ; species name
-	dw 200, 720 ; height, weight
+	dw 200, 72 ; height, weight
 
 	db   "This manmade"
 	next "#MON evolved"
