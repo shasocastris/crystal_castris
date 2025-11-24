@@ -457,6 +457,18 @@ Pokedex_UpdateDexEntryScreen:
 	; refresh palettes
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
+
+	; toggle shiny symbol
+	hlcoord 8, 1
+	ld a, [wPokedexShinyToggle]
+	bit 0, a
+	jr z, .not_shiny
+	ld [hl], $70  ; shiny tile in pokedex.png
+	jr .next
+.not_shiny
+	ld [hl], " "
+
+.next
 	; play sound based on setting
 	ld a, [wPokedexShinyToggle]
 	and a
