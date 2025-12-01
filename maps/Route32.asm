@@ -21,6 +21,11 @@ Route32_MapScripts:
 	scene_script Route32Noop3Scene, SCENE_ROUTE32_NOOP
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, Route32FlypointCallback
+
+Route32FlypointCallback:
+	setflag ENGINE_FLYPOINT_UNION_CAVE
+	endcallback
 
 Route32Noop1Scene:
 	end

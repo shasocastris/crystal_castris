@@ -2,6 +2,11 @@ Route10North_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, Route10NorthFlypointCallback
+
+Route10NorthFlypointCallback:
+	setflag ENGINE_FLYPOINT_ROCK_TUNNEL
+	endcallback
 
 PowerPlantSign:
 	jumptext PowerPlantSignText
