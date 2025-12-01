@@ -84,7 +84,7 @@ DisplayDexEntry:
 	ld [hl], $70  ; shiny tile in pokedex.png
 	jr .next
 .not_shiny
-	ld [hl], " "
+	ld [hl], ' '
 .next
 	call GetPokemonName
 	hlcoord 9, 3

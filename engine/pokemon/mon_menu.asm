@@ -1313,7 +1313,7 @@ PlaceMoveData:
 	ld a, [wCurSpecies]
 	ld b, a
 	hlcoord 10, 13
-	ld [hl], "/"
+	ld [hl], '/'
 	inc hl
 	predef PrintMoveType
 

@@ -821,7 +821,7 @@ LoadOrangePage:
 	hlcoord 1, 12
 	call PlaceString
 	hlcoord 2, 13
-	ld [hl], "<LV>"
+	ld [hl], '<LV>'
 	ret
 
 .unknown_level

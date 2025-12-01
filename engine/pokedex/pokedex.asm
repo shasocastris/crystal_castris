@@ -466,7 +466,7 @@ Pokedex_UpdateDexEntryScreen:
 	ld [hl], $70  ; shiny tile in pokedex.png
 	jr .next
 .not_shiny
-	ld [hl], " "
+	ld [hl], ' '
 
 .next
 	; play sound based on setting
