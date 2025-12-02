@@ -155,7 +155,20 @@ TrainerBeautyCaroline:
 	end
 
 GoldenrodGlitterAndGraceGrowlitheScript:
-	jumptextfaceplayer GoldenrodGlitterAndGraceGrowlitheText
+	opentext
+	writetext GoldenrodGlitterAndGraceGrowlitheText
+	cry GROWLITHE
+	waitbutton
+	callasm .Growlithe
+	special ShowPokedexEntry
+	closetext
+	end
+
+.Growlithe
+	ld hl, GROWLITHE
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
 
 GoldenrodGlitterAndGraceClerkText:
 	text "WELCOME to …"
