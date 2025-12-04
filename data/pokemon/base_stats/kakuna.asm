@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	INCBIN "gfx/pokemon/kakuna/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_MEDIUM_FAST ; growth rate
+	db GROWTH_SLOW ; growth rate
 	; tm/hm learnset
 	tmhm
 	; end

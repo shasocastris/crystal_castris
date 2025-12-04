@@ -11,7 +11,7 @@
 	db GENDER_F50 ; gender ratio
 	INCBIN "gfx/pokemon/spinarak/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_FAST ; growth rate
+	db GROWTH_SLOW ; growth rate
 	; tm/hm learnset
 	tmhm CURSE, TOXIC, HIDDEN_POWER, SUNNY_DAY, SNORE, PROTECT, GIGA_DRAIN, ENDURE, FRUSTRATION, SOLARBEAM, RETURN, PSYCHIC_M, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SLUDGE_BOMB, REST, ATTRACT, THIEF, FLASH
 	; end
