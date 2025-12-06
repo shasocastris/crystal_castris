@@ -7003,6 +7003,8 @@ GiveExperiencePoints:
 	ld b, a
 	jr .ev_loop
 .evs_done
+
+	; Original Gen II formula: (BaseExp × EnemyLevel) ÷ 7
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7015,6 +7017,52 @@ GiveExperiencePoints:
 	ldh [hDivisor], a
 	ld b, 4
 	call Divide
+
+	; Now apply level scaling to the result
+	; Scaling factor = ((2 * EnemyLevel + 10) ÷ (PlayerLevel + EnemyLevel + 10))
+
+	; Get player mon's level
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Species
+	call GetPartyLocation
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]               ; a = player level
+	ld b, a
+
+	; Calculate scaling numerator: (2 × EnemyLevel + 10)
+	ld a, [wEnemyMonLevel]
+	sla a
+	add 10
+	ld c, a                  ; c = numerator
+
+	; Calculate scaling denominator: (PlayerLevel + EnemyLevel + 10)
+	ld a, b                  ; player level
+	ld d, a
+	ld a, [wEnemyMonLevel]
+	add d
+	add 10
+	ld d, a                  ; d = denominator
+
+	; Move quotient to multiplicand for scaling
+	ldh a, [hQuotient + 2]
+	ldh [hMultiplicand + 1], a
+	ldh a, [hQuotient + 3]
+	ldh [hMultiplicand + 2], a
+	xor a
+	ldh [hMultiplicand + 0], a
+
+	; Multiply by scaling numerator
+	ld a, c
+	ldh [hMultiplier], a
+	call Multiply
+
+	; Divide by scaling denominator
+	ld a, d
+	ldh [hDivisor], a
+	ld b, 4
+	call Divide
+
 ; Boost Experience for traded Pokemon
 	pop bc
 	ld hl, MON_OT_ID
