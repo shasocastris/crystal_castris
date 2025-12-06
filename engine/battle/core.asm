@@ -1838,7 +1838,7 @@ HandleWeather:
 	call Call_PlayBattleAnim
 	call SwitchTurnCore
 
-	call GetSixteenthMaxHP
+	call GetEighthMaxHP
 	call SubtractHPFromUser
 
 	ld hl, PeltedByHailText
