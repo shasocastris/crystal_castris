@@ -84,6 +84,7 @@ if DEF(_DEBUG)
 	giveitem SCOPE_LENS
 	giveitem POKE_FLUTE
 	giveitem EXP_SHARE
+	giveitem LUCKY_EGG
 	giveitem GRIP_CLAW
 	giveitem HEAT_ROCK
 	giveitem SLEEP_GUARD
