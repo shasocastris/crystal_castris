@@ -169,6 +169,7 @@ if DEF(_DEBUG)
 	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
 	givepoke AMPHAROS, 50
+	givepokemove HIDDEN_POWER,    wPartyMon4, 3
 	givepoke GENGAR, 50
 	givepokemove PSYWAVE,    wPartyMon5, 0
 	givepokemove SUNNY_DAY,  wPartyMon5, 1
