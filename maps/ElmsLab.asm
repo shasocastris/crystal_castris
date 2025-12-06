@@ -1428,11 +1428,18 @@ ElmsLabTravelTip3Text:
 
 	para "Travel Tip 3:"
 
-	para "There is a seer in"
-	line "CIANWOOD CITY that"
-	cont "can reveal any"
-	cont "#MON's HIDDEN"
-	cont "POWER."
+    para "A #MON gains"
+    line "more experience"
+
+    para "when it faces"
+    line "stronger foes."
+
+    para "Conversely, over-"
+    line "leveled #MON"
+
+    para "gain less from"
+    line "weaker opponents."
+
 	done
 
 ElmsLabTravelTip4Text:
