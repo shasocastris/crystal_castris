@@ -82,7 +82,8 @@ if DEF(_DEBUG)
 	giveitem KINGS_ROCK
 	giveitem AMULET_COIN
 	giveitem SCOPE_LENS
-;	giveitem POKE_FLUTE
+	giveitem POKE_FLUTE
+	giveitem EXP_SHARE
 	giveitem GRIP_CLAW
 	giveitem HEAT_ROCK
 	giveitem SLEEP_GUARD
