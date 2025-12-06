@@ -117,6 +117,7 @@ MrPokemonsHouse_OakScript:
 	writetext MrPokemonText_UsePokedexOnMurkrow
 	waitbutton
 	closetext
+	turnobject PLAYER, DOWN
 	setevent EVENT_RIVAL_NEW_BARK_TOWN
 	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	clearevent EVENT_PLAYERS_NEIGHBORS_HOUSE_NEIGHBOR
