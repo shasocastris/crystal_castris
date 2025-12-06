@@ -24,6 +24,10 @@ DoPlayerMovement::
 	and PAD_CTRL_PAD
 	ret nz
 
+    ld a, c
+    and A_BUTTON | B_BUTTON
+    ret nz
+
 	ld a, c
 	or PAD_DOWN
 	ld [wCurInput], a
