@@ -2861,3 +2861,111 @@ Pokedex_ResetBGMapMode:
 	xor a
 	ldh [hBGMapMode], a
 	ret
+
+INCLUDE "data/types/type_pokemon_lists.asm"
+
+CheckCaughtSpecies:
+; Check if species index in hl has been caught
+; Returns: z flag set if caught, nz if not caught
+; Preserves: de, bc
+	push de
+	push bc
+
+	; Convert species index to Pokémon ID
+	call GetPokemonIDFromIndex
+	ld e, a
+	ld d, 0
+
+	; Calculate byte offset: ID / 8
+	ld hl, wPokedexSeen
+	srl d
+	rr e
+	srl d
+	rr e
+	srl d
+	rr e
+	add hl, de
+
+	; Calculate bit position: ID % 8
+	ld a, [wTempSpecies]  ; Original ID
+	and %111
+	ld b, a
+	ld a, 1
+	jr z, .check_bit
+
+.shift_loop:
+	add a  ; Shift left
+	dec b
+	jr nz, .shift_loop
+
+.check_bit:
+	and [hl]  ; Test the bit
+
+	pop bc
+	pop de
+	ret
+
+CheckAllOfTypeCaught:
+; Check if all Pokémon of a given type have been caught
+; Input: a = type constant (GHOST, FLYING, etc.)
+; Output: carry flag set if all caught, clear if not
+; Destroys: af, bc, de, hl
+
+    push af
+
+    ; Find the species list for this type
+    ld hl, TypePokemonLists
+
+.find_type:
+    ld a, [hli]
+    cp -1
+    jr z, .type_not_found
+
+    ld b, a
+    pop af
+    push af
+    cp b
+    jr z, .found_type
+
+    ; Skip the pointer
+    inc hl
+    inc hl
+    jr .find_type
+
+.found_type:
+    ; Load the species list pointer
+    ld a, [hli]
+    ld h, [hl]
+    ld l, a
+
+.check_loop:
+    ; Get next species
+    ld a, [hli]
+    ld d, [hl]
+    inc hl
+
+    ; Check for end of list
+    cp -1
+    jr z, .all_caught
+
+    ; Check if this species is caught
+    push hl
+    ld h, d
+    ld l, a
+    ld [wTempSpecies], a
+    call CheckCaughtSpecies
+    pop hl
+
+    jr nz, .not_all_caught
+    jr .check_loop
+
+.all_caught:
+    pop af
+    scf  ; Set carry = all caught
+    ret
+
+.not_all_caught:
+.type_not_found:
+    pop af
+    and a  ; Clear carry = not all caught
+    ret
