@@ -3,25 +3,25 @@
 ; Format: Each type points to a list of species indices, terminated with -1
 
 TypePokemonLists:
-	dw NORMAL,			NormalTypeSpecies
-	dw FIGHTING,		FightingTypeSpecies
-	dw FLYING,			FlyingTypeSpecies
-	dw POISON,			PoisonTypeSpecies
-	dw GROUND,			GroundTypeSpecies
-	dw ROCK,			RockTypeSpecies
-	dw BUG,				BugTypeSpecies
-	dw GHOST,			GhostTypeSpecies
-	dw STEEL,			SteelTypeSpecies
-	dw FIRE,			FireTypeSpecies
-	dw WATER,			WaterTypeSpecies
-	dw GRASS,			GrassTypeSpecies
-	dw ELECTRIC,		ElectricTypeSpecies
-	dw PSYCHIC_TYPE,	PsychicTypeSpecies
-	dw ICE,				IceTypeSpecies
-	dw DRAGON,			DragonTypeSpecies
-	dw DARK,			DarkTypeSpecies
-	dw FAIRY,			FairyTypeSpecies
-	dw -1 ; end
+	dbw NORMAL,       NormalTypeSpecies
+	dbw FIGHTING,     FightingTypeSpecies
+	dbw FLYING,       FlyingTypeSpecies
+	dbw POISON,       PoisonTypeSpecies
+	dbw GROUND,       GroundTypeSpecies
+	dbw ROCK,         RockTypeSpecies
+	dbw BUG,          BugTypeSpecies
+	dbw GHOST,        GhostTypeSpecies
+	dbw STEEL,        SteelTypeSpecies
+	dbw FIRE,         FireTypeSpecies
+	dbw WATER,        WaterTypeSpecies
+	dbw GRASS,        GrassTypeSpecies
+	dbw ELECTRIC,     ElectricTypeSpecies
+	dbw PSYCHIC_TYPE, PsychicTypeSpecies
+	dbw ICE,          IceTypeSpecies
+	dbw DRAGON,       DragonTypeSpecies
+	dbw DARK,         DarkTypeSpecies
+	dbw FAIRY,        FairyTypeSpecies
+	db $FF  ; End marker
 
 NormalTypeSpecies:
 ;	dw PIDGEY

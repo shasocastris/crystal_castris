@@ -1264,11 +1264,11 @@ BattleCommand_Stab:
 	pop de
 	pop hl
 
-;	push de
-;	push bc
+	push de
+	push bc
 	farcall DoTypeCompletionBoosts
-;	pop bc
-;	pop de
+	pop bc
+	pop de
 
 	ld a, [wCurType]
 	cp b
