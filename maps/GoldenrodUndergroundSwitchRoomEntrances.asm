@@ -117,6 +117,9 @@ GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript:
 GoldenrodUndergroundSwitchRoomEntrancesTeacherScript:
 	jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_TeacherText
 
+GoldenrodUndergroundSwitchRoomEntrancesFisherScript:
+	jumptextfaceplayer GoldenrodUndergroundSwitchRoomEntrances_FisherText
+
 UndergroundRivalScene1:
 	turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
@@ -770,6 +773,16 @@ GoldenrodUndergroundSwitchRoomEntrances_TeacherText:
 	line "down there."
 	done
 
+GoldenrodUndergroundSwitchRoomEntrances_FisherText:
+	text "I'm getting ready"
+	line "to fight all the"
+	cont "trainers below."
+
+	para "They are tough,"
+	line "but I think my"
+	cont "#MON can win."
+	done
+
 GruntM11SeenText:
 	text "Open one shutter,"
 	line "another closes."
@@ -936,12 +949,15 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	warp_event 23,  3, GOLDENROD_UNDERGROUND, 6
 	warp_event 22, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 1
 	warp_event 23, 10, GOLDENROD_UNDERGROUND_WAREHOUSE, 2
-	warp_event  5, 25, GOLDENROD_UNDERGROUND, 2
-	warp_event  4, 29, GOLDENROD_CITY, 14
-	warp_event  5, 29, GOLDENROD_CITY, 14
-	warp_event 21, 25, GOLDENROD_UNDERGROUND, 1
-	warp_event 20, 29, GOLDENROD_CITY, 13
-	warp_event 21, 29, GOLDENROD_CITY, 13
+	warp_event  5, 23, GOLDENROD_UNDERGROUND, 2
+	warp_event  4, 27, GOLDENROD_CITY, 14
+	warp_event  5, 27, GOLDENROD_CITY, 14
+	warp_event 21, 23, GOLDENROD_UNDERGROUND, 1
+	warp_event 20, 27, GOLDENROD_CITY, 13
+	warp_event 21, 27, GOLDENROD_CITY, 13
+	warp_event  5, 37, GOLDENROD_UNDERGROUND, 7
+	warp_event  4, 41, GOLDENROD_CITY, 17
+	warp_event  5, 41, GOLDENROD_CITY, 17
 
 	def_coord_events
 	coord_event 19,  4, SCENE_GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL_BATTLE, UndergroundRivalScene1
@@ -962,8 +978,12 @@ GoldenrodUndergroundSwitchRoomEntrances_MapEvents:
 	object_event 11,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  3,  2, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM25, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 19, 12, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGruntF3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  3, 27, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1
-	object_event 19, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
+	object_event  3, 25, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesTeacherScript, -1
+	object_event 19, 25, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesSuperNerdScript, -1
 	object_event  1, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesSmokeBall, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_SMOKE_BALL
 	object_event 14,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundSwitchRoomEntrancesFullHeal, EVENT_GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES_FULL_HEAL
 	object_event 25,  4, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_GOLDENROD_UNDERGROUND
+	object_event  3, 38, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundSwitchRoomEntrancesFisherScript, -1
+
+
+

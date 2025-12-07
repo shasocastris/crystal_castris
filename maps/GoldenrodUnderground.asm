@@ -363,6 +363,9 @@ EitherHaircutBrotherScript_MuchHappier:
 	closetext
 	end
 
+PokegearMerchantScript:
+	jumptextfaceplayer GoldenrodUnderground_MerchantText
+
 BasementDoorScript::
 	opentext
 	checkevent EVENT_USED_BASEMENT_KEY
@@ -402,6 +405,9 @@ GoldenrodUndergroundCoinCase:
 
 GoldenrodUndergroundNoEntrySign:
 	jumptext GoldenrodUndergroundNoEntryText
+
+GoldenrodUndergroundEastWestSign:
+	jumptext GoldenrodUndergroundEastWestText
 
 GoldenrodUndergroundHiddenParlyzHeal:
 	hiddenitem PARLYZ_HEAL, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL
@@ -631,6 +637,15 @@ HaircutBrosText_MuchHappier:
 	line "delighted!"
 	done
 
+GoldenrodUnderground_MerchantText:
+	text "Hey, I remember"
+	line "fixing that"
+	cont "#GEAR!"
+
+	para "How's it holding"
+	line "up?"
+	done
+
 GoldenrodUndergroundWeAreNotOpenTodayText:
 	text "We're not open"
 	line "today."
@@ -641,33 +656,42 @@ GoldenrodUndergroundNoEntryText:
 	line "THIS POINT"
 	done
 
+GoldenrodUndergroundEastWestText:
+	text "GOLDENROD EAST-"
+	line "WEST UNDERGROUND"
+	cont "CONNECTION"
+	done
+
 GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
-	warp_event  3, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4
-	warp_event 18,  6, GOLDENROD_UNDERGROUND, 4
-	warp_event 21, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 31, GOLDENROD_UNDERGROUND, 3
-	warp_event 22, 27, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event  1,  2, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 7
+	warp_event  1, 34, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 4
+	warp_event 16,  6, GOLDENROD_UNDERGROUND, 5
+	warp_event 25, 21, GOLDENROD_UNDERGROUND, 3
+	warp_event 26, 21, GOLDENROD_UNDERGROUND, 3
+	warp_event 26, 17, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 1
+	warp_event 19, 32, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 10
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 18,  6, BGEVENT_READ, BasementDoorScript
-	bg_event 19,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign
-	bg_event  6, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal
-	bg_event  4, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion
-	bg_event 17,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote
+	bg_event 16,  6, BGEVENT_READ, BasementDoorScript
+	bg_event 17,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign
+	bg_event  4, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal
+	bg_event  2, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion
+	bg_event 15,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote
+	bg_event 10, 24, BGEVENT_READ, GoldenrodUndergroundEastWestSign
 
 	def_object_events
-	object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdEric, -1
-	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdTeru, -1
-	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
-	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
-	object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
-	object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
-	object_event  7, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
-	object_event  7, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
-	object_event  7, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event  3, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdEric, -1
+	object_event  4,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdTeru, -1
+	object_event  1, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
+	object_event  0,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
+	object_event  5, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
+	object_event  5, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BargainMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
+	object_event  5, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OlderHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_OLDER_HAIRCUT_BROTHER
+	object_event  5, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
+	object_event  5, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
+	object_event 16, 29, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokegearMerchantScript, -1
