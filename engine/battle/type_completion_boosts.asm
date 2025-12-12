@@ -28,12 +28,12 @@ DoTypeCompletionBoosts:
     ld e, a
 
     ; Divide by 8
-    srl d
-    rr e
-    srl d
-    rr e
-    srl d
-    rr e
+;    srl d
+;    rr e
+;    srl d
+;    rr e
+;    srl d
+;    rr e
 
     ; Minimum boost of 1
     ld a, e
@@ -86,86 +86,86 @@ CheckAllOfTypeCaught:
     jr .find_type
 
 .found_type:
-    ; Load the species list pointer
     ld a, [hli]
     ld h, [hl]
     ld l, a
+    ; HL now points to species list
 
 .check_loop:
-    ; Get next species
-    ld a, [hli]
-    ld d, [hl]
-    inc hl
+    ; Get next species word
+    ld a, [hli]     ; Load low byte, advance
+    ld e, a         ; Save in E
+    ld a, [hli]     ; Load high byte, advance
+    ld d, a         ; Save in D
+    ; DE = species, HL = next position in list
 
-    ; Check if BOTH bytes are $FF
+    ; Check terminator
+    ld a, e
     cp $FF
-    jr nz, .check_this_species
+    jr nz, .not_terminator
     ld a, d
     cp $FF
-    jr z, .all_caught
-    ld a, $FF  ; Restore low byte
+    jr z, .all_caught    ; Both $FF = done!
 
-    ; Check if this species is caught
-.check_this_species:
-    push hl
+.not_terminator:
+    ; DE = species, HL = list pointer
+    push hl         ; Save list pointer
+    push de         ; Save species
+
+    ; Move species to HL for CheckCaughtSpecies
     ld h, d
-    ld l, a
-    ld [wTempSpecies], a
-    call CheckCaughtSpecies
-    pop hl
+    ld l, e
 
-    jr nz, .not_all_caught
+    call CheckCaughtSpecies
+
+    pop de          ; Restore species
+    pop hl          ; Restore list pointer
+
+    jr z, .not_all_caught    ; Jump if Z (not caught)
     jr .check_loop
 
 .all_caught:
     pop af
-    scf  ; Set carry = all caught
+    scf
     ret
 
 .not_all_caught:
+    pop af
+    and a
+    ret
+
 .type_not_found:
     pop af
-    and a  ; Clear carry = not all caught
+    and a
     ret
+
 
 CheckCaughtSpecies:
 ; Check if species index in hl has been caught
-; Returns: z flag set if caught, nz if not caught
-; Preserves: de, bc
-	push de
-	push bc
+; Input: hl = 16-bit species index
+; Returns: z flag set if NOT caught, nz if caught
+; Destroys: de
+    push bc
+    push hl
 
-    ; Save the ID returned by GetPokemonIDFromIndex
-    call GetPokemonIDFromIndex
-    ld b, a  ; Save original ID in b
+    ; Convert species index to Pokédex ID, then to flag index
+    call GetPokemonIDFromIndex     ; HL → A (Pokédex ID)
+    call GetPokemonIndexFromID     ; A → HL (index)
+    ld d, h
+    ld e, l                        ; DE = index
 
-    ; Calculate byte offset
-    ld e, a
-    ld d, 0
-    srl e
-    srl e
-    srl e
+    ; Check the caught flag
+    ld hl, wPokedexCaught
+    ld b, CHECK_FLAG
+    dec de                         ; Convert 1-based to 0-based
+    call FlagAction
 
-    ld hl, wPokedexCaught  ; or wPokedexSeen
-    add hl, de
+    ; Set Z flag based on result in C
+    ld a, c
+    and a
 
-    ; Calculate bit position using saved ID
-    ld a, b  ; Get ID back
-	and %111
-	ld b, a
-	ld a, 1
-	jr z, .check_bit
-
-.shift_loop:
-	add a  ; Shift left
-	dec b
-	jr nz, .shift_loop
-
-.check_bit:
-	and [hl]  ; Test the bit
-
-	pop bc
-	pop de
-	ret
+    pop hl
+    pop bc
+    ret
 
 INCLUDE "data/types/type_pokemon_lists.asm"
