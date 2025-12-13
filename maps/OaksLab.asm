@@ -283,16 +283,34 @@ OaksAssistant3Text:
 	done
 
 OaksLabPoster1Text:
-	text "Press START to"
-	line "open the MENU."
+	text "Type Mastery"
+	line "Research:"
+
+	para "Catching all"
+	line "#MON of one"
+
+	para "type strengthens"
+	line "moves of that"
+	cont "type!"
+
+	para "- PROF.OAK"
 	done
 
 OaksLabPoster2Text:
-	text "The SAVE option is"
-	line "on the MENU."
+	text "Type Mastery"
+	line "Notes:"
 
-	para "Use it in a timely"
-	line "manner."
+	para "Legendary #MON"
+	line "are excluded from"
+
+	para "this effect. True"
+	line "mastery comes from"
+
+	para "understanding a"
+	line "type's common"
+	cont "#MON!"
+
+	para "- BLUE"
 	done
 
 OaksLabTrashcanText:

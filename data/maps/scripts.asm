@@ -483,6 +483,10 @@ INCLUDE "maps/CeruleanCave.asm"
 INCLUDE "maps/BlackthornPass.asm"
 INCLUDE "maps/FuchsiaGym.asm"
 INCLUDE "maps/OaksLab.asm"
+
+
+SECTION "Map Scripts 26", ROMX
+
 INCLUDE "maps/ViridianGym.asm"
 
 ENDSECTION

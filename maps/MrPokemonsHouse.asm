@@ -328,12 +328,17 @@ MrPokemonsHouse_OakText2:
 	para "complete that"
 	line "#DEX!"
 
-	para "But I've stayed"
-	line "too long."
+    para "My grandson BLUE"
+    line "claims his #MON"
 
-	para "I have to get to"
-	line "GOLDENROD for my"
-	cont "usual radio show."
+    para "grow stronger when"
+    line "he catches every"
+    cont "#MON of a type."
+
+    para "Interesting idea!"
+
+    para "Perhaps you can"
+    line "confirm it for me?"
 
 	para "<PLAY_G>, I'm"
 	line "counting on you!"

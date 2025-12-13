@@ -307,13 +307,16 @@ EarlsPokemonAcademyGameboyKid2Text:
 	done
 
 EarlsPokemonAcademyYoungster2Text:
-	text "A #MON holding"
-	line "a BERRY will heal"
-	cont "itself in battle."
+	text "I heard a rumor"
+	line "that catching all"
 
-	para "Many other items"
-	line "can be held by"
-	cont "#MON…"
+	para "#MON of a type"
+	line "makes your moves"
+	cont "of that type hit"
+	cont "harder!"
+
+	para "Do you think it's"
+	line "true?"
 
 	para "It sure is tough"
 	line "taking notes…"
