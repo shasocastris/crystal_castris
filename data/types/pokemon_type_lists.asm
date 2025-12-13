@@ -90,8 +90,6 @@ FlyingTypeSpecies:
 	dw DODUO
 	dw DODRIO
 	dw AERODACTYL
-	dw ARTICUNO
-	dw MOLTRES
 	dw HOOTHOOT
 	dw NOCTOWL
 	dw CROBAT
@@ -110,7 +108,6 @@ FlyingTypeSpecies:
 	dw GYARADOS
 	dw BUTTERFREE
 	dw SCYTHER
-	dw ZAPDOS
 	dw -1
 
 PoisonTypeSpecies:
@@ -258,8 +255,6 @@ FireTypeSpecies:
 	dw MAGCARGO
 	dw HOUNDOUR
 	dw HOUNDOOM
-	dw ENTEI
-	dw HO_OH
 	dw MAGBY
 	dw -1
 
@@ -313,7 +308,6 @@ WaterTypeSpecies:
 	dw OCTILLERY
 	dw MANTINE
 	dw KINGDRA
-	dw SUICUNE
 	dw -1
 
 GrassTypeSpecies:
@@ -351,7 +345,6 @@ ElectricTypeSpecies:
 	dw ELECTRODE
 	dw ELECTABUZZ
 	dw JOLTEON
-	dw ZAPDOS
 	dw CHINCHOU
 	dw LANTURN
 	dw PICHU
@@ -359,7 +352,6 @@ ElectricTypeSpecies:
 	dw FLAAFFY
 	dw AMPHAROS
 	dw ELEKID
-	dw RAIKOU
 	dw -1
 
 PsychicTypeSpecies:
@@ -375,8 +367,6 @@ PsychicTypeSpecies:
 	dw STARMIE
 	dw MR__MIME
 	dw JYNX
-	dw MEW
-	dw MEWTWO
 	dw NATU
 	dw XATU
 	dw ESPEON
@@ -384,8 +374,6 @@ PsychicTypeSpecies:
 	dw UNOWN
 	dw GIRAFARIG
 	dw SMOOCHUM
-	dw LUGIA
-	dw CELEBI
 	dw WOBBUFFET
 	dw STANTLER
 	dw VENOMOTH
@@ -396,7 +384,6 @@ IceTypeSpecies:
 	dw CLOYSTER
 	dw JYNX
 	dw LAPRAS
-	dw ARTICUNO
 	dw SNEASEL
 	dw SWINUB
 	dw PILOSWINE
@@ -407,8 +394,8 @@ IceTypeSpecies:
 DragonTypeSpecies:
 	dw DRATINI
 	dw DRAGONAIR
+	dw DRAGONITE
 	dw KINGDRA
-	dw LUGIA
 	dw -1
 
 DarkTypeSpecies:
@@ -440,5 +427,4 @@ FairyTypeSpecies:
 	dw BELLOSSOM
 	dw LEDYBA
 	dw LEDIAN
-	dw HO_OH
 	dw -1
