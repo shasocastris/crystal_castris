@@ -286,71 +286,93 @@ endr
 	pop hl
 	ret
 
-DisplayDexMonType_CustomGFX:
-	call GetBaseData
-	ld a, [wBaseType1]
+DisplayDexMonType:
+    ; Set wCurSpecies to the current Pokédex entry
+    ld a, [wTempSpecies]
+    ld [wCurSpecies], a
 
-	ld c, a ; farcall will clobber a for the bank
-	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
-	ld a, c
-; load the tiles
-	ld hl, TypeLightIconGFX ; gfx\pokedex\types_light.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX are 4 Tiles wide
-	call AddNTimes ; increments the TypeLightIconGFX pointer to the right address of the needed Type Tiles
-	ld d, h
-	ld e, l
+    call GetBaseData
 
-	ld a, $1
-	ldh [rVBK], a
-	ld hl, vTiles2 tile $77
-	lb bc, BANK(TypeLightIconGFX), 4
-	call Request2bpp
-; place type 1 gfx
-	hlcoord 9, 4
-	ld [hl], $77
-	inc hl
-	ld [hl], $78
-	inc hl
-	ld [hl], $79
-	inc hl
-	ld [hl], $7a
+    ; Print first type
+    hlcoord 9, 4  ; Position for type display
+    ld a, [wBaseType1]
+    call .PrintType
 
-	ld a, $0
-	ldh [rVBK], a
+    ; Check if dual-typed
+    ld a, [wBaseType1]
+    ld b, a
+    ld a, [wBaseType2]
+    cp b
+    jr z, .done  ; Same type, done
 
-; 2nd Type
-	ld a, [wBaseType1]
-	ld b, a
-	ld a, [wBaseType2]
-	cp b
-	ret z ; mon doesn't have two types
+    ; Print slash
+    hlcoord 13, 4  ; Position after first type (9 + 4 chars)
+    ld [hl], '/'
 
-	ld c, a ; farcall will clobber a for the bank
-	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
-	ld a, c
-; load type 2 tiles
-	ld hl, TypeDarkIconGFX ; gfx\pokedex\types_dark.png
-	ld bc, 4 * LEN_2BPP_TILE ; Type GFX are 4 Tiles wide
-	call AddNTimes ; increments the TypeDarkIconGFX pointer to the right address of the needed Type Tiles
-	ld d, h
-	ld e, l
+    ; Print second type
+    hlcoord 14, 4  ; Position after slash
+    ld a, [wBaseType2]
+    call .PrintType
 
-	ld a, $1
-	ldh [rVBK], a
+.done:
+    ret
 
-	ld hl, vTiles2 tile $7b
-	lb bc, BANK(TypeDarkIconGFX), 4
-	call Request2bpp
-	hlcoord 13, 4
-	ld [hl], $7b
-	inc hl
-	ld [hl], $7c
-	inc hl
-	ld [hl], $7d
-	inc hl
-	ld [hl], $7e
-	ld a, $0
-	ldh [rVBK], a
-	ret
+.PrintType:
+    ; Input: a = type constant, hl = screen position
+    ; Need to convert type constant to index in our abbreviated list
+    push hl
+
+    ; Convert type constant to sequential index (0-17)
+    cp FIRE  ; FIRE = 20
+    jr c, .sequential
+    ; Types 20-28 (FIRE onward) -> indices 9-17
+    sub FIRE - 9
+    jr .got_index
+
+.sequential:
+    ; Types 0-8 (NORMAL through STEEL) are already sequential
+    ; (no adjustment needed)
+
+.got_index:
+    ; a now contains index 0-17
+    ; Each type string is 5 bytes (4 chars + @)
+    ld c, a
+    ld b, 0
+    ld hl, .Types
+    ld de, 5  ; Length of each type string
+.loop:
+    ld a, c
+    and a
+    jr z, .found
+    add hl, de
+    dec c
+    jr .loop
+
+.found:
+    ; hl now points to the correct type string
+    ld d, h
+    ld e, l
+    pop hl
+    jmp PlaceString
+
+.Types:
+    db "NORM@"
+    db "FIGT@"
+    db "FLY @"
+    db "PSN @"
+    db "GRND@"
+    db "ROCK@"
+    db "BUG @"
+    db "GHST@"
+    db "STEL@"
+    db "FIRE@"
+    db "WATR@"
+    db "GRAS@"
+    db "ELEC@"
+    db "PSY @"
+    db "ICE @"
+    db "DRGN@"
+    db "DARK@"
+    db "FAIR@"
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"

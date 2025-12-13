@@ -1300,7 +1300,7 @@ Pokedex_DrawDexEntryScreenBG:
 	hlcoord 19, 16
 	ld [hl], $40
 ; place Pokemon types
- 	farcall DisplayDexMonType_CustomGFX
+ 	farcall DisplayDexMonType
 ; place bottom row menu
 	hlcoord 0, 17
 	ld de, .MenuItems
