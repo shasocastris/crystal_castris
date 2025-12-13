@@ -286,4 +286,71 @@ endr
 	pop hl
 	ret
 
+DisplayDexMonType_CustomGFX:
+	call GetBaseData
+	ld a, [wBaseType1]
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
+; load the tiles
+	ld hl, TypeLightIconGFX ; gfx\pokedex\types_light.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX are 4 Tiles wide
+	call AddNTimes ; increments the TypeLightIconGFX pointer to the right address of the needed Type Tiles
+	ld d, h
+	ld e, l
+
+	ld a, $1
+	ldh [rVBK], a
+	ld hl, vTiles2 tile $77
+	lb bc, BANK(TypeLightIconGFX), 4
+	call Request2bpp
+; place type 1 gfx
+	hlcoord 9, 4
+	ld [hl], $77
+	inc hl
+	ld [hl], $78
+	inc hl
+	ld [hl], $79
+	inc hl
+	ld [hl], $7a
+
+	ld a, $0
+	ldh [rVBK], a
+
+; 2nd Type
+	ld a, [wBaseType1]
+	ld b, a
+	ld a, [wBaseType2]
+	cp b
+	ret z ; mon doesn't have two types
+
+	ld c, a ; farcall will clobber a for the bank
+	predef GetMonTypeIndex ; returns adjusted Type Index in 'c'
+	ld a, c
+; load type 2 tiles
+	ld hl, TypeDarkIconGFX ; gfx\pokedex\types_dark.png
+	ld bc, 4 * LEN_2BPP_TILE ; Type GFX are 4 Tiles wide
+	call AddNTimes ; increments the TypeDarkIconGFX pointer to the right address of the needed Type Tiles
+	ld d, h
+	ld e, l
+
+	ld a, $1
+	ldh [rVBK], a
+
+	ld hl, vTiles2 tile $7b
+	lb bc, BANK(TypeDarkIconGFX), 4
+	call Request2bpp
+	hlcoord 13, 4
+	ld [hl], $7b
+	inc hl
+	ld [hl], $7c
+	inc hl
+	ld [hl], $7d
+	inc hl
+	ld [hl], $7e
+	ld a, $0
+	ldh [rVBK], a
+	ret
+
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
