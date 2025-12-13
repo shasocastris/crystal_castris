@@ -637,6 +637,11 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 
 
+SECTION "Custom GFX", ROMX
+
+INCLUDE "gfx/rangi_gfx.asm"
+
+
 SECTION "Newbox", ROMX
 
 INCLUDE "engine/pc/bills_pc.asm"

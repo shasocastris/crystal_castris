@@ -286,4 +286,93 @@ endr
 	pop hl
 	ret
 
+DisplayDexMonType:
+    ; Set wCurSpecies to the current Pokédex entry
+    ld a, [wTempSpecies]
+    ld [wCurSpecies], a
+
+    call GetBaseData
+
+    ; Print first type
+    hlcoord 9, 4  ; Position for type display
+    ld a, [wBaseType1]
+    call .PrintType
+
+    ; Check if dual-typed
+    ld a, [wBaseType1]
+    ld b, a
+    ld a, [wBaseType2]
+    cp b
+    jr z, .done  ; Same type, done
+
+    ; Print slash
+    hlcoord 13, 4  ; Position after first type (9 + 4 chars)
+    ld [hl], '/'
+
+    ; Print second type
+    hlcoord 14, 4  ; Position after slash
+    ld a, [wBaseType2]
+    call .PrintType
+
+.done:
+    ret
+
+.PrintType:
+    ; Input: a = type constant, hl = screen position
+    ; Need to convert type constant to index in our abbreviated list
+    push hl
+
+    ; Convert type constant to sequential index (0-17)
+    cp FIRE  ; FIRE = 20
+    jr c, .sequential
+    ; Types 20-28 (FIRE onward) -> indices 9-17
+    sub FIRE - 9
+    jr .got_index
+
+.sequential:
+    ; Types 0-8 (NORMAL through STEEL) are already sequential
+    ; (no adjustment needed)
+
+.got_index:
+    ; a now contains index 0-17
+    ; Each type string is 5 bytes (4 chars + @)
+    ld c, a
+    ld b, 0
+    ld hl, .Types
+    ld de, 5  ; Length of each type string
+.loop:
+    ld a, c
+    and a
+    jr z, .found
+    add hl, de
+    dec c
+    jr .loop
+
+.found:
+    ; hl now points to the correct type string
+    ld d, h
+    ld e, l
+    pop hl
+    jmp PlaceString
+
+.Types:
+    db "NORM@"
+    db "FIGT@"
+    db "FLY @"
+    db "PSN @"
+    db "GRND@"
+    db "ROCK@"
+    db "BUG @"
+    db "GHST@"
+    db "STEL@"
+    db "FIRE@"
+    db "WATR@"
+    db "GRAS@"
+    db "ELEC@"
+    db "PSY @"
+    db "ICE @"
+    db "DRGN@"
+    db "DARK@"
+    db "FAIR@"
+
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
