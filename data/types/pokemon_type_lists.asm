@@ -2,7 +2,7 @@
 ; Pokémon with dual types appear in BOTH type lists
 ; Format: Each type points to a list of species indices, terminated with -1
 
-TypePokemonLists:
+PokemonTypeLists:
 	dbw NORMAL,       NormalTypeSpecies
 	dbw FIGHTING,     FightingTypeSpecies
 	dbw FLYING,       FlyingTypeSpecies

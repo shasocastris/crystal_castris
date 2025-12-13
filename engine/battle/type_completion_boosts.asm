@@ -1,171 +1,172 @@
 DoTypeCompletionBoosts:
 ; Apply damage boost if player has caught all Pokémon of the move's type
-; 12.5% boost (same as badge boost)
+; Replaces the traditional badge boost system with a type completion reward
+; Grants 12.5% damage boost (9/8 multiplier) when all Pokémon of a type are caught
 
-    ld a, [wLinkMode]
-    and a
-    ret nz
+	; Don't apply boost in link battles, Battle Tower, or on enemy's turn
+	ld a, [wLinkMode]
+	and a
+	ret nz
 
-    ld a, [wInBattleTowerBattle]
-    and a
-    ret nz
+	ld a, [wInBattleTowerBattle]
+	and a
+	ret nz
 
-    ldh a, [hBattleTurn]
-    and a
-    ret nz
+	ldh a, [hBattleTurn]
+	and a
+	ret nz
 
-    ; Check if all Pokémon of wCurType are caught
-    ld a, [wCurType]
-    call CheckAllOfTypeCaught
-    jr nc, .no_boost
+	; Check if player has caught all Pokémon of the move's type
+	ld a, [wCurType]
+	call CheckAllTypeSpeciesCaught
+	jr nc, .no_boost
 
-    ; Apply 12.5% boost
-    ld a, [wCurDamage]
-    ld h, a
-    ld d, a
-    ld a, [wCurDamage + 1]
-    ld l, a
-    ld e, a
+	; Load current damage into both HL (original) and DE (for boost calculation)
+	ld a, [wCurDamage]
+	ld h, a
+	ld d, a
+	ld a, [wCurDamage + 1]
+	ld l, a
+	ld e, a
 
-    ; Divide by 8
-;    srl d
-;    rr e
-;    srl d
-;    rr e
-;    srl d
-;    rr e
+	; Calculate 12.5% boost by dividing by 8, with minimum boost of 1
+	srl d
+	rr e
+	srl d
+	rr e
+	srl d
+	rr e
 
-    ; Minimum boost of 1
-    ld a, e
-    or d
-    jr nz, .add_boost
-    ld e, 1
+	; Minimum boost of 1
+	ld a, e
+	or d
+	jr nz, .add_boost
+	ld e, 1
 
 .add_boost:
-    add hl, de
-    jr nc, .update
+	; Add boost to damage and cap at $FFFF maximum
+	add hl, de
+	jr nc, .update
 
-    ; Cap at $ffff
-    ld hl, $ffff
+	; Cap at $ffff
+	ld hl, $ffff
 
 .update:
-    ld a, h
-    ld [wCurDamage], a
-    ld a, l
-    ld [wCurDamage + 1], a
+	; Write boosted damage back to battle variables
+	ld a, h
+	ld [wCurDamage], a
+	ld a, l
+	ld [wCurDamage + 1], a
 
 .no_boost:
-    ret
+	ret
 
 
-CheckAllOfTypeCaught:
+CheckAllTypeSpeciesCaught:
 ; Check if all Pokémon of a given type have been caught
-; Input: a = type constant (GHOST, FLYING, etc.)
-; Output: carry flag set if all caught, clear if not
+; Input: a = type constant (NORMAL, FIRE, WATER, etc.)
+; Output: carry flag set if all caught, clear if any missing
 ; Destroys: af, bc, de, hl
 
-    push af
+	push af
 
-    ; Find the species list for this type
-    ld hl, TypePokemonLists
+	; Search PokemonTypeLists table for matching type entry
+	; Table structure: db TYPE, dw SpeciesListPointer, ..., db $FF
+	ld hl, PokemonTypeLists
 
 .find_type:
-    ld a, [hli]
-    cp -1
-    jr z, .type_not_found
+	ld a, [hli]
+	cp -1
+	jr z, .type_not_found
 
-    ld b, a
-    pop af
-    push af
-    cp b
-    jr z, .found_type
+	ld b, a
+	pop af
+	push af
+	cp b
+	jr z, .found_type
 
-    ; Skip the pointer
-    inc hl
-    inc hl
-    jr .find_type
+	inc hl
+	inc hl
+	jr .find_type
 
 .found_type:
-    ld a, [hli]
-    ld h, [hl]
-    ld l, a
-    ; HL now points to species list
+	; Load pointer to this type's species list
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 
 .check_loop:
-    ; Get next species word
-    ld a, [hli]     ; Load low byte, advance
-    ld e, a         ; Save in E
-    ld a, [hli]     ; Load high byte, advance
-    ld d, a         ; Save in D
-    ; DE = species, HL = next position in list
+	; Read next species (16-bit word) from list
+	; Species list format: dw SPECIES1, dw SPECIES2, ..., dw -1
+	ld a, [hli]
+	ld e, a
+	ld a, [hli]
+	ld d, a
 
-    ; Check terminator
-    ld a, e
-    cp $FF
-    jr nz, .not_terminator
-    ld a, d
-    cp $FF
-    jr z, .all_caught    ; Both $FF = done!
+	; Check for terminator ($FF $FF)
+	ld a, e
+	cp $FF
+	jr nz, .not_terminator
+	ld a, d
+	cp $FF
+	jr z, .all_caught
 
 .not_terminator:
-    ; DE = species, HL = list pointer
-    push hl         ; Save list pointer
-    push de         ; Save species
+	; Check if this species is caught, preserving loop state
+	push hl
+	push de
 
-    ; Move species to HL for CheckCaughtSpecies
-    ld h, d
-    ld l, e
+	ld h, d
+	ld l, e
 
-    call CheckCaughtSpecies
+	call CheckPokedexCaughtFlag
 
-    pop de          ; Restore species
-    pop hl          ; Restore list pointer
+	pop de
+	pop hl
 
-    jr z, .not_all_caught    ; Jump if Z (not caught)
-    jr .check_loop
+	jr z, .not_all_caught
+	jr .check_loop
 
 .all_caught:
-    pop af
-    scf
-    ret
+	pop af
+	scf
+	ret
 
 .not_all_caught:
-    pop af
-    and a
-    ret
-
 .type_not_found:
-    pop af
-    and a
-    ret
+	pop af
+	and a
+	ret
 
 
-CheckCaughtSpecies:
-; Check if species index in hl has been caught
-; Input: hl = 16-bit species index
-; Returns: z flag set if NOT caught, nz if caught
+CheckPokedexCaughtFlag:
+; Check if a species has been caught by checking wPokedexCaught bit array
+; Input: hl = 16-bit species index (BULBASAUR, PIDGEY, etc.)
+; Returns: z flag set if NOT caught, nz flag set if caught
 ; Destroys: de
-    push bc
-    push hl
+	push bc
+	push hl
 
-    ; Convert species index to Pokédex ID, then to flag index
-    call GetPokemonIDFromIndex     ; HL → A (Pokédex ID)
-    call GetPokemonIndexFromID     ; A → HL (index)
-    ld d, h
-    ld e, l                        ; DE = index
+	; Convert species index to Pokédex flag index via two-step conversion
+	; Step 1: Species → Pokédex ID, Step 2: ID → Flag index
+	call GetPokemonIDFromIndex
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
 
-    ; Check the caught flag
-    ld hl, wPokedexCaught
-    ld b, CHECK_FLAG
-    dec de                         ; Convert 1-based to 0-based
-    call FlagAction
+	; Check caught bit using game's flag system
+	; Pokédex IDs are 1-based but bit array is 0-indexed
+	ld hl, wPokedexCaught
+	ld b, CHECK_FLAG
+	dec de
+	call FlagAction
 
-    ; Set Z flag based on result in C
-    ld a, c
-    and a
+	; FlagAction returns result in C; convert to Z flag
+	ld a, c
+	and a
 
-    pop hl
-    pop bc
-    ret
+	pop hl
+	pop bc
+	ret
 
-INCLUDE "data/types/type_pokemon_lists.asm"
+INCLUDE "data/types/pokemon_type_lists.asm"
