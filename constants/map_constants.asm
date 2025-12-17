@@ -75,7 +75,7 @@ ENDM
 	map_const TIN_TOWER_7F,                                10,  9 ; 10
 	map_const TIN_TOWER_8F,                                10,  9 ; 11
 	map_const TIN_TOWER_9F,                                10,  9 ; 12
-	map_const BURNED_TOWER_1F,                             10,  9 ; 13
+	map_const BURNED_TOWER_1F,                              8,  8 ; 13
 	map_const BURNED_TOWER_B1F,                            10,  9 ; 14
 	map_const NATIONAL_PARK,                               20, 27 ; 15
 	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ; 16
