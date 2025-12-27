@@ -259,41 +259,31 @@ MrPokemonsHouse_OakText1:
 	line "ing my old friend"
 	cont "MR.#MON."
 
-	para "I heard you were"
-	line "running an errand"
+	para "Sadly I can't stay"
+	line "much longer."
 
-	para "for PROF.ELM, so I"
-	line "waited here."
+	para "There is an issue"
+	line "west of ECRUTEAK"
+	cont "CITY that I have"
+	cont "been asked to help"
+	cont "investigate."
 
-	para "Oh! What's this?"
-	line "A rare #MON!"
-
-	para "Let's see…"
-
-	para "Hm, I see!"
-
-	para "I understand why"
-	line "PROF.ELM gave you"
-
-	para "a #MON for this"
-	line "errand."
-
-	para "To researchers"
-	line "like PROF.ELM and"
-
-	para "I, #MON are our"
-	line "friends."
-
-	para "He saw that you"
-	line "would treat your"
-
-	para "#MON with love"
-	line "and care."
-
-	para "…Ah!"
+	para "That said, I see"
+	line "why PROF.ELM gave"
+	cont "you a rare #MON"
+	cont "for this errand."
 
 	para "You seem to be"
 	line "dependable."
+
+	para "……Hmmm…"
+
+	para "I was planning on"
+	line "studying JOHTO's"
+	cont "#MON,"
+
+	para "but now I won't be"
+	line "available."
 
 	para "How would you like"
 	line "to help me out?"
