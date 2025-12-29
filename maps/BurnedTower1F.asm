@@ -27,11 +27,11 @@ BurnedTower1FNoop2Scene:
 BurnedTower1FHoleAndLadderCallback:
 	checkevent EVENT_HOLE_IN_BURNED_TOWER
 	iftrue .KeepHoleOpen
-	changeblock 10, 8, $32 ; floor
+	changeblock 8, 8, $32 ; floor
 .KeepHoleOpen:
 	checkevent EVENT_RELEASED_THE_BEASTS
 	iftrue .HideBasement
-	changeblock 6, 14, $09 ; ladder
+	changeblock 4, 14, $09 ; ladder
 .HideBasement:
 	endcallback
 
