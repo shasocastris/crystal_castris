@@ -111,15 +111,19 @@ BillTakeThisEeveeText:
 	line "Do us a favor and"
 	cont "take this EEVEE."
 
-	para "It came over when"
-	line "I was adjusting"
-	cont "the TIME CAPSULE."
+	para "One of the KIMONO"
+	line "GIRLS caught it"
+	cont "after training in"
+	cont "ICE PATH."
 
-	para "Someone has to"
-	line "take care of it,"
+	para "They aren't able"
+	line "to take care of it"
+	cont "given the danger"
+	cont "ECRUTEAK may soon"
+	cont "face."
 
-	para "but I don't like"
-	line "being outside."
+	para "They need someone"
+	line "to step up."
 
 	para "Can I count on you"
 	line "to play with it,"
@@ -186,11 +190,9 @@ BillsMomText_BeforeEcruteak:
 	para "CENTER in ECRUTEAK"
 	line "CITY."
 
-	para "My husband went"
-	line "off to the GAME"
-
-	para "CORNER without"
-	line "being called…"
+	para "There's some sort"
+	line "of emergency on"
+	cont "ROUTE 38."
 	done
 
 BillsMomText_AfterEcruteak:

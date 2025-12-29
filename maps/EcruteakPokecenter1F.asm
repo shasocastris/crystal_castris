@@ -96,62 +96,49 @@ EcruteakPokecenter1F_BillText1:
 	line "who are you?"
 
 	para "Hmm, <PLAYER>, huh?"
-	line "You've come at the"
-	cont "right time."
+	line "You've come at a"
+	cont "bad time."
 	done
 
 EcruteakPokecenter1F_BillText2:
-	text "I just finished"
-	line "adjustments on my"
-	cont "TIME CAPSULE."
+	text "The #MON LEAGUE"
+	line "called me here as"
+	cont "a consultant."
 
-	para "You know that"
-	line "#MON can be"
-	cont "traded, right?"
+	para "TEAM ROCKET was"
+	line "smuggling SLOWPOKE"
+	cont "through OLIVINE."
 
-	para "My TIME CAPSULE"
-	line "was developed to"
+	para "A #MON RANGER"
+	line "intercepted them"
+	cont "on ROUTE 38."
 
-	para "enable trades with"
-	line "the past."
+	para "When cornered, the"
+	line "ROCKETS killed a"
+	cont "SLOWPOKE."
 
-	para "But you can't send"
-	line "anything that"
+	para "Deliberately."
 
-	para "didn't exist in"
-	line "the past."
+	para "That triggered a"
+	line "rampage among the"
+	cont "local TAUROS herd."
 
-	para "If you did, the PC"
-	line "in the past would"
-	cont "have a breakdown."
+	para "If enough get mad,"
+	line "they may induce a"
+	cont "WILD HUNT."
 
-	para "So you have to"
-	line "remove anything"
+	para "ECRUTEAK might be"
+	line "totally overrun."
 
-	para "that wasn't around"
-	line "in the past."
+	para "I've given what"
+	line "advice I can."
 
-	para "Put simply, no"
-	line "sending new moves"
+	para "Now I need to get"
+	line "to GOLDENROD and"
+	cont "bring back help."
 
-	para "or new #MON in"
-	line "the TIME CAPSULE."
-
-	para "Don't you worry."
-	line "I'm done with the"
-	cont "adjustments."
-
-	para "Tomorrow, TIME"
-	line "CAPSULES will be"
-
-	para "running at all"
-	line "#MON CENTERS."
-
-	para "I have to hurry on"
-	line "back to GOLDENROD"
-	cont "and see my folks."
-
-	para "Buh-bye!"
+	para "Stay alert out"
+	line "there!"
 	done
 
 EcruteakPokecenter1FPokefanMText:
@@ -161,6 +148,10 @@ EcruteakPokecenter1FPokefanMText:
 	para "marvelous. Just"
 	line "like the way they"
 	cont "use their #MON."
+
+	para "I'm confident that"
+	line "skill will keep us"
+	cont "safe."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
@@ -168,8 +159,11 @@ EcruteakPokecenter1FCooltrainerFText:
 	line "LEADER, is soooo"
 	cont "cool."
 
-	para "His #MON are"
-	line "really tough too."
+	para "Though right now I"
+	line "bet he's worried"
+	cont "about all the poor"
+	cont "#MON west of"
+	cont "the city."
 	done
 
 EcruteakPokecenter1FGymGuideText:
@@ -178,8 +172,8 @@ EcruteakPokecenter1FGymGuideText:
 	para "The appearance of"
 	line "a GYARADOS swarm…"
 
-	para "I smell a conspir-"
-	line "acy. I know it!"
+	para "Is it connected"
+	line "to the TAUROS?"
 	done
 
 EcruteakPokecenter1F_MapEvents:
