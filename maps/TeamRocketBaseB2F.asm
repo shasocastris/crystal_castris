@@ -284,8 +284,8 @@ RocketBaseElectrodeScript:
 	opentext
 	writetext RocketBaseLanceElectrodeDoneText
 	promptbutton
-	verbosegiveitem HM_WHIRLPOOL
-	setevent EVENT_GOT_HM06_WHIRLPOOL
+	verbosegiveitem HM_SURF
+	setevent EVENT_GOT_HM03_SURF
 	writetext RocketBaseLanceWhirlpoolText
 	waitbutton
 	closetext
@@ -731,11 +731,11 @@ RocketBaseLanceElectrodeDoneText:
 	done
 
 RocketBaseLanceWhirlpoolText:
-	text "That's WHIRLPOOL."
+	text "That's SURF."
 	line "Teach it to a"
 
 	para "#MON to get"
-	line "across wild water."
+	line "across open water."
 
 	para "But keep this in"
 	line "mind."

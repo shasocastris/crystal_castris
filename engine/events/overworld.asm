@@ -344,9 +344,9 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_GLACIERBADGE
 	call CheckBadge
-	jr c, .nofogbadge
+	jr c, .noglacierbadge
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -365,7 +365,7 @@ SurfFunction:
 	jr c, .cannotsurf
 	ld a, $1
 	ret
-.nofogbadge
+.noglacierbadge
 	ld a, JUMPTABLE_EXIT
 	ret
 .alreadyfail
@@ -498,7 +498,7 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .quit
 
@@ -1402,10 +1402,17 @@ AskRockSmashText:
 HasRockSmash:
 	ld hl, ROCK_SMASH
 	call CheckPartyMoveIndex
+	ld de, ENGINE_FOGBADGE
+	call CheckEngineFlag
+	jr nc, .failed
 	; a = carry ? TRUE : FALSE
 	sbc a
 	and TRUE
 	ld [wScriptVar], a
+	ret
+
+.failed
+	ld a, 1
 	ret
 
 FishFunction:

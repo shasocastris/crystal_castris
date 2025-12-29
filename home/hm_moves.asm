@@ -28,4 +28,5 @@ IsHMMove::
 	dw FLASH
 	dw WATERFALL
 	dw WHIRLPOOL
+	dw ROCK_SMASH
 	dw -1 ; end
