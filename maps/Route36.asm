@@ -388,6 +388,42 @@ SudowoodoAttackedText:
 	line "attacked!"
 	done
 
+Route36PokemonRangerText_BeforePlainBadge:
+	text "HALT!"
+
+	para "I'm a #MON"
+	line "RANGER stationed"
+	cont "here by emergency"
+	cont "order."
+
+	para "The routes east of"
+	line "ECRUTEAK CITY are"
+	cont "extremely dangerous"
+	cont "right now."
+
+	para "We're restricting"
+	line "access to everyone"
+	cont "but proven #MON"
+	cont "trainers."
+	done
+
+PokemonRangerText_AfterPlainBadge_Departing:
+	text "You have the"
+	line "PLAINBADGE?"
+
+	para "You might strong"
+	line "enough to help!"
+
+	para "I must report this"
+	line "to ECRUTEAK at"
+	cont "once."
+
+	para "Head there as soon"
+	line "as you can. They"
+	cont "need all the help"
+	cont "they can get!"
+	done
+
 FloriaText1:
 	text "I'm the FLOWER"
 	line "SHOP's FLORIA!"
@@ -432,43 +468,63 @@ RockSmashGuyText1:
 	text "Wa-hey!"
 
 	para "I was going to"
-	line "snap that tree"
+	line "battle that"
 
-	para "with my straight-"
-	line "arm punch."
+	para "#MON RANGER"
+	line "blocking the road."
 
-	para "But I couldn't!"
-	line "I'm a failure!"
+	para "But he refused!"
+
+	para "Can he do that?"
 	done
 
 RockSmashGuyText2:
-	text "Did you clear that"
-	line "wretched tree?"
+	text "Did you get past"
+	line "that stubborn"
+	cont "RANGER?"
 
 	para "I'm impressed!"
-	line "I want you to"
-	cont "have this."
+
+	para "Take some of these"
+	line "COINS and"
+	cont "celebrate on me!"
 	done
 
 RockSmashGuyText3:
-	text "That happens to be"
-	line "ROCK SMASH."
+	text "I won those COINS"
+	line "at the GAME CORNER"
+	cont "a while back."
 
-	para "You can shatter"
-	line "rocks with just a"
+	para "But my wife got me"
+	line "off gambling."
 
-	para "single well-aimed"
-	line "smack."
-
-	para "If any rocks are"
-	line "in your way, just"
-	cont "smash 'em up!"
+	para "Enjoy them! But"
+	line "don't get hooked!"
 	done
 
+;RockSmashGuyNoCoinCase:
+;	text "Huh? I wanna give"
+;	line "you some COINS for"
+;
+;	para "the GAME CORNER,"
+;	line "but you need a"
+;	cont "COIN CASE."
+;	done
+
+;RockSmashGuyFullCoinCase:
+;	text "Huh? Your have all"
+;	line "the COINS you can"
+;	cont "carry already?"
+;
+;	para "Whoa, you're rich!"
+;	line "Or lucky!"
+;	end
+
 Route36LassText:
-	text "An odd tree is"
-	line "blocking the way"
-	cont "to GOLDENROD CITY."
+	text "There is a #MON"
+	line "RANGER is guarding"
+	cont "the path to"
+	cont "GOLDENROD CITY."
 
 	para "It's preventing"
 	line "me from shopping."
@@ -478,18 +534,17 @@ Route36LassText:
 	done
 
 Route36LassText_ClearedSudowoodo:
-	text "That odd tree dis-"
-	line "appeared without a"
-	cont "trace."
+	text "That man ran off"
+	line "so quickly."
 
-	para "Oh! That tree was"
-	line "really a #MON?"
+	para "Oh! He had to go"
+	line "to ECRUTEAK?"
 	done
 
 LassNoniSeenText:
 	text "You're going to"
-	line "look at the weird"
-	cont "tree?"
+	line "talk to the RANGER"
+	cont "at the crossroad?"
 	done
 
 LassNoniBeatenText:
@@ -498,9 +553,8 @@ LassNoniBeatenText:
 	done
 
 LassNoniAfterBattleText:
-	text "I'm not sure if I"
-	line "want to evolve my"
-	cont "#MON or not."
+	text "What did he have"
+	line "to say?"
 	done
 
 PsychicMarkSeenText:
@@ -652,7 +706,7 @@ Route36_MapEvents:
 	def_object_events
 	object_event  8, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 19, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 23,  9, SPRITE_WEIRD_TREE, SPRITEMOVEDATA_SUDOWOODO, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
+	object_event 23,  9, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
 	object_event 39,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 32,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event  9,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
