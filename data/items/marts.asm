@@ -149,7 +149,7 @@ MartGoldenrod5F3:
 	dw TM_THUNDERPUNCH
 	dw TM_FIRE_PUNCH
 	dw TM_ICE_PUNCH
-	dw TM_ROCK_SMASH
+	dw TM_PURSUIT
 
 MartGoldenrod5F4:
 	db 5 ; # items
@@ -157,7 +157,7 @@ MartGoldenrod5F4:
 	dw TM_FIRE_PUNCH
 	dw TM_ICE_PUNCH
 	dw TM_HEADBUTT
-	dw TM_ROCK_SMASH
+	dw TM_PURSUIT
 
 MartOlivine:
 	db 9 ; # items

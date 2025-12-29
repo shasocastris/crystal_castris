@@ -274,7 +274,7 @@ DEF TM01 EQU const_value
 	add_tm ROAR         ; 0404
 	add_tm TOXIC        ; 0405
 	add_tm ZAP_CANNON   ; 0406
-	add_tm ROCK_SMASH   ; 0407
+	add_tm PURSUIT      ; 0407
 	add_tm PSYCH_UP     ; 0408
 	add_tm HIDDEN_POWER ; 0409
 	add_tm SUNNY_DAY    ; 040A
@@ -331,13 +331,14 @@ MACRO add_hm
 ENDM
 
 DEF HM01 EQU const_value
-	add_hm CUT       ; 0432
-	add_hm FLY       ; 0433
-	add_hm SURF      ; 0434
-	add_hm STRENGTH  ; 0435
-	add_hm FLASH     ; 0436
-	add_hm WHIRLPOOL ; 0437
-	add_hm WATERFALL ; 0438
+	add_hm CUT        ; 0432
+	add_hm FLY        ; 0433
+	add_hm SURF       ; 0434
+	add_hm STRENGTH   ; 0435
+	add_hm FLASH      ; 0436
+	add_hm WHIRLPOOL  ; 0437
+	add_hm WATERFALL  ; 0438
+	add_hm ROCK_SMASH ; 0439
 DEF NUM_HMS EQU __tmhm_value__ - NUM_TMS - 1
 
 assert (NUM_TMS + NUM_HMS) < $ff, "TMs/HMs can't exceed 255 due to GetTMHMNumber."

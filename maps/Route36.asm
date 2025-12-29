@@ -116,7 +116,7 @@ Route36FloriaScript:
 Route36RockSmashGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
+	checkevent EVENT_GOT_TM08_PURSUIT
 	iftrue .AlreadyGotRockSmash
 	checkevent EVENT_FOUGHT_SUDOWOODO
 	iftrue .ClearedSudowoodo
@@ -128,9 +128,9 @@ Route36RockSmashGuyScript:
 .ClearedSudowoodo:
 	writetext RockSmashGuyText2
 	promptbutton
-	verbosegiveitem TM_ROCK_SMASH
+	verbosegiveitem TM_PURSUIT
 	iffalse .NoRoomForTM
-	setevent EVENT_GOT_TM08_ROCK_SMASH
+	setevent EVENT_GOT_TM08_PURSUIT
 .AlreadyGotRockSmash:
 	writetext RockSmashGuyText3
 	waitbutton
@@ -484,41 +484,25 @@ RockSmashGuyText2:
 	cont "RANGER?"
 
 	para "I'm impressed!"
-
-	para "Take some of these"
-	line "COINS and"
-	cont "celebrate on me!"
+	line "I want you to"
+	cont "have this."
 	done
 
 RockSmashGuyText3:
-	text "I won those COINS"
-	line "at the GAME CORNER"
-	cont "a while back."
+	text "That happens to be"
+	line "PURSUIT."
 
-	para "But my wife got me"
-	line "off gambling."
+	para "You can chase down"
+	line "enemies trying to"
 
-	para "Enjoy them! But"
-	line "don't get hooked!"
+	para "switch out or wild"
+	line "#MON trying to"
+	cont "flee."
+
+	para "If they do, the"
+	line "attack will be"
+	cont "twice as strong!"
 	done
-
-;RockSmashGuyNoCoinCase:
-;	text "Huh? I wanna give"
-;	line "you some COINS for"
-;
-;	para "the GAME CORNER,"
-;	line "but you need a"
-;	cont "COIN CASE."
-;	done
-
-;RockSmashGuyFullCoinCase:
-;	text "Huh? Your have all"
-;	line "the COINS you can"
-;	cont "carry already?"
-;
-;	para "Whoa, you're rich!"
-;	line "Or lucky!"
-;	end
 
 Route36LassText:
 	text "There is a #MON"
