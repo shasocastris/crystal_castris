@@ -193,6 +193,13 @@ KimonoGirlZukiAfterBattleText:
 	text "I put a different"
 	line "flower in my bar-"
 	cont "rette every month."
+
+	para "This month's is"
+	line "wolfsbane. It's"
+
+	para "said to ward off"
+	line "evil spirits and"
+	cont "rampaging beasts."
 	done
 
 KimonoGirlKuniSeenText:
@@ -207,11 +214,11 @@ KimonoGirlKuniBeatenText:
 	done
 
 KimonoGirlKuniAfterBattleText:
-	text "I trained a lot,"
-	line "so I thought I was"
+	text "The elders say we"
+	line "may need to defend"
 
-	para "a capable trainer."
-	line "I guess I'm not."
+	para "ECRUTEAK soon. I"
+	line "hope I'm ready."
 	done
 
 KimonoGirlMikiSeenText:
@@ -234,6 +241,10 @@ KimonoGirlMikiAfterBattleText:
 
 	para "My #MON keep my"
 	line "spirits up too."
+
+	para "Even in dark times,"
+	line "we must find joy"
+	cont "and beauty."
 	done
 
 RockSmashGuyNeverLeftAScratchText:
