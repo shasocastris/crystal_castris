@@ -272,11 +272,12 @@ GruntM2BeatenText:
 
 GruntM2AfterBattleText:
 	text "We need the money,"
-	line "but selling SLOW-"
+	line "and selling SLOW-"
 	cont "POKETAILS?"
 
-	para "It's tough being a"
-	line "ROCKET GRUNT!"
+	para "We'll make huge"
+	line "profits shipping"
+	cont "through OLIVINE."
 	done
 
 GruntF1SeenText:
@@ -294,8 +295,8 @@ GruntF1AfterBattleText:
 	text "SLOWPOKETAILS"
 	line "grow back fast!"
 
-	para "What's wrong with"
-	line "selling them?"
+	para "They are sought"
+	line "after overseas."
 	done
 
 SlowpokeWellB1FSlowpokeWithMailText:

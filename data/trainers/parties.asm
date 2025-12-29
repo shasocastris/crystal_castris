@@ -3146,13 +3146,13 @@ PokemaniacGroup:
 
 GruntMGroup:
 	next_list_item ; GRUNTM (1), Slowpoke Well
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "ARCHER@", TRAINERTYPE_NORMAL
 	db 17
 	dw KOFFING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (2), Slowpoke Well
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "PETREL@", TRAINERTYPE_NORMAL
 	db 9
 	dw RATTATA
 	db 11
@@ -3386,7 +3386,7 @@ GruntMGroup:
 	db -1 ; end
 
 	next_list_item ; GRUNTM (29), Slowpoke Well
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "PROTON@", TRAINERTYPE_NORMAL
 	db 11
 	dw RATTATA
 	db 11
@@ -5134,7 +5134,7 @@ BlackbeltGroup:
 
 ExecutiveMGroup:
 	next_list_item ; EXECUTIVEM (1), Goldenrod Radio Tower
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	db "ARCHER@", TRAINERTYPE_MOVES
 	db 44
 	dw PORYGON2
 	dw TRI_ATTACK, PSYCHIC_M, HYPER_BEAM, TOXIC
@@ -5156,7 +5156,7 @@ ExecutiveMGroup:
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (2), Goldenrod Radio Tower
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	db "PROTON@", TRAINERTYPE_MOVES
 	db 44
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
@@ -5172,7 +5172,7 @@ ExecutiveMGroup:
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (3), Goldenrod Radio Tower
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	db "PETREL@", TRAINERTYPE_MOVES
 	db 39
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, TOXIC
@@ -5194,7 +5194,7 @@ ExecutiveMGroup:
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
+	db "PETREL@", TRAINERTYPE_NORMAL
 	db 37
 	dw GOLBAT
 	db 37
@@ -5743,7 +5743,7 @@ CamperGroup:
 
 ExecutiveFGroup:
 	next_list_item ; EXECUTIVEF (1), Goldenrod Radio Tower
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	db "ARIANA@", TRAINERTYPE_MOVES
 	db 44
 	dw ARBOK
 	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
@@ -5762,7 +5762,7 @@ ExecutiveFGroup:
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout
-	db "EXECUTIVE@", TRAINERTYPE_MOVES
+	db "ARIANA@", TRAINERTYPE_MOVES
 	db 40
 	dw ARBOK
 	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
@@ -6418,7 +6418,7 @@ OfficerGroup:
 
 GruntFGroup:
 	next_list_item ; GRUNTF (1), Slowpoke Well
-	db "GRUNT@", TRAINERTYPE_NORMAL
+	db "ARIANA@", TRAINERTYPE_NORMAL
 	db 11
 	dw ZUBAT
 	db 14
