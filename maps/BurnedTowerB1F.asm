@@ -88,7 +88,7 @@ ReleaseTheBeasts:
 	setevent EVENT_ECRUTEAK_GYM_GRAMPS
 	clearevent EVENT_ECRUTEAK_CITY_GRAMPS
 	setevent EVENT_BURNED_TOWER_MORTY
-	setevent EVENT_BURNED_TOWER_1F_EUSINE
+	setevent EVENT_BURNED_TOWER_1F_KAREN
 	appear BURNEDTOWERB1F_EUSINE
 	reanchormap
 	changeblock 6, 14, $1b ; ladder

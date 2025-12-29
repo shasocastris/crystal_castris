@@ -13,7 +13,6 @@ JanineSpriteGFX::              INCBIN "gfx/sprites/janine.2bpp"
 KurtSpriteGFX::                INCBIN "gfx/sprites/kurt.2bpp"
 MomSpriteGFX::                 INCBIN "gfx/sprites/mom.2bpp"
 BlaineSpriteGFX::              INCBIN "gfx/sprites/blaine.2bpp"
-RedsMomSpriteGFX::             INCBIN "gfx/sprites/reds_mom.2bpp"
 DaisySpriteGFX::               INCBIN "gfx/sprites/daisy.2bpp"
 ElmSpriteGFX::                 INCBIN "gfx/sprites/elm.2bpp"
 WillSpriteGFX::                INCBIN "gfx/sprites/will.2bpp"
@@ -110,3 +109,4 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
 SECTION "Sprites 3", ROMX
 
 FarfetchdSpriteGFX::           INCBIN "gfx/sprites/farfetch_d.2bpp"
+RedsMomSpriteGFX::             INCBIN "gfx/sprites/reds_mom.2bpp"

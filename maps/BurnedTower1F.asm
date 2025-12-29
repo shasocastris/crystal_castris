@@ -1,13 +1,13 @@
 	object_const_def
 	const BURNEDTOWER1F_ROCK
-	const BURNEDTOWER1F_EUSINE
+	const BURNEDTOWER1F_KAREN
 	const BURNEDTOWER1F_RIVAL
 	const BURNEDTOWER1F_MORTY
 	const BURNEDTOWER1F_POKE_BALL
 
 BurnedTower1F_MapScripts:
 	def_scene_scripts
-	scene_script BurnedTower1FMeetEusineScene, SCENE_BURNEDTOWER1F_MEET_EUSINE
+	scene_script BurnedTower1FMeetEusineScene, SCENE_BURNEDTOWER1F_MEET_KAREN
 	scene_script BurnedTower1FNoop1Scene,      SCENE_BURNEDTOWER1F_RIVAL_BATTLE
 	scene_script BurnedTower1FNoop2Scene,      SCENE_BURNEDTOWER1F_NOOP
 
@@ -36,14 +36,14 @@ BurnedTower1FHoleAndLadderCallback:
 	endcallback
 
 BurnedTower1FMeetEusineScript:
-	turnobject BURNEDTOWER1F_EUSINE, DOWN
-	showemote EMOTE_SHOCK, BURNEDTOWER1F_EUSINE, 15
-	applymovement BURNEDTOWER1F_EUSINE, BurnedTower1FEusineMovement
+	turnobject BURNEDTOWER1F_KAREN, DOWN
+	showemote EMOTE_SHOCK, BURNEDTOWER1F_KAREN, 15
+	applymovement BURNEDTOWER1F_KAREN, BurnedTower1FEusineMovement
 	opentext
 	writetext BurnedTower1FEusineIntroText
 	waitbutton
 	closetext
-	moveobject BURNEDTOWER1F_EUSINE, 9, 14
+	moveobject BURNEDTOWER1F_KAREN, 9, 14
 	setscene SCENE_BURNEDTOWER1F_RIVAL_BATTLE
 	end
 
@@ -227,8 +227,8 @@ BurnedTowerRival_AfterText2:
 	done
 
 BurnedTower1FEusineIntroText:
-	text "EUSINE: My name's"
-	line "EUSINE."
+	text "KAREN: My name's"
+	line "KAREN."
 
 	para "I'm on the trail"
 	line "of a #MON named"
@@ -250,7 +250,7 @@ BurnedTower1FEusineIntroText:
 	done
 
 BurnedTower1FEusineText:
-	text "EUSINE: I heard"
+	text "KAREN: I heard"
 	line "that SUICUNE is in"
 
 	para "this BURNED TOWER,"
@@ -271,7 +271,7 @@ BurnedTower1FMortyText:
 	line "--SUICUNE, ENTEI"
 	cont "and RAIKOU."
 
-	para "EUSINE is here, so"
+	para "KAREN is here, so"
 	line "I've decided to"
 
 
@@ -297,7 +297,7 @@ BurnedTower1F_MapEvents:
 
 	def_object_events
 	object_event 13,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
-	object_event 10, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_EUSINE
+	object_event 10, 12, SPRITE_KAREN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_KAREN
 	object_event  6,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
 	object_event 12, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHeatRock, EVENT_BURNED_TOWER_1F_HEAT_ROCK
