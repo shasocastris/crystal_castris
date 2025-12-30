@@ -6,7 +6,6 @@
 	const ROUTE36_FISHER
 	const ROUTE36_FRUIT_TREE
 	const ROUTE36_ARTHUR
-	const ROUTE36_FLORIA
 	const ROUTE36_SUICUNE
 	const ROUTE36_LASS2
 
@@ -65,13 +64,13 @@ Route36RockSmashGuyScript:
 	checkevent EVENT_GOT_TM08_PURSUIT
 	iftrue .AlreadyGotRockSmash
 	checkevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
-	iftrue .ClearedSudowoodo
+	iftrue .ClearedRanger
 	writetext RockSmashGuyText1
 	waitbutton
 	closetext
 	end
 
-.ClearedSudowoodo:
+.ClearedRanger:
 	writetext RockSmashGuyText2
 	promptbutton
 	verbosegiveitem TM_PURSUIT
@@ -88,14 +87,14 @@ Route36LassScript:
 	faceplayer
 	opentext
 	checkevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
-	iftrue .ClearedSudowoodo
+	iftrue .ClearedRanger
 	writetext Route36LassText
 	waitbutton
 	closetext
 	end
 
-.ClearedSudowoodo:
-	writetext Route36LassText_ClearedSudowoodo
+.ClearedRanger:
+	writetext Route36LassText_ClearedRanger
 	waitbutton
 	closetext
 	end
@@ -383,7 +382,7 @@ Route36LassText:
 	line "be done about it."
 	done
 
-Route36LassText_ClearedSudowoodo:
+Route36LassText_ClearedRanger:
 	text "That man ran off"
 	line "so quickly."
 

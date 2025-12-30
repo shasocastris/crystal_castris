@@ -22,9 +22,6 @@ FlowerShopFloriaScript:
 	writetext GoldenrodFlowerShopFloriaRangerBlockingPathText
 	waitbutton
 	closetext
-;	setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-;	setevent EVENT_FLORIA_AT_FLOWER_SHOP
-;	clearevent EVENT_FLORIA_AT_SUDOWOODO
 	end
 
 .BeatWhitney:
