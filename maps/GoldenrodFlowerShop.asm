@@ -14,106 +14,51 @@ FlowerShopTeacherScript:
 	closetext
 	end
 
-.GotSquirtbottle:
-	jumptextfaceplayer GoldenrodFlowerShopTeacherDontDoAnythingDangerousText
-
-.NoPlainBadge:
-	jumptextfaceplayer GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText
-
-.HaventMetFloria:
-	jumptextfaceplayer GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text
-
 FlowerShopFloriaScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .FoughtSudowoodo
-	checkevent EVENT_GOT_SQUIRTBOTTLE
-	iftrue .GotSquirtbottle
-	writetext GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText
+	checkflag ENGINE_PLAINBADGE
+	iftrue .BeatWhitney
+	writetext GoldenrodFlowerShopFloriaRangerBlockingPathText
 	waitbutton
 	closetext
-	setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-	setevent EVENT_FLORIA_AT_FLOWER_SHOP
-	clearevent EVENT_FLORIA_AT_SUDOWOODO
+;	setevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
+;	setevent EVENT_FLORIA_AT_FLOWER_SHOP
+;	clearevent EVENT_FLORIA_AT_SUDOWOODO
 	end
 
-.GotSquirtbottle:
-	writetext GoldenrodFlowerShopFloriaYouBeatWhitneyText
-	waitbutton
-	closetext
-	end
-
-.FoughtSudowoodo:
-	writetext GoldenrodFlowerShopFloriaItReallyWasAMonText
+.BeatWhitney:
+	writetext GoldenrodFlowerShopDangerInEcruteakText
 	waitbutton
 	closetext
 	end
 
-GoldenrodFlowerShopTeacherMySisterWentToSeeWigglyTreeRoute36Text:
-	text "Have you seen that"
-	line "wiggly tree that's"
+GoldenrodFlowerShopFloriaRangerBlockingPathText:
+	text "I wanted to visit"
+	line "my friend in"
+	cont "ECRUTEAK CITY."
 
-	para "growing on ROUTE"
-	line "36?"
+	para "But there's a"
+	line "#MON RANGER"
+	cont "blocking ROUTE 36."
 
-	para "My little sister"
-	line "got all excited"
+	para "He says the road"
+	line "is closed due to"
+	cont "some emergency."
 
-	para "and went to see"
-	line "it…"
-
-	para "I'm worried… Isn't"
-	line "it dangerous?"
+	para "I hope everything"
+	line "is okay…"
 	done
 
-GoldenrodFlowerShopTeacherAskWantToBorrowWaterBottleText:
-	text "Do you want to"
-	line "borrow the water"
+GoldenrodFlowerShopDangerInEcruteakText:
+	text "I'm trying to help"
+	line "my sis with the"
+	cont "shop,"
 
-	para "bottle too?"
-	line "I don't want you"
-
-	para "doing anything"
-	line "dangerous with it."
-	done
-
-GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
-	text "Oh, you're better"
-	line "than WHITNEY…"
-
-	para "You'll be OK,"
-	line "then. Here's the"
-	cont "SQUIRTBOTTLE!"
-	done
-
-GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
-	text "Don't do anything"
-	line "too dangerous!"
-	done
-
-GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
-	text "When I told my sis"
-	line "about the jiggly"
-
-	para "tree, she told me"
-	line "it's dangerous."
-
-	para "If I beat WHITNEY,"
-	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
-	done
-
-GoldenrodFlowerShopFloriaYouBeatWhitneyText:
-	text "Wow, you beat"
-	line "WHITNEY? Cool!"
-	done
-
-GoldenrodFlowerShopFloriaItReallyWasAMonText:
-	text "So it really was a"
-	line "#MON!"
+	para "but I'm really"
+	line "worried about what"
+	cont "is happening in"
+	cont "ECRUTEAK."
 	done
 
 GoldenrodFlowerShop_MapEvents:
@@ -129,4 +74,4 @@ GoldenrodFlowerShop_MapEvents:
 
 	def_object_events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopTeacherScript, -1
-	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, EVENT_FLORIA_AT_FLOWER_SHOP
+	object_event  5,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FlowerShopFloriaScript, -1
