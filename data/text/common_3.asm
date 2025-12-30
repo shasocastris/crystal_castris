@@ -363,6 +363,58 @@ _PharmacyComeAgainText::
 	line "See you around."
 	done
 
+_FlowerShopIntroText::
+	text "Some of our plants"
+	line "can be ground into"
+	cont "herbal medicine"
+	cont "for #MON."
+
+	para "Our mother sells"
+	line "them in the city's"
+	cont "UNDERGROUND on the"
+	cont "weekends."
+
+	para "We also grow many"
+	line "plants to sell"
+	cont "here. Would you"
+	cont "like one?"
+	done
+
+_FlowerShopHowManyText::
+	text "How many?"
+	done
+
+_FlowerShopFinalPriceText::
+	text_decimal wItemQuantityChange, 1, 2
+	text " @"
+	text_ram wStringBuffer2
+	text "(S)"
+	line "will cost ¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text "."
+	done
+
+_FlowerShopThanksText::
+	text "Thanks for your"
+	line "support!"
+	done
+
+_FlowerShopPackFullText::
+	text "You'll need to"
+	line "make some space."
+	done
+
+_FlowerShopNoMoneyText::
+	text "Perhaps you can"
+	line "get some money"
+	cont "from your MOM."
+	done
+
+_FlowerShopComeAgainText::
+	text "Thanks for coming"
+	line "in!"
+	done
+
 _NothingToSellText::
 	text "You don't have"
 	line "anything to sell."
@@ -860,6 +912,18 @@ _SentTrophyHomeText::
 	text_ram wPlayerName
 	text " sent the"
 	line "trophy home."
+	prompt
+
+_SentPlantHomeText::
+	text "There was a plant"
+	line "inside!@"
+	sound_dex_fanfare_50_79
+	text_start
+
+	para "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "decoration home."
 	prompt
 
 _ItemLooksBitterText::

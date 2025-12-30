@@ -5,6 +5,7 @@
 	const MARTTYPE_BARGAIN
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
+	const MARTTYPE_FLOWER
 DEF NUM_MART_TYPES EQU const_value
 
 ; Marts indexes (see data/items/marts.asm)
@@ -44,4 +45,5 @@ DEF NUM_MART_TYPES EQU const_value
 	const MART_INDIGO_PLATEAU
 	const MART_UNDERGROUND
 	const GLITTER_AND_GRACE
+	const FLOWER_SHOP
 DEF NUM_MARTS EQU const_value

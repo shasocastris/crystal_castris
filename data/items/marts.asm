@@ -36,6 +36,7 @@ Marts:
 	dw MartIndigoPlateau
 	dw MartUnderground
 	dw MartGlitterAndGrace
+	dw MartFlowerShop
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -381,6 +382,12 @@ MartGlitterAndGrace:
 	dw FRESH_WATER
 	dw MINT_BERRY
 	dw POKE_DOLL
+
+MartFlowerShop:
+	db 3 ; # items
+	dw MAGNA_PLANT
+	dw TROPIC_PLANT
+	dw JUMBO_PLANT
 
 DefaultMart:
 	db 2 ; # items

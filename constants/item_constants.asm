@@ -167,6 +167,10 @@
 
 	const RADIANCE_ORB ; 0086
 
+	const MAGNA_PLANT  ; 0087
+	const TROPIC_PLANT ; 0088
+	const JUMBO_PLANT  ; 0089
+
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

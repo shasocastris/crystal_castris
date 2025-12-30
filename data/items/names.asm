@@ -159,6 +159,10 @@ ItemNames::
 	li "SAFARI LURE"  ; 0085
 
 	li "RADIANCE ORB" ; 0086
+
+	li "MAGNA PLANT"  ; 0087
+	li "TROPIC PLANT" ; 0088
+	li "JUMBO PLANT"  ; 0089
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

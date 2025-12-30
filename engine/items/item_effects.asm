@@ -191,6 +191,10 @@ ItemEffects1:
 	dw NoEffect            ; SAFARI_LURE
 
 	dw NoEffect            ; RADIANCE_ORB
+
+	dw MagnaPlantEffect    ; MAGNA_PLANT
+	dw TropicPlantEffect   ; TROPIC_PLANT
+	dw JumboPlantEffect    ; JUMBO_PLANT
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -2659,6 +2663,28 @@ SacredAshEffect:
 	cp $1
 	ret nz
 	jr UseDisposableItem
+
+MagnaPlantEffect:
+	ld c, DECOFLAG_MAGNAPLANT
+	jr OpenPlant
+
+TropicPlantEffect:
+	ld c, DECOFLAG_TROPICPLANT
+	jr OpenPlant
+
+JumboPlantEffect:
+	ld c, DECOFLAG_JUMBOPLANT
+OpenPlant:
+	farcall SetSpecificDecorationFlag
+
+	ld hl, .SentPlantHomeText
+	call PrintText
+
+	jr UseDisposableItem
+
+.SentPlantHomeText:
+	text_far _SentPlantHomeText
+	text_end
 
 NormalBoxEffect:
 	ld c, DECOFLAG_SILVER_TROPHY_DOLL

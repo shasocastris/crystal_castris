@@ -23,6 +23,7 @@ MartTypeDialogs:
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw FlowerShop
 	assert_table_length NUM_MART_TYPES
 
 MartDialog:
@@ -68,6 +69,15 @@ Pharmacist:
 	call MartTextbox
 	call BuyMenu
 	ld hl, PharmacyComeAgainText
+	jmp MartTextbox
+
+FlowerShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, FlowerShopIntroText
+	call MartTextbox
+	call BuyMenu
+	ld hl, FlowerShopComeAgainText
 	jmp MartTextbox
 
 RooftopSale:
@@ -442,6 +452,7 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .FlowerShopPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -473,6 +484,14 @@ GetMartDialogGroup:
 	dw PharmacyNoMoneyText
 	dw PharmacyPackFullText
 	dw PharmacyThanksText
+	dw BuyMenuLoop
+
+.FlowerShopPointers:
+	dw FlowerShopHowManyText
+	dw FlowerShopFinalPriceText
+	dw FlowerShopNoMoneyText
+	dw FlowerShopPackFullText
+	dw FlowerShopThanksText
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -753,6 +772,34 @@ PharmacyNoMoneyText:
 
 PharmacyComeAgainText:
 	text_far _PharmacyComeAgainText
+	text_end
+
+FlowerShopIntroText:
+	text_far _FlowerShopIntroText
+	text_end
+
+FlowerShopHowManyText:
+	text_far _FlowerShopHowManyText
+	text_end
+
+FlowerShopFinalPriceText:
+	text_far _FlowerShopFinalPriceText
+	text_end
+
+FlowerShopThanksText:
+	text_far _FlowerShopThanksText
+	text_end
+
+FlowerShopPackFullText:
+	text_far _FlowerShopPackFullText
+	text_end
+
+FlowerShopNoMoneyText:
+	text_far _FlowerShopNoMoneyText
+	text_end
+
+FlowerShopComeAgainText:
+	text_far _FlowerShopComeAgainText
 	text_end
 
 SellMenu:

@@ -171,6 +171,10 @@ ItemDescriptions1:
 	dw SafariLureDesc   ; 0085
 
 	dw RadianceOrbDesc  ; 0086
+
+	dw MagnaPlantDesc   ; 0087
+	dw TropicPlantDesc  ; 0088
+	dw JumboPlantDesc   ; 0089
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -760,6 +764,12 @@ SafariLureDesc:
 RadianceOrbDesc:
 	db   "Reveals true power"
 	next "of #MON.@"
+
+MagnaPlantDesc:
+TropicPlantDesc:
+JumboPlantDesc:
+	db   "A new plant for"
+	next "your room!@"
 
 BicycleDesc:
 	db   "A collapsible bike"

@@ -8,32 +8,9 @@ GoldenrodFlowerShop_MapScripts:
 	def_callbacks
 
 FlowerShopTeacherScript:
-	checkevent EVENT_FOUGHT_SUDOWOODO
-	iftrue .Lalala
-	checkevent EVENT_GOT_SQUIRTBOTTLE
-	iftrue .GotSquirtbottle
-	checkevent EVENT_MET_FLORIA
-	iffalse .HaventMetFloria
-	checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-	iffalse .Lalala
-	checkflag ENGINE_PLAINBADGE
-	iffalse .NoPlainBadge
 	faceplayer
 	opentext
-	writetext GoldenrodFlowerShopTeacherHeresTheSquirtbottleText
-	promptbutton
-	verbosegiveitem SQUIRTBOTTLE
-	setevent EVENT_GOT_SQUIRTBOTTLE
-	closetext
-	setevent EVENT_FLORIA_AT_SUDOWOODO
-	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
-	end
-
-.Lalala:
-	turnobject GOLDENRODFLOWERSHOP_TEACHER, LEFT
-	opentext
-	writetext GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText
-	waitbutton
+	pokemart MARTTYPE_FLOWER, FLOWER_SHOP
 	closetext
 	end
 
@@ -113,18 +90,6 @@ GoldenrodFlowerShopTeacherHeresTheSquirtbottleText:
 GoldenrodFlowerShopTeacherDontDoAnythingDangerousText:
 	text "Don't do anything"
 	line "too dangerous!"
-	done
-
-GoldenrodFlowerShopTeacherLalalaHavePlentyOfWaterText:
-	text "Some of our plants"
-	line "can be ground into"
-	cont "herbal medicine"
-	cont "for #MON."
-
-	para "Our mother sells"
-	line "them in the city's"
-	cont "UNDERGROUND on the"
-	cont "weekends."
 	done
 
 GoldenrodFlowerShopFloriaWonderIfSisWillLendWaterBottleText:
