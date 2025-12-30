@@ -1174,7 +1174,7 @@ TryWhirlpoolOW::
 	ld hl, WHIRLPOOL
 	call CheckPartyMoveIndex
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_MINERALBADGE
 	call CheckEngineFlag
 	jr c, .failed
 	call TryWhirlpoolMenu
