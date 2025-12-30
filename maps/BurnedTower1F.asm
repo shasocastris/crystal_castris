@@ -7,15 +7,15 @@
 
 BurnedTower1F_MapScripts:
 	def_scene_scripts
-	scene_script BurnedTower1FMeetEusineScene, SCENE_BURNEDTOWER1F_MEET_KAREN
+	scene_script BurnedTower1FMeetKarenScene, SCENE_BURNEDTOWER1F_MEET_KAREN
 	scene_script BurnedTower1FNoop1Scene,      SCENE_BURNEDTOWER1F_RIVAL_BATTLE
 	scene_script BurnedTower1FNoop2Scene,      SCENE_BURNEDTOWER1F_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, BurnedTower1FHoleAndLadderCallback
 
-BurnedTower1FMeetEusineScene:
-	sdefer BurnedTower1FMeetEusineScript
+BurnedTower1FMeetKarenScene:
+	sdefer BurnedTower1FMeetKarenScript
 	end
 
 BurnedTower1FNoop1Scene:
@@ -35,12 +35,12 @@ BurnedTower1FHoleAndLadderCallback:
 .HideBasement:
 	endcallback
 
-BurnedTower1FMeetEusineScript:
+BurnedTower1FMeetKarenScript:
 	turnobject BURNEDTOWER1F_KAREN, DOWN
 	showemote EMOTE_SHOCK, BURNEDTOWER1F_KAREN, 15
-	applymovement BURNEDTOWER1F_KAREN, BurnedTower1FEusineMovement
+	applymovement BURNEDTOWER1F_KAREN, BurnedTower1FKarenMovement
 	opentext
-	writetext BurnedTower1FEusineIntroText
+	writetext BurnedTower1FKarenIntroText
 	waitbutton
 	closetext
 	moveobject BURNEDTOWER1F_KAREN, 9, 14
@@ -117,8 +117,8 @@ BurnedTowerRivalBattleScript:
 	warpcheck
 	end
 
-BurnedTower1FEusineScript:
-	jumptextfaceplayer BurnedTower1FEusineText
+BurnedTower1FKarenScript:
+	jumptextfaceplayer BurnedTower1FKarenText
 
 BurnedTower1FMortyScript:
 	jumptextfaceplayer BurnedTower1FMortyText
@@ -147,7 +147,7 @@ BurnedTower1FMovement_PlayerStartsToFall:
 	skyfall_top
 	step_end
 
-BurnedTower1FEusineMovement:
+BurnedTower1FKarenMovement:
 	step DOWN
 	step LEFT
 	step LEFT
@@ -173,9 +173,14 @@ BurnedTowerRival_BeforeText:
 	cont "hiding in the"
 	cont "shadows."
 
+	para "I heard about some"
+	line "strong #MON out"
+	cont "west, but a RANGER"
+	cont "stopped me."
+
 	para "Fine! I'll prove"
 	line "my #MON are"
-	cont "the strongest"
+	cont "strong enough"
 	cont "right now!"
 	done
 
@@ -226,30 +231,33 @@ BurnedTowerRival_AfterText2:
 	cont "like that."
 	done
 
-BurnedTower1FEusineIntroText:
-	text "KAREN: My name's"
-	line "KAREN."
+BurnedTower1FKarenIntroText:
+	text "My name's KAREN,"
+	line "with the #MON"
+	cont "LEAGUE."
 
-	para "I'm on the trail"
-	line "of a #MON named"
-	cont "SUICUNE."
+	para "I'm investigating"
+	line "the unsettled"
+	cont "TAUROS with MORTY."
 
 	para "And you are…?"
 
 	para "<PLAYER>? Glad to"
 	line "meet you!"
 
-	para "I heard rumors"
-	line "that SUICUNE is in"
+	para "We're checking if"
+	line "someone disturbed"
 
-	para "this BURNED TOWER,"
-	line "so I came to look."
+	para "the BURNED TOWER"
+	line "and angered the"
+	cont "wild #MON."
 
-	para "But where exactly"
-	line "could it be?"
+	para "But we haven't"
+	line "found anything"
+	cont "yet…"
 	done
 
-BurnedTower1FEusineText:
+BurnedTower1FKarenText:
 	text "KAREN: I heard"
 	line "that SUICUNE is in"
 
@@ -258,6 +266,9 @@ BurnedTower1FEusineText:
 
 	para "But where exactly"
 	line "could it be?"
+
+	para "Is it involved"
+	line "somehow?"
 	done
 
 BurnedTower1FMortyText:
@@ -271,12 +282,11 @@ BurnedTower1FMortyText:
 	line "--SUICUNE, ENTEI"
 	cont "and RAIKOU."
 
-	para "KAREN is here, so"
-	line "I've decided to"
+	para "KAREN and I are"
+	line "looking for clues"
 
-
-	para "investigate the"
-	line "TOWER with him."
+	para "to see if they are"
+	line "connected."
 	done
 
 BurnedTower1F_MapEvents:
@@ -297,7 +307,7 @@ BurnedTower1F_MapEvents:
 
 	def_object_events
 	object_event 13,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurnedTower1FRock, -1
-	object_event 10, 12, SPRITE_KAREN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BurnedTower1FEusineScript, EVENT_BURNED_TOWER_1F_KAREN
+	object_event 10, 12, SPRITE_KAREN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BurnedTower1FKarenScript, EVENT_BURNED_TOWER_1F_KAREN
 	object_event  6,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_RIVAL_BURNED_TOWER
 	object_event 12, 14, SPRITE_MORTY, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BurnedTower1FMortyScript, EVENT_BURNED_TOWER_MORTY
 	object_event 12,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTower1FHeatRock, EVENT_BURNED_TOWER_1F_HEAT_ROCK

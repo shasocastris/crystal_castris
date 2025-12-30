@@ -20,7 +20,7 @@
 CianwoodCity_MapScripts:
 	def_scene_scripts
 	scene_script CianwoodCityNoop1Scene, SCENE_CIANWOODCITY_NOOP
-	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script CianwoodCityNoop2Scene, SCENE_CIANWOODCITY_SUICUNE_AND_KAREN
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, CianwoodCityFlypointAndSuicuneCallback
@@ -33,7 +33,7 @@ CianwoodCityNoop2Scene:
 
 CianwoodCityFlypointAndSuicuneCallback:
 	setflag ENGINE_FLYPOINT_CIANWOOD
-	setevent EVENT_EUSINE_IN_BURNED_TOWER
+	setevent EVENT_KAREN_IN_BURNED_TOWER
 	checkevent EVENT_FOUGHT_EUSINE
 	iffalse .Done
 	disappear CIANWOODCITY_EUSINE
@@ -487,7 +487,7 @@ CianwoodCity_MapEvents:
 	warp_event  5, 18, POKE_SEERS_HOUSE, 1
 
 	def_coord_events
-	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
+	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_KAREN, CianwoodCitySuicuneAndEusine
 
 	def_bg_events
 	bg_event 20, 34, BGEVENT_READ, CianwoodCitySign

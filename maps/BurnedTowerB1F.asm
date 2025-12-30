@@ -7,7 +7,7 @@
 	const BURNEDTOWERB1F_ENTEI2
 	const BURNEDTOWERB1F_SUICUNE2
 	const BURNEDTOWERB1F_POKE_BALL
-	const BURNEDTOWERB1F_EUSINE
+	const BURNEDTOWERB1F_KAREN
 
 BurnedTowerB1F_MapScripts:
 	def_scene_scripts
@@ -83,13 +83,13 @@ ReleaseTheBeasts:
 	setevent EVENT_RELEASED_THE_BEASTS
 	special InitRoamMons
 	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_NOOP
-	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_KAREN
 	clearevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	setevent EVENT_ECRUTEAK_GYM_GRAMPS
 	clearevent EVENT_ECRUTEAK_CITY_GRAMPS
 	setevent EVENT_BURNED_TOWER_MORTY
 	setevent EVENT_BURNED_TOWER_1F_KAREN
-	appear BURNEDTOWERB1F_EUSINE
+	appear BURNEDTOWERB1F_KAREN
 	reanchormap
 	changeblock 6, 14, $1b ; ladder
 	refreshmap
@@ -97,21 +97,21 @@ ReleaseTheBeasts:
 	setscene SCENE_BURNEDTOWERB1F_NOOP
 	end
 
-BurnedTowerB1FEusine:
+BurnedTowerB1FKaren:
 	faceplayer
 	opentext
-	writetext BurnedTowerB1FEusineText
+	writetext BurnedTowerB1FKarenText
 	waitbutton
 	closetext
 	readvar VAR_FACING
 	ifequal UP, .Movement2
-	applymovement BURNEDTOWERB1F_EUSINE, BurnedTowerB1FEusineMovement1
+	applymovement BURNEDTOWERB1F_KAREN, BurnedTowerB1FKarenMovement1
 	sjump .Finish
 
 .Movement2:
-	applymovement BURNEDTOWERB1F_EUSINE, BurnedTowerB1FEusineMovement2
+	applymovement BURNEDTOWERB1F_KAREN, BurnedTowerB1FKarenMovement2
 .Finish:
-	disappear BURNEDTOWERB1F_EUSINE
+	disappear BURNEDTOWERB1F_KAREN
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	end
@@ -166,7 +166,7 @@ BurnedTowerSuicuneMovement3:
 	remove_sliding
 	step_end
 
-BurnedTowerB1FEusineMovement2:
+BurnedTowerB1FKarenMovement2:
 	step LEFT
 	step LEFT
 	step DOWN
@@ -175,7 +175,7 @@ BurnedTowerB1FEusineMovement2:
 	step DOWN
 	step_end
 
-BurnedTowerB1FEusineMovement1:
+BurnedTowerB1FKarenMovement1:
 	step DOWN
 	step LEFT
 	step LEFT
@@ -184,47 +184,35 @@ BurnedTowerB1FEusineMovement1:
 	step DOWN
 	step_end
 
-BurnedTowerB1FEusineText:
-	text "EUSINE: I dug a"
-	line "hole here, too…"
+BurnedTowerB1FKarenText:
+	text "I've finished my"
+	line "investigation."
 
-	para "I was shocked!"
+	para "The ruins are"
+	line "undisturbed, and"
 
-	para "SUICUNE raced by"
-	line "like a blur, right"
+	para "the legendary"
+	line "#MON don't have"
+	cont "to do with what-"
+	cont "ever caused the"
+	cont "TAUROS to rampage."
 
-	para "in front of my"
-	line "eyes!"
+	para "The answer must"
+	line "lie elsewhere…"
 
-	para "For ten years I"
-	line "chased SUICUNE,"
+	para "Perhaps some other"
+	line "foul play?"
 
-	para "and I finally got"
-	line "to see it."
+	para "<PLAYER>, if you"
+	line "head that way, be"
+	cont "extremely careful."
 
-	para "I'm all choked up!"
+	para "I need to report"
+	line "my findings to the"
+	cont "LEAGUE."
 
-	para "<PLAYER>, I owe"
-	line "this all to you!"
-
-	para "Thank you!"
-
-	para "I heard that the"
-	line "legendary #MON"
-
-	para "of ECRUTEAK test"
-	line "chosen humans by"
-
-	para "allowing them to"
-	line "get close."
-
-	para "I'm going to track"
-	line "SUICUNE."
-
-	para "<PLAYER>, let's"
-	line "meet again!"
-
-	para "Farewell!"
+	para "Stay safe out"
+	line "there!"
 	done
 
 BurnedTowerB1F_MapEvents:
@@ -248,4 +236,4 @@ BurnedTowerB1F_MapEvents:
 	object_event 12,  3, SPRITE_ENTEI, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
 	object_event 10,  4, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURNED_TOWER_B1F_BEASTS_2
 	object_event 16,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurnedTowerB1FTMEndure, EVENT_BURNED_TOWER_B1F_TM_ENDURE
-	object_event 10, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTowerB1FEusine, EVENT_EUSINE_IN_BURNED_TOWER
+	object_event 10, 12, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BurnedTowerB1FKaren, EVENT_KAREN_IN_BURNED_TOWER
