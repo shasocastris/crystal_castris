@@ -24,17 +24,28 @@ OlivinePunishmentSpeechHouseDadText:
 	line "CIANWOOD, there"
 
 	para "are four deserted"
-	line "islands."
+	line "islands called the"
+	cont "WHIRL ISLANDS."
 
-	para "Bad kids are taken"
-	line "to the islands as"
-	cont "punishment!"
+	para "The whirlpools"
+	line "around them are"
+	cont "treacherous."
+
+	para "Only skilled"
+	line "trainers can"
+	cont "navigate them."
 	done
 
 OlivinePunishmentSpeechHouseDaughterText:
 	text "Whenever I get in"
 	line "trouble, Daddy"
 	cont "always scares me."
+
+	para "But one day I'll"
+	line "be as strong as"
+	cont "JASMINE and be"
+	cont "able to explore"
+	cont "the islands!"
 	done
 
 OlivinePunishmentSpeechHouse_MapEvents:
