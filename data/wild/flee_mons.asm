@@ -125,6 +125,7 @@ SometimesFleeMons:
 	dw STANTLER
 	dw MARILL
 	dw AZUMARILL
+	dw SUDOWOODO
 	dw DIGLETT
 	dw DUGTRIO
 	dw MANKEY

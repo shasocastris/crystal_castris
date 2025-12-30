@@ -1577,7 +1577,7 @@ JohtoGrassWildMons:
 	dbw 33, FEAROW
 	dbw 35, STANTLER
 	dbw 37, RATICATE
-	dbw 35, FURRET
+	dbw 35, SUDOWOODO
 	dbw 37, FEAROW
 	dbw 37, FEAROW
 	; day
@@ -1585,7 +1585,7 @@ JohtoGrassWildMons:
 	dbw 33, FEAROW
 	dbw 35, STANTLER
 	dbw 32, RATICATE
-	dbw 35, FURRET
+	dbw 35, SUDOWOODO
 	dbw 37, FEAROW
 	dbw 37, FEAROW
 	; nite
