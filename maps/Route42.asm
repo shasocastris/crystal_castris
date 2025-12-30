@@ -266,18 +266,10 @@ PokemaniacShaneAfterBattleText:
 	done
 
 Route42Sign1Text:
-	text "WARNING!"
+	text "ROUTE 42"
 
-	para "Tall grass on"
-	line "ROUTE 42 grows"
-	cont "back too fast to"
-	cont "CUT!"
-
-	para "Use a CLEANSE TAG"
-	line "and the #MON"
-	cont "LULLABY radio"
-	cont "station to reduce"
-	cont "wild encounters."
+	para "ECRUTEAK CITY -"
+	line "MAHOGANY TOWN"
 	done
 
 MtMortarSign1Text:

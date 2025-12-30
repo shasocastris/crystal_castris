@@ -10,20 +10,23 @@ Route42EcruteakGateOfficerScript:
 	jumptextfaceplayer Route42EcruteakGateOfficerText
 
 Route42EcruteakGateOfficerText:
-	text "MT.MORTAR is like"
-	line "a maze inside."
+	text "MT.MORTAR and"
+	line "ROUTE 42 are home"
+	cont "to many powerful"
+	cont "wild #MON."
 
-	para "Be careful. Both"
-	line "it and ROUTE 42"
-	cont "are full of very"
-	cont "powerful #MON."
+	para "Please don't"
+	line "disturb them."
 
-	para "We recommend that"
-	line "trainers get at"
-	cont "least 6 BADGES"
-	cont "before attempting"
-	cont "to get to MAHOGANY"
-	cont "TOWN."
+	para "We've had enough"
+	line "trouble with wild"
+
+	para "#MON west of"
+	line "here already."
+
+	para "The last thing we"
+	line "need is another"
+	cont "incident."
 	done
 
 Route42EcruteakGate_MapEvents:
