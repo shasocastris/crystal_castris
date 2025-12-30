@@ -1,7 +1,7 @@
 	object_const_def
 	const ROUTE36_YOUNGSTER1
 	const ROUTE36_YOUNGSTER2
-	const ROUTE36_WEIRD_TREE
+	const ROUTE36_OFFICER
 	const ROUTE36_LASS1
 	const ROUTE36_FISHER
 	const ROUTE36_FRUIT_TREE
@@ -37,80 +37,26 @@ Route36SuicuneScript:
 	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 	end
 
-SudowoodoScript:
-	checkitem SQUIRTBOTTLE
-	iftrue .Fight
-
-	waitsfx
-	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
-	end
-
-.Fight:
-	opentext
-	writetext UseSquirtbottleText
-	yesorno
-	iffalse DidntUseSquirtbottleScript
-	closetext
-WateredWeirdTreeScript:: ; export (for when you use Squirtbottle from pack)
-	opentext
-	writetext UsedSquirtbottleText
-	waitbutton
-	closetext
-	waitsfx
-	playsound SFX_SANDSTORM
-	applymovement ROUTE36_WEIRD_TREE, SudowoodoShakeMovement
-	opentext
-	writetext SudowoodoAttackedText
-	waitbutton
-	closetext
-	loadwildmon SUDOWOODO, 20
-	startbattle
-	setevent EVENT_FOUGHT_SUDOWOODO
-	ifequal DRAW, DidntCatchSudowoodo
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	reloadmapafterbattle
-	end
-
-DidntUseSquirtbottleScript:
-	closetext
-	end
-
-DidntCatchSudowoodo:
-	reloadmapafterbattle
-	applymovement ROUTE36_WEIRD_TREE, WeirdTreeMovement_Flee
-	disappear ROUTE36_WEIRD_TREE
-	variablesprite SPRITE_WEIRD_TREE, SPRITE_TWIN
-	special LoadUsedSpritesGFX
-	special RefreshSprites
-	end
-
-Route36FloriaScript:
+Route36RangerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_FLORIA_AT_FLOWER_SHOP
-	iftrue .SecondTimeTalking
-	setevent EVENT_MET_FLORIA
-	writetext FloriaText1
+	writetext Route36PokemonRangerText_BeforePlainBadge
 	waitbutton
 	closetext
-	clearevent EVENT_FLORIA_AT_FLOWER_SHOP
-	readvar VAR_FACING
-	ifequal UP, .Up
-	applymovement ROUTE36_FLORIA, FloriaMovement1
-	disappear ROUTE36_FLORIA
+	checkflag ENGINE_PLAINBADGE
+	iftrue .HeadToEcruteak
 	end
 
-.Up:
-	applymovement ROUTE36_FLORIA, FloriaMovement2
-	disappear ROUTE36_FLORIA
-	end
-
-.SecondTimeTalking:
-	writetext FloriaText2
+.HeadToEcruteak:
+	showemote EMOTE_SHOCK, ROUTE36_OFFICER, 15
+	opentext
+	writetext PokemonRangerText_AfterPlainBadge_Departing
 	waitbutton
 	closetext
+	turnobject ROUTE36_OFFICER, LEFT
+	applymovement ROUTE36_OFFICER, Route36RangerMovement
+	disappear ROUTE36_OFFICER
+	setevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
 	end
 
 Route36RockSmashGuyScript:
@@ -118,7 +64,7 @@ Route36RockSmashGuyScript:
 	opentext
 	checkevent EVENT_GOT_TM08_PURSUIT
 	iftrue .AlreadyGotRockSmash
-	checkevent EVENT_FOUGHT_SUDOWOODO
+	checkevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
 	iftrue .ClearedSudowoodo
 	writetext RockSmashGuyText1
 	waitbutton
@@ -141,7 +87,7 @@ Route36RockSmashGuyScript:
 Route36LassScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
+	checkevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
 	iftrue .ClearedSudowoodo
 	writetext Route36LassText
 	waitbutton
@@ -325,37 +271,16 @@ Route36TrainerTips2:
 Route36FruitTree:
 	fruittree FRUITTREE_ROUTE_36
 
-SudowoodoShakeMovement:
-	tree_shake
-	step_end
-
-WeirdTreeMovement_Flee:
-	fast_jump_step UP
-	fast_jump_step UP
-	step_end
-
-FloriaMovement1:
-	step DOWN
-	step DOWN
-	step DOWN
+Route36RangerMovement:
 	step LEFT
 	step LEFT
 	step LEFT
+	step UP
+	step UP
 	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-FloriaMovement2:
-	step LEFT
-	step DOWN
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
+	step UP
+	step UP
+	step UP
 	step_end
 
 Route36SuicuneMovement:
@@ -369,25 +294,6 @@ Route36SuicuneMovement:
 	remove_sliding
 	step_end
 
-UseSquirtbottleText:
-	text "It's a weird tree."
-	line "Use SQUIRTBOTTLE?"
-	done
-
-UsedSquirtbottleText:
-	text "<PLAYER> used the"
-	line "SQUIRTBOTTLE."
-	done
-
-SudowoodoAttackedText:
-	text "The weird tree"
-	line "doesn't like the"
-	cont "SQUIRTBOTTLE!"
-
-	para "The weird tree"
-	line "attacked!"
-	done
-
 Route36PokemonRangerText_BeforePlainBadge:
 	text "HALT!"
 
@@ -396,9 +302,9 @@ Route36PokemonRangerText_BeforePlainBadge:
 	cont "here by emergency"
 	cont "order."
 
-	para "The routes east of"
+	para "The routes west of"
 	line "ECRUTEAK CITY are"
-	cont "extremely dangerous"
+	cont "extremely perilous"
 	cont "right now."
 
 	para "We're restricting"
@@ -420,48 +326,8 @@ PokemonRangerText_AfterPlainBadge_Departing:
 
 	para "Head there as soon"
 	line "as you can. They"
-	cont "need all the help"
-	cont "they can get!"
-	done
-
-FloriaText1:
-	text "I'm the FLOWER"
-	line "SHOP's FLORIA!"
-
-	para "Listen, listen!"
-
-	para "When I sprinkled"
-	line "water on that"
-
-	para "wiggly tree, it"
-	line "jumped right up!"
-
-	para "It just has to be"
-	line "a #MON."
-
-	para "I bet it would be"
-	line "shocked out of its"
-
-	para "disguise if you"
-	line "soaked it!"
-
-	para "I know! I'll tell"
-	line "my sis and borrow"
-	cont "her water bottle!"
-	done
-
-FloriaText2:
-	text "When I told my sis"
-	line "about the jiggly"
-
-	para "tree, she said"
-	line "it's dangerous."
-
-	para "If I beat WHITNEY,"
-	line "I wonder if she'll"
-
-	para "lend me her water"
-	line "bottle…"
+	cont "need every capable"
+	cont "trainer available!"
 	done
 
 RockSmashGuyText1:
@@ -537,8 +403,8 @@ LassNoniBeatenText:
 	done
 
 LassNoniAfterBattleText:
-	text "What did he have"
-	line "to say?"
+	text "What did the"
+	line "RANGER say?"
 	done
 
 PsychicMarkSeenText:
@@ -690,11 +556,10 @@ Route36_MapEvents:
 	def_object_events
 	object_event  8, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicMark, -1
 	object_event 19, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyAlan1, -1
-	object_event 23,  9, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, SudowoodoScript, EVENT_ROUTE_36_SUDOWOODO
+	object_event 23,  9, SPRITE_OFFICER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route36RangerScript, EVENT_ROUTE_36_RANGER
 	object_event 39,  8, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36LassScript, -1
 	object_event 32,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36RockSmashGuyScript, -1
 	object_event  9,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route36FruitTree, -1
 	object_event 34,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
-	object_event 21, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route36FloriaScript, EVENT_FLORIA_AT_SUDOWOODO
 	object_event  9,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
 	object_event 28,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 5, TrainerLassNoni, -1

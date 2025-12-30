@@ -78,7 +78,7 @@ GiftSpearowOTName:
 Route35GoldenrodGatePokefanFScript:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUGHT_SUDOWOODO
+	checkevent EVENT_SPOKE_WITH_ROUTE_36_RANGER
 	iftrue .FoughtSudowoodo
 	writetext Route35GoldenrodGatePokefanFText
 	waitbutton
@@ -162,17 +162,17 @@ Route35GoldenrodGateRandyMyPalWasSnoozingRightText:
 	done
 
 Route35GoldenrodGatePokefanFText:
-	text "A strange tree is"
-	line "blocking the road."
+	text "A #MON RANGER"
+	line "is blocking ROUTE"
+	cont "36 to the north."
 
-	para "It wriggles around"
-	line "if you talk to it."
+	para "He says the road"
+	line "is closed due to"
+	cont "an emergency."
 
-	para "I heard it became"
-	line "wild when someone"
-
-	para "watered it with a"
-	line "SQUIRTBOTTLE."
+	para "I wonder what's"
+	line "happening near"
+	cont "ECRUTEAK CITY?"
 	done
 
 Route35GoldenrodGatePokefanFText_FoughtSudowoodo:

@@ -218,7 +218,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; LOST_ITEM
 	dw BasementKeyEffect  ; BASEMENT_KEY
 	dw NoEffect           ; PASS
-	dw SquirtbottleEffect ; SQUIRTBOTTLE
+	dw NoEffect           ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
 	dw PokeFluteEffect    ; POKE_FLUTE
 .IndirectEnd:
@@ -2647,9 +2647,6 @@ PPsIncreasedText:
 PPRestoredText:
 	text_far _PPRestoredText
 	text_end
-
-SquirtbottleEffect:
-	farjp _Squirtbottle
 
 CardKeyEffect:
 	farjp _CardKey
