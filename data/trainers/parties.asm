@@ -2362,11 +2362,11 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (2), Lake of Rage
 	db "AARON@", TRAINERTYPE_NORMAL
-	db 41
+	db 36
 	dw VENUSAUR
-	db 41
+	db 36
 	dw CHARIZARD
-	db 41
+	db 36
 	dw BLASTOISE
 	db -1 ; end
 
@@ -2584,10 +2584,10 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (2), Lake of Rage
 	db "LOIS@", TRAINERTYPE_MOVES
-	db 42
+	db 36
 	dw JUMPLUFF
 	dw SYNTHESIS, SPORE, GIGA_DRAIN, LEECH_SEED
-	db 42
+	db 36
 	dw NINETALES
 	dw FLAMETHROWER, FAINT_ATTACK, CONFUSE_RAY, SAFEGUARD
 	db -1 ; end
@@ -2994,37 +2994,37 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (4), Route 42
 	db "SHANE@", TRAINERTYPE_NORMAL
-	db 38
+	db 30
 	dw NIDORINA
-	db 38
+	db 31
 	dw NIDORINO
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (5), Route 43
 	db "BEN@", TRAINERTYPE_NORMAL
-	db 37
+	db 32
 	dw SLOWBRO
-	db 37
+	db 32
 	dw LEDIAN
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (6), Route 43
 	db "BRENT@", TRAINERTYPE_NORMAL
-	db 35
+	db 31
 	dw LICKITUNG
-	db 36
+	db 32
 	dw KANGASKHAN
-	db 35
+	db 31
 	dw PORYGON
-	db 36
+	db 32
 	dw CHANSEY
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (7), Route 43
 	db "RON@", TRAINERTYPE_NORMAL
-	db 37
+	db 33
 	dw NIDOKING
-	db 37
+	db 33
 	dw AMPHAROS
 	db -1 ; end
 
@@ -3716,41 +3716,41 @@ FisherGroup:
 
 	next_list_item ; FISHER (6), Route 43
 	db "MARVIN@", TRAINERTYPE_NORMAL
-	db 36
+	db 31
 	dw OCTILLERY
-	db 38
+	db 33
 	dw GYARADOS
-	db 36
+	db 31
 	dw OCTILLERY
-	db 38
+	db 33
 	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; FISHER (7), Route 42
 	db "TULLY@", TRAINERTYPE_NORMAL
-	db 38
+	db 32
 	dw SEAKING
-	db 38
+	db 32
 	dw QWILFISH
 	db -1 ; end
 
 	next_list_item ; FISHER (8), Lake of Rage
 	db "ANDRE@", TRAINERTYPE_NORMAL
-	db 42
+	db 36
 	dw GYARADOS
-	db 42
+	db 36
 	dw KINGLER
 	db -1 ; end
 
 	next_list_item ; FISHER (9), Lake of Rage
 	db "RAYMOND@", TRAINERTYPE_NORMAL
-	db 39
+	db 36
 	dw GOLDUCK
-	db 39
+	db 36
 	dw SEADRA
-	db 39
+	db 36
 	dw STARMIE
-	db 39
+	db 36
 	dw OCTILLERY
 	db -1 ; end
 
@@ -3832,9 +3832,9 @@ FisherGroup:
 
 	next_list_item ; FISHER (18), Route 42
 	db "TULLY@", TRAINERTYPE_NORMAL
-	db 43
+	db 40
 	dw SEAKING
-	db 43
+	db 40
 	dw QWILFISH
 	db -1 ; end
 
@@ -4598,11 +4598,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (6), Route 42
 	db "BENJAMIN@", TRAINERTYPE_NORMAL
-	db 37
+	db 31
 	dw ONIX
-	db 37
+	db 31
 	dw GOLEM
-	db 37
+	db 31
 	dw DUGTRIO
 	db -1 ; end
 
@@ -5430,20 +5430,20 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (16), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 38
+	db 32
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 38
+	db 32
 	dw BUTTERFREE
 	dw LEECH_LIFE, CONFUSION, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; PICNICKER (17), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 46
+	db 41
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 46
+	db 41
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
@@ -5464,10 +5464,10 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (20), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 50
+	db 47
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 50
+	db 47
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
@@ -5688,11 +5688,11 @@ CamperGroup:
 
 	next_list_item ; CAMPER (19), Route 43
 	db "SPENCER@", TRAINERTYPE_NORMAL
-	db 37
+	db 30
 	dw NOCTOWL
-	db 37
+	db 30
 	dw SANDSLASH
-	db 37
+	db 31
 	dw CROBAT
 	db -1 ; end
 
@@ -5724,16 +5724,16 @@ CamperGroup:
 
 	next_list_item ; CAMPER (23), Lake of Rage
 	db "WESLEY@", TRAINERTYPE_ITEM
-	db 44
+	db 34
 	dw PRIMEAPE
 	dw NO_ITEM
-	db 43
+	db 33
 	dw POLIWRATH
 	dw BLACKBELT_I
-	db 45
+	db 35
 	dw MACHAMP
 	dw NO_ITEM
-	db 44
+	db 34
 	dw HERACROSS
 	dw BLACKBELT_I
 	db -1 ; end
