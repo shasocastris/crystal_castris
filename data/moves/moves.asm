@@ -62,7 +62,7 @@ MovesGen1:
 	move EFFECT_RAMPAGE,           120, NORMAL,        PHYSICAL, 100, 10,   0      ;THRASH
 	move EFFECT_RECOIL_HIT,        120, NORMAL,        PHYSICAL, 100, 15,   0      ;DOUBLE_EDGE
 	move EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0      ;TAIL_WHIP
-	move EFFECT_POISON_HIT,         15, POISON,        PHYSICAL, 100, 35,  30      ;POISON_STING
+	move EFFECT_POISON_HIT,         30, POISON,        PHYSICAL, 100, 35,  30      ;POISON_STING
 	move EFFECT_POISON_MULTI_HIT,   40, BUG,           PHYSICAL, 100, 20,  20      ;TWINEEDLE
 	move EFFECT_MULTI_HIT,          14, BUG,           PHYSICAL,  85, 20,   0      ;PIN_MISSILE
 	move EFFECT_DEFENSE_DOWN,        0, NORMAL,        STATUS,   100, 30,   0      ;LEER
