@@ -2618,9 +2618,9 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (6), Route 34
 	db "IRENE@", TRAINERTYPE_NORMAL
-	db 27
-	dw STARMIE
-	db 29
+	db 32
+	dw SKARMORY
+	db 34
 	dw SEAKING
 	db -1 ; end
 
@@ -2720,9 +2720,9 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (17), Route 34
 	db "JENN@", TRAINERTYPE_NORMAL
-	db 29
-	dw STARYU
 	db 32
+	dw SANDSLASH
+	db 34
 	dw STARMIE
 	db -1 ; end
 
@@ -5625,7 +5625,7 @@ CamperGroup:
 	db 36
 	dw SLUGMA
 	db 39
-	dw PSYDUCK
+	dw GOLDUCK
 	db -1 ; end
 
 	next_list_item ; CAMPER (14), National Park
