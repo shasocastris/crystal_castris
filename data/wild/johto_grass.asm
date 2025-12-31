@@ -593,57 +593,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
 	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 33, RATICATE
-	dbw 33, GOLBAT
-	dbw 33, MACHOKE
-	dbw 31, RHYHORN
-	dbw 33, GRAVELER
-	dbw 37, CLEFAIRY
-	dbw 37, CLEFABLE
+	dbw 26, RATICATE
+	dbw 26, GOLBAT
+	dbw 26, MACHOKE
+	dbw 24, RHYHORN
+	dbw 26, GRAVELER
+	dbw 30, CUBONE
+	dbw 30, MAROWAK
 	; day
-	dbw 33, RATICATE
-	dbw 33, GOLBAT
-	dbw 33, MACHOKE
-	dbw 31, RHYHORN
-	dbw 33, GRAVELER
-	dbw 37, CLEFAIRY
-	dbw 37, CLEFABLE
+	dbw 26, RATICATE
+	dbw 26, GOLBAT
+	dbw 26, MACHOKE
+	dbw 24, RHYHORN
+	dbw 26, GRAVELER
+	dbw 30, CUBONE
+	dbw 30, MAROWAK
 	; nite
-	dbw 33, RATICATE
-	dbw 33, GOLBAT
-	dbw 33, AZUMARILL
-	dbw 31, RHYHORN
-	dbw 33, GRAVELER
-	dbw 37, CLEFAIRY
-	dbw 37, CLEFABLE
+	dbw 26, RATICATE
+	dbw 26, GOLBAT
+	dbw 26, AZUMARILL
+	dbw 24, RHYHORN
+	dbw 26, GRAVELER
+	dbw 30, CUBONE
+	dbw 30, MAROWAK
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_INSIDE
 	db 67 percent, 67 percent, 67 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 33, GRAVELER
-	dbw 33, RATICATE
-	dbw 35, MACHOKE
-	dbw 33, RHYHORN
-	dbw 35, GOLBAT
-	dbw 35, CLEFAIRY
-	dbw 35, CLEFABLE
-	; day
-	dbw 33, GRAVELER
-	dbw 33, RATICATE
-	dbw 35, MACHOKE
-	dbw 33, RHYHORN
-	dbw 35, GOLBAT
-	dbw 35, CLEFAIRY
-	dbw 35, CLEFABLE
-	; nite
-	dbw 33, GRAVELER
-	dbw 33, RATICATE
+	dbw 33, MACHOKE
 	dbw 35, RHYHORN
 	dbw 33, GOLBAT
-	dbw 35, AZUMARILL
 	dbw 35, CLEFAIRY
 	dbw 35, CLEFABLE
+	dbw 35, KANGASKHAN
+	; day
+	dbw 33, GRAVELER
+	dbw 33, MACHOKE
+	dbw 35, RHYHORN
+	dbw 33, GOLBAT
+	dbw 35, CLEFAIRY
+	dbw 35, CLEFABLE
+	dbw 35, KANGASKHAN
+	; nite
+	dbw 33, GRAVELER
+	dbw 33, RHYHORN
+	dbw 35, GOLBAT
+	dbw 33, AZUMARILL
+	dbw 35, CLEFAIRY
+	dbw 35, CLEFABLE
+	dbw 35, KANGASKHAN
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_2F_INSIDE
@@ -652,7 +652,7 @@ JohtoGrassWildMons:
 	dbw 51, GRAVELER
 	dbw 52, MACHOKE
 	dbw 51, RHYDON
-	dbw 50, RATICATE
+	dbw 50, DUGTRIO
 	dbw 48, GOLBAT
 	dbw 50, GOLEM
 	dbw 50, GOLEM
@@ -660,14 +660,14 @@ JohtoGrassWildMons:
 	dbw 51, GRAVELER
 	dbw 52, MACHOKE
 	dbw 51, RHYDON
-	dbw 50, RATICATE
+	dbw 50, DUGTRIO
 	dbw 28, GOLBAT
 	dbw 50, MACHAMP
 	dbw 50, MACHAMP
 	; nite
 	dbw 51, GRAVELER
 	dbw 51, RHYDON
-	dbw 50, RATICATE
+	dbw 50, DUGTRIO
 	dbw 50, GOLBAT
 	dbw 48, AZUMARILL
 	dbw 52, CROBAT
@@ -1571,59 +1571,59 @@ JohtoGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
-	db 100 percent, 100 percent, 100 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 33, ARBOK
-	dbw 33, FEAROW
-	dbw 35, STANTLER
-	dbw 37, RATICATE
-	dbw 35, SUDOWOODO
-	dbw 37, FEAROW
-	dbw 37, FEAROW
+	dbw 26, ARBOK
+	dbw 26, FEAROW
+	dbw 28, STANTLER
+	dbw 30, RATICATE
+	dbw 28, SUDOWOODO
+	dbw 30, FEAROW
+	dbw 30, FEAROW
 	; day
-	dbw 33, ARBOK
-	dbw 33, FEAROW
-	dbw 35, STANTLER
-	dbw 32, RATICATE
-	dbw 35, SUDOWOODO
-	dbw 37, FEAROW
-	dbw 37, FEAROW
+	dbw 26, ARBOK
+	dbw 26, FEAROW
+	dbw 28, STANTLER
+	dbw 25, RATICATE
+	dbw 28, SUDOWOODO
+	dbw 30, FEAROW
+	dbw 30, FEAROW
 	; nite
-	dbw 33, STANTLER
-	dbw 33, GOLBAT
-	dbw 35, RATICATE
-	dbw 37, AZUMARILL
-	dbw 35, AZUMARILL
-	dbw 37, GOLBAT
-	dbw 37, GOLBAT
+	dbw 26, STANTLER
+	dbw 26, GOLBAT
+	dbw 28, RATICATE
+	dbw 30, AZUMARILL
+	dbw 28, AZUMARILL
+	dbw 30, GOLBAT
+	dbw 30, GOLBAT
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_43
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 35, FURRET
-	dbw 36, PIDGEOT
-	dbw 36, FARFETCH_D
-	dbw 35, AMPHAROS
-	dbw 37, RATICATE
-	dbw 37, NINETALES
-	dbw 37, NINETALES
+	dbw 28, FURRET
+	dbw 29, PIDGEOT
+	dbw 29, FARFETCH_D
+	dbw 28, AMPHAROS
+	dbw 30, RATICATE
+	dbw 30, NINETALES
+	dbw 30, NINETALES
 	; day
-	dbw 35, FURRET
-	dbw 36, PIDGEOT
-	dbw 36, FARFETCH_D
-	dbw 35, FURRET
-	dbw 37, RATICATE
-	dbw 37, ARCANINE
-	dbw 37, ARCANINE
+	dbw 28, FURRET
+	dbw 29, PIDGEOT
+	dbw 29, FARFETCH_D
+	dbw 28, FURRET
+	dbw 30, RATICATE
+	dbw 30, ARCANINE
+	dbw 30, ARCANINE
 	; nite
-	dbw 35, VENOMOTH
-	dbw 36, NOCTOWL
-	dbw 36, RATICATE
-	dbw 37, GIRAFARIG
-	dbw 37, MISDREAVUS
-	dbw 37, HOUNDOOM
-	dbw 37, HOUNDOOM
+	dbw 28, VENOMOTH
+	dbw 29, NOCTOWL
+	dbw 29, RATICATE
+	dbw 30, GIRAFARIG
+	dbw 30, MISDREAVUS
+	dbw 30, HOUNDOOM
+	dbw 30, HOUNDOOM
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_44

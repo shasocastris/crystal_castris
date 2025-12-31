@@ -3107,11 +3107,11 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (15), Mt Mortar
 	db "MILLER@", TRAINERTYPE_NORMAL
-	db 45
+	db 33
 	dw NIDOKING
-	db 45
+	db 33
 	dw UMBREON
-	db 45
+	db 33
 	dw NIDOQUEEN
 	db -1 ; end
 
@@ -4000,11 +4000,11 @@ SwimmerMGroup:
 
 	next_list_item ; SWIMMERM (11), Mt Mortar
 	db "DARYL@", TRAINERTYPE_NORMAL
-	db 47
+	db 37
 	dw GYARADOS
-	db 48
+	db 38
 	dw KINGLER
-	db 45
+	db 35
 	dw POLIWRATH
 	db -1 ; end
 
@@ -4205,11 +4205,11 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (13), Mt Mortar
 	db "TARA@", TRAINERTYPE_NORMAL
-	db 45
+	db 35
 	dw DEWGONG
-	db 46
+	db 36
 	dw LAPRAS
-	db 47
+	db 37
 	dw STARMIE
 	db -1 ; end
 
@@ -4233,11 +4233,11 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (16), Mt Mortar
 	db "JODY@", TRAINERTYPE_NORMAL
-	db 44
+	db 34
 	dw GOLDUCK
-	db 46
+	db 36
 	dw QUAGSIRE
-	db 48
+	db 38
 	dw SLOWKING
 	db -1 ; end
 
@@ -4484,21 +4484,21 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (11), Mt Mortar
 	db "RUSS@", TRAINERTYPE_NORMAL
-	db 46
+	db 36
 	dw CROBAT
-	db 45
+	db 35
 	dw MAGNETON
-	db 48
+	db 38
 	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (12), Mt Mortar
 	db "NORTON@", TRAINERTYPE_NORMAL
-	db 45
+	db 35
 	dw PORYGON2
-	db 47
+	db 37
 	dw XATU
-	db 48
+	db 38
 	dw ELECTRODE
 	db -1 ; end
 
@@ -4517,13 +4517,13 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (14), Mt Mortar
 	db "MARKUS@", TRAINERTYPE_MOVES
-	db 45
+	db 35
 	dw BELLOSSOM
 	dw PETAL_DANCE, STUN_SPORE, GROWTH, SYNTHESIS
-	db 45
+	db 35
 	dw SLOWBRO
 	dw CURSE, IRON_TAIL, EARTHQUAKE, STRENGTH
-	db 45
+	db 35
 	dw SLOWKING
 	dw AMNESIA, SURF, PSYCHIC_M, FLAMETHROWER
 	db -1 ; end
