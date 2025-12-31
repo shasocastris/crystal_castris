@@ -1642,27 +1642,27 @@ RedGroup:
 ScientistGroup:
 	next_list_item ; SCIENTIST (1), Team Rocket's Hideout
 	db "ROSS@", TRAINERTYPE_NORMAL
-	db 39
+	db 32
 	dw MAGNETON
-	db 39
+	db 32
 	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (2), Team Rocket's Hideout
 	db "MITCH@", TRAINERTYPE_NORMAL
-	db 41
+	db 33
 	dw DITTO
-	db 41
+	db 33
 	dw MAGNETON
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (3), Team Rocket's Hideout
 	db "JED@", TRAINERTYPE_NORMAL
-	db 36
+	db 31
 	dw WEEZING
-	db 36
+	db 32
 	dw PORYGON
-	db 36
+	db 31
 	dw MAGNETON
 	db -1 ; end
 
@@ -3296,27 +3296,27 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (18), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 33
+	db 31
 	dw RATICATE
-	db 33
+	db 31
 	dw GOLBAT
-	db 33
+	db 31
 	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (19), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 34
+	db 32
 	dw VENOMOTH
-	db 34
+	db 32
 	dw GOLBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (20), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 33
+	db 32
 	dw HYPNO
-	db 35
+	db 33
 	dw GOLBAT
 	db -1 ; end
 
@@ -3326,7 +3326,7 @@ GruntMGroup:
 	dw GOLBAT
 	db 33
 	dw VENOMOTH
-	db 34
+	db 32
 	dw RATICATE
 	db -1 ; end
 
@@ -3376,10 +3376,10 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (28), Team Rocket's Hideout
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 35
+	db 31
 	dw RATICATE
-	db 36
-	dw WEEZING
+	db 31
+	dw KOFFING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (29), Slowpoke Well
@@ -5194,12 +5194,12 @@ ExecutiveMGroup:
 
 	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
 	db "PETREL@", TRAINERTYPE_NORMAL
-	db 34
+	db 30
 	dw GOLBAT
-	db 34
+	db 30
 	dw RATICATE
-	db 35
-	dw WEEZING
+	db 31
+	dw KOFFING
 	db -1 ; end
 
 	end_list_items
