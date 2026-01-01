@@ -22,7 +22,7 @@ Route36RuinsOfAlphGateOfficerText:
 
 Route36RuinsOfAlphGateGrampsText:
 	text "Did you see that"
-	line "strange tree in"
+	line "RANGER blocking"
 	cont "the road?"
 
 	para "That may explain"

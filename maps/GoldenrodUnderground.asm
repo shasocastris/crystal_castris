@@ -46,7 +46,7 @@ GoldenrodUndergroundCheckBasementKeyCallback:
 	endcallback
 
 .LockBasementDoor:
-	changeblock 18, 6, $3d ; locked door
+	changeblock 16, 6, $3d ; locked door
 	endcallback
 
 GoldenrodUndergroundCheckDayOfWeekCallback:
@@ -382,7 +382,7 @@ BasementDoorScript::
 	writetext GoldenrodUndergroundBasementKeyOpenedDoorText
 	waitbutton
 	closetext
-	changeblock 18, 6, $2e ; unlocked door
+	changeblock 16, 6, $2e ; unlocked door
 	refreshmap
 	closetext
 	setevent EVENT_USED_BASEMENT_KEY
