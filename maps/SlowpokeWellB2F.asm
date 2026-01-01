@@ -1,6 +1,7 @@
 	object_const_def
 	const SLOWPOKEWELLB2F_GYM_GUIDE
 	const SLOWPOKEWELLB2F_POKE_BALL
+	const SLOWPOKEWELLB2F_SUPER_NERD
 
 SlowpokeWellB2F_MapScripts:
 	def_scene_scripts

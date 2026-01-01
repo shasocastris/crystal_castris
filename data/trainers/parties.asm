@@ -1640,7 +1640,7 @@ RedGroup:
 	end_list_items
 
 ScientistGroup:
-	next_list_item ; SCIENTIST (1), Team Rocket's Hideout
+	next_list_item ; SCIENTIST (1), Team Rocket's Hideout, B3F
 	db "ROSS@", TRAINERTYPE_NORMAL
 	db 32
 	dw MAGNETON
@@ -1648,7 +1648,7 @@ ScientistGroup:
 	dw WEEZING
 	db -1 ; end
 
-	next_list_item ; SCIENTIST (2), Team Rocket's Hideout
+	next_list_item ; SCIENTIST (2), Team Rocket's Hideout, B3F
 	db "MITCH@", TRAINERTYPE_NORMAL
 	db 33
 	dw DITTO
@@ -1656,7 +1656,7 @@ ScientistGroup:
 	dw MAGNETON
 	db -1 ; end
 
-	next_list_item ; SCIENTIST (3), Team Rocket's Hideout
+	next_list_item ; SCIENTIST (3), Team Rocket's Hideout, B1F
 	db "JED@", TRAINERTYPE_NORMAL
 	db 31
 	dw WEEZING
@@ -2302,9 +2302,9 @@ LassGroup:
 
 	next_list_item ; LASS (5), Dark Cave, Violet
 	db "MARGE@", TRAINERTYPE_NORMAL
-	db 20
+	db 28
 	dw AZUMARILL
-	db 20
+	db 28
 	dw FLAAFFY
 	db -1 ; end
 
@@ -2351,7 +2351,7 @@ LassGroup:
 	end_list_items
 
 CooltrainerMGroup:
-	next_list_item ; COOLTRAINERM (1), Union Cave
+	next_list_item ; COOLTRAINERM (1), Union Cave, post Surf
 	db "NICK@", TRAINERTYPE_MOVES
 	db 32
 	dw CHARMELEON
@@ -2574,15 +2574,15 @@ CooltrainerMGroup:
 	end_list_items
 
 CooltrainerFGroup:
-	next_list_item ; COOLTRAINERF (1), Union Cave
+	next_list_item ; COOLTRAINERF (1), Union Cave, post Surf
 	db "GWEN@", TRAINERTYPE_NORMAL
-	db 32
+	db 33
 	dw EEVEE
-	db 27
+	db 33
 	dw FLAREON
-	db 27
+	db 33
 	dw VAPOREON
-	db 27
+	db 33
 	dw JOLTEON
 	db -1 ; end
 
@@ -2612,19 +2612,19 @@ CooltrainerFGroup:
 	dw GYARADOS
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (5), Route 34
+	next_list_item ; COOLTRAINERF (5), Route 34, post Surf
 	db "KATE@", TRAINERTYPE_NORMAL
-	db 32
-	dw MEGANIUM
 	db 34
+	dw MEGANIUM
+	db 36
 	dw CLOYSTER
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (6), Route 34
+	next_list_item ; COOLTRAINERF (6), Route 34, post Surf
 	db "IRENE@", TRAINERTYPE_NORMAL
-	db 32
-	dw SKARMORY
 	db 34
+	dw SKARMORY
+	db 36
 	dw SEAKING
 	db -1 ; end
 
@@ -2703,10 +2703,14 @@ CooltrainerFGroup:
 	dw STARMIE
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (15), Union Cave
+	next_list_item ; COOLTRAINERF (15), Union Cave, post Surf
 	db "EMMA@", TRAINERTYPE_NORMAL
 	db 34
 	dw POLIWHIRL
+	db 34
+	dw MACHOKE
+	db 34
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (16), Route 44
@@ -2722,11 +2726,11 @@ CooltrainerFGroup:
 	dw EARTHQUAKE, ROCK_SLIDE, EXPLOSION, MEGA_PUNCH
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF (17), Route 34
+	next_list_item ; COOLTRAINERF (17), Route 34, post Surf
 	db "JENN@", TRAINERTYPE_NORMAL
-	db 32
-	dw SANDSLASH
 	db 34
+	dw SANDSLASH
+	db 36
 	dw STARMIE
 	db -1 ; end
 
@@ -2984,53 +2988,57 @@ PokemaniacGroup:
 	dw PARAS
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (2), Union Cave
+	next_list_item ; POKEMANIAC (2), Union Cave, post Surf
 	db "ANDREW@", TRAINERTYPE_NORMAL
-	db 29
+	db 34
 	dw MAROWAK
-	db 29
+	db 34
 	dw DUGTRIO
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (3), Union Cave
+	next_list_item ; POKEMANIAC (3), Union Cave, post Surf
 	db "CALVIN@", TRAINERTYPE_NORMAL
 	db 32
 	dw KANGASKHAN
+	db 32
+	dw FARFETCH_D
+	db 32
+	dw RAICHU
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (4), Route 42
 	db "SHANE@", TRAINERTYPE_NORMAL
-	db 30
+	db 27
 	dw NIDORINA
-	db 31
+	db 28
 	dw NIDORINO
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (5), Route 43
 	db "BEN@", TRAINERTYPE_NORMAL
-	db 32
+	db 28
 	dw SLOWBRO
-	db 32
+	db 27
 	dw LEDIAN
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (6), Route 43
 	db "BRENT@", TRAINERTYPE_NORMAL
-	db 31
+	db 27
 	dw LICKITUNG
-	db 32
+	db 28
 	dw KANGASKHAN
-	db 31
+	db 27
 	dw PORYGON
-	db 32
+	db 28
 	dw CHANSEY
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (7), Route 43
 	db "RON@", TRAINERTYPE_NORMAL
-	db 33
+	db 29
 	dw NIDOKING
-	db 33
+	db 30
 	dw AMPHAROS
 	db -1 ; end
 
@@ -3044,13 +3052,13 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (9), Route 43
 	db "BRENT@", TRAINERTYPE_NORMAL
-	db 43
+	db 37
 	dw LICKITUNG
-	db 44
+	db 38
 	dw KANGASKHAN
-	db 44
+	db 37
 	dw PORYGON
-	db 43
+	db 38
 	dw CHANSEY
 	db -1 ; end
 
@@ -3111,13 +3119,13 @@ PokemaniacGroup:
 	dw RECOVER, PSYCHIC_M, CONVERSION2, TRI_ATTACK
 	db -1 ; end
 
-	next_list_item ; POKEMANIAC (15), Mt Mortar
+	next_list_item ; POKEMANIAC (15), Mt Mortar, post Ecruteak
 	db "MILLER@", TRAINERTYPE_NORMAL
-	db 33
+	db 27
 	dw NIDOKING
-	db 33
+	db 30
 	dw UMBREON
-	db 33
+	db 27
 	dw NIDOQUEEN
 	db -1 ; end
 
@@ -3282,25 +3290,21 @@ GruntMGroup:
 	dw SLOWBRO
 	db -1 ; end
 
-	next_list_item ; GRUNTM (16), Team Rocket's Hideout
+	next_list_item ; GRUNTM (16), Team Rocket's Hideout, B3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
-	dw RATICATE
-	db 32
-	dw TAUROS
 	db 32
 	dw RATICATE
 	db 32
 	dw TAUROS
 	db -1 ; end
 
-	next_list_item ; GRUNTM (17), Team Rocket's Hideout
+	next_list_item ; GRUNTM (17), Team Rocket's Hideout, B2F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 34
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (18), Team Rocket's Hideout
+	next_list_item ; GRUNTM (18), Team Rocket's Hideout, B2F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 31
 	dw RATICATE
@@ -3310,7 +3314,7 @@ GruntMGroup:
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (19), Team Rocket's Hideout
+	next_list_item ; GRUNTM (19), Team Rocket's Hideout, B2F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 32
 	dw VENOMOTH
@@ -3318,21 +3322,21 @@ GruntMGroup:
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (20), Team Rocket's Hideout
+	next_list_item ; GRUNTM (20), Team Rocket's Hideout, B1F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
+	db 30
 	dw HYPNO
-	db 33
+	db 31
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (21), Team Rocket's Hideout
+	next_list_item ; GRUNTM (21), Team Rocket's Hideout, B1F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 32
+	db 30
 	dw GOLBAT
-	db 33
+	db 31
 	dw VENOMOTH
-	db 32
+	db 30
 	dw RATICATE
 	db -1 ; end
 
@@ -3380,12 +3384,12 @@ GruntMGroup:
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (28), Team Rocket's Hideout
+	next_list_item ; GRUNTM (28), Team Rocket's Hideout, B3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 31
 	dw RATICATE
 	db 31
-	dw KOFFING
+	dw GRIMER
 	db -1 ; end
 
 	next_list_item ; GRUNTM (29), Slowpoke Well
@@ -3458,17 +3462,17 @@ GentlemanGroup:
 SkierGroup:
 	next_list_item ; SKIER (1), Mahogany Gym
 	db "ROXANNE@", TRAINERTYPE_NORMAL
-	db 35
+	db 33
 	dw JYNX
-	db 35
+	db 33
 	dw DEWGONG
 	db -1 ; end
 
 	next_list_item ; SKIER (2), Mahogany Gym
 	db "CLARISSA@", TRAINERTYPE_NORMAL
-	db 44
+	db 34
 	dw LAPRAS
-	db 44
+	db 34
 	dw DELIBIRD
 	db -1 ; end
 
@@ -3724,13 +3728,13 @@ FisherGroup:
 
 	next_list_item ; FISHER (6), Route 43
 	db "MARVIN@", TRAINERTYPE_NORMAL
-	db 31
+	db 27
 	dw OCTILLERY
-	db 33
+	db 28
 	dw GYARADOS
-	db 31
+	db 27
 	dw OCTILLERY
-	db 33
+	db 29
 	dw GYARADOS
 	db -1 ; end
 
@@ -3837,7 +3841,7 @@ FisherGroup:
 	db 36
 	dw QWILFISH
 	db 39
-	dw GOLDEEN
+	dw SEAKING
 	db -1 ; end
 
 	next_list_item ; FISHER (18), Route 42
@@ -4008,11 +4012,11 @@ SwimmerMGroup:
 	dw LANTURN
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (11), Mt Mortar
+	next_list_item ; SWIMMERM (11), Mt Mortar, post Surf
 	db "DARYL@", TRAINERTYPE_NORMAL
-	db 37
+	db 34
 	dw GYARADOS
-	db 38
+	db 34
 	dw KINGLER
 	db 35
 	dw POLIWRATH
@@ -4084,7 +4088,7 @@ SwimmerMGroup:
 	dw QUAGSIRE
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (19), Union Cave
+	next_list_item ; SWIMMERM (19), Union Cave, post Surf
 	db "JAMES@", TRAINERTYPE_NORMAL
 	db 34
 	dw TENTACRUEL
@@ -4094,7 +4098,7 @@ SwimmerMGroup:
 	dw SEADRA
 	db -1 ; end
 
-	next_list_item ; SWIMMERM (20), Union Cave
+	next_list_item ; SWIMMERM (20), Union Cave, post Surf
 	db "LEWIS@", TRAINERTYPE_NORMAL
 	db 33
 	dw GOLDUCK
@@ -4175,7 +4179,7 @@ SwimmerFGroup:
 	dw DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (8), Union Cave
+	next_list_item ; SWIMMERF (8), Union Cave, post Surf
 	db "LISA@", TRAINERTYPE_NORMAL
 	db 34
 	dw JYNX
@@ -4213,13 +4217,13 @@ SwimmerFGroup:
 	dw SEAKING
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (13), Mt Mortar
+	next_list_item ; SWIMMERF (13), Mt Mortar, post Surf
 	db "TARA@", TRAINERTYPE_NORMAL
-	db 35
+	db 32
 	dw DEWGONG
-	db 36
+	db 32
 	dw LAPRAS
-	db 37
+	db 33
 	dw STARMIE
 	db -1 ; end
 
@@ -4241,13 +4245,13 @@ SwimmerFGroup:
 	dw STARMIE
 	db -1 ; end
 
-	next_list_item ; SWIMMERF (16), Mt Mortar
+	next_list_item ; SWIMMERF (16), Mt Mortar, post Surf
 	db "JODY@", TRAINERTYPE_NORMAL
-	db 34
+	db 32
 	dw GOLDUCK
-	db 36
+	db 32
 	dw QUAGSIRE
-	db 38
+	db 34
 	dw SLOWKING
 	db -1 ; end
 
@@ -4402,12 +4406,14 @@ SailorGroup:
 	end_list_items
 
 SuperNerdGroup:
-	next_list_item ; SUPER_NERD (1)
+	next_list_item ; SUPER_NERD (1), Slowpoke Well, B2F
 	db "STAN@", TRAINERTYPE_NORMAL
-	db 32
+	db 38
 	dw HOUNDOOM
-	db 32
-	dw GRIMER
+	db 38
+	dw POLITOED
+	db 38
+	dw MUK
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (2), Goldenrod Tunnel
@@ -4430,10 +4436,10 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (4), Dark Cave, Violet
 	db "JAY@", TRAINERTYPE_NORMAL
-	db 18
-	dw KOFFING
-	db 22
-	dw MAGNEMITE
+	db 35
+	dw WEEZING
+	db 33
+	dw MAGNETON
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (5), Dark Cave, Blackthorn Entrance
@@ -4492,7 +4498,7 @@ SuperNerdGroup:
 	dw VULPIX
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (11), Mt Mortar
+	next_list_item ; SUPER_NERD (11), Mt Mortar, post Strength
 	db "RUSS@", TRAINERTYPE_NORMAL
 	db 36
 	dw CROBAT
@@ -4502,7 +4508,7 @@ SuperNerdGroup:
 	dw ALAKAZAM
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (12), Mt Mortar
+	next_list_item ; SUPER_NERD (12), Mt Mortar, post Waterfall
 	db "NORTON@", TRAINERTYPE_NORMAL
 	db 35
 	dw PORYGON2
@@ -4512,7 +4518,7 @@ SuperNerdGroup:
 	dw ELECTRODE
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (13), Mt Mortar
+	next_list_item ; SUPER_NERD (13), Mt Mortar, post Waterfall
 	db "HUGH@", TRAINERTYPE_MOVES
 	db 47
 	dw AMPHAROS
@@ -4525,7 +4531,7 @@ SuperNerdGroup:
 	dw SMOKESCREEN, TWISTER, SURF, WATERFALL
 	db -1 ; end
 
-	next_list_item ; SUPER_NERD (14), Mt Mortar
+	next_list_item ; SUPER_NERD (14), Mt Mortar, post Strength
 	db "MARKUS@", TRAINERTYPE_MOVES
 	db 35
 	dw BELLOSSOM
@@ -4580,21 +4586,21 @@ HikerGroup:
 	dw GEODUDE
 	db -1 ; end
 
-	next_list_item ; HIKER (3), Union Cave
+	next_list_item ; HIKER (3), Union Cave, post Surf
 	db "PHILLIP@", TRAINERTYPE_NORMAL
-	db 28
+	db 34
 	dw SANDSLASH
-	db 28
+	db 34
 	dw RHYHORN
-	db 28
+	db 34
 	dw GRAVELER
 	db -1 ; end
 
-	next_list_item ; HIKER (4), Union Cave
+	next_list_item ; HIKER (4), Union Cave, post Surf
 	db "LEONARD@", TRAINERTYPE_NORMAL
-	db 28
+	db 34
 	dw GRAVELER
-	db 30
+	db 36
 	dw MACHOKE
 	db -1 ; end
 
@@ -4608,11 +4614,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (6), Route 42
 	db "BENJAMIN@", TRAINERTYPE_NORMAL
-	db 31
+	db 28
 	dw ONIX
-	db 31
+	db 28
 	dw GOLEM
-	db 31
+	db 28
 	dw DUGTRIO
 	db -1 ; end
 
@@ -4654,16 +4660,16 @@ HikerGroup:
 
 	next_list_item ; HIKER (11), Route 46
 	db "BAILEY@", TRAINERTYPE_NORMAL
-	db 16
-	dw DIGLETT
-	db 16
-	dw GEODUDE
-	db 16
-	dw LARVITAR
-	db 16
-	dw SANDSHREW
-	db 16
-	dw GEODUDE
+	db 31
+	dw DUGTRIO
+	db 31
+	dw GRAVELER
+	db 31
+	dw PUPITAR
+	db 31
+	dw SANDSLASH
+	db 31
+	dw GRAVELER
 	db -1 ; end
 
 	next_list_item ; HIKER (21), Route 33
@@ -5103,7 +5109,7 @@ BlackbeltGroup:
 	dw LEER, KARATE_CHOP, SEISMIC_TOSS, ROCK_SLIDE
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (6), Mt Mortar
+	next_list_item ; BLACKBELT_T (6), Mt Mortar, post Waterfall
 	db "KIYO@", TRAINERTYPE_NORMAL
 	db 50
 	dw HITMONLEE
@@ -5123,7 +5129,7 @@ BlackbeltGroup:
 	dw PRIMEAPE
 	db -1 ; end
 
-	next_list_item ; BLACKBELT_T (8), Mt Mortar
+	next_list_item ; BLACKBELT_T (8), Mt Mortar, post Waterfall
 	db "TAKESHI@", TRAINERTYPE_NORMAL
 	db 46
 	dw MACHOKE
@@ -5213,7 +5219,7 @@ ExecutiveMGroup:
 	db 30
 	dw RATICATE
 	db 31
-	dw KOFFING
+	dw HYPNO
 	db -1 ; end
 
 	end_list_items
@@ -5223,6 +5229,10 @@ PsychicGroup:
 	db "NATHAN@", TRAINERTYPE_NORMAL
 	db 32
 	dw GIRAFARIG
+	db 32
+	dw XATU
+	db 30
+	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (2), Saffron Gym
@@ -5402,9 +5412,9 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (10), Route 46
 	db "ERIN@", TRAINERTYPE_NORMAL
-	db 20
+	db 30
 	dw VULPIX
-	db 20
+	db 30
 	dw PONYTA
 	db -1 ; end
 
@@ -5454,20 +5464,20 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (16), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 32
+	db 29
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 32
+	db 29
 	dw BUTTERFREE
 	dw LEECH_LIFE, CONFUSION, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
 
 	next_list_item ; PICNICKER (17), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 41
+	db 38
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 41
+	db 38
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
 	db -1 ; end
@@ -5476,8 +5486,8 @@ PicnickerGroup:
 	db "ERIN@", TRAINERTYPE_NORMAL
 	db 39
 	dw NINETALES
-	db 39
-	dw PONYTA
+	db 40
+	dw RAPIDASH
 	db -1 ; end
 
 	next_list_item ; PICNICKER (19), Celadon Gym
@@ -5630,8 +5640,12 @@ CamperGroup:
 
 	next_list_item ; CAMPER (11), Route 46
 	db "TED@", TRAINERTYPE_NORMAL
-	db 21
-	dw MANKEY
+	db 31
+	dw PRIMEAPE
+	db 31
+	dw SCYTHER
+	db 31
+	dw MILTANK
 	db -1 ; end
 
 	next_list_item ; CAMPER (12), Route 34
@@ -5668,12 +5682,14 @@ CamperGroup:
 	dw PSYDUCK
 	db -1 ; end
 
-	next_list_item ; CAMPER (15), Dark Cave, Violet
-	db "LEROY@", TRAINERTYPE_NORMAL
-	db 19
-	dw SLUGMA
-	db 21
-	dw PSYDUCK
+	next_list_item ; CAMPER (15), Dark Cave, Violet, post Surf
+	db "LEROY@", TRAINERTYPE_MOVES
+	db 38
+	dw MAGCARGO
+	dw FLAMETHROWER, AMNESIA, ROCK_THROW, SMOG
+	db 38
+	dw GOLDUCK
+	dw SURF, ICE_BEAM, PSYCH_UP, PSYBEAM
 	db -1 ; end
 
 	next_list_item ; CAMPER (16), Route 2
@@ -5716,11 +5732,11 @@ CamperGroup:
 
 	next_list_item ; CAMPER (19), Route 43
 	db "SPENCER@", TRAINERTYPE_NORMAL
-	db 30
+	db 28
 	dw NOCTOWL
-	db 30
+	db 28
 	dw SANDSLASH
-	db 31
+	db 29
 	dw CROBAT
 	db -1 ; end
 
@@ -5788,18 +5804,18 @@ ExecutiveFGroup:
 	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout
+	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout, B2F
 	db "ARIANA@", TRAINERTYPE_MOVES
-	db 34
+	db 32
 	dw VILEPLUME
 	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
-	db 36
+	db 34
 	dw MURKROW
 	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
-	db 35
+	db 33
 	dw HYPNO
 	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
-	db 35
+	db 33
 	dw MUK
 	dw SLUDGE_BOMB, LICK, MINIMIZE, SCREECH
 	db -1 ; end
@@ -6508,7 +6524,7 @@ GruntFGroup:
 	dw VILEPLUME
 	db -1 ; end
 
-	next_list_item ; GRUNTF (5), Team Rocket's Hideout
+	next_list_item ; GRUNTF (5), Team Rocket's Hideout, B3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 32
 	dw ARBOK

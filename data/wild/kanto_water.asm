@@ -180,7 +180,7 @@ KantoWaterWildMons:
 	def_water_wildmons BLACKTHORN_PASS
 	db 6 percent ; encounter rate
 	dbw 30, LANTURN
-	dbw 25, DRAGONAIR
+	dbw 30, DRAGONAIR
 	dbw 30, GYARADOS
 	end_water_wildmons
 

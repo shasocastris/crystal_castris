@@ -25,7 +25,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons UNION_CAVE_B2F
 	db 25 percent ; encounter rate
-	dbw 26, TENTACOOL
+	dbw 30, TENTACRUEL
 	dbw 30, QUAGSIRE
 	dbw 33, SEAKING
 	end_water_wildmons
@@ -39,9 +39,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SLOWPOKE_WELL_B2F
 	db 10 percent ; encounter rate
-	dbw 15, SLOWPOKE
-	dbw 20, SLOWPOKE
-	dbw 20, SLOWBRO
+	dbw 33, SLOWPOKE
+	dbw 37, SLOWBRO
+	dbw 37, SLOWKING
 	end_water_wildmons
 
 	def_water_wildmons ILEX_FOREST
@@ -60,7 +60,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons MOUNT_MORTAR_2F_INSIDE
 	db 45 percent ; encounter rate
-	dbw 48, SEAKING
+	dbw 48, QUAGSIRE
 	dbw 50, AZUMARILL
 	dbw 50, LANTURN
 	end_water_wildmons
@@ -102,9 +102,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
 	db 15 percent ; encounter rate
-	dbw 16, MAGIKARP
-	dbw 18, POLIWAG
-	dbw 20, GYARADOS
+	dbw 28, HORSEA
+	dbw 28, POLIWHIRL
+	dbw 30, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -205,11 +205,11 @@ JohtoWaterWildMons:
 	dbw 35, OCTILLERY
 	end_water_wildmons
 
-	def_water_wildmons NEW_BARK_TOWN
+	def_water_wildmons NEW_BARK_TOWN; mirror ROUTE_27
 	db 20 percent ; encounter rate
-	dbw 20, TENTACOOL
-	dbw 15, REMORAID
-	dbw 20, TENTACRUEL
+	dbw 40, TENTACRUEL
+	dbw 35, CLOYSTER
+	dbw 40, GYARADOS
 	end_water_wildmons
 
 	def_water_wildmons CHERRYGROVE_CITY
@@ -242,9 +242,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ECRUTEAK_CITY
 	db 10 percent ; encounter rate35
-	dbw 20, POLIWAG
-	dbw 15, CHINCHOU
-	dbw 20, POLIWHIRL
+	dbw 21, POLIWAG
+	dbw 23, CHINCHOU
+	dbw 25, POLIWHIRL
 	end_water_wildmons
 
 	def_water_wildmons LAKE_OF_RAGE

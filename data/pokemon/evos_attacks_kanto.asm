@@ -2044,9 +2044,9 @@ KoffingEvosAttacks:
 	dbw 1, TACKLE
 	dbw 9, SMOG
 	dbw 13, SCREECH
-	dbw 17, SELFDESTRUCT
+	dbw 17, SLUDGE
 	dbw 19, PSYWAVE
-	dbw 21, SLUDGE
+	dbw 21, SELFDESTRUCT
 	dbw 25, SMOKESCREEN
 	dbw 29, DESTINY_BOND
 	dbw 33, HAZE
@@ -2063,9 +2063,9 @@ WeezingEvosAttacks:
 	dbw 1, TACKLE
 	dbw 9, SMOG
 	dbw 13, SCREECH
-	dbw 17, SELFDESTRUCT
+	dbw 17, SLUDGE
 	dbw 19, PSYWAVE
-	dbw 21, SLUDGE
+	dbw 21, SELFDESTRUCT
 	dbw 25, SMOKESCREEN
 	dbw 29, DESTINY_BOND
 	dbw 33, HAZE
