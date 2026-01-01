@@ -1215,7 +1215,7 @@ Rival1Group:
 
 	next_list_item ; RIVAL1 (4), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw GASTLY
 	db 20
 	dw ZUBAT
@@ -1225,7 +1225,7 @@ Rival1Group:
 
 	next_list_item ; RIVAL1 (5), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw GASTLY
 	db 20
 	dw ZUBAT
@@ -1235,7 +1235,7 @@ Rival1Group:
 
 	next_list_item ; RIVAL1 (6), Azalea Town
 	db "?@", TRAINERTYPE_NORMAL
-	db 15
+	db 17
 	dw GASTLY
 	db 20
 	dw ZUBAT
@@ -1691,13 +1691,13 @@ ScientistGroup:
 YoungsterGroup:
 	next_list_item ; YOUNGSTER (1), Route 30
 	db "JOEY@", TRAINERTYPE_NORMAL
-	db 5
+	db 6
 	dw RATTATA
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (2), Route 30
 	db "MIKEY@", TRAINERTYPE_NORMAL
-	db 3
+	db 4
 	dw PIDGEY
 	db 5
 	dw RATTATA
@@ -1705,9 +1705,9 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (3), Route 32
 	db "ALBERT@", TRAINERTYPE_NORMAL
-	db 8
+	db 11
 	dw RATTATA
-	db 10
+	db 12
 	dw ZUBAT
 	db -1 ; end
 
@@ -1715,17 +1715,19 @@ YoungsterGroup:
 	db "GORDON@", TRAINERTYPE_NORMAL
 	db 12
 	dw WOOPER
+	db 12
+	dw EKANS
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (5), Route 32
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db 9
+	db 10
 	dw RATTATA
 	db 12
 	dw SANDSHREW
-	db 10
+	db 11
 	dw SPEAROW
-	db 10
+	db 11
 	dw PICHU
 	db -1 ; end
 
@@ -2114,11 +2116,11 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (13), Route 32
 	db "PETER@", TRAINERTYPE_NORMAL
-	db 8
+	db 11
 	dw HOOTHOOT
-	db 8
+	db 11
 	dw PIDGEY
-	db 10
+	db 12
 	dw SPEAROW
 	db -1 ; end
 
@@ -2336,7 +2338,7 @@ LassGroup:
 
 	next_list_item ; LASS (13), Route 32
 	db "FRIEDA@", TRAINERTYPE_NORMAL
-	db 12
+	db 14
 	dw ZUBAT
 	db 14
 	dw EKANS
@@ -2505,9 +2507,9 @@ CooltrainerMGroup:
 	db "TYLER@", TRAINERTYPE_NORMAL
 	db 12
 	dw STANTLER
-	db 13
+	db 12
 	dw TANGELA
-	db 14
+	db 13
 	dw CORSOLA
 	db -1 ; end
 
@@ -2974,8 +2976,10 @@ BeautyGroup:
 PokemaniacGroup:
 	next_list_item ; POKEMANIAC (1), Union Cave
 	db "LARRY@", TRAINERTYPE_NORMAL
-	db 12
+	db 13
 	dw SLOWPOKE
+	db 13
+	dw PARAS
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (2), Union Cave
@@ -3144,17 +3148,17 @@ PokemaniacGroup:
 GruntMGroup:
 	next_list_item ; GRUNTM (1), Slowpoke Well
 	db "ARCHER@", TRAINERTYPE_NORMAL
-	db 17
+	db 19
 	dw KOFFING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (2), Slowpoke Well
 	db "PETREL@", TRAINERTYPE_NORMAL
-	db 9
+	db 14
 	dw RATTATA
-	db 11
+	db 15
 	dw ZUBAT
-	db 11
+	db 15
 	dw DROWZEE
 	db -1 ; end
 
@@ -3384,9 +3388,9 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (29), Slowpoke Well
 	db "PROTON@", TRAINERTYPE_NORMAL
-	db 11
-	dw RATTATA
-	db 11
+	db 15
+	dw SLOWPOKE
+	db 15
 	dw ZUBAT
 	db -1 ; end
 
@@ -3502,9 +3506,9 @@ TeacherGroup:
 BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (1), Route 30
 	db "DON@", TRAINERTYPE_NORMAL
-	db 4
+	db 5
 	dw LEDYBA
-	db 4
+	db 5
 	dw SPINARAK
 	db -1 ; end
 
@@ -3528,13 +3532,13 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (4), Route 31
 	db "WADE@", TRAINERTYPE_NORMAL
-	db 3
-	dw CATERPIE
-	db 3
+	db 4
 	dw CATERPIE
 	db 4
+	dw CATERPIE
+	db 5
 	dw WEEDLE
-	db 3
+	db 4
 	dw CATERPIE
 	db -1 ; end
 
@@ -3650,9 +3654,9 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (19), Ilex Forest
 	db "WAYNE@", TRAINERTYPE_NORMAL
-	db 10
+	db 16
 	dw LEDYBA
-	db 12
+	db 17
 	dw PARAS
 	db -1 ; end
 
@@ -3674,13 +3678,13 @@ BugCatcherGroup:
 FisherGroup:
 	next_list_item ; FISHER (1), Route 32
 	db "JUSTIN@", TRAINERTYPE_NORMAL
-	db 6
+	db 11
 	dw SHELLDER
-	db 6
+	db 11
 	dw KRABBY
 	db 18
 	dw MAGIKARP
-	db 6
+	db 11
 	dw POLIWAG
 	db -1 ; end
 
@@ -3688,6 +3692,8 @@ FisherGroup:
 	db "RALPH@", TRAINERTYPE_NORMAL
 	db 12
 	dw GOLDEEN
+	db 12
+	dw QWILFISH
 	db -1 ; end
 
 	next_list_item ; FISHER (3), Route 21
@@ -3708,9 +3714,9 @@ FisherGroup:
 
 	next_list_item ; FISHER (5), Route 32
 	db "HENRY@", TRAINERTYPE_NORMAL
-	db 10
+	db 12
 	dw HORSEA
-	db 10
+	db 12
 	dw POLIWAG
 	db -1 ; end
 
@@ -3820,6 +3826,8 @@ FisherGroup:
 	db "RALPH@", TRAINERTYPE_NORMAL
 	db 21
 	dw GOLDEEN
+	db 21
+	dw QWILFISH
 	db -1 ; end
 
 	next_list_item ; FISHER (23), Route 32
@@ -4562,11 +4570,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (2), Union Cave
 	db "RUSSELL@", TRAINERTYPE_NORMAL
-	db 5
+	db 11
 	dw DIGLETT
-	db 8
+	db 12
 	dw ONIX
-	db 10
+	db 13
 	dw GEODUDE
 	db -1 ; end
 
@@ -4712,6 +4720,8 @@ HikerGroup:
 
 	next_list_item ; HIKER (18), Union Cave
 	db "DANIEL@", TRAINERTYPE_NORMAL
+	db 12
+	dw ONIX
 	db 14
 	dw ONIX
 	db -1 ; end
@@ -4907,9 +4917,9 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (5), Union Cave
 	db "BILL@", TRAINERTYPE_NORMAL
-	db 8
+	db 12
 	dw KOFFING
-	db 8
+	db 13
 	dw SLUGMA
 	db -1 ; end
 
@@ -4923,8 +4933,10 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (7), Union Cave
 	db "RAY@", TRAINERTYPE_NORMAL
-	db 11
+	db 13
 	dw VULPIX
+	db 13
+	dw GROWLITHE
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (8), SS Aqua
@@ -5315,6 +5327,8 @@ PicnickerGroup:
 	db "LIZ@", TRAINERTYPE_NORMAL
 	db 11
 	dw NIDORAN_F
+	db 11
+	dw BELLSPROUT
 	db -1 ; end
 
 	next_list_item ; PICNICKER (2), Route 34
@@ -5526,8 +5540,10 @@ PicnickerGroup:
 CamperGroup:
 	next_list_item ; CAMPER (1), Route 32
 	db "ROLAND@", TRAINERTYPE_NORMAL
-	db 11
+	db 12
 	dw NIDORAN_M
+	db 11
+	dw MAREEP
 	db -1 ; end
 
 	next_list_item ; CAMPER (2), Route 34
@@ -5586,17 +5602,17 @@ CamperGroup:
 
 	next_list_item ; CAMPER (9), Ilex Forest
 	db "HARVEY@", TRAINERTYPE_NORMAL
-	db 11
+	db 17
 	dw ODDISH
-	db 11
+	db 17
 	dw BELLSPROUT
-	db 13
+	db 18
 	dw HOOTHOOT
 	db -1 ; end
 
 	next_list_item ; CAMPER (10), Ilex Forest
 	db "DALE@", TRAINERTYPE_NORMAL
-	db 15
+	db 18
 	dw FURRET
 	db -1 ; end
 
@@ -5781,21 +5797,21 @@ ExecutiveFGroup:
 SageGroup:
 	next_list_item ; SAGE (1), Sprout Tower
 	db "CHOW@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
+	db 6
 	dw NATU
-	db 4
+	db 6
 	dw GASTLY
 	db -1 ; end
 
 	next_list_item ; SAGE (2), Sprout Tower
 	db "NICO@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw GASTLY
-	db 4
+	db 6
 	dw HOOTHOOT
-	db 4
+	db 6
 	dw BELLSPROUT
 	db -1 ; end
 
@@ -5803,6 +5819,8 @@ SageGroup:
 	db "JIN@", TRAINERTYPE_NORMAL
 	db 8
 	dw BELLSPROUT
+	db 8
+	dw GASTLY
 	db -1 ; end
 
 	next_list_item ; SAGE (4), Sprout Tower
@@ -5835,16 +5853,18 @@ SageGroup:
 
 	next_list_item ; SAGE (7), Sprout Tower
 	db "EDMOND@", TRAINERTYPE_NORMAL
-	db 4
+	db 6
 	dw BELLSPROUT
-	db 4
+	db 6
 	dw GASTLY
-	db 4
+	db 6
 	dw NATU
 	db -1 ; end
 
 	next_list_item ; SAGE (8), Sprout Tower
 	db "NEAL@", TRAINERTYPE_NORMAL
+	db 8
+	dw NATU
 	db 8
 	dw BELLSPROUT
 	db -1 ; end
@@ -5855,7 +5875,7 @@ SageGroup:
 	dw GASTLY
 	db 9
 	dw BELLSPROUT
-	db 12
+	db 10
 	dw HOOTHOOT
 	db -1 ; end
 
@@ -6415,9 +6435,9 @@ OfficerGroup:
 GruntFGroup:
 	next_list_item ; GRUNTF (1), Slowpoke Well
 	db "ARIANA@", TRAINERTYPE_NORMAL
-	db 11
+	db 15
 	dw ZUBAT
-	db 14
+	db 16
 	dw EKANS
 	db -1 ; end
 

@@ -425,29 +425,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons UNION_CAVE_1F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 6, GEODUDE
-	dbw 6, SANDSHREW
-	dbw 5, ZUBAT
-	dbw 6, PARAS
-	dbw 7, RATTATA
-	dbw 6, ONIX
-	dbw 6, ONIX
-	; day
-	dbw 6, GEODUDE
-	dbw 6, SANDSHREW
-	dbw 5, ZUBAT
-	dbw 6, PARAS
-	dbw 7, WOOPER
-	dbw 6, ONIX
-	dbw 6, ONIX
-	; nite
-	dbw 6, GEODUDE
-	dbw 6, DIGLETT
-	dbw 5, WOOPER
-	dbw 6, PARAS
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
 	dbw 7, ZUBAT
-	dbw 6, ONIX
-	dbw 6, ONIX
+	dbw 8, PARAS
+	dbw 9, RATTATA
+	dbw 8, ONIX
+	dbw 8, ONIX
+	; day
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 6, ZUBAT
+	dbw 8, PARAS
+	dbw 9, WOOPER
+	dbw 8, ONIX
+	dbw 8, ONIX
+	; nite
+	dbw 8, GEODUDE
+	dbw 8, DIGLETT
+	dbw 7, WOOPER
+	dbw 8, PARAS
+	dbw 9, ZUBAT
+	dbw 8, ONIX
+	dbw 8, ONIX
 	end_grass_wildmons
 
 	def_grass_wildmons UNION_CAVE_B1F
@@ -509,29 +509,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons SLOWPOKE_WELL_B1F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 5, SLOWPOKE
-	dbw 6, ZUBAT
-	dbw 7, ZUBAT
-	dbw 6, SLOWPOKE
-	dbw 8, ZUBAT
-	dbw 8, SLOWPOKE
-	dbw 8, SLOWPOKE
+	dbw 9, SLOWPOKE
+	dbw 10, ZUBAT
+	dbw 11, ZUBAT
+	dbw 10, SLOWPOKE
+	dbw 12, ZUBAT
+	dbw 12, SLOWPOKE
+	dbw 12, SLOWPOKE
 	; day
-	dbw 5, SLOWPOKE
-	dbw 6, ZUBAT
-	dbw 7, ZUBAT
-	dbw 6, SLOWPOKE
-	dbw 8, ZUBAT
-	dbw 8, SLOWPOKE
-	dbw 8, SLOWPOKE
+	dbw 9, SLOWPOKE
+	dbw 10, ZUBAT
+	dbw 11, ZUBAT
+	dbw 10, SLOWPOKE
+	dbw 12, ZUBAT
+	dbw 12, SLOWPOKE
+	dbw 12, SLOWPOKE
 	; nite
-	dbw 5, SLOWPOKE
-	dbw 6, ZUBAT
-	dbw 7, ZUBAT
-	dbw 6, SLOWPOKE
-	dbw 8, ZUBAT
-	dbw 8, SLOWPOKE
-	dbw 8, SLOWPOKE
+	dbw 9, SLOWPOKE
+	dbw 10, ZUBAT
+	dbw 11, ZUBAT
+	dbw 10, SLOWPOKE
+	dbw 12, ZUBAT
+	dbw 12, SLOWPOKE
+	dbw 12, SLOWPOKE
 	end_grass_wildmons
 
 	def_grass_wildmons SLOWPOKE_WELL_B2F
@@ -565,29 +565,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ILEX_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 5, CATERPIE
-	dbw 5, WEEDLE
-	dbw 7, METAPOD
-	dbw 7, PINECO
-	dbw 7, AIPOM
-	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 11, CATERPIE
+	dbw 11, LEDYBA
+	dbw 13, METAPOD
+	dbw 13, PINECO
+	dbw 13, AIPOM
+	dbw 12, PARAS
+	dbw 12, PARAS
 	; day
-	dbw 5, CATERPIE
-	dbw 5, WEEDLE
-	dbw 7, PINECO
-	dbw 7, KAKUNA
-	dbw 7, AIPOM
-	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 11, SPINARAK
+	dbw 11, WEEDLE
+	dbw 13, PINECO
+	dbw 13, KAKUNA
+	dbw 13, AIPOM
+	dbw 12, PARAS
+	dbw 12, PARAS
 	; nite
-	dbw 5, ODDISH
-	dbw 5, VENONAT
-	dbw 7, AIPOM
-	dbw 7, PSYDUCK
-	dbw 7, HOOTHOOT
-	dbw 6, PARAS
-	dbw 6, PARAS
+	dbw 11, ODDISH
+	dbw 11, VENONAT
+	dbw 13, AIPOM
+	dbw 13, PSYDUCK
+	dbw 13, HOOTHOOT
+	dbw 12, PARAS
+	dbw 12, PARAS
 	end_grass_wildmons
 
 	def_grass_wildmons MOUNT_MORTAR_1F_OUTSIDE
@@ -1321,85 +1321,85 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_31
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 4, LEDYBA
-	dbw 4, CATERPIE
-	dbw 5, BELLSPROUT
-	dbw 5, WEEDLE
-	dbw 4, PIDGEY
-	dbw 5, HOPPIP
-	dbw 5, HOPPIP
-	; day
-	dbw 4, LEDYBA
-	dbw 4, WEEDLE
-	dbw 5, BELLSPROUT
+	dbw 5, LEDYBA
 	dbw 5, CATERPIE
-	dbw 4, PIDGEY
-	dbw 5, HOPPIP
-	dbw 5, HOPPIP
+	dbw 6, BELLSPROUT
+	dbw 6, WEEDLE
+	dbw 5, PIDGEY
+	dbw 6, HOPPIP
+	dbw 6, HOPPIP
+	; day
+	dbw 5, LEDYBA
+	dbw 5, WEEDLE
+	dbw 6, BELLSPROUT
+	dbw 6, CATERPIE
+	dbw 5, PIDGEY
+	dbw 6, HOPPIP
+	dbw 6, HOPPIP
 	; nite
-	dbw 4, SPINARAK
-	dbw 4, POLIWAG
-	dbw 5, ODDISH
-	dbw 5, HOOTHOOT
-	dbw 4, ZUBAT
-	dbw 5, GASTLY
-	dbw 5, GASTLY
+	dbw 5, SPINARAK
+	dbw 5, POLIWAG
+	dbw 6, ODDISH
+	dbw 6, HOOTHOOT
+	dbw 5, ZUBAT
+	dbw 6, GASTLY
+	dbw 6, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_32
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 6, EKANS
-	dbw 5, BELLSPROUT
-	dbw 7, NIDORAN_F
-	dbw 6, NIDORAN_M
-	dbw 7, MAREEP
-	dbw 7, PIDGEY
-	dbw 7, PIDGEY
+	dbw 7, EKANS
+	dbw 6, BELLSPROUT
+	dbw 8, NIDORAN_F
+	dbw 7, NIDORAN_M
+	dbw 8, MAREEP
+	dbw 8, PIDGEY
+	dbw 8, PIDGEY
 	; day
-	dbw 6, EKANS
-	dbw 5, BELLSPROUT
-	dbw 7, NIDORAN_F
-	dbw 6, NIDORAN_M
-	dbw 7, MAREEP
-	dbw 7, PIDGEY
-	dbw 7, PIDGEY
+	dbw 7, EKANS
+	dbw 6, BELLSPROUT
+	dbw 8, NIDORAN_F
+	dbw 7, NIDORAN_M
+	dbw 8, MAREEP
+	dbw 8, PIDGEY
+	dbw 8, PIDGEY
 	; nite
-	dbw 6, WOOPER
-	dbw 5, ODDISH
-	dbw 7, ZUBAT
-	dbw 6, HOOTHOOT
-	dbw 7, RATTATA
-	dbw 7, GASTLY
-	dbw 7, GASTLY
+	dbw 7, WOOPER
+	dbw 6, ODDISH
+	dbw 8, ZUBAT
+	dbw 7, HOOTHOOT
+	dbw 8, RATTATA
+	dbw 8, GASTLY
+	dbw 8, GASTLY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 6, RATTATA
-	dbw 6, SPEAROW
-	dbw 6, GEODUDE
-	dbw 6, MANKEY
-	dbw 7, EKANS
-	dbw 7, MACHOP
-	dbw 7, MACHOP
+	dbw 9, SENTRET
+	dbw 9, SPEAROW
+	dbw 9, GEODUDE
+	dbw 9, MANKEY
+	dbw 10, EKANS
+	dbw 10, MACHOP
+	dbw 10, MACHOP
 	; day
-	dbw 6, RATTATA
-	dbw 6, SPEAROW
-	dbw 6, GEODUDE
-	dbw 6, MANKEY
-	dbw 7, EKANS
-	dbw 7, MACHOP
-	dbw 7, MACHOP
+	dbw 9, SENTRET
+	dbw 9, SPEAROW
+	dbw 9, GEODUDE
+	dbw 9, MANKEY
+	dbw 10, EKANS
+	dbw 10, MACHOP
+	dbw 10, MACHOP
 	; nite
-	dbw 6, RATTATA
-	dbw 6, ZUBAT
-	dbw 6, GEODUDE
-	dbw 6, VENONAT
-	dbw 7, BELLSPROUT
-	dbw 7, MANKEY
-	dbw 7, MANKEY
+	dbw 9, SENTRET
+	dbw 9, ZUBAT
+	dbw 9, GEODUDE
+	dbw 9, VENONAT
+	dbw 10, BELLSPROUT
+	dbw 10, MANKEY
+	dbw 10, MANKEY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34
