@@ -2443,7 +2443,8 @@ EeveeEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
 	dbw 8, SAND_ATTACK
-	dbw 16, GROWL
+	dbw 12, GROWL
+	dbw 16, GROWTH
 	dbw 20, FLAIL
 	dbw 23, QUICK_ATTACK
 	dbw 27, CHARM

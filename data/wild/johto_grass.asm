@@ -285,57 +285,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons BURNED_TOWER_1F
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 16, RATTATA
-	dbw 17, KOFFING
-	dbw 18, ABRA
-	dbw 17, ZUBAT
-	dbw 18, MAGMAR
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 22, KOFFING
+	dbw 23, GASTLY
+	dbw 24, ZUBAT
+	dbw 23, MAGMAR
+	dbw 24, MACHOP
+	dbw 24, RATICATE
+	dbw 24, RATICATE
 	; day
-	dbw 16, RATTATA
-	dbw 17, KOFFING
-	dbw 18, ABRA
-	dbw 17, ZUBAT
-	dbw 18, MAGMAR
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 22, KOFFING
+	dbw 23, GASTLY
+	dbw 24, ZUBAT
+	dbw 23, MAGMAR
+	dbw 24, MACHOP
+	dbw 24, RATICATE
+	dbw 24, RATICATE
 	; nite
-	dbw 16, RATTATA
-	dbw 17, KOFFING
-	dbw 18, ABRA
-	dbw 17, ZUBAT
-	dbw 18, MAGMAR
-	dbw 18, RATICATE
-	dbw 18, RATICATE
+	dbw 22, KOFFING
+	dbw 23, GASTLY
+	dbw 24, ZUBAT
+	dbw 23, MAGMAR
+	dbw 24, MACHOP
+	dbw 24, RATICATE
+	dbw 24, RATICATE
 	end_grass_wildmons
 
 	def_grass_wildmons BURNED_TOWER_B1F
 	db 20 percent, 20 percent, 20 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 18, RATTATA
-	dbw 18, KOFFING
-	dbw 20, MAGMAR
-	dbw 19, ZUBAT
-	dbw 16, ABRA
-	dbw 20, WEEZING
-	dbw 20, WEEZING
+	dbw 24, KOFFING
+	dbw 24, MAGMAR
+	dbw 26, GOLBAT
+	dbw 25, HAUNTER
+	dbw 25, MACHOKE
+	dbw 26, WEEZING
+	dbw 26, WEEZING
 	; day
-	dbw 18, RATTATA
-	dbw 18, KOFFING
-	dbw 20, MAGMAR
-	dbw 19, ZUBAT
-	dbw 16, ABRA
-	dbw 20, WEEZING
-	dbw 20, WEEZING
+	dbw 24, KOFFING
+	dbw 24, MAGMAR
+	dbw 26, GOLBAT
+	dbw 25, HAUNTER
+	dbw 25, MACHOKE
+	dbw 26, WEEZING
+	dbw 26, WEEZING
 	; nite
-	dbw 18, RATTATA
-	dbw 18, KOFFING
-	dbw 20, MAGMAR
-	dbw 19, ZUBAT
-	dbw 16, ABRA
-	dbw 20, WEEZING
-	dbw 20, WEEZING
+	dbw 24, KOFFING
+	dbw 24, MAGMAR
+	dbw 26, GOLBAT
+	dbw 25, HAUNTER
+	dbw 25, MACHOKE
+	dbw 26, WEEZING
+	dbw 26, WEEZING
 	end_grass_wildmons
 
 	def_grass_wildmons NATIONAL_PARK
@@ -1405,57 +1405,57 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 10, SNUBBULL
-	dbw 11, RATTATA
-	dbw 12, PIDGEY
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, MAREEP
-	dbw 10, MAREEP
+	dbw 12, SNUBBULL
+	dbw 13, RATTATA
+	dbw 14, PIDGEY
+	dbw 12, ABRA
+	dbw 14, JIGGLYPUFF
+	dbw 12, MAREEP
+	dbw 12, MAREEP
 	; day
-	dbw 10, SNUBBULL
-	dbw 11, RATTATA
-	dbw 12, PIDGEY
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, MAREEP
-	dbw 10, MAREEP
+	dbw 12, SNUBBULL
+	dbw 13, RATTATA
+	dbw 14, PIDGEY
+	dbw 12, ABRA
+	dbw 14, JIGGLYPUFF
+	dbw 12, MAREEP
+	dbw 12, MAREEP
 	; nite
-	dbw 12, DROWZEE
-	dbw 11, RATTATA
-	dbw 12, HOOTHOOT
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, MAREEP
-	dbw 10, MAREEP
+	dbw 14, DROWZEE
+	dbw 13, RATTATA
+	dbw 14, HOOTHOOT
+	dbw 12, ABRA
+	dbw 14, JIGGLYPUFF
+	dbw 12, MAREEP
+	dbw 12, MAREEP
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_35
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 12, SNUBBULL
-	dbw 14, PIDGEY
-	dbw 13, VULPIX
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, YANMA
-	dbw 12, YANMA
+	dbw 16, SNUBBULL
+	dbw 18, PIDGEOTTO
+	dbw 17, VULPIX
+	dbw 14, ABRA
+	dbw 16, JIGGLYPUFF
+	dbw 14, YANMA
+	dbw 16, YANMA
 	; day
-	dbw 12, SNUBBULL
-	dbw 14, PIDGEY
-	dbw 13, GROWLITHE
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, YANMA
-	dbw 12, YANMA
+	dbw 16, SNUBBULL
+	dbw 18, PIDGEOTTO
+	dbw 17, GROWLITHE
+	dbw 14, ABRA
+	dbw 16, JIGGLYPUFF
+	dbw 14, YANMA
+	dbw 16, YANMA
 	; nite
-	dbw 12, DROWZEE
-	dbw 14, HOOTHOOT
-	dbw 13, HOUNDOUR
-	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
-	dbw 10, YANMA
-	dbw 12, YANMA
+	dbw 16, DROWZEE
+	dbw 18, HOOTHOOT
+	dbw 17, HOUNDOUR
+	dbw 14, ABRA
+	dbw 16, JIGGLYPUFF
+	dbw 14, YANMA
+	dbw 16, YANMA
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_36
@@ -1489,29 +1489,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_37
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 15, LEDIAN
-	dbw 16, VULPIX
-	dbw 17, DODUO
-	dbw 18, SNUBBULL
-	dbw 17, FLAAFFY
-	dbw 17, FEAROW
-	dbw 17, FEAROW
+	dbw 20, LEDIAN
+	dbw 21, VULPIX
+	dbw 22, DODUO
+	dbw 23, GRANBULL
+	dbw 22, FLAAFFY
+	dbw 22, FEAROW
+	dbw 22, FEAROW
 	; day
-	dbw 15, LEDIAN
-	dbw 16, GROWLITHE
-	dbw 17, DODUO
-	dbw 18, SNUBBULL
-	dbw 17, FLAAFFY
-	dbw 17, FEAROW
-	dbw 17, FEAROW
+	dbw 20, LEDIAN
+	dbw 21, GROWLITHE
+	dbw 22, DODUO
+	dbw 23, GRANBULL
+	dbw 22, FLAAFFY
+	dbw 22, FEAROW
+	dbw 22, FEAROW
 	; nite
-	dbw 15, ARIADOS
-	dbw 16, STANTLER
-	dbw 17, DROWZEE
-	dbw 18, HOUNDOUR
-	dbw 17, NOCTOWL
-	dbw 17, FLAAFFY
-	dbw 17, FLAAFFY
+	dbw 20, ARIADOS
+	dbw 21, STANTLER
+	dbw 22, DROWZEE
+	dbw 23, HOUNDOUR
+	dbw 22, NOCTOWL
+	dbw 22, FLAAFFY
+	dbw 22, FLAAFFY
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_38
