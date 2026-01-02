@@ -5,4 +5,5 @@ CriticalHitMoves:
 	dw SLASH
 	dw AEROBLAST
 	dw CROSS_CHOP
+	dw FLY
 	dw -1
