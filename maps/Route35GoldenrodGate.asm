@@ -129,11 +129,12 @@ Route35GoldenrodGateRandyWeirdTreeBlockingRoadText:
 	cont "ROUTE 31!"
 
 	para "Oh, yeah. There"
-	line "was a weird tree"
-	cont "blocking the road."
+	line "was a RANGER that"
+	cont "wasn't letting"
+	cont "anyone through."
 
-	para "I wonder if it's"
-	line "been cleared?"
+	para "I wonder if he's"
+	line "left yet? "
 	done
 
 Route35GoldenrodGateRandyCantCarryAnotherMonText:

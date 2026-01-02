@@ -160,7 +160,7 @@ MortyGroup:
 	db 28
 	dw HAUNTER
 	dw SPELL_TAG
-	dw HYPNOSIS, CONFUSE_RAY, CURSE, DREAM_EATER
+	dw HYPNOSIS, MEAN_LOOK, CURSE, DREAM_EATER
 	db 29
 	dw NINETALES
 	dw GOLD_BERRY
@@ -168,7 +168,7 @@ MortyGroup:
 	db 30
 	dw GENGAR
 	dw NO_ITEM
-	dw HYPNOSIS, SHADOW_BALL, MEAN_LOOK, THIEF
+	dw HYPNOSIS, SHADOW_BALL, PSYCHIC_M, THIEF
 	db 28
 	dw MISDREAVUS
 	dw FOCUS_BAND
@@ -1721,13 +1721,13 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (5), Route 32
 	db "SAMUEL@", TRAINERTYPE_NORMAL
-	db 10
+	db 16
 	dw RATTATA
-	db 12
+	db 18
 	dw SANDSHREW
-	db 11
+	db 17
 	dw SPEAROW
-	db 11
+	db 17
 	dw PICHU
 	db -1 ; end
 
@@ -5420,7 +5420,7 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (11), Route 32
 	db "LIZ@", TRAINERTYPE_NORMAL
-	db 18
+	db 21
 	dw WEEPINBELL
 	db 18
 	dw NIDORINA
@@ -5650,9 +5650,9 @@ CamperGroup:
 
 	next_list_item ; CAMPER (12), Route 34
 	db "TODD@", TRAINERTYPE_NORMAL
-	db 21
+	db 25
 	dw GEODUDE
-	db 21
+	db 25
 	dw DROWZEE
 	db 28
 	dw PSYDUCK
@@ -5672,8 +5672,6 @@ CamperGroup:
 
 	next_list_item ; CAMPER (14), National Park
 	db "THOMAS@", TRAINERTYPE_NORMAL
-	db 19
-	dw GEODUDE
 	db 19
 	dw GEODUDE
 	db 22

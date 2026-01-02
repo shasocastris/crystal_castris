@@ -240,11 +240,8 @@ KimonoGirlMikiAfterBattleText:
 	line "what I do."
 
 	para "My #MON keep my"
-	line "spirits up too."
-
-	para "Even in dark times,"
-	line "we must find joy"
-	cont "and beauty."
+	line "spirits up even"
+	cont "in dark times."
 	done
 
 RockSmashGuyNeverLeftAScratchText:
@@ -292,13 +289,7 @@ RockSmashGuyLikeADanceText:
 	done
 
 RockSmashGuyRockSmashExplanationText:
-	text "That's ROCK SMASH."
-
-	para "It's a move that"
-	line "lets #MON break"
-	cont "rocks."
-
-	para "That happens to be"
+	text "That happens to be"
 	line "ROCK SMASH."
 
 	para "You can shatter"

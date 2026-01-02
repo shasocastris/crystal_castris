@@ -336,10 +336,13 @@ BirdKeeperBryanAfterBattleText:
 
 	para "Whenever I find a"
 	line "WHT APRICORN, I"
-	cont "take it to KURT."
+	cont "sell it."
 
-	para "He turns it into a"
-	line "custom BALL."
+	para "KURT turns them"
+	line "into custom balls"
+	cont "that are sold at"
+	cont "the AZALEA TOWN"
+	cont "#MON MART."
 	done
 
 JugglerIrwin1SeenText:
