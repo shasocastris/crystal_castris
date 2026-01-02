@@ -1,10 +1,10 @@
 	db 0 ; species ID placeholder
 
-	db  90, 130,  75,  55,  75,  75
-	evs  0,   2,   0,   0,   0,   0
+	db 130, 140, 105,  50,  45,  80
+	evs  0,   3,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db NORMAL, NORMAL ; type
+	db GROUND, NORMAL ; type
 	db 20 ; catch rate
 	db 189 ; base exp
 	dw NO_ITEM, NO_ITEM ; items

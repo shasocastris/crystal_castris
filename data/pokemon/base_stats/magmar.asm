@@ -1,7 +1,7 @@
 	db 0 ; species ID placeholder
 
-	db  65,  95,  57,  93, 100,  85
-	evs  0,   0,   0,   0,   2,   0
+	db  75,  95,  67,  83, 125,  95
+	evs  0,   0,   0,   0,   3,   0
 	;   hp  atk  def  spd  sat  sdf
 
 	db FIRE, FIRE ; type
