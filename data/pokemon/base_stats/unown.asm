@@ -11,7 +11,7 @@
 	db GENDER_UNKNOWN ; gender ratio
 	INCBIN "gfx/pokemon/unown_a/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
-	db GROWTH_SLOW ; growth rate
+	db GROWTH_MEDIUM_FAST ; growth rate
 	; tm/hm learnset
 	tmhm
 	; end
