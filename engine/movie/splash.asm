@@ -145,7 +145,7 @@ GameFreakPresents_PlaceGameFreak:
 .PlaceGameFreak:
 	ld [hl], 0
 	ld hl, .game_freak
-	decoord 5, 10
+	decoord 6, 10
 	ld bc, .end - .game_freak
 	rst CopyBytes
 	call GameFreakPresents_NextScene
@@ -153,7 +153,7 @@ GameFreakPresents_PlaceGameFreak:
 	jmp PlaySFX
 
 .game_freak
-	db $00, $01, $02, $03, $0d, $04, $05, $03, $01, $06
+	db $0d, $00, $01, $02, $03, $04, $05, $06
 .end
 	db "@"
 

@@ -1,7 +1,7 @@
 roms := \
-	crystal_castris.gbc\
-	crystal_castris_debug.gbc
-patches := crystal_castris.patch
+	crystal_eclipse.gbc\
+	crystal_eclipse_debug.gbc
+patches := crystal_eclipse.patch
 
 rom_obj := \
 	audio.o \
@@ -21,9 +21,9 @@ rom_obj := \
 	gfx/tilesets.o \
 	lib/mobile/main.o
 
-crystal_castris_obj       := $(rom_obj:.o=.o)
-crystal_castris_debug_obj := $(rom_obj:.o=_debug.o)
-crystal_castris_vc_obj    := $(rom_obj:.o=_vc.o)
+crystal_eclipse_obj       := $(rom_obj:.o=.o)
+crystal_eclipse_debug_obj := $(rom_obj:.o=_debug.o)
+crystal_eclipse_vc_obj    := $(rom_obj:.o=_vc.o)
 
 
 ### Build tools
@@ -55,9 +55,9 @@ RGBGFXFLAGS  ?= -Weverything
 .SECONDARY:
 
 all: crystal crystal_debug
-crystal:       crystal_castris.gbc
-crystal_debug: crystal_castris_debug.gbc
-crystal_vc:    crystal_castris.patch
+crystal:       crystal_eclipse.gbc
+crystal_debug: crystal_eclipse_debug.gbc
+crystal_vc:    crystal_eclipse.patch
 
 clean: tidy
 	find gfx \
@@ -84,9 +84,9 @@ tidy:
 	      $(patches:.patch=_vc.sym) \
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
-	      $(crystal_castris_obj) \
-	      $(crystal_castris_debug_obj) \
-	      $(crystal_castris_vc_obj) \
+	      $(crystal_eclipse_obj) \
+	      $(crystal_eclipse_debug_obj) \
+	      $(crystal_eclipse_vc_obj) \
 	      rgbdscheck.o
 	$(MAKE) clean -C tools/
 
@@ -96,9 +96,9 @@ tools:
 
 RGBASMFLAGS += -Q8 -P includes.asm
 
-$(crystal_castris_obj):       RGBASMFLAGS +=
-$(crystal_castris_debug_obj): RGBASMFLAGS += -D _DEBUG
-$(crystal_castris_vc_obj):    RGBASMFLAGS += -D _CRYSTAL_VC
+$(crystal_eclipse_obj):       RGBASMFLAGS +=
+$(crystal_eclipse_debug_obj): RGBASMFLAGS += -D _DEBUG
+$(crystal_eclipse_vc_obj):    RGBASMFLAGS += -D _CRYSTAL_VC
 
 %.patch: %_vc.gbc %.gbc vc/%.patch.template
 # Ignore the checksums added by tools/stadium at the end of the ROM
@@ -123,16 +123,16 @@ $1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) | rgbdscheck.o
 endef
 
 # Dependencies for shared objects objects
-$(foreach obj, $(crystal_castris_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
-$(foreach obj, $(crystal_castris_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
-$(foreach obj, $(crystal_castris_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
+$(foreach obj, $(crystal_eclipse_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(crystal_eclipse_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
+$(foreach obj, $(crystal_eclipse_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 
 endif
 
 RGBFIXFLAGS += -Cjv -t PM_CRYSTAL -k 01 -l 0x33 -m MBC3+TIMER+RAM+BATTERY -r 3 -p 0
-crystal_castris.gbc:       RGBFIXFLAGS += -i BYTE -n 0
-crystal_castris_debug.gbc: RGBFIXFLAGS += -i BYTE -n 0
-crystal_castris_vc.gbc:    RGBFIXFLAGS += -i BYTE -n 0
+crystal_eclipse.gbc:       RGBFIXFLAGS += -i BYTE -n 0
+crystal_eclipse_debug.gbc: RGBFIXFLAGS += -i BYTE -n 0
+crystal_eclipse_vc.gbc:    RGBFIXFLAGS += -i BYTE -n 0
 
 .gbc: tools/bankends
 %.gbc: $$(%_obj) layout.link
