@@ -27,6 +27,7 @@ Route38EcruteakGateRanger2Script:
 	end
 
 Route38EcruteakGateRanger3Script:
+	clearevent EVENT_QUELL_WILD_HUNT
 	jumptextfaceplayer Route38EcruteakGateRanger3Text
 
 Route38EcruteakGateOfficerScript:
@@ -92,7 +93,7 @@ Route38EcruteakGate_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  3,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRanger1Script, -1
-	object_event  4,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRanger2Script, -1
+;	object_event  3,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRanger1Script, -1
+;	object_event  4,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRanger2Script, -1
 	object_event  7,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateRanger3Script, -1
-	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateOfficerScript, EVENT_BEAT_PRYCE
+	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route38EcruteakGateOfficerScript, EVENT_QUELL_WILD_HUNT

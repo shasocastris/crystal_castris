@@ -206,7 +206,8 @@
 	const EVENT_FOREST_IS_RESTLESS
 	const EVENT_ANSWERED_DRAGON_MASTER_QUIZ_WRONG
 	const EVENT_GOT_FREEZE_GUARD
-; Unused: next 1 events
+	const EVENT_QUELL_WILD_HUNT
+; Unused: next 0 events
 
 	const_next 300
 ; Kanto story events
