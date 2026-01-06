@@ -262,7 +262,7 @@ TrainerBeautyOlivia:
 
 WildHuntTauros1:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_1, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_1, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -278,7 +278,7 @@ WildHuntTauros1:
 
 WildHuntTauros2:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_2, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_2, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -294,7 +294,7 @@ WildHuntTauros2:
 
 WildHuntTauros3:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_3, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_3, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -310,7 +310,7 @@ WildHuntTauros3:
 
 WildHuntTauros4:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_4, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_4, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -326,7 +326,7 @@ WildHuntTauros4:
 
 WildHuntTauros5:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_5, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_5, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -342,7 +342,7 @@ WildHuntTauros5:
 
 WildHuntTauros6:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_6, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_6, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -358,7 +358,7 @@ WildHuntTauros6:
 
 WildHuntTauros7:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_7, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_7, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -374,7 +374,7 @@ WildHuntTauros7:
 
 WildHuntTauros8:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_8, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_8, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -390,7 +390,7 @@ WildHuntTauros8:
 
 WildHuntTauros9:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_9, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_9, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -406,7 +406,7 @@ WildHuntTauros9:
 
 WildHuntTauros10:
 	faceplayer
-	showemote EMOTE_SAD, ROUTE38_TAUROS_10, 15
+	showemote EMOTE_SAD, ROUTE38_TAUROS_10, 35
 	opentext
 	writetext WildHuntTauros_Text
 	cry TAUROS
@@ -604,13 +604,13 @@ Route38_MapEvents:
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, EVENT_QUELLED_WILD_HUNT
 	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, EVENT_QUELLED_WILD_HUNT
-	object_event 30,  8, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros1, EVENT_FOUGHT_WILD_HUNT_TAUROS_1
-	object_event 28, 11, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros2, EVENT_FOUGHT_WILD_HUNT_TAUROS_2
-	object_event 15, 12, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros3, EVENT_FOUGHT_WILD_HUNT_TAUROS_3
-	object_event 20, 14, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros4, EVENT_FOUGHT_WILD_HUNT_TAUROS_4
-	object_event  8, 10, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros5, EVENT_FOUGHT_WILD_HUNT_TAUROS_5
-	object_event 10,  5, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros6, EVENT_FOUGHT_WILD_HUNT_TAUROS_6
-	object_event 13,  1, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros7, EVENT_FOUGHT_WILD_HUNT_TAUROS_7
-	object_event 24,  3, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros8, EVENT_FOUGHT_WILD_HUNT_TAUROS_8
-	object_event 22, 10, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros9, EVENT_FOUGHT_WILD_HUNT_TAUROS_9
-	object_event  6, 14, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros10, EVENT_FOUGHT_WILD_HUNT_TAUROS_10
+	object_event 30,  8, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros1, EVENT_FOUGHT_WILD_HUNT_TAUROS_1
+	object_event 28, 11, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros2, EVENT_FOUGHT_WILD_HUNT_TAUROS_2
+	object_event 15, 12, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros3, EVENT_FOUGHT_WILD_HUNT_TAUROS_3
+	object_event 20, 14, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros4, EVENT_FOUGHT_WILD_HUNT_TAUROS_4
+	object_event  8, 10, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros5, EVENT_FOUGHT_WILD_HUNT_TAUROS_5
+	object_event 10,  5, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros6, EVENT_FOUGHT_WILD_HUNT_TAUROS_6
+	object_event 13,  1, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros7, EVENT_FOUGHT_WILD_HUNT_TAUROS_7
+	object_event 24,  3, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros8, EVENT_FOUGHT_WILD_HUNT_TAUROS_8
+	object_event 22, 10, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros9, EVENT_FOUGHT_WILD_HUNT_TAUROS_9
+	object_event  6, 14, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros10, EVENT_FOUGHT_WILD_HUNT_TAUROS_10

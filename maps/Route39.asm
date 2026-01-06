@@ -10,6 +10,13 @@
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
 	const ROUTE39_TAUROS_HERD_LEADER
+	const ROUTE39_TAUROS_11
+	const ROUTE39_TAUROS_12
+	const ROUTE39_TAUROS_13
+	const ROUTE39_TAUROS_14
+	const ROUTE39_TAUROS_15
+	const ROUTE39_TAUROS_16
+	const ROUTE39_TAUROS_17
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -49,6 +56,20 @@ WildHuntFarmCantLeaveScript:
 	iffalse .cantleave
 	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_10
 	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_11
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_12
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_13
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_14
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_15
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_16
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_17
+	iffalse .cantleave
 	end
 
 .cantleave
@@ -65,6 +86,118 @@ WildHuntOlivineCantLeaveScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, WildHuntOlivineCantLeaveMovement
+	end
+
+WildHuntTauros11:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_11, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_11
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_11
+	reloadmapafterbattle
+	end
+
+WildHuntTauros12:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_12, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_12
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_12
+	reloadmapafterbattle
+	end
+
+WildHuntTauros13:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_13, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_13
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_13
+	reloadmapafterbattle
+	end
+
+WildHuntTauros14:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_14, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_14
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_14
+	reloadmapafterbattle
+	end
+
+WildHuntTauros15:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_15, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_15
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_15
+	reloadmapafterbattle
+	end
+
+WildHuntTauros16:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_16, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_16
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_16
+	reloadmapafterbattle
+	end
+
+WildHuntTauros17:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE39_TAUROS_17, 35
+	opentext
+	writetext Route39WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_17
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE39_TAUROS_17
+	reloadmapafterbattle
 	end
 
 WildHuntTaurosHerdLeaderScript:
@@ -280,6 +413,10 @@ Route39TaurosHerdLeaderMovement:
 	fast_jump_step LEFT
 	remove_sliding
 	step_end
+
+Route39WildHuntTauros_Text:
+	text "TAUROS: RRRGGH!"
+	done
 
 WildHuntFarmCantLeaveText:
 	text "I can't head to"
@@ -508,3 +645,10 @@ Route39_MapEvents:
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, EVENT_QUELLED_WILD_HUNT
 	object_event  6,  8, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TAUROS_HERD_LEADER
+	object_event 13, 10, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros11, EVENT_FOUGHT_WILD_HUNT_TAUROS_11
+	object_event 14, 16, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros12, EVENT_FOUGHT_WILD_HUNT_TAUROS_12
+	object_event  5, 25, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros13, EVENT_FOUGHT_WILD_HUNT_TAUROS_13
+	object_event  9, 28, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros14, EVENT_FOUGHT_WILD_HUNT_TAUROS_14
+	object_event  8,  6, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros15, EVENT_FOUGHT_WILD_HUNT_TAUROS_15
+	object_event  8, 19, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros16, EVENT_FOUGHT_WILD_HUNT_TAUROS_16
+	object_event  4,  7, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros17, EVENT_FOUGHT_WILD_HUNT_TAUROS_17
