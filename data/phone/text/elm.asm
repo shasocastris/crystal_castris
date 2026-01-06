@@ -187,6 +187,33 @@ ElmPhoneRadioTowerRocketTakeoverText:
 	line "Take care!"
 	done
 
+ElmPhoneRoute38WildHuntText:
+	text "<PLAY_G>! The"
+	line "situation west of"
+	cont "ECRUTEAK has"
+	cont "escalated!"
+
+	para "The TAUROS rampage"
+	line "is spreading--more"
+	cont "wild #MON are"
+	cont "joining in!"
+
+	para "It has become a"
+	line "full WILD HUNT!"
+
+	para "If they reach"
+	line "the city, it might"
+	cont "be destroyed!"
+
+	para "Get there as fast"
+	line "as you can!"
+
+	para "MORTY is asking"
+	line "for every capable"
+	cont "trainer to help"
+	cont "defend the city!"
+	done
+
 ElmPhoneGiftText:
 	text "Hello, <PLAY_G>?"
 

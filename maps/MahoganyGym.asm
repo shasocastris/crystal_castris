@@ -41,7 +41,7 @@ MahoganyGymPryceScript:
 	waitsfx
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
-	scall MahoganyGymActivateRockets
+	scall MahoganyGymWildHuntCallScript
 .FightDone:
 	changeblock 4, 17, $1C ; door
 	changeblock 5, 17, $1C ; door
@@ -110,16 +110,9 @@ MahoganyGym_NoRoomForIcyWind:
 	closetext
 	end
 
-MahoganyGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
+MahoganyGymWildHuntCallScript:
+	specialphonecall SPECIALCALL_WILDHUNT
 	end
-
-.GoldenrodRockets:
-	jumpstd GoldenrodRocketsScript
-
-.RadioTowerRockets:
-	jumpstd RadioTowerRocketsScript
 
 TrainerSkierRoxanne:
 	trainer SKIER, ROXANNE, EVENT_BEAT_SKIER_ROXANNE, SkierRoxanneSeenText, SkierRoxanneBeatenText, 0, .Script

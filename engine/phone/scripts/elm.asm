@@ -66,6 +66,7 @@ ElmPhoneCallerScript:
 	ifequal SPECIALCALL_ROBBED, .disaster
 	ifequal SPECIALCALL_ASSISTANT, .assistant
 	ifequal SPECIALCALL_WEIRDBROADCAST, .rocket
+	ifequal SPECIALCALL_WILDHUNT, .wildhunt
 	ifequal SPECIALCALL_SSTICKET, .gift
 	ifequal SPECIALCALL_MASTERBALL, .gift
 	farwritetext ElmPhoneDiscoveredPokerusText
@@ -87,6 +88,11 @@ ElmPhoneCallerScript:
 
 .rocket
 	farwritetext ElmPhoneRadioTowerRocketTakeoverText
+	specialphonecall SPECIALCALL_NONE
+	end
+
+.wildhunt
+	farwritetext ElmPhoneRoute38WildHuntText
 	specialphonecall SPECIALCALL_NONE
 	end
 
