@@ -12,8 +12,32 @@
 
 Route39_MapScripts:
 	def_scene_scripts
+	scene_script Route39FNoop1Scene, SCENE_ROUTE39_WILD_HUNT
+	scene_script Route39FNoop2Scene, SCENE_ROUTE39_NOOP
 
 	def_callbacks
+
+Route39FNoop1Scene:
+	end
+
+Route39FNoop2Scene:
+	end
+
+WildHuntFarmCantLeaveScript:
+	opentext
+	writetext WildHuntFarmCantLeaveText
+	waitbutton
+	closetext
+	applymovement PLAYER, WildHuntFarmCantLeaveMovement
+	end
+
+WildHuntOlivineCantLeaveScript:
+	opentext
+	writetext WildHuntOlivineCantLeaveText
+	waitbutton
+	closetext
+	applymovement PLAYER, WildHuntOlivineCantLeaveMovement
+	end
 
 Route39Miltank:
 	opentext
@@ -191,6 +215,30 @@ Route39FruitTree:
 
 Route39HiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_39_HIDDEN_NUGGET
+
+WildHuntFarmCantLeaveMovement:
+	step RIGHT
+	step_end
+
+WildHuntOlivineCantLeaveMovement:
+	step UP
+	step_end
+
+WildHuntFarmCantLeaveText:
+	text "I can't head to"
+	line "the farm yet."
+
+	para "There are still"
+	line "TAUROS rampaging."
+	done
+
+WildHuntOlivineCantLeaveText:
+	text "I'm not the sort"
+	line "of #MON trainer"
+
+	para "that runs from a"
+	line "battle!"
+	done
 
 Route39MiltankText:
 	text "MILTANK: Mooo!"
@@ -378,6 +426,11 @@ Route39_MapEvents:
 	warp_event  5,  3, ROUTE_39_FARMHOUSE, 1
 
 	def_coord_events
+	coord_event  3,  4, SCENE_ROUTE39_WILD_HUNT, WildHuntFarmCantLeaveScript
+	coord_event  8, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
+	coord_event  9, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
+	coord_event 10, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
+	coord_event 11, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
 
 	def_bg_events
 	bg_event  5, 31, BGEVENT_READ, Route39TrainerTips

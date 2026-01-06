@@ -2780,6 +2780,7 @@ wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 wVioletCitySceneID::                              db
 wGlitterAndGraceSceneID::                         db
+wRoute39SceneID::                                 db
 
 ; fight counts
 
