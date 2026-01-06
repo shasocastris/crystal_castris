@@ -33,6 +33,22 @@ WildHuntFarmCantLeaveScript:
 	iffalse .cantleave
 	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_2
 	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_3
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_4
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_5
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_6
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_7
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_8
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_9
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_10
+	iffalse .cantleave
 	end
 
 .cantleave
