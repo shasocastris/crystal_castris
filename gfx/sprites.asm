@@ -110,3 +110,4 @@ SECTION "Sprites 3", ROMX
 
 FarfetchdSpriteGFX::           INCBIN "gfx/sprites/farfetch_d.2bpp"
 RedsMomSpriteGFX::             INCBIN "gfx/sprites/reds_mom.2bpp"
+TaurosSpriteGFX::              INCBIN "gfx/sprites/tauros.2bpp"

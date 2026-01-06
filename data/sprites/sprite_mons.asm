@@ -29,7 +29,6 @@ SpriteMons:
 	dw DRATINI
 	dw PARAS
 	dw TENTACOOL
-	dw TAUROS
 	dw MACHOP
 	dw MILTANK
 	dw MACHOKE

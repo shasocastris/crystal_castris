@@ -104,7 +104,8 @@
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_STANDING_YOUNGSTER ; 66
-	const SPRITE_FARFETCHD ; 4e
+	const SPRITE_FARFETCHD ; 67
+	const SPRITE_TAUROS ; 68
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -138,7 +139,6 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_DRATINI ; 96
 	const SPRITE_PARAS ; 97
 	const SPRITE_TENTACOOL ; 98
-	const SPRITE_TAUROS ; 99
 	const SPRITE_MACHOP ; 9a
 	const SPRITE_MILTANK ; 99
 	const SPRITE_MACHOKE ; 9a
