@@ -3,6 +3,15 @@
 	const ROUTE38ECRUTEAKGATE_OFFICER_2
 	const ROUTE38ECRUTEAKGATE_OFFICER_3
 	const ROUTE38ECRUTEAKGATE_OFFICER_4
+	const ROUTE38ECRUTEAKGATE_MORTY
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_1
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_2
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_3
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_4
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_5
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_6
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_7
+	const ROUTE38ECRUTEAKGATE_KIMONO_GIRL_8
 
 Route38EcruteakGate_MapScripts:
 	def_scene_scripts
@@ -32,7 +41,31 @@ Route38EcruteakGateRanger3Script:
 
 Route38EcruteakGateMortyScript:
 	setflag ENGINE_WILD_HUNT
-	jumptextfaceplayer Route38EcruteakGateMortyText
+	faceplayer
+	opentext
+	writetext Route38EcruteakGateMortyText
+;	waitbutton
+;	closetext
+;	end
+.MustSayYes:
+	yesorno
+	iftrue .BeginQuellingWildHunt
+	writetext MortyText_Refused
+	sjump .MustSayYes
+.BeginQuellingWildHunt:
+	writetext MortyText_Accepted
+    waitbutton
+    closetext
+    follow ROUTE38ECRUTEAKGATE_MORTY, PLAYER
+	applymovement ROUTE38ECRUTEAKGATE_MORTY, Route38GateFollowMorty_MovementData
+	stopfollow
+	special FadeOutToWhite
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	warp ROUTE_38, 35, 8
+	applymovement PLAYER, Route38TurnPlayerLeft_MovementData
+	wildoff
+	end
 
 Route38EcruteakGateKimonoGirlScript:
 	jumptextfaceplayer Route38EcruteakGateKimonoGirlText
@@ -48,6 +81,17 @@ Route38EcruteakGateTealKimonoGirlMortyScript:
 
 Route38EcruteakGateOfficerScript:
 	jumptextfaceplayer Route38EcruteakGateOfficerText
+
+Route38GateFollowMorty_MovementData:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+
+Route38TurnPlayerLeft_MovementData:
+	turn_head LEFT
+	step_end
 
 Route38EcruteakGateRanger1Text:
 	text "The TAUROS herd"
@@ -84,15 +128,100 @@ Route38EcruteakGateRanger3Text:
 	done
 
 Route38EcruteakGateMortyText:
-	text "We're trying to"
-	line "contain the TAUROS"
-	cont "before they reach"
-	cont "ECRUTEAK CITY."
+	text "MORTY: <PLAY_G>,"
+	line "thank you for"
+	cont "coming."
 
-	para "If they form a"
-	line "WILD HUNT, the"
-	cont "whole town could"
-	cont "be overrun!"
+	para "Let me bring you"
+	line "up to speed."
+
+	para "TEAM ROCKET was"
+	line "smuggling SLOWPOKE"
+	cont "through OLIVINE."
+
+	para "They are selling"
+	line "the tails to fund"
+	cont "their operations."
+
+	para "When cornered by"
+	line "RANGERS on ROUTE"
+	cont "38, they killed a"
+
+	para "SLOWPOKE. That's"
+	line "what triggered the"
+	cont "WILD HUNT."
+
+	para "They forced us to"
+	line "defend ECRUTEAK"
+	cont "while they fled."
+
+	para "Multiple species"
+	line "have now joined,"
+	cont "mostly TAUROS."
+
+	para "WHITNEY told BILL"
+	line "that TAUROS calm"
+
+	para "down when exposed"
+	line "to a healthy,"
+	cont "peaceful MILTANK."
+
+	para "But the MOOMOO"
+	line "FARM's MILTANK is"
+	cont "sick."
+
+	para "That's just our"
+	line "bad luck."
+
+	para "We need you to"
+	line "fight through to"
+	cont "the farm."
+
+	para "Bring a GOLD BERRY"
+	line "from ROUTE 38, or"
+	cont "a MIRACLEBERRY if"
+	cont "you have one, to"
+	cont "heal MILTANK."
+
+	para "Every wild #MON"
+	line "you encounter must"
+	cont "be knocked out."
+
+	para "Only then will it"
+	line "be safe to head"
+	cont "tp MILTANK and end"
+	cont "this disaster."
+
+	para "While you do that,"
+	line "we'll hold the"
+	cont "line here."
+
+	para "Good hunting,"
+	line "<PLAY_G>."
+	cont "ECRUTEAK is count-"
+	cont "ing on you!"
+
+	para "Are you ready?"
+	done
+
+MortyText_Refused:
+	text "I know it's a lot"
+	line "to take in."
+
+	para "Have a moment to"
+	line "focus and prepare."
+
+	para "<……><……><……>"
+
+	para "Are you ready?"
+	done
+
+MortyText_Accepted:
+	text "Ok, don't hold"
+	line "back!"
+
+	para "Everyone, let's"
+	line "go!"
 	done
 
 Route38EcruteakGateKimonoGirlText:
