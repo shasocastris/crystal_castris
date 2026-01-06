@@ -3,7 +3,7 @@ FruitTreeItems:
 	table_width 2
 	dw BERRY        ; ROUTE_29
 	dw BERRY        ; ROUTE_30_1
-	dw BERRY        ; ROUTE_38
+	dw GOLD_BERRY   ; ROUTE_38
 	dw GOLD_BERRY   ; ROUTE_46_1
 	dw PSNCUREBERRY ; ROUTE_30_2
 	dw PSNCUREBERRY ; ROUTE_33

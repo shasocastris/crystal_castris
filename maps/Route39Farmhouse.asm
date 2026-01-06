@@ -18,7 +18,7 @@ PokefanM_DairyFarmer:
 	writetext FarmerMText_SickCow
 	waitbutton
 	closetext
-	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
+;	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
 	end
 
 FarmerMScript_SellMilk:
@@ -119,19 +119,28 @@ FarmhouseBookshelf:
 FarmerMText_SickCow:
 	text "My MILTANK ain't"
 	line "givin' me milk"
-	cont "n'more."
+	cont "anymore."
 
-	para "This here FARM's"
-	line "got famous milk."
+	para "Worse, she's too"
+	line "sick to help calm"
+	cont "them TAUROS."
 
-	para "Most everyone"
-	line "wants a drink."
+	para "WHITNEY said a"
+	line "healthy MILTANK"
 
-	para "It'll give me lots"
-	line "o' milk if'n I"
+	para "could end the"
+	line "rampage, but mine"
+	cont "caught a fever."
 
-	para "feed it a good ol'"
-	line "BERRY, I reckon."
+	para "She'll get better"
+	line "if'n I feed her a"
+
+	para "good GOLD BERRY"
+	line "I reckon."
+
+	para "But I can't get"
+	line "through all them"
+	cont "wild #MON!"
 	done
 
 FarmerMText_BuyMilk:

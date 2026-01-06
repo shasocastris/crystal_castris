@@ -176,9 +176,7 @@ Route38EcruteakGateMortyText:
 	cont "the farm."
 
 	para "Bring a GOLD BERRY"
-	line "from ROUTE 38, or"
-	cont "a MIRACLEBERRY if"
-	cont "you have one, to"
+	line "from ROUTE 38 to"
 	cont "heal MILTANK."
 
 	para "Every wild #MON"
