@@ -115,6 +115,14 @@ FieldMoveFailed:
 	text_far _CantUseItemText
 	text_end
 
+CantFlyWildHUnt:
+	ld hl, .CantFlyWildHUntText
+	jmp MenuTextboxBackup
+
+.CantFlyWildHUntText:
+	text_far _CantFlyWildHUntText
+	text_end
+
 CutFunction:
 	call FieldMoveJumptableReset
 .loop
@@ -559,6 +567,11 @@ FlyFunction:
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr nz, .indoors
+
+	ld de, ENGINE_WILD_HUNT
+	call CheckEngineFlag
+	jr nc, .wildhunt
+
 	xor a
 	ldh [hMapAnims], a
 	call LoadStandardMenuHeader
@@ -587,6 +600,11 @@ FlyFunction:
 	call CloseWindow
 	call WaitBGMap
 	ld a, JUMPTABLE_EXIT
+	ret
+
+.wildhunt
+	call CantFlyWildHUnt
+	ld a, JUMPTABLE_EXIT | $2
 	ret
 
 .DoFly:

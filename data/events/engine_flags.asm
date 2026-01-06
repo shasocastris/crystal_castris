@@ -104,7 +104,7 @@ EngineFlags:
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_WILD_HUNT
 
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F

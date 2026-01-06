@@ -206,6 +206,12 @@ _CantUseItemText::
 	line "here."
 	prompt
 
+_CantFlyWildHUntText::
+	text "Flying away from a"
+	line "WILD HUNT is too"
+	cont "dangerous!"
+	prompt
+
 _UseCutText::
 	text_ram wStringBuffer2
 	text " used"
