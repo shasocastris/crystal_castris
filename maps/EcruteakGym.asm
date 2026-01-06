@@ -281,10 +281,11 @@ MortyText_FogBadgeSpeech:
 	line "you."
 
 	para "Also, #MON that"
-	line "know SURF will be"
+	line "know ROCK SMASH"
 
-	para "able to use that"
-	line "move anytime."
+	para "will be able to"
+	line "use that move"
+	cont "anytime."
 
 	para "I want you to have"
 	line "this too."
