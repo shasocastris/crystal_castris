@@ -4970,6 +4970,8 @@ BattleCommand_ForceSwitch:
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCESHINY
 	jmp z, .fail
+	cp BATTLETYPE_WILD_HUNT
+	jmp z, .fail
 	cp BATTLETYPE_TRAP
 	jmp z, .fail
 	cp BATTLETYPE_CELEBI

@@ -3686,6 +3686,8 @@ TryToRunAwayFromBattle:
 	jmp z, .cant_escape
 	cp BATTLETYPE_SUICUNE
 	jmp z, .cant_escape
+	cp BATTLETYPE_WILD_HUNT
+	jmp z, .cant_escape
 
 	ld a, [wLinkMode]
 	and a
@@ -6006,6 +6008,19 @@ LoadEnemyMon:
 .UpdateItem:
 	ld a, b
 	ld [wEnemyMonItem], a
+
+; Force the WILD_HUNT pokemon to all have the BERSERK_GENE
+	ld a, [wBattleType]
+	cp BATTLETYPE_WILD_HUNT
+	jr nz, .NoItem
+; 16 bit
+	push af
+	ld hl, BERSERK_GENE
+	call GetItemIDFromHL
+	ld [wEnemyMonItem], a
+	pop af
+.NoItem
+; fallthrough
 
 ; Initialize DVs
 

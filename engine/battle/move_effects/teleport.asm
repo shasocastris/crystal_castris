@@ -8,6 +8,8 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_SUICUNE
 	jr z, .failed
+	cp BATTLETYPE_WILD_HUNT
+	jr z, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar

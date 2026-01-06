@@ -6,6 +6,8 @@
 	const ROUTE38_SAILOR
 	const ROUTE38_FRUIT_TREE
 	const ROUTE38_BEAUTY2
+	const ROUTE38_TAUROS_1
+	const ROUTE38_TAUROS_2
 
 Route38_MapScripts:
 	def_scene_scripts
@@ -250,6 +252,38 @@ TrainerBeautyOlivia:
 	closetext
 	end
 
+WildHuntTauros1:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE38_TAUROS_1, 15
+	opentext
+	writetext WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE38_TAUROS_1
+	reloadmapafterbattle
+	end
+
+WildHuntTauros2:
+	faceplayer
+	showemote EMOTE_SAD, ROUTE38_TAUROS_2, 15
+	opentext
+	writetext WildHuntTauros_Text
+	cry TAUROS
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 40
+	startbattle
+	disappear ROUTE38_TAUROS_2
+	reloadmapafterbattle
+	end
+
 Route38Sign:
 	jumptext Route38SignText
 
@@ -258,6 +292,10 @@ Route38TrainerTips:
 
 Route38FruitTree:
 	fruittree FRUITTREE_ROUTE_38
+
+WildHuntTauros_Text:
+	text "TAUROS: RRRGGH!"
+	done
 
 BirdKeeperTobySeenText:
 	text "Fly high into the"
@@ -428,5 +466,7 @@ Route38_MapEvents:
 	object_event 12, 15, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, EVENT_QUELLED_WILD_HUNT
 	object_event 19,  9, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, EVENT_QUELLED_WILD_HUNT
 	object_event 24,  5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, EVENT_QUELLED_WILD_HUNT
-	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, EVENT_QUELLED_WILD_HUNT
+	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route38FruitTree, -1
 	object_event  5,  8, SPRITE_BEAUTY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, EVENT_QUELLED_WILD_HUNT
+	object_event 30,  8, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros1, EVENT_FOUGHT_WILD_HUNT_TAUROS_1
+	object_event 28, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros2, EVENT_FOUGHT_WILD_HUNT_TAUROS_2

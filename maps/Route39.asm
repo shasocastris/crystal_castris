@@ -24,6 +24,13 @@ Route39FNoop2Scene:
 	end
 
 WildHuntFarmCantLeaveScript:
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_1
+	iffalse .cantleave
+	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_2
+	iffalse .cantleave
+	end
+
+.cantleave
 	opentext
 	writetext WildHuntFarmCantLeaveText
 	waitbutton
