@@ -111,6 +111,8 @@ MahoganyGym_NoRoomForIcyWind:
 	end
 
 MahoganyGymWildHuntCallScript:
+	clearevent EVENT_ECRUTEAK_WILD_HUNT
+	setevent EVENT_ROUTE38_GATE_RANGERS
 	specialphonecall SPECIALCALL_WILDHUNT
 	end
 

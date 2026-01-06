@@ -221,7 +221,6 @@ INCLUDE "maps/OlivinePunishmentSpeechHouse.asm"
 INCLUDE "maps/OlivineGoodRodHouse.asm"
 INCLUDE "maps/OlivineCafe.asm"
 INCLUDE "maps/OlivineMart.asm"
-INCLUDE "maps/Route38EcruteakGate.asm"
 INCLUDE "maps/Route39Barn.asm"
 INCLUDE "maps/Route39Farmhouse.asm"
 INCLUDE "maps/ManiasHouse.asm"
@@ -488,5 +487,6 @@ INCLUDE "maps/OaksLab.asm"
 SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/ViridianGym.asm"
+INCLUDE "maps/Route38EcruteakGate.asm"
 
 ENDSECTION
