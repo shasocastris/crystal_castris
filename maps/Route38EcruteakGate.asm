@@ -44,9 +44,6 @@ Route38EcruteakGateMortyScript:
 	faceplayer
 	opentext
 	writetext Route38EcruteakGateMortyText
-;	waitbutton
-;	closetext
-;	end
 .MustSayYes:
 	yesorno
 	iftrue .BeginQuellingWildHunt
@@ -56,6 +53,7 @@ Route38EcruteakGateMortyScript:
 	writetext MortyText_Accepted
     waitbutton
     closetext
+    setevent EVENT_TAUROS_HERD_LEADER
     follow ROUTE38ECRUTEAKGATE_MORTY, PLAYER
 	applymovement ROUTE38ECRUTEAKGATE_MORTY, Route38GateFollowMorty_MovementData
 	stopfollow
@@ -189,7 +187,7 @@ Route38EcruteakGateMortyText:
 
 	para "Only then will it"
 	line "be safe to head"
-	cont "tp MILTANK and end"
+	cont "to MILTANK and end"
 	cont "this disaster."
 
 	para "While you do that,"

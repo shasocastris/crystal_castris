@@ -9,11 +9,13 @@
 	const ROUTE39_PSYCHIC_NORMAN
 	const ROUTE39_FRUIT_TREE
 	const ROUTE39_POKEFAN_F2
+	const ROUTE39_TAUROS_HERD_LEADER
 
 Route39_MapScripts:
 	def_scene_scripts
 	scene_script Route39FNoop1Scene, SCENE_ROUTE39_WILD_HUNT
-	scene_script Route39FNoop2Scene, SCENE_ROUTE39_NOOP
+	scene_script Route39FNoop2Scene, SCENE_ROUTE39_TAUROS_HERD_LEADER
+	scene_script Route39FNoop3Scene, SCENE_ROUTE39_NOOP
 
 	def_callbacks
 
@@ -21,6 +23,9 @@ Route39FNoop1Scene:
 	end
 
 Route39FNoop2Scene:
+	end
+
+Route39FNoop3Scene:
 	end
 
 WildHuntFarmCantLeaveScript:
@@ -44,6 +49,25 @@ WildHuntOlivineCantLeaveScript:
 	waitbutton
 	closetext
 	applymovement PLAYER, WildHuntOlivineCantLeaveMovement
+	end
+
+WildHuntTaurosHerdLeaderScript:
+	turnobject PLAYER, RIGHT
+	showemote EMOTE_SHOCK, PLAYER, 15
+	special FadeOutMusic
+	cry TAUROS
+	pause 15
+	appear ROUTE39_TAUROS_HERD_LEADER
+	waitsfx
+	applymovement ROUTE39_TAUROS_HERD_LEADER, Route39TaurosHerdLeaderMovement
+	showemote EMOTE_SAD, ROUTE39_TAUROS_HERD_LEADER, 30
+	setevent EVENT_TAUROS_HERD_LEADER
+	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
+	loadwildmon TAUROS, 50
+	startbattle
+	disappear ROUTE39_TAUROS_HERD_LEADER
+	reloadmapafterbattle
+	setscene SCENE_ROUTE39_NOOP
 	end
 
 Route39Miltank:
@@ -230,6 +254,15 @@ WildHuntFarmCantLeaveMovement:
 
 WildHuntOlivineCantLeaveMovement:
 	step UP
+	step_end
+
+Route39TaurosHerdLeaderMovement:
+	set_sliding
+	fast_jump_step UP
+	fast_jump_step UP
+	fast_jump_step LEFT
+	fast_jump_step LEFT
+	remove_sliding
 	step_end
 
 WildHuntFarmCantLeaveText:
@@ -439,6 +472,7 @@ Route39_MapEvents:
 	coord_event  9, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
 	coord_event 10, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
 	coord_event 11, 34, SCENE_ROUTE39_WILD_HUNT, WildHuntOlivineCantLeaveScript
+	coord_event  1,  4, SCENE_ROUTE39_WILD_HUNT, WildHuntTaurosHerdLeaderScript
 
 	def_bg_events
 	bg_event  5, 31, BGEVENT_READ, Route39TrainerTips
@@ -450,10 +484,11 @@ Route39_MapEvents:
 	object_event 13, 29, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSailorEugene, EVENT_QUELLED_WILD_HUNT
 	object_event 10, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanmDerek, EVENT_QUELLED_WILD_HUNT
 	object_event 11, 19, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerPokefanfRuth, EVENT_QUELLED_WILD_HUNT
-	object_event  3, 12, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
-	object_event  6, 11, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
-	object_event  4, 15, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
-	object_event  8, 13, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
+	object_event  3, 12, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
+	object_event  6, 11, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
+	object_event  4, 15, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
+	object_event  8, 13, SPRITE_MILTANK, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39Miltank, EVENT_QUELLED_WILD_HUNT
 	object_event 13,  7, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPsychicNorman, EVENT_QUELLED_WILD_HUNT
 	object_event  9,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route39FruitTree, -1
 	object_event  4, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokefanfJaime, EVENT_QUELLED_WILD_HUNT
+	object_event  6,  8, SPRITE_TAUROS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TAUROS_HERD_LEADER
