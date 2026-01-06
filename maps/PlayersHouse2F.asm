@@ -176,6 +176,7 @@ if DEF(_DEBUG)
 	givepokemove SUNNY_DAY,  wPartyMon5, 1
 	givepokemove SOLARBEAM,  wPartyMon5, 2
 	givepoke DITTO, 50, METAL_POWDER
+	givepokemove TELEPORT,  wPartyMon6, 1
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1

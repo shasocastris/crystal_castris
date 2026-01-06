@@ -206,10 +206,10 @@ _CantUseItemText::
 	line "here."
 	prompt
 
-_CantFlyWildHUntText::
-	text "Flying away from a"
-	line "WILD HUNT is too"
-	cont "dangerous!"
+_CantFlyTeleportWildHuntText::
+	text "There's no turning"
+	line "back from quelling"
+	cont "a WILD HUNT!"
 	prompt
 
 _UseCutText::

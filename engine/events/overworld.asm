@@ -115,12 +115,12 @@ FieldMoveFailed:
 	text_far _CantUseItemText
 	text_end
 
-CantFlyWildHUnt:
-	ld hl, .CantFlyWildHUntText
+CantFlyTeleportWildHunt:
+	ld hl, .CantFlyTeleportWildHuntText
 	jmp MenuTextboxBackup
 
-.CantFlyWildHUntText:
-	text_far _CantFlyWildHUntText
+.CantFlyTeleportWildHuntText:
+	text_far _CantFlyTeleportWildHuntText
 	text_end
 
 CutFunction:
@@ -603,7 +603,7 @@ FlyFunction:
 	ret
 
 .wildhunt
-	call CantFlyWildHUnt
+	call CantFlyTeleportWildHunt
 	ld a, JUMPTABLE_EXIT | $2
 	ret
 
@@ -904,6 +904,11 @@ TeleportFunction:
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr nz, .nope
+
+	ld de, ENGINE_WILD_HUNT
+	call CheckEngineFlag
+	jr nc, .wildhunt
+
 	ld a, [wLastSpawnMapGroup]
 	ld d, a
 	ld a, [wLastSpawnMapNumber]
@@ -917,6 +922,11 @@ TeleportFunction:
 
 .nope
 	ld a, $2
+	ret
+
+.wildhunt
+	call CantFlyTeleportWildHunt
+	ld a, JUMPTABLE_EXIT
 	ret
 
 .DoTeleport:
