@@ -16,7 +16,6 @@
 	const ROUTE39_TAUROS_14
 	const ROUTE39_TAUROS_15
 	const ROUTE39_TAUROS_16
-	const ROUTE39_TAUROS_17
 
 Route39_MapScripts:
 	def_scene_scripts
@@ -67,8 +66,6 @@ WildHuntFarmCantLeaveScript:
 	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_15
 	iffalse .cantleave
 	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_16
-	iffalse .cantleave
-	checkevent EVENT_FOUGHT_WILD_HUNT_TAUROS_17
 	iffalse .cantleave
 	end
 
@@ -181,22 +178,6 @@ WildHuntTauros16:
 	loadwildmon TAUROS, 40
 	startbattle
 	disappear ROUTE39_TAUROS_16
-	reloadmapafterbattle
-	end
-
-WildHuntTauros17:
-	faceplayer
-	showemote EMOTE_SAD, ROUTE39_TAUROS_17, 35
-	opentext
-	writetext Route39WildHuntTauros_Text
-	cry TAUROS
-	pause 15
-	closetext
-	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_17
-	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
-	startbattle
-	disappear ROUTE39_TAUROS_17
 	reloadmapafterbattle
 	end
 
@@ -651,4 +632,3 @@ Route39_MapEvents:
 	object_event  9, 28, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros14, EVENT_FOUGHT_WILD_HUNT_TAUROS_14
 	object_event  8,  6, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros15, EVENT_FOUGHT_WILD_HUNT_TAUROS_15
 	object_event  8, 19, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros16, EVENT_FOUGHT_WILD_HUNT_TAUROS_16
-	object_event  4,  7, SPRITE_TAUROS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WildHuntTauros17, EVENT_FOUGHT_WILD_HUNT_TAUROS_17

@@ -34,28 +34,12 @@ MoomooScript:
 	special PlaySlowCry
 	promptbutton
 	writetext Route39BarnItsCryIsWeakText
-;	checkevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
-;	iftrue .GiveBerry
-;	waitbutton
-;	closetext
-;	end
-;
-;.GiveBerry:
 	promptbutton
 	writetext Route39BarnAskGiveBerryText
 	yesorno
 	iffalse .Refused
 	checkitem GOLD_BERRY
 	iffalse .NoBerriesInBag
-;	takeitem GOLD_BERRY
-;	sjump .GaveMooMooBerry
-;
-;.CheckMiracleberry:
-;	checkitem MIRACLEBERRY
-;	iffalse .NoBerriesInBag
-;	takeitem MIRACLEBERRY
-
-;.GaveMooMooBerry:
 	playmusic MUSIC_HEAL
 	writetext Route39BarnGaveBerryText
 	pause 60
@@ -67,6 +51,7 @@ MoomooScript:
 	setevent EVENT_HEALED_MOOMOO
 	setscene SCENE_ROUTE39_WILD_HUNT
 	clearevent EVENT_QUELLED_WILD_HUNT
+	setevent EVENT_ECRUTEAK_WILD_HUNT
 	showemote EMOTE_SHOCK, ROUTE39BARN_WHITNEY, 30
 	applymovement ROUTE39BARN_WHITNEY, Route39BarnWhitneyMovement
 	turnobject ROUTE39BARN_WHITNEY, UP
@@ -75,10 +60,8 @@ MoomooScript:
 	writetext Route39BarnWhitneyCongratulationsText
 	waitbutton
 	closetext
-	wildon
 	turnobject ROUTE39BARN_WHITNEY, DOWN
 	applymovement ROUTE39BARN_WHITNEY, Route39BarnWhitneyLeaveMovement
-;	pause 15
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE39BARN_WHITNEY
 	waitsfx
