@@ -20,7 +20,6 @@ OlivineCityNoop2Scene:
 
 OlivineCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_OLIVINE
-	setflag ENGINE_WILD_HUNT
 	endcallback
 
 OlivineCityRivalSceneTop:

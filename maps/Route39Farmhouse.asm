@@ -18,7 +18,6 @@ PokefanM_DairyFarmer:
 	writetext FarmerMText_SickCow
 	waitbutton
 	closetext
-;	setevent EVENT_TALKED_TO_FARMER_ABOUT_MOOMOO
 	end
 
 FarmerMScript_SellMilk:
