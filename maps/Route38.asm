@@ -270,7 +270,7 @@ WildHuntTauros1:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_1
 	reloadmapafterbattle
@@ -286,7 +286,7 @@ WildHuntTauros2:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_2
 	reloadmapafterbattle
@@ -302,7 +302,7 @@ WildHuntTauros3:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_3
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_3
 	reloadmapafterbattle
@@ -318,7 +318,7 @@ WildHuntTauros4:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_4
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_4
 	reloadmapafterbattle
@@ -334,7 +334,7 @@ WildHuntTauros5:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_5
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_5
 	reloadmapafterbattle
@@ -350,7 +350,7 @@ WildHuntTauros6:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_6
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_6
 	reloadmapafterbattle
@@ -366,7 +366,7 @@ WildHuntTauros7:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_7
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_7
 	reloadmapafterbattle
@@ -382,7 +382,7 @@ WildHuntTauros8:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_8
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_8
 	reloadmapafterbattle
@@ -398,7 +398,7 @@ WildHuntTauros9:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_9
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_9
 	reloadmapafterbattle
@@ -414,7 +414,7 @@ WildHuntTauros10:
 	closetext
 	setevent EVENT_FOUGHT_WILD_HUNT_TAUROS_10
 	loadvar VAR_BATTLETYPE, BATTLETYPE_WILD_HUNT
-	loadwildmon TAUROS, 40
+	loadwildmon TAUROS, 35
 	startbattle
 	disappear ROUTE38_TAUROS_10
 	reloadmapafterbattle
