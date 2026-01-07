@@ -5971,6 +5971,16 @@ LoadEnemyMon:
 ; Force Item1
 ; Used for Ho-Oh, Lugia and Snorlax encounters
 	ld a, [wBattleType]
+	cp BATTLETYPE_WILD_HUNT
+	jr nz, .NotRampage
+	push af
+	ld hl, BERSERK_GENE
+	call GetItemIDFromIndex
+	ld b, a
+	pop af
+    jr .UpdateItem
+
+.NotRampage
 	cp BATTLETYPE_FORCEITEM
 ; 16 bit
 	push af
@@ -6008,19 +6018,6 @@ LoadEnemyMon:
 .UpdateItem:
 	ld a, b
 	ld [wEnemyMonItem], a
-
-; Force the WILD_HUNT pokemon to all have the BERSERK_GENE
-	ld a, [wBattleType]
-	cp BATTLETYPE_WILD_HUNT
-	jr nz, .NoItem
-; 16 bit
-	push af
-	ld hl, BERSERK_GENE
-	call GetItemIDFromHL
-	ld [wEnemyMonItem], a
-	pop af
-.NoItem
-; fallthrough
 
 ; Initialize DVs
 
