@@ -9,7 +9,7 @@
 	const CIANWOODCITY_ROCK5
 	const CIANWOODCITY_ROCK6
 	const CIANWOODCITY_POKEFAN_F
-	const CIANWOODCITY_EUSINE
+	const CIANWOODCITY_KAREN
 	const CIANWOODCITY_SUICUNE
     const CIANWOODCITY_SWIMMER_GIRL1
 	const CIANWOODCITY_OLIVINE_RIVAL1
@@ -34,13 +34,13 @@ CianwoodCityNoop2Scene:
 CianwoodCityFlypointAndSuicuneCallback:
 	setflag ENGINE_FLYPOINT_CIANWOOD
 	setevent EVENT_KAREN_IN_BURNED_TOWER
-	checkevent EVENT_FOUGHT_EUSINE
+	checkevent EVENT_FOUGHT_KAREN_AT_CIANWOOD
 	iffalse .Done
-	disappear CIANWOODCITY_EUSINE
+	disappear CIANWOODCITY_KAREN
 .Done:
 	endcallback
 
-CianwoodCitySuicuneAndEusine:
+CianwoodCitySuicuneAndKaren:
 	turnobject PLAYER, UP
 	showemote EMOTE_SHOCK, PLAYER, 15
 	pause 15
@@ -55,29 +55,30 @@ CianwoodCitySuicuneAndEusine:
 	setscene SCENE_CIANWOODCITY_NOOP
 	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42
 	setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE
-	checkevent EVENT_FOUGHT_EUSINE
+	checkevent EVENT_FOUGHT_KAREN_AT_CIANWOOD
 	iftrue .Done
-	setevent EVENT_FOUGHT_EUSINE
+	setevent EVENT_FOUGHT_KAREN_AT_CIANWOOD
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
-	appear CIANWOODCITY_EUSINE
-	applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineApproachMovement
+	appear CIANWOODCITY_KAREN
+	applymovement CIANWOODCITY_KAREN, CianwoodCityKarenApproachMovement
 	opentext
-	writetext EusineSuicuneText
+	writetext KarenSuicuneText
 	waitbutton
 	closetext
-	winlosstext EusineBeatenText, 0
-	setlasttalked CIANWOODCITY_EUSINE
-	loadtrainer MYSTICALMAN, EUSINE
+	winlosstext KarenBeatenText, KarenPlayerLostText
+	setlasttalked CIANWOODCITY_KAREN
+	loadtrainer KAREN, KAREN1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	opentext
-	writetext EusineAfterText
+	writetext KarenAfterText
 	waitbutton
 	closetext
-	applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineDepartMovement
-	disappear CIANWOODCITY_EUSINE
+	applymovement CIANWOODCITY_KAREN, CianwoodCityKarenDepartMovement
+	disappear CIANWOODCITY_KAREN
 	pause 20
 	special FadeOutMusic
 	playmapmusic
@@ -196,14 +197,14 @@ CianwoodCitySuicuneDepartMovement:
 	remove_sliding
 	step_end
 
-CianwoodCityEusineApproachMovement:
+CianwoodCityKarenApproachMovement:
 	step UP
 	step UP
 	step UP
 	step UP
 	step_end
 
-CianwoodCityEusineDepartMovement:
+CianwoodCityKarenDepartMovement:
 	step DOWN
 	step DOWN
 	step DOWN
@@ -308,66 +309,72 @@ CianwoodCityLassText:
 	line "MON."
 	done
 
-EusineSuicuneText:
-	text "EUSINE: Yo,"
+KarenSuicuneText:
+	text "KAREN: Well, well."
 	line "<PLAYER>."
 
-	para "Wasn't that"
-	line "SUICUNE just now?"
+	para "I heard about what"
+	line "you did during the"
+	cont "WILD HUNT."
 
-	para "I only caught a"
-	line "quick glimpse, but"
+	para "Impressive work."
+	line "You saved ECRUTEAK"
+	cont "from disaster."
 
-	para "I thought I saw"
-	line "SUICUNE running on"
-	cont "the waves."
+	para "The LEAGUE's been"
+	line "talking about you."
 
-	para "SUICUNE is beau-"
-	line "tiful and grand."
+	para "A rookie trainer"
+	line "who can handle a"
+	cont "crisis like that…"
 
-	para "And it races"
-	line "through towns and"
+	para "Even SUICUNE seems"
+	line "to have taken an"
+	cont "interest in you!"
 
-	para "roads at simply"
-	line "awesome speeds."
+	para "I'm curious to see"
+	line "your strength for"
+	cont "myself."
 
-	para "It's wonderful…"
+	para "Don't hold back,"
+	line "<PLAYER>."
 
-	para "I want to see"
-	line "SUICUNE up close…"
-
-	para "I've decided."
-
-	para "I'll battle you as"
-	line "a trainer to earn"
-	cont "SUICUNE's respect!"
-
-	para "Come on, <PLAYER>."
-	line "Let's battle now!"
+	para "I want to see what"
+	line "you're really made"
+	cont "of!"
 	done
 
-EusineBeatenText:
-	text "I hate to admit"
-	line "it, but you win."
+KarenBeatenText:
+	text "Hm. Not bad."
 	done
 
-EusineAfterText:
-	text "You're amazing,"
-	line "<PLAYER>!"
+KarenPlayerLostText:
+	text "You've got spirit."
+	done
 
-	para "No wonder #MON"
-	line "gravitate to you."
+KarenAfterText:
+	text "KAREN: You've got"
+	line "real potential,"
+	cont "<PLAYER>."
 
-	para "I get it now."
+	para "That crisis would"
+	line "have broken even"
+	cont "veterans."
 
-	para "I'm going to keep"
-	line "searching for"
-	cont "SUICUNE."
+	para "But you and your"
+	line "#MON fought"
+	cont "with everything"
+	cont "you had."
 
-	para "I'm sure we'll see"
-	line "each other again."
+	para "That's the mark of"
+	line "a true trainer."
 
-	para "See you around!"
+	para "Keep growing"
+	line "stronger."
+
+	para "I look forward to"
+	line "meeting you again"
+	cont "at INDIGO PLATEAU."
 	done
 
 CianwoodCitySignText:
@@ -487,7 +494,7 @@ CianwoodCity_MapEvents:
 	warp_event  5, 18, POKE_SEERS_HOUSE, 1
 
 	def_coord_events
-	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_KAREN, CianwoodCitySuicuneAndEusine
+	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_KAREN, CianwoodCitySuicuneAndKaren
 
 	def_bg_events
 	bg_event 20, 34, BGEVENT_READ, CianwoodCitySign
@@ -510,7 +517,7 @@ CianwoodCity_MapEvents:
 	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 21, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
-	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
+	object_event 11, 21, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_KAREN
 	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	object_event 25, 15, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKatie, -1
 	object_event 22, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPaton, -1
