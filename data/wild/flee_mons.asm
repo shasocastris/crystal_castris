@@ -142,7 +142,6 @@ SometimesFleeMons:
 	dw HITMONCHAN
 	dw HITMONTOP
 	dw GIRAFARIG
-	dw TAUROS
 	dw MILTANK
 	dw MAGBY
 	dw MAGMAR
