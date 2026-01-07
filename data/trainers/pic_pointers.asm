@@ -69,6 +69,5 @@ TrainerPicPointers::
 	dba PokefanfPic
 	dba OfficerPic
 	dba GruntfPic
-	dba MysticalmanPic
 	dba KrisTrainerPic
 	assert_table_length NUM_TRAINER_CLASSES

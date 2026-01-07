@@ -67,6 +67,5 @@ TrainerClassNames::
 	li "#FAN"           ; 40
 	li "OFFICER"        ; 41
 	li "ROCKET"         ; 42
-	li "MYSTICALMAN"    ; 43
 	li "<PKMN> TRAINER" ; 44
 	assert_list_length NUM_TRAINER_CLASSES

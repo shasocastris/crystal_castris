@@ -6650,25 +6650,6 @@ GruntFGroup:
 
 	end_list_items
 
-MysticalmanGroup:
-	next_list_item ; MYSTICALMAN (1), Cianwood City
-	db "EUSINE@", TRAINERTYPE_MOVES
-	db 32
-	dw HYPNO
-	dw DREAM_EATER, HYPNOSIS, HEADBUTT, PSYCHIC_M
-	db 32
-	dw HAUNTER
-	dw SHADOW_BALL, CONFUSE_RAY, MEAN_LOOK, PERISH_SONG
-	db 32
-	dw JUMPLUFF
-	dw MEGA_DRAIN, SPORE, CONFUSION, LEECH_SEED
-	db 32
-	dw ELECTRODE
-	dw SCREECH, SPARK, THUNDER, ROLLOUT
-	db -1 ; end
-
-	end_list_items
-
 KrisGroup:
 	next_list_item; KRIS (1), unused ???
 	db "KRIS@", TRAINERTYPE_NORMAL

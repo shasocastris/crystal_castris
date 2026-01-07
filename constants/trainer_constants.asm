@@ -719,9 +719,6 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTF_4
 	const GRUNTF_5
 
-	trainerclass MYSTICALMAN ; 43
-	const EUSINE
-
 	trainerclass LINK_KRIS ; 44
 	const LINK_KRIS1
 
