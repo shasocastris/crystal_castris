@@ -41,7 +41,6 @@ AzaleaGymBugsyScript:
 	waitsfx
 	setflag ENGINE_HIVEBADGE
 	readvar VAR_BADGES
-	scall AzaleaGymActivateRockets
 .FightDone:
 	changeblock 4, 15, $03 ; door
 	changeblock 5, 15, $03 ; door
@@ -96,17 +95,6 @@ BugsyRematchScript:
 	waitbutton
 	closetext
 	end
-
-AzaleaGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
-	jumpstd GoldenrodRocketsScript
-
-.RadioTowerRockets:
-	jumpstd RadioTowerRocketsScript
 
 TrainerTwinsAmyandmay1:
 	trainer TWINS, AMYANDMAY1, EVENT_BEAT_TWINS_AMY_AND_MAY, TwinsAmyandmay1SeenText, TwinsAmyandmay1BeatenText, 0, .AfterScript

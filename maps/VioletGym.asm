@@ -38,7 +38,6 @@ VioletGymFalknerScript:
 	waitsfx
 	setflag ENGINE_ZEPHYRBADGE
 	readvar VAR_BADGES
-	scall VioletGymActivateRockets
 .FightDone:
 	changeblock 4, 15, $1C ; door
 	changeblock 5, 15, $1C ; door
@@ -97,17 +96,6 @@ FalknerRematchScript:
 	waitbutton
 	closetext
 	end
-
-VioletGymActivateRockets:
-	ifequal 7, .RadioTowerRockets
-	ifequal 6, .GoldenrodRockets
-	end
-
-.GoldenrodRockets:
-	jumpstd GoldenrodRocketsScript
-
-.RadioTowerRockets:
-	jumpstd RadioTowerRocketsScript
 
 TrainerBirdKeeperRod:
 	trainer BIRD_KEEPER, ROD, EVENT_BEAT_BIRD_KEEPER_ROD, BirdKeeperRodSeenText, BirdKeeperRodBeatenText, 0, .Script
