@@ -1378,16 +1378,16 @@ MantineEvosAttacks:
 
 SkarmoryEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, LEER
+	dbw 1, FURY_ATTACK
 	dbw 1, PECK
 	dbw 7, SPIKES
-	dbw 13, SAND_ATTACK
+	dbw 13, METAL_CLAW
 	dbw 16, PURSUIT
 	dbw 19, SWIFT
-	dbw 11, DRILL_PECK
+	dbw 22, DRILL_PECK
 	dbw 25, AGILITY
 	dbw 31, WHIRLWIND
-	dbw 37, FURY_ATTACK
+	dbw 37, SAND_ATTACK
 	dbw 43, SKY_ATTACK
 	dbw 49, STEEL_WING
 	db 0 ; no more level-up moves
