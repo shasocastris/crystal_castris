@@ -13,6 +13,8 @@ CianwoodPharmacyNoopScene:
 CianwoodPharmacist:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_CHUCK
+	iffalse .NeedToBeatChuck
 	checkevent EVENT_GOT_SECRETPOTION_FROM_PHARMACY
 	iftrue .Mart
 	checkevent EVENT_JASMINE_EXPLAINED_AMPHYS_SICKNESS
@@ -32,6 +34,12 @@ CianwoodPharmacist:
 
 .Mart:
 	pokemart MARTTYPE_PHARMACY, MART_CIANWOOD
+	closetext
+	end
+
+.NeedToBeatChuck
+	writetext NeedToBeatChuckText
+	waitbutton
 	closetext
 	end
 
@@ -68,6 +76,29 @@ PharmacistDescribeSecretpotionText:
 
 	para "I only offer it in"
 	line "an emergency."
+	done
+
+NeedToBeatChuckText:
+	text "Your #MON ap-"
+	line "pear to be fine."
+
+	para "Is something wor-"
+	line "rying you?"
+
+	para "…"
+
+	para "The LIGHTHOUSE"
+	line "#MON is in"
+	cont "trouble?"
+
+	para "I can only entrust"
+	line "my SECRETPOTION to"
+	cont "the strongest"
+	cont "#MON trainers."
+
+	para "I'll give it to"
+	line "you once you beat"
+	cont "CHUCK."
 	done
 
 CianwoodPharmacy_MapEvents:

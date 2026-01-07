@@ -217,6 +217,10 @@ ChuckGroup:
 	dw FOCUS_BAND
 	dw STRENGTH, LIGHT_SCREEN, ICE_PUNCH, MEDITATE
 	db 40
+	dw HERACROSS
+	dw ACC_UP_BERRY
+	dw STRENGTH, EARTHQUAKE, FURY_CUTTER, THIEF
+	db 40
 	dw POLIWRATH
 	dw MIRACLEBERRY
 	dw HYPNOSIS, MIND_READER, SURF, DYNAMICPUNCH
@@ -5159,9 +5163,15 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (2), Cianwood Gym
 	db "YOSHI@", TRAINERTYPE_MOVES
-	db 33
+	db 36
 	dw HITMONLEE
 	dw DOUBLE_KICK, MEDITATE, JUMP_KICK, FOCUS_ENERGY
+	db 36
+	dw HITMONCHAN
+	dw COMET_PUNCH, THUNDERPUNCH, ICE_PUNCH, FIRE_PUNCH
+	db 36
+	dw HITMONTOP
+	dw HI_JUMP_KICK, MACH_PUNCH, RAPID_SPIN, PURSUIT
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (3), Dark Cave, Blackthorn Entrance
@@ -5182,19 +5192,28 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (4), Cianwood Gym
 	db "LAO@", TRAINERTYPE_MOVES
-	db 33
+	db 36
+	dw HITMONLEE
+	dw DOUBLE_KICK, MEDITATE, JUMP_KICK, FOCUS_ENERGY
+	db 36
 	dw HITMONCHAN
 	dw COMET_PUNCH, THUNDERPUNCH, ICE_PUNCH, FIRE_PUNCH
+	db 36
+	dw HITMONTOP
+	dw HI_JUMP_KICK, MACH_PUNCH, RAPID_SPIN, PURSUIT
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (5), Cianwood Gym
 	db "NOB@", TRAINERTYPE_MOVES
-	db 30
+	db 37
 	dw PRIMEAPE
 	dw LEER, FOCUS_ENERGY, KARATE_CHOP, SEISMIC_TOSS
-	db 30
+	db 37
 	dw MACHOKE
 	dw LEER, KARATE_CHOP, SEISMIC_TOSS, ROCK_SLIDE
+	db 37
+	dw MACHAMP
+	dw EARTHQUAKE, KARATE_CHOP, SEISMIC_TOSS, ROCK_SLIDE
 	db -1 ; end
 
 	next_list_item ; BLACKBELT_T (6), Mt Mortar, post Waterfall
@@ -5209,11 +5228,11 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (7), Cianwood Gym
 	db "LUNG@", TRAINERTYPE_NORMAL
-	db 28
-	dw TYROGUE
-	db 28
+	db 38
+	dw HITMONLEE
+	db 38
 	dw MACHOKE
-	db 30
+	db 40
 	dw PRIMEAPE
 	db -1 ; end
 
