@@ -1434,7 +1434,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 16, SNUBBULL
-	dbw 18, PIDGEOTTO
+	dbw 18, MAGNEMITE
 	dbw 17, VULPIX
 	dbw 14, ABRA
 	dbw 16, JIGGLYPUFF
@@ -1442,7 +1442,7 @@ JohtoGrassWildMons:
 	dbw 16, YANMA
 	; day
 	dbw 16, SNUBBULL
-	dbw 18, PIDGEOTTO
+	dbw 18, MAGNEMITE
 	dbw 17, GROWLITHE
 	dbw 14, ABRA
 	dbw 16, JIGGLYPUFF
@@ -1517,64 +1517,64 @@ JohtoGrassWildMons:
 	def_grass_wildmons ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 20, PONYTA
-	dbw 20, RATICATE
-	dbw 20, MAGNEMITE
-	dbw 20, PIDGEOTTO
-	dbw 17, TAUROS
-	dbw 17, MILTANK
-	dbw 17, MILTANK
+	dbw 30, PONYTA
+	dbw 30, WEEPINBELL
+	dbw 30, MAGNETON
+	dbw 30, PIDGEOTTO
+	dbw 27, TAUROS
+	dbw 27, MILTANK
+	dbw 27, MILTANK
 	; day
-	dbw 20, PONYTA
-	dbw 20, RATICATE
-	dbw 20, MAGNEMITE
-	dbw 20, PIDGEOTTO
-	dbw 17, TAUROS
-	dbw 17, MILTANK
-	dbw 17, MILTANK
+	dbw 30, PONYTA
+	dbw 30, WEEPINBELL
+	dbw 30, MAGNETON
+	dbw 30, PIDGEOTTO
+	dbw 27, TAUROS
+	dbw 27, MILTANK
+	dbw 27, MILTANK
 	; nite
-	dbw 20, MEOWTH
-	dbw 22, RATICATE
-	dbw 20, MAGNEMITE
-	dbw 22, NOCTOWL
-	dbw 20, MURKROW
-	dbw 22, PERSIAN
-	dbw 22, PERSIAN
+	dbw 30, PERSIAN
+	dbw 32, GLOOM
+	dbw 30, MAGNETON
+	dbw 32, NOCTOWL
+	dbw 30, MURKROW
+	dbw 32, LICKITUNG
+	dbw 32, LICKITUNG
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_39
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 22, PONYTA
-	dbw 22, RATICATE
-	dbw 22, MAGNEMITE
-	dbw 22, PIDGEOTTO
-	dbw 19, MILTANK
-	dbw 19, TAUROS
-	dbw 19, TAUROS
+	dbw 32, PONYTA
+	dbw 32, WEEPINBELL
+	dbw 32, MAGNETON
+	dbw 32, PIDGEOTTO
+	dbw 29, MILTANK
+	dbw 29, TAUROS
+	dbw 29, TAUROS
 	; day
-	dbw 22, PONYTA
-	dbw 22, RATICATE
-	dbw 22, MAGNEMITE
-	dbw 22, PIDGEOTTO
-	dbw 19, MILTANK
-	dbw 19, TAUROS
-	dbw 19, TAUROS
+	dbw 32, PONYTA
+	dbw 32, WEEPINBELL
+	dbw 32, MAGNETON
+	dbw 32, PIDGEOTTO
+	dbw 29, MILTANK
+	dbw 29, TAUROS
+	dbw 29, TAUROS
 	; nite
-	dbw 22, MEOWTH
-	dbw 22, RATICATE
-	dbw 22, MAGNEMITE
-	dbw 22, NOCTOWL
-	dbw 25, MURKROW
-	dbw 25, PERSIAN
-	dbw 25, PERSIAN
+	dbw 32, PERSIAN
+	dbw 32, GLOOM
+	dbw 32, MAGNETON
+	dbw 32, NOCTOWL
+	dbw 35, MURKROW
+	dbw 35, LICKITUNG
+	dbw 35, LICKITUNG
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_42
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 22, ARBOK
-	dbw 22, FEAROW
+	dbw 22, MEOWTH
 	dbw 24, STANTLER
 	dbw 26, RATICATE
 	dbw 24, SUDOWOODO
@@ -1582,7 +1582,7 @@ JohtoGrassWildMons:
 	dbw 26, FEAROW
 	; day
 	dbw 22, ARBOK
-	dbw 22, FEAROW
+	dbw 22, MEOWTH
 	dbw 24, STANTLER
 	dbw 21, RATICATE
 	dbw 24, SUDOWOODO
@@ -1590,7 +1590,7 @@ JohtoGrassWildMons:
 	dbw 26, FEAROW
 	; nite
 	dbw 22, STANTLER
-	dbw 22, GOLBAT
+	dbw 22, MEOWTH
 	dbw 24, RATICATE
 	dbw 26, AZUMARILL
 	dbw 24, AZUMARILL

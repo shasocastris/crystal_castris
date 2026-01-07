@@ -165,23 +165,23 @@ JohtoWaterWildMons:
 
 	def_water_wildmons ROUTE_40
 	db 15 percent ; encounter rate
-	dbw 27, TENTACRUEL
+	dbw 30, TENTACRUEL
 	dbw 27, LANTURN
-	dbw 22, REMORAID
+	dbw 25, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_41
 	db 15 percent ; encounter rate
-	dbw 27, TENTACRUEL
+	dbw 30, TENTACRUEL
 	dbw 27, LANTURN
 	dbw 25, MANTINE
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_42
 	db 10 percent ; encounter rate
-	dbw 30, SEAKING
-	dbw 28, GOLDUCK
-	dbw 28, OCTILLERY
+	dbw 33, SEAKING
+	dbw 33, GOLDUCK
+	dbw 31, OCTILLERY
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_43
@@ -235,7 +235,7 @@ JohtoWaterWildMons:
 
 	def_water_wildmons OLIVINE_CITY
 	db 15 percent ; encounter rate
-	dbw 26, TENTACOOL
+	dbw 22, REMORAID
 	dbw 24, CHINCHOU
 	dbw 30, TENTACRUEL
 	end_water_wildmons
