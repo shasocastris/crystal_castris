@@ -55,7 +55,6 @@ DecorationAttributes:
 	decoration DECO_DOLL,    13,              SET_UP_DOLL,       EVENT_DECO_GRIMER_DOLL,             SPRITE_GRIMER
 	decoration DECO_DOLL,    17,              SET_UP_DOLL,       EVENT_DECO_VOLTORB_DOLL,            SPRITE_VOLTORB
 	decoration DECO_DOLL,    3,               SET_UP_DOLL,       EVENT_DECO_WEEDLE_DOLL,             SPRITE_WEEDLE
-	decoration DECO_DOLL,    22,              SET_UP_DOLL,       EVENT_DECO_UNOWN_DOLL,              SPRITE_UNOWN
 	decoration DECO_DOLL,    12,              SET_UP_DOLL,       EVENT_DECO_GEODUDE_DOLL,            SPRITE_GEODUDE
 	decoration DECO_DOLL,    10,              SET_UP_DOLL,       EVENT_DECO_MACHOP_DOLL,             SPRITE_MACHOP
 	decoration DECO_DOLL,    11,              SET_UP_DOLL,       EVENT_DECO_TENTACOOL_DOLL,          SPRITE_TENTACOOL
