@@ -1,7 +1,6 @@
 SpriteMons:
 ; entries correspond to SPRITE_* constants past SPRITE_POKEMON
 	table_width 2
-	dw UNOWN
 	dw GEODUDE
 	dw GROWLITHE
 	dw MEOWTH

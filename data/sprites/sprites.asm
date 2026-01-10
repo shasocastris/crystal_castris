@@ -111,4 +111,30 @@ OverworldSprites:
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite FarfetchdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite TaurosSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite UnownASpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownBSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownCSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownDSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownESpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownGSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownHSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownISpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownJSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownKSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownLSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownNSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownOSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownPSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownQSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownRSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownSSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownTSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownUSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownVSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownWSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownXSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownYSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
+	overworld_sprite UnownZSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GRAY
 	assert_table_length NUM_OVERWORLD_SPRITES
