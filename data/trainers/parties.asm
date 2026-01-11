@@ -1690,6 +1690,16 @@ ScientistGroup:
 	dw SURF, DRAGON_RAGE, FLAMETHROWER, REVERSAL
 	db -1 ; end
 
+	next_list_item ; SCIENTIST (6), Ruins of Alph Outside
+	db "WERNER@", TRAINERTYPE_MOVES
+	db 46
+	dw SLOWBRO
+	dw CONFUSION, SURF, SAFEGUARD, HEADBUTT
+	db 46
+	dw ELECTRODE
+	dw ROLLOUT, THUNDERBOLT, EXPLOSION, FLASH
+	db -1 ; end
+
 	end_list_items
 
 YoungsterGroup:

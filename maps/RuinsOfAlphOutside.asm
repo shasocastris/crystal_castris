@@ -19,7 +19,33 @@ RuinsOfAlphOutsideNoop2Scene:
 	end
 
 RuinsOfAlphOutsideScientist1_Script:
-	jumptextfaceplayer RuinsOfAlphOutsideScientist1_Text
+	faceplayer
+	opentext
+	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .GetLost
+	writetext WernerFight_Text
+	waitbutton
+	closetext
+	winlosstext WernerWin_Text, 0
+	loadtrainer SCIENTIST, WERNER
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SCIENTIST_WERNER
+	opentext
+	writetext WernerWarnOthers_Text
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST1, RuinsOfAlphOutsideScientist1Movement
+	playsound SFX_ENTER_DOOR
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST1
+	waitsfx
+    end
+
+.GetLost
+	writetext RuinsOfAlphOutsideScientist1_Text
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphOutsideScientist2_Script:
 	jumptextfaceplayer RuinsOfAlphOutsideScientist2_Text
@@ -59,6 +85,10 @@ RuinsOfAlphOutsidePlayerEnterLabMovement:
 	step UP
 	step_end
 
+RuinsOfAlphOutsideScientist1Movement:
+	step UP
+	step_end
+
 RuinsOfAlphOutsideScientistText:
 	text "Hm? That's a #-"
 	line "DEX, isn't it?"
@@ -94,6 +124,26 @@ RuinsOfAlphOutsideScientist3_Text:
 RuinsOfAlphOutsideScientist4_Text:
 RuinsOfAlphOutsideScientist5_Text:
 	text "Get lost, kid!"
+	done
+
+WernerFight_Text:
+	text "You're here to"
+	line "investigate TEAM"
+	cont "ROCKET?"
+
+	para "No chance!"
+	done
+
+WernerWin_Text:
+	text "I miscalculated!"
+	done
+
+WernerWarnOthers_Text:
+	text "The LEAGUE is on"
+	line "to us!"
+
+	para "I have to warn the"
+	line "others!"
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
@@ -138,7 +188,7 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 20, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event 12, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, -1
+	object_event 12, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, EVENT_BEAT_SCIENTIST_WERNER
 	object_event 16,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist2_Script, -1
 	object_event  2, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist3_Script, -1
 	object_event  4, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist4_Script, -1

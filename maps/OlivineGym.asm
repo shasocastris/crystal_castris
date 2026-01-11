@@ -38,7 +38,8 @@ OlivineGymJasmineScript:
 	waitsfx
 	setflag ENGINE_MINERALBADGE
 	readvar VAR_BADGES
-	scall OlivineGymActivateRockets
+	setevent EVENT_RUINS_OF_ALPH_ROCKETS
+;	scall OlivineGymActivateRockets
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door

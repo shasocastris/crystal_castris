@@ -151,6 +151,7 @@ DEF KRIS EQU __trainer_class__
 	const JED
 	const MARC
 	const RICH
+	const WERNER
 
 	trainerclass YOUNGSTER ; 1c
 	const JOEY1
