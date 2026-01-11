@@ -1,5 +1,9 @@
 	object_const_def
-	const RUINSOFALPHOUTSIDE_SCIENTIST
+	const RUINSOFALPHOUTSIDE_SCIENTIST1
+	const RUINSOFALPHOUTSIDE_SCIENTIST2
+	const RUINSOFALPHOUTSIDE_SCIENTIST3
+	const RUINSOFALPHOUTSIDE_SCIENTIST4
+	const RUINSOFALPHOUTSIDE_SCIENTIST5
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -7,7 +11,6 @@ RuinsOfAlphOutside_MapScripts:
 	scene_script RuinsOfAlphOutsideNoop2Scene, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX
 
 	def_callbacks
-	callback MAPCALLBACK_OBJECTS, RuinsOfAlphOutsideScientistCallback
 
 RuinsOfAlphOutsideNoop1Scene:
 	end
@@ -15,54 +18,20 @@ RuinsOfAlphOutsideNoop1Scene:
 RuinsOfAlphOutsideNoop2Scene:
 	end
 
-RuinsOfAlphOutsideScientistCallback:
-	checkflag ENGINE_UNOWN_DEX
-	iftrue .NoScientist
-	checkevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
-	iftrue .MaybeScientist
-	sjump .NoScientist
+RuinsOfAlphOutsideScientist1_Script:
+	jumptextfaceplayer RuinsOfAlphOutsideScientist1_Text
 
-.MaybeScientist:
-	readvar VAR_UNOWNCOUNT
-	ifgreater 2, .YesScientist
-	sjump .NoScientist
+RuinsOfAlphOutsideScientist2_Script:
+	jumptextfaceplayer RuinsOfAlphOutsideScientist2_Text
 
-.YesScientist:
-	appear RUINSOFALPHOUTSIDE_SCIENTIST
-	setscene SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX
-	endcallback
+RuinsOfAlphOutsideScientist3_Script:
+	jumptextfaceplayer RuinsOfAlphOutsideScientist3_Text
 
-.NoScientist:
-	disappear RUINSOFALPHOUTSIDE_SCIENTIST
-	setscene SCENE_RUINSOFALPHOUTSIDE_NOOP
-	endcallback
+RuinsOfAlphOutsideScientist4_Script:
+	jumptextfaceplayer RuinsOfAlphOutsideScientist4_Text
 
-RuinsOfAlphOutsideScientistScene1:
-	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, UP
-	turnobject PLAYER, DOWN
-	sjump RuinsOfAlphOutsideScientistSceneContinue
-
-RuinsOfAlphOutsideScientistScene2:
-	turnobject RUINSOFALPHOUTSIDE_SCIENTIST, LEFT
-	turnobject PLAYER, RIGHT
-	sjump RuinsOfAlphOutsideScientistSceneContinue
-
-RuinsOfAlphOutsideScientistScript:
-	faceplayer
-RuinsOfAlphOutsideScientistSceneContinue:
-	opentext
-	writetext RuinsOfAlphOutsideScientistText
-	waitbutton
-	closetext
-	playmusic MUSIC_SHOW_ME_AROUND
-	follow RUINSOFALPHOUTSIDE_SCIENTIST, PLAYER
-	applymovement RUINSOFALPHOUTSIDE_SCIENTIST, RuinsOfAlphOutsideScientistWalkToLabMovement
-	disappear RUINSOFALPHOUTSIDE_SCIENTIST
-	stopfollow
-	applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement
-	setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX
-	warpcheck
-	end
+RuinsOfAlphOutsideScientist5_Script:
+	jumptextfaceplayer RuinsOfAlphOutsideScientist5_Text
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
@@ -119,18 +88,12 @@ RuinsOfAlphOutsideScientistText:
 	cont "DEX. Follow me."
 	done
 
-PsychicNathanSeenText:
-	text "Hmmm… This is a"
-	line "strange place."
-	done
-
-PsychicNathanBeatenText:
-	text "…"
-	done
-
-PsychicNathanAfterBattleText:
-	text "I like thinking"
-	line "here."
+RuinsOfAlphOutsideScientist1_Text:
+RuinsOfAlphOutsideScientist2_Text:
+RuinsOfAlphOutsideScientist3_Text:
+RuinsOfAlphOutsideScientist4_Text:
+RuinsOfAlphOutsideScientist5_Text:
+	text "Get lost, kid!"
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
@@ -168,8 +131,6 @@ RuinsOfAlphOutside_MapEvents:
 	warp_event 15, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2
 
 	def_coord_events
-	coord_event 13, 14, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene1
-	coord_event 12, 15, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX, RuinsOfAlphOutsideScientistScene2
 
 	def_bg_events
 	bg_event 18,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign
@@ -177,4 +138,8 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 20, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event 13, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, -1
+	object_event 12, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, -1
+	object_event 16,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist2_Script, -1
+	object_event  2, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist3_Script, -1
+	object_event  4, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist4_Script, -1
+	object_event 18, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist5_Script, -1
