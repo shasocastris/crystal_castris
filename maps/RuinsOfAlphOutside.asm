@@ -1,9 +1,5 @@
 	object_const_def
-	const RUINSOFALPHOUTSIDE_YOUNGSTER1
 	const RUINSOFALPHOUTSIDE_SCIENTIST
-	const RUINSOFALPHOUTSIDE_FISHER
-	const RUINSOFALPHOUTSIDE_YOUNGSTER2
-	const RUINSOFALPHOUTSIDE_YOUNGSTER3
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -66,47 +62,6 @@ RuinsOfAlphOutsideScientistSceneContinue:
 	applymovement PLAYER, RuinsOfAlphOutsidePlayerEnterLabMovement
 	setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX
 	warpcheck
-	end
-
-RuinsOfAlphOutsideFisherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_RUINS_COWARD
-	iftrue .Next
-	setevent EVENT_TALKED_TO_RUINS_COWARD
-	writetext RuinsOfAlphOutsideFisherText1
-	promptbutton
-.Next:
-	writetext RuinsOfAlphOutsideFisherText2
-	waitbutton
-	closetext
-	end
-
-RuinsOfAlphOutsideYoungster1Script:
-	faceplayer
-	opentext
-	writetext RuinsOfAlphOutsideYoungster1Text
-	waitbutton
-	closetext
-	end
-
-RuinsOfAlphOutsideYoungster2Script:
-	faceplayer
-	opentext
-	writetext RuinsOfAlphOutsideYoungster2Text
-	waitbutton
-	closetext
-	turnobject RUINSOFALPHOUTSIDE_YOUNGSTER3, UP
-	end
-
-TrainerPsychicNathan:
-	trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext PsychicNathanAfterBattleText
-	waitbutton
-	closetext
 	end
 
 RuinsOfAlphOutsideMysteryChamberSign:
@@ -196,45 +151,6 @@ RuinsOfAlphResearchCenterSignText:
 	line "THE RUINS OF ALPH"
 	done
 
-RuinsOfAlphOutsideFisherText1:
-	text "While exploring"
-	line "the RUINS, we"
-
-	para "suddenly noticed"
-	line "an odd presence."
-
-	para "We all got scared"
-	line "and ran away."
-
-	para "You should be"
-	line "careful too."
-	done
-
-RuinsOfAlphOutsideFisherText2:
-	text "The RUINS hide a"
-	line "huge secret!"
-
-	para "…I think…"
-	done
-
-RuinsOfAlphOutsideYoungster1Text:
-	text "There are many"
-	line "kinds of UNOWN, so"
-
-	para "we use them for"
-	line "our secret codes."
-	done
-
-RuinsOfAlphOutsideYoungster2Text:
-	text "A… H… E… A… D…"
-	line "Hmm…"
-
-	para "What?"
-
-	para "I'm decoding this"
-	line "message!"
-	done
-
 RuinsOfAlphOutside_MapEvents:
 	db 0, 0 ; filler
 
@@ -261,8 +177,4 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 20, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event  5, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPsychicNathan, -1
-	object_event 13, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, EVENT_RUINS_OF_ALPH_OUTSIDE_SCIENTIST
-	object_event 15, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideFisherScript, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_FISHER
-	object_event 16, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster1Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
-	object_event 14,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideYoungster2Script, EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
+	object_event 13, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistScript, -1

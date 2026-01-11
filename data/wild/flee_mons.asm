@@ -238,7 +238,6 @@ OftenFleeMons:
 	dw DRAGONAIR
 	dw TOGETIC
 	dw UMBREON
-	dw UNOWN
 	dw SNUBBULL
 	dw HERACROSS
 	dw CUBONE

@@ -95,7 +95,6 @@ RuinsOfAlphResearchCenterScientist1Script:
 	writetext RuinsOfAlphResearchCenterScientist1Text_GotAllUnown
 	waitbutton
 	closetext
-	clearevent EVENT_RUINS_OF_ALPH_OUTSIDE_TOURIST_YOUNGSTERS
 	end
 
 RuinsOfAlphResearchCenterScientist2Script:
