@@ -1,10 +1,10 @@
 ; Trainer data structure:
 ; - db "NAME@", TRAINERTYPE_* constant
 ; - 1 to 6 Pokémon:
-;    * for TRAINERTYPE_NORMAL:     db level, species
-;    * for TRAINERTYPE_MOVES:      db level, species, 4 moves
-;    * for TRAINERTYPE_ITEM:       db level, species, item
-;    * for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
+;	* for TRAINERTYPE_NORMAL:	 db level, species
+;	* for TRAINERTYPE_MOVES:	  db level, species, 4 moves
+;	* for TRAINERTYPE_ITEM:	   db level, species, item
+;	* for TRAINERTYPE_ITEM_MOVES: db level, species, item, 4 moves
 ; - db -1 ; end
 
 SECTION "Enemy Trainer Parties 1", ROMX
@@ -1692,12 +1692,95 @@ ScientistGroup:
 
 	next_list_item ; SCIENTIST (6), Ruins of Alph Outside
 	db "WERNER@", TRAINERTYPE_MOVES
-	db 46
+	db 44
 	dw SLOWBRO
 	dw CONFUSION, SURF, SAFEGUARD, HEADBUTT
-	db 46
+	db 44
 	dw ELECTRODE
 	dw ROLLOUT, THUNDERBOLT, EXPLOSION, FLASH
+	db 44
+	dw ALAKAZAM
+	dw PSYCHIC_M, RECOVER, REFLECT, ICE_PUNCH
+	db -1 ; end
+
+	next_list_item ; SCIENTIST ENRICO (7), Ruins of Alph Outside
+	db "ENRICO@", TRAINERTYPE_NORMAL
+	db 42
+	dw ELECTRODE
+	db 43
+	dw PORYGON2
+	db 42
+	dw MAGNETON
+	db -1 ; end
+
+	next_list_item ; SCIENTIST NIELS (8), Ruins of Alph Outside
+	db "NIELS@", TRAINERTYPE_MOVES
+	db 44
+	dw ALAKAZAM
+	dw PSYCHIC_M, RECOVER, REFLECT, THUNDERPUNCH
+	db 44
+	dw MAGNETON
+	dw THUNDERBOLT, THUNDER_WAVE, SPIKE_CANNON, SCREECH
+	db -1 ; end
+
+	next_list_item ; SCIENTIST EARNEST (9), Ruins of Alph Outside
+	db "EARNEST@", TRAINERTYPE_NORMAL
+	db 43
+	dw WEEZING
+	db 43
+	dw FORRETRESS
+	db 43
+	dw STEELIX
+	db -1 ; end
+
+	next_list_item ; SCIENTIST MAX (10), Ruins of Alph Outside
+	db "MAX@", TRAINERTYPE_MOVES
+	db 44
+	dw PORYGON2
+	dw TRI_ATTACK, CONVERSION2, PSYCHIC_M, RECOVER
+	db 44
+	dw JOLTEON
+	dw THUNDERBOLT, PIN_MISSILE, SAND_ATTACK, BITE
+	db -1 ; end
+
+	next_list_item ; SCIENTIST ERWIN (11), Ruins of Alph Kabuto Chamber
+	db "ERWIN@", TRAINERTYPE_NORMAL
+	db 42
+	dw MUK
+	db 43
+	dw ELECTRODE
+	db 44
+	dw MAGNETON
+	db -1 ; end
+
+	next_list_item ; SCIENTIST JAYJAY (12), Ruins of Alph Omanyte Chamber
+	db "JAYJAY@", TRAINERTYPE_MOVES
+	db 44
+	dw TENTACRUEL
+	dw SURF, SLUDGE_BOMB, WRAP, BARRIER
+	db 44
+	dw MAGNETON
+	dw LOCK_ON, ZAP_CANNON, THUNDER_WAVE, SPIKE_CANNON
+	db -1 ; end
+
+	next_list_item ; SCIENTIST CARL (13), Ruins of Alph Aerodactyl Chamber
+	db "CARL@", TRAINERTYPE_NORMAL
+	db 43
+	dw RAICHU
+	db 43
+	dw WEEZING
+	db 43
+	dw MAGNETON
+	db -1 ; end
+
+	next_list_item ; SCIENTIST KIP (14), Ruins of Alph Ho-Oh Chamber
+	db "KIP@", TRAINERTYPE_MOVES
+	db 45
+	dw STARMIE
+	dw PSYCHIC_M, SURF, RECOVER, ICE_BEAM
+	db 45
+	dw MAGNETON
+	dw THUNDER, THUNDER_WAVE, SWIFT, SCREECH
 	db -1 ; end
 
 	end_list_items
@@ -3304,11 +3387,17 @@ GruntMGroup:
 	dw SLOWBRO
 	db -1 ; end
 
-	next_list_item ; GRUNTM (12), unused ???
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 40
-	dw HOUNDOUR
-	db -1 ; end
+	next_list_item ; GRUNTM (12), Ruins of Alph Kabuto Chamber
+    db "GRUNT@", TRAINERTYPE_NORMAL
+    db 40
+    dw WEEZING
+    db 41
+    dw RATICATE
+    db 40
+    dw GOLBAT
+    db 41
+    dw MUK
+    db -1 ; end
 
 	next_list_item ; GRUNTM (13), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
@@ -3384,16 +3473,32 @@ GruntMGroup:
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (22), unused ???
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 44
-	dw GOLBAT
+	next_list_item ; GRUNTM (22), Ruins of Alph Aerodactyl Chamber
+	db "GRUNT@", TRAINERTYPE_NORMAL
+    db 40
+    dw GOLBAT
+    db 41
+    dw ARBOK
+    db 41
+    dw HOUNDOOM
+    db 40
+    dw HYPNO
 	db -1 ; end
 
-	next_list_item ; GRUNTM (23), unused ???
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 36
-	dw KOFFING
+	next_list_item ; GRUNTM (23), Ruins of Alph Ho-Oh Chamber
+    db "GRUNT@", TRAINERTYPE_MOVES
+    db 41
+    dw WEEZING
+    dw SLUDGE, SMOKESCREEN, EXPLOSION, HAZE
+    db 41
+    dw RATICATE
+    dw HYPER_FANG, PURSUIT, SCARY_FACE, QUICK_ATTACK
+    db 41
+    dw MURKROW
+    dw FAINT_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
+    db 40
+    dw MAGNETON
+    dw THUNDERSHOCK, SUPERSONIC, SONICBOOM, THUNDER_WAVE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (24), Goldenrod Underground
@@ -5271,60 +5376,60 @@ BlackbeltGroup:
 ExecutiveMGroup:
 	next_list_item ; EXECUTIVEM (1), Goldenrod Radio Tower
 	db "ARCHER@", TRAINERTYPE_MOVES
-	db 44
+	db 46
 	dw PORYGON2
 	dw TRI_ATTACK, PSYCHIC_M, HYPER_BEAM, TOXIC
-	db 44
+	db 46
 	dw MAGNETON
 	dw THUNDERBOLT, SPIKE_CANNON, THUNDER_WAVE, FLASH
-	db 44
+	db 46
 	dw SLOWBRO
 	dw PSYCHIC_M, SURF, AMNESIA, FLAMETHROWER
-	db 44
-	dw CLEFABLE
-	dw MOONBLAST, DREAM_EATER, ICE_BEAM, SING
-	db 45
+	db 47
 	dw WEEZING
 	dw EXPLOSION, SLUDGE_BOMB, SMOKESCREEN, ZAP_CANNON
-	db 45
+	db 47
 	dw HOUNDOOM
 	dw FLAMETHROWER, CRUNCH, SOLARBEAM, SUNNY_DAY
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (2), Goldenrod Radio Tower
 	db "PROTON@", TRAINERTYPE_MOVES
-	db 44
+	db 46
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
-	db 44
+	db 46
 	dw KANGASKHAN
 	dw BODY_SLAM, SAFEGUARD, STRENGTH, FIRE_PUNCH
-	db 44
+	db 46
+	dw CLEFABLE
+	dw MOONBLAST, DREAM_EATER, ICE_BEAM, SING
+	db 46
 	dw ELECTRODE
 	dw THUNDER, ROLLOUT, EXPLOSION, SONICBOOM
-	db 44
+	db 46
 	dw RHYDON
 	dw EARTHQUAKE, ROCK_SLIDE, CRUNCH, HORN_DRILL
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (3), Goldenrod Radio Tower
 	db "PETREL@", TRAINERTYPE_MOVES
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, TOXIC
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THIEF
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, FLAMETHROWER
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THUNDERBOLT
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, ROLLOUT
-	db 39
+	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, HYPER_BEAM
 	db -1 ; end
@@ -5905,19 +6010,19 @@ CamperGroup:
 ExecutiveFGroup:
 	next_list_item ; EXECUTIVEF (1), Goldenrod Radio Tower
 	db "ARIANA@", TRAINERTYPE_MOVES
-	db 44
+	db 45
 	dw ARBOK
 	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
-	db 44
+	db 45
 	dw VILEPLUME
 	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
-	db 46
+	db 47
 	dw MURKROW
 	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
-	db 45
+	db 46
 	dw HYPNO
 	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
-	db 45
+	db 46
 	dw MUK
 	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
 	db -1 ; end
@@ -6675,6 +6780,70 @@ GruntFGroup:
 	dw ARBOK
 	db 33
 	dw GLOOM
+	db -1 ; end
+
+next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 40
+	dw GOLBAT
+	db 40
+	dw ARBOK
+	db 41
+	dw RATICATE
+	db 40
+	dw MUK
+	db -1 ; end
+
+	next_list_item ; ROCKET GRUNTF (7), Ruins of Alph Omanyte Chamber
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 41
+	dw VILEPLUME
+	db 40
+	dw MURKROW
+	db 41
+	dw WEEZING
+	db 40
+	dw RATICATE
+	db -1 ; end
+
+	next_list_item ; ROCKET GRUNTF (8), Ruins of Alph Omanyte Chamber
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 40
+	dw GLOOM
+	db 41
+	dw RATICATE
+	db 41
+	dw ARBOK
+	db 40
+	dw GOLBAT
+	db -1 ; end
+
+	next_list_item ; ROCKET GRUNTF (9), Ruins of Alph Aerodactyl Chamber
+	db "GRUNT@", TRAINERTYPE_MOVES
+	db 41
+	dw GOLBAT
+	dw WING_ATTACK, BITE, CONFUSE_RAY, MEAN_LOOK
+	db 42
+	dw MUK
+	dw SLUDGE_BOMB, MINIMIZE, SCREECH, ACID_ARMOR
+	db 41
+	dw HYPNO
+	dw CONFUSION, HYPNOSIS, HEADBUTT, POISON_GAS
+	db 41
+	dw WEEZING
+	dw SLUDGE, SMOKESCREEN, TACKLE, SELFDESTRUCT
+	db -1 ; end
+
+	next_list_item ; ROCKET GRUNTF (10), Ruins of Alph Ho-Oh Chamber
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 40
+	dw MURKROW
+	db 41
+	dw WEEZING
+	db 41
+	dw HOUNDOOM
+	db 40
+	dw ARBOK
 	db -1 ; end
 
 	end_list_items

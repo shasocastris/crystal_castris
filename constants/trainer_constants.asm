@@ -152,6 +152,14 @@ DEF KRIS EQU __trainer_class__
 	const MARC
 	const RICH
 	const WERNER
+	const ENRICO
+	const NIELS
+	const EARNEST
+	const MAX
+	const ERWIN
+	const JAYJAY
+	const CARL
+	const KIP
 
 	trainerclass YOUNGSTER ; 1c
 	const JOEY1
@@ -719,6 +727,11 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTF_3
 	const GRUNTF_4
 	const GRUNTF_5
+	const GRUNTF_6
+	const GRUNTF_7
+	const GRUNTF_8
+	const GRUNTF_9
+	const GRUNTF_10
 
 	trainerclass LINK_KRIS ; 44
 	const LINK_KRIS1
