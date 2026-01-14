@@ -13,7 +13,6 @@ RuinsOfAlphHoOhItemRoomAmuletCoin:
 	itemball GS_BALL
 	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 
-
 RuinsOfAlphHoOhItemRoomSacredAsh:
 	itemball SACRED_ASH
 
@@ -36,8 +35,8 @@ RuinsOfAlphHoOhItemRoom_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  9, RUINS_OF_ALPH_HO_OH_CHAMBER, 5
-	warp_event  4,  9, RUINS_OF_ALPH_HO_OH_CHAMBER, 5
+	warp_event  3,  8, RUINS_OF_ALPH_HO_OH_CHAMBER, 5
+	warp_event  4,  8, RUINS_OF_ALPH_HO_OH_CHAMBER, 5
 	warp_event  3,  1, RUINS_OF_ALPH_HO_OH_WORD_ROOM, 1
 	warp_event  4,  1, RUINS_OF_ALPH_HO_OH_WORD_ROOM, 2
 
