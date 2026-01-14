@@ -1369,7 +1369,7 @@ JohtoGrassWildMons:
 	dbw 6, ODDISH
 	dbw 8, ZUBAT
 	dbw 7, HOOTHOOT
-	dbw 8, RATTATA
+	dbw 8, PICHU
 	dbw 8, GASTLY
 	dbw 8, GASTLY
 	end_grass_wildmons
@@ -1630,16 +1630,16 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 2, EEVEE
-	dbw 2, PICHU
+	dbw 2, IGGLYBUFF
 	dbw 2, ELEKID
 	dbw 2, CLEFFA
-	dbw 2, IGGLYBUFF
+	dbw 2, TOGEPI
 	dbw 32, CHANSEY
 	dbw 36, BLISSEY
 	; day
 	dbw 2, EEVEE
 	dbw 2, TYROGUE
-	dbw 2, PICHU
+	dbw 2, MAGBY
 	dbw 2, ELEKID
 	dbw 2, IGGLYBUFF
 	dbw 32, CHANSEY
