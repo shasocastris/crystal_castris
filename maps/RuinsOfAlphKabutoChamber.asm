@@ -43,6 +43,36 @@ RuinsOfAlphKabutoChamberPuzzle:
 	warpcheck
 	end
 
+TrainerGruntM12:
+	trainer GRUNTM, GRUNTM_12, EVENT_BEAT_ROCKET_GRUNTM_12, GruntM12SeenText, GruntM12BeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GruntM12AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGruntF6:
+		trainer GRUNTF, GRUNTF_6, EVENT_BEAT_ROCKET_GRUNTF_6, GruntF6SeenText, GruntF6BeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GruntF6AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerScientistErwin:
+	trainer SCIENTIST, ERWIN, EVENT_BEAT_SCIENTIST_ERWIN, ScientistErwinSeenText, ScientistErwinBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext ScientistErwinAfterBattleText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphKabutoChamberAncientReplica:
 	jumptext RuinsOfAlphKabutoChamberAncientReplicaText
 
@@ -52,6 +82,78 @@ RuinsOfAlphKabutoChamberDescriptionSign:
 RuinsOfAlphKabutoChamberSkyfallTopMovement:
 	skyfall_top
 	step_end
+
+GruntM12SeenText:
+	text "These ruins are"
+	line "TEAM ROCKET's now!"
+
+	para "We're gonna catch"
+	line "every last UNOWN!"
+	done
+
+GruntM12BeatenText:
+	text "Ugh! You're too"
+	line "strong!"
+	done
+
+GruntM12AfterBattleText:
+	text "The BOSS has big"
+	line "plans for JOHTO."
+	
+	para "You can't stop us"
+	line "all, kid!"
+	done
+
+GruntF6SeenText:
+	text "You think you can"
+	line "just waltz in?"
+	
+	para "TEAM ROCKET owns"
+	line "this place now!"
+	done
+
+GruntF6BeatenText:
+	text "No way!"
+	line "I lost?!"
+	done
+
+GruntF6AfterBattleText:
+	text "The broadcast will"
+	line "go out soon."
+	
+	para "Then everyone will"
+	line "know our power!"
+	done
+
+ScientistErwinSeenText:
+	text "Fascinating! A"
+	line "trainer strong"
+	
+	para "enough to reach"
+	line "this floor!"
+	
+	para "Let's test your"
+	line "#MON's limits!"
+	done
+
+ScientistErwinBeatenText:
+	text "TEAM ROCKET hired"
+	line "me for my genius."
+
+	para "Morality? That's"
+	line "not my department."
+	done
+
+ScientistErwinAfterBattleText:
+	text "The UNOWN exhibit"
+	line "psychic resonance"
+	
+	para "when gathered in"
+	line "complete sets."
+	
+	para "Imagine harnessing"
+	line "all 26 at once!"
+	done
 
 RuinsOfAlphKabutoChamberWallHoleText:
 	text "There's a big hole"
@@ -90,3 +192,6 @@ RuinsOfAlphKabutoChamber_MapEvents:
 	bg_event  4,  2, BGEVENT_UP, RuinsOfAlphKabutoChamberDescriptionSign
 
 	def_object_events
+	object_event  1,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM12, -1
+	object_event  6,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntF6, -1
+	object_event  5,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistErwin, -1
