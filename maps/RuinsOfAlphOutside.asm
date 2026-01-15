@@ -1,9 +1,8 @@
 	object_const_def
-	const RUINSOFALPHOUTSIDE_SCIENTIST1
-	const RUINSOFALPHOUTSIDE_SCIENTIST2
-	const RUINSOFALPHOUTSIDE_SCIENTIST3
-	const RUINSOFALPHOUTSIDE_SCIENTIST4
-	const RUINSOFALPHOUTSIDE_SCIENTIST5
+	const RUINSOFALPHOUTSIDE_SCIENTIST_WERNER
+	const RUINSOFALPHOUTSIDE_SCIENTIST_ENRICO
+	const RUINSOFALPHOUTSIDE_SCIENTIST_NIELS
+	const RUINSOFALPHOUTSIDE_SCIENTIST_EARNEST
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
@@ -19,7 +18,7 @@ RuinsOfAlphOutsideShrineCallback:
 	changeblock 6, 24, $9C ; left floor
 	endcallback
 
-RuinsOfAlphOutsideScientist1_Script:
+RuinsOfAlphOutsideScientistWerner_Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
@@ -36,29 +35,104 @@ RuinsOfAlphOutsideScientist1_Script:
 	writetext WernerWarnOthers_Text
 	waitbutton
 	closetext
-	applymovement RUINSOFALPHOUTSIDE_SCIENTIST1, RuinsOfAlphOutsideScientist1Movement
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST_WERNER, RuinsOfAlphOutsideScientistWernerMovement
 	playsound SFX_ENTER_DOOR
-	disappear RUINSOFALPHOUTSIDE_SCIENTIST1
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST_WERNER
 	waitsfx
-    end
+	end
 
 .GetLost
-	writetext RuinsOfAlphOutsideScientist1_Text
+	writetext RuinsOfAlphOutsideScientistWerner_Text
 	waitbutton
 	closetext
 	end
 
-RuinsOfAlphOutsideScientist2_Script:
-	jumptextfaceplayer RuinsOfAlphOutsideScientist2_Text
+RuinsOfAlphOutsideScientistEnrico_Script:
+	faceplayer
+	opentext
+	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .NormalText
+	writetext EnricoFight_Text
+	waitbutton
+	closetext
+	winlosstext EnricoWin_Text, 0
+	loadtrainer SCIENTIST, ENRICO
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SCIENTIST_ENRICO
+	opentext
+	writetext EnricoAfterBattle_Text
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST_ENRICO, RuinsOfAlphOutsideScientistEnricoMovement
+	playsound SFX_ENTER_DOOR
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST_ENRICO
+	waitsfx
+	end
 
-RuinsOfAlphOutsideScientist3_Script:
-	jumptextfaceplayer RuinsOfAlphOutsideScientist3_Text
+.NormalText
+	writetext RuinsOfAlphOutsideScientistEnrico_Text
+	waitbutton
+	closetext
+	end
 
-RuinsOfAlphOutsideScientist4_Script:
-	jumptextfaceplayer RuinsOfAlphOutsideScientist4_Text
+RuinsOfAlphOutsideScientistNiels_Script:
+	faceplayer
+	opentext
+	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .Research
+	writetext NielsFight_Text
+	waitbutton
+	closetext
+	winlosstext NielsWin_Text, 0
+	loadtrainer SCIENTIST, NIELS
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SCIENTIST_NIELS
+	opentext
+	writetext NielsAfterBattle_Text
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST_NIELS, RuinsOfAlphOutsideScientistNielsMovement
+	playsound SFX_ENTER_DOOR
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST_NIELS
+	waitsfx
+	end
 
-RuinsOfAlphOutsideScientist5_Script:
-	jumptextfaceplayer RuinsOfAlphOutsideScientist5_Text
+.Research
+	writetext RuinsOfAlphOutsideScientistNiels_Text
+	waitbutton
+	closetext
+	end
+
+RuinsOfAlphOutsideScientistEarnest_Script:
+	faceplayer
+	opentext
+	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .Studying
+	writetext EarnestFight_Text
+	waitbutton
+	closetext
+	winlosstext EarnestWin_Text, 0
+	loadtrainer SCIENTIST, EARNEST
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SCIENTIST_EARNEST
+	opentext
+	writetext EarnestAfterBattle_Text
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SCIENTIST_EARNEST, RuinsOfAlphOutsideScientistEarnestMovement
+	playsound SFX_ENTER_DOOR
+	disappear RUINSOFALPHOUTSIDE_SCIENTIST_EARNEST
+	waitsfx
+	end
+
+.Studying
+	writetext RuinsOfAlphOutsideScientistEarnest_Text
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
@@ -69,36 +143,152 @@ RuinsOfAlphSign:
 RuinsOfAlphResearchCenterSign:
 	jumptext RuinsOfAlphResearchCenterSignText
 
-RuinsOfAlphOutsideScientist1Movement:
+RuinsOfAlphOutsideScientistWernerMovement:
+RuinsOfAlphOutsideScientistEnricoMovement:
+RuinsOfAlphOutsideScientistNielsMovement:
+RuinsOfAlphOutsideScientistEarnestMovement:
 	step UP
 	step_end
 
-RuinsOfAlphOutsideScientist1_Text:
-RuinsOfAlphOutsideScientist2_Text:
-RuinsOfAlphOutsideScientist3_Text:
-RuinsOfAlphOutsideScientist4_Text:
-RuinsOfAlphOutsideScientist5_Text:
-	text "Get lost, kid!"
-	done
-
 WernerFight_Text:
-	text "You're here to"
-	line "investigate TEAM"
-	cont "ROCKET?"
-
-	para "No chance!"
+	text "You there! This is"
+	line "a restricted area!"
+	
+	para "We're conducting"
+	line "critical research"
+	cont "on the UNOWN!"
 	done
 
 WernerWin_Text:
-	text "I miscalculated!"
+	text "TEAM ROCKET hired"
+	line "me for my genius."
+	
+	para "Morality? That's"
+	line "not my department."
 	done
 
 WernerWarnOthers_Text:
-	text "The LEAGUE is on"
-	line "to us!"
+	text "Tch! I must warn"
+	line "the others!"
+	
+	para "If you are here,"
+	line "the LEAGUE will be"
+	cont "just behind!"
+	done
 
-	para "I have to warn the"
-	line "others!"
+RuinsOfAlphOutsideScientistWerner_Text:
+	text "These ruins are"
+	line "ancient. Over"
+	cont "1500 years old!"
+	done
+
+EnricoFight_Text:
+	text "An intruder?"
+
+	para "I can't let you"
+	line "disrupt our UNOWN"
+	cont "capture operation!"
+	done
+
+EnricoWin_Text:
+	text "Curses! My"
+	line "calculations…"
+	done
+
+EnricoAfterBattle_Text:
+	text "Each UNOWN has a"
+	line "distinct psychic"
+	cont "signature!"
+	
+	para "Collecting all 26"
+	line "types is crucial"
+	
+	para "for… well, that's"
+	line "above my clearance"
+	cont "level."
+	done
+
+RuinsOfAlphOutsideScientistEnrico_Text:
+	text "I'm cataloging the"
+	line "different puzzle"
+	cont "chambers here."
+	
+	para "We suspect that"
+	line "each one might"
+	cont "reveal different"
+	cont "UNOWN!"
+	done
+
+NielsFight_Text:
+	text "Have we been"
+	line "discovered?"
+
+	para "No matter, I can't"
+	line "you stop our"
+	cont "research."
+	done
+
+NielsWin_Text:
+	text "Fascinating"
+	line "results!"
+	done
+
+NielsAfterBattle_Text:
+	text "With you here, we"
+	line "also won't be able"
+	cont "to investigate the"
+
+	para "strange radio"
+	line "signal that we get"
+	cont "throughout the"
+	cont "ruins."
+	done
+
+RuinsOfAlphOutsideScientistNiels_Text:
+	text "The text on the"
+	line "ruin walls suggest"
+	
+	para "there are 26 types"
+	line "of UNOWN."
+	done
+
+EarnestFight_Text:
+	text "Another pest! We"
+	line "don't have time"
+	cont "for this!"
+	
+	para "Our deadline for"
+	line "the full UNOWN set"
+	cont "is tight!"
+	
+	para "If the LEAGUE gets"
+	line "wind of this…"
+	done
+
+EarnestWin_Text:
+	text "Blast! That hurt!"
+	done
+
+EarnestAfterBattle_Text:
+	text "We haven't been"
+	line "able to figure out"
+	cont "the blocks in each"
+	cont "chamber."
+
+	para "Perhaps the UNOWN"
+	line "will reveal"
+	cont "themselves when we"
+	cont "solve the puzzles."
+	done
+
+RuinsOfAlphOutsideScientistEarnest_Text:
+	text "I wonder if UNOWN"
+	line "existed before"
+	cont "humans?"
+	
+	para "Or UNOWN shaped"
+	line "themselves based"
+	cont "on human language?"
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
@@ -143,7 +333,7 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 20, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event 17,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, EVENT_BEAT_SCIENTIST_WERNER
-	object_event  2, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist3_Script, -1
-	object_event  5, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist4_Script, -1
-	object_event 19, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist5_Script, -1
+	object_event 16,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistWerner_Script, EVENT_BEAT_SCIENTIST_WERNER
+	object_event  2, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistEnrico_Script, EVENT_BEAT_SCIENTIST_ENRICO
+	object_event  4, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistNiels_Script, EVENT_BEAT_SCIENTIST_NIELS
+	object_event 18, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistEarnest_Script, EVENT_BEAT_SCIENTIST_EARNEST
