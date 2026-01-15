@@ -1,3 +1,8 @@
+	object_const_def
+	const RUINSOFALPHOUTSIDE_ROCKET_M22
+	const RUINSOFALPHOUTSIDE_ROCKET_F9
+	const RUINSOFALPHOUTSIDE_SCIENTIST_CARL
+
 RuinsOfAlphAerodactylChamber_MapScripts:
 	def_scene_scripts
 
@@ -40,6 +45,36 @@ RuinsOfAlphAerodactylChamberPuzzle:
 	warpcheck
 	end
 
+TrainerGruntM22:
+    trainer GRUNTM, GRUNTM_22, EVENT_BEAT_ROCKET_GRUNTM_22, GruntM22SeenText, GruntM22BeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext GruntM22AfterBattleText
+    waitbutton
+    closetext
+    end
+
+TrainerGruntF9:
+    trainer GRUNTF, GRUNTF_9, EVENT_BEAT_ROCKET_GRUNTF_9, GruntF9SeenText, GruntF9BeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext GruntF9AfterBattleText
+    waitbutton
+    closetext
+    end
+
+TrainerScientistCarl:
+    trainer SCIENTIST, CARL, EVENT_BEAT_SCIENTIST_CARL, ScientistCarlSeenText, ScientistCarlBeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext ScientistCarlAfterBattleText
+    waitbutton
+    closetext
+    end
+
 RuinsOfAlphAerodactylChamberAncientReplica:
 	jumptext RuinsOfAlphAerodactylChamberAncientReplicaText
 
@@ -49,6 +84,88 @@ RuinsOfAlphAerodactylChamberDescriptionSign:
 RuinsOfAlphAerodactylChamberSkyfallTopMovement:
 	skyfall_top
 	step_end
+
+GruntM22SeenText:
+    text "This operation"
+    line "better pay off!"
+
+    para "Standing guard in"
+    line "these dusty ruins"
+    cont "is boring!"
+    done
+
+GruntM22BeatenText:
+    text "Well, that was"
+    line "less boring!"
+    done
+
+GruntM22AfterBattleText:
+    text "The executives are"
+    line "obsessed with this"
+    cont "place."
+
+    para "Something about"
+    line "ancient power…"
+
+    para "I just want my"
+    line "paycheck!"
+    done
+
+GruntF9SeenText:
+    text "Oh great, another"
+    line "do-gooder!"
+
+    para "Can't you see we're"
+    line "busy here?"
+    done
+
+GruntF9BeatenText:
+    text "Ugh, annoying!"
+    done
+
+GruntF9AfterBattleText:
+    text "If these mystery"
+    line "#MON are so"
+    cont "powerful…"
+
+    para "Why haven't any"
+    line "of us seen them"
+    cont "yet?"
+
+    para "Starting to think"
+    line "this is all a wild"
+    cont "FARFETCH'D chase!"
+    done
+
+ScientistCarlSeenText:
+    text "Ah! A test subject"
+    line "arrives!"
+
+    para "Your battle style"
+    line "will provide val-"
+    cont "uable data!"
+    done
+
+ScientistCarlBeatenText:
+    text "Hmm! Unexpected"
+    line "variables!"
+    done
+
+ScientistCarlAfterBattleText:
+    text "The puzzle chambers"
+    line "require specific"
+    cont "sequences."
+
+    para "We've documented"
+    line "four chambers, but"
+
+    para "no #MON have"
+    line "appeared yet."
+
+    para "Perhaps we need to"
+    line "solve them in a"
+    cont "certain order?"
+    done
 
 RuinsOfAlphAerodactylChamberAncientReplicaText:
 	text "It's a replica of"
@@ -82,3 +199,6 @@ RuinsOfAlphAerodactylChamber_MapEvents:
 	bg_event  4,  2, BGEVENT_UP, RuinsOfAlphAerodactylChamberDescriptionSign
 
 	def_object_events
+	object_event  1,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM22, -1
+	object_event  5,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntF9, -1
+	object_event  2,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistJayJay, -1
