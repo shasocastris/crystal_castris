@@ -26,45 +26,12 @@ RuinsOfAlphInnerChamberStrangePresenceScript:
 	setevent EVENT_MADE_UNOWN_APPEAR_IN_RUINS
 	end
 
-RuinsOfAlphInnerChamberFisherScript:
-	jumptextfaceplayer RuinsOfAlphInnerChamberFisherText
-
-RuinsOfAlphInnerChamberTeacherScript:
-	jumptextfaceplayer RuinsOfAlphInnerChamberTeacherText
-
-RuinsOfAlphInnerChamberGrampsScript:
-	jumptextfaceplayer RuinsOfAlphInnerChamberGrampsText
-
 RuinsOfAlphInnerChamberStatue:
 	jumptext RuinsOfAlphInnerChamberStatueText
 
 RuinsOfAlphStrangePresenceText:
 	text "There is a strange"
 	line "presence here…"
-	done
-
-RuinsOfAlphInnerChamberFisherText:
-	text "This is a big"
-	line "room, but there's"
-	cont "nothing here."
-	done
-
-RuinsOfAlphInnerChamberTeacherText:
-	text "This place has a"
-	line "mystical quality"
-	cont "to it."
-
-	para "It feels sort of"
-	line "ethereal even."
-	done
-
-RuinsOfAlphInnerChamberGrampsText:
-	text "Ancient buildings"
-	line "are often tombs of"
-	cont "kings."
-
-	para "Like the pyramids,"
-	line "for instance."
 	done
 
 RuinsOfAlphInnerChamberStatueText:
@@ -118,6 +85,3 @@ RuinsOfAlphInnerChamber_MapEvents:
 	bg_event 17, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
 
 	def_object_events
-	object_event  3,  7, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberFisherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
-	object_event 14, 13, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberTeacherScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS
-	object_event 11, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphInnerChamberGrampsScript, EVENT_RUINS_OF_ALPH_INNER_CHAMBER_TOURISTS

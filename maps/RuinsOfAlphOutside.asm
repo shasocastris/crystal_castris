@@ -127,7 +127,7 @@ RuinsOfAlphOutside_MapEvents:
 	warp_event 16,  7, RUINS_OF_ALPH_KABUTO_CHAMBER, 1
 	warp_event  4, 29, RUINS_OF_ALPH_OMANYTE_CHAMBER, 1
 	warp_event 18, 33, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 1
-	warp_event 12, 13, RUINS_OF_ALPH_INNER_CHAMBER, 1
+	warp_event 12, 14, RUINS_OF_ALPH_INNER_CHAMBER, 1
 	warp_event 19, 11, RUINS_OF_ALPH_RESEARCH_CENTER, 1
 	warp_event  6, 19, UNION_CAVE_B1F, 1
 	warp_event  8, 27, UNION_CAVE_B1F, 2
@@ -143,8 +143,7 @@ RuinsOfAlphOutside_MapEvents:
 	bg_event 20, 12, BGEVENT_READ, RuinsOfAlphResearchCenterSign
 
 	def_object_events
-	object_event 12, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, EVENT_BEAT_SCIENTIST_WERNER
-	object_event 16,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist2_Script, -1
-	object_event  2, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist3_Script, -1
-	object_event  4, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist4_Script, -1
-	object_event 18, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist5_Script, -1
+	object_event 17,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist1_Script, EVENT_BEAT_SCIENTIST_WERNER
+	object_event  2, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist3_Script, -1
+	object_event  5, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist4_Script, -1
+	object_event 19, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientist5_Script, -1
