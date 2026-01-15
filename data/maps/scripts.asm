@@ -39,8 +39,6 @@ INCLUDE "maps/RuinsOfAlphAerodactylWordRoom.asm"
 INCLUDE "maps/UnionCave1F.asm"
 INCLUDE "maps/UnionCaveB1F.asm"
 INCLUDE "maps/UnionCaveB2F.asm"
-INCLUDE "maps/SlowpokeWellB1F.asm"
-INCLUDE "maps/SlowpokeWellB2F.asm"
 INCLUDE "maps/OlivineLighthouse1F.asm"
 INCLUDE "maps/OlivineLighthouse2F.asm"
 INCLUDE "maps/OlivineLighthouse3F.asm"
@@ -488,5 +486,7 @@ SECTION "Map Scripts 26", ROMX
 
 INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/Route38EcruteakGate.asm"
+INCLUDE "maps/SlowpokeWellB1F.asm"
+INCLUDE "maps/SlowpokeWellB2F.asm"
 
 ENDSECTION

@@ -1,3 +1,8 @@
+	object_const_def
+	const RUINSOFALPHOUTSIDE_ROCKET_F7
+	const RUINSOFALPHOUTSIDE_ROCKET_F8
+	const RUINSOFALPHOUTSIDE_SCIENTIST_JAYJAY
+
 RuinsOfAlphOmanyteChamber_MapScripts:
 	def_scene_scripts
 
@@ -40,6 +45,36 @@ RuinsOfAlphOmanyteChamberPuzzle:
 	warpcheck
 	end
 
+TrainerGruntF7:
+	trainer GRUNTF, GRUNTF_7, EVENT_BEAT_ROCKET_GRUNTF_7, GruntF7SeenText, GruntF7BeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GruntF7AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerGruntF8:
+	trainer GRUNTF, GRUNTF_8, EVENT_BEAT_ROCKET_GRUNTF_8, GruntF8SeenText, GruntF8BeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GruntF8AfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerScientistJayJay:
+	trainer SCIENTIST, JAYJAY, EVENT_BEAT_SCIENTIST_JAYJAY, ScientistJayJaySeenText, ScientistJayJayBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext ScientistJayJayAfterBattleText
+	waitbutton
+	closetext
+	end
+
 RuinsOfAlphOmanyteChamberAncientReplica:
 	jumptext RuinsOfAlphOmanyteChamberAncientReplicaText
 
@@ -49,6 +84,76 @@ RuinsOfAlphOmanyteChamberDescriptionSign:
 RuinsOfAlphOmanyteChamberSkyfallTopMovement:
 	skyfall_top
 	step_end
+
+GruntF7SeenText:
+	text "This place gives"
+	line "me the creeps…"
+
+	para "But orders are"
+	line "orders!"
+	done
+
+GruntF7BeatenText:
+	text "Finally! Now I"
+	line "can leave!"
+	done
+
+GruntF7AfterBattleText:
+	text "I heard strange"
+	line "noises in the"
+	cont "chambers."
+
+	para "Maybe the #MON"
+	line "really are here?"
+	done
+
+GruntF8SeenText:
+	text "Keep moving, kid!"
+
+	para "We're busy working"
+	line "on these puzzles!"
+	done
+
+GruntF8BeatenText:
+	text "Argh! Useless!"
+	done
+
+GruntF8AfterBattleText:
+	text "I don't get it."
+	line "How do these block"
+	cont "puzzles work?"
+
+	para "The scientists act"
+	line "like they know,"
+	cont "but I doubt it!"
+	done
+
+ScientistJayJaySeenText:
+	text "Excellent! Fresh"
+	line "data for my"
+	cont "research!"
+
+	para "Don't worry, this"
+	line "won't hurt… much!"
+	done
+
+ScientistJayJayBeatenText:
+	text "Intriguing! Most"
+	line "intriguing!"
+	done
+
+ScientistJayJayAfterBattleText:
+	text "The wall patterns"
+	line "shift as I try to"
+	cont "solve the puzzle."
+
+	para "If #MON truly"
+	line "dwell here, they"
+
+	para "are likely attuned"
+	line "to the mechanisms"
+	cont "somehow."
+	done
 
 RuinsOfAlphOmanyteChamberAncientReplicaText:
 	text "It's a replica of"
@@ -82,3 +187,6 @@ RuinsOfAlphOmanyteChamber_MapEvents:
 	bg_event  4,  2, BGEVENT_UP, RuinsOfAlphOmanyteChamberDescriptionSign
 
 	def_object_events
+	object_event  2,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntF7, -1
+	object_event  6,  7, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntF8, -1
+	object_event  3,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerScientistJayJay, -1
