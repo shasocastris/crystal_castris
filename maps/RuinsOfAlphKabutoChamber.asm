@@ -1,4 +1,7 @@
 	object_const_def
+	const RUINSOFALPHOUTSIDE_ROCKET_M12
+	const RUINSOFALPHOUTSIDE_ROCKET_F6
+	const RUINSOFALPHOUTSIDE_SCIENTIST_ERWIN
 
 RuinsOfAlphKabutoChamber_MapScripts:
 	def_scene_scripts
@@ -87,8 +90,9 @@ GruntM12SeenText:
 	text "These ruins are"
 	line "TEAM ROCKET's now!"
 
-	para "We're gonna catch"
-	line "every last UNOWN!"
+	para "Stay out while we"
+	line "search for the"
+	cont "hidden #MON!"
 	done
 
 GruntM12BeatenText:
@@ -107,9 +111,6 @@ GruntM12AfterBattleText:
 GruntF6SeenText:
 	text "You think you can"
 	line "just waltz in?"
-	
-	para "TEAM ROCKET owns"
-	line "this place now!"
 	done
 
 GruntF6BeatenText:
@@ -118,11 +119,14 @@ GruntF6BeatenText:
 	done
 
 GruntF6AfterBattleText:
-	text "The broadcast will"
-	line "go out soon."
-	
-	para "Then everyone will"
-	line "know our power!"
+	text "The scientists say"
+	line "solving puzzles"
+
+	para "will reveal rare"
+	line "#MON."
+
+	para "Sounds like super-"
+	line "stition to me…"
 	done
 
 ScientistErwinSeenText:
@@ -145,14 +149,16 @@ ScientistErwinBeatenText:
 	done
 
 ScientistErwinAfterBattleText:
-	text "The UNOWN exhibit"
-	line "psychic resonance"
-	
-	para "when gathered in"
-	line "complete sets."
-	
+	text "If the rumors are"
+	line "true, these ruins"
+
+	para "hide #MON with"
+	line "an immense psychic"
+	cont "resonance."
+
 	para "Imagine harnessing"
-	line "all 26 at once!"
+	line "all of them in"
+	cont "unison!"
 	done
 
 RuinsOfAlphKabutoChamberWallHoleText:
