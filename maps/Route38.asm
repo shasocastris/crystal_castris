@@ -21,9 +21,9 @@ Route38_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .Route39WildHunt
+	callback MAPCALLBACK_TILES, .Route38WildHunt
 
-.Route39WildHunt
+.Route38WildHunt
 	checkevent EVENT_QUELLED_WILD_HUNT
 	iffalse .UnlockGate
 	changeblock 35, 8, $01 ; ground
