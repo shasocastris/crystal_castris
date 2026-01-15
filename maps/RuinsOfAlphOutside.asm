@@ -7,16 +7,17 @@
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
-	scene_script RuinsOfAlphOutsideNoop1Scene, SCENE_RUINSOFALPHOUTSIDE_NOOP
-	scene_script RuinsOfAlphOutsideNoop2Scene, SCENE_RUINSOFALPHOUTSIDE_GET_UNOWN_DEX
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, RuinsOfAlphOutsideShrineCallback
 
-RuinsOfAlphOutsideNoop1Scene:
-	end
-
-RuinsOfAlphOutsideNoop2Scene:
-	end
+RuinsOfAlphOutsideShrineCallback:
+	readvar VAR_UNOWNCOUNT
+	ifless NUM_UNOWN, .ShrineOff
+	endcallback
+.ShrineOff:
+	changeblock 6, 24, $9C ; left floor
+	endcallback
 
 RuinsOfAlphOutsideScientist1_Script:
 	faceplayer
@@ -68,55 +69,9 @@ RuinsOfAlphSign:
 RuinsOfAlphResearchCenterSign:
 	jumptext RuinsOfAlphResearchCenterSignText
 
-RuinsOfAlphOutsideScientistWalkToLabMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step_end
-
-RuinsOfAlphOutsidePlayerEnterLabMovement:
-	step UP
-	step_end
-
 RuinsOfAlphOutsideScientist1Movement:
 	step UP
 	step_end
-
-RuinsOfAlphOutsideScientistText:
-	text "Hm? That's a #-"
-	line "DEX, isn't it?"
-	cont "May I see it?"
-
-	para "There are so many"
-	line "kinds of #MON."
-
-	para "Hm? What's this?"
-
-	para "What is this"
-	line "#MON?"
-
-	para "It looks like the"
-	line "strange writing on"
-
-	para "the walls of the"
-	line "RUINS."
-
-	para "If those drawings"
-	line "are really #-"
-	cont "MON, there should"
-	cont "be many more."
-
-	para "I know! Let me up-"
-	line "grade your #-"
-	cont "DEX. Follow me."
-	done
 
 RuinsOfAlphOutsideScientist1_Text:
 RuinsOfAlphOutsideScientist2_Text:
