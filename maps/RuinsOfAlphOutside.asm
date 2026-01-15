@@ -160,11 +160,10 @@ WernerFight_Text:
 	done
 
 WernerWin_Text:
-	text "TEAM ROCKET hired"
-	line "me for my genius."
-	
-	para "Morality? That's"
-	line "not my department."
+	text "The patterns on"
+	line "the walls-they"
+	cont "look almost like"
+	cont "#MON shapes…"
 	done
 
 WernerWarnOthers_Text:
@@ -196,16 +195,22 @@ EnricoWin_Text:
 	done
 
 EnricoAfterBattle_Text:
-	text "Each UNOWN has a"
-	line "distinct psychic"
-	cont "signature!"
-	
-	para "Collecting all 26"
-	line "types is crucial"
-	
-	para "for… well, that's"
-	line "above my clearance"
-	cont "level."
+	text "The wall patterns"
+	line "suggest 26 unique"
+	cont "symbols."
+
+	para "If they represent"
+	line "#MON as we"
+	cont "suspect…"
+
+	para "Well, that's why"
+	line "we're solving the"
+	cont "puzzles!"
+
+	para "The executives"
+	line "want us to confirm"
+	cont "if #MON really"
+	cont "live here."
 	done
 
 RuinsOfAlphOutsideScientistEnrico_Text:
@@ -234,35 +239,40 @@ NielsWin_Text:
 	done
 
 NielsAfterBattle_Text:
-	text "With you here, we"
-	line "also won't be able"
-	cont "to investigate the"
+	text "The ancient texts"
+	line "describe #MON"
+	cont "living in these"
+	cont "chambers."
 
-	para "strange radio"
-	line "signal that we get"
-	cont "throughout the"
-	cont "ruins."
+	para "But in 10 years of"
+	line "official research,"
+	cont "no one has found"
+	cont "any."
 	done
 
 RuinsOfAlphOutsideScientistNiels_Text:
 	text "The text on the"
 	line "ruin walls suggest"
-	
+
 	para "there are 26 types"
-	line "of UNOWN."
+	line "of something."
+
+	para "We believe they're"
+	line "#MON. We just"
+	cont "need proof."
 	done
 
 EarnestFight_Text:
 	text "Another pest! We"
 	line "don't have time"
 	cont "for this!"
-	
-	para "Our deadline for"
-	line "the full UNOWN set"
-	cont "is tight!"
-	
-	para "If the LEAGUE gets"
-	line "wind of this…"
+
+	para "We need to solve"
+	line "these puzzles and"
+
+	para "find the #MON"
+	line "before the LEAGUE"
+	cont "gets wind of this!"
 	done
 
 EarnestWin_Text:
@@ -275,20 +285,27 @@ EarnestAfterBattle_Text:
 	cont "the blocks in each"
 	cont "chamber."
 
-	para "Perhaps the UNOWN"
+	para "Perhaps #MON"
 	line "will reveal"
 	cont "themselves when we"
 	cont "solve the puzzles."
+
+	para "If the rumors are"
+	line "true, capturing"
+
+	para "these #MON will"
+	line "give TEAM ROCKET"
+	cont "unprecedented power!"
 	done
 
 RuinsOfAlphOutsideScientistEarnest_Text:
-	text "I wonder if UNOWN"
-	line "existed before"
-	cont "humans?"
+	text "If #MON shaped"
+	line "like these symbols"
+	cont "really exist…"
 	
-	para "Or UNOWN shaped"
-	line "themselves based"
-	cont "on human language?"
+	para "Is this where"
+	line "human language"
+	cont "originated?"
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
