@@ -295,7 +295,8 @@ EarnestAfterBattle_Text:
 
 	para "these #MON will"
 	line "give TEAM ROCKET"
-	cont "unprecedented power!"
+	cont "unprecedented"
+	cont "power!"
 	done
 
 RuinsOfAlphOutsideScientistEarnest_Text:
