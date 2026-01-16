@@ -130,13 +130,7 @@ GruntF6AfterBattleText:
 	done
 
 ScientistErwinSeenText:
-	text "Fascinating! A"
-	line "trainer strong"
-	
-	para "enough to reach"
-	line "this floor!"
-	
-	para "Let's test your"
+	text "Let's test your"
 	line "#MON's limits!"
 	done
 
