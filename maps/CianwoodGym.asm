@@ -304,8 +304,8 @@ ChuckRejectText:
 
 	para "There's a KARATE"
 	line "KING training in"
-	cont "MT. MORTAR who"
-	cont "has a rare #MON."
+	cont "MT. MORTAR who has"
+	cont "a rare #MON."
 
 	para "If you can prove"
 	line "your fighting"
