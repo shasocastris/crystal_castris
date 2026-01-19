@@ -116,7 +116,7 @@
 	const SPRITE_UNOWN_H ; 70
 	const SPRITE_UNOWN_I ; 71
 	const SPRITE_UNOWN_J ; 72
-	const SPRITE_UNOWN_k ; 73
+	const SPRITE_UNOWN_K ; 73
 	const SPRITE_UNOWN_L ; 74
 	const SPRITE_UNOWN_M ; 75
 	const SPRITE_UNOWN_N ; 76

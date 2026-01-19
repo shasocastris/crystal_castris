@@ -6049,7 +6049,7 @@ LoadEnemyMon:
 ; These are the DVs we'll use if we're actually in a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .UpdateDVs
+	jp nz, .UpdateDVs
 
 ; Wild DVs
 ; Here's where the fun starts
@@ -6078,7 +6078,7 @@ LoadEnemyMon:
 ; Get back the result of our check
 	pop af
 ; If the RoamMon struct has already been initialized, we're done
-	jr nz, .UpdateDVs
+	jp nz, .UpdateDVs
 
 ; If it hasn't, we need to initialize the DVs
 ; (HP is initialized at the end of the battle)
@@ -6091,7 +6091,7 @@ LoadEnemyMon:
 	ld [hl], a
 	ld b, a
 ; We're done with DVs
-	jr .UpdateDVs
+	jp .UpdateDVs
 
 .NotRoaming:
 ; Register a contains wBattleType
@@ -6099,9 +6099,192 @@ LoadEnemyMon:
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_FORCESHINY
+	jr nz, .UnownA
+
+	lb bc, ATKDEFDV_SHINY, SPDSPCDV_SHINY ; $ff / $ff
+	jp .UpdateDVs
+
+; Check for forced Unown type
+.UnownA
+	cp BATTLETYPE_UNOWN_A
+	jr nz, .UnownB
+
+	lb bc, ATKDEFDV_UNOWN_A, SPDSPCDV_UNOWN_A ; $99 / $db
+	jp .UpdateDVs
+
+.UnownB
+	cp BATTLETYPE_UNOWN_B
+	jr nz, .UnownC
+
+	lb bc, ATKDEFDV_UNOWN_B, SPDSPCDV_UNOWN_B ; $99 / $df
+	jp .UpdateDVs
+
+.UnownC
+	cp BATTLETYPE_UNOWN_C
+	jr nz, .UnownD
+
+	lb bc, ATKDEFDV_UNOWN_C, SPDSPCDV_UNOWN_C ; $9d / $9b
+	jp .UpdateDVs
+
+.UnownD
+	cp BATTLETYPE_UNOWN_D
+	jr nz, .UnownE
+
+	lb bc, ATKDEFDV_UNOWN_D, SPDSPCDV_UNOWN_D ; $9d / $9f
+	jp .UpdateDVs
+
+.UnownE
+	cp BATTLETYPE_UNOWN_E
+	jr nz, .UnownF
+
+	lb bc, ATKDEFDV_UNOWN_E, SPDSPCDV_UNOWN_E ; $9d / $db
+	jp .UpdateDVs
+
+.UnownF
+	cp BATTLETYPE_UNOWN_F
+	jr nz, .UnownG
+
+	lb bc, ATKDEFDV_UNOWN_F, SPDSPCDV_UNOWN_F ; $9d / $df
+	jp .UpdateDVs
+
+.UnownG
+	cp BATTLETYPE_UNOWN_G
+	jr nz, .UnownH
+
+	lb bc, ATKDEFDV_UNOWN_G, SPDSPCDV_UNOWN_G ; $d9 / $9b
+	jp .UpdateDVs
+
+.UnownH
+	cp BATTLETYPE_UNOWN_H
+	jr nz, .UnownI
+
+	lb bc, ATKDEFDV_UNOWN_H, SPDSPCDV_UNOWN_H ; $d9 / $9f
+	jp .UpdateDVs
+
+.UnownI
+	cp BATTLETYPE_UNOWN_I
+	jr nz, .UnownJ
+
+	lb bc, ATKDEFDV_UNOWN_I, SPDSPCDV_UNOWN_I ; $d9 / $db
+	jp .UpdateDVs
+
+.UnownJ
+	cp BATTLETYPE_UNOWN_J
+	jr nz, .UnownK
+
+	lb bc, ATKDEFDV_UNOWN_J, SPDSPCDV_UNOWN_J ; $d9 / $df
+	jp .UpdateDVs
+
+.UnownK
+	cp BATTLETYPE_UNOWN_K
+	jr nz, .UnownL
+
+	lb bc, ATKDEFDV_UNOWN_K, SPDSPCDV_UNOWN_K ; $dd / $9b
+	jp .UpdateDVs
+
+.UnownL
+	cp BATTLETYPE_UNOWN_L
+	jr nz, .UnownM
+
+	lb bc, ATKDEFDV_UNOWN_L, SPDSPCDV_UNOWN_L ; $dd / $9f
+	jp .UpdateDVs
+
+.UnownM
+	cp BATTLETYPE_UNOWN_M
+	jr nz, .UnownN
+
+	lb bc, ATKDEFDV_UNOWN_M, SPDSPCDV_UNOWN_M ; $dd / $db
+	jr .UpdateDVs
+
+.UnownN
+	cp BATTLETYPE_UNOWN_N
+	jr nz, .UnownO
+
+	lb bc, ATKDEFDV_UNOWN_N, SPDSPCDV_UNOWN_N ; $dd / $df
+	jr .UpdateDVs
+
+.UnownO
+	cp BATTLETYPE_UNOWN_O
+	jr nz, .UnownP
+
+	lb bc, ATKDEFDV_UNOWN_O, SPDSPCDV_UNOWN_O ; $99 / $5b
+	jr .UpdateDVs
+
+.UnownP
+	cp BATTLETYPE_UNOWN_P
+	jr nz, .UnownQ
+
+	lb bc, ATKDEFDV_UNOWN_P, SPDSPCDV_UNOWN_P ; $99 / $5f
+	jr .UpdateDVs
+
+.UnownQ
+	cp BATTLETYPE_UNOWN_Q
+	jr nz, .UnownR
+
+	lb bc, ATKDEFDV_UNOWN_Q, SPDSPCDV_UNOWN_Q ; $9d / $5b
+	jr .UpdateDVs
+
+.UnownR
+	cp BATTLETYPE_UNOWN_R
+	jr nz, .UnownS
+
+	lb bc, ATKDEFDV_UNOWN_R, SPDSPCDV_UNOWN_R ; $9d / $5f
+	jr .UpdateDVs
+
+.UnownS
+	cp BATTLETYPE_UNOWN_S
+	jr nz, .UnownT
+
+	lb bc, ATKDEFDV_UNOWN_S, SPDSPCDV_UNOWN_S ; $d9 / $5b
+	jr .UpdateDVs
+
+.UnownT
+	cp BATTLETYPE_UNOWN_T
+	jr nz, .UnownU
+
+	lb bc, ATKDEFDV_UNOWN_T, SPDSPCDV_UNOWN_T ; $d9 / $5f
+	jr .UpdateDVs
+
+.UnownU
+	cp BATTLETYPE_UNOWN_U
+	jr nz, .UnownV
+
+	lb bc, ATKDEFDV_UNOWN_U, SPDSPCDV_UNOWN_U ; $dd / $5b
+	jr .UpdateDVs
+
+.UnownV
+	cp BATTLETYPE_UNOWN_V
+	jr nz, .UnownW
+
+	lb bc, ATKDEFDV_UNOWN_V, SPDSPCDV_UNOWN_V ; $dd / $5f
+	jr .UpdateDVs
+
+.UnownW
+	cp BATTLETYPE_UNOWN_W
+	jr nz, .UnownX
+
+	lb bc, ATKDEFDV_UNOWN_W, SPDSPCDV_UNOWN_W ; $99 / $1b
+	jr .UpdateDVs
+
+.UnownX
+	cp BATTLETYPE_UNOWN_X
+	jr nz, .UnownY
+
+	lb bc, ATKDEFDV_UNOWN_X, SPDSPCDV_UNOWN_X ; $99 / $1f
+	jr .UpdateDVs
+
+.UnownY
+	cp BATTLETYPE_UNOWN_Y
+	jr nz, .UnownZ
+
+	lb bc, ATKDEFDV_UNOWN_Y, SPDSPCDV_UNOWN_Y ; $9d / $1b
+	jr .UpdateDVs
+
+.UnownZ
+	cp BATTLETYPE_UNOWN_Z
 	jr nz, .GenerateDVs
 
-	lb bc, ATKDEFDV_SHINY, SPDSPCDV_SHINY ; $ea / $aa
+	lb bc, ATKDEFDV_UNOWN_Z, SPDSPCDV_UNOWN_Z ; $9d / $1f
 	jr .UpdateDVs
 
 .GenerateDVs:

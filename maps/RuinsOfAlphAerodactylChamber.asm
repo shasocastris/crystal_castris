@@ -152,11 +152,7 @@ ScientistCarlBeatenText:
     done
 
 ScientistCarlAfterBattleText:
-    text "The puzzle chambers"
-    line "require specific"
-    cont "sequences."
-
-    para "We've documented"
+    text "We've documented"
     line "four chambers, but"
 
     para "no #MON have"
@@ -201,4 +197,4 @@ RuinsOfAlphAerodactylChamber_MapEvents:
 	def_object_events
 	object_event  1,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM22, EVENT_DEFEATED_RUINS_OF_ALPH_ROCKETS
 	object_event  5,  8, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntF9, EVENT_DEFEATED_RUINS_OF_ALPH_ROCKETS
-	object_event  2,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistJayJay, EVENT_DEFEATED_RUINS_OF_ALPH_ROCKETS
+	object_event  2,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistCarl, EVENT_DEFEATED_RUINS_OF_ALPH_ROCKETS
