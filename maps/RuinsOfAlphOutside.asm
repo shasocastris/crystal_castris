@@ -34,6 +34,12 @@ RuinsOfAlphOutsideScientistWerner_Script:
 	opentext
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .GetLost
+	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	iffalse .GetLost
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
+	iffalse .GetLost
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
+	iffalse .GetLost
 	writetext WernerFight_Text
 	waitbutton
 	closetext
@@ -62,6 +68,12 @@ RuinsOfAlphOutsideScientistEnrico_Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .NormalText
+	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	iffalse .NormalText
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
+	iffalse .NormalText
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .NormalText
 	writetext EnricoFight_Text
 	waitbutton
@@ -92,6 +104,12 @@ RuinsOfAlphOutsideScientistNiels_Script:
 	opentext
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .Research
+	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	iffalse .Research
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
+	iffalse .Research
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
+	iffalse .Research
 	writetext NielsFight_Text
 	waitbutton
 	closetext
@@ -120,6 +138,12 @@ RuinsOfAlphOutsideScientistEarnest_Script:
 	faceplayer
 	opentext
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .Studying
+	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	iffalse .Studying
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
+	iffalse .Studying
+	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .Studying
 	writetext EarnestFight_Text
 	waitbutton
@@ -504,24 +528,24 @@ RuinsOfAlphOutsideExecutiveFHoldItText:
 	done
 
 RuinsOfAlphOutsideBossFSeenText:
-    text "Well, well. The"
-    line "meddling child who"
+	text "Well, well. The"
+	line "meddling child who"
 
-    para "has been such a"
-    line "massive pain."
+	para "has been such a"
+	line "massive pain."
 
-    para "You've ruined our"
-    line "operation here."
+	para "You've ruined our"
+	line "operation here."
 
-    para "Did you think we'd"
-    line "just let you walk"
-    cont "away?"
+	para "Did you think we'd"
+	line "just let you walk"
+	cont "away?"
 	done
 
 RuinsOfAlphSuicuneRoarText:
-    text "A crystalline howl"
-    line "echoes through the"
-    cont "ruins!"
+	text "A crystalline howl"
+	line "echoes through the"
+	cont "ruins!"
 	done
 
 RuinsOfAlphOutsideBossSuicuneRumorsText:
@@ -533,9 +557,9 @@ RuinsOfAlphOutsideBossSuicuneRumorsText:
 	para "So the rumors were"
 	line "true…"
 
-    para "A legendary beast"
-    line "does watch over"
-    cont "JOHTO."
+	para "A legendary beast"
+	line "does watch over"
+	cont "JOHTO."
 
 	para "You're both naive"
 	line "if you think this"
@@ -543,25 +567,25 @@ RuinsOfAlphOutsideBossSuicuneRumorsText:
 	done
 
 RuinsOfAlphOutsideBossWinText:
-    text "What?! How can"
-    line "this be?!"
-    done
+	text "What?! How can"
+	line "this be?!"
+	done
 
 RuinsOfAlphOutsideBossFleeFromSuicuneText:
 	text "All units"
 	line "withdraw!"
 
 	para "This mission is"
-    line "compromised!"
+	line "compromised!"
 
-    para "…"
+	para "…"
 
-    para "Consider yourself"
-    line "fortunate, child."
+	para "Consider yourself"
+	line "fortunate, child."
 
-    para "SUICUNE won't"
-    line "always be there to"
-    cont "protect you!"
+	para "SUICUNE won't"
+	line "always be there to"
+	cont "protect you!"
 	done
 
 RuinsOfAlphOutsideSuicunePostBattleText:
@@ -598,18 +622,18 @@ RuinsOfAlphOutsideBossAbandonPlanText:
 	done
 
 RuinsOfAlphOutsideSuicuneApproachesPlayer:
-    text "SUICUNE approaches"
-    line "you carefully."
-    done
+	text "SUICUNE approaches"
+	line "you carefully."
+	done
 
 RuinsOfAlphOutsideSuicuneGivesPlayerClearBellText:
-    text "SUICUNE places"
-    line "something at your"
-    cont "feet."
+	text "SUICUNE places"
+	line "something at your"
+	cont "feet."
 
-    para "It chimes in a"
-    line "loud, clear tone."
-    done
+	para "It chimes in a"
+	line "loud, clear tone."
+	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:
 	text "MYSTERY STONE"
