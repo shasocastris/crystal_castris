@@ -7,7 +7,6 @@
 	const CIANWOODCITY_ROCK3
 	const CIANWOODCITY_ROCK4
 	const CIANWOODCITY_ROCK5
-	const CIANWOODCITY_ROCK6
 	const CIANWOODCITY_POKEFAN_F
 	const CIANWOODCITY_KAREN
 	const CIANWOODCITY_SUICUNE
@@ -16,6 +15,7 @@
     const CIANWOODCITY_SWIMMER_GIRL2
 	const CIANWOODCITY_OLIVINE_RIVAL2
     const CIANWOODCITY_SWIMMER_GIRL3
+    const CIANWOODCITY_UNOWN_G
 
 CianwoodCity_MapScripts:
 	def_scene_scripts
@@ -43,6 +43,13 @@ CianwoodCityFlypointAndSuicuneCallback:
 CianwoodCitySuicuneAndKaren:
 	turnobject PLAYER, UP
 	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	cry SUICUNE
+	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneAttackUnownMovement
+	pause 15
+	cry UNOWN
+	applymovement CIANWOODCITY_UNOWN_G, CianwoodCityUnownDisappearMovement
+	disappear CIANWOODCITY_UNOWN_G
 	pause 15
 	playsound SFX_WARP_FROM
 	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneApproachMovement
@@ -179,6 +186,17 @@ CianwoodCityHiddenRevive:
 
 CianwoodCityHiddenMaxEther:
 	hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER
+
+CianwoodCitySuicuneAttackUnownMovement:
+	fix_facing
+	big_step UP
+	big_step DOWN
+	remove_fixed_facing
+	step_end
+
+CianwoodCityUnownDisappearMovement:
+	rock_smash 30
+	step_end
 
 CianwoodCitySuicuneApproachMovement:
 	set_sliding
@@ -514,13 +532,13 @@ CianwoodCity_MapEvents:
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  7, 26, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  4, 21, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
 	object_event 11, 21, SPRITE_KAREN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_KAREN
-	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
 	object_event 25, 15, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKatie, -1
 	object_event 22, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerSwimmermPaton, -1
 	object_event 31,  7, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmerfJill, -1
 	object_event 32, 46, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmermHal, -1
 	object_event 33, 27, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityTrainerSwimmerfMary, -1
+	object_event 10, 13, SPRITE_UNOWN_G, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY

@@ -8,6 +8,7 @@
 	const ROUTE36_ARTHUR
 	const ROUTE36_SUICUNE
 	const ROUTE36_LASS2
+	const ROUTE36_UNOWN_C
 
 Route36_MapScripts:
 	def_scene_scripts
@@ -24,6 +25,13 @@ Route36Noop2Scene:
 
 Route36SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	cry SUICUNE
+	applymovement ROUTE36_SUICUNE, Route36SuicuneAttackUnownMovement
+	pause 15
+	cry UNOWN
+	applymovement ROUTE36_UNOWN_C, Route36UnownDisappearMovement
+	disappear ROUTE36_UNOWN_C
 	pause 15
 	playsound SFX_WARP_FROM
 	turnobject PLAYER, UP
@@ -280,6 +288,17 @@ Route36RangerMovement:
 	step UP
 	step UP
 	step UP
+	step_end
+
+Route36SuicuneAttackUnownMovement:
+	fix_facing
+	big_step UP
+	big_step DOWN
+	remove_fixed_facing
+	step_end
+
+Route36UnownDisappearMovement:
+	rock_smash 30
 	step_end
 
 Route36SuicuneMovement:
@@ -562,3 +581,4 @@ Route36_MapEvents:
 	object_event 34,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ArthurScript, EVENT_ROUTE_36_ARTHUR_OF_THURSDAY
 	object_event  9,  6, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36
 	object_event 28,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 5, TrainerLassNoni, -1
+	object_event  9,  5, SPRITE_UNOWN_C, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_36

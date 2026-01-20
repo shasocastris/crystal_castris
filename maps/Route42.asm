@@ -8,6 +8,7 @@
 	const ROUTE42_POKE_BALL1
 	const ROUTE42_POKE_BALL2
 	const ROUTE42_SUICUNE
+	const ROUTE42_UNOWN_S
 
 Route42_MapScripts:
 	def_scene_scripts
@@ -24,6 +25,13 @@ Route42Noop2Scene:
 
 Route42SuicuneScript:
 	showemote EMOTE_SHOCK, PLAYER, 15
+	pause 15
+	cry SUICUNE
+	applymovement ROUTE42_SUICUNE, Route42SuicuneAttackUnownMovement
+	pause 15
+	cry UNOWN
+	applymovement ROUTE42_UNOWN_S, Route42UnownDisappearMovement
+	disappear ROUTE42_UNOWN_S
 	pause 15
 	playsound SFX_WARP_FROM
 	applymovement ROUTE42_SUICUNE, Route42SuicuneMovement
@@ -189,6 +197,17 @@ Route42FruitTree3:
 Route42HiddenMaxPotion:
 	hiddenitem MAX_POTION, EVENT_ROUTE_42_HIDDEN_MAX_POTION
 
+Route42SuicuneAttackUnownMovement:
+	fix_facing
+	big_step DOWN
+	big_step UP
+	remove_fixed_facing
+	step_end
+
+Route42UnownDisappearMovement:
+	rock_smash 30
+	step_end
+
 Route42SuicuneMovement:
 	set_sliding
 	fast_jump_step UP
@@ -323,3 +342,4 @@ Route42_MapEvents:
 	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42UltraBall, EVENT_ROUTE_42_ULTRA_BALL
 	object_event 33,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route42HyperPotion, EVENT_ROUTE_42_HYPER_POTION
 	object_event 26, 16, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
+	object_event 26, 17, SPRITE_UNOWN_S, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_ON_ROUTE_42
