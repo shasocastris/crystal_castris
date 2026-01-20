@@ -3,13 +3,24 @@
 	const RUINSOFALPHOUTSIDE_SCIENTIST_ENRICO
 	const RUINSOFALPHOUTSIDE_SCIENTIST_NIELS
 	const RUINSOFALPHOUTSIDE_SCIENTIST_EARNEST
+	const RUINSOFALPHOUTSIDE_ROCKET
+	const RUINSOFALPHOUTSIDE_ROCKET_GIRL
+	const RUINSOFALPHOUTSIDE_SUICUNE
 
 RuinsOfAlphOutside_MapScripts:
 	def_scene_scripts
+	scene_script RuinsOfAlphOutsideNoop1Scene, SCENE_RUINSOFALPHOUTSIDE_ROCKET_BOSS
+	scene_script RuinsOfAlphOutsideNoop2Scene, SCENE_RUINSOFALPHOUTSIDE_NOOP
 
 	def_callbacks
 	callback MAPCALLBACK_TILES, RuinsOfAlphOutsideShrineCallback
 
+RuinsOfAlphOutsideNoop1Scene:
+	end
+
+RuinsOfAlphOutsideNoop2Scene:
+	end
+	
 RuinsOfAlphOutsideShrineCallback:
 	readvar VAR_UNOWNCOUNT
 	ifless NUM_UNOWN, .ShrineOff
@@ -134,6 +145,92 @@ RuinsOfAlphOutsideScientistEarnest_Script:
 	closetext
 	end
 
+ShrineFight:
+	readvar VAR_UNOWNCOUNT
+	ifequal NUM_UNOWN, .FightExecutives
+	end
+.FightExecutives
+	appear RUINSOFALPHOUTSIDE_ROCKET
+	appear RUINSOFALPHOUTSIDE_ROCKET_GIRL
+	opentext
+	writetext RuinsOfAlphOutsideExecutiveFHoldItText
+	waitbutton
+	closetext
+	turnobject PLAYER, DOWN
+	showemote EMOTE_SHOCK, PLAYER, 15
+	applymovement PLAYER, RuinsOfAlphOutsidePlayerApproachesBossMovement
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	applymovement RUINSOFALPHOUTSIDE_ROCKET_GIRL, RuinsOfAlphOutsideBossFApproachesPlayerMovement
+	turnobject PLAYER, UP
+	applymovement RUINSOFALPHOUTSIDE_ROCKET, RuinsOfAlphOutsideGruntApproachesPlayerMovement
+	opentext
+	writetext RuinsOfAlphOutsideBossFSeenText
+	waitbutton
+	closetext
+	appear RUINSOFALPHOUTSIDE_SUICUNE
+	cry SUICUNE
+	opentext
+	writetext RuinsOfAlphSuicuneRoarText
+	waitbutton
+	closetext
+	turnobject RUINSOFALPHOUTSIDE_ROCKET_GIRL, LEFT
+	turnobject PLAYER, LEFT
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneAttacksMovement
+	applymovement RUINSOFALPHOUTSIDE_ROCKET_GIRL, RuinsOfAlphOutsideBossFHitMovement
+	applymovement RUINSOFALPHOUTSIDE_ROCKET, RuinsOfAlphOutsideGruntProtectsBossFMovement
+	turnobject PLAYER, RIGHT
+	applymovement RUINSOFALPHOUTSIDE_ROCKET_GIRL, RuinsOfAlphOutsideBossFFacesPlayerMovement
+	opentext
+	writetext RuinsOfAlphOutsideBossSuicuneRumorsText
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_ROCKET, RuinsOfAlphOutsideGruntBattlesSuicuneMovement
+	applymovement RUINSOFALPHOUTSIDE_ROCKET_GIRL, RuinsOfAlphOutsideBossFBattlesPlayerMovement
+
+	winlosstext RuinsOfAlphOutsideBossWinText, 0
+	setlasttalked RUINSOFALPHOUTSIDE_ROCKET_GIRL
+	loadtrainer EXECUTIVEF, EXECUTIVEF_1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	setevent EVENT_DEFEATED_RUINS_OF_ALPH_ROCKETS
+	reloadmapafterbattle
+
+	opentext
+	writetext RuinsOfAlphOutsideBossFleeFromSuicuneText
+	waitbutton
+	closetext
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	disappear RUINSOFALPHOUTSIDE_ROCKET_GIRL
+	disappear RUINSOFALPHOUTSIDE_ROCKET
+	pause 15
+	special FadeInFromBlack
+	setscene SCENE_RUINSOFALPHOUTSIDE_NOOP
+	opentext
+	writetext RuinsOfAlphOutsideSuicunePostBattleText
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneMoveToPlayerMovement
+	opentext
+	writetext RuinsOfAlphOutsideSuicuneApproachesPlayer
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, RUINSOFALPHOUTSIDE_SUICUNE, 15
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneMoveToShrineMovement
+	pause 30
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneMoveBackToPlayerMovement
+	opentext
+	writetext RuinsOfAlphOutsideSuicuneGivesPlayerClearBellText
+	promptbutton
+	verbosegiveitem CLEAR_BELL
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneCirclesPlayerPlayerMovement
+	pause 30
+	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneLeavesMovement
+	disappear RUINSOFALPHOUTSIDE_SUICUNE
+	end
+
 RuinsOfAlphOutsideMysteryChamberSign:
 	jumptext RuinsOfAlphOutsideMysteryChamberSignText
 
@@ -148,6 +245,98 @@ RuinsOfAlphOutsideScientistEnricoMovement:
 RuinsOfAlphOutsideScientistNielsMovement:
 RuinsOfAlphOutsideScientistEarnestMovement:
 	step UP
+	step_end
+
+RuinsOfAlphOutsidePlayerApproachesBossMovement:
+	step RIGHT
+	step RIGHT
+	step_end
+
+RuinsOfAlphOutsideBossFApproachesPlayerMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step LEFT
+	turn_head DOWN
+	step_end
+
+RuinsOfAlphOutsideGruntApproachesPlayerMovement:
+	step UP
+	step UP
+	step UP
+	step UP
+	step UP
+	step LEFT
+	step LEFT
+	step_end
+
+RuinsOfAlphOutsideSuicuneAttacksMovement:
+	step UP
+	set_sliding
+	fast_jump_step RIGHT
+	fast_jump_step RIGHT
+	remove_sliding
+	step_end
+
+RuinsOfAlphOutsideBossFHitMovement:
+	fix_facing
+	set_sliding
+	jump_step RIGHT
+	remove_sliding
+	remove_fixed_facing
+	step_end
+
+RuinsOfAlphOutsideGruntProtectsBossFMovement:
+	big_step UP
+	turn_head LEFT
+	step_end
+
+RuinsOfAlphOutsideBossFFacesPlayerMovement:
+	slow_step DOWN
+	turn_head LEFT
+	step_end
+
+RuinsOfAlphOutsideGruntBattlesSuicuneMovement:
+	big_step LEFT
+	step_end
+
+RuinsOfAlphOutsideBossFBattlesPlayerMovement:
+	big_step LEFT
+	step_end
+
+RuinsOfAlphOutsideSuicuneMoveToPlayerMovement:
+	step RIGHT
+	step_end
+
+RuinsOfAlphOutsideSuicuneMoveToShrineMovement:
+	step LEFT
+	step_end
+
+RuinsOfAlphOutsideSuicuneMoveBackToPlayerMovement:
+	step RIGHT
+	step_end
+
+RuinsOfAlphOutsideSuicuneCirclesPlayerPlayerMovement:
+	set_sliding
+	fast_jump_step RIGHT
+	fast_jump_step DOWN
+	fast_jump_step LEFT
+	fast_jump_step UP
+	remove_sliding
+	step_end
+
+RuinsOfAlphOutsideSuicuneLeavesMovement:
+	set_sliding
+	fast_jump_step UP
+	fast_jump_step RIGHT
+	fast_jump_step UP
+	fast_jump_step UP
+	remove_sliding
 	step_end
 
 WernerFight_Text:
@@ -309,6 +498,119 @@ RuinsOfAlphOutsideScientistEarnest_Text:
 	cont "originated?"
 	done
 
+RuinsOfAlphOutsideExecutiveFHoldItText:
+	text "Get away from that"
+	line "shrine!"
+	done
+
+RuinsOfAlphOutsideBossFSeenText:
+    text "Well, well. The"
+    line "meddling child who"
+
+    para "has been such a"
+    line "massive pain."
+
+    para "You've ruined our"
+    line "operation here."
+
+    para "Did you think we'd"
+    line "just let you walk"
+    cont "away?"
+	done
+
+RuinsOfAlphSuicuneRoarText:
+    text "A crystalline howl"
+    line "echoes through the"
+    cont "ruins!"
+	done
+
+RuinsOfAlphOutsideBossSuicuneRumorsText:
+	text "SUICUNE?!"
+
+	para "Even a legendary"
+	line "is opposing us?"
+
+	para "So the rumors were"
+	line "true…"
+
+    para "A legendary beast"
+    line "does watch over"
+    cont "JOHTO."
+
+	para "You're both naive"
+	line "if you think this"
+	para "will stop us!"
+	done
+
+RuinsOfAlphOutsideBossWinText:
+    text "What?! How can"
+    line "this be?!"
+    done
+
+RuinsOfAlphOutsideBossFleeFromSuicuneText:
+	text "All units"
+	line "withdraw!"
+
+	para "This mission is"
+    line "compromised!"
+
+    para "…"
+
+    para "Consider yourself"
+    line "fortunate, child."
+
+    para "SUICUNE won't"
+    line "always be there to"
+    cont "protect you!"
+	done
+
+RuinsOfAlphOutsideSuicunePostBattleText:
+	text "SUICUNE roars in"
+	line "triumph."
+	done
+
+RuinsOfAlphOutsideBossAbandonPlanText:
+	text "…This hideout is"
+	line "done for…"
+
+	para "But that's fine."
+	line "The broadcast ex-"
+	cont "periment was a"
+	cont "total success."
+
+	para "It doesn't matter"
+	line "what happens to"
+	cont "this hideout now."
+
+	para "We have much big-"
+	line "ger plans."
+
+	para "You'll come to"
+	line "appreciate TEAM"
+
+	para "ROCKET's true"
+	line "power soon enough."
+
+	para "Enjoy yourself"
+	line "while you can…"
+
+	para "Fufufufu…"
+	done
+
+RuinsOfAlphOutsideSuicuneApproachesPlayer:
+    text "SUICUNE approaches"
+    line "you carefully."
+    done
+
+RuinsOfAlphOutsideSuicuneGivesPlayerClearBellText:
+    text "SUICUNE places"
+    line "something at your"
+    cont "feet."
+
+    para "It chimes in a"
+    line "loud, clear tone."
+    done
+
 RuinsOfAlphOutsideMysteryChamberSignText:
 	text "MYSTERY STONE"
 	line "PANEL CHAMBER"
@@ -344,6 +646,7 @@ RuinsOfAlphOutside_MapEvents:
 	warp_event 15, 21, ROUTE_32_RUINS_OF_ALPH_GATE, 2
 
 	def_coord_events
+	coord_event  7, 26, SCENE_RUINSOFALPHOUTSIDE_ROCKET_BOSS, ShrineFight
 
 	def_bg_events
 	bg_event 18,  8, BGEVENT_READ, RuinsOfAlphOutsideMysteryChamberSign
@@ -355,3 +658,6 @@ RuinsOfAlphOutside_MapEvents:
 	object_event  2, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistEnrico_Script, EVENT_BEAT_SCIENTIST_ENRICO
 	object_event  4, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistNiels_Script, EVENT_BEAT_SCIENTIST_NIELS
 	object_event 18, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistEarnest_Script, EVENT_BEAT_SCIENTIST_EARNEST
+	object_event 12, 31, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
+	object_event 12, 31, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
+	object_event  4, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES

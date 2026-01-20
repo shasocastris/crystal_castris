@@ -53,11 +53,11 @@ TrainerClassNames::
 	li "FIREBREATHER"   ; 32
 	li "JUGGLER"        ; 33
 	li "BLACKBELT"      ; 34
-	li "ROCKET"         ; 35
+	li "EXECUTIVE"      ; 35
 	li "PSYCHIC"        ; 36
 	li "PICNICKER"      ; 37
 	li "CAMPER"         ; 38
-	li "ROCKET"         ; 39
+	li "EXECUTIVE"      ; 39
 	li "SAGE"           ; 3a
 	li "MEDIUM"         ; 3b
 	li "BOARDER"        ; 3c
