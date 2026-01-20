@@ -39,7 +39,7 @@ OlivineGymJasmineScript:
 	setflag ENGINE_MINERALBADGE
 	readvar VAR_BADGES
 	setevent EVENT_RUINS_OF_ALPH_ROCKETS
-;	scall OlivineGymActivateRockets
+	setmapscene MAHOGANY_TOWN, SCENE_MAHOGANYTOWN_NOOP
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door
@@ -90,9 +90,6 @@ JasmineRematchScript:
 	waitbutton
 	closetext
 	end
-
-OlivineGymActivateRockets:
-	jumpstd RadioTowerRocketsScript
 
 OlivineGymGuideScript:
 	faceplayer

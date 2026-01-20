@@ -253,6 +253,7 @@ ShrineFight:
 	pause 30
 	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneLeavesMovement
 	disappear RUINSOFALPHOUTSIDE_SUICUNE
+	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
 	end
 
 RuinsOfAlphOutsideMysteryChamberSign:

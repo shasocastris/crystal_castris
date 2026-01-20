@@ -160,28 +160,30 @@ ElmPhoneEggAssistantText:
 	cont "him?"
 	done
 
-ElmPhoneRadioTowerRocketTakeoverText:
+ElmPhoneRuinsOfAlphRocketTakeoverText:
 	text "<PLAY_G>, how are"
 	line "things going?"
 
 	para "I called because"
 	line "something weird is"
 
-	para "happening with the"
-	line "radio broadcasts."
+	para "happening at the"
+	line "RUINS OF ALPH."
 
-	para "They were talking"
+	para "I'm hearing rumors"
 	line "about TEAM ROCKET."
 
 	para "<PLAY_G>, do you"
 	line "know anything"
 	cont "about it?"
 
-	para "Maybe TEAM ROCKET"
-	line "has returned. No,"
+	para "That might explain"
+	line "all the recent"
+	cont "incidents."
 
-	para "that just can't"
-	line "be true."
+	para "But probably not"
+	line "since they broke"
+	cont "up many years ago."
 
 	para "Sorry to bug you."
 	line "Take care!"
@@ -213,6 +215,23 @@ ElmPhoneRoute38WildHuntText:
 	cont "trainer to help"
 	cont "defend the city!"
 	done
+
+ElmPhoneSuicuneText:
+	text "<PLAY_G>! Have you"
+	line "seen the legendary"
+	cont "#MON SUICUNE"
+	cont "on your travels?"
+
+	para "There have been"
+	line "many sightings of"
+	cont "it racing across"
+	cont "the region and"
+
+	para "fighting strange"
+	line "looking #MON."
+
+	para "Keep an eye out,"
+	line "<PLAY_G>!"
 
 ElmPhoneGiftText:
 	text "Hello, <PLAY_G>?"

@@ -55,7 +55,7 @@ CianwoodGymChuckScript:
 	waitsfx
 	setflag ENGINE_STORMBADGE
 	readvar VAR_BADGES
-	scall CianwoodGymActivateRockets
+	specialphonecall SPECIALCALL_SUICUNE
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
@@ -110,9 +110,6 @@ ChuckRematchScript:
 	waitbutton
 	closetext
 	end
-
-CianwoodGymActivateRockets:
-	jumpstd GoldenrodRocketsScript
 
 TrainerBlackbeltYoshi:
 	trainer BLACKBELT_T, YOSHI, EVENT_BEAT_BLACKBELT_YOSHI, BlackbeltYoshiSeenText, BlackbeltYoshiBeatenText, 0, .Script
