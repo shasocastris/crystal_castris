@@ -7504,6 +7504,8 @@ GiveExperiencePoints:
 	ld a, b
 	ld [wCurPartyLevel], a
 	push bc
+	ld a, [wCurSpecies]
+	ld [wEvolutionOldSpecies], a
 	predef LearnLevelMoves
 	pop bc
 	ld a, b

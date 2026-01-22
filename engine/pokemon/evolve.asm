@@ -248,10 +248,8 @@ EvolveAfterBattle_MasterLoop:
 	ld [wTempSpecies], a
 	xor a
 	ld [wMonType], a
-	ld a, [wEvolutionOldSpecies]
-	push af
 	call LearnLevelMoves
-	pop af
+	xor a
 	ld [wEvolutionOldSpecies], a
 	ld a, [wTempSpecies]
 	call SetSeenAndCaughtMon

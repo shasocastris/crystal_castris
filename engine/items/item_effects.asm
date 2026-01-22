@@ -1457,6 +1457,7 @@ RareCandyEffect:
 	ld [wMonType], a
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
+	ld [wEvolutionOldSpecies], a
 	predef LearnLevelMoves
 
 	xor a
