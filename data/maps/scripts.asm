@@ -184,8 +184,6 @@ INCLUDE "maps/LavenderNameRater.asm"
 INCLUDE "maps/LavenderMart.asm"
 INCLUDE "maps/SoulHouse.asm"
 INCLUDE "maps/LavRadioTower1F.asm"
-INCLUDE "maps/Route8SaffronGate.asm"
-INCLUDE "maps/Route12SuperRodHouse.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -488,5 +486,7 @@ INCLUDE "maps/ViridianGym.asm"
 INCLUDE "maps/Route38EcruteakGate.asm"
 INCLUDE "maps/SlowpokeWellB1F.asm"
 INCLUDE "maps/SlowpokeWellB2F.asm"
+INCLUDE "maps/Route12SuperRodHouse.asm"
+INCLUDE "maps/Route8SaffronGate.asm"
 
 ENDSECTION

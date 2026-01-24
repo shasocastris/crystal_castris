@@ -82,4 +82,5 @@ MapScenes::
 	scene_var VIOLET_CITY,                                 wVioletCitySceneID
 	scene_var GOLDENROD_GLITTER_AND_GRACE,                 wGlitterAndGraceSceneID
 	scene_var ROUTE_39,                                    wRoute39SceneID
+	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	db -1 ; end

@@ -214,6 +214,7 @@ ShrineFight:
 	pause 15
 	special FadeInFromBlack
 	setscene SCENE_RUINSOFALPHOUTSIDE_NOOP
+	setmapscene ICE_PATH_1F, SCENE_ICEPATH1F_RIVAL
 	opentext
 	writetext RuinsOfAlphOutsideSuicunePostBattleText
 	waitbutton
