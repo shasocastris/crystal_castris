@@ -16,6 +16,8 @@ RuinsOfAlphHoOhChamberOpenHoleCallback:
 .FloorClosed:
 	changeblock 2, 2, $01 ; left floor
 	changeblock 4, 2, $02 ; right floor
+	changeblock 2, 8, $15 ; left entrance
+	changeblock 4, 8, $16 ; right entrance
 	endcallback
 
 RuinsOfAlphHoOhChamberPuzzle:
