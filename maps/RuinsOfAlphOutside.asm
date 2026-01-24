@@ -32,13 +32,9 @@ RuinsOfAlphOutsideShrineCallback:
 RuinsOfAlphOutsideScientistWerner_Script:
 	faceplayer
 	opentext
+	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	iffalse .GetLost
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
-	iffalse .GetLost
-	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	iffalse .GetLost
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	iffalse .GetLost
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .GetLost
 	writetext WernerFight_Text
 	waitbutton
@@ -67,13 +63,9 @@ RuinsOfAlphOutsideScientistWerner_Script:
 RuinsOfAlphOutsideScientistEnrico_Script:
 	faceplayer
 	opentext
+	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	iffalse .NormalText
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
-	iffalse .NormalText
-	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	iffalse .NormalText
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	iffalse .NormalText
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .NormalText
 	writetext EnricoFight_Text
 	waitbutton
@@ -102,13 +94,9 @@ RuinsOfAlphOutsideScientistEnrico_Script:
 RuinsOfAlphOutsideScientistNiels_Script:
 	faceplayer
 	opentext
+	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	iffalse .Research
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
-	iffalse .Research
-	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	iffalse .Research
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	iffalse .Research
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .Research
 	writetext NielsFight_Text
 	waitbutton
@@ -137,13 +125,9 @@ RuinsOfAlphOutsideScientistNiels_Script:
 RuinsOfAlphOutsideScientistEarnest_Script:
 	faceplayer
 	opentext
+	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	iffalse .Studying
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
-	iffalse .Studying
-	checkevent EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
-	iffalse .Studying
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	iffalse .Studying
-	checkevent EVENT_SAW_SUICUNE_ON_ROUTE_36
 	iffalse .Studying
 	writetext EarnestFight_Text
 	waitbutton
@@ -685,4 +669,4 @@ RuinsOfAlphOutside_MapEvents:
 	object_event 18, 34, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphOutsideScientistEarnest_Script, EVENT_BEAT_SCIENTIST_EARNEST
 	object_event 12, 31, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
 	object_event 12, 31, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
-	object_event  4, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
+	object_event  4, 26, SPRITE_SUICUNE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_OUTSIDE_EXECUTIVES
