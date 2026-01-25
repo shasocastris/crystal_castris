@@ -37,9 +37,9 @@ OlivineGymJasmineScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MINERALBADGE
+	specialphonecall SPECIALCALL_WEIRDBROADCAST
 	readvar VAR_BADGES
 	setevent EVENT_RUINS_OF_ALPH_ROCKETS
-	setmapscene MAHOGANY_TOWN, SCENE_MAHOGANYTOWN_NOOP
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door

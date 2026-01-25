@@ -1604,7 +1604,7 @@ JohtoGrassWildMons:
 	dbw 25, FURRET
 	dbw 26, PIDGEOTTO
 	dbw 26, FARFETCH_D
-	dbw 25, AMPHAROS
+	dbw 25, FLAAFFY
 	dbw 27, RATICATE
 	dbw 27, NINETALES
 	dbw 27, NINETALES

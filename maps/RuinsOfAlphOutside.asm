@@ -233,12 +233,15 @@ ShrineFight:
 	promptbutton
 	verbosegiveitem CLEAR_BELL
 	waitbutton
+	writetext RuinsOfAlphOutsideClearBellEcruteakCityText
+	waitbutton
 	closetext
 	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneCirclesPlayerPlayerMovement
 	pause 30
 	applymovement RUINSOFALPHOUTSIDE_SUICUNE, RuinsOfAlphOutsideSuicuneLeavesMovement
 	disappear RUINSOFALPHOUTSIDE_SUICUNE
 	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
+	setmapscene MAHOGANY_TOWN, SCENE_MAHOGANYTOWN_NOOP
 	end
 
 RuinsOfAlphOutsideMysteryChamberSign:
@@ -329,6 +332,7 @@ RuinsOfAlphOutsideSuicuneMoveToShrineMovement:
 
 RuinsOfAlphOutsideSuicuneMoveBackToPlayerMovement:
 	step RIGHT
+	turn_head DOWN
 	step_end
 
 RuinsOfAlphOutsideSuicuneCirclesPlayerPlayerMovement:
@@ -338,6 +342,7 @@ RuinsOfAlphOutsideSuicuneCirclesPlayerPlayerMovement:
 	fast_jump_step LEFT
 	fast_jump_step UP
 	remove_sliding
+	turn_head DOWN
 	step_end
 
 RuinsOfAlphOutsideSuicuneLeavesMovement:
@@ -419,8 +424,8 @@ RuinsOfAlphOutsideScientistEnrico_Text:
 	
 	para "We suspect that"
 	line "each one might"
-	cont "reveal different"
-	cont "UNOWN!"
+	cont "reveal something"
+	cont "new!"
 	done
 
 NielsFight_Text:
@@ -619,6 +624,13 @@ RuinsOfAlphOutsideSuicuneGivesPlayerClearBellText:
 
 	para "It chimes in a"
 	line "loud, clear tone."
+	done
+
+RuinsOfAlphOutsideClearBellEcruteakCityText:
+	text "The sounds reminds"
+	line "you of the TIN"
+	cont "TOWER in ECRUTEAK"
+	cont "CITY."
 	done
 
 RuinsOfAlphOutsideMysteryChamberSignText:

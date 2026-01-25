@@ -41,6 +41,7 @@ Route38EcruteakGateRanger3Script:
 
 Route38EcruteakGateMortyScript:
 	setflag ENGINE_WILD_HUNT
+	setevent EVENT_QUELLED_WILD_HUNT
 	faceplayer
 	opentext
 	writetext Route38EcruteakGateMortyText

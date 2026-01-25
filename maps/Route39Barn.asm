@@ -52,6 +52,7 @@ MoomooScript:
 	setscene SCENE_ROUTE39_WILD_HUNT
 	clearevent EVENT_QUELLED_WILD_HUNT
 	setevent EVENT_ECRUTEAK_WILD_HUNT
+	clearflag ENGINE_WILD_HUNT
 	showemote EMOTE_SHOCK, ROUTE39BARN_WHITNEY, 30
 	applymovement ROUTE39BARN_WHITNEY, Route39BarnWhitneyMovement
 	turnobject ROUTE39BARN_WHITNEY, UP

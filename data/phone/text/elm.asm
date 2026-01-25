@@ -232,6 +232,7 @@ ElmPhoneSuicuneText:
 
 	para "Keep an eye out,"
 	line "<PLAY_G>!"
+	done
 
 ElmPhoneGiftText:
 	text "Hello, <PLAY_G>?"

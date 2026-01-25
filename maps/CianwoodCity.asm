@@ -78,7 +78,7 @@ CianwoodCitySuicuneAndKaren:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
-	reloadmapafterbattle
+	reloadmap
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	opentext
 	writetext KarenAfterText
@@ -88,6 +88,7 @@ CianwoodCitySuicuneAndKaren:
 	disappear CIANWOODCITY_KAREN
 	pause 20
 	special FadeOutMusic
+	special HealParty
 	playmapmusic
 	pause 10
 .Done:

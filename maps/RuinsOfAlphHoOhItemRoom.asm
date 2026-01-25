@@ -10,8 +10,7 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphHoOhItemRoomAmuletCoin:
-	itemball GS_BALL
-	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	itemball AMULET_COIN
 
 RuinsOfAlphHoOhItemRoomSacredAsh:
 	itemball SACRED_ASH

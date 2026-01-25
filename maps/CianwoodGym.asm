@@ -54,7 +54,6 @@ CianwoodGymChuckScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_STORMBADGE
-	readvar VAR_BADGES
 	specialphonecall SPECIALCALL_SUICUNE
 .FightDone:
 	changeblock 4, 17, $26 ; door

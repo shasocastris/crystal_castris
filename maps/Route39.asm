@@ -366,7 +366,6 @@ Route39Sign:
 	jumptext Route39SignText
 
 MoomooFarmSign:
-	clearflag ENGINE_WILD_HUNT
 	jumptext MoomooFarmSignText
 
 Route39TrainerTips:
