@@ -212,7 +212,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; SILVER_WING
 	dw NoEffect           ; GS_BALL
 	dw BlueCardEffect     ; BLUE_CARD
-	dw CardKeyEffect      ; CARD_KEY
+	dw NoEffect           ; CARD_KEY
 	dw NoEffect           ; MACHINE_PART
 	dw NoEffect           ; EGG_TICKET
 	dw NoEffect           ; LOST_ITEM
@@ -2650,9 +2650,6 @@ PPsIncreasedText:
 PPRestoredText:
 	text_far _PPRestoredText
 	text_end
-
-CardKeyEffect:
-	farjp _CardKey
 
 BasementKeyEffect:
 	farjp _BasementKey

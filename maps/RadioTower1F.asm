@@ -2,7 +2,6 @@
 	const RADIOTOWER1F_RECEPTIONIST
 	const RADIOTOWER1F_LASS
 	const RADIOTOWER1F_YOUNGSTER
-	const RADIOTOWER1F_ROCKET
 	const RADIOTOWER1F_LUCKYNUMBERMAN
 	const RADIOTOWER1F_CARD_WOMAN
 
@@ -10,33 +9,9 @@ RadioTower1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, .RadioTowerLocked
-
-.RadioTowerLocked
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iffalse .UnlockRadioTower
-	checkevent EVENT_BEAT_ROCKET_EXECUTIVEM_3 ; Executive with basement key
-	iftrue .UnlockRadioTower
-	changeblock 2, 7, $01 ; floor
-	changeblock 3, 7, $01 ; floor
-.UnlockRadioTower
-    endcallback
 
 RadioTower1FReceptionistScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue .Rockets
-	writetext RadioTower1FReceptionistWelcomeText
-	waitbutton
-	closetext
-	end
-
-.Rockets:
-	writetext RadioTower1FReceptionistNoToursText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer RadioTower1FReceptionistWelcomeText
 
 RadioTower1FLuckyNumberManScript:
 	faceplayer
@@ -195,16 +170,6 @@ RadioTower1FLassScript:
 RadioTower1FYoungsterScript:
 	jumptextfaceplayer RadioTower1FYoungsterText
 
-TrainerGruntM3:
-	trainer GRUNTM, GRUNTM_3, EVENT_BEAT_ROCKET_GRUNTM_3, GruntM3SeenText, GruntM3BeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext GruntM3AfterBattleText
-	waitbutton
-	closetext
-	end
-
 RadioTower1FDirectory:
 	jumptext RadioTower1FDirectoryText
 
@@ -222,14 +187,9 @@ RadioTower1FLuckyNumberManReturnToPlayerMovement:
 	step_end
 
 RadioTower1FReceptionistWelcomeText:
-	text "Welcome!"
-	done
-
-RadioTower1FReceptionistNoToursText:
-	text "No one can escape"
-	line "until the rocket"
-	cont "executives are"
-	cont "all defeated!"
+	text "Welcome to the"
+	line "GOLDENROD RADIO"
+	cont "TOWER!"
 	done
 
 RadioTower1FLuckyNumberManAskToPlayText:
@@ -431,34 +391,6 @@ RadioTower1FYoungsterText:
 	cont "though."
 	done
 
-GruntM3SeenText:
-	text "We've finally"
-	line "taken over the"
-	cont "RADIO TOWER!"
-
-	para "Now everyone will"
-	line "get to experience"
-
-	para "the true terror of"
-	line "TEAM ROCKET!"
-
-	para "We'll show you"
-	line "how scary we are!"
-	done
-
-GruntM3BeatenText:
-	text "Too strong! We"
-	line "must watch you…"
-	done
-
-GruntM3AfterBattleText:
-	text "You're too strong."
-
-	para "Our plan could be"
-	line "ruined. I must"
-	cont "warn the others…"
-	done
-
 RadioTower1FDirectoryText:
 	text "1F RECEPTION"
 	line "2F SALES"
@@ -499,6 +431,5 @@ RadioTower1F_MapEvents:
 	object_event  5,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FReceptionistScript, -1
 	object_event 16,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RadioTower1FLassScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 15,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FYoungsterScript, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event 14,  1, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM3, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RadioTower1FLuckyNumberManScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 12,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RadioTower1FRadioCardWomanScript, EVENT_GOLDENROD_CITY_CIVILIANS

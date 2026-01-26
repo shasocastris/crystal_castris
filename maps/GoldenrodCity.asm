@@ -6,13 +6,6 @@
 	const GOLDENRODCITY_YOUNGSTER2
 	const GOLDENRODCITY_LASS
 	const GOLDENRODCITY_GRAMPS
-	const GOLDENRODCITY_ROCKETSCOUT
-	const GOLDENRODCITY_ROCKET1
-	const GOLDENRODCITY_ROCKET2
-	const GOLDENRODCITY_ROCKET3
-	const GOLDENRODCITY_ROCKET4
-	const GOLDENRODCITY_ROCKET5
-	const GOLDENRODCITY_ROCKET6
 	const GOLDENRODCITY_MOVETUTOR
 
 GoldenrodCity_MapScripts:
@@ -163,20 +156,7 @@ GoldenrodCityYoungster1Script:
 	jumptextfaceplayer GoldenrodCityYoungster1Text
 
 GoldenrodCityCooltrainerF1Script:
-	faceplayer
-	opentext
-	checkevent EVENT_CLEARED_RADIO_TOWER
-	iftrue .ClearedRadioTower
-	writetext GoldenrodCityCooltrainerF1Text
-	waitbutton
-	closetext
-	end
-
-.ClearedRadioTower:
-	writetext GoldenrodCityCooltrainerF1Text_ClearedRadioTower
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer GoldenrodCityCooltrainerF1Text
 
 GoldenrodCityCooltrainerF2Script:
 	faceplayer
@@ -202,35 +182,6 @@ GoldenrodCityLassScript:
 
 GoldenrodCityGrampsScript:
 	jumptextfaceplayer GoldenrodCityGrampsText
-
-GoldenrodCityRocketScoutScript:
-	opentext
-	writetext GoldenrodCityRocketScoutText1
-	promptbutton
-	faceplayer
-	writetext GoldenrodCityRocketScoutText2
-	waitbutton
-	closetext
-	turnobject GOLDENRODCITY_ROCKETSCOUT, UP
-	end
-
-GoldenrodCityRocket1Script:
-	jumptextfaceplayer GoldenrodCityRocket1Text
-
-GoldenrodCityRocket2Script:
-	jumptextfaceplayer GoldenrodCityRocket2Text
-
-GoldenrodCityRocket3Script:
-	jumptextfaceplayer GoldenrodCityRocket3Text
-
-GoldenrodCityRocket4Script:
-	jumptextfaceplayer GoldenrodCityRocket4Text
-
-GoldenrodCityRocket5Script:
-	jumptextfaceplayer GoldenrodCityRocket5Text
-
-GoldenrodCityRocket6Script:
-	jumptextfaceplayer GoldenrodCityRocket6Text
 
 GoldenrodCityStationSign:
 	jumptext GoldenrodCityStationSignText
@@ -317,19 +268,14 @@ GoldenrodCityYoungster1Text:
 	done
 
 GoldenrodCityCooltrainerF1Text:
-	text "Is that man in"
-	line "black dressed up"
+	text "There's an old guy"
+	line "in town that will"
+	cont "teach your #MON"
+	cont "really good moves,"
 
-	para "like a TEAM ROCKET"
-	line "member? How silly!"
-	done
-
-GoldenrodCityCooltrainerF1Text_ClearedRadioTower:
-	text "Was that man in"
-	line "black really part"
-
-	para "of TEAM ROCKET? I"
-	line "can't believe it!"
+	para "but only if you've"
+	line "caught a bunch of"
+	cont "#MON."
 	done
 
 GoldenrodCityCooltrainerF2Text:
@@ -388,57 +334,6 @@ GoldenrodCityGrampsText:
 
 	para "try some. I bet"
 	line "it's delicious!"
-	done
-
-GoldenrodCityRocketScoutText1:
-	text "So this is the"
-	line "RADIO TOWER…"
-	done
-
-GoldenrodCityRocketScoutText2:
-	text "What do you want,"
-	line "you pest? Scram!"
-	done
-
-GoldenrodCityRocket1Text:
-	text "Stay out of the"
-	line "way! Beat it!"
-	done
-
-GoldenrodCityRocket2Text:
-	text "Take over the"
-	line "RADIO TOWER…"
-
-	para "What? It's none of"
-	line "your business!"
-	done
-
-GoldenrodCityRocket3Text:
-	text "#MON? They're"
-	line "nothing more than"
-
-	para "tools for making"
-	line "money!"
-	done
-
-GoldenrodCityRocket4Text:
-	text "Our dream will"
-	line "soon come true…"
-
-	para "It was such a long"
-	line "struggle…"
-	done
-
-GoldenrodCityRocket5Text:
-	text "Hey, brat! You"
-	line "don't belong here!"
-	cont "Get lost!"
-	done
-
-GoldenrodCityRocket6Text:
-	text "Come taste the"
-	line "true terror of"
-	cont "TEAM ROCKET!"
 	done
 
 GoldenrodCityStationSignText:
@@ -644,11 +539,4 @@ GoldenrodCity_MapEvents:
 	object_event 19, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodCityYoungster2Script, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 17, 10, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodCityLassScript, EVENT_GOLDENROD_CITY_CIVILIANS
 	object_event 11, 27, SPRITE_GRAMPS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityGrampsScript, EVENT_GOLDENROD_CITY_CIVILIANS
-	object_event  4, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocketScoutScript, EVENT_GOLDENROD_CITY_ROCKET_SCOUT
-	object_event 28, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket1Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	object_event  8, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket2Script, EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	object_event 16, 23, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket3Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 29, 20, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket4Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 29,  7, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket5Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 31, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodCityRocket6Script, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 12, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoveTutorScript, -1

@@ -286,7 +286,7 @@ RocketBaseElectrodeScript:
 	promptbutton
 	verbosegiveitem HM_SURF
 	setevent EVENT_GOT_HM03_SURF
-	writetext RocketBaseLanceWhirlpoolText
+	writetext RocketBaseLanceSurfText
 	waitbutton
 	closetext
 	turnobject TEAMROCKETBASEB2F_LANCE, DOWN
@@ -730,7 +730,7 @@ RocketBaseLanceElectrodeDoneText:
 	cont "any need for it."
 	done
 
-RocketBaseLanceWhirlpoolText:
+RocketBaseLanceSurfText:
 	text "That's SURF."
 	line "Teach it to a"
 
