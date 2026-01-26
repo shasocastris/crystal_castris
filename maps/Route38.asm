@@ -434,9 +434,13 @@ WildHuntTauros_Text:
 	done
 
 BirdKeeperTobySeenText:
-	text "Fly high into the"
-	line "sky, my beloved"
-	cont "bird #MON!"
+	text "My bird #MON"
+	line "were terrified"
+	cont "during the WILD"
+	cont "HUNT!"
+
+	para "But they're ready"
+	line "to battle now!"
 	done
 
 BirdKeeperTobyBeatenText:
@@ -445,17 +449,24 @@ BirdKeeperTobyBeatenText:
 	done
 
 BirdKeeperTobyAfterBattleText:
-	text "I plan to train in"
-	line "CIANWOOD CITY to"
+	text "The wild #MON"
+	line "went berserk."
 
-	para "teach my #MON"
-	line "how to FLY."
+	para "Even the PIDGEY"
+	line "and SPEAROW were"
+	cont "acting strange."
+
+	para "I'm grateful the"
+	line "RANGERS handled"
+	cont "it so quickly."
 	done
 
 SchoolboyChad1SeenText:
-	text "Let me try some-"
-	line "thing I learned"
-	cont "today."
+	text "School was closed"
+	line "during the crisis!"
+
+	para "Let me show you"
+	line "what I practiced!"
 	done
 
 SchoolboyChad1BeatenText:
@@ -464,24 +475,23 @@ SchoolboyChad1BeatenText:
 	done
 
 SchoolboyChadSoManyTestsText:
-	text "I have to take so"
-	line "many tests, I"
+	text "We had to evacuate"
+	line "to ECRUTEAK CITY."
 
-	para "don't have much"
-	line "time for #MON."
+	para "Seeing the RANGERS"
+	line "and trainers work"
 
-	para "So when I do get"
-	line "to play, I really"
-	cont "concentrate."
+	para "together was more"
+	line "educational than"
+	cont "any class!"
 	done
 
 LassDana1SeenText:
-	text "You seem to be"
-	line "good at #MON."
+	text "That WILD HUNT was"
+	line "so scary!"
 
-	para "If you are, how"
-	line "about giving me"
-	cont "some advice?"
+	para "But you helped"
+	line "stop it, right?"
 	done
 
 LassDana1BeatenText:
@@ -490,20 +500,24 @@ LassDana1BeatenText:
 	done
 
 LassDanaMoomooMilkText:
-	text "I know something"
-	line "good!"
+	text "I heard MILTANK"
+	line "at MOOMOO FARM"
+	cont "was the key!"
 
-	para "MOOMOO FARM's milk"
-	line "is famous for its"
-	cont "flavor."
+	para "A healthy MILTANK"
+	line "calmed the raging"
+	cont "TAUROS herd."
+
+	para "That's why their"
+	line "milk is so special!"
 	done
 
 BeautyValerieSeenText:
-	text "Hi! Aren't you a"
-	line "cute trainer!"
+	text "After seeing those"
+	line "aggressive #MON,"
 
-	para "May I see your"
-	line "#MON?"
+	para "I really appreci-"
+	line "ate kind trainers!"
 	done
 
 BeautyValerieBeatenText:
@@ -512,17 +526,24 @@ BeautyValerieBeatenText:
 	done
 
 BeautyValerieAfterBattleText:
-	text "When I see #-"
-	line "MON, it seems to"
-	cont "soothe my nerves."
+	text "The WILD HUNT was"
+	line "terrifying."
+
+	para "But seeing well-"
+	line "trained #MON"
+
+	para "working with their"
+	line "trainers was so"
+	cont "reassuring."
 	done
 
 SailorHarrySeenText:
-	text "I've been over-"
-	line "seas, so I know"
+	text "I've sailed the"
+	line "world, but I've"
 
-	para "about all sorts of"
-	line "#MON!"
+	para "never seen wild"
+	line "#MON go berserk"
+	cont "like that!"
 	done
 
 SailorHarryBeatenText:
@@ -531,17 +552,20 @@ SailorHarryBeatenText:
 	done
 
 SailorHarryAfterBattleText:
-	text "When it's raining,"
-	line "fire-type moves"
+	text "In all my travels,"
+	line "I've seen storms,"
+	cont "whirlpools, even"
+	cont "TENTACRUEL swarms."
 
-	para "become much weaker"
-	line "than usual."
+	para "But a WILD HUNT?"
+	line "That's such a rare"
+	cont "phenomenon."
 	done
 
 BeautyOliviaSeenText:
-	text "Don't you think my"
-	line "#MON and I are"
-	cont "beautiful?"
+	text "MOOMOO FARM almost"
+	line "lost everything"
+	cont "in the stampede!"
 	done
 
 BeautyOliviaBeatenText:
@@ -550,14 +574,15 @@ BeautyOliviaBeatenText:
 	done
 
 BeautyOliviaAfterBattleText:
-	text "MOOMOO MILK is"
-	line "good for beauty"
+	text "Thank goodness"
+	line "their MILTANK"
+	cont "recovered in time!"
 
-	para "and health, and"
-	line "conveniently, they"
+	para "Now the farm is"
+	line "back to selling"
 
-	para "now sell a dozen"
-	line "bottles at a time."
+	para "their delicious"
+	line "milk by the dozen!"
 	done
 
 Route38SignText:

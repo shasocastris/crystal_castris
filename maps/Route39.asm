@@ -422,8 +422,11 @@ SailorEugeneSeenText:
 	text "I just got back to"
 	line "OLIVINE."
 
-	para "So how about a"
-	line "#MON battle?"
+	para "What's this about"
+	line "a stampede?"
+
+	para "Let's battle while"
+	line "you fill me in!"
 	done
 
 SailorEugeneBeatenText:
@@ -431,19 +434,24 @@ SailorEugeneBeatenText:
 	done
 
 SailorEugeneAfterBattleText:
-	text "My #MON were"
-	line "caught and raised"
-	cont "overseas."
+	text "A WILD HUNT caused"
+	line "by TEAM ROCKET?"
 
-	para "They're my compan-"
-	line "ions on those long"
-	cont "voyages."
+	para "The seas are dan-"
+	line "gerous, but at"
+
+	para "least wild #MON"
+	line "don't form massive"
+	cont "hunting packs!"
 	done
 
 PokefanmDerekSeenText:
-	text "This is a good"
-	line "time to brag about"
-	cont "my PIKACHU!"
+	text "My PIKACHU stayed"
+	line "calm during the"
+	cont "whole crisis!"
+
+	para "Isn't that worth"
+	line "bragging about?"
 	done
 
 PokefanmDerekBeatenText:
@@ -463,12 +471,11 @@ PokefanMDerekText_NotBragging:
 	done
 
 PokefanfRuthSeenText:
-	text "Such darling"
-	line "#MON."
+	text "After that fright-"
+	line "ening stampede,"
 
-	para "Let's show our"
-	line "#MON together"
-	cont "at the same time."
+	para "I want to see some"
+	line "friendly #MON!"
 	done
 
 PokefanfRuthBeatenText:
@@ -477,11 +484,15 @@ PokefanfRuthBeatenText:
 	done
 
 PokefanfRuthAfterBattleText:
-	text "If your opponent"
-	line "is FLYing, your"
+	text "Wild #MON can"
+	line "be dangerous when"
+	cont "provoked."
 
-	para "GUST becomes much"
-	line "more powerful."
+	para "But with proper"
+	line "care and training,"
+
+	para "they become our"
+	line "beloved companions."
 	done
 
 PokefanMDerekPikachuIsItText:
@@ -490,9 +501,12 @@ PokefanMDerekPikachuIsItText:
 	done
 
 PsychicNormanSeenText:
-	text "Let me see what"
-	line "your #MON are"
-	cont "capable of."
+	text "The WILD HUNT"
+	line "revealed much"
+
+	para "about the bond"
+	line "between people and"
+	cont "#MON."
 	done
 
 PsychicNormanBeatenText:
@@ -501,14 +515,16 @@ PsychicNormanBeatenText:
 	done
 
 PsychicNormanAfterBattleText:
-	text "You know how #-"
-	line "MON have different"
-	cont "abilities?"
+	text "Wild #MON have"
+	line "instincts we can"
+	cont "barely comprehend."
 
-	para "People are like"
-	line "that too. Every-"
-	cont "one has different"
-	cont "potential."
+	para "But trainers and"
+	line "#MON who trust"
+
+	para "each other can"
+	line "overcome any"
+	cont "crisis together."
 	done
 
 PokefanfJaimeHopeItGetsDarkText:
@@ -517,10 +533,12 @@ PokefanfJaimeHopeItGetsDarkText:
 	done
 
 PokefanfJaimeSeenText:
-	text "You came at just"
-	line "the right time."
+	text "The night of the"
+	line "WILD HUNT, my"
+	cont "PERSIAN sensed the"
+	cont "danger early."
 
-	para "Let's battle."
+	para "Let's battle!"
 	done
 
 PokefanfJaimeBeatenText:
@@ -529,26 +547,26 @@ PokefanfJaimeBeatenText:
 	done
 
 PokefanfJaimeAfterBattleText:
-	text "I met my MEOWTH at"
-	line "night, right here"
-	cont "on ROUTE 39."
+	text "I met my PERSIAN"
+	line "at night, right"
+	cont "here on ROUTE 39."
 
-	para "I'm not sure why,"
-	line "but it seems to"
+	para "During the stam-"
+	line "pede, it kept me"
 
-	para "like it when I"
-	line "train here."
+	para "safe by sensing"
+	line "when TAUROS were"
+	cont "approaching."
 
-	para "It seems to become"
-	line "friendlier by"
-
-	para "training here than"
-	line "anywhere else."
+	para "Training here has"
+	line "made us even"
+	cont "closer than before."
 	done
 
 JaimeGivesParalyzGuardText:
-	text "I'm impressed. You"
-	line "should take this."
+	text "After going through"
+	line "that crisis, you"
+	cont "deserve this."
 
 	para "It will keep your"
 	line "#MON from"

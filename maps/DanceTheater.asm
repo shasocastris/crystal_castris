@@ -19,7 +19,15 @@ TrainerKimonoGirlNaoko:
 
 .Script:
 	opentext
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	iftrue .NaokoPostHunt
 	writetext KimonoGirlNaokoAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.NaokoPostHunt:
+	writetext DanceTheaterNaokoText_PostHunt
 	waitbutton
 	closetext
 	end
@@ -29,7 +37,15 @@ TrainerKimonoGirlSayo:
 
 .Script:
 	opentext
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	iftrue .SayoPostHunt
 	writetext KimonoGirlSayoAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.SayoPostHunt:
+	writetext DanceTheaterSayoText_PostHunt
 	waitbutton
 	closetext
 	end
@@ -39,7 +55,15 @@ TrainerKimonoGirlZuki:
 
 .Script:
 	opentext
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	iftrue .ZukiPostHunt
 	writetext KimonoGirlZukiAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.ZukiPostHunt:
+	writetext DanceTheaterZukiText_PostHunt
 	waitbutton
 	closetext
 	end
@@ -49,7 +73,15 @@ TrainerKimonoGirlKuni:
 
 .Script:
 	opentext
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	iftrue .KuniPostHunt
 	writetext KimonoGirlKuniAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.KuniPostHunt:
+	writetext DanceTheaterKuniText_PostHunt
 	waitbutton
 	closetext
 	end
@@ -59,7 +91,15 @@ TrainerKimonoGirlMiki:
 
 .Script:
 	opentext
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	iftrue .MikiPostHunt
 	writetext KimonoGirlMikiAfterBattleText
+	waitbutton
+	closetext
+	end
+
+.MikiPostHunt:
+	writetext DanceTheaterMikiText_PostHunt
 	waitbutton
 	closetext
 	end
@@ -155,6 +195,22 @@ KimonoGirlNaokoAfterBattleText:
 	cont "to see you again."
 	done
 
+DanceTheaterNaokoText_PostHunt:
+	text "The WILD HUNT is"
+	line "over, but ECRUTEAK"
+	cont "needs time to"
+	cont "heal."
+
+	para "Our FLAREON helped"
+	line "drive back the"
+	cont "herd near the TIN"
+	cont "TOWER."
+
+	para "TEAM ROCKET fled,"
+	line "but they're still"
+	cont "out there."
+	done
+
 KimonoGirlSayoSeenText:
 	text "I always dance"
 	line "with my #MON."
@@ -174,6 +230,21 @@ KimonoGirlSayoAfterBattleText:
 
 	para "dancing and #-"
 	line "MON."
+	done
+
+DanceTheaterSayoText_PostHunt:
+	text "ESPEON sensed the"
+	line "panic in the wild"
+	cont "#MON."
+
+	para "Something about"
+	line "TEAM ROCKET's"
+	cont "cruelty triggered"
+	cont "a primal rage."
+
+	para "We must ensure"
+	line "this never happens"
+	cont "again."
 	done
 
 KimonoGirlZukiSeenText:
@@ -202,6 +273,26 @@ KimonoGirlZukiAfterBattleText:
 	cont "rampaging beasts."
 	done
 
+DanceTheaterZukiText_PostHunt:
+	text "UMBREON and I"
+	line "patrolled all"
+	cont "night during the"
+	cont "crisis."
+
+	para "I heard strange"
+	line "reports from the"
+	cont "BURNED TOWER."
+
+	para "Travelers say they"
+	line "saw SUICUNE fight-"
+	cont "ing off aggressive"
+	cont "wild #MON."
+
+	para "Could the legend-"
+	line "ary beast be"
+	cont "protecting JOHTO?"
+	done
+
 KimonoGirlKuniSeenText:
 	text "Oh, you're a cute"
 	line "trainer. Would you"
@@ -219,6 +310,21 @@ KimonoGirlKuniAfterBattleText:
 
 	para "ECRUTEAK soon. I"
 	line "hope I'm ready."
+	done
+
+DanceTheaterKuniText_PostHunt:
+	text "Thank goodness"
+	line "MILTANK recovered"
+	cont "in time."
+
+	para "Without your help,"
+	line "the TAUROS would"
+	cont "have trampled"
+	cont "everything."
+
+	para "TEAM ROCKET must"
+	line "answer for what"
+	cont "they've done."
 	done
 
 KimonoGirlMikiSeenText:
@@ -242,6 +348,21 @@ KimonoGirlMikiAfterBattleText:
 	para "My #MON keep my"
 	line "spirits up even"
 	cont "in dark times."
+	done
+
+DanceTheaterMikiText_PostHunt:
+	text "JOLTEON's speed"
+	line "helped us evacuate"
+	cont "citizens quickly."
+
+	para "But TEAM ROCKET"
+	line "is growing bolder."
+
+	para "First SLOWPOKE"
+	line "WELL, now this?"
+
+	para "What are they"
+	line "really planning?"
 	done
 
 RockSmashGuyNeverLeftAScratchText:
