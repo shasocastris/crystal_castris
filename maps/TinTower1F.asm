@@ -2,7 +2,7 @@
 	const TINTOWER1F_SUICUNE
 	const TINTOWER1F_RAIKOU
 	const TINTOWER1F_ENTEI
-	const TINTOWER1F_EUSINE
+	const TINTOWER1F_KAREN
 	const TINTOWER1F_SAGE1
 	const TINTOWER1F_SAGE2
 	const TINTOWER1F_SAGE3
@@ -45,7 +45,7 @@ TinTower1FNPCsCallback:
 .GotRainbowWing:
 	checkevent EVENT_FOUGHT_HO_OH
 	iffalse .Done
-	appear TINTOWER1F_EUSINE
+	appear TINTOWER1F_KAREN
 .Done:
 	endcallback
 
@@ -142,9 +142,9 @@ TinTower1FSuicuneBattleScript:
 	turnobject PLAYER, DOWN
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	playsound SFX_ENTER_DOOR
-	moveobject TINTOWER1F_EUSINE, 10, 15
-	appear TINTOWER1F_EUSINE
-	applymovement TINTOWER1F_EUSINE, TinTower1FEusineEntersMovement
+	moveobject TINTOWER1F_KAREN, 10, 15
+	appear TINTOWER1F_KAREN
+	applymovement TINTOWER1F_KAREN, TinTower1FKarenEntersMovement
 	playsound SFX_ENTER_DOOR
 	moveobject TINTOWER1F_SAGE1, 9, 15
 	appear TINTOWER1F_SAGE1
@@ -162,12 +162,12 @@ TinTower1FSuicuneBattleScript:
 	moveobject TINTOWER1F_SAGE3, 11, 13
 	turnobject PLAYER, RIGHT
 	opentext
-	writetext TinTower1FEusineSuicuneText
+	writetext TinTower1FKarenSuicuneText
 	waitbutton
 	closetext
-	applymovement TINTOWER1F_EUSINE, TinTower1FEusineLeavesMovement
+	applymovement TINTOWER1F_KAREN, TinTower1FKarenLeavesMovement
 	playsound SFX_EXIT_BUILDING
-	disappear TINTOWER1F_EUSINE
+	disappear TINTOWER1F_KAREN
 	waitsfx
 	special FadeOutMusic
 	pause 20
@@ -231,8 +231,8 @@ TinTower1FSage6Script:
 .FoughtHoOh:
 	jumptextfaceplayer TinTower1FSage6Text2
 
-TinTower1FEusine:
-	jumptextfaceplayer TinTower1FEusineHoOhText
+TinTower1FKaren:
+	jumptextfaceplayer TinTower1FKarenHoOhText
 
 TinTower1FPlayerEntersMovement:
 	slow_step UP
@@ -281,14 +281,14 @@ TinTower1FPlayerBacksUpMovement:
 	remove_fixed_facing
 	step_end
 
-TinTower1FEusineEntersMovement:
+TinTower1FKarenEntersMovement:
 	step UP
 	step UP
 	step UP
 	turn_head LEFT
 	step_end
 
-TinTower1FEusineLeavesMovement:
+TinTower1FKarenLeavesMovement:
 	step DOWN
 	step DOWN
 	step DOWN
@@ -314,8 +314,8 @@ TinTower1FSage3EntersMovement:
 	step UP
 	step_end
 
-TinTower1FEusineSuicuneText:
-	text "EUSINE: Awesome!"
+TinTower1FKarenSuicuneText:
+	text "KAREN: Awesome!"
 	line "Too awesome, even!"
 
 	para "I've never seen a"
@@ -342,14 +342,15 @@ TinTower1FEusineSuicuneText:
 	para "will cause that"
 	line "#MON to appear."
 
-	para "I'm going to study"
-	line "the legends more."
+	para "You're journey has"
+	line "been a storied one"
+	cont "and I'm excited to"
+	cont "witness more."
 
-	para "Thanks for showing"
-	line "me that fantastic"
-	cont "battle."
-
-	para "Later, <PLAYER>!"
+	para "I look forward to"
+	line "seeing you again"
+	cont "when you reach"
+	cont "INDIGO PLATEAU."
 	done
 
 TinTower1FSage1Text:
@@ -447,8 +448,8 @@ TinTower1FSage6Text1:
 	cont "and advance."
 	done
 
-TinTower1FEusineHoOhText:
-	text "I knew it."
+TinTower1FKarenHoOhText:
+	text "KAREN: I knew it."
 
 	para "I knew you'd get"
 	line "to see the #MON"
@@ -456,17 +457,18 @@ TinTower1FEusineHoOhText:
 	para "of rainbow colors,"
 	line "<PLAYER>."
 
-	para "It happened just"
-	line "as I envisioned."
-
-	para "My research isn't"
-	line "bad, I might say."
+	para "You are at the"
+	line "center of many"
+	cont "great things in"
+	cont "the #MON world."
 
 	para "I'm going to keep"
-	line "studying #MON"
+	line "training as well"
 
-	para "to become a famous"
-	line "#MANIAC!"
+	para "and embrace the"
+	line "full extent of the"
+	cont "wonders of which"
+	cont "we are a part."
 	done
 
 TinTower1FSage4Text2:
@@ -543,7 +545,7 @@ TinTower1F_MapEvents:
 	object_event  9,  9, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_SUICUNE
 	object_event  7,  9, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_RAIKOU
 	object_event 12,  9, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_TIN_TOWER_1F_ENTEI
-	object_event  8,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TinTower1FEusine, EVENT_TIN_TOWER_1F_EUSINE
+	object_event  8,  3, SPRITE_KAREN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FKaren, EVENT_TIN_TOWER_1F_KAREN
 	object_event  5,  9, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage1Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event 11, 11, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage2Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
 	object_event 14,  6, SPRITE_SAGE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TinTower1FSage3Script, EVENT_TIN_TOWER_1F_WISE_TRIO_1
