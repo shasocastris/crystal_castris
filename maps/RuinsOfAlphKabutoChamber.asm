@@ -92,9 +92,13 @@ GruntM12SeenText:
 	text "These ruins are"
 	line "TEAM ROCKET's now!"
 
-	para "Stay out while we"
-	line "search for the"
-	cont "hidden #MON!"
+	para "After getting run"
+	line "out from SLOWPOKE"
+	cont "WELL and the LAKE"
+	cont "OF RAGE,"
+
+	para "we're not losing"
+	line "here!"
 	done
 
 GruntM12BeatenText:
@@ -103,16 +107,22 @@ GruntM12BeatenText:
 	done
 
 GruntM12AfterBattleText:
-	text "The BOSS has big"
-	line "plans for JOHTO."
-	
-	para "You can't stop us"
-	line "all, kid!"
+	text "The BOSS says once"
+	line "we control these"
+	cont "ruins, no one can"
+	cont "stop us!"
+
+	para "Not the LEAGUE."
+	line "Not the RANGERS."
+	cont "No one!"
 	done
 
 GruntF6SeenText:
 	text "You think you can"
 	line "just waltz in?"
+
+	para "You already ruined"
+	line "our plans twice!"
 	done
 
 GruntF6BeatenText:
@@ -121,40 +131,48 @@ GruntF6BeatenText:
 	done
 
 GruntF6AfterBattleText:
-	text "The scientists say"
-	line "solving puzzles"
+	text "The scientists keep"
+	line "babbling about"
+	cont "symbols and forms."
 
-	para "will reveal rare"
-	line "#MON."
-
-	para "Sounds like super-"
-	line "stition to me…"
+	para "I don't care about"
+	line "that. I just want"
+	cont "to see TEAM ROCKET"
+	cont "dominate JOHTO!"
 	done
 
 ScientistErwinSeenText:
-	text "Let's test your"
+	text "You! You're the"
+	line "one who disrupted"
+	cont "our radio wave"
+	cont "experiment!"
+
+	para "Let's test your"
 	line "#MON's limits!"
 	done
 
 ScientistErwinBeatenText:
-	text "TEAM ROCKET hired"
-	line "me for my genius."
-
-	para "Morality? That's"
-	line "not my department."
+	text "Fascinating data!"
 	done
 
 ScientistErwinAfterBattleText:
-	text "If the rumors are"
-	line "true, these ruins"
+	text "My hypothesis: the"
+	line "symbols in each"
+	cont "chamber represent"
+	cont "different #MON."
 
-	para "hide #MON with"
-	line "an immense psychic"
-	cont "resonance."
+	para "There are 26 in"
+	line "total."
 
-	para "Imagine harnessing"
-	line "all of them in"
-	cont "unison!"
+	para "Which means if we"
+	line "catch every single"
+	cont "one, we should"
+	cont "unlock all the"
+	cont "resonance patterns!"
+
+	para "Then we can harness"
+	line "their collective"
+	cont "psychic power!"
 	done
 
 RuinsOfAlphKabutoChamberWallHoleText:

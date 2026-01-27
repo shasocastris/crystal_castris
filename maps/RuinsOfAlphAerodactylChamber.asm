@@ -48,34 +48,34 @@ RuinsOfAlphAerodactylChamberPuzzle:
 	end
 
 TrainerGruntM22:
-    trainer GRUNTM, GRUNTM_22, EVENT_BEAT_ROCKET_GRUNTM_22, GruntM22SeenText, GruntM22BeatenText, 0, .Script
+	trainer GRUNTM, GRUNTM_22, EVENT_BEAT_ROCKET_GRUNTM_22, GruntM22SeenText, GruntM22BeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext GruntM22AfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext GruntM22AfterBattleText
+	waitbutton
+	closetext
+	end
 
 TrainerGruntF9:
-    trainer GRUNTF, GRUNTF_9, EVENT_BEAT_ROCKET_GRUNTF_9, GruntF9SeenText, GruntF9BeatenText, 0, .Script
+	trainer GRUNTF, GRUNTF_9, EVENT_BEAT_ROCKET_GRUNTF_9, GruntF9SeenText, GruntF9BeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext GruntF9AfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext GruntF9AfterBattleText
+	waitbutton
+	closetext
+	end
 
 TrainerScientistCarl:
-    trainer SCIENTIST, CARL, EVENT_BEAT_SCIENTIST_CARL, ScientistCarlSeenText, ScientistCarlBeatenText, 0, .Script
+	trainer SCIENTIST, CARL, EVENT_BEAT_SCIENTIST_CARL, ScientistCarlSeenText, ScientistCarlBeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext ScientistCarlAfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext ScientistCarlAfterBattleText
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphAerodactylChamberAncientReplica:
 	jumptext RuinsOfAlphAerodactylChamberAncientReplicaText
@@ -88,82 +88,93 @@ RuinsOfAlphAerodactylChamberSkyfallTopMovement:
 	step_end
 
 GruntM22SeenText:
-    text "This operation"
-    line "better pay off!"
+	text "This operation"
+	line "better pay off!"
 
-    para "Standing guard in"
-    line "these dusty ruins"
-    cont "is boring!"
-    done
+	para "Standing guard in"
+	line "these dusty ruins"
+	cont "is boring!"
+	done
 
 GruntM22BeatenText:
-    text "Well, that was"
-    line "less boring!"
-    done
+	text "Well, that was"
+	line "less boring!"
+	done
 
 GruntM22AfterBattleText:
-    text "The executives are"
-    line "obsessed with this"
-    cont "place."
+	text "The executives are"
+	line "obsessed with this"
+	cont "place."
 
-    para "Something about"
-    line "ancient power…"
+	para "Something about"
+	line "ancient power…"
 
-    para "I just want my"
-    line "paycheck!"
-    done
+	para "I just want my"
+	line "paycheck!"
+	done
 
 GruntF9SeenText:
-    text "Oh great, another"
-    line "do-gooder!"
+	text "Oh great, another"
+	line "do-gooder!"
 
-    para "Can't you see we're"
-    line "busy here?"
-    done
+	para "Can't you see we're"
+	line "busy here?"
+	done
 
 GruntF9BeatenText:
-    text "Ugh, annoying!"
-    done
+	text "Ugh, annoying!"
+	done
 
 GruntF9AfterBattleText:
-    text "If these mystery"
-    line "#MON are so"
-    cont "powerful…"
+	text "If these mystery"
+	line "#MON are so"
+	cont "powerful…"
 
-    para "Why haven't any"
-    line "of us seen them"
-    cont "yet?"
+	para "Why haven't any"
+	line "of us seen them"
+	cont "yet?"
 
-    para "Starting to think"
-    line "this is all a wild"
-    cont "FARFETCH'D chase!"
-    done
+	para "Starting to think"
+	line "this is all a wild"
+	cont "FARFETCH'D chase!"
+	done
 
 ScientistCarlSeenText:
-    text "Ah! A test subject"
-    line "arrives!"
+	text "Ah! A test subject"
+	line "arrives!"
 
-    para "Your battle style"
-    line "will provide val-"
-    cont "uable data!"
-    done
+	para "The same child who"
+	line "ruined our LAKE OF"
+	cont "RAGE broadcast!"
+
+	para "Your battle style"
+	line "will provide val-"
+	cont "uable data!"
+	done
 
 ScientistCarlBeatenText:
-    text "Hmm! Unexpected"
-    line "variables!"
-    done
+	text "Hmm! Unexpected"
+	line "variables!"
+	done
 
 ScientistCarlAfterBattleText:
-    text "We've documented"
-    line "four chambers, but"
+	text "My research shows"
+	line "four puzzle chambers"
+	cont "total."
 
-    para "no #MON have"
-    line "appeared yet."
+	para "Each reveals differ-"
+	line "ent symbol forms."
 
-    para "Perhaps we need to"
-    line "solve them in a"
-    cont "certain order?"
-    done
+	para "I theorize catching"
+	line "all 26 variants"
+
+	para "creates a psychic"
+	line "resonance cascade."
+
+	para "Whoever achieves"
+	line "this becomes the"
+	cont "ruins' master!"
+	done
 
 RuinsOfAlphAerodactylChamberAncientReplicaText:
 	text "It's a replica of"

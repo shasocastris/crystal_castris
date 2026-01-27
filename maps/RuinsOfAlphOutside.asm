@@ -360,7 +360,7 @@ WernerFight_Text:
 	
 	para "We're conducting"
 	line "critical research"
-	cont "on the UNOWN!"
+	cont "on the ruins!"
 	done
 
 WernerWin_Text:
@@ -389,8 +389,8 @@ EnricoFight_Text:
 	text "An intruder?"
 
 	para "I can't let you"
-	line "disrupt our UNOWN"
-	cont "capture operation!"
+	line "disrupt our latest"
+	cont "operation!"
 	done
 
 EnricoWin_Text:
@@ -525,12 +525,28 @@ RuinsOfAlphOutsideBossFSeenText:
 	para "has been such a"
 	line "massive pain."
 
-	para "You've ruined our"
-	line "operation here."
+	para "You disrupted our"
+	line "SLOWPOKE operation."
 
-	para "Did you think we'd"
-	line "just let you walk"
-	cont "away?"
+	para "You sabotaged our"
+	line "LAKE OF RAGE"
+	cont "broadcast."
+
+	para "You even quelled"
+	line "the WILD HUNT we"
+	cont "tried to use as a"
+	cont "distraction."
+
+	para "And now you think"
+	line "you can stop us"
+	cont "here?"
+
+	para "Not on our watch!"
+
+	para "The hidden power"
+	line "of the RUINS OF"
+	cont "ALPH will serve"
+	cont "TEAM ROCKET!"
 	done
 
 RuinsOfAlphSuicuneRoarText:
@@ -552,9 +568,13 @@ RuinsOfAlphOutsideBossSuicuneRumorsText:
 	line "does watch over"
 	cont "JOHTO."
 
-	para "You're both naive"
-	line "if you think this"
-	para "will stop us!"
+	para "No matter! You're"
+	line "both naive if you"
+
+	para "think this will"
+	line "stop TEAM ROCKET"
+	cont "from dominating"
+	cont "this region!"
 	done
 
 RuinsOfAlphOutsideBossWinText:
@@ -577,39 +597,16 @@ RuinsOfAlphOutsideBossFleeFromSuicuneText:
 	para "SUICUNE won't"
 	line "always be there to"
 	cont "protect you!"
+
+	para "And when we return,"
+	line "we'll have the"
+	cont "power to crush any"
+	cont "resistance!"
 	done
 
 RuinsOfAlphOutsideSuicunePostBattleText:
 	text "SUICUNE roars in"
 	line "triumph."
-	done
-
-RuinsOfAlphOutsideBossAbandonPlanText:
-	text "…This hideout is"
-	line "done for…"
-
-	para "But that's fine."
-	line "The broadcast ex-"
-	cont "periment was a"
-	cont "total success."
-
-	para "It doesn't matter"
-	line "what happens to"
-	cont "this hideout now."
-
-	para "We have much big-"
-	line "ger plans."
-
-	para "You'll come to"
-	line "appreciate TEAM"
-
-	para "ROCKET's true"
-	line "power soon enough."
-
-	para "Enjoy yourself"
-	line "while you can…"
-
-	para "Fufufufu…"
 	done
 
 RuinsOfAlphOutsideSuicuneApproachesPlayer:

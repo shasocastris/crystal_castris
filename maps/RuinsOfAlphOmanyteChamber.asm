@@ -91,8 +91,9 @@ GruntF7SeenText:
 	text "This place gives"
 	line "me the creeps…"
 
-	para "But orders are"
-	line "orders!"
+	para "But after causing"
+	line "that WILD HUNT,"
+	cont "we need a win!"
 	done
 
 GruntF7BeatenText:
@@ -101,12 +102,15 @@ GruntF7BeatenText:
 	done
 
 GruntF7AfterBattleText:
-	text "I heard strange"
-	line "noises in the"
-	cont "chambers."
+	text "The executives say"
+	line "these ruins will"
+	cont "give us power over"
+	cont "all of JOHTO."
 
-	para "Maybe the #MON"
-	line "really are here?"
+	para "After that loss at"
+	line "MAHOGANY TOWN, we"
+	cont "need that kind of"
+	cont "leverage!"
 	done
 
 GruntF8SeenText:
@@ -121,13 +125,15 @@ GruntF8BeatenText:
 	done
 
 GruntF8AfterBattleText:
-	text "I don't get it."
-	line "How do these block"
-	cont "puzzles work?"
+	text "The BOSS is tired"
+	line "of setbacks."
 
-	para "The scientists act"
-	line "like they know,"
-	cont "but I doubt it!"
+	para "He wants total"
+	line "control of JOHTO."
+
+	para "Whatever power is"
+	line "hidden here, we're"
+	cont "taking it!"
 	done
 
 ScientistJayJaySeenText:
@@ -146,15 +152,19 @@ ScientistJayJayBeatenText:
 
 ScientistJayJayAfterBattleText:
 	text "The wall patterns"
-	line "shift as I try to"
-	cont "solve the puzzle."
+	line "correspond to 26"
+	cont "distinct shapes."
 
-	para "If #MON truly"
-	line "dwell here, they"
+	para "Each puzzle chamber"
+	line "seems to focus on"
+	cont "different variants."
 
-	para "are likely attuned"
-	line "to the mechanisms"
-	cont "somehow."
+	para "A trainer who cap-"
+	line "tures all 26 forms"
+
+	para "could theoretically"
+	line "command the entire"
+	cont "ruin structure!"
 	done
 
 RuinsOfAlphOmanyteChamberAncientReplicaText:

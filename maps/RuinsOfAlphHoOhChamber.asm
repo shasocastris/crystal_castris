@@ -48,34 +48,34 @@ RuinsOfAlphHoOhChamberPuzzle:
 	end
 
 TrainerGruntM23:
-    trainer GRUNTM, GRUNTM_23, EVENT_BEAT_ROCKET_GRUNTM_23, GruntM23SeenText, GruntM23BeatenText, 0, .Script
+	trainer GRUNTM, GRUNTM_23, EVENT_BEAT_ROCKET_GRUNTM_23, GruntM23SeenText, GruntM23BeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext GruntM23AfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext GruntM23AfterBattleText
+	waitbutton
+	closetext
+	end
 
 TrainerGruntF10:
-    trainer GRUNTF, GRUNTF_10, EVENT_BEAT_ROCKET_GRUNTF_10, GruntF10SeenText, GruntF10BeatenText, 0, .Script
+	trainer GRUNTF, GRUNTF_10, EVENT_BEAT_ROCKET_GRUNTF_10, GruntF10SeenText, GruntF10BeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext GruntF10AfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext GruntF10AfterBattleText
+	waitbutton
+	closetext
+	end
 
 TrainerScientistKip:
-    trainer SCIENTIST, KIP, EVENT_BEAT_SCIENTIST_KIP, ScientistKipSeenText, ScientistKipBeatenText, 0, .Script
+	trainer SCIENTIST, KIP, EVENT_BEAT_SCIENTIST_KIP, ScientistKipSeenText, ScientistKipBeatenText, 0, .Script
 
 .Script:
-    opentext
-    writetext ScientistKipAfterBattleText
-    waitbutton
-    closetext
-    end
+	opentext
+	writetext ScientistKipAfterBattleText
+	waitbutton
+	closetext
+	end
 
 RuinsOfAlphHoOhChamberAncientReplica:
 	jumptext RuinsOfAlphHoOhChamberAncientReplicaText
@@ -88,87 +88,93 @@ RuinsOfAlphHoOhChamberSkyfallTopMovement:
 	step_end
 
 GruntM23SeenText:
-    text "You got past the"
-    line "others?"
+	text "You got past the"
+	line "others?"
 
-    para "Impressive! But"
-    line "you stop here!"
-    done
+	para "Impressive! But"
+	line "you stop here!"
+	done
 
 GruntM23BeatenText:
-    text "Guess not…"
-    done
+	text "Guess not…"
+	done
 
 GruntM23AfterBattleText:
-    text "The BOSS said if"
-    line "we find these"
-    cont "#MON first…"
+	text "After the WILD HUNT"
+	line "disaster, TEAM"
+	cont "ROCKET needs this."
 
-    para "We'll control"
-    line "something the"
-    cont "LEAGUE can't touch!"
+	para "We're going to rule"
+	line "JOHTO from these"
+	cont "ruins!"
 
-    para "That's gotta be"
-    line "worth something!"
-    done
+	para "The LEAGUE won't"
+	line "even see us coming!"
+	done
 
 GruntF10SeenText:
-    text "Stop right there!"
+	text "Stop right there!"
 
-    para "No one interrupts"
-    line "our work!"
-    done
+	para "No one interrupts"
+	line "our work!"
+	done
 
 GruntF10BeatenText:
-    text "Tch! You're"
-    line "tougher than you"
-    cont "look!"
-    done
+	text "Tch! You're"
+	line "tougher than you"
+	cont "look!"
+	done
 
 GruntF10AfterBattleText:
-    text "The scientists are"
-    line "certain something"
-    cont "lives in here."
+	text "The scientists are"
+	line "certain something"
+	cont "lives in here."
 
-    para "They keep talking"
-    line "about psychic"
-    cont "energy readings…"
+	para "They keep talking"
+	line "about psychic"
+	cont "energy readings…"
 
-    para "Whatever. I'll"
-    line "believe it when I"
-    cont "see it!"
-    done
+	para "Whatever. I'll"
+	line "believe it when I"
+	cont "see it!"
+	done
 
 ScientistKipSeenText:
-    text "Marvelous! You've"
-    line "made it this far!"
+	text "Marvelous! You've"
+	line "made it this far!"
 
-    para "But I can't allow"
-    line "further intrusion!"
-    done
+	para "You thwarted our"
+	line "LAKE broadcast,"
+
+	para "but you won't stop"
+	line "this operation!"
+	done
 
 ScientistKipBeatenText:
-    text "What remarkable"
-    line "tenacity!"
-    done
+	text "What remarkable"
+	line "tenacity!"
+	done
 
 ScientistKipAfterBattleText:
-    text "My readings show"
-    line "psychic energy"
-    cont "permeating the"
-    cont "ruins."
+	text "My instruments"
+	line "detect 26 distinct"
+	cont "psychic signatures."
 
-    para "It intensifies"
-    line "near the puzzle"
-    cont "chambers."
+	para "Each puzzle chamber"
+	line "should reveal a"
+	cont "different subset."
 
-    para "If #MON are"
-    line "generating this"
-    cont "energy…"
+	para "A trainer who cap-"
+	line "tures every form"
 
-    para "They're close."
-    line "Very close indeed!"
-    done
+	para "might be able to"
+	line "access the ruins'"
+	cont "dimensional gifts!"
+
+	para "Think of it! A"
+	line "living alphabet of"
+	cont "psychic power!"
+	done
 
 RuinsOfAlphHoOhChamberAncientReplicaText:
 	text "It's a replica of"
