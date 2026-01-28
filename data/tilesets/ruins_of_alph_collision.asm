@@ -54,10 +54,10 @@
 	tilecoll WALL, WALL, PIT, WALL ; 35
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 36
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 37
-	tilecoll FLOOR, FLOOR, GRASS_4A, FLOOR ; 38
-	tilecoll FLOOR, FLOOR, GRASS_4B, FLOOR ; 39
-	tilecoll FLOOR, FLOOR, CUT_28, FLOOR ; 3a
-	tilecoll FLOOR, FLOOR, WATER, FLOOR ; 3b
+	tilecoll WALL, FLOOR, WALL, WALL ; 38
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 39
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 3a
+	tilecoll FLOOR, WALL, WALL, WALL ; 3b
 	tilecoll 64, FLOOR, WATERFALL_UP, FLOOR ; 3c
 	tilecoll 65, FLOOR, WATERFALL, FLOOR ; 3d
 	tilecoll WATERFALL_UP, FLOOR, WARP_CARPET_DOWN, FLOOR ; 3e

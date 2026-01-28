@@ -44,44 +44,29 @@ RuinsOfAlphInnerChamber_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 10, 13, RUINS_OF_ALPH_OUTSIDE, 5
-	warp_event  3, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 3
-	warp_event  4, 15, RUINS_OF_ALPH_HO_OH_CHAMBER, 4
-	warp_event 15,  3, RUINS_OF_ALPH_KABUTO_CHAMBER, 3
-	warp_event 16,  3, RUINS_OF_ALPH_KABUTO_CHAMBER, 4
-	warp_event  3, 21, RUINS_OF_ALPH_OMANYTE_CHAMBER, 3
-	warp_event  4, 21, RUINS_OF_ALPH_OMANYTE_CHAMBER, 4
-	warp_event 15, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 3
-	warp_event 16, 24, RUINS_OF_ALPH_AERODACTYL_CHAMBER, 4
+	warp_event 14, 17, RUINS_OF_ALPH_OUTSIDE, 5
+	warp_event  2,  9, RUINS_OF_ALPH_HO_OH_WORD_ROOM, 3
+	warp_event 19,  3, RUINS_OF_ALPH_KABUTO_WORD_ROOM, 3
+	warp_event 11, 30, RUINS_OF_ALPH_OMANYTE_WORD_ROOM, 3
+	warp_event 23, 33, RUINS_OF_ALPH_AERODACTYL_WORD_ROOM, 3
 
 	def_coord_events
 
 	def_bg_events
-	bg_event  2,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  5,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  8,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 11,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 14,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 17,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  2,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  5,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  8,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 11,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 14,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 17,  8, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  2, 13, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 17, 13, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  2, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  5, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  8, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 11, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 14, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 17, 18, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  2, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  5, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event  8, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 11, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 14, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
-	bg_event 17, 24, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 20,  3, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 23,  5, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event  5, 11, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 12, 11, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 16, 25, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 13, 21, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 22, 23, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event  7, 17, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 21, 16, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event  2, 21, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event  2, 30, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event  3, 16, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 10, 31, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 22, 31, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
+	bg_event 25, 31, BGEVENT_READ, RuinsOfAlphInnerChamberStatue
 
 	def_object_events

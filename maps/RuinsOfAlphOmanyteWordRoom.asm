@@ -145,7 +145,7 @@ RuinsOfAlphOmanyteWordRoom_MapEvents:
 	def_warp_events
 	warp_event  9,  7, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 3
 	warp_event 10,  7, RUINS_OF_ALPH_OMANYTE_ITEM_ROOM, 4
-	warp_event 17, 13, RUINS_OF_ALPH_INNER_CHAMBER, 6
+	warp_event 17, 13, RUINS_OF_ALPH_INNER_CHAMBER, 4
 
 	def_coord_events
 
