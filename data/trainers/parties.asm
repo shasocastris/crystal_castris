@@ -1886,10 +1886,10 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (14), Route 36
 	db "ARTHUR@", TRAINERTYPE_ITEM
-	db 14
+	db 12
 	dw ONIX
 	dw HARD_STONE
-	db 12
+	db 10
 	dw RHYHORN
 	dw NO_ITEM
 	db -1 ; end
@@ -2459,8 +2459,6 @@ LassGroup:
 	next_list_item ; LASS (13), Route 32
 	db "FRIEDA@", TRAINERTYPE_NORMAL
 	db 14
-	dw ZUBAT
-	db 14
 	dw EKANS
 	db 16
 	dw NIDORINA
@@ -2625,11 +2623,11 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (15), Route 32
 	db "TYLER@", TRAINERTYPE_NORMAL
-	db 12
+	db 10
 	dw STANTLER
-	db 12
+	db 10
 	dw TANGELA
-	db 13
+	db 11
 	dw CORSOLA
 	db -1 ; end
 
