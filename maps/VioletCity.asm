@@ -200,12 +200,11 @@ VioletCityGrampsText:
 	done
 
 VioletCityYoungsterText:
-	text "I saw a wiggly"
-	line "tree up ahead!"
+	text "There's a RANGEr"
+	line "up ahead!"
 
-	para "If you touch it,"
-	line "it squirms and"
-	cont "dances! Cool!"
+	para "What's happening"
+	line "in ECRUTEAK CITY?"
 	done
 
 VioletCitySignText:

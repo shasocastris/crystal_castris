@@ -951,32 +951,32 @@ MintBerryDesc:
 	next "for sleep.@"
 
 AttackUpBerryDesc:
-	db   "Raises Attack in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for ATTACK.@"
 
 DefenseUpBerryDesc:
-	db   "Raises Defense in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for DEFENSE.@"
 
 SpeedUpBerryDesc:
-	db   "Raises Speed in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for SPEED.@"
 
 SpAttackUpBerryDesc:
-	db   "Raises Sp.Atk in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for SP.ATK.@"
 
 SpDefenseUpBerryDesc:
-	db   "Raises Sp.Def in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for SP.DEF.@"
 
 AccuracyUpBerryDesc:
-	db   "Raises Accuracy in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for ACCURACY.@"
 
 EvasionUpBerryDesc:
-	db   "Raises Evasion in"
-	next "a pinch.@"
+	db   "A self-stat boost"
+	next "for EVASION.@"
 
 WhtApricornDesc:
 	db   "A white APRICORN.@"
@@ -988,8 +988,7 @@ BluApricornDesc:
 	db   "A blue APRICORN.@"
 
 BlkApricornDesc:
-	db   "A black APRICORN."
-	next "@"
+	db   "A black APRICORN.@"
 
 YlwApricornDesc:
 	db   "A yellow APRICORN.@"
@@ -998,8 +997,7 @@ GrnApricornDesc:
 	db   "A green APRICORN.@"
 
 PnkApricornDesc:
-	db   "A pink APRICORN."
-	next "@"
+	db   "A pink APRICORN.@"
 
 QuestionMarkDesc:
 	db   "?@"
