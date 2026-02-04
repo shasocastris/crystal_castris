@@ -41,12 +41,13 @@ GoldenrodDeptStore2FElevatorButton:
 
 GoldenrodDeptStore2FYoungsterText:
 	text "#GEAR can store"
-	line "up to ten phone"
+	line "up to thirty phone"
 	cont "numbers."
 
-	para "It's hard to de-"
-	line "cide which numbers"
-	cont "to keep."
+	para "It's nice not to"
+	line "have to decide"
+	cont "which numbers to"
+	cont "keep."
 	done
 
 GoldenrodDeptStore2FCooltrainerFText:

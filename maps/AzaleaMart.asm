@@ -28,9 +28,9 @@ AzaleaMartCooltrainerMText:
 	line "catching #MON"
 	cont "than a # BALL."
 
-	para "I wish KURT would"
-	line "make me some of"
-	cont "his custom BALLS."
+	para "I'm glad I can buy"
+	line "KURT's custom"
+	cont "BALLS here."
 
 	para "They are sometimes"
 	line "even better than"
