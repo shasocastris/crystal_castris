@@ -247,8 +247,8 @@ Text_ReceivedGlacierBadge:
 
 PryceText_GlacierBadgeSpeech:
 	text "That BADGE lets"
-	line "#MON use SURF to"
-	cont "get across open"
+	line "#MON use SURF"
+	cont "to get across open"
 	cont "water."
 
 	para "And this… This is"
@@ -342,8 +342,9 @@ PryceRejectText:
 
 BoarderRonaldSeenText:
 	text "I'll frostbite"
-	line "your #MON, so you"
-	cont "can't do a thing!"
+	line "your #MON, and"
+	cont "any special attack"
+	cont "won't do a thing!"
 	done
 
 BoarderRonaldBeatenText:

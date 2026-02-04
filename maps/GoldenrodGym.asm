@@ -86,7 +86,7 @@ GoldenrodGymWhitneyScript:
 	end
 
 .GotAttract:
-	writetext WhitneyGoodCryText
+	writetext WhitneyStrenghtSurfFlyText
 	waitbutton
 .NoRoomForAttract:
 	closetext
@@ -286,12 +286,17 @@ WhitneyAttractText:
 	cont "like me?"
 	done
 
-WhitneyGoodCryText:
-	text "Ah, that was a"
-	line "good cry!"
+WhitneyStrenghtSurfFlyText:
+	text "Make sure to have"
+	line "a powerful #MON"
+	cont "to learn STRENGTH."
 
-	para "Come for a visit"
-	line "again! Bye-bye!"
+	para "It has to be big"
+	line "enough to actually"
+	cont "move rocks."
+
+	para "The moves SURF and"
+	line "FLY are similar."
 	done
 
 WhitneyRematchText:
