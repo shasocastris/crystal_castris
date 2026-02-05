@@ -1,280 +1,266 @@
 	object_const_def
-	const POKECOMCENTERADMINOFFICEMOBILE_SCIENTIST1
-	const POKECOMCENTERADMINOFFICEMOBILE_SCIENTIST2
-	const POKECOMCENTERADMINOFFICEMOBILE_SCIENTIST3
+	const OKECOMCENTERADMINOFFICEMOBILE_NURSE
+	const OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	const OKECOMCENTERADMINOFFICEMOBILE_GAMEBOY_KID
+	const OKECOMCENTERADMINOFFICEMOBILE_LASS
+	const OKECOMCENTERADMINOFFICEMOBILE_POKEFAN_F
 
 PokecomCenterAdminOfficeMobile_MapScripts:
 	def_scene_scripts
+	scene_const SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL
 
 	def_callbacks
 
-PokecomCenterAdminOfficeMobileScientist1Script:
-	jumptextfaceplayer PokecomCenterAdminOfficeMobileScientist1Text
+PokecomCenterAdminOfficeMobileNurseScript:
+	jumpstd PokecenterNurseScript
 
-PokecomCenterAdminOfficeMobileScientist2Script:
-	jumptextfaceplayer PokecomCenterAdminOfficeMobileScientist2Text
+PokecomCenterAdminOfficeMobile_GSBallSceneLeft:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .gsball
+	end
 
-PokecomCenterAdminOfficeMobileScientist3Script:
-	jumptextfaceplayer PokecomCenterAdminOfficeMobileScientist3Text
-
-PokecomCenterAdminOfficeMobileComputer1:
+.gsball
+	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	iftrue .cancel
+	playsound SFX_EXIT_BUILDING
+	moveobject OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	appear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	playmusic MUSIC_SHOW_ME_AROUND
+	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, PokecomCenterAdminOfficeMobileLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement
+	turnobject PLAYER, UP
 	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer1Text
+	writetext PokecomCenterAdminOfficeMobileLinkReceptionistPleaseAcceptGSBallText
 	waitbutton
-.loop:
-	refreshmap
-	loadmenu .Computer1MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .PokeComClub
-	ifequal 2, .MobileCenter
-	sjump .Quit
+	verbosegiveitem GS_BALL
+	setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	writetext PokecomCenterAdminOfficeMobileLinkReceptionistPleaseDoComeAgainText
+	waitbutton
+	closetext
+	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, PokecomCenterAdminOfficeMobileLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement
+	special RestartMapMusic
+	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	playsound SFX_EXIT_BUILDING
+.cancel
+	end
 
-.PokeComClub:
+PokecomCenterAdminOfficeMobile_GSBallSceneRight:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .gsball
+	end
+
+.gsball
+	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	iftrue .cancel
+	playsound SFX_EXIT_BUILDING
+	moveobject OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	appear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	playmusic MUSIC_SHOW_ME_AROUND
+	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, PokecomCenterAdminOfficeMobileLinkReceptionistApproachPlayerAtRightDoorwayTileMovement
+	turnobject PLAYER, UP
 	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub
+	writetext PokecomCenterAdminOfficeMobileLinkReceptionistPleaseAcceptGSBallText
 	waitbutton
-	sjump .loop
+	verbosegiveitem GS_BALL
+	setevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	writetext PokecomCenterAdminOfficeMobileLinkReceptionistPleaseDoComeAgainText
+	waitbutton
+	closetext
+	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, PokecomCenterAdminOfficeMobileLinkReceptionistWalkToStairsFromRightDoorwayTileMovement
+	special RestartMapMusic
+	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	playsound SFX_EXIT_BUILDING
+.cancel
+	end
 
-.MobileCenter:
+PokecomCenterAdminOfficeMobileGameboyKidScript:
+	jumptextfaceplayer PokecomCenterAdminOfficeMobileGameboyKidText
+
+PokecomCenterAdminOfficeMobileLassScript:
+	jumptextfaceplayer PokecomCenterAdminOfficeMobileLassText
+
+PokecomCenterAdminOfficeMobilePokefanF:
+	faceplayer
 	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter
+	writetext PokecomCenterAdminOfficeMobilePokefanFDoYouHaveEonMailText
 	waitbutton
-	sjump .loop
-
-.Quit:
+	writetext PokecomCenterAdminOfficeMobileAskGiveAwayAnEonMailText
+	yesorno
+	iffalse .NoEonMail
+	takeitem EON_MAIL
+	iffalse .NoEonMail
+	writetext PokecomCenterAdminOfficeMobilePlayerGaveAwayTheEonMailText
+	waitbutton
+	writetext PokecomCenterAdminOfficeMobilePokefanFThisIsForYouText
+	waitbutton
+	verbosegiveitem REVIVE
+	iffalse .NoRoom
+	writetext PokecomCenterAdminOfficeMobilePokefanFDaughterWillBeDelightedText
+	waitbutton
 	closetext
 	end
 
-.Computer1MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 8
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "#　つうしん　クラブ@" ; # COM CLUB
-	db "モバイルセンター@" ; MOBILE CENTER
-	db "やめる@" ; QUIT
-
-PokecomCenterAdminOfficeMobileComputer2:
-	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer2Text
+.NoEonMail:
+	writetext PokecomCenterAdminOfficeMobilePokefanFTooBadText
 	waitbutton
-.loop:
-	refreshmap
-	loadmenu .Computer2MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .UsePhone
-	ifequal 2, .DontUsePhone
-	sjump .Quit
-
-.UsePhone:
-	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer2Text_UsePhone
-	waitbutton
-	sjump .loop
-
-.DontUsePhone:
-	opentext
-	writetext PokecomCenterAdminOfficeMobileComputer2Text_DontUsePhone
-	waitbutton
-	sjump .loop
-
-.Quit:
 	closetext
 	end
 
-.Computer2MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 8
-	dw .MenuData
-	db 1 ; default option
+.NoRoom:
+	giveitem EON_MAIL
+	writetext PokecomCenterAdminOfficeMobilePokefanFAnotherTimeThenText
+	waitbutton
+	closetext
+	end
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "でんわ<WO>つかうとき@" ; Use phone
-	db "でんわ<GA>つながらないとき@" ; Don't use phone
-	db "やめる@" ; QUIT
+PokecomCenterAdminOfficeMobileLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head DOWN
+	step_end
 
-PokecomCenterAdminOfficeMobileComputer3:
-	jumptext PokecomCenterAdminOfficeMobileComputer3Text
+PokecomCenterAdminOfficeMobileLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
 
-PokecomCenterAdminOfficeMobileScientist1Text:
-	text "#COM CENTER and"
-	line "MOBILE CENTER were"
+PokecomCenterAdminOfficeMobileLinkReceptionistApproachPlayerAtRightDoorwayTileMovement:
+	step UP
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head DOWN
+	step_end
 
-	para "built to satisfy"
-	line "demands for trades"
+PokecomCenterAdminOfficeMobileLinkReceptionistWalkToStairsFromRightDoorwayTileMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step DOWN
+	step_end
 
-	para "and battles with"
-	line "trainers far away"
+PokecomCenterAdminOfficeMobileGameboyKidText:
+	text "The COLOSSEUM"
+	line "upstairs is for"
+	cont "link battles."
 
-	para "and with total"
-	line "strangers."
+	para "Battle records are"
+	line "posted on the"
+
+	para "wall, so I can't"
+	line "afford to lose."
 	done
 
-PokecomCenterAdminOfficeMobileScientist2Text:
-	text "When you linked"
-	line "with someone by"
+PokecomCenterAdminOfficeMobileLassText:
+	text "A higher level"
+	line "#MON doesn't"
+	cont "always win."
 
-	para "mobile phone for"
-	line "the first time,"
+	para "After all, it may"
+	line "have a type dis-"
+	cont "advantage."
 
-	para "weren't you"
-	line "impressed?"
+	para "I don't think"
+	line "there is a single"
 
-	para "When my first try"
-	line "worked, I was so"
-
-	para "impressed that I"
-	line "got the shakes!"
+	para "#MON that is"
+	line "the toughest."
 	done
 
-PokecomCenterAdminOfficeMobileScientist3Text:
-	text "They were able to"
-	line "build this huge"
+PokecomCenterAdminOfficeMobileLinkReceptionistPleaseAcceptGSBallText:
+	text "<PLAYER>, isn't it?"
 
-	para "facility thanks to"
-	line "advances in wire-"
-	cont "less technology."
+	para "Congratulations!"
+
+	para "As a special deal,"
+	line "a GS BALL has been"
+	cont "sent just for you!"
+
+	para "Please accept it!"
 	done
 
-PokecomCenterAdminOfficeMobileComputer1Text:
-	text "It's a notice"
-	line "about where MOBILE"
-
-	para "ADAPTERS are to be"
-	line "used…"
+PokecomCenterAdminOfficeMobileLinkReceptionistPleaseDoComeAgainText:
+	text "Please do come"
+	line "again!"
 	done
 
-PokecomCenterAdminOfficeMobileComputer1Text_PokeComClub:
-	text "There's a #COM"
-	line "CLUB upstairs in"
+PokecomCenterAdminOfficeMobilePokefanFDoYouHaveEonMailText:
+	text "Oh my, your pack"
+	line "looks so heavy!"
 
-	para "any #MON"
-	line "CENTER."
+	para "Oh! Do you happen"
+	line "to have something"
+	cont "named EON MAIL?"
 
-	para "There, you can"
-	line "battle or trade"
+	para "My daughter is"
+	line "after one."
 
-	para "with a friend far"
-	line "away by using a"
-	cont "MOBILE ADAPTER."
-
-	para "To link up, your"
-	line "friend must have"
-
-	para "the same kind of"
-	line "MOBILE ADAPTER as"
-	cont "you."
+	para "You can part with"
+	line "one, can't you?"
 	done
 
-PokecomCenterAdminOfficeMobileComputer1Text_MobileCenter:
-	text "To use the TRADE"
-	line "CORNER or read the"
-
-	para "#MON NEWS, you"
-	line "need to phone the"
-	cont "MOBILE CENTER."
-
-	para "You must register"
-	line "at the MOBILE"
-
-	para "CENTER before"
-	line "connecting there."
+PokecomCenterAdminOfficeMobileAskGiveAwayAnEonMailText:
+	text "Give away an EON"
+	line "MAIL?"
 	done
 
-PokecomCenterAdminOfficeMobileComputer2Text:
-	text "It's a notice"
-	line "about using the"
-	cont "phone…"
+PokecomCenterAdminOfficeMobilePokefanFThisIsForYouText:
+	text "Oh, that's great!"
+	line "Thank you, honey!"
+
+	para "Here, this is for"
+	line "you in return!"
 	done
 
-PokecomCenterAdminOfficeMobileComputer2Text_UsePhone:
-	text "Please ensure that"
-	line "your phone and"
-
-	para "MOBILE ADAPTER are"
-	line "properly linked."
-
-	para "Please make sure"
-	line "the wireless phone"
-	cont "signal is strong."
-
-	para "Don't touch or"
-	line "hang up the phone"
-	cont "while linking."
+PokecomCenterAdminOfficeMobilePokefanFDaughterWillBeDelightedText:
+	text "My daughter will"
+	line "be delighted!"
 	done
 
-PokecomCenterAdminOfficeMobileComputer2Text_DontUsePhone:
-	text "If the server is"
-	line "busy, it may not"
-
-	para "be possible to log"
-	line "on."
-
-	para "If so, please call"
-	line "back later."
-
-	para "If you are unable"
-	line "to log on or don't"
-
-	para "understand the"
-	line "error messages,"
-
-	para "call a support"
-	line "center or read the"
-	cont "instructions."
+PokecomCenterAdminOfficeMobilePokefanFTooBadText:
+	text "Oh? You don't have"
+	line "one? Too bad."
 	done
 
-PokecomCenterAdminOfficeMobileComputer3Text:
-	text "The ADMINISTRATION"
-	line "OFFICE received an"
-	cont "e-mail. It says…"
+PokecomCenterAdminOfficeMobilePokefanFAnotherTimeThenText:
+	text "Oh… Well, another"
+	line "time, then."
+	done
 
-	para "<……> <……> <……>"
-
-	para "To the #COM"
-	line "CENTER staff…"
-
-	para "Wireless communi-"
-	line "cation has enabled"
-
-	para "#MON trainers"
-	line "to interact across"
-
-	para "the nation. Let's"
-	line "keep working for"
-
-	para "the day when all"
-	line "the trainers in"
-
-	para "the world can link"
-	line "without barriers!"
-
-	para "<……> <……> <……>"
+PokecomCenterAdminOfficeMobilePlayerGaveAwayTheEonMailText:
+	text "<PLAYER> gave away"
+	line "the EON MAIL."
 	done
 
 PokecomCenterAdminOfficeMobile_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0, 31, GOLDENROD_POKECENTER_1F, 3
-	warp_event  1, 31, GOLDENROD_POKECENTER_1F, 3
+	warp_event  6, 15, GOLDENROD_CITY, 15
+	warp_event  7, 15, GOLDENROD_CITY, 15
+	warp_event  0,  6, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 6
+	warp_event  0, 15, POKECENTER_2F, 1
+	warp_event  0, 31, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 3
+	warp_event  1, 31, POKECOM_CENTER_ADMIN_OFFICE_MOBILE, 3
 
 	def_coord_events
+	coord_event  6, 15, SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL, PokecomCenterAdminOfficeMobile_GSBallSceneLeft
+	coord_event  7, 15, SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL, PokecomCenterAdminOfficeMobile_GSBallSceneRight
 
 	def_bg_events
-	bg_event  6, 26, BGEVENT_UP, PokecomCenterAdminOfficeMobileComputer1
-	bg_event  6, 28, BGEVENT_UP, PokecomCenterAdminOfficeMobileComputer2
-	bg_event  3, 26, BGEVENT_UP, PokecomCenterAdminOfficeMobileComputer3
 
 	def_object_events
-	object_event  4, 28, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileScientist1Script, -1
-	object_event  7, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileScientist2Script, -1
-	object_event  7, 29, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileScientist3Script, -1
+	object_event  7,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileNurseScript, -1
+	object_event 16,  8, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 10, 12, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileGameboyKidScript, -1
+	object_event  3, 12, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobileLassScript, -1
+	object_event 11, 14, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokecomCenterAdminOfficeMobilePokefanF, -1
