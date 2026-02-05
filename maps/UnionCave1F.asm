@@ -162,11 +162,11 @@ FirebreatherBillBeatenText:
 	done
 
 FirebreatherBillAfterBattleText:
-	text "On weekends, you"
-	line "can hear strange"
+	text "When it's raining,"
+	line "fire-type moves"
 
-	para "roars from deep in"
-	line "the cave."
+	para "become much weaker"
+	line "than usual."
 	done
 
 FirebreatherRaySeenText:

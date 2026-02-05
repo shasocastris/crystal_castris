@@ -433,9 +433,11 @@ SuperNerdEricBeatenText:
 	done
 
 SuperNerdEricAfterBattleText:
-	text "I guess I have to"
-	line "do things fair and"
-	cont "square…"
+	text "Your #MON will"
+	line "like you more if"
+
+	para "you give them"
+	line "haircuts."
 	done
 
 SuperNerdTeruSeenText:
@@ -475,11 +477,11 @@ PokemaniacIssacBeatenText:
 	done
 
 PokemaniacIssacAfterBattleText:
-	text "Your #MON will"
-	line "like you more if"
+	text "If the opponent"
+	line "uses MINIMIZE,"
 
-	para "you give them"
-	line "haircuts."
+	para "your STOMP becomes"
+	line "more powerful."
 	done
 
 PokemaniacDonaldSeenText:

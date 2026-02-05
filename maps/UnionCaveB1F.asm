@@ -86,12 +86,11 @@ HikerPhillipBeatenText:
 	done
 
 HikerPhillipAfterBattleText:
-	text "I've been lost for"
-	line "a long time…"
+	text "If your opponent"
+	line "uses DIG, your"
 
-	para "I don't mind it"
-	line "here, but I am"
-	cont "soooo hungry!"
+	para "EARTHQUAKE becomes"
+	line "more powerful."
 	done
 
 HikerLeonardSeenText:

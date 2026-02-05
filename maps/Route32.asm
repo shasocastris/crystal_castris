@@ -752,11 +752,11 @@ BirdKeeperPeterBeatenText:
 	done
 
 BirdKeeperPeterAfterText:
-	text "If you use DEFENSE"
-	line "CURL, ROLLOUT's"
+	text "If your opponent"
+	line "is FLYing, your"
 
-	para "power goes way up"
-	line "past normal."
+	para "GUST becomes much"
+	line "more powerful."
 	done
 
 Text_RoarIntro:

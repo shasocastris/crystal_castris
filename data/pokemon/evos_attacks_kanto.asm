@@ -2311,7 +2311,7 @@ JynxEvosAttacks:
 	dbw 9, LOVELY_KISS
 	dbw 13, POWDER_SNOW
 	dbw 17, MEDITATE
-	dbw 21, DOUBLESLAP
+	dbw 21, HAIL
 	dbw 25, ICE_PUNCH
 	dbw 30, PSYBEAM
 	dbw 35, MEAN_LOOK

@@ -425,11 +425,9 @@ YoungsterIanBeatenText:
 	done
 
 YoungsterIanAfterText:
-	text "If the opponent"
-	line "uses MINIMIZE,"
-
-	para "your STOMP becomes"
-	line "more powerful."
+	text "I'm trying hard so"
+	line "I can be the star"
+	cont "in my class."
 	done
 
 CamperTodd1SeenText:

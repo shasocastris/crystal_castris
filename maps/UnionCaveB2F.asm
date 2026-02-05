@@ -232,8 +232,9 @@ SwimmerfLisaSeenText:
 	cont "CERULEAN swim"
 	cont "tournament!"
 
-	para "Let's battle to"
-	line "practice!"
+	para "Part of the course"
+	line "is in freezing"
+	cont "water."
 	done
 
 SwimmerfLisaBeatenText:
@@ -243,15 +244,9 @@ SwimmerfLisaBeatenText:
 	done
 
 SwimmerfLisaAfterBattleText:
-	text "Swimming makes you"
-	line "and your #MON"
-	cont "faster."
-
-	para "MISTY is my idol!"
-	line "I train like her."
-
-	para "One day I'll be a"
-	line "Gym Leader too!"
+	text "The ice type"
+	line "can't be hurt by"
+	cont "HAIL."
 	done
 
 UnionCaveB2F_MapEvents:

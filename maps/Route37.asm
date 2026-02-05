@@ -102,11 +102,11 @@ TwinsAnnandanne1BeatenText:
 	done
 
 TwinsAnnandanne1AfterBattleText:
-	text "ANN: I can tell"
-	line "what my sister and"
+	text "If you use DEFENSE"
+	line "CURL, ROLLOUT's"
 
-	para "my #MON are"
-	line "thinking."
+	para "power goes way up"
+	line "past normal."
 	done
 
 TwinsAnnandanne2SeenText:
@@ -121,9 +121,11 @@ TwinsAnnandanne2BeatenText:
 	done
 
 TwinsAnnandanne2AfterBattleText:
-	text "ANNE: We share the"
-	line "same feelings as"
-	cont "our #MON."
+	text "If you use DEFENSE"
+	line "CURL, ROLLOUT's"
+
+	para "power goes way up"
+	line "past normal."
 	done
 
 PsychicGregSeenText:

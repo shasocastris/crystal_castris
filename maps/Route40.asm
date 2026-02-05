@@ -142,9 +142,11 @@ SwimmermRandallBeatenText:
 	done
 
 SwimmermRandallAfterBattleText:
-	text "Swimming exercises"
-	line "your entire body."
-	cont "It's healthy."
+	text "If your opponent"
+	line "is FLYing, your"
+
+	para "TWISTER becomes"
+	line "more powerful."
 	done
 
 SwimmerfElaineSeenText:
@@ -160,9 +162,9 @@ SwimmerfElaineBeatenText:
 	done
 
 SwimmerfElaineAfterBattleText:
-	text "When it's raining,"
-	line "THUNDER is sure to"
-	cont "strike."
+	text "I'd say I'm a bet-"
+	line "ter swimmer than"
+	cont "you. Yeah!"
 	done
 
 SwimmerfPaulaSeenText:

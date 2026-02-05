@@ -302,14 +302,9 @@ CooltrainerfJoyceBeatenText:
 	done
 
 CooltrainerfJoyceAfterBattleText:
-	text "I've defeated"
-	line "eight GYM LEADERS,"
-
-	para "so I was feeling"
-	line "confident."
-
-	para "I'll have to try"
-	line "harder next time."
+	text "When it's raining,"
+	line "THUNDER is sure to"
+	cont "strike."
 	done
 
 CooltrainerfBeth1SeenText:

@@ -369,11 +369,9 @@ PsychicPhilBeatenText:
 	done
 
 PsychicPhilAfterBattleText:
-	text "If the sunlight is"
-	line "harsh, SOLARBEAM"
-
-	para "doesn't need to be"
-	line "charged up."
+	text "It's important to"
+	line "have conviction"
+	cont "on your side."
 	done
 
 PokemaniacZachSeenText:
@@ -444,13 +442,11 @@ CooltrainerfCybilBeatenText:
 	done
 
 CooltrainerfCybilAfterBattleText:
-	text "We all get better"
-	line "by experiencing"
-	cont "many battles."
+	para "If the sunlight is"
+	line "harsh, SOLARBEAM"
 
-	para "I battled a lot to"
-	line "become what I am"
-	cont "today--an elite."
+	para "doesn't need to be"
+	line "charged up."
 	done
 
 Route44Sign1Text:
