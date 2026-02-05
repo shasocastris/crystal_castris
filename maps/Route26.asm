@@ -234,6 +234,9 @@ Route26FruitTree:
 Route26MaxElixer:
 	itemball MAX_ELIXER
 
+Route26HiddenFullRestore:
+	hiddenitem FULL_RESTORE, EVENT_ROUTE_26_HIDDEN_FULL_RESTORE
+
 CooltrainermJakeSeenText:
 	text "I'm making my"
 	line "final preparations"
@@ -450,6 +453,7 @@ Route26_MapEvents:
 
 	def_bg_events
 	bg_event  8,  6, BGEVENT_READ, Route26Sign
+	bg_event 13, 34, BGEVENT_ITEM, Route26HiddenFullRestore
 
 	def_object_events
 	object_event 14, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermJake, -1
