@@ -418,7 +418,6 @@ INCLUDE "maps/Route39.asm"
 INCLUDE "maps/Route40.asm"
 INCLUDE "maps/Route41.asm"
 INCLUDE "maps/Route12.asm"
-INCLUDE "maps/CherrygroveCafe.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -489,5 +488,6 @@ INCLUDE "maps/Route8SaffronGate.asm"
 INCLUDE "maps/UnionCave1F.asm"
 INCLUDE "maps/UnionCaveB1F.asm"
 INCLUDE "maps/UnionCaveB2F.asm"
+INCLUDE "maps/CherrygroveCafe.asm"
 
 ENDSECTION

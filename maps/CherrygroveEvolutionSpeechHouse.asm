@@ -1,4 +1,4 @@
-    	object_const_def
+   	object_const_def
 	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_LASS
 	const CHERRYGROVEEVOLUTIONSPEECHHOUSE_YOUNGSTER
 
