@@ -47,8 +47,7 @@ EcruteakMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, ECRUTEAK_CITY, 9
-	warp_event  3,  7, ECRUTEAK_CITY, 9
+	warp_event  0, 7, ECRUTEAK_POKECENTER_1F, 3
 
 	def_coord_events
 

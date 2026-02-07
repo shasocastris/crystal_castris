@@ -248,7 +248,7 @@ EcruteakCity_MapEvents:
 	warp_event 23, 27, ECRUTEAK_POKECENTER_1F, 1
 	warp_event  5, 21, ECRUTEAK_LUGIA_SPEECH_HOUSE, 1
 	warp_event 23, 21, DANCE_THEATER, 1
-	warp_event 29, 21, ECRUTEAK_MART, 2
+	warp_event 29, 21, ECRUTEAK_GAME_HOUSE, 2
 	warp_event  6, 27, ECRUTEAK_GYM, 1
 	warp_event 13, 27, ECRUTEAK_ITEMFINDER_HOUSE, 1
 	warp_event 37,  7, TIN_TOWER_1F, 1
@@ -265,7 +265,7 @@ EcruteakCity_MapEvents:
 	bg_event 21, 21, BGEVENT_READ, EcruteakDanceTheaterSign
 	bg_event  2, 10, BGEVENT_READ, BurnedTowerSign
 	bg_event 24, 27, BGEVENT_READ, EcruteakCityPokecenterSign
-	bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign
+;	bg_event 30, 21, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 23, 14, BGEVENT_ITEM, EcruteakCityHiddenHyperPotion
 
 	def_object_events

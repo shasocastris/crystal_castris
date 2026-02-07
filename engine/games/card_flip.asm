@@ -1,9 +1,6 @@
 DEF CARDFLIP_LIGHT_OFF EQU '♂' ; $ef
 DEF CARDFLIP_LIGHT_ON  EQU '♀' ; $f5
 
-MemoryGameGFX:
-	ret ; no-optimize Stub function (This was originally a graphic, may be restored)
-
 _CardFlip:
 	ld hl, wOptions
 	set NO_TEXT_SCROLL, [hl]

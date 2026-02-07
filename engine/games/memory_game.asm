@@ -70,10 +70,60 @@ _MemoryGame:
 	dw .AskPlayAgain
 
 .RestartGame:
+	ld hl, .CardFlipPlayWithThreeCoinsText
+	call PrintText
+	call CardFlip_PrintCoinBalance
+	call YesNoBox
+	jr c, .NotPlaying
+	call .DeductCoins
+	jr c, .NotPlaying
 	call MemoryGame_InitStrings
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
+
+.NotPlaying:
+	ld hl, wJumptableIndex
+	set JUMPTABLE_EXIT_F, [hl]
+	ret
+
+.CardFlipPlayWithThreeCoinsText:
+	text_far _CardFlipPlayWithThreeCoinsText
+	text_end
+
+.DeductCoins:
+	ld a, [wCoins]
+	ld h, a
+	ld a, [wCoins + 1]
+	ld l, a
+	ld a, h
+	and a
+	jr nz, .deduct ; You have at least 256 coins.
+	ld a, l
+	cp 3
+	jr nc, .deduct ; You have at least 3 coins.
+	ld hl, .CardFlipNotEnoughCoinsText
+	call PrintText
+	scf
+	ret
+
+.deduct
+	ld de, -3
+	add hl, de
+	ld a, h
+	ld [wCoins], a
+	ld a, l
+	ld [wCoins + 1], a
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call CardFlip_PrintCoinBalance
+	call WaitSFX
+	xor a
+	ret
+
+.CardFlipNotEnoughCoinsText:
+	text_far _CardFlipNotEnoughCoinsText
+	text_end
 
 .ResetBoard:
 	jr nc, .proceed
@@ -115,10 +165,6 @@ endr
 	ret
 
 .CheckTriesRemaining:
-	ld a, [wMemoryGameNumberTriesRemaining]
-	hlcoord 17, 0
-	add '0'
-	ld [hl], a
 	ld hl, wMemoryGameNumberTriesRemaining
 	ld a, [hl]
 	and a
@@ -128,6 +174,11 @@ endr
 	ret
 
 .next_try
+	push hl
+	ld hl, CardFlipChooseACardText
+	call PrintText
+	call MemoryGame_PrintTries
+	pop hl
 	dec [hl]
 	xor a
 	ld [wMemoryGameCardChoice], a
@@ -226,16 +277,7 @@ endr
 
 .finish_round
 	call WaitPressAorB_BlinkCursor
-	ld hl, wJumptableIndex
-	inc [hl]
 .AskPlayAgain:
-
-	jr nc, .restart
-	ld hl, wJumptableIndex
-	set JUMPTABLE_EXIT_F, [hl]
-	ret
-
-.restart
 	xor a
 	ld [wJumptableIndex], a
 	ret
@@ -245,6 +287,11 @@ MemoryGame_CheckMatch:
 	ld a, [hli]
 	cp [hl]
 	jr nz, .no_match
+
+	ld hl, .VictoryText
+	call PrintText
+	call MemoryGame_PrintTries
+	call WaitPressAorB_BlinkCursor
 
 	ld a, [wMemoryGameCard1Location]
 	call MemoryGame_Card2Coord
@@ -282,11 +329,10 @@ MemoryGame_CheckMatch:
 	inc [hl]
 	inc [hl]
 	ld d, 0
-	hlcoord 5, 0
+	hlcoord 0, 0
 	add hl, de
 	call MemoryGame_PlaceCard
-	ld hl, .VictoryText
-	jmp PrintText
+	ret
 
 .no_match
 	xor a
@@ -301,7 +347,10 @@ MemoryGame_CheckMatch:
 	call MemoryGame_PlaceCard
 
 	ld hl, MemoryGameDarnText
-	jmp PrintText
+	call PrintText
+	call MemoryGame_PrintTries
+	call WaitPressAorB_BlinkCursor
+	ret
 
 .VictoryText:
 	text_asm
@@ -387,7 +436,7 @@ MemoryGame_SampleTilePlacement:
 	and a
 	jr nz, .loop
 	ld [hl], c
-	dec b
+	dec c
 	jr nz, .loop
 	pop hl
 	inc hl
@@ -443,21 +492,27 @@ MemoryGame_InitStrings:
 	ld bc, SCREEN_AREA
 	ld a, $1
 	rst ByteFill
-	hlcoord 0, 0
-	ld de, .japstr1
-	rst PlaceString
-	hlcoord 15, 0
-	ld de, .japstr2
-	rst PlaceString
-	ld hl, .dummy_text
-	jmp PrintText
+	ret
 
-.dummy_text
-	db "@"
-.japstr1
-	db "とったもの@"
-.japstr2
-	db "あと　かい@"
+CardFlipChooseACardText:
+	text_far _CardFlipChooseACardText
+	text_end
+
+MemoryGame_PrintTries:
+	hlcoord 9, 15
+	lb bc, 1, 9
+	call Textbox
+	hlcoord 10, 16
+	ld de, .tries_text
+	call PlaceString
+	hlcoord 17, 16
+	ld de, wMemoryGameNumberTriesRemaining
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
+	ret
+
+.tries_text:
+	db "TRIES@"
 
 MemoryGame_Card2Coord:
 	ld d, 0
@@ -580,3 +635,6 @@ MemoryGame_InterpretJoypad_AnimateCursor:
 
 MemoryGameLZ:
 INCBIN "gfx/memory_game/memory_game.2bpp.lz"
+
+MemoryGameGFX:
+INCBIN "gfx/battle_anims/pointer.2bpp"

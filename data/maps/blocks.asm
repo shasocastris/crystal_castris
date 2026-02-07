@@ -261,7 +261,6 @@ Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
 OlivineMart_Blocks:
-EcruteakMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
 VermilionMart_Blocks:
@@ -275,6 +274,7 @@ SaffronMart_Blocks:
 VioletMart_Blocks:
 CherrygroveMart_Blocks:
 AzaleaMart_Blocks:
+EcruteakMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:
@@ -920,5 +920,8 @@ VioletCemetery_Blocks:
 
 AzaleaLumberYard_Blocks:
 	INCBIN "maps/AzaleaLumberYard.ablk"
+
+EcruteakGameHouse_Blocks:
+	INCBIN "maps/EcruteakGameHouse.ablk"
 
 ENDSECTION
