@@ -261,7 +261,7 @@ VioletCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 17, VIOLET_MART, 2
+	warp_event 11, 11, VIOLET_CEMETERY, 1
 	warp_event 18, 17, VIOLET_GYM, 1
 	warp_event 30, 17, EARLS_POKEMON_ACADEMY, 1
 	warp_event  3, 15, VIOLET_NICKNAME_SPEECH_HOUSE, 1
@@ -280,7 +280,6 @@ VioletCity_MapEvents:
 	bg_event 24,  8, BGEVENT_READ, SproutTowerSign
 	bg_event 27, 17, BGEVENT_READ, EarlsPokemonAcademySign
 	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
 	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	def_object_events

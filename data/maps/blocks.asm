@@ -263,7 +263,6 @@ EcruteakMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
 AzaleaMart_Blocks:
-VioletMart_Blocks:
 VermilionMart_Blocks:
 PewterMart_Blocks:
 FuchsiaMart_Blocks:
@@ -272,6 +271,7 @@ ViridianMart_Blocks:
 SaffronMart_Blocks:
 	INCBIN "maps/Mart.ablk"
 
+VioletMart_Blocks:
 CherrygroveMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
@@ -910,5 +910,8 @@ BlackthornPass_Blocks:
 
 CherrygroveCafe_Blocks:
 	INCBIN "maps/CherrygroveCafe.ablk"
+
+VioletCemetery_Blocks:
+	INCBIN "maps/VioletCemetery.ablk"
 
 ENDSECTION
