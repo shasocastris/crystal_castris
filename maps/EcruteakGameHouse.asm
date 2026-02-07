@@ -8,7 +8,7 @@ EcruteakGameHouse_MapScripts:
 
 EcruteakEcruteakGameHouseGrampsScript:
 	reanchormap
-	special UnusedMemoryGame
+	special MemoryGame
 	closetext
 	end
 

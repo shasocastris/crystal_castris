@@ -141,7 +141,7 @@ CardFlip:
 	ld hl, _CardFlip
 	jr StartGameCornerGame
 
-UnusedMemoryGame:
+MemoryGame:
 	call CheckCoinsAndCoinCase
 	ret c
 	ld a, BANK(_MemoryGame)
