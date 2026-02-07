@@ -289,7 +289,6 @@ CeruleanPokecenter1F_Blocks:
 Route10Pokecenter1F_Blocks:
 AzaleaPokecenter1F_Blocks:
 VioletPokecenter1F_Blocks:
-Route32Pokecenter1F_Blocks:
 VermilionPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:
@@ -301,6 +300,9 @@ ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
+
+Route32Pokecenter1F_Blocks:
+	INCBIN "maps/Route32Pokecenter1F.ablk"
 
 EarlsPokemonAcademy_Blocks:
 	INCBIN "maps/EarlsPokemonAcademy.ablk"

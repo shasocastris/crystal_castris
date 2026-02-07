@@ -43,6 +43,9 @@ Route32Pokecenter1FFishingGuruScript:
 Route32Pokecenter1FCooltrainerFScript:
 	jumptextfaceplayer Route32Pokecenter1FCooltrainerFText
 
+Route32Pokecenter1FYoungsterScript:
+	jumptextfaceplayer Route32Pokecenter1FYoungsterText
+
 Route32Pokecenter1FFishingGuruText_Question:
 	text "This is a great"
 	line "fishing spot."
@@ -92,13 +95,22 @@ Route32Pokecenter1FCooltrainerFText:
 	cont "power…"
 	done
 
+Route32Pokecenter1FYoungsterText:
+	text "I thought every"
+	line "#MON CENTER had"
+	cont "a MART upstairs."
+
+	para "I guess that is"
+	line "only in the towns"
+	cont "and cities…"
+	done
+
 Route32Pokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  3,  7, ROUTE_32, 1
 	warp_event  4,  7, ROUTE_32, 1
-	warp_event  0,  7, POKECENTER_2F, 1
 
 	def_coord_events
 
@@ -108,3 +120,4 @@ Route32Pokecenter1F_MapEvents:
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FNurseScript, -1
 	object_event  1,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FFishingGuruScript, -1
 	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FCooltrainerFScript, -1
+	object_event  5,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32Pokecenter1FYoungsterScript, -1
