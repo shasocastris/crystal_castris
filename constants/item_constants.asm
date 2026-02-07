@@ -171,6 +171,10 @@
 	const TROPIC_PLANT ; 0088
 	const JUMBO_PLANT  ; 0089
 
+	const PINKBED      ; 008A
+	const POLKADOTBED  ; 008B
+	const PIKACHUBED   ; 008C
+
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

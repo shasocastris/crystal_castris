@@ -195,6 +195,10 @@ ItemEffects1:
 	dw MagnaPlantEffect    ; MAGNA_PLANT
 	dw TropicPlantEffect   ; TROPIC_PLANT
 	dw JumboPlantEffect    ; JUMBO_PLANT
+
+	dw PinkBedEffect       ; PINK_BED
+	dw PolkadotBedEffect   ; POLKADOT_BED
+	dw PikachuBedEffect    ; PIKACHU_BED
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -2681,6 +2685,28 @@ OpenPlant:
 
 .SentPlantHomeText:
 	text_far _SentPlantHomeText
+	text_end
+
+PinkBedEffect:
+	ld c, DECOFLAG_PINK_BED
+	jr OpenBed
+
+PolkadotBedEffect:
+	ld c, DECOFLAG_POLKADOT_BED
+	jr OpenBed
+
+PikachuBedEffect:
+	ld c, DECOFLAG_PIKACHU_BED
+OpenBed:
+	farcall SetSpecificDecorationFlag
+
+	ld hl, .SentBedHomeText
+	call PrintText
+
+	jr UseDisposableItem
+
+.SentBedHomeText:
+	text_far _SentBedHomeText
 	text_end
 
 NormalBoxEffect:

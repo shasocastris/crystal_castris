@@ -926,6 +926,18 @@ _SentPlantHomeText::
 	line "decoration home."
 	prompt
 
+_SentBedHomeText::
+	text "There was a bed"
+	line "inside!@"
+	sound_dex_fanfare_50_79
+	text_start
+
+	para "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "decoration home."
+	prompt
+
 _ItemLooksBitterText::
 	text "It looks bitter…"
 	prompt

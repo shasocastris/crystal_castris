@@ -38,6 +38,7 @@ Marts:
 	dw MartGlitterAndGrace
 	dw MartCherrygroveCafe
 	dw MartFlowerShop
+	dw MartLumberYard
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -396,6 +397,12 @@ MartFlowerShop:
 	dw MAGNA_PLANT
 	dw TROPIC_PLANT
 	dw JUMBO_PLANT
+
+MartLumberYard:
+	db 3 ; # items
+	dw PINKBED
+	dw POLKADOTBED
+	dw PIKACHUBED
 
 DefaultMart:
 	db 2 ; # items

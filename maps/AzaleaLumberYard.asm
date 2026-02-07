@@ -1,6 +1,7 @@
 	object_const_def
 	const AZALEALUMBERYARD_FISHER
 	const AZALEALUMBERYARD_POKEFAN_M
+	const AZALEALUMBERYARD_SAGE
 
 AzaleaLumberYard_MapScripts:
 	def_scene_scripts
@@ -18,6 +19,12 @@ AzaleaLumberYardFisherScript:
 
 AzaleaLumberYardPokefanScript:
 	jumptextfaceplayer AzaleaLumberYardPokefanText
+
+AzaleaLumberYardSageScript:
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_LUMBER_YARD
+	closetext
+	end
 
 AzaleaLumberYardFisherText:
 	text "The LUMBER YARD"
@@ -52,3 +59,4 @@ AzaleaLumberYard_MapEvents:
 	def_object_events
 	object_event  8,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AzaleaLumberYardFisherScript, -1
 	object_event  4,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AzaleaLumberYardPokefanScript, -1
+	object_event  2,  3, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaLumberYardSageScript, -1

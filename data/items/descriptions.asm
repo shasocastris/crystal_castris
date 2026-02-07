@@ -175,6 +175,10 @@ ItemDescriptions1:
 	dw MagnaPlantDesc   ; 0087
 	dw TropicPlantDesc  ; 0088
 	dw JumboPlantDesc   ; 0089
+
+	dw PinkBedDesc      ; 008A
+	dw PolkadotBedDesc  ; 008B
+	dw PikachuBedDesc   ; 008C
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -769,6 +773,12 @@ MagnaPlantDesc:
 TropicPlantDesc:
 JumboPlantDesc:
 	db   "A new plant for"
+	next "your room!@"
+
+PinkBedDesc:
+PolkadotBedDesc:
+PikachuBedDesc:
+	db   "A new bed for"
 	next "your room!@"
 
 BicycleDesc:
