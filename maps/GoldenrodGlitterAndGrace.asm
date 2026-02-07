@@ -28,7 +28,7 @@ GoldenrodGlitterAndGraceClerkScript:
 	opentext
 	writetext GoldenrodGlitterAndGraceClerkText
 	waitbutton
-	pokemart MARTTYPE_STANDARD, GLITTER_AND_GRACE
+	pokemart MARTTYPE_STANDARD, MART_GLITTER_AND_GRACE
 	closetext
 	end
 

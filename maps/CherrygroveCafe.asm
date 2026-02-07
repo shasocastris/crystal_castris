@@ -13,7 +13,7 @@ CherrygroveCafe_MapScripts:
 CherrygroveCafeBeautyScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, CHERRYGROVE_CAFE
+	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_CAFE
 	closetext
 	end
 

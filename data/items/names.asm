@@ -164,9 +164,9 @@ ItemNames::
 	li "TROPIC PLANT" ; 0088
 	li "JUMBO PLANT"  ; 0089
 
-	li "PINK BED"     ; 0087
-	li "POLKADOT BED" ; 0088
-	li "PIKACHU BED"  ; 0089
+	li "PINK BED"     ; 008A
+	li "POLKADOT BED" ; 008B
+	li "PIKACHU BED"  ; 008C
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

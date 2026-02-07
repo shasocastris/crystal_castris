@@ -10,7 +10,7 @@ GoldenrodFlowerShop_MapScripts:
 FlowerShopTeacherScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_FLOWER, FLOWER_SHOP
+	pokemart MARTTYPE_FLOWER, MART_FLOWER_SHOP
 	closetext
 	end
 
