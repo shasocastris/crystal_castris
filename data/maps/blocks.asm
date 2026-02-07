@@ -916,4 +916,7 @@ CherrygroveCafe_Blocks:
 VioletCemetery_Blocks:
 	INCBIN "maps/VioletCemetery.ablk"
 
+AzaleaLumberYard_Blocks:
+	INCBIN "maps/AzaleaLumberYard.ablk"
+
 ENDSECTION

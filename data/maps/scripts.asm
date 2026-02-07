@@ -489,5 +489,6 @@ INCLUDE "maps/UnionCave1F.asm"
 INCLUDE "maps/UnionCaveB1F.asm"
 INCLUDE "maps/UnionCaveB2F.asm"
 INCLUDE "maps/CherrygroveCafe.asm"
+INCLUDE "maps/AzaleaLumberYard.asm"
 
 ENDSECTION

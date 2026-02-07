@@ -17,6 +17,7 @@ Route38EcruteakGate_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
 Route38EcruteakGateRanger1Script:
 	faceplayer
 	opentext

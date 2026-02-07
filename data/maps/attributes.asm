@@ -699,3 +699,4 @@ ENDM
 	map_attributes SilverCaveUnderbelly, SILVER_CAVE_UNDERBELLY, $09, 0
 	map_attributes CeruleanCave, CERULEAN_CAVE, $09, 0
 	map_attributes CherrygroveCafe, CHERRYGROVE_CAFE, $00, 0
+	map_attributes AzaleaLumberYard, AZALEA_LUMBER_YARD, $00, 0

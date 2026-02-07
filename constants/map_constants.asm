@@ -223,10 +223,11 @@ ENDM
 	map_const AZALEA_GYM,                                   5,  8 ;  5
 	map_const ROUTE_33,                                    10,  9 ;  6
 	map_const AZALEA_TOWN,                                 20,  9 ;  7
+	map_const AZALEA_LUMBER_YARD,                           6,  5 ;  8
 	endgroup
 
 	newgroup LAKE_OF_RAGE                                         ;  9
-	map_const LAKE_OF_RAGE_MOVE_REMINDER_HOUSE,              4,  4 ;  1
+	map_const LAKE_OF_RAGE_MOVE_REMINDER_HOUSE,             4,  4 ;  1
 	map_const LAKE_OF_RAGE_MAGIKARP_HOUSE,                  4,  4 ;  2
 	map_const ROUTE_43_MAHOGANY_GATE,                       5,  4 ;  3
 	map_const ROUTE_43_GATE,                                5,  4 ;  4
