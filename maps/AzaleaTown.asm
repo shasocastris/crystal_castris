@@ -476,7 +476,6 @@ AzaleaTown_MapEvents:
 	bg_event 29,  7, BGEVENT_READ, SlowpokeWellSign
 	bg_event 19, 13, BGEVENT_READ, CharcoalKilnSign
 	bg_event 16,  9, BGEVENT_READ, AzaleaTownPokecenterSign
-	bg_event 22,  5, BGEVENT_READ, AzaleaTownMartSign
 	bg_event  3,  9, BGEVENT_READ, AzaleaTownIlextForestSign
 	bg_event 31,  6, BGEVENT_ITEM, AzaleaTownHiddenFullHeal
 

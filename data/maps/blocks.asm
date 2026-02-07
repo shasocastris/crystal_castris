@@ -125,7 +125,6 @@ CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
-CharcoalKiln_Blocks:
 LakeOfRageMoveReminderHouse_Blocks:
 LakeOfRageMagikarpHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
@@ -162,6 +161,9 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 	INCBIN "maps/House1.ablk"
+
+CharcoalKiln_Blocks:
+	INCBIN "maps/CharcoalKiln.ablk"
 
 PokeSeersHouse_Blocks:
 	INCBIN "maps/PokeSeersHouse.ablk"
@@ -262,7 +264,6 @@ OlivineMart_Blocks:
 EcruteakMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
-AzaleaMart_Blocks:
 VermilionMart_Blocks:
 PewterMart_Blocks:
 FuchsiaMart_Blocks:
@@ -273,6 +274,7 @@ SaffronMart_Blocks:
 
 VioletMart_Blocks:
 CherrygroveMart_Blocks:
+AzaleaMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:

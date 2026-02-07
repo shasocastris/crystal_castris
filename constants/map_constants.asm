@@ -217,7 +217,7 @@ ENDM
 
 	newgroup AZALEA                                               ;  8
 	map_const AZALEA_POKECENTER_1F,                         5,  4 ;  1
-	map_const CHARCOAL_KILN,                                4,  4 ;  2
+	map_const CHARCOAL_KILN,                                5,  4 ;  2
 	map_const AZALEA_MART,                                  6,  4 ;  3
 	map_const KURTS_HOUSE,                                  8,  4 ;  4
 	map_const AZALEA_GYM,                                   5,  8 ;  5
