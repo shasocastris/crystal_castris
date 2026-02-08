@@ -491,5 +491,6 @@ INCLUDE "maps/UnionCaveB2F.asm"
 INCLUDE "maps/CherrygroveCafe.asm"
 INCLUDE "maps/AzaleaLumberYard.asm"
 INCLUDE "maps/EcruteakGameHouse.asm"
+INCLUDE "maps/OlivineRestaurant.asm"
 
 ENDSECTION

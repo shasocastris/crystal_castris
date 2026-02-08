@@ -235,14 +235,18 @@ OlivineCityStandingYoungsterPokedexText:
 	done
 
 OlivineCitySailor2Text:
-	text "The sea is sweet!"
+	text "The OLIVINE"
+	line "RESTAURANT is one"
+	cont "of the big draws"
+	cont "of this port."
 
-	para "Sunsets on the sea"
-	line "are marvelous!"
+	para "It serves both"
+	line "#MON and their"
+	cont "trainers."
 
-	para "Sing with me!"
-	line "Yo-ho! Blow the"
-	cont "man down!…"
+	para "I hear the #MON"
+	line "are always well"
+	cont "taken care of."
 	done
 
 OlivineCitySignText:
@@ -287,7 +291,7 @@ OlivineCity_MapEvents:
 	warp_event 29, 11, OLIVINE_PUNISHMENT_SPEECH_HOUSE, 1
 	warp_event 13, 15, OLIVINE_GOOD_ROD_HOUSE, 1
 	warp_event  7, 21, OLIVINE_CAFE, 1
-	warp_event 19, 17, OLIVINE_MART, 2
+	warp_event 19, 17, OLIVINE_RESTAURANT, 1
 	warp_event 29, 27, OLIVINE_LIGHTHOUSE_1F, 1
 	warp_event 19, 27, OLIVINE_PORT_PASSAGE, 1
 	warp_event 20, 27, OLIVINE_PORT_PASSAGE, 2

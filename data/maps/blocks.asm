@@ -260,7 +260,6 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
-OlivineMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
 VermilionMart_Blocks:
@@ -275,6 +274,7 @@ VioletMart_Blocks:
 CherrygroveMart_Blocks:
 AzaleaMart_Blocks:
 EcruteakMart_Blocks:
+OlivineMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:
@@ -923,5 +923,8 @@ AzaleaLumberYard_Blocks:
 
 EcruteakGameHouse_Blocks:
 	INCBIN "maps/EcruteakGameHouse.ablk"
+
+OlivineRestaurant_Blocks:
+	INCBIN "maps/OlivineRestaurant.ablk"
 
 ENDSECTION
