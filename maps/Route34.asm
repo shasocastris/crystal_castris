@@ -381,20 +381,6 @@ Route34HiddenRareCandy:
 Route34HiddenSuperPotion:
 	hiddenitem SUPER_POTION, EVENT_ROUTE_34_HIDDEN_SUPER_POTION
 
-Route34MovementData_DayCareManWalksBackInside:
-	slow_step LEFT
-	slow_step LEFT
-	slow_step UP
-	step_end
-
-Route34MovementData_DayCareManWalksBackInside_WalkAroundPlayer:
-	slow_step DOWN
-	slow_step LEFT
-	slow_step LEFT
-	slow_step UP
-	slow_step UP
-	step_end
-
 YoungsterSamuelSeenText:
 	text "This is where I do"
 	line "my training!"
