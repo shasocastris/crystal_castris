@@ -7,7 +7,78 @@ OlivineRestaurant_MapScripts:
 	def_callbacks
 
 OlivineRestaurantLassScript:
-	jumptextfaceplayer OlivineRestaurantLassText
+	faceplayer
+	opentext
+	checkflag ENGINE_OLIVINE_RESTAURANT
+	iftrue .AlreadyAte
+	writetext OlivineRestaurantLassWelcomeText
+	yesorno
+	iffalse .Refused
+	writetext OlivineRestaurantLassCostText
+	yesorno
+	iffalse .TooExpensive
+	checkmoney YOUR_MONEY, 9800
+	ifequal HAVE_LESS, .NotEnoughMoney
+	writetext OlivineRestaurantLassPokemonEatWellText
+	waitbutton
+	closetext
+	takemoney YOUR_MONEY, 9800
+;	promptbutton
+;	special OlivineRestaurantHappiness
+;	loadmem wPartyMon1Happiness, $ff
+	special FadeOutToWhite
+  	playsound SFX_ENTER_DOOR
+	pause 30
+	waitsfx
+	reloadmap
+	setflag ENGINE_OLIVINE_RESTAURANT
+	opentext
+	writetext OlivineRestaurantLassPokemonFedText
+	waitbutton
+	random 0
+	ifequal 0, .Leftovers
+	opentext
+	writetext OlivineRestaurantLassThanksForJoiningText
+	closetext
+	end
+
+.AlreadyAte ;74150
+	writetext OlivineRestaurantLassAlreadyAteText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney
+	writetext OlivineRestaurantLassNotEnoughText
+	waitbutton
+	closetext
+	end
+
+.Leftovers
+	writetext OlivineRestaurantLassGiveLeftoversText
+	promptbutton
+	verbosegiveitem LEFTOVERS
+	iffalse .NoRoom
+	writetext OlivineRestaurantLassThanksForJoiningText
+	waitbutton
+	closetext
+	end
+
+.NoRoom
+	writetext OlivineRestaurantLassNoRoomText
+	waitbutton
+	closetext
+	end
+
+.TooExpensive
+	writetext OlivineRestaurantLassTooExpensiveText
+	waitbutton
+
+.Refused:
+	writetext OlivineRestaurantLassRefusedText
+	waitbutton
+	closetext
+	end
 
 OlivineRestaurantYoungsterScript:
 	jumptext OlivineRestaurantYoungsterText
@@ -20,7 +91,6 @@ OlivineRestaurantTeacherScript:
 
 OlivineRestaurantRockerScript:
 	jumptextfaceplayer OlivineRestaurantRockerText
-
 
 OlivineRestaurantEkansScript:
 	opentext
@@ -86,8 +156,83 @@ OlivineRestaurantRhydonScript:
 	ld [wScriptVar], a
 	ret
 
-OlivineRestaurantLassText:
-	text "Welcome!"
+OlivineRestaurantLassWelcomeText:
+	text "Welcome! Will you"
+	line "and your #MON"
+	cont "be dining with us"
+	cont "today?"
+	done
+
+OlivineRestaurantLassAlreadyAteText:
+	text "Your #MON ate"
+	line "with us earlier"
+	cont "today."
+
+	para "We look forward to"
+	line "serving them again"
+	cont "tomorrow!"
+	done
+
+OlivineRestaurantLassCostText:
+	text "It will be ¥9800."
+
+	para "Is that ok?"
+	done
+
+OlivineRestaurantLassPokemonEatWellText:
+	text "Excellent! We'll"
+	line "make sure to feed"
+	cont "them well."
+	done
+
+OlivineRestaurantLassPokemonFedText:
+	text "Your #MON are"
+	line "back and have been"
+	cont "fed."
+	done
+
+OlivineRestaurantLassThanksForJoiningText:
+	text "Thanks for joining"
+	line "us and I hope to"
+	cont "see you again!"
+	done
+
+OlivineRestaurantLassNotEnoughText:
+	text "It looks like you"
+	line "don't have enough"
+	cont "money on hand."
+
+	para "Maybe you can sell"
+	line "some items and"
+	cont "come again."
+	done
+
+OlivineRestaurantLassGiveLeftoversText:
+	text "There were some"
+	line "LEFTOVERS as well."
+
+	para "We bagged them up"
+	line "for you."
+	done
+
+OlivineRestaurantLassNoRoomText:
+	text "Oh? I guess you"
+	line "don't have enough"
+	cont "room for them."
+
+	para "I'll make sure"
+	line "they get to the"
+	cont "DAYCARE instead."
+	done
+
+OlivineRestaurantLassTooExpensiveText:
+	text "No? I understand."
+	done
+
+OlivineRestaurantLassRefusedText:
+	text "We look forward to"
+	line "serving you at"
+	cont "another time!"
 	done
 
 OlivineRestaurantYoungsterText:
