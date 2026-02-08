@@ -39,6 +39,7 @@ Marts:
 	dw MartCherrygroveCafe
 	dw MartFlowerShop
 	dw MartLumberYard
+	dw MartOlivineCafe
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -403,6 +404,13 @@ MartLumberYard:
 	dw PINKBED
 	dw POLKADOTBED
 	dw PIKACHUBED
+
+MartOlivineCafe:
+	db 4 ; # items
+	dw LEMONADE
+	dw ICE_BERRY
+	dw PROTEIN
+	dw ENERGYPOWDER
 
 DefaultMart:
 	db 2 ; # items

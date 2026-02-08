@@ -24,7 +24,13 @@ OlivineCafeStrengthSailorScript:
 	end
 
 OlivineCafeFishingGuruScript:
-	jumptextfaceplayer OlivineCafeFishingGuruText
+	faceplayer
+	opentext
+	writetext OlivineCafeFishingGuruText
+	waitbutton
+	pokemart MARTTYPE_STANDARD, MART_OLIVINE_CAFE
+	closetext
+	end
 
 OlivineCafeSailorScript:
 	jumptextfaceplayer OlivineCafeSailorText
@@ -56,11 +62,11 @@ OlivineCafeStrengthSailorText_GotStrength:
 	para "count on is your"
 	line "own good self!"
 
-	para "I'm so proud of my"
-	line "buff bod!"
+	para "And of course your"
+	line "#MON!"
 
-	para "Remember that you"
-	line "will need to use"
+	para "Don't forget that"
+	line "you'll need to put"
 	cont "STRENGTH on your"
 	cont "bulkiest #MON."
 	done
@@ -68,9 +74,12 @@ OlivineCafeStrengthSailorText_GotStrength:
 OlivineCafeFishingGuruText:
 	text "OLIVINE CAFE's"
 	line "menu is chock full"
+	para "of hearty fare."
 
-	para "of hearty fare for"
-	line "beefy SAILORS!"
+	para "And I always enjoy"
+	line "meeting new faces!"
+
+	para "So…"
 	done
 
 OlivineCafeSailorText:
@@ -83,8 +92,8 @@ OlivineCafeSailorText:
 	para "Everything on the"
 	line "menu makes me feel"
 
-	para "stronger. I can't"
-	line "stop eating!"
+	para "stronger. And it's"
+	line "so refreshing!"
 	done
 
 OlivineCafe_MapEvents:
