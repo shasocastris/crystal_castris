@@ -35,14 +35,14 @@ OlivineRestaurantLassScript:
 	opentext
 	writetext OlivineRestaurantLassPokemonFedText
 	waitbutton
-	random 0
+	random 3
 	ifequal 0, .Leftovers
 	opentext
 	writetext OlivineRestaurantLassThanksForJoiningText
 	closetext
 	end
 
-.AlreadyAte ;74150
+.AlreadyAte ;
 	writetext OlivineRestaurantLassAlreadyAteText
 	waitbutton
 	closetext
@@ -189,6 +189,9 @@ OlivineRestaurantLassPokemonFedText:
 	text "Your #MON are"
 	line "back and have been"
 	cont "fed."
+
+	para "They look very"
+	line "happy!"
 	done
 
 OlivineRestaurantLassThanksForJoiningText:
