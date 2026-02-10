@@ -1560,3 +1560,62 @@ _PrestoAllDoneText::
 	text "Presto! All done."
 	line "Come again, OK?"
 	done
+
+_NPCTradeIntroTextWonder::
+	text "A pen pal from"
+	line "KANTO reached out!"
+
+	para "They want a"
+	line "@"
+	text_ram wStringBuffer1
+	text ","
+
+	para "and will send a"
+	line "@"
+	text_ram wStringBuffer2
+	text " in"
+	cont "return. Deal?"
+	done
+
+_NPCTradeCancelTextWonder::
+	text "No problem! Their"
+	line "offer will stay"
+	cont "on file."
+	done
+
+_NPCTradeWrongTextWonder::
+	text "Sorry, the trainer"
+	line "in KANTO asked for"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+
+	para "Come back if you"
+	line "find one!"
+	done
+
+_NPCTradeCompleteTextWonder::
+	text "Trade complete!"
+
+	para "We'll send your"
+	line "@"
+	text_ram wMonOrItemNameBuffer
+	text " to"
+	cont "KANTO right away."
+
+	para "Enjoy your new"
+	line "@"
+	text_ram wStringBuffer2
+	text "!"
+	done
+
+_NPCTradeAfterTextWonder::
+	text "We heard back from"
+	line "your pen pal!"
+
+	para "They say your"
+	line "@"
+	text_ram wMonOrItemNameBuffer
+	text " is"
+	cont "doing great!"
+	done

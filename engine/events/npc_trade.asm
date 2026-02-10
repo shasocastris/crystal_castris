@@ -403,7 +403,7 @@ PrintTradeText:
 	push af
 	call GetTradeMonNames
 	pop af
-	ld bc, 2 * 4
+	ld bc, 2 * NUM_TRADE_DIALOGSETS  ; was 2 * 4
 	ld hl, TradeTexts
 	rst AddNTimes
 	ld a, [wTradeDialog]
@@ -423,26 +423,31 @@ TradeTexts:
 	dw NPCTradeIntroText2
 	dw NPCTradeIntroText2
 	dw NPCTradeIntroText3
+	dw NPCTradeIntroTextWonder
 ; TRADE_DIALOG_CANCEL
 	dw NPCTradeCancelText1
 	dw NPCTradeCancelText2
 	dw NPCTradeCancelText2
 	dw NPCTradeCancelText3
+	dw NPCTradeCancelTextWonder
 ; TRADE_DIALOG_WRONG
 	dw NPCTradeWrongText1
 	dw NPCTradeWrongText2
 	dw NPCTradeWrongText2
 	dw NPCTradeWrongText3
+	dw NPCTradeWrongTextWonder
 ; TRADE_DIALOG_COMPLETE
 	dw NPCTradeCompleteText1
 	dw NPCTradeCompleteText2
 	dw NPCTradeCompleteText4
 	dw NPCTradeCompleteText3
+	dw NPCTradeCompleteTextWonder
 ; TRADE_DIALOG_AFTER
 	dw NPCTradeAfterText1
 	dw NPCTradeAfterText2
 	dw NPCTradeAfterText4
 	dw NPCTradeAfterText3
+	dw NPCTradeAfterTextWonder
 	assert_table_length NUM_TRADE_DIALOGS * NUM_TRADE_DIALOGSETS
 
 NPCTradeCableText:
@@ -529,4 +534,24 @@ NPCTradeCompleteText4:
 
 NPCTradeAfterText4:
 	text_far _NPCTradeAfterText4
+	text_end
+
+NPCTradeIntroTextWonder:
+	text_far _NPCTradeIntroTextWonder
+	text_end
+
+NPCTradeCancelTextWonder:
+	text_far _NPCTradeCancelTextWonder
+	text_end
+
+NPCTradeWrongTextWonder:
+	text_far _NPCTradeWrongTextWonder
+	text_end
+
+NPCTradeCompleteTextWonder:
+	text_far _NPCTradeCompleteTextWonder
+	text_end
+
+NPCTradeAfterTextWonder:
+	text_far _NPCTradeAfterTextWonder
 	text_end

@@ -132,6 +132,58 @@ GoldenrodPokecomCenterBlisseyScript:
 	ld [wScriptVar], a
 	ret
 
+WonderTradeReceptionistScript:
+	faceplayer
+	opentext
+	writetext WonderTradeGreetingText
+	waitbutton
+	readvar VAR_WEEKDAY
+	ifequal SUNDAY,    .Sunday
+	ifequal MONDAY,    .Monday
+	ifequal TUESDAY,   .Tuesday
+	ifequal WEDNESDAY, .Wednesday
+	ifequal THURSDAY,  .Thursday
+	ifequal FRIDAY,    .Friday
+	ifequal SATURDAY,  .Saturday
+	closetext
+	end
+
+.Sunday:
+	trade NPC_TRADE_BARRY
+	waitbutton
+	closetext
+	end
+.Monday:
+	trade NPC_TRADE_TERRY
+	waitbutton
+	closetext
+	end
+.Tuesday:
+	trade NPC_TRADE_RONIN
+	waitbutton
+	closetext
+	end
+.Wednesday:
+	trade NPC_TRADE_DARREL
+	waitbutton
+	closetext
+	end
+.Thursday:
+	trade NPC_TRADE_ELYSSA
+	waitbutton
+	closetext
+	end
+.Friday:
+	trade NPC_TRADE_OSCAR
+	waitbutton
+	closetext
+	end
+.Saturday:
+	trade NPC_TRADE_LINDA
+	waitbutton
+	closetext
+	end
+
 GoldenrodPokecomCenterInfoSign:
 	jumptext GoldenrodPokecomCenterInfoSignText
 
@@ -272,10 +324,20 @@ GoldenrodPokecomCenterInfoSignText:
 	line "Administration"
 
 	para "Center:"
-	line "Wonder Trade Hub"
+	line "Trade Hub"
 
 	para "Right:"
 	line "Judge Machine"
+	done
+
+WonderTradeGreetingText:
+	text "Welcome to the"
+	line "#COM TRADE"
+	cont "CENTER."
+
+	para "We arrange trades"
+	line "with pen pals"
+	cont "from KANTO."
 	done
 
 GoldenrodPokecomCenter_MapEvents:
@@ -298,7 +360,7 @@ GoldenrodPokecomCenter_MapEvents:
 	def_object_events
 	object_event  7, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterNurseScript, -1
 	object_event  8, 13, SPRITE_BLISSEY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterBlisseyScript, -1
-	object_event 18, 14, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 18, 14, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, WonderTradeReceptionistScript, -1
 	object_event 10, 18, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterGameboyKidScript, -1
 	object_event  3, 18, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterLassScript, -1
 	object_event 11, 20, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterPokefanF, -1
