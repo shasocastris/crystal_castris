@@ -702,3 +702,4 @@ ENDM
 	map_attributes AzaleaLumberYard, AZALEA_LUMBER_YARD, $00, 0
 	map_attributes EcruteakGameHouse, ECRUTEAK_GAME_HOUSE, $00, 0
 	map_attributes OlivineRestaurant, OLIVINE_RESTAURANT, $00, 0
+	map_attributes BlackthornRangerStation, BLACKTHORN_RANGER_STATION, $00, 0
