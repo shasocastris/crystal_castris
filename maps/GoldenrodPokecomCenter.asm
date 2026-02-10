@@ -184,6 +184,97 @@ WonderTradeReceptionistScript:
 	closetext
 	end
 
+BulletinBoardScript:
+	opentext
+	writetext BulletinHeaderText
+	waitbutton
+
+	; === Swarms ===
+	checkflag ENGINE_DUNSPARCE_SWARM
+	iftrue .DunsparceSwarm
+	sjump .CheckYanma
+.DunsparceSwarm:
+	writetext BulletinDunsparceText
+	waitbutton
+.CheckYanma:
+	checkflag ENGINE_YANMA_SWARM
+	iftrue .YanmaSwarm
+	sjump .CheckContest
+.YanmaSwarm:
+	writetext BulletinYanmaText
+	waitbutton
+
+	; === Bug Catching Contest ===
+.CheckContest:
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .ContestToday
+	ifequal THURSDAY, .ContestToday
+	ifequal SATURDAY, .ContestToday
+	sjump .CheckLapras
+.ContestToday:
+	checkflag ENGINE_DAILY_BUG_CONTEST
+	iftrue .ContestOver
+	writetext BulletinContestText
+	waitbutton
+	sjump .CheckLapras
+.ContestOver:
+	writetext BulletinContestOverText
+	waitbutton
+
+	; === Union Cave Lapras (Friday) ===
+.CheckLapras:
+	readvar VAR_WEEKDAY
+	ifequal FRIDAY, .LaprasToday
+	sjump .CheckClefairy
+.LaprasToday:
+	writetext BulletinLaprasText
+	waitbutton
+
+	; === Mt. Moon Clefairy (Monday night) ===
+.CheckClefairy:
+	readvar VAR_WEEKDAY
+	ifequal MONDAY, .MondayCheck
+	sjump .CheckSale
+.MondayCheck:
+	checktime NITE
+	iftrue .ClefairyTonight
+	writetext BulletinClefairyTonightText
+	waitbutton
+	sjump .CheckSale
+.ClefairyTonight:
+	writetext BulletinClefairyNowText
+	waitbutton
+
+	; === Dept Store Sale ===
+.CheckSale:
+	checkflag ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
+	iftrue .SaleOn
+	sjump .CheckBuena
+.SaleOn:
+	writetext BulletinSaleText
+	waitbutton
+
+	; === Buena's Password ===
+.CheckBuena:
+	checkflag ENGINE_BUENAS_PASSWORD
+	iffalse .BuenaAvailable
+	sjump .Footer
+.BuenaAvailable:
+	checktime NITE | EVE
+	iftrue .BuenaNow
+	writetext BulletinBuenaLaterText
+	waitbutton
+	sjump .Footer
+.BuenaNow:
+	writetext BulletinBuenaNowText
+	waitbutton
+
+.Footer:
+	writetext BulletinFooterText
+	waitbutton
+	closetext
+	end
+
 GoldenrodPokecomCenterInfoSign:
 	jumptext GoldenrodPokecomCenterInfoSignText
 
@@ -340,6 +431,125 @@ WonderTradeGreetingText:
 	cont "from KANTO."
 	done
 
+BulletinHeaderText:
+	text "POKECOM BULLETIN"
+	line "ーーーーーーーーーーーーーーー"
+
+	para "Ranger field"
+	line "reports and local"
+	cont "notices follow."
+	done
+
+BulletinDunsparceText:
+	text "FIELD REPORT:"
+	line "Large numbers of"
+	cont "DUNSPARCE spotted"
+	cont "in DARK CAVE."
+
+	para "Rangers advise"
+	line "this is temporary."
+	done
+
+BulletinYanmaText:
+	text "FIELD REPORT:"
+	line "A swarm of YANMA"
+	cont "has been seen on"
+	cont "ROUTE 35."
+
+	para "Catch them while"
+	line "you can!"
+	done
+
+BulletinContestText:
+	text "NOTICE:"
+	line "A Bug-Catching"
+	cont "Contest is being"
+	cont "held today at the"
+	cont "NATIONAL PARK."
+
+	para "Registration is"
+	line "at the North Gate."
+	done
+
+BulletinContestOverText:
+	text "NOTICE:"
+	line "Today's Bug-"
+	cont "Catching Contest"
+	cont "has concluded."
+
+	para "Winners will be"
+	line "posted shortly."
+	done
+
+BulletinLaprasText:
+	text "FIELD REPORT:"
+	line "A LAPRAS has been"
+	cont "sighted deep in"
+	cont "UNION CAVE."
+
+	para "Appearance may be"
+	line "time sensitive."
+	done
+
+BulletinClefairyTonightText:
+	text "FIELD REPORT:"
+	line "CLEFAIRY gather"
+	cont "at MT. MOON SQUARE"
+	cont "on Monday nights."
+
+	para "Check back after"
+	line "dark."
+	done
+
+BulletinClefairyNowText:
+	text "FIELD REPORT:"
+	line "CLEFAIRY have"
+	cont "been spotted at"
+	cont "MT. MOON SQUARE!"
+
+	para "They may not stay"
+	line "for long."
+	done
+
+BulletinSaleText:
+	text "ADVERTISEMENT:"
+	line "The GOLDENROD"
+	cont "DEPT. STORE is"
+	cont "holding a rooftop"
+	cont "bargain sale!"
+
+	para "Great deals on"
+	line "rare items!"
+	done
+
+BulletinBuenaNowText:
+	text "RADIO LISTING:"
+	line "BUENA'S PASSWORD"
+	cont "is on the air!"
+
+	para "Tune in and earn"
+	line "prizes at the"
+	cont "RADIO TOWER."
+	done
+
+BulletinBuenaLaterText:
+	text "RADIO LISTING:"
+	line "BUENA'S PASSWORD"
+	cont "airs in the"
+	cont "evening."
+
+	para "Tune in for a"
+	line "chance at prizes."
+	done
+
+BulletinFooterText:
+	text "ーーーーーーーーーーーーーーー"
+	line "END OF BULLETIN"
+
+	para "Check back for"
+	line "updated reports."
+	done
+
 GoldenrodPokecomCenter_MapEvents:
 	db 0, 0 ; filler
 
@@ -356,6 +566,22 @@ GoldenrodPokecomCenter_MapEvents:
 
 	def_bg_events
 	bg_event  2, 15, BGEVENT_READ, GoldenrodPokecomCenterInfoSign
+	bg_event 25, 17, BGEVENT_READ, BulletinBoardScript
+	bg_event 26, 17, BGEVENT_READ, BulletinBoardScript
+	bg_event 27, 17, BGEVENT_READ, BulletinBoardScript
+	bg_event 28, 17, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 10, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 11, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 12, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 13, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 14, BGEVENT_READ, BulletinBoardScript
+	bg_event 24, 15, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 10, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 11, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 12, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 13, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 14, BGEVENT_READ, BulletinBoardScript
+	bg_event 29, 15, BGEVENT_READ, BulletinBoardScript
 
 	def_object_events
 	object_event  7, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterNurseScript, -1
