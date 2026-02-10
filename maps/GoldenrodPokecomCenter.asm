@@ -132,6 +132,9 @@ GoldenrodPokecomCenterBlisseyScript:
 	ld [wScriptVar], a
 	ret
 
+GoldenrodPokecomCenterInfoSign:
+	jumptext GoldenrodPokecomCenterInfoSignText
+
 GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement:
 	step UP
 	step RIGHT
@@ -261,6 +264,20 @@ GoldenrodPokecomCenterBlisseyText:
 	text "BLISSEY: Blissey!"
 	done
 
+GoldenrodPokecomCenterInfoSignText:
+	text "#Com Center"
+	line "Information"
+
+	para "Left:"
+	line "Administration"
+
+	para "Center:"
+	line "Wonder Trade Hub"
+
+	para "Right:"
+	line "Judge Machine"
+	done
+
 GoldenrodPokecomCenter_MapEvents:
 	db 0, 0 ; filler
 
@@ -276,6 +293,7 @@ GoldenrodPokecomCenter_MapEvents:
 	coord_event  7, 21, SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL, GoldenrodPokecomCenter_GSBallSceneRight
 
 	def_bg_events
+	bg_event  2, 15, BGEVENT_READ, GoldenrodPokecomCenterInfoSign
 
 	def_object_events
 	object_event  7, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterNurseScript, -1
