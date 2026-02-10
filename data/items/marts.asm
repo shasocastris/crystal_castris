@@ -196,7 +196,8 @@ MartMahogany1:
 	dw POTION
 
 MartMahogany2:
-	db 9 ; # items
+	db 10 ; # items
+	dw BURNT_BERRY
 	dw RAGECANDYBAR
 	dw GREAT_BALL
 	dw SUPER_POTION
