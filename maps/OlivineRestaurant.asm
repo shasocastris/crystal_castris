@@ -23,9 +23,8 @@ OlivineRestaurantLassScript:
 	waitbutton
 	closetext
 	takemoney YOUR_MONEY, 9800
-;	promptbutton
-;	special OlivineRestaurantHappiness
-;	loadmem wPartyMon1Happiness, $ff
+	callasm .BuffHappiness
+	special RestaurantHappiness
 	special FadeOutToWhite
   	playsound SFX_ENTER_DOOR
 	pause 30
@@ -39,10 +38,18 @@ OlivineRestaurantLassScript:
 	ifequal 0, .Leftovers
 	opentext
 	writetext OlivineRestaurantLassThanksForJoiningText
+	waitbutton
 	closetext
 	end
 
-.AlreadyAte ;
+.BuffHappiness
+	ld hl, wPartyMon1Happiness
+
+	call GetPokemonIDFromIndex
+	ld [wScriptVar], a
+	ret
+
+.AlreadyAte
 	writetext OlivineRestaurantLassAlreadyAteText
 	waitbutton
 	closetext

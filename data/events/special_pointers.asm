@@ -114,6 +114,7 @@ SpecialsPointers::
 	add_special InitRoamMons
 	add_special FadeOutMusic
 	add_special CianwoodPhotograph
+	add_special RestaurantHappiness
 	add_special Diploma
 
 ; Crystal only

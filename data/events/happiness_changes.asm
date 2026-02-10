@@ -23,4 +23,5 @@ HappinessChanges:
 	db +10,  +6,  +4 ; Gained a level in the place where it was caught
 	db  +1,  +1,  +0 ; Added every step cycle
 	db  +5,  +3,  +2 ; Took a photograph
+	db +10,  +6,  +4 ; Ate at restaurant
 	assert_table_length NUM_HAPPINESS_CHANGES
