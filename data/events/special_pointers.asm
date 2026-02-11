@@ -115,6 +115,8 @@ SpecialsPointers::
 	add_special FadeOutMusic
 	add_special CianwoodPhotograph
 	add_special RestaurantHappiness
+	add_special CountCompletedTypes
+	add_special CountGroupCompleted
 	add_special Diploma
 
 ; Crystal only

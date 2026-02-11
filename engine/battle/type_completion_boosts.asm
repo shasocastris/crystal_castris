@@ -170,3 +170,79 @@ CheckPokedexCaughtFlag:
 	ret
 
 INCLUDE "data/types/pokemon_type_lists.asm"
+
+CountCompletedTypes:
+; Count how many of the 18 types have all species caught
+; Output: wScriptVar = count of completed types (0-18)
+	ld hl, PokemonTypeLists
+	ld b, 0 ; completed count
+.loop:
+	ld a, [hl]
+	cp $FF
+	jr z, .done
+	push hl
+	push bc
+	call CheckAllTypeSpeciesCaught
+	pop bc
+	pop hl
+	jr nc, .next
+	inc b
+.next:
+	inc hl ; skip type byte (already read)
+	inc hl ; skip pointer low
+	inc hl ; skip pointer high
+	jr .loop
+.done:
+	ld a, b
+	ld [wScriptVar], a
+	ret
+
+CountGroupCompleted:
+; Count completed types within a themed research group
+; Input: wScriptVar = group ID (0=Physical, 1=Elemental, 2=Mystical)
+; Output: wScriptVar = count of completed types in group (0-6)
+	ld a, [wScriptVar]
+	ld e, a
+	ld d, 0
+	ld hl, .GroupPointers
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	; hl = pointer to group's type list
+	ld b, 0 ; completed count
+.loop:
+	ld a, [hli]
+	cp $FF
+	jr z, .done
+	push hl
+	push bc
+	call CheckAllTypeSpeciesCaught
+	pop bc
+	pop hl
+	jr nc, .not_complete
+	inc b
+.not_complete:
+	jr .loop
+.done:
+	ld a, b
+	ld [wScriptVar], a
+	ret
+
+.GroupPointers:
+	dw .PhysicalGroup
+	dw .ElementalGroup
+	dw .MysticalGroup
+
+.PhysicalGroup:
+; NORMAL, FIGHTING, FLYING, GROUND, ROCK, STEEL
+	db NORMAL, FIGHTING, FLYING, GROUND, ROCK, STEEL, $FF
+
+.ElementalGroup:
+; FIRE, WATER, GRASS, ELECTRIC, ICE, DRAGON
+	db FIRE, WATER, GRASS, ELECTRIC, ICE, DRAGON, $FF
+
+.MysticalGroup:
+; POISON, BUG, GHOST, PSYCHIC, DARK, FAIRY
+	db POISON, BUG, GHOST, PSYCHIC_TYPE, DARK, FAIRY, $FF

@@ -16,15 +16,6 @@ GoldenrodPokecomCenter_MapScripts:
 
 	def_callbacks
 
-GoldenrodPokecomCenterNurseScript:
-	jumpstd PokecenterNurseScript
-
-GoldenrodPokecomCenterGameboyKidScript:
-	jumptextfaceplayer GoldenrodPokecomCenterGameboyKidText
-
-GoldenrodPokecomCenterLassScript:
-	jumptextfaceplayer GoldenrodPokecomCenterLassText
-
 GoldenrodPokecomCenterPokefanF:
 	faceplayer
 	opentext
@@ -217,6 +208,114 @@ BulletinBoardScript:
 	waitbutton
 	closetext
 	end
+
+AdminTerminalScript:
+	opentext
+	writetext AdminTerminalBootText
+	waitbutton
+	special CountCompletedTypes
+	; wScriptVar = completed count (0-18)
+	ifequal 0, .NoneComplete
+	ifequal 18, .AllComplete
+	; partial completion
+	getnum STRING_BUFFER_3
+	writetext AdminTerminalProgressText
+	waitbutton
+	closetext
+	end
+
+.NoneComplete:
+	writetext AdminTerminalNoneText
+	waitbutton
+	closetext
+	end
+
+.AllComplete:
+	writetext AdminTerminalAllText
+	waitbutton
+	closetext
+	end
+
+; Group 0: Physical (NORMAL, FIGHTING, FLYING, GROUND, ROCK, STEEL)
+AdminScientistPhysicalScript:
+	faceplayer
+	opentext
+	setval 0
+	special CountGroupCompleted
+	ifequal 0, .None
+	ifequal 6, .AllDone
+	getnum STRING_BUFFER_3
+	writetext AdminPhysicalProgressText
+	waitbutton
+	closetext
+	end
+.None:
+	writetext AdminPhysicalNoneText
+	waitbutton
+	closetext
+	end
+.AllDone:
+	writetext AdminPhysicalCompleteText
+	waitbutton
+	closetext
+	end
+
+; Group 1: Elemental (FIRE, WATER, GRASS, ELECTRIC, ICE, DRAGON)
+AdminScientistElementalScript:
+	faceplayer
+	opentext
+	setval 1
+	special CountGroupCompleted
+	ifequal 0, .None
+	ifequal 6, .AllDone
+	getnum STRING_BUFFER_3
+	writetext AdminElementalProgressText
+	waitbutton
+	closetext
+	end
+.None:
+	writetext AdminElementalNoneText
+	waitbutton
+	closetext
+	end
+.AllDone:
+	writetext AdminElementalCompleteText
+	waitbutton
+	closetext
+	end
+
+; Group 2: Mystical (POISON, BUG, GHOST, PSYCHIC, DARK, FAIRY)
+AdminScientistMysticalScript:
+	faceplayer
+	opentext
+	setval 2
+	special CountGroupCompleted
+	ifequal 0, .None
+	ifequal 6, .AllDone
+	getnum STRING_BUFFER_3
+	writetext AdminMysticalProgressText
+	waitbutton
+	closetext
+	end
+.None:
+	writetext AdminMysticalNoneText
+	waitbutton
+	closetext
+	end
+.AllDone:
+	writetext AdminMysticalCompleteText
+	waitbutton
+	closetext
+	end
+
+GoldenrodPokecomCenterNurseScript:
+	jumpstd PokecenterNurseScript
+
+GoldenrodPokecomCenterGameboyKidScript:
+	jumptextfaceplayer GoldenrodPokecomCenterGameboyKidText
+
+GoldenrodPokecomCenterLassScript:
+	jumptextfaceplayer GoldenrodPokecomCenterLassText
 
 GoldenrodPokecomCenterCooltrainerMScript:
 	jumptextfaceplayer GoldenrodPokecomCenterCooltrainerMText
@@ -505,6 +604,229 @@ BulletinFooterText:
 	line "updated reports."
 	done
 
+; === Terminal ===
+
+AdminTerminalBootText:
+	text "TYPE RESEARCH LAB"
+	line "ーーーーーーーーーーーーーーー"
+
+	para "Analyzing your"
+	line "field data…"
+	done
+
+AdminTerminalProgressText:
+	text "TYPE BOOST STATUS"
+
+	para "Types mastered:"
+	line "@"
+	text_ram wStringBuffer3
+	text " of 18."
+
+	para "Catch every known"
+	line "species of a type"
+	cont "to unlock a boost"
+	cont "for that type."
+	done
+
+AdminTerminalNoneText:
+	text "TYPE BOOST STATUS"
+
+	para "Types mastered:"
+	line "0 of 18."
+
+	para "When you catch all"
+	line "known species of"
+	cont "a type, attacks"
+	cont "of that type get"
+	cont "a power boost."
+
+	para "Talk to our"
+	line "researchers for"
+	cont "details."
+	done
+
+AdminTerminalAllText:
+	text "TYPE BOOST STATUS"
+
+	para "Types mastered:"
+	line "18 of 18."
+
+	para "CONGRATULATIONS!"
+
+	para "All type boosts"
+	line "are active. Your"
+	cont "#MON have never"
+	cont "been stronger."
+	done
+
+; === Physical Scientist ===
+
+AdminPhysicalNoneText:
+	text "I study NORMAL,"
+	line "FIGHTING, FLYING,"
+	cont "GROUND, ROCK, and"
+	cont "STEEL types."
+
+	para "Catching all known"
+	line "species of a type"
+	cont "activates a boost"
+	cont "for those moves."
+
+	para "You haven't"
+	line "mastered any of"
+	cont "my types yet."
+
+	para "ROCK and STEEL"
+	line "types are rare."
+	cont "Keep an eye out!"
+	done
+
+AdminPhysicalProgressText:
+	text "Interesting…"
+	line "my instruments"
+	cont "show you've"
+	cont "mastered @"
+	text_ram wStringBuffer3
+	text " of 6"
+	cont "physical types."
+
+	para "NORMAL, FIGHTING,"
+	line "FLYING, GROUND,"
+	cont "ROCK, and STEEL."
+
+	para "The ones you've"
+	line "completed are"
+	cont "already boosting"
+	cont "your battle power."
+	done
+
+AdminPhysicalCompleteText:
+	text "Remarkable! You've"
+	line "mastered all six"
+	cont "physical types!"
+
+	para "NORMAL, FIGHTING,"
+	line "FLYING, GROUND,"
+	cont "ROCK, and STEEL"
+	cont "moves are all"
+	cont "boosted."
+
+	para "Your field work"
+	line "is outstanding."
+	done
+
+; === Elemental Scientist ===
+
+AdminElementalNoneText:
+	text "My research covers"
+	line "FIRE, WATER,"
+	cont "GRASS, ELECTRIC,"
+	cont "ICE, and DRAGON."
+
+	para "These types are"
+	line "tied to the"
+	cont "natural forces"
+	cont "of our world."
+
+	para "You haven't"
+	line "mastered any"
+	cont "of them yet."
+
+	para "DRAGON types are"
+	line "especially rare."
+	done
+
+AdminElementalProgressText:
+	text "Let me check my"
+	line "readings…"
+
+	para "You've mastered"
+	line "@"
+	text_ram wStringBuffer3
+	text " of 6"
+	cont "elemental types."
+
+	para "FIRE, WATER,"
+	line "GRASS, ELECTRIC,"
+	cont "ICE, and DRAGON."
+
+	para "Each one you"
+	line "complete makes"
+	cont "those moves"
+	cont "stronger."
+	done
+
+AdminElementalCompleteText:
+	text "Incredible! All"
+	line "six elemental"
+	cont "types mastered!"
+
+	para "FIRE, WATER,"
+	line "GRASS, ELECTRIC,"
+	cont "ICE, and DRAGON"
+	cont "moves are all"
+	cont "boosted."
+
+	para "You're a true"
+	line "master of the"
+	cont "elements."
+	done
+
+; === Mystical Scientist ===
+
+AdminMysticalNoneText:
+	text "I specialize in"
+	line "POISON, BUG,"
+	cont "GHOST, PSYCHIC,"
+	cont "DARK, and FAIRY."
+
+	para "The mysterious"
+	line "types. Hard to"
+	cont "find, harder to"
+	cont "catch."
+
+	para "You haven't"
+	line "mastered any of"
+	cont "them yet."
+
+	para "Start with BUG"
+	line "and POISONーthey"
+	cont "are more common."
+	done
+
+AdminMysticalProgressText:
+	text "Fascinating…"
+
+	para "You've mastered"
+	line "@"
+	text_ram wStringBuffer3
+	text " of 6"
+	cont "mystical types."
+
+	para "POISON, BUG,"
+	line "GHOST, PSYCHIC,"
+	cont "DARK, and FAIRY."
+
+	para "The rest will come"
+	line "with persistence."
+	done
+
+AdminMysticalCompleteText:
+	text "Astounding! All"
+	line "six mystical types"
+	cont "mastered!"
+
+	para "POISON, BUG,"
+	line "GHOST, PSYCHIC,"
+	cont "DARK, and FAIRY"
+	cont "moves are all"
+	cont "boosted."
+
+	para "Even I haven't"
+	line "cataloged that"
+	cont "many species…"
+	done
+
 GoldenrodPokecomCenterCooltrainerMText:
 	text "You should check"
 	line "the #COM TRADE"
@@ -594,6 +916,7 @@ GoldenrodPokecomCenter_MapEvents:
 	bg_event 29, 13, BGEVENT_READ, BulletinBoardScript
 	bg_event 29, 14, BGEVENT_READ, BulletinBoardScript
 	bg_event 29, 15, BGEVENT_READ, BulletinBoardScript
+	bg_event  3,  2, BGEVENT_READ, AdminTerminalScript
 
 	def_object_events
 	object_event  7, 13, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterNurseScript, -1
@@ -606,3 +929,6 @@ GoldenrodPokecomCenter_MapEvents:
 	object_event 19, 18, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterRockerScript, -1
 	object_event 22, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterSuperNerdScript, -1
 	object_event 12, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterTeacherScript, -1
+	object_event  4,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AdminScientistPhysicalScript, -1
+	object_event  6,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AdminScientistElementalScript, -1
+	object_event  6,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AdminScientistMysticalScript, -1
