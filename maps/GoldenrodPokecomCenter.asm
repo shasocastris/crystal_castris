@@ -1,13 +1,18 @@
 	object_const_def
-	const OKECOMCENTERADMINOFFICEMOBILE_NURSE
-	const OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
-	const OKECOMCENTERADMINOFFICEMOBILE_GAMEBOY_KID
-	const OKECOMCENTERADMINOFFICEMOBILE_LASS
-	const OKECOMCENTERADMINOFFICEMOBILE_POKEFAN_F
+	const GOLDENRODPOKECOMCENTER_NURSE
+	const GOLDENRODPOKECOMCENTER_BLISSEY
+	const GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
+	const GOLDENRODPOKECOMCENTER_GAMEBOY_KID
+	const GOLDENRODPOKECOMCENTER_LASS_1
+	const GOLDENRODPOKECOMCENTER_POKEFAN_F
+	const GOLDENRODPOKECOMCENTER_COOLTRAINER_M
+	const GOLDENRODPOKECOMCENTER_ROCKER
+	const GOLDENRODPOKECOMCENTER_SUPER_NERD
+	const GOLDENRODPOKECOMCENTER_TEACHER
 
 GoldenrodPokecomCenter_MapScripts:
 	def_scene_scripts
-	scene_const SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL
+	scene_const SCENE_GOLDENRODPOKECOMCENTER_GS_BALL
 
 	def_callbacks
 
@@ -23,11 +28,11 @@ GoldenrodPokecomCenter_GSBallSceneLeft:
 	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
 	iftrue .cancel
 	playsound SFX_EXIT_BUILDING
-	moveobject OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
-	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
-	appear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	moveobject GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
+	appear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
 	playmusic MUSIC_SHOW_ME_AROUND
-	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement
+	applymovement GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement
 	turnobject PLAYER, UP
 	opentext
 	writetext GoldenrodPokecomCenterLinkReceptionistPleaseAcceptGSBallText
@@ -38,9 +43,9 @@ GoldenrodPokecomCenter_GSBallSceneLeft:
 	writetext GoldenrodPokecomCenterLinkReceptionistPleaseDoComeAgainText
 	waitbutton
 	closetext
-	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement
+	applymovement GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement
 	special RestartMapMusic
-	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	disappear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
 	playsound SFX_EXIT_BUILDING
 .cancel
 	end
@@ -54,11 +59,11 @@ GoldenrodPokecomCenter_GSBallSceneRight:
 	checkevent EVENT_GOT_GS_BALL_FROM_GOLDENROD_POKEMON_CENTER
 	iftrue .cancel
 	playsound SFX_EXIT_BUILDING
-	moveobject OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
-	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
-	appear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	moveobject GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, 0, 7
+	disappear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
+	appear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
 	playmusic MUSIC_SHOW_ME_AROUND
-	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtRightDoorwayTileMovement
+	applymovement GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtRightDoorwayTileMovement
 	turnobject PLAYER, UP
 	opentext
 	writetext GoldenrodPokecomCenterLinkReceptionistPleaseAcceptGSBallText
@@ -69,9 +74,9 @@ GoldenrodPokecomCenter_GSBallSceneRight:
 	writetext GoldenrodPokecomCenterLinkReceptionistPleaseDoComeAgainText
 	waitbutton
 	closetext
-	applymovement OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromRightDoorwayTileMovement
+	applymovement GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST, GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromRightDoorwayTileMovement
 	special RestartMapMusic
-	disappear OKECOMCENTERADMINOFFICEMOBILE_PCC_TRADE_CORNER_RECEPTIONIST
+	disappear GOLDENRODPOKECOMCENTER_PCC_TRADE_CORNER_RECEPTIONIST
 	playsound SFX_EXIT_BUILDING
 .cancel
 	end
@@ -274,6 +279,18 @@ BulletinBoardScript:
 	waitbutton
 	closetext
 	end
+
+GoldenrodPokecomCenterCooltrainerMScript:
+	jumptextfaceplayer GoldenrodPokecomCenterCooltrainerMText
+
+GoldenrodPokecomCenterRockerScript:
+	jumptextfaceplayer GoldenrodPokecomCenterRockerText
+
+GoldenrodPokecomCenterSuperNerdScript:
+	jumptextfaceplayer GoldenrodPokecomCenterSuperNerdText
+
+GoldenrodPokecomCenterTeacherScript:
+	jumptextfaceplayer GoldenrodPokecomCenterTeacherText
 
 GoldenrodPokecomCenterInfoSign:
 	jumptext GoldenrodPokecomCenterInfoSignText
@@ -550,6 +567,65 @@ BulletinFooterText:
 	line "updated reports."
 	done
 
+GoldenrodPokecomCenterCooltrainerMText:
+	text "You should check"
+	line "the #COM TRADE"
+	cont "CENTER every day."
+
+	para "They arrange swaps"
+	line "with trainers in"
+	cont "KANTO."
+
+	para "You never know"
+	line "what they'll have!"
+	done
+
+GoldenrodPokecomCenterRockerText:
+	text "Have you tried the"
+	line "bulletin board?"
+
+	para "It posts RANGER"
+	line "field reports, so"
+	cont "you can find rare"
+	cont "#MON."
+
+	para "Way better than"
+	line "wandering around"
+	cont "hoping to get"
+	cont "lucky!"
+	done
+
+GoldenrodPokecomCenterSuperNerdText:
+	text "This place used to"
+	line "run on some old"
+	cont "wireless system."
+
+	para "Nobody could ever"
+	line "get it working."
+
+	para "But now they've"
+	line "set up the WONDER"
+	cont "TRADE and the"
+	cont "bulletin board."
+
+	para "Honestly? It's way"
+	line "more useful than"
+	cont "it ever was."
+	done
+
+GoldenrodPokecomCenterTeacherText:
+	text "Most #MON"
+	line "CENTERS just have"
+	cont "a healing station."
+
+	para "This one has trade"
+	line "services and a"
+	cont "news terminal!"
+
+	para "GOLDENROD really"
+	line "is the big city."
+	done
+
 GoldenrodPokecomCenter_MapEvents:
 	db 0, 0 ; filler
 
@@ -561,8 +637,8 @@ GoldenrodPokecomCenter_MapEvents:
 	warp_event  1,  7, GOLDENROD_POKECOM_CENTER, 3
 
 	def_coord_events
-	coord_event  6, 21, SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL, GoldenrodPokecomCenter_GSBallSceneLeft
-	coord_event  7, 21, SCENE_OKECOMCENTERADMINOFFICEMOBILE_GS_BALL, GoldenrodPokecomCenter_GSBallSceneRight
+	coord_event  6, 21, SCENE_GOLDENRODPOKECOMCENTER_GS_BALL, GoldenrodPokecomCenter_GSBallSceneLeft
+	coord_event  7, 21, SCENE_GOLDENRODPOKECOMCENTER_GS_BALL, GoldenrodPokecomCenter_GSBallSceneRight
 
 	def_bg_events
 	bg_event  2, 15, BGEVENT_READ, GoldenrodPokecomCenterInfoSign
@@ -590,3 +666,7 @@ GoldenrodPokecomCenter_MapEvents:
 	object_event 10, 18, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterGameboyKidScript, -1
 	object_event  3, 18, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterLassScript, -1
 	object_event 11, 20, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterPokefanF, -1
+	object_event  7, 17, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterCooltrainerMScript, -1
+	object_event 15, 18, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterRockerScript, -1
+	object_event 22, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterSuperNerdScript, -1
+	object_event 14, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodPokecomCenterTeacherScript, -1
