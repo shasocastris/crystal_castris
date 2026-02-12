@@ -168,11 +168,6 @@ INCLUDE "maps/MountMortar1FOutside.asm"
 INCLUDE "maps/MountMortar1FInside.asm"
 INCLUDE "maps/MountMortar2FInside.asm"
 INCLUDE "maps/MountMortarB1F.asm"
-INCLUDE "maps/IcePath1F.asm"
-INCLUDE "maps/IcePathB1F.asm"
-INCLUDE "maps/IcePathB2FMahoganySide.asm"
-INCLUDE "maps/IcePathB2FBlackthornSide.asm"
-INCLUDE "maps/IcePathB3F.asm"
 INCLUDE "maps/LavenderPokecenter1F.asm"
 INCLUDE "maps/LavenderPokecenter2FBeta.asm"
 INCLUDE "maps/MrFujisHouse.asm"
@@ -493,5 +488,14 @@ INCLUDE "maps/AzaleaLumberYard.asm"
 INCLUDE "maps/EcruteakGameHouse.asm"
 INCLUDE "maps/OlivineRestaurant.asm"
 INCLUDE "maps/BlackthornRangerStation.asm"
+
+
+SECTION "Map Scripts 27", ROMX
+
+INCLUDE "maps/IcePath1F.asm"
+INCLUDE "maps/IcePathB1F.asm"
+INCLUDE "maps/IcePathB2FMahoganySide.asm"
+INCLUDE "maps/IcePathB2FBlackthornSide.asm"
+INCLUDE "maps/IcePathB3F.asm"
 
 ENDSECTION

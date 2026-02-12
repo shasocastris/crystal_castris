@@ -3,6 +3,8 @@
 	const ICEPATH1F_POKE_BALL2
 	const ICEPATH1F_POKE_BALL3
 	const ICEPATH1F_RIVAL
+	const ICEPATH1F_SKIER
+	const ICEPATH1F_COOLTRAINER_F
 
 IcePath1F_MapScripts:
 	def_scene_scripts
@@ -88,6 +90,27 @@ IcePath1FRivalRetreatMovement:
 	step UP
 	step_end
 
+TrainerSkierNoelle:
+	trainer SKIER, NOELLE, EVENT_BEAT_SKIER_NOELLE, SkierNoelleSeenText, SkierNoelleBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SkierNoelleAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerfNina:
+	trainer COOLTRAINERF, NINA, EVENT_BEAT_COOLTRAINERF_NINA, CooltrainerfNinaSeenText, CooltrainerfNinaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext CooltrainerfNinaAfterBattleText
+	waitbutton
+	closetext
+	end
+
+
 IcePath1FHMWaterfall:
 	itemball HM_WATERFALL
 
@@ -96,6 +119,9 @@ IcePath1FPPUp:
 
 IcePath1FIcyRock:
 	itemball ICY_ROCK
+
+IcePath1FRevive:
+	itemball REVIVE
 
 IcePath1FRivalBeforeText:
 	text "<PLAY_G>!"
@@ -181,6 +207,52 @@ IcePath1FRivalLossText:
 	cont "under my heels."
 	done
 
+SkierNoelleSeenText:
+	text "The snow here is"
+	line "perfect for a run!"
+
+	para "Let's see if your"
+	line "#MON can keep"
+	cont "up!"
+	done
+
+SkierNoelleBeatenText:
+	text "Whoa, you really"
+	line "shredded me!"
+	done
+
+SkierNoelleAfterBattleText:
+	text "ICE PATH is the"
+	line "best slope around."
+
+	para "It goes all the"
+	line "way to BLACKTHORN!"
+	done
+
+CooltrainerfNinaSeenText:
+	text "I'm training my"
+	line "dragons to endure"
+	cont "the bitter cold."
+
+	para "Care to test them?"
+	done
+
+CooltrainerfNinaBeatenText:
+	text "The cold got to"
+	line "them after all…"
+	done
+
+CooltrainerfNinaAfterBattleText:
+	text "CLAIR says a true"
+	line "dragon master"
+
+	para "overcomes every"
+	line "weakness."
+
+	para "That's why I train"
+	line "here in the ice."
+	done
+
 IcePath1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -200,3 +272,6 @@ IcePath1F_MapEvents:
 	object_event 32, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FPPUp, EVENT_ICE_PATH_1F_PP_UP
 	object_event 35,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FIcyRock, EVENT_ICE_PATH_1F_ICY_ROCK
 	object_event 36, 22, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ICE_PATH_1F_RIVAL
+	object_event 20,  2, SPRITE_BEAUTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSkierNoelle, -1
+	object_event 24, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerCooltrainerfNina, -1
+	object_event 17, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IcePath1FRevive, EVENT_GOT_HM07_WATERFALL

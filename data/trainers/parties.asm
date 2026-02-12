@@ -2687,6 +2687,16 @@ CooltrainerMGroup:
 	dw TWISTER, SURF, ICE_BEAM, HEADBUTT
 	db -1 ; end
 
+	next_list_item ; COOLTRAINERM (21), Ice Path B1F
+	db "LOGAN@", TRAINERTYPE_MOVES
+	db 42
+	dw DRAGONAIR
+	dw DRAGONBREATH, SURF, THUNDER_WAVE, SLAM
+	db 41
+	dw DRAGONAIR
+	dw DRAGONBREATH, ICE_BEAM, FLAMETHROWER, SAFEGUARD
+	db -1 ; end
+
 	end_list_items
 
 CooltrainerFGroup:
@@ -2897,7 +2907,7 @@ CooltrainerFGroup:
 	dw SWIFT, ICE_BEAM, WATERFALL, TWISTER
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF GALEN, Victory Road
+	next_list_item ; COOLTRAINERF GALEN (22), Victory Road
 	db "GALEN@", TRAINERTYPE_ITEM_MOVES
 	db 48
 	dw CROBAT
@@ -2917,7 +2927,7 @@ CooltrainerFGroup:
 	dw SANDSTORM, EARTHQUAKE, ROCK_SLIDE, FIRE_BLAST
 	db -1 ; end
 
-	next_list_item ; COOLTRAINERF KELSEY
+	next_list_item ; COOLTRAINERF KELSEY (23), Victory Road
 	db "KELSEY@", TRAINERTYPE_ITEM_MOVES
 	db 44
 	dw SKARMORY
@@ -2935,6 +2945,16 @@ CooltrainerFGroup:
 	dw CHARIZARD
 	dw CHARCOAL
 	dw FLAMETHROWER, EARTHQUAKE, DRAGON_RAGE, WING_ATTACK
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERF (24), Ice Path 1F
+	db "NINA@", TRAINERTYPE_MOVES
+	db 42
+	dw DRAGONAIR
+	dw DRAGONBREATH, FLAMETHROWER, THUNDER_WAVE, SLAM
+	db 41
+	dw SEADRA
+	dw TWISTER, SURF, SMOKESCREEN, ICE_BEAM
 	db -1 ; end
 
 	end_list_items
@@ -3627,6 +3647,26 @@ SkierGroup:
 	dw LAPRAS
 	db 34
 	dw DELIBIRD
+	db -1 ; end
+
+	next_list_item ; SKIER (3), Ice Path 1F
+	db "NOELLE@", TRAINERTYPE_MOVES
+	db 41
+	dw PILOSWINE
+	dw ICY_WIND, MUD_SLAP, EARTHQUAKE, ENDURE
+	db 40
+	dw CLOYSTER
+	dw SPIKE_CANNON, ICY_WIND, SURF, PROTECT
+	db -1 ; end
+
+	next_list_item ; SKIER (4), Ice Path B1F
+	db "FLORA@", TRAINERTYPE_MOVES
+	db 40
+	dw DEWGONG
+	dw ICY_WIND, SURF, REST, SLEEP_TALK
+	db 40
+	dw JYNX
+	dw ICE_PUNCH, PSYCHIC_M, LOVELY_KISS, MEAN_LOOK
 	db -1 ; end
 
 	end_list_items
@@ -6295,6 +6335,29 @@ BoarderGroup:
 	dw CORSOLA
 	db -1 ; end
 
+	next_list_item ; BOARDER (4), Ice Path B1F
+	db "DAMON@", TRAINERTYPE_MOVES
+	db 41
+	dw CLOYSTER
+	dw SPIKE_CANNON, ICY_WIND, SURF, PROTECT
+	db 40
+	dw SNEASEL
+	dw FAINT_ATTACK, ICY_WIND, SLASH, SCREECH
+	db 39
+	dw DEWGONG
+	dw AURORA_BEAM, SURF, REST, HEADBUTT
+	db -1 ; end
+
+	next_list_item ; BOARDER (5), Ice Path B2F Blackthorn Side
+	db "VINCE@", TRAINERTYPE_NORMAL
+	db 41
+	dw DEWGONG
+	db 40
+	dw TENTACRUEL
+	db 40
+	dw DELIBIRD
+	db -1 ; end
+
 	end_list_items
 
 PokefanMGroup:
@@ -6539,10 +6602,16 @@ KimonoGirlGroup:
 	dw THUNDERBOLT, DOUBLE_KICK, SHADOW_BALL, MUD_SLAP
 	db -1 ; end
 
-	next_list_item ; KIMONO_GIRL (7), unused ???
-	db "YUKI@", TRAINERTYPE_NORMAL
-	db 24
-	dw EEVEE
+	next_list_item ; KIMONO_GIRL (7), Ice Path B2F Blackthorn Side
+	db "YUKI@", TRAINERTYPE_ITEM_MOVES
+	db 40
+	dw LAPRAS
+	dw NEVERMELTICE
+	dw ICY_WIND, QUICK_ATTACK, SHADOW_BALL, BITE
+	db 43
+	dw LAPRAS
+	dw LEFTOVERS
+	dw ICE_BEAM, BARRIER, HIDDEN_POWER, REST
 	db -1 ; end
 
 	next_list_item ; KIMONO_GIRL (8), unused ???

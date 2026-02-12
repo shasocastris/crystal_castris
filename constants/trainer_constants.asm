@@ -262,6 +262,7 @@ DEF KRIS EQU __trainer_class__
 	const STEVE
 	const ALLEN
 	const DARIN
+	const LOGAN
 
 	trainerclass COOLTRAINERF ; 21
 	const GWEN
@@ -287,6 +288,7 @@ DEF KRIS EQU __trainer_class__
 	const CARA
 	const GALEN
 	const KELSEY
+	const NINA
 
 	trainerclass BEAUTY ; 22
 	const VICTORIA
@@ -369,6 +371,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass SKIER ; 26
 	const ROXANNE
 	const CLARISSA
+    const NOELLE
+	const FLORA
 
 	trainerclass TEACHER ; 27
 	const TUSCANY
@@ -670,6 +674,8 @@ DEF KRIS EQU __trainer_class__
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const DAMON
+	const VINCE
 
 	trainerclass POKEFANM ; 3d
 	const WILLIAM
