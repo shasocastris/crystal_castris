@@ -281,7 +281,6 @@ Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
 
 OlivinePokecenter1F_Blocks:
-MahoganyPokecenter1F_Blocks:
 EcruteakPokecenter1F_Blocks:
 BlackthornPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
@@ -295,13 +294,14 @@ FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
 SilverCavePokecenter1F_Blocks:
 CeladonPokecenter1F_Blocks:
-CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.ablk"
 
 Route32Pokecenter1F_Blocks:
+CianwoodPokecenter1F_Blocks:
+MahoganyPokecenter1F_Blocks:
 	INCBIN "maps/Route32Pokecenter1F.ablk"
 
 EarlsPokemonAcademy_Blocks:
