@@ -218,7 +218,7 @@ ItemEffectsKeyItems:
 	dw BlueCardEffect     ; BLUE_CARD
 	dw NoEffect           ; CARD_KEY
 	dw NoEffect           ; MACHINE_PART
-	dw NoEffect           ; EGG_TICKET
+	dw MacheteEffect      ; MACHETE
 	dw NoEffect           ; LOST_ITEM
 	dw BasementKeyEffect  ; BASEMENT_KEY
 	dw NoEffect           ; PASS
@@ -2345,6 +2345,12 @@ PokeFluteEffect:
 
 .battle
 	jmp PokeFluteTerminator
+
+MacheteEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	call MacheteFunction
+	ret
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

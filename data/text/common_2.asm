@@ -1353,3 +1353,16 @@ _OakText5::
 	para "That's why I study"
 	line "#MON every day."
 	prompt
+
+_UseMacheteText::
+	text "You carved through"
+	line "some undergrowth!"
+	prompt
+
+_AskMacheteText::
+	text "This tree can be"
+	line "carved up!"
+
+	para "Want to use your"
+	line "MACHETE?"
+	done

@@ -258,7 +258,6 @@ BattleTowerAction:
 	dw BattleTower_CheckSaveFileExistsAndIsYours
 	dw BattleTowerAction_0A
 	dw BattleTowerAction_GSBall
-	dw BattleTowerAction_EggTicket
 	dw BattleTowerAction_0F
 	dw BattleTowerAction_11
 	dw BattleTowerAction_12
@@ -448,78 +447,6 @@ BattleTowerAction_GSBall:
 	ld a, [sGSBallFlag]
 	ld [wScriptVar], a
 	jmp CloseSRAM
-
-BattleTowerAction_EggTicket:
-	xor a ; FALSE
-	ld [wScriptVar], a
-	ld hl, EGG_TICKET
-	call GetItemIDFromIndex
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	ret nc
-	ld a, [wPartyCount]
-	ld b, 0
-	ld c, a
-	ld hl, wPartySpecies
-.loop
-	ld a, [hli]
-	cp EGG
-	jr nz, .not_egg
-	push hl
-	ld hl, wPartyMonOTs
-	ld de, NAME_LENGTH_JAPANESE
-	ld a, b
-	and a
-	jr z, .skip
-.loop2
-	add hl, de
-	dec a
-	jr nz, .loop2
-.skip
-	ld de, String_MysteryJP
-	ld a, NAME_LENGTH_JAPANESE
-.compare_loop
-	push af
-	ld a, [de]
-	inc de
-	cp [hl]
-	inc hl
-	jr nz, .different
-	pop af
-	dec a
-	jr nz, .compare_loop
-rept 4
-	dec hl
-endr
-	ld a, '@'
-	ld [hli], a
-	ld [hl], a
-	ld hl, EGG_TICKET
-	call GetItemIDFromIndex
-	pop hl
-	ld [wCurItem], a
-	ld a, 1
-	ld [wItemQuantityChange], a
-	ld a, -1
-	ld [wCurItemQuantity], a
-	ld hl, wNumItems
-	call TossItem
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-.different
-	pop af
-	pop hl
-.not_egg
-	inc b
-	dec c
-	jr nz, .loop
-	ret
-
-String_MysteryJP:
-	dname "なぞナゾ", NAME_LENGTH_JAPANESE ; "MYSTERY"
 
 BattleTowerAction_0F:
 	ldh a, [rWBK]

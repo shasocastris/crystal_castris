@@ -198,7 +198,7 @@ ItemDescriptionsKeyItems:
 	dw BlueCardDesc     ; 010D
 	dw CardKeyDesc      ; 010E
 	dw MachinePartDesc  ; 010F
-	dw EggTicketDesc    ; 0110
+	dw MacheteDesc      ; 0110
 	dw LostItemDesc     ; 0111
 	dw BasementKeyDesc  ; 0112
 	dw PassDesc         ; 0113
@@ -845,9 +845,9 @@ MachinePartDesc:
 	db   "A machine part for"
 	next "the POWER PLANT.@"
 
-EggTicketDesc:
-	db   "May use at Golden-"
-	next "rod trade corner.@"
+MacheteDesc:
+    db   "Carves through"
+    next "thick undergrowth.@"
 
 LostItemDesc:
 	db   "The # DOLL lost"

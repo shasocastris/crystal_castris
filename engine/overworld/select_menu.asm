@@ -168,6 +168,12 @@ UseRegisteredItem:
 	call ReanchorMap
 
 ._cantuse
+	; Grab and reset wUsingHMItem without changing flag
+	ld hl, wUsingHMItem
+	ld a, [hl]
+	ld [hl], 0
+
+	ret nz
 	call CantUseItem
 	call CloseText
 	and a

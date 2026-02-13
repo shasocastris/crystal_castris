@@ -123,6 +123,62 @@ CantFlyTeleportWildHunt:
 	text_far _CantFlyTeleportWildHuntText
 	text_end
 
+MacheteFunction:
+	call FieldMoveJumptableReset
+.loop
+	ld hl, .Jumptable
+	call FieldMoveJumptable
+	jr nc, .loop
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.Jumptable:
+	dw .CheckAble
+	dw .DoCut
+	dw .FailCut
+
+.CheckAble:
+	call CheckMapForSomethingToCut
+	jr c, .nothingtocut
+	ld a, $1
+	ret
+
+.nothingtocut
+	ld a, $2
+	ret
+
+.DoCut:
+	ld hl, Script_MacheteFromMenu
+	call QueueScript
+	ld a, $81
+	ret
+
+.FailCut:
+	ld hl, CutNothingText
+	call MenuTextboxBackup
+	ld a, $80
+	ret
+
+Script_MacheteFromMenu:
+	refreshmap
+	special UpdateTimePals
+
+Script_Machete:
+	writetext UseMacheteText
+	refreshmap
+	callasm CutDownTreeOrGrass
+	closetext
+	end
+
+UseMacheteText:
+	text_far _UseMacheteText
+	text_end
+
+AskMacheteText:
+	text_far _AskMacheteText
+	text_end
+
 CutFunction:
 	call FieldMoveJumptableReset
 .loop
@@ -484,6 +540,45 @@ CheckDirection:
 	db FACE_UP
 	db FACE_LEFT
 	db FACE_RIGHT
+
+TryMacheteOW::
+	ld a, LOW(MACHETE)	; $10 — what's actually stored in wKeyItems
+	ld hl, wKeyItems
+	ld de, 1
+	call IsInArray
+	jr nc, .cant_cut
+
+	ld a, BANK(AskMacheteScript)
+	ld hl, AskMacheteScript
+	call CallScript
+	scf
+	ret
+
+.cant_cut
+	ld a, BANK(CantCutScript)
+	ld hl, CantCutScript
+	call CallScript
+	scf
+	ret
+
+AskMacheteScript:
+	opentext
+	writetext AskMacheteText
+	yesorno
+	iffalse .declined
+	callasm .CheckMap
+	iftrue Script_Machete
+.declined
+	closetext
+	end
+
+.CheckMap:
+	xor a
+	ld [wScriptVar], a
+	call CheckMapForSomethingToCut
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
 
 TrySurfOW::
 ; Checking a tile in the overworld.

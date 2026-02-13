@@ -1524,8 +1524,9 @@ wMinutesSince:: db
 wHoursSince:: db
 wDaysSince:: db
 
-	ds 7
+	ds 6
 
+wUsingHMItem:: db
 wTempLoopCounter:: db
 
 

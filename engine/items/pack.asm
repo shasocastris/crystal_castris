@@ -488,9 +488,20 @@ UseItem:
 	call DoItemEffect
 	ld a, [wItemEffectSucceeded]
 	and a
-	jr z, .Oak
+
+	; Grab and reset wUsingHMItem without changing the zero flag
+	ld hl, wUsingHMItem
+	ld a, [hl]
+	ld [hl], 0
+
+	jr z, .tryOak
 	ld a, PACKSTATE_QUITRUNSCRIPT
 	ld [wJumptableIndex], a
+	ret
+
+.tryOak
+	or a
+	jr z, .Oak
 	ret
 
 TossMenu:

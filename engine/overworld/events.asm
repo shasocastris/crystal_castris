@@ -984,16 +984,16 @@ DoPlayerEvent:
 PlayerEventScriptPointers:
 ; entries correspond to PLAYEREVENT_* constants
 	table_width 3
-	dba InvalidEventScript      ; PLAYEREVENT_NONE
-	dba SeenByTrainerScript     ; PLAYEREVENT_SEENBYTRAINER
-	dba TalkToTrainerScript     ; PLAYEREVENT_TALKTOTRAINER
-	dba FindItemInBallScript    ; PLAYEREVENT_ITEMBALL
-	dba EdgeWarpScript          ; PLAYEREVENT_CONNECTION
-	dba WarpToNewMapScript      ; PLAYEREVENT_WARP
-	dba FallIntoMapScript       ; PLAYEREVENT_FALL
+	dba InvalidEventScript	  ; PLAYEREVENT_NONE
+	dba SeenByTrainerScript	 ; PLAYEREVENT_SEENBYTRAINER
+	dba TalkToTrainerScript	 ; PLAYEREVENT_TALKTOTRAINER
+	dba FindItemInBallScript	; PLAYEREVENT_ITEMBALL
+	dba EdgeWarpScript		  ; PLAYEREVENT_CONNECTION
+	dba WarpToNewMapScript	  ; PLAYEREVENT_WARP
+	dba FallIntoMapScript	   ; PLAYEREVENT_FALL
 	dba OverworldWhiteoutScript ; PLAYEREVENT_WHITEOUT
 	dba ChangeDirectionScript   ; PLAYEREVENT_JOYCHANGEFACING
-	dba InvalidEventScript      ; (NUM_PLAYER_EVENTS)
+	dba InvalidEventScript	  ; (NUM_PLAYER_EVENTS)
 	assert_table_length NUM_PLAYER_EVENTS + 1
 
 InvalidEventScript:
@@ -1090,7 +1090,19 @@ TryTileCollisionEvent::
 	; it still is after the previous farcall.
 	call CheckCutTreeTile
 	jr nz, .whirlpool
+
+
+	ld a, LOW(MACHETE)
+	ld hl, wKeyItems
+	ld de, 1
+	call IsInArray
+	jr c, .machete
+
 	farcall TryCutOW
+	jr .done
+
+.machete
+	farcall TryMacheteOW
 	jr .done
 
 .whirlpool
