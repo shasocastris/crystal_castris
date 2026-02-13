@@ -29,14 +29,14 @@ BlackthornRangerStationRanger2Script:
 BlackthornRangerStationRanger3Script:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_BLACKTHORN_RANGER_STATION_SMOKE_BALL
-	iftrue .GotSmokeBall
-	writetext BlackthornRangerStationReceiveSmokeBallText
+	checkevent EVENT_GOT_BLACKTHORN_RANGER_STATION_MACHETE
+	iftrue .GotMachete
+	writetext BlackthornRangerStationReceiveMacheteText
 	promptbutton
-	verbosegiveitem SMOKE_BALL
-	setevent EVENT_GOT_BLACKTHORN_RANGER_STATION_SMOKE_BALL
-.GotSmokeBall:
-	writetext BlackthornRangerStationGotSmokeBallText
+	verbosegiveitem MACHETE
+	setevent EVENT_GOT_BLACKTHORN_RANGER_STATION_MACHETE
+.GotMachete:
+	writetext BlackthornRangerStationGotMacheteText
 	waitbutton
 	closetext
 	end
@@ -65,7 +65,7 @@ BlackthornRangerStationRanger2Text:
 	cont "TEAM ROCKET."
 	done
 
-BlackthornRangerStationReceiveSmokeBallText:
+BlackthornRangerStationReceiveMacheteText:
 	text "Thanks so much for"
 	line "your help with the"
 	cont "WILD HUNT."
@@ -76,22 +76,20 @@ BlackthornRangerStationReceiveSmokeBallText:
 	cont "on your travels."
 	done
 
-BlackthornRangerStationGotSmokeBallText:
-	text "SMOKE BALLs are an"
-	line "excellent way to"
-	cont "escape any wild"
-	cont "encounter."
+BlackthornRangerStationGotMacheteText:
+	text "A MACHETE is how"
+	line "we cut through"
+	cont "small trees and"
+	cont "brush out here."
 
-	para "We use them in"
-	line "conjunction with"
-	cont "REPELs, CLEANSE"
-	cont "TAGs, # DOLLs,"
+	para "No need to have a"
+	line "#MON that knows"
+	cont "CUT in your team!"
 
-	para "and the LULLABY"
-	line "radio channel to"
-	cont "avoid #MON we"
-	cont "don't want to"
-	cont "battle."
+	para "Try it out on any"
+	line "small tree. You"
+	cont "can register it"
+	cont "to SELECT, too."
 	done
 
 BlackthornRangerStation_MapEvents:
