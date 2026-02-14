@@ -544,7 +544,7 @@ MistyGroup:
 	end_list_items
 
 LtSurgeGroup:
-	next_list_item ; LT_SURGE (1), Vermillion Gym
+	next_list_item ; LT_SURGE (1), Vermilion Gym
 	db "LT.SURGE@", TRAINERTYPE_ITEM_MOVES
 	db 53
 	dw RAICHU
@@ -3618,7 +3618,7 @@ GentlemanGroup:
 	dw POLITOED
 	db -1 ; end
 
-	next_list_item ; GENTLEMAN (3), Vermillion Gym
+	next_list_item ; GENTLEMAN (3), Vermilion Gym
 	db "GREGORY@", TRAINERTYPE_NORMAL
 	db 45
 	dw RAICHU
@@ -4830,7 +4830,7 @@ GuitaristGroup:
 	dw FORRETRESS
 	db -1 ; end
 
-	next_list_item ; GUITARIST (2), Vermillion Gym
+	next_list_item ; GUITARIST (2), Vermilion Gym
 	db "VINCENT@", TRAINERTYPE_NORMAL
 	db 33
 	dw JOLTEON
@@ -5261,7 +5261,7 @@ JugglerGroup:
 	dw MACHOKE
 	db -1 ; end
 
-	next_list_item ; JUGGLER (3), Vermillion Gym
+	next_list_item ; JUGGLER (3), Vermilion Gym
 	db "HORTON@", TRAINERTYPE_NORMAL
 	db 40
 	dw ELECTRODE
