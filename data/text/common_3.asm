@@ -938,6 +938,42 @@ _SentBedHomeText::
 	line "decoration home."
 	prompt
 
+_SentGameHomeText::
+	text "There was a game"
+	line "inside!@"
+	sound_dex_fanfare_50_79
+	text_start
+
+	para "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "decoration home."
+	prompt
+
+_SentCarpetHomeText::
+	text "There was a carpet"
+	line "inside!@"
+	sound_dex_fanfare_50_79
+	text_start
+
+	para "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "decoration home."
+	prompt
+
+_SentPosterHomeText::
+	text "There was a poster"
+	line "inside!@"
+	sound_dex_fanfare_50_79
+	text_start
+
+	para "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "decoration home."
+	prompt
+
 _ItemLooksBitterText::
 	text "It looks bitter…"
 	prompt

@@ -167,6 +167,20 @@ ItemNames::
 	li "PINK BED"     ; 008A
 	li "POLKADOT BED" ; 008B
 	li "PIKACHU BED"  ; 008C
+
+	li "SUPER NES"    ; 008D
+	li "NINTENDO 64"  ; 008E
+	li "VIRTUAL BOY"  ; 008F
+	li "FAMICOM"      ; 0090
+
+	li "RED CARPET"   ; 0091
+	li "BLUE CARPET"  ; 0092
+	li "YELLOWCARPET" ; 0093
+	li "GREEN CARPET" ; 0094
+
+	li "PIKA POSTER"  ; 0095
+	li "CLEF POSTER"  ; 0096
+	li "JIGG POSTER"  ; 0097
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

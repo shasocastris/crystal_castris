@@ -175,6 +175,20 @@
 	const POLKADOTBED  ; 008B
 	const PIKACHUBED   ; 008C
 
+	const NES          ; 008D
+	const N64          ; 008E
+	const VIRTUALBOY   ; 008F
+	const FCOM         ; 0090
+
+	const REDCARPET    ; 0091
+	const BLUECARPET   ; 0092
+	const YELLOWCARPET ; 0093
+	const GREENCARPET  ; 0094
+
+	const PIKACHU_POSTER    ; 0095
+	const CLEFAIRY_POSTER   ; 0096
+	const JIGGLYPUFF_POSTER ; 0097
+
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
 	const_align 8 ; Key items assume the value of HIGH(FIRST_KEY_ITEM) when storing in bag.

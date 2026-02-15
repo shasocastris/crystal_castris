@@ -179,6 +179,20 @@ ItemDescriptions1:
 	dw PinkBedDesc      ; 008A
 	dw PolkadotBedDesc  ; 008B
 	dw PikachuBedDesc   ; 008C
+
+	dw NESDesc          ; 008D
+	dw N64Desc          ; 008E
+	dw VirtualBoyDesc   ; 008F
+	dw FamicomDesc      ; 0090
+
+	dw RedCarpetDesc    ; 0091
+	dw BlueCarpetDesc   ; 0092
+	dw GreenCarpetDesc  ; 0093
+	dw YellowCarpetDesc ; 0094
+
+	dw PikachuPosterDesc    ; 0095
+	dw ClefairyPosterDesc   ; 0096
+	dw JigglypuffPosterDesc ; 0097
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -779,6 +793,26 @@ PinkBedDesc:
 PolkadotBedDesc:
 PikachuBedDesc:
 	db   "A new bed for"
+	next "your room!@"
+
+NESDesc:
+N64Desc:
+VirtualBoyDesc:
+FamicomDesc:
+	db   "A new game for"
+	next "your room!@"
+
+RedCarpetDesc:
+BlueCarpetDesc:
+GreenCarpetDesc:
+YellowCarpetDesc:
+	db   "A new carpet for"
+	next "your room!@"
+
+PikachuPosterDesc:
+ClefairyPosterDesc:
+JigglypuffPosterDesc:
+	db   "A new poster for"
 	next "your room!@"
 
 BicycleDesc:

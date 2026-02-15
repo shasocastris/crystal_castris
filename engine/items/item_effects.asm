@@ -196,9 +196,23 @@ ItemEffects1:
 	dw TropicPlantEffect   ; TROPIC_PLANT
 	dw JumboPlantEffect    ; JUMBO_PLANT
 
-	dw PinkBedEffect       ; PINK_BED
-	dw PolkadotBedEffect   ; POLKADOT_BED
-	dw PikachuBedEffect    ; PIKACHU_BED
+	dw PinkBedEffect       ; PINKBED
+	dw PolkadotBedEffect   ; POLKADOTBED
+	dw PikachuBedEffect    ; PIKACHUBED
+
+	dw NESEffect           ; NES
+	dw N64Effect           ; N64
+	dw VirtualBoyEffect    ; VIRTUALBOY
+	dw FamicomEffect       ; FCOM
+
+	dw RedCarpetEffect     ; REDCARPET
+	dw BlueCarpetEffect    ; BLUECARPET
+	dw YellowCarpetEffect  ; YELLOWCARPET
+	dw GreenCarpetEffect   ; GREENCARPET
+
+	dw PikachuPosterEffect    ; PIKACHU_POSTER
+	dw ClefairyPosterEffect   ; CLEFAIRY_POSTER
+	dw JigglypuffPosterEffect ; JIGGLYPUFF_POSTER
 .IndirectEnd:
 
 ItemEffectsKeyItems:
@@ -2669,7 +2683,7 @@ SacredAshEffect:
 	ld a, [wItemEffectSucceeded]
 	cp $1
 	ret nz
-	jr UseDisposableItem
+	jp UseDisposableItem
 
 MagnaPlantEffect:
 	ld c, DECOFLAG_MAGNAPLANT
@@ -2687,7 +2701,7 @@ OpenPlant:
 	ld hl, .SentPlantHomeText
 	call PrintText
 
-	jr UseDisposableItem
+	jp UseDisposableItem
 
 .SentPlantHomeText:
 	text_far _SentPlantHomeText
@@ -2709,10 +2723,84 @@ OpenBed:
 	ld hl, .SentBedHomeText
 	call PrintText
 
-	jr UseDisposableItem
+	jp UseDisposableItem
 
 .SentBedHomeText:
 	text_far _SentBedHomeText
+	text_end
+
+NESEffect:
+	ld c, DECOFLAG_SNES
+	jr OpenGameSystem
+
+N64Effect:
+	ld c, DECOFLAG_N64
+	jr OpenGameSystem
+
+VirtualBoyEffect:
+	ld c, DECOFLAG_VIRTUAL_BOY
+	jr OpenGameSystem
+
+FamicomEffect:
+	ld c, DECOFLAG_FAMICOM
+OpenGameSystem:
+	farcall SetSpecificDecorationFlag
+
+	ld hl, .SentGameHomeText
+	call PrintText
+
+	jr UseDisposableItem
+
+.SentGameHomeText:
+	text_far _SentGameHomeText
+	text_end
+
+RedCarpetEffect:
+	ld c, DECOFLAG_RED_CARPET
+	jr OpenGameSystem
+
+BlueCarpetEffect:
+	ld c, DECOFLAG_BLUE_CARPET
+	jr OpenGameSystem
+
+YellowCarpetEffect:
+	ld c, DECOFLAG_YELLOW_CARPET
+	jr OpenGameSystem
+
+GreenCarpetEffect:
+	ld c, DECOFLAG_GREEN_CARPET
+OpenCarpet:
+	farcall SetSpecificDecorationFlag
+
+	ld hl, .SentCarpetHomeText
+	call PrintText
+
+	jr UseDisposableItem
+
+.SentCarpetHomeText:
+	text_far _SentCarpetHomeText
+	text_end
+
+PikachuPosterEffect:
+	ld c, DECOFLAG_PIKACHU_POSTER
+	jr OpenGameSystem
+
+ClefairyPosterEffect:
+	ld c, DECOFLAG_CLEFAIRY_POSTER
+	jr OpenGameSystem
+
+JigglypuffPosterEffect:
+	ld c, DECOFLAG_JIGGLYPUFF_POSTER
+OpenPoster:
+	farcall SetSpecificDecorationFlag
+
+	ld hl, .SentPosterHomeText
+	call PrintText
+
+	jr UseDisposableItem
+
+.SentPosterHomeText:
+	text_far _SentPosterHomeText
 	text_end
 
 NormalBoxEffect:
