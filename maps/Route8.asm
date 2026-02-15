@@ -6,11 +6,34 @@
 	const ROUTE8_SUPER_NERD2
 	const ROUTE8_FRUIT_TREE
 	const ROUTE8_POKEFAN_M
+	const ROUTE8_BIG_SNORLAX
 
 Route8_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+
+Route8Snorlax:
+	opentext
+	special SnorlaxAwake
+	iftrue .Awake
+	writetext Route8SnorlaxSleepingText
+	waitbutton
+	closetext
+	end
+
+.Awake:
+	writetext Route8RadioNearSnorlaxText
+	pause 15
+	cry SNORLAX
+	closetext
+	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon SNORLAX, 50
+	startbattle
+	disappear ROUTE8_BIG_SNORLAX
+	setevent EVENT_FOUGHT_SNORLAX
+	reloadmapafterbattle
+	end
 
 TrainerBikerDwayne:
 	trainer BIKER, DWAYNE, EVENT_BEAT_BIKER_DWAYNE, BikerDwayneSeenText, BikerDwayneBeatenText, 0, .Script
@@ -80,6 +103,21 @@ Route8UndergroundPathSign:
 
 Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
+
+Route8SnorlaxSleepingText:
+	text "SNORLAX is snoring"
+	line "peacefully…"
+	done
+
+Route8RadioNearSnorlaxText:
+	text "The #GEAR was"
+	line "placed near the"
+	cont "sleeping SNORLAX…"
+
+	para "…"
+
+	para "SNORLAX woke up!"
+	done
 
 BikerDwayneSeenText:
 	text "We're the KANTO"
@@ -226,3 +264,4 @@ Route8_MapEvents:
 	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSuperNerdTom, -1
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
 	object_event 16, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokefanMJerred, -1
+	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Snorlax, EVENT_ROUTE8_SNORLAX
