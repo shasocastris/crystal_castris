@@ -21,6 +21,7 @@ AzaleaLumberYardPokefanScript:
 	jumptextfaceplayer AzaleaLumberYardPokefanText
 
 AzaleaLumberYardSageScript:
+	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_LUMBER_YARD
 	closetext
