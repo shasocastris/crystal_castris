@@ -25,7 +25,7 @@ MysteryGiftNPC:
 	ret
 
 .end_of_table
-	ld hl, BRICK_PIECE
+	ld hl, REVIVE
 	jr .done
 
 INCLUDE "data/items/mystery_gift_items.asm"
