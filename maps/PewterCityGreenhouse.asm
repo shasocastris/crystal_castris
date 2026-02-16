@@ -133,7 +133,7 @@ GreenhousePlot1Script:
 	ifequal 0, .DeclinePlant
 	; wScriptVar now holds the berry item ID
 	writemem wGreenhousePlot1
-;	takeitem ITEM_FROM_MEM
+;	callasm RemoveOneGreenhouseBerry
 	clearevent EVENT_GREENHOUSE_PLOT1_GROWN
 	clearevent EVENT_GREENHOUSE_PLOT1_WATERED
 	writetext GreenhousePlantedText
@@ -249,7 +249,7 @@ GreenhousePlot2Script:
 	special SelectBerryForGreenhouse
 	ifequal 0, .DeclinePlant
 	writemem wGreenhousePlot2
-;	takeitem ITEM_FROM_MEM
+;	callasm RemoveOneGreenhouseBerry
 	clearevent EVENT_GREENHOUSE_PLOT2_GROWN
 	clearevent EVENT_GREENHOUSE_PLOT2_WATERED
 	writetext GreenhousePlantedText
@@ -364,7 +364,7 @@ GreenhousePlot3Script:
 	special SelectBerryForGreenhouse
 	ifequal 0, .DeclinePlant
 	writemem wGreenhousePlot3
-;	takeitem ITEM_FROM_MEM
+;	callasm RemoveOneGreenhouseBerry
 	clearevent EVENT_GREENHOUSE_PLOT3_GROWN
 	clearevent EVENT_GREENHOUSE_PLOT3_WATERED
 	writetext GreenhousePlantedText
@@ -479,7 +479,7 @@ GreenhousePlot4Script:
 	special SelectBerryForGreenhouse
 	ifequal 0, .DeclinePlant
 	writemem wGreenhousePlot4
-;	takeitem ITEM_FROM_MEM
+;	callasm RemoveOneGreenhouseBerry
 	clearevent EVENT_GREENHOUSE_PLOT4_GROWN
 	clearevent EVENT_GREENHOUSE_PLOT4_WATERED
 	writetext GreenhousePlantedText
