@@ -41,6 +41,11 @@ _NothingHereText::
 	line "here…"
 	done
 
+_GreenhouseWhichBerryText::
+	text "Which BERRY should"
+	line "be planted?"
+	done
+
 _WhichApricornText::
 	text "Which APRICORN"
 	line "should I use?"

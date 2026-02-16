@@ -930,4 +930,7 @@ OlivineRestaurant_Blocks:
 BlackthornRangerStation_Blocks:
 	INCBIN "maps/BlackthornRangerStation.ablk"
 
+PewterCityGreenhouse_Blocks:
+	INCBIN "maps/PewterCityGreenhouse.ablk"
+
 ENDSECTION

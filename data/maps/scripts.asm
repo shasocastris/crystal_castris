@@ -400,6 +400,7 @@ INCLUDE "maps/PewterMart.asm"
 INCLUDE "maps/PewterPokecenter1F.asm"
 INCLUDE "maps/PewterPokecenter2FBeta.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
+INCLUDE "maps/PewterCityGreenhouse.asm"
 
 
 SECTION "Map Scripts 22", ROMX
