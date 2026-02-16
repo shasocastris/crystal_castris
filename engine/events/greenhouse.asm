@@ -16,7 +16,14 @@ PlantableBerries:
 	dw SPF_UP_BERRY
 	dw ACC_UP_BERRY
 	dw EVN_UP_BERRY
-	dw -1 ; terminator
+    dw WHT_APRICORN
+	dw RED_APRICORN
+	dw BLU_APRICORN
+	dw BLK_APRICORN
+	dw YLW_APRICORN
+	dw GRN_APRICORN
+	dw PNK_APRICORN
+	dw -1
 
 
 FindPlantableBerriesInBag:
