@@ -1,87 +1,73 @@
+PlantableBerries:
+	dw BERRY
+	dw GOLD_BERRY
+	dw MYSTERYBERRY
+	dw MIRACLEBERRY
+	dw PSNCUREBERRY
+	dw PRZCUREBERRY
+	dw BURNT_BERRY
+	dw ICE_BERRY
+	dw BITTER_BERRY
+	dw MINT_BERRY
+	dw ATK_UP_BERRY
+	dw DEF_UP_BERRY
+	dw SPD_UP_BERRY
+	dw SPA_UP_BERRY
+	dw SPF_UP_BERRY
+	dw ACC_UP_BERRY
+	dw EVN_UP_BERRY
+	dw -1 ; terminator
+
+
 FindPlantableBerriesInBag:
-; Scans wNumBerries for berries that are NOT apricorns.
-; Builds a list at wKurtApricornCount+1, count at wKurtApricornCount.
-; Returns carry set if no plantable berries found.
-
-	; Clear the output buffer
+; Checks the bag for plantable berries (not apricorns).
+; Mirrors FindApricornsInBag exactly, just with a different table.
+	ld hl, wKurtApricornCount
 	xor a
-	ld [wKurtApricornCount], a
+	ld [hli], a
+	assert wKurtApricornCount + 1 == wKurtApricornItems
+	dec a
+	ld bc, 10
+	rst ByteFill
 
-	; Point to the berry pocket
-	ld hl, wNumBerries
-	ld a, [hl]
-	and a
-	jr z, .none  ; pocket empty
-
-	; Walk entries: each is [id_hi, id_lo, qty]
-	inc hl       ; skip count byte
-	ld b, 0      ; b = number of unique berries found
-	ld de, wKurtApricornCount + 1  ; de = write pointer
-
-.loop:
-	ld a, [hli]  ; item_id_hi
-	cp -1
-	jr z, .done  ; hit terminator
-	; Save hi byte, read lo byte
-	ld c, a
-	ld a, [hli]  ; item_id_lo
-	inc hl       ; skip quantity byte
-
-	; Filter: must be a berry, not an apricorn
-	; Apricorns start at LOW(WHT_APRICORN) = $11
-	; Plantable berries are $00-$10
+	ld hl, PlantableBerries
+.loop
 	push hl
-	ld h, c      ; h = id_hi
-	ld l, a      ; l = id_lo
-
-	; Verify it's in the berry range (hi byte == HIGH(FIRST_BERRY_ITEM))
-	ld a, h
-	cp HIGH(FIRST_BERRY_ITEM)
-	jr nz, .skip
-
-	; Check it's not an apricorn (lo byte < LOW(WHT_APRICORN))
-	ld a, l
-	cp LOW(WHT_APRICORN)
-	jr nc, .skip  ; >= WHT_APRICORN, it's an apricorn
-
-	; Reconstruct the full item ID to store
-	ld a, h
-	ld [de], a
-	inc de
-	ld a, l
-	ld [de], a
-	inc de
-
-	; Check if we've already listed this berry (dedup)
-	; For simplicity: since the pocket shouldn't have
-	; duplicate entries, we skip dedup. If your build
-	; allows stacking duplicates, add a check here.
-
-	inc b
-
-.skip:
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	cphl16 $ffff
+	jr z, .done
+	call GetItemIDFromIndex
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
 	pop hl
+	inc hl
+	inc hl
+	call c, .addtobuffer
 	jr .loop
 
-.done:
-	; Write the terminator
-	ld a, -1
-	ld [de], a
-
-	; Store the count
-	ld a, b
-	ld [wKurtApricornCount], a
+.done
+	pop hl
+	farcall ItemTableGarbageCollection
+	ld a, [wKurtApricornCount]
 	and a
-	jr z, .none
-
-	; Success: carry clear
-	and a
-	ret
-
-.none:
+	ret nz
 	scf
 	ret
 
+.addtobuffer:
+	push hl
+	ld hl, wKurtApricornCount
+	inc [hl]
+	ld e, [hl]
+	ld d, 0
+	add hl, de
+	ld a, [wCurItem]
+	ld [hl], a
+	pop hl
+	ret
 
 SelectBerryForGreenhouse:
 ; Called as a special from the greenhouse map script.
@@ -89,11 +75,9 @@ SelectBerryForGreenhouse:
 ; On selection: consumes 1 berry, sets wScriptVar = item ID.
 ; On cancel: sets wScriptVar = 0.
 
-	; Build the list of plantable berries
 	call FindPlantableBerriesInBag
 	jr c, .no_berries
 
-	; Set up the scrolling menu
 	call LoadStandardMenuHeader
 	xor a
 	ld [wMenuScrollPosition], a
@@ -108,17 +92,18 @@ SelectBerryForGreenhouse:
 	call .ShowBerryMenu
 	ld a, c
 	and a
-	jr z, .cancelled  ; player pressed B
+	jr z, .cancelled
 
-	; c = selected item ID
-	; Store it and consume 1 from the bag
+	; c = selected item ID (8-bit, from buffer)
 	ld [wCurItem], a
+	; Find this item's position in the berry pocket
+	ld hl, wNumBerries
+	call CheckItem       ; sets wCurItemQuantity to the slot index
 	ld a, 1
 	ld [wItemQuantityChange], a
 	ld hl, wNumBerries
 	call TossItem
 
-	; Write the item ID to wScriptVar
 	ld a, [wCurItem]
 	ld [wScriptVar], a
 	call ExitMenu
@@ -157,7 +142,7 @@ SelectBerryForGreenhouse:
 	jr nz, .got_selection
 
 .nope:
-	xor a ; FALSE
+	xor a
 .got_selection:
 	ld c, a
 	ret
@@ -167,7 +152,7 @@ SelectBerryForGreenhouse:
 	menu_coords 1, 1, 13, 10
 	dw .MenuData
 	db 1 ; default option
-	db 0 ; unused
+	db 0
 
 .MenuData:
 	db SCROLLINGMENU_DISPLAY_ARROWS ; flags
@@ -194,8 +179,8 @@ SelectBerryForGreenhouse:
 	farjp PlaceMenuItemQuantity
 
 .GetBerryQuantity:
-	; Reuse Kurt's quantity-counting logic
-	; but for the selected berry
+; Counts quantity of [wCurItem] in the berry pocket.
+; Inlined from Kurt_GetQuantityOfApricorn to avoid cross-bank call.
 	push bc
 	push de
 	ld hl, wNumBerries
@@ -206,7 +191,7 @@ SelectBerryForGreenhouse:
 	ld e, l
 	pop hl
 	ld b, 0
-.qty_loop:
+.qty_loop
 	inc hl
 	ld a, [hli]
 	cp -1
@@ -221,7 +206,7 @@ SelectBerryForGreenhouse:
 	ld b, a
 	jr nc, .qty_loop
 	ld b, 99
-.qty_done:
+.qty_done
 	ld a, b
 	ld [wItemQuantityChange], a
 	and a
