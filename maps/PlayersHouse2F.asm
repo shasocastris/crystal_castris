@@ -83,6 +83,7 @@ if DEF(_DEBUG)
 	giveitem AMULET_COIN
 	giveitem SCOPE_LENS
 	giveitem POKE_FLUTE
+	giveitem SQUIRTBOTTLE
 	giveitem EXP_SHARE
 	giveitem LUCKY_EGG
 	giveitem GRIP_CLAW

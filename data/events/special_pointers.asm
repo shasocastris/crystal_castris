@@ -118,6 +118,7 @@ SpecialsPointers::
 	add_special CountCompletedTypes
 	add_special CountGroupCompleted
 	add_special Diploma
+	add_special SelectBerryForGreenhouse
 
 ; Crystal only
 	add_special BattleTowerRoomMenu

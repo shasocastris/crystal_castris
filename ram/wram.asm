@@ -2851,7 +2851,12 @@ wUnusedTwoDayTimer:: db
 wUnusedTwoDayTimerStartDate:: db
 
 wMobileOrCable_LastSelection:: db
-	ds 8
+	ds 4
+wGreenhousePlot1:: db
+wGreenhousePlot2:: db
+wGreenhousePlot3:: db
+wGreenhousePlot4:: db
+
 wBuenasPassword:: db
 wBlueCardBalance:: db
 wDailyRematchFlags:: ds 4

@@ -400,7 +400,6 @@ INCLUDE "maps/PewterMart.asm"
 INCLUDE "maps/PewterPokecenter1F.asm"
 INCLUDE "maps/PewterPokecenter2FBeta.asm"
 INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
-INCLUDE "maps/PewterCityGreenhouse.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -498,5 +497,6 @@ INCLUDE "maps/IcePathB1F.asm"
 INCLUDE "maps/IcePathB2FMahoganySide.asm"
 INCLUDE "maps/IcePathB2FBlackthornSide.asm"
 INCLUDE "maps/IcePathB3F.asm"
+INCLUDE "maps/PewterCityGreenhouse.asm"
 
 ENDSECTION

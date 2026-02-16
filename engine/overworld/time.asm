@@ -123,6 +123,7 @@ rept 3
 	ld [hli], a
 endr
 	ld [hl], a
+	farcall ResetGreenhousePlots
 	ld hl, wKenjiBreakTimer
 	ld a, [hl]
 	and a
