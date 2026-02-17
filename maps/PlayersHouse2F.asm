@@ -159,6 +159,7 @@ if DEF(_DEBUG)
 	; good party
 	givepoke MEWTWO, 100, BRIGHTPOWDER
 	givepokemove HAIL,       wPartyMon1, 1
+	loadmem wPartyMon1Happiness, $ff
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
 	givepoke LANTURN, 100, LEFTOVERS

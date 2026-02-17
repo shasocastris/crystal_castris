@@ -502,5 +502,6 @@ INCLUDE "maps/CeruleanAquarium.asm"
 INCLUDE "maps/VermilionGrampsHouse.asm"
 INCLUDE "maps/VermilionMysteryGiftHouse.asm"
 INCLUDE "maps/SaffronGameStop.asm"
+INCLUDE "maps/FuchsiaPokemonGiver.asm"
 
 ENDSECTION

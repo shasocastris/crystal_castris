@@ -126,7 +126,7 @@ FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 13, FUCHSIA_MART, 2
+	warp_event  5, 13, FUCHSIA_POKEMON_GIVER, 1
 	warp_event 22, 13, SAFARI_ZONE_MAIN_OFFICE, 1
 	warp_event  8, 27, FUCHSIA_GYM, 1
 	warp_event 11, 27, BILLS_OLDER_SISTERS_HOUSE, 1
@@ -148,7 +148,6 @@ FuchsiaCity_MapEvents:
 	bg_event 17,  5, BGEVENT_READ, SafariZoneClosedSign
 	bg_event 13, 15, BGEVENT_READ, NoLitteringSign
 	bg_event 20, 27, BGEVENT_READ, FuchsiaCityPokecenterSign
-	bg_event  6, 13, BGEVENT_READ, FuchsiaCityMartSign
 
 	def_object_events
 	object_event 23, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FuchsiaCityYoungster, -1
