@@ -24,9 +24,18 @@ FuchsiaPokemonGiverSageScript:
 	writetext SageOfferPokemonText
 	yesorno
 	iffalse .Refused
-	givepoke KANGASKHAN, 25, NO_ITEM
+	callasm CheckPartyFullForGift
+	ifequal 1, .PartyFull
+	givepoke KANGASKHAN, 60, KINGS_ROCK
+	callasm SetKangaskhanMoves
 	setevent EVENT_GOT_KANGASKHAN_FROM_SAGE
 	writetext SageGavePokemonText
+	waitbutton
+	closetext
+	end
+
+.PartyFull:
+	writetext SagePartyFullText
 	waitbutton
 	closetext
 	end
@@ -42,6 +51,64 @@ FuchsiaPokemonGiverSageScript:
 	waitbutton
 	closetext
 	end
+
+CheckPartyFullForGift::
+; Sets wScriptVar to 1 if party is full, 0 if room.
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jr nc, .full
+	xor a
+	ld [wScriptVar], a
+	ret
+.full
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+SetKangaskhanMoves::
+; Writes a custom moveset + PP to the last party mon.
+	ld a, [wPartyCount]
+	dec a
+	ld [wCurPartyMon], a
+
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	push hl
+
+	ld hl, BODY_SLAM
+	call GetMoveIDFromIndex
+	pop hl
+	ld [hli], a
+	push hl
+
+	ld hl, EARTHQUAKE
+	call GetMoveIDFromIndex
+	pop hl
+	ld [hli], a
+	push hl
+
+	ld hl, SHADOW_BALL
+	call GetMoveIDFromIndex
+	pop hl
+	ld [hli], a
+	push hl
+
+	ld hl, ROCK_SLIDE
+	call GetMoveIDFromIndex
+	pop hl
+	ld [hl], a
+
+	; Now fill PP
+	ld a, MON_MOVES
+	call GetPartyParamLocation
+	push hl
+	ld a, MON_PP
+	call GetPartyParamLocation
+	ld d, h
+	ld e, l
+	pop hl
+	predef FillPP
+	ret
 
 SageNotHappyEnoughText:
 	text "I am a retired"
@@ -93,24 +160,35 @@ SageOfferPokemonText:
 	line "the SAFARI ZONE"
 	cont "years ago."
 
-	para "She's a fierce"
-	line "protector. I think"
-	cont "she'd thrive with"
-	cont "a #MON trainer"
-	cont "like you."
+	para "She's a seasoned"
+	line "battler. Knows"
+	cont "tricks that most"
+	cont "trainers never"
+	cont "learn."
 	done
 
 SageGavePokemonText:
 	text "Take good care of"
 	line "her."
 
-	para "She's tough as"
-	line "nails, and she'll"
-	cont "guard your team"
-	cont "like her own."
+	para "Don't let her age"
+	line "fool you. She hits"
+	cont "like a landslide"
+	cont "and guards her"
+	cont "team like her own."
 
 	para "That's what a"
 	line "mother does."
+	done
+
+SagePartyFullText:
+	text "Hmm, your party"
+	line "is full."
+
+	para "Come back with an"
+	line "open spot. I want"
+	cont "to make sure you"
+	cont "two meet properly."
 	done
 
 SageRefusedText:
@@ -126,8 +204,8 @@ SageAfterGaveText:
 	line "doing?"
 
 	para "I bet she's"
-	line "already protecting"
-	cont "your whole team."
+	line "protecting your"
+	cont "whole team by now."
 
 	para "Old habits die"
 	line "hard, you know."

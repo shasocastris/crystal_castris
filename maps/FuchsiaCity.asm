@@ -126,7 +126,7 @@ FuchsiaCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  5, 13, FUCHSIA_POKEMON_GIVER, 1
+	warp_event  5, 11, FUCHSIA_POKEMON_GIVER, 1
 	warp_event 22, 13, SAFARI_ZONE_MAIN_OFFICE, 1
 	warp_event  8, 27, FUCHSIA_GYM, 1
 	warp_event 11, 27, BILLS_OLDER_SISTERS_HOUSE, 1
