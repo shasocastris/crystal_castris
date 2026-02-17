@@ -171,7 +171,7 @@ CharcoalKiln_Blocks:
 PokeSeersHouse_Blocks:
 	INCBIN "maps/PokeSeersHouse.ablk"
 
-SafariZoneFuchsiaGateBeta_Blocks:
+SafariZoneFuchsiaGate_Blocks:
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
@@ -814,8 +814,8 @@ VermilionPortPassage_Blocks:
 FuchsiaGym_Blocks:
 	INCBIN "maps/FuchsiaGym.ablk"
 
-SafariZoneBeta_Blocks:
-	INCBIN "maps/SafariZoneBeta.ablk"
+SafariZone_Blocks:
+	INCBIN "maps/SafariZone.ablk"
 
 UndergroundPath_Blocks:
 	INCBIN "maps/UndergroundPath.ablk"

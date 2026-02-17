@@ -2,7 +2,7 @@
 	const SAFARI_ZONE_FUCHSIA_GATE_CLERK
 	const SAFARI_ZONE_FUCHSIA_GATE_CLERK_COOLTRAINER_F
 
-SafariZoneFuchsiaGateBeta_MapScripts:
+SafariZoneFuchsiaGate_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -29,12 +29,12 @@ SafariZoneFuchsiaGateCooltrainerFText:
 	cont "named KURT."
 	done
 
-SafariZoneFuchsiaGateBeta_MapEvents:
+SafariZoneFuchsiaGate_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  4,  0, SAFARI_ZONE_BETA, 1
-	warp_event  5,  0, SAFARI_ZONE_BETA, 2
+	warp_event  4,  0, SAFARI_ZONE, 1
+	warp_event  5,  0, SAFARI_ZONE, 2
 	warp_event  4,  7, FUCHSIA_CITY, 7
 	warp_event  5,  7, FUCHSIA_CITY, 7
 

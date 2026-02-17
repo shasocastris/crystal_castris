@@ -870,7 +870,7 @@ KantoGrassWildMons:
 	dbw 62, TYRANITAR
 	end_grass_wildmons
 
-	def_grass_wildmons SAFARI_ZONE_BETA
+	def_grass_wildmons SAFARI_ZONE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 45, DODRIO
