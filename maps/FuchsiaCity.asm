@@ -112,7 +112,8 @@ SafariZoneClosedSignText:
 
 	para "Therefore, the"
 	line "SAFARI ZONE is"
-	cont "closed."
+	cont "limited to one"
+	done "area."
 	done
 
 NoLitteringSignText:

@@ -184,4 +184,11 @@ KantoWaterWildMons:
 	dbw 30, GYARADOS
 	end_water_wildmons
 
+	def_water_wildmons SAFARI_ZONE_BETA
+	db 6 percent ; encounter rate
+	dbw 45, SEAKING
+	dbw 45, GYARADOS
+	dbw 45, DRAGONAIR
+	end_water_wildmons
+
 	db -1 ; end

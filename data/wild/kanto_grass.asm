@@ -870,4 +870,32 @@ KantoGrassWildMons:
 	dbw 62, TYRANITAR
 	end_grass_wildmons
 
+	def_grass_wildmons SAFARI_ZONE_BETA
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 45, DODRIO
+	dbw 45, MILTANK
+	dbw 45, CHANSEY
+	dbw 45, NIDOKING
+	dbw 45, SLOWBRO
+	dbw 45, SCYTHER
+	dbw 45, SCYTHER
+	; day
+	dbw 45, MAROWAK
+	dbw 45, EXEGGUTOR
+	dbw 45, TANGELA
+	dbw 45, NIDOQUEEN
+	dbw 45, POLIWRATH
+	dbw 45, PINSIR
+	dbw 45, PINSIR
+	; nite
+	dbw 45, VENOMOTH
+	dbw 45, TAUROS
+	dbw 45, PARASECT
+	dbw 45, GOLDUCK
+	dbw 45, RHYDON
+	dbw 45, HERACROSS
+	dbw 45, HERACROSS
+	end_grass_wildmons
+
 	db -1 ; end
