@@ -262,7 +262,6 @@ Route14_Blocks:
 
 CeruleanMart_Blocks:
 VermilionMart_Blocks:
-PewterMart_Blocks:
 FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 ViridianMart_Blocks:
@@ -275,6 +274,7 @@ AzaleaMart_Blocks:
 EcruteakMart_Blocks:
 OlivineMart_Blocks:
 BlackthornMart_Blocks:
+PewterMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:
