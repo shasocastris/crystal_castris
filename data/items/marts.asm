@@ -41,6 +41,7 @@ Marts:
 	dw MartLumberYard
 	dw MartOlivineCafe
 	dw MartSaffronGameStop
+	dw MartSafari
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -420,6 +421,16 @@ MartSaffronGameStop:
 	dw N64
 	dw VIRTUALBOY
 	dw FCOM
+
+MartSafari:
+	db 7 ; # items
+	dw FAST_BALL
+	dw HEAVY_BALL
+	dw LEVEL_BALL
+	dw LURE_BALL
+	dw FRIEND_BALL
+	dw MOON_BALL
+	dw LOVE_BALL
 
 DefaultMart:
 	db 2 ; # items
