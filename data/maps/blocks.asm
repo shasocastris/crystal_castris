@@ -262,21 +262,19 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
-FuchsiaMart_Blocks:
-LavenderMart_Blocks:
-ViridianMart_Blocks:
-SaffronMart_Blocks:
-	INCBIN "maps/Mart.ablk"
-
 CherrygroveMart_Blocks:
 VioletMart_Blocks:
 AzaleaMart_Blocks:
 EcruteakMart_Blocks:
 OlivineMart_Blocks:
 BlackthornMart_Blocks:
+ViridianMart_Blocks:
 PewterMart_Blocks:
 CeruleanMart_Blocks:
 VermilionMart_Blocks:
+LavenderMart_Blocks:
+SaffronMart_Blocks:
+FuchsiaMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:
@@ -937,5 +935,8 @@ PewterCityGreenhouse_Blocks:
 
 CeruleanAquarium_Blocks:
 	INCBIN "maps/CeruleanAquarium.ablk"
+
+SaffronGameStop_Blocks:
+	INCBIN "maps/SaffronGameStop.ablk"
 
 ENDSECTION

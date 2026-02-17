@@ -707,3 +707,4 @@ ENDM
 	map_attributes CeruleanAquarium, CERULEAN_AQUARIUM, $00, 0
 	map_attributes VermilionGrampsHouse, VERMILION_GRAMPS_HOUSE, $00, 0
 	map_attributes VermilionMysteryGiftHouse, VERMILION_MYSTERY_GIFT_HOUSE, $00, 0
+	map_attributes SaffronGameStop, SAFFRON_GAME_STOP, $00, 0

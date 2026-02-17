@@ -40,6 +40,7 @@ Marts:
 	dw MartFlowerShop
 	dw MartLumberYard
 	dw MartOlivineCafe
+	dw MartSaffronGameStop
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -412,6 +413,13 @@ MartOlivineCafe:
 	dw ICE_BERRY
 	dw PROTEIN
 	dw ENERGYPOWDER
+
+MartSaffronGameStop:
+	db 4 ; # items
+	dw NES
+	dw N64
+	dw VIRTUALBOY
+	dw FCOM
 
 DefaultMart:
 	db 2 ; # items
