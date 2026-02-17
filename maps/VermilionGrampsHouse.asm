@@ -1,6 +1,6 @@
 	object_const_def
-	const VERMILIONCITY_GRAMPS
-	const VERMILIONCITY_MACHOP
+	const VERMILION_GRAMPS_HOUSE_GRAMPS
+	const VERMILION_GRAMPS_HOUSE_MACHOP
 
 VermilionGrampsHouse_MapScripts:
 	def_scene_scripts
@@ -20,7 +20,7 @@ VermilionGrampsHouseMachop:
 	opentext
 	writetext VermilionGrampsHouseMachopText2
 	waitbutton
-	showemote EMOTE_SHOCK, VERMILIONCITY_GRAMPS, 30
+	showemote EMOTE_SHOCK, VERMILION_GRAMPS_HOUSE_GRAMPS, 30
 	writetext VermilionGrampsHouseGrampsStopThatText
 	waitbutton
 	closetext

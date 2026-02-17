@@ -500,5 +500,6 @@ INCLUDE "maps/IcePathB3F.asm"
 INCLUDE "maps/PewterCityGreenhouse.asm"
 INCLUDE "maps/CeruleanAquarium.asm"
 INCLUDE "maps/VermilionGrampsHouse.asm"
+INCLUDE "maps/VermilionMysteryGiftHouse.asm"
 
 ENDSECTION

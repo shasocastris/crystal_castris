@@ -161,6 +161,7 @@ GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
 VermilionGrampsHouse_Blocks:
+VermilionMysteryGiftHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 CharcoalKiln_Blocks:
