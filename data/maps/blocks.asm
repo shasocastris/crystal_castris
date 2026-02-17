@@ -275,7 +275,7 @@ VermilionMart_Blocks:
 LavenderMart_Blocks:
 SaffronMart_Blocks:
 FuchsiaMart_Blocks:
-	INCBIN "maps/NewMart.ablk"
+	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
