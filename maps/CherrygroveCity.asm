@@ -35,11 +35,6 @@ CherrygroveCityGuideGent:
 	faceplayer
 	opentext
 	writetext GuideGentIntroText
-	yesorno
-	iffalse .No
-; fallthrough
-.Yes:
-	writetext GuideGentTourText1
 	waitbutton
 	closetext
 	playmusic MUSIC_SHOW_ME_AROUND
@@ -358,14 +353,10 @@ GuideGentIntroText:
 	line "one is a rookie"
 	cont "at some point!"
 
-	para "If you'd like, I"
-	line "can teach you a"
-	cont "few things."
-	done
+	para "I can teach you a"
+	line "few things."
 
-GuideGentTourText1:
-	text "OK, then!"
-	line "Follow me!"
+	para "Follow me!"
 	done
 
 GuideGentPokecenterText:
