@@ -499,5 +499,6 @@ INCLUDE "maps/IcePathB2FBlackthornSide.asm"
 INCLUDE "maps/IcePathB3F.asm"
 INCLUDE "maps/PewterCityGreenhouse.asm"
 INCLUDE "maps/CeruleanAquarium.asm"
+INCLUDE "maps/VermilionGrampsHouse.asm"
 
 ENDSECTION

@@ -38,8 +38,7 @@ VermilionMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, VERMILION_CITY, 5
-	warp_event  3,  7, VERMILION_CITY, 5
+	warp_event  0,  7, VERMILION_POKECENTER_1F, 3
 
 	def_coord_events
 

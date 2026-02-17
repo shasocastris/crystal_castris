@@ -160,6 +160,7 @@ CherrygroveGymSpeechHouse_Blocks:
 GuideGentsHouse_Blocks:
 CherrygroveEvolutionSpeechHouse_Blocks:
 Route30BerryHouse_Blocks:
+VermilionGrampsHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 CharcoalKiln_Blocks:
@@ -260,7 +261,6 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
-VermilionMart_Blocks:
 FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 ViridianMart_Blocks:
@@ -275,6 +275,7 @@ OlivineMart_Blocks:
 BlackthornMart_Blocks:
 PewterMart_Blocks:
 CeruleanMart_Blocks:
+VermilionMart_Blocks:
 	INCBIN "maps/NewMart.ablk"
 
 Route10North_Blocks:

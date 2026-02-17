@@ -105,7 +105,7 @@ RockItemEncounter:
 	ld [wScriptVar], a
 	ret
 .end_of_table
-	ld hl, NO_ITEM
+	ld hl, BRICK_PIECE
 	jr .done
 
 .RockItems
