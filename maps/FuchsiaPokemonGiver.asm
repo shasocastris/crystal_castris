@@ -11,6 +11,8 @@ FuchsiaPokemonGiverSageScript:
 	opentext
 	checkevent EVENT_GOT_KANGASKHAN_FROM_SAGE
 	iftrue .AlreadyGave
+	writetext SageIntroText
+	promptbutton
 	special GetFirstPokemonHappiness
 	ifgreater 220 - 1, .HappyEnough
 	writetext SageNotHappyEnoughText
@@ -110,7 +112,7 @@ SetKangaskhanMoves::
 	predef FillPP
 	ret
 
-SageNotHappyEnoughText:
+SageIntroText:
 	text "I am a retired"
 	line "trainer."
 
@@ -124,8 +126,10 @@ SageNotHappyEnoughText:
 	line "to a trainer who"
 	cont "truly cares for"
 	cont "their #MON."
+	done
 
-	para "Hmm… your #MON"
+SageNotHappyEnoughText:
+	text "Hmm… your #MON"
 	line "doesn't look that"
 	cont "happy, though."
 
@@ -135,18 +139,9 @@ SageNotHappyEnoughText:
 	done
 
 SageImpressedText:
-	text "I am a retired"
-	line "trainer."
-
-	para "My old partner"
-	line "still has some"
-	cont "fight left, but"
-	cont "I cannot battle"
-	cont "anymore."
-
-	para "But you… I can"
-	line "tell your #MON"
-	cont "trusts you deeply."
+	text "I can tell your"
+	line "#MON trusts you"
+	cont "deeply."
 
 	para "That kind of bond"
 	line "is rare."
