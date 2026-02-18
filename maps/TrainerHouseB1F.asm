@@ -39,6 +39,7 @@ TrainerHouseReceptionistScript:
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	reloadmapafterbattle
+	setevent EVENT_VIRIDIAN_TRAINER_HOUSE_CLEARED
 	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
 	end
 

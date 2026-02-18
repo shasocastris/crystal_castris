@@ -38,8 +38,7 @@ ViridianMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  7, VIRIDIAN_CITY, 4
-	warp_event  3,  7, VIRIDIAN_CITY, 4
+	warp_event  0,  7, VIRIDIAN_POKECENTER_1F, 3
 
 	def_coord_events
 

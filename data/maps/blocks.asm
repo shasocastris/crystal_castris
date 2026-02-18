@@ -163,6 +163,7 @@ Route30BerryHouse_Blocks:
 VermilionGrampsHouse_Blocks:
 VermilionMysteryGiftHouse_Blocks:
 FuchsiaPokemonGiver_Blocks:
+ViridianRetiredChampionHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 CharcoalKiln_Blocks:

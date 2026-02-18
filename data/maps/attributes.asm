@@ -709,3 +709,4 @@ ENDM
 	map_attributes VermilionMysteryGiftHouse, VERMILION_MYSTERY_GIFT_HOUSE, $00, 0
 	map_attributes SaffronGameStop, SAFFRON_GAME_STOP, $00, 0
 	map_attributes FuchsiaPokemonGiver, FUCHSIA_POKEMON_GIVER, $00, 0
+	map_attributes ViridianRetiredChampionHouse, VIRIDIAN_RETIRED_CHAMPION_HOUSE, $00, 0
