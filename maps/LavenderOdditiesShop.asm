@@ -11,46 +11,19 @@ LavenderOdditiesShop_MapScripts:
 LavenderOdditiesShopSailorScript:
 	faceplayer
 	opentext
-	writetext LavenderOdditiesShopSailorText
-	promptbutton
-	pokemart MARTTYPE_ODDITIES, MART_LAVENDER_ODDITIES_2
+	pokemart MARTTYPE_STANDARD, MART_LAVENDER_ODDITIES_1
 	closetext
 	end
 
 LavenderOdditiesShopGentlemanScript:
 	faceplayer
 	opentext
-	writetext LavenderOdditiesShopGentlemanText
-	promptbutton
-	pokemart MARTTYPE_ODDITIES, MART_LAVENDER_ODDITIES_1
+	pokemart MARTTYPE_ODDITIES, MART_LAVENDER_ODDITIES_2
 	closetext
 	end
 
 LavenderOdditiesShopPokefanMScript:
 	jumptextfaceplayer LavenderOdditiesShopPokefanMText
-
-LavenderOdditiesShopSailorText:
-	text "I've explored"
-	line "caves and tunnels"
-	cont "all across KANTO."
-
-	para "Need supplies for"
-	line "the road? I've got"
-	cont "you covered."
-	done
-
-LavenderOdditiesShopGentlemanText:
-	text "Ah, a discerning"
-	line "customer."
-
-	para "I collect rare"
-	line "items from around"
-	cont "the world."
-
-	para "Perhaps something"
-	line "here will catch"
-	cont "your eye."
-	done
 
 LavenderOdditiesShopPokefanMText:
 	text "This place is run"

@@ -416,13 +416,16 @@ _FlowerShopComeAgainText::
 	done
 
 _OdditiesShopIntroText::
-	text "Ah, a visitor."
+	text "Ah, a discerning"
+	line "customer."
 
-	para "Everything here"
-	line "has a story."
+	para "I collect rare"
+	line "items from around"
+	cont "the world."
 
-	para "See anything that"
-	line "catches your eye?"
+	para "Perhaps something"
+	line "here will catch"
+	cont "your eye."
 	done
 
 _OdditiesShopHowManyText::
