@@ -941,4 +941,7 @@ CeruleanAquarium_Blocks:
 SaffronGameStop_Blocks:
 	INCBIN "maps/SaffronGameStop.ablk"
 
+LavenderOdditiesShop_Blocks:
+	INCBIN "maps/LavenderOdditiesShop.ablk"
+
 ENDSECTION

@@ -415,6 +415,57 @@ _FlowerShopComeAgainText::
 	line "in!"
 	done
 
+_OdditiesShopIntroText::
+	text "Ah, a visitor."
+
+	para "Everything here"
+	line "has a story."
+
+	para "See anything that"
+	line "catches your eye?"
+	done
+
+_OdditiesShopHowManyText::
+	text "How many would"
+	line "you like?"
+	done
+
+_OdditiesShopFinalPriceText::
+	text "That will be"
+	line "¥@"
+	text_decimal hMoneyTemp, 3, 6
+	text ". Yes?"
+	done
+
+_OdditiesShopNoMoneyText::
+	text "Hmm, you're a bit"
+	line "short on funds."
+
+	para "These things don't"
+	line "come cheap."
+	done
+
+_OdditiesShopPackFullText::
+	text "Your bag is full."
+
+	para "Make some room"
+	line "and come back."
+	done
+
+_OdditiesShopThanksText::
+	text "A fine choice."
+
+	para "Handle it with"
+	line "care."
+	done
+
+_OdditiesShopComeAgainText::
+	text "Do come again."
+
+	para "I'm always finding"
+	line "new curiosities."
+	done
+
 _NothingToSellText::
 	text "You don't have"
 	line "anything to sell."

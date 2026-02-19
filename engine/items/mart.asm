@@ -24,6 +24,7 @@ MartTypeDialogs:
 	dw Pharmacist
 	dw RooftopSale
 	dw FlowerShop
+	dw OdditiesShop
 	assert_table_length NUM_MART_TYPES
 
 MartDialog:
@@ -97,6 +98,15 @@ RooftopSale:
 	call MartTextbox
 	call BuyMenu
 	ld hl, MartComeAgainText
+	jmp MartTextbox
+
+OdditiesShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, OdditiesShopIntroText
+	call MartTextbox
+	call BuyMenu
+	ld hl, OdditiesShopComeAgainText
 	jmp MartTextbox
 
 INCLUDE "data/items/rooftop_sale.asm"
@@ -453,6 +463,7 @@ GetMartDialogGroup:
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
 	dwb .FlowerShopPointers, 0
+	dwb .OdditiesShopPointers, 0
 
 .StandardMartPointers:
 	dw MartHowManyText
@@ -492,6 +503,14 @@ GetMartDialogGroup:
 	dw FlowerShopNoMoneyText
 	dw FlowerShopPackFullText
 	dw FlowerShopThanksText
+	dw BuyMenuLoop
+
+.OdditiesShopPointers:
+	dw OdditiesShopHowManyText
+	dw OdditiesShopFinalPriceText
+	dw OdditiesShopNoMoneyText
+	dw OdditiesShopPackFullText
+	dw OdditiesShopThanksText
 	dw BuyMenuLoop
 
 BuyMenuLoop:
@@ -800,6 +819,34 @@ FlowerShopNoMoneyText:
 
 FlowerShopComeAgainText:
 	text_far _FlowerShopComeAgainText
+	text_end
+
+OdditiesShopIntroText:
+	text_far _OdditiesShopIntroText
+	text_end
+
+OdditiesShopHowManyText:
+	text_far _OdditiesShopHowManyText
+	text_end
+
+OdditiesShopFinalPriceText:
+	text_far _OdditiesShopFinalPriceText
+	text_end
+
+OdditiesShopThanksText:
+	text_far _OdditiesShopThanksText
+	text_end
+
+OdditiesShopPackFullText:
+	text_far _OdditiesShopPackFullText
+	text_end
+
+OdditiesShopNoMoneyText:
+	text_far _OdditiesShopNoMoneyText
+	text_end
+
+OdditiesShopComeAgainText:
+	text_far _OdditiesShopComeAgainText
 	text_end
 
 SellMenu:

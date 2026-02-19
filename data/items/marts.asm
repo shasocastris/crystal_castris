@@ -42,6 +42,8 @@ Marts:
 	dw MartOlivineCafe
 	dw MartSaffronGameStop
 	dw MartSafari
+	dw MartLavenderOddities1
+	dw MartLavenderOddities2
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -431,6 +433,25 @@ MartSafari:
 	dw FRIEND_BALL
 	dw MOON_BALL
 	dw LOVE_BALL
+
+MartLavenderOddities1:
+	db 6 ; # items
+	dw ESCAPE_ROPE
+	dw REPEL
+	dw SUPER_REPEL
+	dw MAX_REPEL
+	dw FULL_HEAL
+	dw REVIVAL_HERB
+
+MartLavenderOddities2:
+	db 7 ; # items
+	dw SPELL_TAG
+	dw CLEANSE_TAG
+	dw SMOKE_BALL
+	dw BLACKGLASSES
+	dw POKE_DOLL
+	dw DIRE_HIT
+	dw GUARD_SPEC
 
 DefaultMart:
 	db 2 ; # items

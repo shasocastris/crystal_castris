@@ -6,6 +6,7 @@
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
 	const MARTTYPE_FLOWER
+	const MARTTYPE_ODDITIES
 DEF NUM_MART_TYPES EQU const_value
 
 ; Marts indexes (see data/items/marts.asm)
@@ -51,4 +52,6 @@ DEF NUM_MART_TYPES EQU const_value
 	const MART_OLIVINE_CAFE
 	const MART_SAFFRON_GAME_STOP
 	const MART_SAFARI
+	const MART_LAVENDER_ODDITIES_1
+	const MART_LAVENDER_ODDITIES_2
 DEF NUM_MARTS EQU const_value
