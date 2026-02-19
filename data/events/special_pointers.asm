@@ -127,6 +127,7 @@ SpecialsPointers::
 	add_special CheckForBattleTowerRules
 	add_special Reset ; bank 0
 	add_special MoveTutor
+	add_special MoveTutorNoCheck
 	add_special OmanyteChamber
 	add_special BattleTowerAction
 	add_special DisplayUnownWords
