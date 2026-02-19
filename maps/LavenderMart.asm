@@ -49,7 +49,7 @@ LavenderMart_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  0,  7, LAVENDER_POKECENTER_1F, 1
+	warp_event  0,  7, LAVENDER_POKECENTER_1F, 3
 
 	def_coord_events
 
