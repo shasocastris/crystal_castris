@@ -576,7 +576,6 @@ CherrygroveCity_MapEvents:
 	def_coord_events
 	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneNorth
 	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveRivalSceneSouth
-	coord_event 33,  7, 0, CherrygroveGuideGentTrigger
 
 	def_bg_events
 	bg_event 30,  8, BGEVENT_READ, CherrygroveCitySign
