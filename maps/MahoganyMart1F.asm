@@ -213,7 +213,7 @@ MahoganyMart1FLanceSplitUpText:
 
 	para "until we defeat"
 	line "every member of"
-	cont "Team Rocket!"
+	cont "TEAM ROCKET!"
 	done
 
 MahoganyMart1F_MapEvents:

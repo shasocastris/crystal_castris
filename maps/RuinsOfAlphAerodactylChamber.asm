@@ -158,22 +158,18 @@ ScientistCarlBeatenText:
 	done
 
 ScientistCarlAfterBattleText:
-	text "My research shows"
-	line "four puzzle chambers"
+	text "There are at least"
+	line "four chambers in"
 	cont "total."
 
-	para "Each reveals differ-"
-	line "ent symbol forms."
+	para "Each has a new"
+	line "puzzle."
 
-	para "I theorize catching"
-	line "all 26 variants"
+	para "I theorize solving"
+	line "them unlocks new"
 
-	para "creates a psychic"
-	line "resonance cascade."
-
-	para "Whoever achieves"
-	line "this becomes the"
-	cont "ruins' master!"
+	para "variants of the"
+	line "unknown #MON."
 	done
 
 RuinsOfAlphAerodactylChamberAncientReplicaText:

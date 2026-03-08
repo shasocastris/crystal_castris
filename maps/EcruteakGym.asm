@@ -388,12 +388,13 @@ SagePingBeatenText:
 	done
 
 SagePingAfterBattleText:
-	text "We use only ghost-"
-	line "type #MON."
+	text "We use ghost-type"
+	line "#MON along with"
+	cont "related others."
 
-	para "No normal-type"
-	line "attack can harm"
-	cont "them!"
+	para "The variety often"
+	line "catches trainers"
+	cont "by surprise!"
 	done
 
 MediumMarthaSeenText:

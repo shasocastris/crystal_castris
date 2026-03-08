@@ -131,7 +131,7 @@ GruntF6BeatenText:
 	done
 
 GruntF6AfterBattleText:
-	text "The scientists keep"
+	text "The scientists are"
 	line "babbling about"
 	cont "symbols and forms."
 
@@ -167,12 +167,8 @@ ScientistErwinAfterBattleText:
 	para "Which means if we"
 	line "catch every single"
 	cont "one, we should"
-	cont "unlock all the"
-	cont "resonance patterns!"
-
-	para "Then we can harness"
-	line "their collective"
-	cont "psychic power!"
+	cont "activate the"
+	cont "shrine!"
 	done
 
 RuinsOfAlphKabutoChamberWallHoleText:
