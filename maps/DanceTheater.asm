@@ -19,7 +19,7 @@ TrainerKimonoGirlNaoko:
 
 .Script:
 	opentext
-	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	checkevent EVENT_QUELLED_WILD_HUNT
 	iftrue .NaokoPostHunt
 	writetext KimonoGirlNaokoAfterBattleText
 	waitbutton
@@ -37,7 +37,7 @@ TrainerKimonoGirlSayo:
 
 .Script:
 	opentext
-	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	checkevent EVENT_QUELLED_WILD_HUNT
 	iftrue .SayoPostHunt
 	writetext KimonoGirlSayoAfterBattleText
 	waitbutton
@@ -55,7 +55,7 @@ TrainerKimonoGirlZuki:
 
 .Script:
 	opentext
-	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	checkevent EVENT_QUELLED_WILD_HUNT
 	iftrue .ZukiPostHunt
 	writetext KimonoGirlZukiAfterBattleText
 	waitbutton
@@ -73,7 +73,7 @@ TrainerKimonoGirlKuni:
 
 .Script:
 	opentext
-	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	checkevent EVENT_QUELLED_WILD_HUNT
 	iftrue .KuniPostHunt
 	writetext KimonoGirlKuniAfterBattleText
 	waitbutton
@@ -91,7 +91,7 @@ TrainerKimonoGirlMiki:
 
 .Script:
 	opentext
-	checkevent EVENT_ECRUTEAK_WILD_HUNT
+	checkevent EVENT_QUELLED_WILD_HUNT
 	iftrue .MikiPostHunt
 	writetext KimonoGirlMikiAfterBattleText
 	waitbutton
