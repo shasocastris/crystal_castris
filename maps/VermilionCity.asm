@@ -116,12 +116,13 @@ VermilionCityTeacherText:
 	done
 
 VermilionCitySuperNerdText:
-	text "There are eight"
-	line "GYMS in KANTO."
+	text "I'm trackign each"
+	line "SNORLAX sighting"
+	cont "across the region."
 
-	para "That big building"
-	line "is VERMILION's"
-	cont "#MON GYM."
+	para "LAVENDER TOWN has"
+	line "been almost cutoff"
+	cont "completely."
 	done
 
 VermilionCitySnorlaxSleepingText:

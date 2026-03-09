@@ -85,14 +85,15 @@ VictoryRoadGateLeftBlackBeltText:
 	done
 
 VictoryRoadGateRightBlackBeltText:
-	text "Off to the #MON"
-	line "LEAGUE, are you?"
+	text "We're not letting"
+	line "anyone into KANTO"
 
-	para "The ELITE FOUR are"
-	line "so strong it's"
+	para "until we can work"
+	line "out why all these"
 
-	para "scary, and they're"
-	line "ready for you!"
+	para "SNORLAX keep"
+	line "sleeping on key"
+	cont "routes."
 	done
 
 VictoryRoadGate_MapEvents:
