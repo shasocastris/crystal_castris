@@ -19,7 +19,7 @@ TrainerKimonoGirlNaoko:
 
 .Script:
 	opentext
-	checkevent EVENT_QUELLED_WILD_HUNT
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
 	iftrue .NaokoPostHunt
 	writetext KimonoGirlNaokoAfterBattleText
 	waitbutton
@@ -37,7 +37,7 @@ TrainerKimonoGirlSayo:
 
 .Script:
 	opentext
-	checkevent EVENT_QUELLED_WILD_HUNT
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
 	iftrue .SayoPostHunt
 	writetext KimonoGirlSayoAfterBattleText
 	waitbutton
@@ -55,7 +55,7 @@ TrainerKimonoGirlZuki:
 
 .Script:
 	opentext
-	checkevent EVENT_QUELLED_WILD_HUNT
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
 	iftrue .ZukiPostHunt
 	writetext KimonoGirlZukiAfterBattleText
 	waitbutton
@@ -73,7 +73,7 @@ TrainerKimonoGirlKuni:
 
 .Script:
 	opentext
-	checkevent EVENT_QUELLED_WILD_HUNT
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
 	iftrue .KuniPostHunt
 	writetext KimonoGirlKuniAfterBattleText
 	waitbutton
@@ -91,7 +91,7 @@ TrainerKimonoGirlMiki:
 
 .Script:
 	opentext
-	checkevent EVENT_QUELLED_WILD_HUNT
+	checkevent EVENT_ECRUTEAK_WILD_HUNT
 	iftrue .MikiPostHunt
 	writetext KimonoGirlMikiAfterBattleText
 	waitbutton
@@ -488,11 +488,11 @@ DanceTheater_MapEvents:
 	bg_event  6,  6, BGEVENT_UP, DanceTheaterFancyPanel
 
 	def_object_events
-	object_event  0,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlNaoko, -1
-	object_event  2,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlSayo, -1
-	object_event  6,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlZuki, -1
-	object_event  9,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlKuni, -1
-	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, -1
+	object_event  0,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlNaoko, EVENT_QUELLED_WILD_HUNT
+	object_event  2,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlSayo, EVENT_QUELLED_WILD_HUNT
+	object_event  6,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlZuki, EVENT_QUELLED_WILD_HUNT
+	object_event  9,  1, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlKuni, EVENT_QUELLED_WILD_HUNT
+	object_event 11,  2, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_YELLOW, OBJECTTYPE_TRAINER, 0, TrainerKimonoGirlMiki, EVENT_QUELLED_WILD_HUNT
 	object_event  7, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DanceTheaterRockSmashGuy, -1
 	object_event  6,  8, SPRITE_RHYDON, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GRAY, OBJECTTYPE_SCRIPT, 0, DanceTheaterRhydon, -1
 	object_event 10, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DanceTheaterCooltrainerMScript, -1

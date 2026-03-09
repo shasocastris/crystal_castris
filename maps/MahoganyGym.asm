@@ -42,6 +42,7 @@ MahoganyGymPryceScript:
 	setflag ENGINE_GLACIERBADGE
 	readvar VAR_BADGES
 	scall MahoganyGymWildHuntCallScript
+	setevent EVENT_QUELLED_WILD_HUNT
 .FightDone:
 	changeblock 4, 17, $1C ; door
 	changeblock 5, 17, $1C ; door

@@ -37,12 +37,10 @@ Route38EcruteakGateRanger2Script:
 	end
 
 Route38EcruteakGateRanger3Script:
-	clearevent EVENT_QUELLED_WILD_HUNT
 	jumptextfaceplayer Route38EcruteakGateRanger3Text
 
 Route38EcruteakGateMortyScript:
 	setflag ENGINE_WILD_HUNT
-	setevent EVENT_QUELLED_WILD_HUNT
 	faceplayer
 	opentext
 	writetext Route38EcruteakGateMortyText
