@@ -32,7 +32,7 @@ RuinsOfAlphOutsideShrineCallback:
 RuinsOfAlphOutsideScientistWerner_Script:
 	faceplayer
 	opentext
-	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	checkevent EVENT_MET_ELM_AT_RESEARCH_CENTER
 	iffalse .GetLost
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .GetLost
@@ -63,7 +63,7 @@ RuinsOfAlphOutsideScientistWerner_Script:
 RuinsOfAlphOutsideScientistEnrico_Script:
 	faceplayer
 	opentext
-	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	checkevent EVENT_MET_ELM_AT_RESEARCH_CENTER
 	iffalse .NormalText
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .NormalText
@@ -94,7 +94,7 @@ RuinsOfAlphOutsideScientistEnrico_Script:
 RuinsOfAlphOutsideScientistNiels_Script:
 	faceplayer
 	opentext
-	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	checkevent EVENT_MET_ELM_AT_RESEARCH_CENTER
 	iffalse .Research
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .Research
@@ -125,7 +125,7 @@ RuinsOfAlphOutsideScientistNiels_Script:
 RuinsOfAlphOutsideScientistEarnest_Script:
 	faceplayer
 	opentext
-	checkevent EVENT_FINISHED_SUICUNE_ENCOUNTERS
+	checkevent EVENT_MET_ELM_AT_RESEARCH_CENTER
 	iffalse .Studying
 	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
 	iffalse .Studying

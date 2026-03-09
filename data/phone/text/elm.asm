@@ -185,8 +185,13 @@ ElmPhoneRuinsOfAlphRocketTakeoverText:
 	line "since they broke"
 	cont "up many years ago."
 
-	para "Sorry to bug you."
-	line "Take care!"
+	para "I'm heading to the"
+	line "RESEARCH CENTER"
+	cont "there to look into"
+	cont "it myself."
+
+	para "If you're nearby,"
+	line "please be careful!"
 	done
 
 ElmPhoneRoute38WildHuntText:

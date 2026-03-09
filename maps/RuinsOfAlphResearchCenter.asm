@@ -2,19 +2,25 @@
 	const RUINSOFALPHRESEARCHCENTER_SCIENTIST1
 	const RUINSOFALPHRESEARCHCENTER_SCIENTIST2
 	const RUINSOFALPHRESEARCHCENTER_ROCKET3
+	const RUINSOFALPHRESEARCHCENTER_ELM
 
 RuinsOfAlphResearchCenter_MapScripts:
 	def_scene_scripts
-	scene_script RuinsOfAlphResearchCenterGetUnownDexScene, SCENE_RUINSOFALPHRESEARCHCENTER_GET_UNOWN_DEX
-	scene_script RuinsOfAlphResearchCenterNoopScene,        SCENE_RUINSOFALPHRESEARCHCENTER_NOOP
+	scene_script RuinsOfAlphResearchCenterClosed,     SCENE_RUINSOFALPHRESEARCHCENTER_CLOSED
+	scene_script RuinsOfAlphResearchCenterElmPresent, SCENE_RUINSOFALPHRESEARCHCENTER_ELM_PRESENT
+	scene_script RuinsOfAlphResearchCenterNoopScene,  SCENE_RUINSOFALPHRESEARCHCENTER_NOOP
 
 	def_callbacks
 
 RuinsOfAlphResearchCenterNoopScene:
 	end
 
-RuinsOfAlphResearchCenterGetUnownDexScene:
+RuinsOfAlphResearchCenterClosed:
 	sdefer ResearchCenterClosed
+	end
+
+RuinsOfAlphResearchCenterElmPresent:
+	sdefer RuinsOfAlphResearchCenterElmScript
 	end
 
 RuinsOfAlphResearchCenterScientist1Script:
@@ -84,6 +90,49 @@ ResearchCenterClosed:
 	warp RUINS_OF_ALPH_OUTSIDE, 19, 12
 	end
 
+RuinsOfAlphResearchCenterElmScript:
+	appear RUINSOFALPHRESEARCHCENTER_ELM
+	applymovement PLAYER, ResearchCenterPlayerApproachesElmMovement
+    turnobject PLAYER, RIGHT
+	opentext
+	checkevent EVENT_MET_ELM_AT_RESEARCH_CENTER
+	iftrue .DuringBattle
+	writetext RuinsOfAlphResearchCenterElmText_Searching
+	waitbutton
+	closetext
+	setevent EVENT_MET_ELM_AT_RESEARCH_CENTER
+	applymovement PLAYER, ResearchCenterPlayerLeavesElmMovement
+    special FadeOutToWhite
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	warp RUINS_OF_ALPH_OUTSIDE, 19, 12
+	end
+
+.DuringBattle:
+	checkevent EVENT_RUINS_OF_ALPH_ROCKETS
+	iffalse .PostBattle
+	writetext RuinsOfAlphResearchCenterElmText_LabSecured
+	waitbutton
+	closetext
+    applymovement PLAYER, ResearchCenterPlayerLeavesElmMovement
+    special FadeOutToWhite
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	warp RUINS_OF_ALPH_OUTSIDE, 19, 12
+	end
+
+.PostBattle:
+	writetext RuinsOfAlphResearchCenterElmText_Relieved
+	waitbutton
+	closetext
+	applymovement RUINSOFALPHRESEARCHCENTER_ELM, ResearchCenterElmLeavesMovement
+	playsound SFX_ENTER_DOOR
+	disappear RUINSOFALPHRESEARCHCENTER_ELM
+	waitsfx
+	setmapscene RUINS_OF_ALPH_RESEARCH_CENTER, SCENE_RUINSOFALPHRESEARCHCENTER_NOOP
+	setevent EVENT_ELM_NOT_AT_RUINS_RESEARCH_CENTER
+	end
+
 RuinsOfAlphResearchCenterBookshelf:
 	jumptext RuinsOfAlphResearchCenterAcademicBooksText
 
@@ -95,6 +144,19 @@ ResearchCenterPlayerSlowStepDownMovement:
 	fix_facing
 	slow_step DOWN
 	remove_fixed_facing
+	step_end
+
+ResearchCenterPlayerApproachesElmMovement:
+	step UP
+	step_end
+
+ResearchCenterPlayerLeavesElmMovement:
+	step DOWN
+	step_end
+
+ResearchCenterElmLeavesMovement:
+	step DOWN
+	step DOWN
 	step_end
 
 RuinsOfAlphResearchCenterScientist1Text:
@@ -111,8 +173,8 @@ RuinsOfAlphResearchCenterScientist1Text:
 RuinsOfAlphResearchCenterScientist1Text_CaughtUnown:
 	text "What's this?"
 
-	para "You caught a new"
-	line "type of #MON?"
+	para "You caught all the"
+	line "UNOWN?"
 
 	para "That's a stunning"
 	line "discovery."
@@ -208,6 +270,75 @@ ResearchCenterClosedText:
 	para "SCRAM!"
 	done
 
+RuinsOfAlphResearchCenterElmText_Searching:
+    text "ELM: <PLAY_G>!"
+    line "Thank goodness."
+
+    para "TEAM ROCKET locked"
+    line "the staff in here."
+
+    para "I've secured this"
+    line "GRUNT."
+
+    para "We overheard them."
+    line "They're hunting"
+    cont "for a new #MON."
+
+    para "The researchers"
+    line "think there are"
+    cont "26 variants hidden"
+    cont "behind the four"
+    cont "puzzle chambers,"
+
+    para "and catching every"
+    line "will activate the"
+    cont "shrine."
+
+    para "We're not sure why"
+    line "TEAM ROCKET wants"
+    cont "to do that."
+
+    para "But they haven't"
+    line "solved any puzzles"
+    cont "yet."
+
+    para "If you catch those"
+    line "#MON first,"
+    cont "their plan fails!"
+
+    para "The first thing"
+    line "you'll need to do"
+    cont "is get past those"
+    cont "guards."
+    done
+
+RuinsOfAlphResearchCenterElmText_LabSecured:
+    text "ELM: I've got the"
+    line "lab secured."
+
+    para "Make sure to catch"
+    line "the #MON and"
+    cont "stop TEAM ROCKET."
+    done
+
+RuinsOfAlphResearchCenterElmText_Relieved:
+    text "ELM: You did it!"
+    line "TEAM ROCKET is"
+    cont "gone."
+
+    para "The researchers"
+    line "are safe."
+
+    para "We have a lot of"
+    line "work ahead of us"
+    cont "to uncover all of"
+    cont "the secrets of the"
+    cont "RUINS OF ALPH."
+
+    para "Thank you,"
+    line "<PLAY_G>."
+    done
+
 RuinsOfAlphResearchCenter_MapEvents:
 	db 0, 0 ; filler
 
@@ -225,3 +356,4 @@ RuinsOfAlphResearchCenter_MapEvents:
 	object_event  4,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist1Script, -1
 	object_event  5,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 2, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterScientist2Script, -1
 	object_event  2,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RUINS_OF_ALPH_RESEARCH_CENTER_ROCKET
+	object_event  3,  6, SPRITE_ELM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RuinsOfAlphResearchCenterElmScript, EVENT_ELM_NOT_AT_RUINS_RESEARCH_CENTER
