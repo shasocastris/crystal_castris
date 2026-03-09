@@ -53,9 +53,10 @@ WardensGranddaughterText2:
 	text "Many people were"
 	line "disappointed that"
 
-	para "SAFARI ZONE closed"
-	line "down, but Grandpa"
-	cont "is so stubborn…"
+	para "SAFARI ZONE mostly"
+	line "closed down, but"
+	cont "Grandpa is so"
+	cont "stubborn…"
 	done
 
 WardenPhotoText:

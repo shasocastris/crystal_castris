@@ -68,11 +68,13 @@ FuchsiaCityPokefanMText:
 	done
 
 FuchsiaCityTeacherText:
-	text "The SAFARI ZONE is"
-	line "closed… It's sad,"
+	text "You can only get"
+	line "into one part of"
+	cont "the SAFARI ZONE…"
 
-	para "considering it's"
-	line "FUCHSIA's main"
+	para "It's sad,"
+	line "considering it's"
+	cont "FUCHSIA's main"
 	cont "attraction."
 	done
 
