@@ -15,6 +15,11 @@ Route44_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, Route44GoldenrodRadioDirectorCallback
+
+Route44GoldenrodRadioDirectorCallback:
+	specialphonecall SPECIALCALL_DIRECTOR
+	endcallback
 
 TrainerBirdKeeperVance1:
 	trainer BIRD_KEEPER, VANCE1, EVENT_BEAT_BIRD_KEEPER_VANCE, BirdKeeperVance1SeenText, BirdKeeperVance1BeatenText, 0, .Script

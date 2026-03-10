@@ -55,8 +55,12 @@ RadioTower5FBookshelf2:
 	jumptext RadioTower5FBookshelf2Text
 
 RadioTower5FDirectorWhirlpoolText:
-	text "<PLAY_G>, I heard"
-	line "you explored the"
+	text "<PLAY_G>, thanks"
+	line "for meeting with"
+	cont "me."
+
+	text "I heard you were"
+	line "exploring the"
 	cont "RUINS OF ALPH."
 
 	para "Maybe you'll want"

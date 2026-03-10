@@ -1,0 +1,4 @@
+DirectorPhoneCallerScript:
+	farwritetext DirectorPhoneCallerText
+	specialphonecall SPECIALCALL_NONE
+	end
