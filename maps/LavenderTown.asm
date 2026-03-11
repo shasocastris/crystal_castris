@@ -20,8 +20,8 @@ LavenderTownPokefanMScript:
 LavenderTownTeacherScript:
 	jumptextfaceplayer LavenderTownTeacherText
 
-LavenderTownGrampsScript:
-	jumptextfaceplayer LavenderTownGrampsText
+LavenderTownRocketScript:
+	jumptextfaceplayer LavenderTownRocketText
 
 LavenderTownYoungsterScript:
 	jumptextfaceplayer LavenderTownYoungsterText
@@ -45,11 +45,13 @@ LavenderMartSignText:
 	jumpstd MartSignScript
 
 LavenderTownPokefanMText:
-	text "That's quite some"
-	line "building, eh?"
+	text "Strange men took"
+	line "over the tower a"
+	cont "week ago."
 
-	para "It's KANTO's RADIO"
-	line "TOWER."
+	para "The broadcasts"
+	line "have been… "
+	line "different since."
 	done
 
 LavenderTownTeacherText:
@@ -57,22 +59,23 @@ LavenderTownTeacherText:
 	line "good radio shows."
 	done
 
-LavenderTownGrampsText:
-	text "People come from"
-	line "all over to pay"
+LavenderTownRocketText:
+	text "The cries of ghost"
+	line "#MON…"
 
-	para "their respects to"
-	line "the departed souls"
-	cont "of #MON."
+	para "I'm sure we can"
+	line "harness those."
 	done
 
 LavenderTownYoungsterText:
-	text "You need a #"
-	line "FLUTE to wake"
-	cont "sleeping #MON."
+	text "There is supposed"
+	line "to be a # FLUTE"
+	cont "channel but all I"
+	cont "hear is static."
 
-	para "Every trainer has"
-	line "to know that!"
+	para "The SNORLAX just"
+	line "outside town won't"
+	cont "budge."
 	done
 
 LavenderTownSignText:
@@ -127,5 +130,5 @@ LavenderTown_MapEvents:
 	def_object_events
 	object_event 12,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
 	object_event  2, 15, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
-	object_event 14, 12, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
+	object_event 14, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownRocketScript, -1
 	object_event  6, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownYoungsterScript, -1
