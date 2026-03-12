@@ -382,6 +382,10 @@ ENDM
 	map_const LAVENDER_MART,                                6,  4 ; 10
 	map_const SOUL_HOUSE,                                   5,  4 ; 11
 	map_const LAV_RADIO_TOWER_1F,                          10,  4 ; 12
+	map_const LAV_RADIO_TOWER_2F,                          10,  4 ; 12
+	map_const LAV_RADIO_TOWER_3F,                          10,  4 ; 12
+	map_const LAV_RADIO_TOWER_4F,                          10,  4 ; 12
+	map_const LAV_RADIO_TOWER_5F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
 	map_const LAVENDER_ODDITIES_SHOP,                       5,  4 ; 15

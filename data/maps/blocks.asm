@@ -769,6 +769,18 @@ MrFujisHouse_Blocks:
 LavRadioTower1F_Blocks:
 	INCBIN "maps/LavRadioTower1F.ablk"
 
+LavRadioTower2F_Blocks:
+	INCBIN "maps/LavRadioTower2F.ablk"
+
+LavRadioTower3F_Blocks:
+	INCBIN "maps/LavRadioTower3F.ablk"
+
+LavRadioTower4F_Blocks:
+	INCBIN "maps/LavRadioTower4F.ablk"
+
+LavRadioTower5F_Blocks:
+	INCBIN "maps/LavRadioTower5F.ablk"
+
 SilverCaveItemRooms_Blocks:
 	INCBIN "maps/SilverCaveItemRooms.ablk"
 

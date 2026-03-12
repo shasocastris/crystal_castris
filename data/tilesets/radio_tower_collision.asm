@@ -33,7 +33,7 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 20
 	tilecoll COUNTER, FLOOR, COUNTER, FLOOR ; 21
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 22
-	tilecoll WALL, WALL, WALL, WALL ; 23
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 23
 	tilecoll WALL, WALL, FLOOR, BOOKSHELF ; 24
 	tilecoll COUNTER, FLOOR, COUNTER, FLOOR ; 25
 	tilecoll FLOOR, FLOOR, COUNTER, COUNTER ; 26
@@ -61,4 +61,4 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 3c
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 3e
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3f
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 3f
