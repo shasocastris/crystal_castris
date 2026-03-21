@@ -160,10 +160,6 @@ INCLUDE "maps/Route29Route46Gate.asm"
 SECTION "Map Scripts 10", ROMX
 
 INCLUDE "maps/Route22.asm"
-INCLUDE "maps/GoldenrodUnderground.asm"
-INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"
-INCLUDE "maps/GoldenrodDeptStoreB1F.asm"
-INCLUDE "maps/GoldenrodUndergroundWarehouse.asm"
 INCLUDE "maps/MountMortar1FOutside.asm"
 INCLUDE "maps/MountMortar1FInside.asm"
 INCLUDE "maps/MountMortar2FInside.asm"
@@ -509,5 +505,13 @@ INCLUDE "maps/SaffronGameStop.asm"
 INCLUDE "maps/FuchsiaPokemonGiver.asm"
 INCLUDE "maps/ViridianRetiredChampionHouse.asm"
 INCLUDE "maps/LavenderOdditiesShop.asm"
+
+
+SECTION "Map Scripts 28", ROMX
+
+INCLUDE "maps/GoldenrodUnderground.asm"
+INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"
+INCLUDE "maps/GoldenrodDeptStoreB1F.asm"
+INCLUDE "maps/GoldenrodUndergroundWarehouse.asm"
 
 ENDSECTION
