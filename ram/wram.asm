@@ -2782,7 +2782,8 @@ wMobileBattleRoomSceneID::                        db
 wVioletCitySceneID::                              db
 wGlitterAndGraceSceneID::                         db
 wRoute39SceneID::                                 db
-wIcePath1FSceneID::                                 db
+wIcePath1FSceneID::                               db
+wLavRadioTower2FSceneID::                         db
 
 ; fight counts
 

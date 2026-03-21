@@ -4,11 +4,35 @@
 	const LAVRADIOTOWER2F_GENTLEMAN
 	const LAVRADIOTOWER2F_TEACHER
 	const LAVRADIOTOWER2F_COOLTRAINERF
+	const LAVRADIOTOWER2F_SUPER_NERD
 
 LavRadioTower2F_MapScripts:
 	def_scene_scripts
+    scene_script LavRadioTower2FRivalScene, SCENE_LAVRADIOTOWER2F_RIVAL
+	scene_script LavRadioTower2FNoop,       SCENE_LAVRADIOTOWER2F_NOOP
 
 	def_callbacks
+
+LavRadioTower2FRivalScene:
+	sdefer LavRadioTower2FRivalApproachScript
+	end
+
+LavRadioTower2FNoop:
+	end
+
+
+LavRadioTower2FRivalApproachScript:
+	applymovement PLAYER, FaceRivalMovement
+	showemote EMOTE_SHOCK, LAVRADIOTOWER2F_RIVAL, 30
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	opentext
+	writetext LavRadioTower2FRivalText
+	waitbutton
+	closetext
+	setevent EVENT_RIVAL_LAV_RADIO_TOWER_2F
+	setscene SCENE_LAVRADIOTOWER2F_NOOP
+	playmapmusic
+	end
 
 LavRadioTower2FRivalScript:
 	faceplayer
@@ -19,10 +43,16 @@ LavRadioTower2FRivalScript:
 	waitbutton
 	closetext
 	setevent EVENT_RIVAL_LAV_RADIO_TOWER_2F
+	setscene SCENE_LAVRADIOTOWER2F_NOOP
 	end
 
 .AlreadyTalked:
 	jumptextfaceplayer LavRadioTower2FRivalRepeatText
+
+FaceRivalMovement:
+	step DOWN
+	turn_head RIGHT
+	step_end
 
 LavRadioTower2FRivalText:
 	text "<PLAY_G>."
@@ -340,14 +370,15 @@ LavRadioTower2F_MapEvents:
 	warp_event 15,  0, LAV_RADIO_TOWER_1F, 3
 
 	def_coord_events
+	coord_event 15,  1, SCENE_LAVRADIOTOWER2F_RIVAL, LavRadioTower2FRivalApproachScript
 
 	def_bg_events
 	bg_event  9,  0, BGEVENT_READ, LavRadioTower2FSalesSign
 
 	def_object_events
-	object_event 12,  1, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FRivalScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 16,  1, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FRivalScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 13,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, LavRadioTower2FYoungsterScript, -1
-	object_event 17,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FPokefanMScript, -1
+	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FPokefanMScript, -1
 	object_event  0,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FTeacherScript, -1
 	object_event 18,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FCooltrainerFScript, -1
 	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP,  0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT,  0, LavRadioTower2FSuperNerdScript, -1
