@@ -97,6 +97,11 @@ LavRadioTower2FRivalRepeatText:
 	text "The DIRECTOR is"
 	line "still up there."
 
+	para "Make sure to clear"
+	line "out every one of"
+	cont "these rotten"
+	cont "#MON 'trainers.'"
+
 	para "Go. I've got"
 	line "this floor."
 	done
