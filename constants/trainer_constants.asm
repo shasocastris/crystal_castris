@@ -745,6 +745,9 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTF_8
 	const GRUNTF_9
 	const GRUNTF_10
+	const GRUNTF_11
+	const GRUNTF_12
+	const GRUNTF_13
 
 	trainerclass LINK_KRIS ; 44
 	const LINK_KRIS1

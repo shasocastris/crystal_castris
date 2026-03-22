@@ -3418,16 +3418,16 @@ GruntMGroup:
 	db -1 ; end
 
 	next_list_item ; GRUNTM (12), Ruins of Alph Kabuto Chamber
-    db "GRUNT@", TRAINERTYPE_NORMAL
-    db 40
-    dw WEEZING
-    db 41
-    dw RATICATE
-    db 40
-    dw GOLBAT
-    db 41
-    dw MUK
-    db -1 ; end
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 40
+	dw WEEZING
+	db 41
+	dw RATICATE
+	db 40
+	dw GOLBAT
+	db 41
+	dw MUK
+	db -1 ; end
 
 	next_list_item ; GRUNTM (13), Goldenrod Radio Tower
 	db "GRUNT@", TRAINERTYPE_NORMAL
@@ -3505,30 +3505,30 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (22), Ruins of Alph Aerodactyl Chamber
 	db "GRUNT@", TRAINERTYPE_NORMAL
-    db 40
-    dw GOLBAT
-    db 41
-    dw ARBOK
-    db 41
-    dw HOUNDOOM
-    db 40
-    dw HYPNO
+	db 40
+	dw GOLBAT
+	db 41
+	dw ARBOK
+	db 41
+	dw HOUNDOOM
+	db 40
+	dw HYPNO
 	db -1 ; end
 
 	next_list_item ; GRUNTM (23), Ruins of Alph Ho-Oh Chamber
-    db "GRUNT@", TRAINERTYPE_MOVES
-    db 41
-    dw WEEZING
-    dw SLUDGE, SMOKESCREEN, EXPLOSION, HAZE
-    db 41
-    dw RATICATE
-    dw HYPER_FANG, PURSUIT, SCARY_FACE, QUICK_ATTACK
-    db 41
-    dw MURKROW
-    dw FAINT_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
-    db 40
-    dw MAGNETON
-    dw THUNDERSHOCK, SUPERSONIC, SONICBOOM, THUNDER_WAVE
+	db "GRUNT@", TRAINERTYPE_MOVES
+	db 41
+	dw WEEZING
+	dw SLUDGE, SMOKESCREEN, EXPLOSION, HAZE
+	db 41
+	dw RATICATE
+	dw HYPER_FANG, PURSUIT, SCARY_FACE, QUICK_ATTACK
+	db 41
+	dw MURKROW
+	dw FAINT_ATTACK, PURSUIT, HAZE, NIGHT_SHADE
+	db 40
+	dw MAGNETON
+	dw THUNDERSHOCK, SUPERSONIC, SONICBOOM, THUNDER_WAVE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (24), Goldenrod Underground
@@ -3593,6 +3593,60 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 46
 	dw GOLBAT
+	db -1 ; end
+
+	next_list_item ; GRUNTM (32), Lav Radio Tower 3F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 48
+	dw ARBOK
+	db 49
+	dw GOLBAT
+	db -1 ; end
+
+	next_list_item ; GRUNTM (33), Lav Radio Tower 3F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 48
+	dw RATICATE
+	db 49
+	dw HYPNO
+	db -1 ; end
+
+	next_list_item ; GRUNTM (34), Lav Radio Tower 3F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 50
+	dw GOLBAT
+	db 50
+	dw WEEZING
+	db -1 ; end
+
+	next_list_item ; GRUNTM (35), Lav Radio Tower 4F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 50
+	dw RATICATE
+	db 51
+	dw GOLBAT
+	db 51
+	dw MUK
+	db -1 ; end
+
+	next_list_item ; GRUNTM (36), Lav Radio Tower 4F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 52
+	dw WEEZING
+	db 52
+	dw GOLBAT
+	db 53
+	dw ARBOK
+	db -1 ; end
+
+	next_list_item ; GRUNTM (37), Lav Radio Tower 4F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 52
+	dw ELECTRODE
+	db 53
+	dw HAUNTER
+	db 54
+	dw MAROWAK
 	db -1 ; end
 
 	end_list_items
@@ -6965,6 +7019,33 @@ next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
 	dw HOUNDOOM
 	db 40
 	dw ARBOK
+	db -1 ; end
+
+
+	next_list_item ; GRUNTF (11), Lav Radio Tower 3F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 50
+	dw ARBOK
+	db 51
+	dw GLOOM
+	db -1 ; end
+
+	next_list_item ; GRUNTF (12), Lav Radio Tower 4F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 51
+	dw GOLBAT
+	db 52
+	dw VILEPLUME
+	db -1 ; end
+
+	next_list_item ; GRUNTF (13), Lav Radio Tower 4F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 52
+	dw ARBOK
+	db 52
+	dw GOLBAT
+	db 53
+	dw WEEZING
 	db -1 ; end
 
 	end_list_items
