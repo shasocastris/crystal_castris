@@ -79,10 +79,10 @@ GruntM33AfterBattleText:
 	line "any help at the"
 	cont "POWER PLANT."
  
-	para "We have people"
+	para "We sent people"
 	line "there too. The"
-	cont "whole region's"
-	cont "grid is ours."
+	cont "whole region is"
+	cont "is our hostage."
 	done
 
 TrainerGruntM34:
@@ -164,54 +164,62 @@ GruntF11AfterBattleText:
 LavRadioTower3FNerdScript:
 	faceplayer
 	opentext
-	checkevent EVENT_LAV_TOWER_3F_GOT_MAX_ETHER
-	iftrue .AlreadyGave
+	checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	iftrue .Cleared
 	writetext LavRadioTower3FNerdText
-	promptbutton
-	verbosegiveitem MAX_ETHER
-	iffalse .NoRoom
-	setevent EVENT_LAV_TOWER_3F_GOT_MAX_ETHER
-	writetext LavRadioTower3FNerdGaveText
 	waitbutton
 	closetext
 	end
 
-.NoRoom:
-	writetext LavRadioTower3FNerdNoRoomText
+.Cleared:
+	writetext LavRadioTower3FNerdText_Cleared
 	waitbutton
-.AlreadyGave:
 	closetext
 	end
 
 LavRadioTower3FNerdText:
 	text "A trainer!"
-	line "Please, take this."
+	line "Please, get to"
+	cont "the DIRECTOR."
 
-	para "I've been hiding"
-	line "it since they"
-	cont "showed up."
+	para "He went up to"
+	line "reason with them"
+	cont "alone."
 
-	para "You're going to"
-	line "need it more"
-	cont "than I do up"
-	cont "there. Go. Please."
+	para "I haven't heard"
+	line "anything from"
+	cont "up there since."
 	done
 
-LavRadioTower3FNerdGaveText:
-	text "Come back safely."
-	line "And bring the"
-	cont "DIRECTOR with you."
-	done
+LavRadioTower3FNerdText_Cleared:
+	text "I can't believe"
+	line "it's over."
 
-LavRadioTower3FNerdNoRoomText:
-	text "Your bag is too"
-	line "full. Come back"
-	cont "when you have"
-	cont "room. Hurry!"
+	para "Six days crouched"
+	line "behind that desk"
+	cont "pretending to work"
+	cont "while those men"
+	cont "walked around."
+
+	para "Thank you."
+	line "Genuinely."
 	done
 
 LavRadioTower3FGrampsScript:
-	jumptextfaceplayer LavRadioTower3FGrampsText
+	faceplayer
+	opentext
+	checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	iftrue .Cleared
+	writetext LavRadioTower3FGrampsText
+	waitbutton
+	closetext
+	end
+
+.Cleared:
+	writetext LavRadioTower3FGrampsText_Cleared
+	waitbutton
+	closetext
+	end
 
 LavRadioTower3FGrampsText:
 	text "The men up top…"
@@ -237,6 +245,15 @@ LavRadioTower3FGrampsText:
 	line "more than anything"
 	done
 
+LavRadioTower3FGrampsText_Cleared:
+	text "You're the JOHTO"
+	line "CHAMPION?"
+
+	para "You're definitely"
+	line "living up to the"
+	cont "stories."
+	done
+
 LavRadioTower3FPersonnelSign:
 	jumptext LavRadioTower3FPersonnelSignText
 
@@ -257,7 +274,7 @@ LavRadioTower3F_MapEvents:
 	bg_event  5,  0, BGEVENT_READ, LavRadioTower3FPersonnelSign
 
 	def_object_events
-	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerGruntM32, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerGruntM32, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 14,  4, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM33, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event 10,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerGruntM34, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	object_event  8,  3, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntF11, EVENT_RADIO_TOWER_ROCKET_TAKEOVER

@@ -325,7 +325,7 @@ LavRadioTower2FSuperNerdText:
 	line "down."
 
 	para "I've been watching"
-	line "the broadcast logs."
+	line "the broadcast log."
 	cont "The signal output"
 	cont "changed about a"
 	cont "week ago."
