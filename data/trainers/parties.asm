@@ -5500,6 +5500,16 @@ BlackbeltGroup:
 	end_list_items
 
 ExecutiveMGroup:
+	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
+	db "PETREL@", TRAINERTYPE_NORMAL
+	db 30
+	dw GOLBAT
+	db 30
+	dw RATICATE
+	db 31
+	dw HYPNO
+	db -1 ; end
+
 	next_list_item ; EXECUTIVEM (1), Goldenrod Radio Tower
 	db "ARCHER@", TRAINERTYPE_MOVES
 	db 46
@@ -5558,16 +5568,6 @@ ExecutiveMGroup:
 	db 41
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, HYPER_BEAM
-	db -1 ; end
-
-	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
-	db "PETREL@", TRAINERTYPE_NORMAL
-	db 30
-	dw GOLBAT
-	db 30
-	dw RATICATE
-	db 31
-	dw HYPNO
 	db -1 ; end
 
 	end_list_items
@@ -6140,6 +6140,22 @@ CamperGroup:
 	end_list_items
 
 ExecutiveFGroup:
+	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout, B2F
+	db "ARIANA@", TRAINERTYPE_MOVES
+	db 32
+	dw VILEPLUME
+	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
+	db 34
+	dw MURKROW
+	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
+	db 33
+	dw HYPNO
+	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
+	db 33
+	dw MUK
+	dw SLUDGE_BOMB, LICK, MINIMIZE, SCREECH
+	db -1 ; end
+
 	next_list_item ; EXECUTIVEF (1), Goldenrod Radio Tower
 	db "ARIANA@", TRAINERTYPE_MOVES
 	db 45
@@ -6157,22 +6173,6 @@ ExecutiveFGroup:
 	db 46
 	dw MUK
 	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
-	db -1 ; end
-
-	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout, B2F
-	db "ARIANA@", TRAINERTYPE_MOVES
-	db 32
-	dw VILEPLUME
-	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
-	db 34
-	dw MURKROW
-	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
-	db 33
-	dw HYPNO
-	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
-	db 33
-	dw MUK
-	dw SLUDGE_BOMB, LICK, MINIMIZE, SCREECH
 	db -1 ; end
 
 	end_list_items

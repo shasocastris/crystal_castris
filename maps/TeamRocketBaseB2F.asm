@@ -95,7 +95,7 @@ RocketBaseBossFScript:
 	applymovement TEAMROCKETBASEB2F_ROCKET_GIRL, RocketBaseBossFBattlesPlayerMovement
 	winlosstext RocketBaseBossWinText, 0
 	setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
-	loadtrainer EXECUTIVEF, EXECUTIVEF_2
+	loadtrainer EXECUTIVEF, EXECUTIVEF_1
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
 	disappear TEAMROCKETBASEB2F_DRAGON
@@ -103,7 +103,7 @@ RocketBaseBossFScript:
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_GRUNT_WITH_EXECUTIVE
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_LANCE
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ROCKET_EXECUTIVEF_2
+	setevent EVENT_BEAT_ROCKET_EXECUTIVEF_1
 	opentext
 	writetext RocketBaseBossRetreatText
 	waitbutton
