@@ -3593,7 +3593,17 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (31), Route 24
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 46
+	db 52
+	dw RATICATE
+	db 52
+	dw HYPNO
+	db 53
+	dw SLOWBRO
+	db 53
+	dw VILEPLUME
+	db 54
+	dw MAGNETON
+	db 54
 	dw GOLBAT
 	db -1 ; end
 

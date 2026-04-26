@@ -111,9 +111,8 @@ Route24RocketDisappearsText:
 	para "go-go? Broken it"
 	line "is says you?"
 
-	para "Oh, no! Should I"
-	line "do what now on"
-	cont "from, me?"
+	para "Ha, ha! Shows"
+	line "nothing you know!"
 	done
 
 Route24_MapEvents:
