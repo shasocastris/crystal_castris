@@ -8,17 +8,6 @@
 	const LAVRADIOTOWER5F_GRUNT_3
 	const LAVRADIOTOWER5F_RANGER
 
-; ============================================================
-; EVENT FLAG NOTES
-;
-; EVENT_LAV_RADIO_TOWER_RANGER_HIDDEN:
-;   Must be added to constants/event_flags.asm
-;   Must be setevent'd in InitializeEventsScript (engine/events/std_scripts.asm)
-;   The Ranger's object_event uses this as its hide flag.
-;   `appear LAVRADIOTOWER5F_RANGER` inside the arrest scene clears it,
-;   making him visible and interactive afterward.
-; ============================================================
-
 LavRadioTower5F_MapScripts:
 	def_scene_scripts
 
@@ -88,7 +77,6 @@ GruntM27AfterBattleText:
 
 	para "Kids these days!"
 	done
-
 
 TrainerGruntM30:
 	trainer GRUNTM, GRUNTM_30, EVENT_BEAT_ROCKET_GRUNTM_30, GruntM30SeenText, GruntM30BeatenText, 0, .Script
@@ -161,9 +149,9 @@ LavRadioTower5FProtonScript:
 	disappear LAVRADIOTOWER5F_GRUNT_1
 	disappear LAVRADIOTOWER5F_GRUNT_2
 	disappear LAVRADIOTOWER5F_GRUNT_3
-	reloadmapafterbattle
 	setevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_2
+	reloadmapafterbattle
 	playmusic MUSIC_RIVAL_AFTER
 	opentext
 	writetext LavRadioTower5FPharmacistText
@@ -193,7 +181,6 @@ LavRadioTower5FProtonScript:
 	stopfollow
 	disappear LAVRADIOTOWER5F_PROTON
 	disappear LAVRADIOTOWER5F_RANGER
-	reloadmap
 	playmapmusic
 	end
 
