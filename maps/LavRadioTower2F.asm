@@ -332,8 +332,7 @@ LavRadioTower2FSuperNerdText:
 
 	para "Something is being"
 	line "piggybacked onto"
-	cont "the main frequency."
-	cont "Something low."
+	cont "the main channels."
 
 	para "I don't know what"
 	line "it does. But it's"
@@ -386,4 +385,4 @@ LavRadioTower2F_MapEvents:
 	object_event 14,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FPokefanMScript, -1
 	object_event  0,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FTeacherScript, -1
 	object_event 18,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavRadioTower2FCooltrainerFScript, -1
-	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP,  0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT,  0, LavRadioTower2FSuperNerdScript, -1
+	object_event  5,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP,  0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT,  4, LavRadioTower2FSuperNerdScript, -1

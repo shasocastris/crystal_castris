@@ -8,6 +8,17 @@
 	const LAVRADIOTOWER5F_GRUNT_3
 	const LAVRADIOTOWER5F_RANGER
 
+; ============================================================
+; EVENT FLAG NOTES
+;
+; EVENT_LAV_RADIO_TOWER_RANGER_HIDDEN:
+;   Must be added to constants/event_flags.asm
+;   Must be setevent'd in InitializeEventsScript (engine/events/std_scripts.asm)
+;   The Ranger's object_event uses this as its hide flag.
+;   `appear LAVRADIOTOWER5F_RANGER` inside the arrest scene clears it,
+;   making him visible and interactive afterward.
+; ============================================================
+
 LavRadioTower5F_MapScripts:
 	def_scene_scripts
 
@@ -112,11 +123,11 @@ LavRadioTower5FProtonScript:
 	faceplayer
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_32
 	iffalse .NotReady
-	checkevent EVENT_BEAT_ROCKET_GRUNTM_33
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_33  ; keep uncommented for testing
 	iffalse .NotReady
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_34
 	iffalse .NotReady
-	checkevent EVENT_BEAT_ROCKET_GRUNTM_35
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_35  ; keep uncommented for testing
 	iffalse .NotReady
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_36
 	iffalse .NotReady
@@ -130,11 +141,11 @@ LavRadioTower5FProtonScript:
 	iffalse .NotReady
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_26
 	iffalse .NotReady
-	checkevent EVENT_BEAT_ROCKET_GRUNTM_27
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_27  ; keep uncommented for testing
 	iffalse .NotReady
 	checkevent EVENT_BEAT_ROCKET_GRUNTM_30
 	iffalse .NotReady
-	; All grunts beaten — drop disguise
+	; All grunts beaten — drop disguise and battle
 	special FadeOutMusic
 	pause 15
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -147,6 +158,9 @@ LavRadioTower5FProtonScript:
 	loadtrainer EXECUTIVEM, EXECUTIVEM_2
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
 	startbattle
+	disappear LAVRADIOTOWER5F_GRUNT_1
+	disappear LAVRADIOTOWER5F_GRUNT_2
+	disappear LAVRADIOTOWER5F_GRUNT_3
 	reloadmapafterbattle
 	setevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
 	setevent EVENT_BEAT_ROCKET_EXECUTIVEM_2
@@ -155,7 +169,31 @@ LavRadioTower5FProtonScript:
 	writetext LavRadioTower5FPharmacistText
 	waitbutton
 	closetext
+	appear LAVRADIOTOWER5F_RANGER
+	applymovement LAVRADIOTOWER5F_RANGER, FirstRangerArrivesMovement
+    opentext
+	writetext LavRadioTower5FRangerText
+	waitbutton
+	closetext
+	applymovement PLAYER, PlayerStepBackMovement
+	applymovement LAVRADIOTOWER5F_RANGER, FirstRangerArrestsProtonMovement
+	opentext
+	writetext FirstRangerArrestsProtonText
+	waitbutton
+	closetext
+	pause 15
+	turnobject LAVRADIOTOWER5F_RANGER, LEFT
+	pause 15
+	opentext
+	writetext LavRadioTower5FRangerText_Cleared
+	waitbutton
+	closetext
+	follow LAVRADIOTOWER5F_RANGER, LAVRADIOTOWER5F_PROTON
+	applymovement LAVRADIOTOWER5F_RANGER, FirstRangerLeavesMovement
+	stopfollow
 	disappear LAVRADIOTOWER5F_PROTON
+	disappear LAVRADIOTOWER5F_RANGER
+	reloadmap
 	playmapmusic
 	end
 
@@ -260,6 +298,45 @@ LavRadioTower5FPharmacistText:
 	cont "easy!"
 	done
 
+LavRadioTower5FRangerText:
+	text "<PLAY_G>, nice to"
+	line "finally meet you."
+
+	para "I'm FIRST RANGER"
+	line "for the #MON"
+	cont "LEAGUE."
+
+	para "I had a assembled"
+	line "a team to defeat"
+	cont "PROTON but you got"
+	cont "to him first."
+
+	para "Good work. I'll"
+	line "put him away where"
+	cont "he can't escape."
+	done
+
+FirstRangerArrestsProtonText:
+	text "FIRST RANGER:"
+
+	para "PROTON."
+	line "You're coming"
+	cont "with me."
+	done
+
+LavRadioTower5FRangerText_Cleared:
+	text "He'll answer for"
+	line "what happened"
+	cont "here."
+
+	para "You cleared every"
+	line "floor of this"
+	cont "building."
+
+	para "The RANGERS won't"
+	line "forget that."
+	done
+
 LavRadioTower5FGentlemanScript:
 	faceplayer
 	opentext
@@ -314,7 +391,6 @@ LavRadioTower5FGentlemanText_BeforeProton:
 	cont "please win."
 	done
 
-; Kept from original draft
 LavRadioTower5FGentlemanText:
 	text "Thanks for getting"
 	line "rid of those guys!"
@@ -429,59 +505,6 @@ LavRadioTower5FClerkText_Cleared:
 	cont "I suppose."
 	done
 
-LavRadioTower5FRangerScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	iftrue .Cleared
-	writetext LavRadioTower5FRangerText
-	waitbutton
-	closetext
-	end
-
-.Cleared:
-	writetext LavRadioTower5FRangerText_Cleared
-	waitbutton
-	closetext
-	end
-
-LavRadioTower5FRangerText:
-	text "FIRST RANGER."
-	line "That's my rank."
-
-	para "I've been up here"
-	line "since yesterday."
-	cont "Watching."
-
-	para "PROTON is the"
-	line "target. But I"
-	cont "needed the floor"
-	cont "clear before I"
-	cont "could act."
-
-	para "You're doing the"
-	line "work. I'll handle"
-	cont "the rest once"
-	cont "you're done."
-	done
-
-LavRadioTower5FRangerText_Cleared:
-	text "PROTON is in"
-	line "RANGER custody."
-
-	para "He'll answer for"
-	line "what happened"
-	cont "here."
-
-	para "You cleared every"
-	line "floor of this"
-	cont "building."
-
-	para "The RANGERS won't"
-	line "forget that."
-	cont "Well done, trainer."
-	done
-
 LavRadioTower5F_MapEvents:
 	db 0, 0 ; filler
 
@@ -493,11 +516,12 @@ LavRadioTower5F_MapEvents:
 	def_bg_events
 
 	def_object_events
+	; Always-present staff
 	object_event  6,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FGentlemanScript, -1
-	object_event 14,  6, SPRITE_ROCKER,    SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FRockerScript,    -1
-	object_event  1,  4, SPRITE_CLERK,     SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FClerkScript,     -1
-	object_event 10,  2, SPRITE_OFFICER,   SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FRangerScript,    -1
-	object_event  5,  6, SPRITE_PHARMACIST,SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 5, LavRadioTower5FProtonScript,    EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 17,  5, SPRITE_ROCKET,    SPRITEMOVEDATA_STANDING_RIGHT,0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM26,               EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event 10,  4, SPRITE_ROCKET,    SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM27,               EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	object_event  0,  5, SPRITE_ROCKET,    SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM30,               EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 14,  6, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FRockerScript, -1
+	object_event  1,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavRadioTower5FClerkScript, -1
+	object_event  5,  6, SPRITE_PHARMACIST,SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 5, LavRadioTower5FProtonScript, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 17,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT,0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM26, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 10,  4, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM27, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event  0,  5, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM30, EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	object_event 10,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_LAV_RADIO_TOWER_RANGER_HIDDEN

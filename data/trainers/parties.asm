@@ -3549,18 +3549,20 @@ GruntMGroup:
 	dw SLOWBRO
 	db -1 ; end
 
-	next_list_item ; GRUNTM (26), unused ???
+	next_list_item ; GRUNTM (26), Lav Radio Tower 5F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 18
-	dw RATTATA
-	db 18
-	dw RATTATA
+	db 52
+	dw WEEZING
+	db 52
+	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (27), unused ???
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 27
-	dw ZUBAT
+	next_list_item ; GRUNTM (27), Lav Radio Tower 5F
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 52
+	dw ARBOK
+	db 52
+	dw HAUNTER
 	db -1 ; end
 
 	next_list_item ; GRUNTM (28), Team Rocket's Hideout, B3F
@@ -3579,14 +3581,14 @@ GruntMGroup:
 	dw ZUBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (30), unused ???
+	next_list_item ; GRUNTM (30), Lav Radio Tower 5F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30
+	db 53
 	dw GOLBAT
-	db 30
-	dw GOLBAT
-	db 36
+	db 53
 	dw ARBOK
+	db 53
+	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (31), Route 24

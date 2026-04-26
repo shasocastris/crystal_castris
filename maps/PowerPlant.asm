@@ -67,6 +67,51 @@ PowerPlantOfficerScript:
 	closetext
 	end
 
+PowerPlantOfficer1ApproachGymGuide2Movement:
+	step RIGHT
+	step RIGHT
+	step UP
+	step UP
+	step_end
+
+PowerPlantOfficer1ReturnToPostMovement:
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	turn_head DOWN
+	step_end
+
+PowerPlantOfficer1AThiefBrokeInText:
+	text "A thief broke into"
+	line "the POWER PLANT…"
+
+	para "What is the world"
+	line "coming to?"
+	done
+
+PowerPlantOfficer1CeruleanShadyCharacterText:
+	text "I just got word"
+	line "from CERULEAN."
+
+	para "It appears that a"
+	line "shady character"
+
+	para "has been loitering"
+	line "around."
+	done
+
+PowerPlantOfficer1CouldIAskForYourCooperationText:
+	text "Could I ask for"
+	line "your cooperation?"
+	done
+
+PowerPlantOfficer1HaveToBeefUpSecurityText:
+	text "We'll have to beef"
+	line "up our security"
+	cont "presence."
+	done
+
 PowerPlantGymGuide1Script:
 	faceplayer
 	opentext
@@ -82,6 +127,26 @@ PowerPlantGymGuide1Script:
 	waitbutton
 	closetext
 	end
+
+PowerPlantGymGuide1SomeoneStoleAPartText:
+	text "Someone made off"
+	line "with a part that's"
+
+	para "essential for the"
+	line "generator."
+
+	para "Without it, the"
+	line "new generator's"
+	cont "useless!"
+	done
+
+PowerPlantGymGuide1GeneratorUpAndRunningText:
+	text "The generator's up"
+	line "and running. It's"
+
+	para "making electricity"
+	line "to spare."
+	done
 
 PowerPlantGymGuide2Script:
 	faceplayer
@@ -99,6 +164,23 @@ PowerPlantGymGuide2Script:
 	closetext
 	end
 
+PowerPlantGymGuide2PowerPlantUpAndRunningText:
+	text "This POWER PLANT"
+	line "had been abandoned"
+	cont "in the past."
+
+	para "We got it back up"
+	line "and running to"
+
+	para "provide power to"
+	line "the MAGNET TRAIN."
+	done
+
+PowerPlantGymGuide2GeneratorIsRunningAgainText:
+	text "The generator's"
+	line "running again!"
+	done
+
 PowerPlantOfficer2Script:
 	faceplayer
 	opentext
@@ -114,6 +196,26 @@ PowerPlantOfficer2Script:
 	waitbutton
 	closetext
 	end
+
+PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
+	text "The POWER PLANT's"
+	line "MANAGER is up"
+	cont "ahead."
+
+	para "But since someone"
+	line "wrecked the gener-"
+	cont "ator, he's been"
+	cont "both sad and"
+	cont "furious…"
+	done
+
+PowerPlantOfficer2ManagerHasBeenCheerfulText:
+	text "Since the gener-"
+	line "ator's been fixed,"
+
+	para "the MANAGER has"
+	line "been cheerful."
+	done
 
 PowerPlantGymGuide4Script:
 	faceplayer
@@ -131,9 +233,29 @@ PowerPlantGymGuide4Script:
 	closetext
 	end
 
+PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
+	text "The MAGNET TRAIN"
+	line "consumes a lot of"
+	cont "electricity."
+
+	para "It can't move if"
+	line "the new generator"
+	cont "isn't operating."
+	done
+
+PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
+	text "All right! We can"
+	line "finally get the"
+
+	para "MAGNET TRAIN"
+	line "running again."
+	done
+
 PowerPlantManager:
 	faceplayer
 	opentext
+	checkevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
+	iffalse .TowerNotCleared
 	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .ReturnedMachinePart
 	checkitem MACHINE_PART
@@ -186,136 +308,11 @@ PowerPlantManager:
 	closetext
 	end
 
-Forest:
-	faceplayer
-	opentext
-	trade NPC_TRADE_FOREST
+.TowerNotCleared:
+	writetext PowerPlantManagerTowerNotClearedText
 	waitbutton
 	closetext
 	end
-
-PowerPlantBookshelf:
-	jumpstd DifficultBookshelfScript
-
-PowerPlantOfficer1ApproachGymGuide2Movement:
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step_end
-
-PowerPlantOfficer1ReturnToPostMovement:
-	step DOWN
-	step DOWN
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-PowerPlantOfficer1AThiefBrokeInText:
-	text "A thief broke into"
-	line "the POWER PLANT…"
-
-	para "What is the world"
-	line "coming to?"
-	done
-
-PowerPlantOfficer1CeruleanShadyCharacterText:
-	text "I just got word"
-	line "from CERULEAN."
-
-	para "It appears that a"
-	line "shady character"
-
-	para "has been loitering"
-	line "around."
-	done
-
-PowerPlantOfficer1CouldIAskForYourCooperationText:
-	text "Could I ask for"
-	line "your cooperation?"
-	done
-
-PowerPlantOfficer1HaveToBeefUpSecurityText:
-	text "We'll have to beef"
-	line "up our security"
-	cont "presence."
-	done
-
-PowerPlantGymGuide1SomeoneStoleAPartText:
-	text "Someone made off"
-	line "with a part that's"
-
-	para "essential for the"
-	line "generator."
-
-	para "Without it, the"
-	line "new generator's"
-	cont "useless!"
-	done
-
-PowerPlantGymGuide1GeneratorUpAndRunningText:
-	text "The generator's up"
-	line "and running. It's"
-
-	para "making electricity"
-	line "to spare."
-	done
-
-PowerPlantGymGuide2PowerPlantUpAndRunningText:
-	text "This POWER PLANT"
-	line "had been abandoned"
-	cont "in the past."
-
-	para "We got it back up"
-	line "and running to"
-
-	para "provide power to"
-	line "the MAGNET TRAIN."
-	done
-
-PowerPlantGymGuide2GeneratorIsRunningAgainText:
-	text "The generator's"
-	line "running again!"
-	done
-
-PowerPlantOfficer2ManagerHasBeenSadAndFuriousText:
-	text "The POWER PLANT's"
-	line "MANAGER is up"
-	cont "ahead."
-
-	para "But since someone"
-	line "wrecked the gener-"
-	cont "ator, he's been"
-	cont "both sad and"
-	cont "furious…"
-	done
-
-PowerPlantOfficer2ManagerHasBeenCheerfulText:
-	text "Since the gener-"
-	line "ator's been fixed,"
-
-	para "the MANAGER has"
-	line "been cheerful."
-	done
-
-PowerPlantGymGuide4MagnetTrainConsumesElectricityText:
-	text "The MAGNET TRAIN"
-	line "consumes a lot of"
-	cont "electricity."
-
-	para "It can't move if"
-	line "the new generator"
-	cont "isn't operating."
-	done
-
-PowerPlantGymGuide4WeCanGetMagnetTrainRunningText:
-	text "All right! We can"
-	line "finally get the"
-
-	para "MAGNET TRAIN"
-	line "running again."
-	done
 
 PowerPlantManagerWhoWouldRuinMyGeneratorText:
 	text "MANAGER: I, I, I'm"
@@ -385,6 +382,38 @@ PowerPlantManagerMyBelovedGeneratorText:
 	para "Keep pumping the"
 	line "electricity out!"
 	done
+
+PowerPlantManagerTowerNotClearedText:
+	text "I'd love your help"
+	line "but I can't focus"
+	cont "on anything right"
+	cont "now."
+
+	para "TEAM ROCKET has"
+	line "taken over the"
+	cont "RADIO TOWER in"
+	cont "LAVENDER TOWN."
+
+	para "Our communications"
+	line "are completely"
+	cont "jammed."
+
+	para "If you're really"
+	line "a trainer, help"
+	cont "them first. Then"
+	cont "come see me."
+	done
+
+Forest:
+	faceplayer
+	opentext
+	trade NPC_TRADE_FOREST
+	waitbutton
+	closetext
+	end
+
+PowerPlantBookshelf:
+	jumpstd DifficultBookshelfScript
 
 PowerPlant_MapEvents:
 	db 0, 0 ; filler
