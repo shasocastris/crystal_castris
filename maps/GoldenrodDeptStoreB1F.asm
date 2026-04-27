@@ -12,15 +12,6 @@ GoldenrodDeptStoreB1F_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_TILES, GoldenRodDeptStoreB1FClearBoxesCallback
-
-GoldenRodDeptStoreB1FClearBoxesCallback:
-	checkevent EVENT_RECEIVED_CARD_KEY
-	iftrue .GotCardKey
-	endcallback
-.GotCardKey:
-	changeblock 16, 4, $0d ; floor
-	endcallback
 
 GoldenrodDeptStoreB1FBlackBelt1Script:
 	jumptextfaceplayer GoldenrodDeptStoreB1FBlackBelt1Text
@@ -97,7 +88,6 @@ GoldenrodDeptStoreB1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 17,  2, GOLDENROD_UNDERGROUND_WAREHOUSE, 3
 	warp_event  9,  4, GOLDENROD_DEPT_STORE_ELEVATOR, 1
 	warp_event 10,  4, GOLDENROD_DEPT_STORE_ELEVATOR, 2
 
