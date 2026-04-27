@@ -1295,7 +1295,7 @@ Rival1Group:
 	dw LEER, RAGE, WATER_GUN, BITE
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (10), Goldenrod Underground
+	next_list_item ; RIVAL1 (10), Ice Path 1F
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -1314,7 +1314,7 @@ Rival1Group:
 	dw REFLECT, RAZOR_LEAF, POISONPOWDER, BODY_SLAM
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (11), Goldenrod Underground
+	next_list_item ; RIVAL1 (11), Ice Path 1F
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -1333,7 +1333,7 @@ Rival1Group:
 	dw SMOKESCREEN, EMBER, QUICK_ATTACK, FLAME_WHEEL
 	db -1 ; end
 
-	next_list_item ; RIVAL1 (12), Goldenrod Underground
+	next_list_item ; RIVAL1 (12), Ice Path 1F
 	db "?@", TRAINERTYPE_MOVES
 	db 41
 	dw SNEASEL
@@ -3407,13 +3407,13 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (11), Goldenrod Underground Switch Room
+	next_list_item ; GRUNTM (11), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 38
+	db 58
 	dw MUK
-	db 38
+	db 58
 	dw HAUNTER
-	db 40
+	db 60
 	dw SLOWBRO
 	db -1 ; end
 
@@ -3429,27 +3429,27 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (13), Goldenrod Underground Switch Room
+	next_list_item ; GRUNTM (13), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 42
+	db 62
 	dw MAROWAK
-	db 42
+	db 62
 	dw HAUNTER
 	db -1 ; end
 
-	next_list_item ; GRUNTM (14), Goldenrod Underground Warehouse
+	next_list_item ; GRUNTM (14), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 41
+	db 61
 	dw RATICATE
-	db 41
+	db 61
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (15), Goldenrod Underground Warehouse
+	next_list_item ; GRUNTM (15), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40
+	db 60
 	dw MUK
-	db 40
+	db 60
 	dw SLOWBRO
 	db -1 ; end
 
@@ -3531,21 +3531,21 @@ GruntMGroup:
 	dw THUNDERSHOCK, SUPERSONIC, SONICBOOM, THUNDER_WAVE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (24), Goldenrod Underground Warehouse
+	next_list_item ; GRUNTM (24), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40
+	db 60
 	dw MUK
-	db 40
+	db 60
 	dw MAROWAK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (25), Goldenrod Underground Switch Room
+	next_list_item ; GRUNTM (25), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 39
+	db 59
 	dw HAUNTER
-	db 39
+	db 59
 	dw MAROWAK
-	db 39
+	db 59
 	dw SLOWBRO
 	db -1 ; end
 
@@ -5199,22 +5199,22 @@ BikerGroup:
 	end_list_items
 
 BurglarGroup:
-	next_list_item ; BURGLAR (1), Goldenrod Underground
+	next_list_item ; BURGLAR (1), Saffron Underground Switch Room
 	db "DUNCAN@", TRAINERTYPE_NORMAL
-	db 38
+	db 58
 	dw WEEZING
-	db 40
+	db 60
 	dw MAGMAR
-	db 38
+	db 58
 	dw CHARIZARD
 	db -1 ; end
 
-	next_list_item ; BURGLAR (2), Goldenrod Underground
+	next_list_item ; BURGLAR (2), Saffron Underground Switch Room
 	db "EDDIE@", TRAINERTYPE_MOVES
-	db 42
+	db 62
 	dw ARCANINE
 	dw ROAR, EMBER, LEER, TAKE_DOWN
-	db 42
+	db 62
 	dw WEEZING
 	dw TACKLE, SMOG, SLUDGE, SMOKESCREEN
 	db -1 ; end
@@ -5541,29 +5541,29 @@ ExecutiveMGroup:
 	dw EARTHQUAKE, ROCK_SLIDE, CRUNCH, HORN_DRILL
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (3), Goldenrod Radio Tower
+	next_list_item ; EXECUTIVEM (3), Saffron Underground Warehouse
 	db "PETREL@", TRAINERTYPE_MOVES
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, TOXIC
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THIEF
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, FLAMETHROWER
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THUNDERBOLT
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, ROLLOUT
-	db 41
+	db 61
 	dw WEEZING
 	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, HYPER_BEAM
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (1), Goldenrod Radio Tower
+	next_list_item ; EXECUTIVEM (1), Cerulean Cave
 	db "ARCHER@", TRAINERTYPE_MOVES
 	db 46
 	dw PORYGON2
@@ -6168,7 +6168,7 @@ ExecutiveFGroup:
 	dw SLUDGE_BOMB, LICK, MINIMIZE, SCREECH
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEF (1), Goldenrod Radio Tower
+	next_list_item ; EXECUTIVEF (1), CERULEAN CAVE
 	db "ARIANA@", TRAINERTYPE_MOVES
 	db 45
 	dw ARBOK
@@ -6939,13 +6939,13 @@ GruntFGroup:
 	dw SLOWBRO
 	db -1 ; end
 
-	next_list_item ; GRUNTF (3), Goldenrod Underground
+	next_list_item ; GRUNTF (3), Saffron Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40
+	db 60
 	dw GLOOM
-	db 40
+	db 60
 	dw HAUNTER
-	db 40
+	db 60
 	dw WEEPINBELL
 	db -1 ; end
 
