@@ -510,10 +510,11 @@ INCLUDE "maps/LavenderOdditiesShop.asm"
 SECTION "Map Scripts 28", ROMX
 
 INCLUDE "maps/GoldenrodUnderground.asm"
-INCLUDE "maps/GoldenrodUndergroundSwitchRoomEntrances.asm"
+INCLUDE "maps/GoldenrodUndergroundEntrances.asm"
 INCLUDE "maps/GoldenrodDeptStoreB1F.asm"
-INCLUDE "maps/GoldenrodUndergroundWarehouse.asm"
+INCLUDE "maps/SaffronUndergroundWarehouse.asm"
 INCLUDE "maps/Route7UndergroundPathEntrance.asm"
 INCLUDE "maps/Route8UndergroundPathEntrance.asm"
+INCLUDE "maps/SaffronUndergroundSwitchRoom.asm"
 
 ENDSECTION

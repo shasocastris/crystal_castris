@@ -117,9 +117,10 @@ ENDM
 	map_const TEAM_ROCKET_BASE_B3F,                        15,  9 ; 51
 	map_const ILEX_FOREST,                                 15, 27 ; 52
 	map_const GOLDENROD_UNDERGROUND,                       15, 18 ; 53
-	map_const GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, 13, 21 ; 54
+	map_const GOLDENROD_UNDERGROUND_ENTRANCES,             13, 12 ; 54
 	map_const GOLDENROD_DEPT_STORE_B1F,                    10,  9 ; 55
-	map_const GOLDENROD_UNDERGROUND_WAREHOUSE,             10,  9 ; 56
+	map_const SAFFRON_UNDERGROUND_WAREHOUSE,               10,  9 ; 56
+	map_const SAFFRON_UNDERGROUND_SWITCH_ROOM,             13,  8 ; 56 - 2
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
 	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 25 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
@@ -152,8 +153,8 @@ ENDM
 	map_const UNDERGROUND_PATH,                            14, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
-	map_const SAFARI_ZONE_FUCHSIA_GATE,                5,  4 ; 89
-	map_const SAFARI_ZONE,                            10, 18 ; 90
+	map_const SAFARI_ZONE_FUCHSIA_GATE,                     5,  4 ; 89
+	map_const SAFARI_ZONE,                                 10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const SEAFOAM_CAVES,                               10,  9 ; 92
 	map_const SILVER_CAVE_UNDERBELLY,                      15, 18 ; 93

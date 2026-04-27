@@ -1,6 +1,7 @@
 	object_const_def
 	const ROUTE5_POKEFAN_M
 	const ROUTE5_BIG_SNORLAX
+	const ROUTE5_TEACHER
 
 Route5_MapScripts:
 	def_scene_scripts
@@ -94,11 +95,26 @@ Route5PokefanMText:
 	line "is solved."
 	done
 
+Route5TeacherScript:
+	jumptextfaceplayer Route5TeacherText
+
+Route5TeacherText:
+	text "Many cities in"
+	line "JOHTO have long"
+
+	para "histories. I'd"
+	line "love to visit!"
+	done
+
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
 
-HouseForSaleSign:
-	jumptext HouseForSaleSignText
+Route5UndergroundPathSignText:
+	text "UNDERGROUND PATH"
+
+	para "CERULEAN CITY -"
+	line "VERMILION CITY"
+	done
 
 Route5SnorlaxSleepingText:
 	text "SNORLAX is snoring"
@@ -115,20 +131,6 @@ Route5RadioNearSnorlaxText:
 	para "SNORLAX woke up!"
 	done
 
-Route5UndergroundPathSignText:
-	text "UNDERGROUND PATH"
-
-	para "CERULEAN CITY -"
-	line "VERMILION CITY"
-	done
-
-HouseForSaleSignText:
-	text "What's this?"
-
-	para "House for Sale…"
-	line "Nobody lives here."
-	done
-
 Route5_MapEvents:
 	db 0, 0 ; filler
 
@@ -142,8 +144,8 @@ Route5_MapEvents:
 
 	def_bg_events
 	bg_event 17, 17, BGEVENT_READ, Route5UndergroundPathSign
-	bg_event 10, 11, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
 	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_BEAT_ROCKET_GRUNTM_3
 	object_event  8, 14, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5Snorlax, EVENT_ROUTE5_SNORLAX
+	object_event  2,  7, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route5TeacherScript, -1

@@ -380,7 +380,6 @@ Route7UndergroundPathEntrance_Blocks:
 Route8UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.ablk"
 
-
 KurtsHouse_Blocks:
 	INCBIN "maps/KurtsHouse.ablk"
 
@@ -474,14 +473,17 @@ Route18_Blocks:
 GoldenrodUnderground_Blocks:
 	INCBIN "maps/GoldenrodUnderground.ablk"
 
-GoldenrodUndergroundSwitchRoomEntrances_Blocks:
-	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.ablk"
+GoldenrodUndergroundEntrances_Blocks:
+	INCBIN "maps/GoldenrodUndergroundEntrances.ablk"
 
 GoldenrodDeptStoreB1F_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreB1F.ablk"
 
-GoldenrodUndergroundWarehouse_Blocks:
-	INCBIN "maps/GoldenrodUndergroundWarehouse.ablk"
+SaffronUndergroundWarehouse_Blocks:
+	INCBIN "maps/SaffronUndergroundWarehouse.ablk"
+
+SaffronUndergroundSwitchRoom_Blocks:
+	INCBIN "maps/SaffronUndergroundSwitchRoom.ablk"
 
 TinTower1F_Blocks:
 	INCBIN "maps/TinTower1F.ablk"
