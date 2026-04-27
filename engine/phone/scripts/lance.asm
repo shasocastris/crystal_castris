@@ -1,0 +1,4 @@
+LancePhoneCallerScript:
+	farwritetext LancePhoneCallerText
+	specialphonecall SPECIALCALL_NONE
+	end

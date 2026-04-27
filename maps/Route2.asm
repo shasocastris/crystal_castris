@@ -14,6 +14,11 @@ Route2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, Route2LanceCallback
+
+Route2LanceCallback:
+	specialphonecall SPECIALCALL_LANCE
+	endcallback
 
 TrainerBugCatcherRob:
 	trainer BUG_CATCHER, ROB, EVENT_BEAT_BUG_CATCHER_ROB, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
