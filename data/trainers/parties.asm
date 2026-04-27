@@ -3329,7 +3329,7 @@ GruntMGroup:
 	dw DROWZEE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (3), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (3), Route 5, Route 6, Route 7, Route 8
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 41
 	dw MUK

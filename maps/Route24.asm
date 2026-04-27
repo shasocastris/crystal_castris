@@ -18,6 +18,7 @@ Route24RocketScript:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_31
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
 	writetext Route24RocketAfterBattleText
@@ -29,6 +30,7 @@ Route24RocketScript:
 	special FadeOutToBlack
 	special ReloadSpritesNoPalettes
 	disappear ROUTE24_ROCKET
+	setevent EVENT_ROUTE_24_ROCKET
 	pause 25
 	special FadeInFromBlack
 	playmapmusic
@@ -78,9 +80,9 @@ Route24RocketAfterBattleText:
 	line "secret will I."
 
 	para "MACHINE PART steal"
-	line "by me, deliver it I"
+	line "by me, deliver it"
 
-	para "did to EXECUTIVE"
+	para "I did to EXECUTIVE"
 	line "PETREL."
 
 	para "Secret paths you"

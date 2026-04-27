@@ -149,7 +149,7 @@ ENDM
 	map_const TOHJO_FALLS,                                 15, 10 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
 	map_const MOUNT_MOON,                                  15,  9 ; 85
-	map_const UNDERGROUND_PATH,                             3, 14 ; 86
+	map_const UNDERGROUND_PATH,                            14, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88
 	map_const SAFARI_ZONE_FUCHSIA_GATE,                5,  4 ; 89
@@ -387,6 +387,7 @@ ENDM
 	map_const LAV_RADIO_TOWER_4F,                          10,  4 ; 12
 	map_const LAV_RADIO_TOWER_5F,                          10,  4 ; 12
 	map_const ROUTE_8_SAFFRON_GATE,                         5,  4 ; 13
+	map_const ROUTE_8_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_12_SUPER_ROD_HOUSE,                     4,  4 ; 14
 	map_const LAVENDER_ODDITIES_SHOP,                       5,  4 ; 15
 	endgroup
@@ -428,6 +429,7 @@ ENDM
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
 	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 25
+	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 26
 	endgroup
 

@@ -5,8 +5,9 @@
 	const ROUTE8_SUPER_NERD1
 	const ROUTE8_SUPER_NERD2
 	const ROUTE8_FRUIT_TREE
-	const ROUTE8_POKEFAN_M
+	const ROUTE8_POKEFAN_M1
 	const ROUTE8_BIG_SNORLAX
+	const ROUTE8_POKEFAN_M2
 
 Route8_MapScripts:
 	def_scene_scripts
@@ -35,75 +36,6 @@ Route8Snorlax:
 	reloadmapafterbattle
 	end
 
-TrainerBikerDwayne:
-	trainer BIKER, DWAYNE, EVENT_BEAT_BIKER_DWAYNE, BikerDwayneSeenText, BikerDwayneBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext BikerDwayneAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBikerHarris:
-	trainer BIKER, HARRIS, EVENT_BEAT_BIKER_HARRIS, BikerHarrisSeenText, BikerHarrisBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext BikerHarrisAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerBikerZeke:
-	trainer BIKER, ZEKE, EVENT_BEAT_BIKER_ZEKE, BikerZekeSeenText, BikerZekeBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext BikerZekeAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerSuperNerdSam:
-	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SuperNerdSamSeenText, SuperNerdSamBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SuperNerdSamAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerSuperNerdTom:
-	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SuperNerdTomSeenText, SuperNerdTomBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SuperNerdTomAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerPokefanMJerred:
-    trainer POKEFANM, JERRED, EVENT_BEAT_POKEFANM_JERRED, PokefanMJerredSeenText, PokefanMJerredBeatenText, 0, .Script
-
-.Script:
-    opentext
-    writetext PokefanMJerredAfterBattleText
-    waitbutton
-    closetext
-    end
-
-Route8LockedDoor:
-	jumptext Route8LockedDoorText
-
-Route8UndergroundPathSign:
-	jumptext Route8UndergroundPathSignText
-
-Route8FruitTree:
-	fruittree FRUITTREE_ROUTE_8
-
 Route8SnorlaxSleepingText:
 	text "SNORLAX is snoring"
 	line "peacefully…"
@@ -118,6 +50,16 @@ Route8RadioNearSnorlaxText:
 
 	para "SNORLAX woke up!"
 	done
+
+TrainerBikerDwayne:
+	trainer BIKER, DWAYNE, EVENT_BEAT_BIKER_DWAYNE, BikerDwayneSeenText, BikerDwayneBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerDwayneAfterBattleText
+	waitbutton
+	closetext
+	end
 
 BikerDwayneSeenText:
 	text "We're the KANTO"
@@ -138,6 +80,16 @@ BikerDwayneAfterBattleText:
 	cont "never fall!"
 	done
 
+TrainerBikerHarris:
+	trainer BIKER, HARRIS, EVENT_BEAT_BIKER_HARRIS, BikerHarrisSeenText, BikerHarrisBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerHarrisAfterBattleText
+	waitbutton
+	closetext
+	end
+
 BikerHarrisSeenText:
 	text "The cops shut down"
 	line "our UNDERGROUND"
@@ -154,6 +106,16 @@ BikerHarrisAfterBattleText:
 	text "Wiped out by some"
 	line "punk from JOHTO…"
 	done
+
+TrainerBikerZeke:
+	trainer BIKER, ZEKE, EVENT_BEAT_BIKER_ZEKE, BikerZekeSeenText, BikerZekeBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext BikerZekeAfterBattleText
+	waitbutton
+	closetext
+	end
 
 BikerZekeSeenText:
 	text "We're the KANTO"
@@ -172,6 +134,16 @@ BikerZekeAfterBattleText:
 	cont "from now on…"
 	done
 
+TrainerSuperNerdSam:
+	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SuperNerdSamSeenText, SuperNerdSamBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SuperNerdSamAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SuperNerdSamSeenText:
 	text "How does the MAG-"
 	line "NET TRAIN work?"
@@ -186,6 +158,16 @@ SuperNerdSamAfterBattleText:
 	text "The power of mag-"
 	line "nets is awesome!"
 	done
+
+TrainerSuperNerdTom:
+	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SuperNerdTomSeenText, SuperNerdTomBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SuperNerdTomAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SuperNerdTomSeenText:
 	text "Hm… You've got"
@@ -203,6 +185,16 @@ SuperNerdTomAfterBattleText:
 	cont "advantages in"
 	cont "battles."
 	done
+
+TrainerPokefanMJerred:
+    trainer POKEFANM, JERRED, EVENT_BEAT_POKEFANM_JERRED, PokefanMJerredSeenText, PokefanMJerredBeatenText, 0, .Script
+
+.Script:
+    opentext
+    writetext PokefanMJerredAfterBattleText
+    waitbutton
+    closetext
+    end
 
 PokefanMJerredSeenText:
     text "I just love cute"
@@ -232,9 +224,73 @@ PokefanMJerredAfterBattleText:
     cont "around!"
     done
 
-Route8LockedDoorText:
-	text "It's locked…"
+Route8PokefanMScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_31
+	iffalse .RoadClosed
+	writetext Route8RocketSeenText
+	waitbutton
+	closetext
+	winlosstext Route8RocketBeaten_Text, 0
+	loadtrainer GRUNTM, GRUNTM_3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_3
+	opentext
+	writetext Route8RocketLeaves_Text
+	waitbutton
+	closetext
+	applymovement ROUTE8_POKEFAN_M2, Route8PokefanMovement
+	playsound SFX_ENTER_DOOR
+	disappear ROUTE8_POKEFAN_M2
+	waitsfx
+	end
+
+.RoadClosed
+	writetext Route8PokefanMText
+	waitbutton
+	closetext
+	end
+
+Route8PokefanMovement:
+	step UP
+	step_end
+
+Route8RocketSeenText:
+	text "Someone told you"
+	line "about the secret"
+	cont "underground path?"
+
+	para "That idiot …"
+
+	para "I suppose I'll"
+	line "have to deal with"
+	line "you."
 	done
+
+Route8RocketBeaten_Text:
+	text "What? I lost to"
+	line "some brat?"
+	done
+
+Route8RocketLeaves_Text:
+	text "I need to warn the"
+	line "bosses. There's no"
+	cont "way you will beat"
+	cont "our entire crew."
+	done
+
+Route8PokefanMText:
+	text "The road is closed"
+	line "until the problem"
+
+	para "at the POWER PLANT"
+	line "is solved."
+	done
+
+Route8UndergroundPathSign:
+	jumptext Route8UndergroundPathSignText
 
 Route8UndergroundPathSignText:
 	text "The flyer's torn."
@@ -243,18 +299,21 @@ Route8UndergroundPathSignText:
 	line "read…"
 	done
 
+Route8FruitTree:
+	fruittree FRUITTREE_ROUTE_8
+
 Route8_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  4,  4, ROUTE_8_SAFFRON_GATE, 3
 	warp_event  4,  5, ROUTE_8_SAFFRON_GATE, 4
+	warp_event 10,  5, ROUTE_8_UNDERGROUND_PATH_ENTRANCE, 1
 
 	def_coord_events
 
 	def_bg_events
 	bg_event 11,  7, BGEVENT_READ, Route8UndergroundPathSign
-	bg_event 10,  5, BGEVENT_READ, Route8LockedDoor
 
 	def_object_events
 	object_event 10,  8, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1
@@ -265,3 +324,4 @@ Route8_MapEvents:
 	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
 	object_event 16, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerPokefanMJerred, -1
 	object_event 34,  8, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Snorlax, EVENT_ROUTE8_SNORLAX
+	object_event 10,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route8PokefanMScript, EVENT_BEAT_ROCKET_GRUNTM_3

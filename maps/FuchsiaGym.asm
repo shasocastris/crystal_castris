@@ -64,7 +64,11 @@ JanineRematchScript:
 	iftrue .RematchDone
 	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_FULL_RESTORE
 	iffalse .JanineReject
-	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_X_SP_ATK
+	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_MAX_REVIVE
+	iffalse .JanineReject
+	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_MAX_POTION
+	iffalse .JanineReject
+	checkevent EVENT_UNDERGROUND_PATH_HIDDEN_MAX_ELIXER
 	iffalse .JanineReject
 	checkevent EVENT_ROCK_TUNNEL_1F_HIDDEN_X_ACCURACY
 	iffalse .JanineReject

@@ -30,7 +30,69 @@ Route5Snorlax:
 	end
 
 Route5PokefanMScript:
-	jumptextfaceplayer Route5PokefanMText
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_ROCKET_GRUNTM_31
+	iffalse .RoadClosed
+	writetext Route5RocketSeenText
+	waitbutton
+	closetext
+	winlosstext Route5RocketBeaten_Text, 0
+	loadtrainer GRUNTM, GRUNTM_3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_ROCKET_GRUNTM_3
+	opentext
+	writetext Route5RocketLeaves_Text
+	waitbutton
+	closetext
+	applymovement ROUTE5_POKEFAN_M, Route5PokefanMovement
+	playsound SFX_ENTER_DOOR
+	disappear ROUTE5_POKEFAN_M
+	waitsfx
+	end
+
+.RoadClosed
+	writetext Route5PokefanMText
+	waitbutton
+	closetext
+	end
+
+Route5PokefanMovement:
+	step UP
+	step_end
+
+Route5RocketSeenText:
+	text "Someone told you"
+	line "about the secret"
+	cont "underground path?"
+
+	para "That idiot …"
+
+	para "I suppose I'll"
+	line "have to deal with"
+	line "you."
+	done
+
+Route5RocketBeaten_Text:
+	text "What? I lost to"
+	line "some brat?"
+	done
+
+Route5RocketLeaves_Text:
+	text "I need to warn the"
+	line "bosses. There's no"
+	cont "way you will beat"
+	cont "our entire crew."
+	done
+
+Route5PokefanMText:
+	text "The road is closed"
+	line "until the problem"
+
+	para "at the POWER PLANT"
+	line "is solved."
+	done
 
 Route5UndergroundPathSign:
 	jumptext Route5UndergroundPathSignText
@@ -51,14 +113,6 @@ Route5RadioNearSnorlaxText:
 	para "…"
 
 	para "SNORLAX woke up!"
-	done
-
-Route5PokefanMText:
-	text "The road is closed"
-	line "until the problem"
-
-	para "at the POWER PLANT"
-	line "is solved."
 	done
 
 Route5UndergroundPathSignText:
@@ -91,5 +145,5 @@ Route5_MapEvents:
 	bg_event 10, 11, BGEVENT_READ, HouseForSaleSign
 
 	def_object_events
-	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_ROUTE_5_6_POKEFAN_M_BLOCKS_UNDERGROUND_PATH
+	object_event 17, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route5PokefanMScript, EVENT_BEAT_ROCKET_GRUNTM_3
 	object_event  8, 14, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5Snorlax, EVENT_ROUTE5_SNORLAX

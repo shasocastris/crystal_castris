@@ -376,6 +376,8 @@ NationalParkBugContest_Blocks:
 
 Route5UndergroundPathEntrance_Blocks:
 Route6UndergroundPathEntrance_Blocks:
+Route7UndergroundPathEntrance_Blocks:
+Route8UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.ablk"
 
 
