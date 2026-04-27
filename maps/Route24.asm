@@ -78,18 +78,17 @@ Route24RocketAfterBattleText:
 	line "secret will I."
 
 	para "MACHINE PART steal"
-	line "by me, hide it I"
+	line "by me, deliver it I"
 
-	para "did in GYM of the"
-	line "CERULEAN."
+	para "did to EXECUTIVE"
+	line "PETREL."
 
-	para "Inside water put"
-	line "it I did. Look for"
+	para "Secret paths you"
+	line "know not, guarded"
 
-	para "in water center of"
-	line "GYM at."
+	para "doors they are."
 
-	para "But you forget me"
+	para "And you forget me"
 	line "not!"
 
 	para "Beat you for sure"

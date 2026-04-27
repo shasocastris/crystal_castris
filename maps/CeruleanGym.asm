@@ -56,138 +56,6 @@ CeruleanGymGruntRunsOutScript:
 	pause 15
 	end
 
-CeruleanGymMistyScript:
-	faceplayer
-	opentext
-	checkflag ENGINE_CASCADEBADGE
-	iftrue .FightDone
-	writetext MistyIntroText
-	waitbutton
-	closetext
-	winlosstext MistyWinLossText, MistyLossText
-	loadtrainer MISTY, MISTY1
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_MISTY
-	setevent EVENT_BEAT_SWIMMERF_DIANA
-	setevent EVENT_BEAT_SWIMMERF_BRIANA
-	setevent EVENT_BEAT_SWIMMERM_PARKER
-	opentext
-	writetext ReceivedCascadeBadgeText
-	playsound SFX_GET_BADGE
-	waitsfx
-	setflag ENGINE_CASCADEBADGE
-.FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, MistyRematchScript
-	writetext MistyFightDoneText
-	waitbutton
-	closetext
-	end
-
-MistyRematchScript:
-	checkevent EVENT_MISTY_REMATCH
-	iftrue .RematchDone
-	checkevent EVENT_FOUGHT_LUGIA
-	iffalse .MistyReject
-	writetext MistyRematchText
-	waitbutton
-	closetext
-	winlosstext MistyRematchWinLossText, MistyLossText
-	loadtrainer MISTY, MISTY2
-	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_MISTY_REMATCH
-.RematchDone
-	opentext
-	writetext BeatenMistyAgainText
-	waitbutton
-	closetext
-	end
-
-.MistyReject
-	writetext MistyRejectText
-	waitbutton
-	closetext
-	end
-
-TrainerSwimmerfDiana:
-	trainer SWIMMERF, DIANA, EVENT_BEAT_SWIMMERF_DIANA, SwimmerfDianaSeenText, SwimmerfDianaBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SwimmerfDianaAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerSwimmerfBriana:
-	trainer SWIMMERF, BRIANA, EVENT_BEAT_SWIMMERF_BRIANA, SwimmerfBrianaSeenText, SwimmerfBrianaBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SwimmerfBrianaAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerSwimmermParker:
-	trainer SWIMMERM, PARKER, EVENT_BEAT_SWIMMERM_PARKER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SwimmermParkerAfterBattleText
-	waitbutton
-	closetext
-	end
-
-CeruleanGymGuideScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BEAT_MISTY
-	iftrue .CeruleanGymGuideWinScript
-	writetext CeruleanGymGuideText
-	waitbutton
-	closetext
-	end
-
-.CeruleanGymGuideWinScript:
-	writetext CeruleanGymGuideWinText
-	waitbutton
-	closetext
-	end
-
-CeruleanGymHiddenMachinePart:
-	hiddenitem MACHINE_PART, EVENT_FOUND_MACHINE_PART_IN_CERULEAN_GYM
-
-CeruleanGymStatue1:
-	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	iffalse CeruleanGymStatue
-	opentext
-	writetext CeruleanGymNote1Text
-	waitbutton
-	closetext
-	end
-
-CeruleanGymStatue2:
-	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	iffalse CeruleanGymStatue
-	opentext
-	writetext CeruleanGymNote2Text
-	waitbutton
-	closetext
-	end
-
-CeruleanGymStatue:
-	checkflag ENGINE_CASCADEBADGE
-	iftrue .Beaten
-	jumpstd GymStatue1Script
-.Beaten:
-	gettrainername STRING_BUFFER_4, MISTY, MISTY1
-	jumpstd GymStatue2Script
-
 CeruleanGymGruntRunsDownMovement:
 	big_step DOWN
 	big_step DOWN
@@ -253,17 +121,62 @@ CeruleanGymGruntByeText:
 	para "Bye-bye a go-go!"
 	done
 
-CeruleanGymNote1Text:
-	text "Sorry, I'll be out"
-	line "for a while."
-	cont "MISTY, GYM LEADER"
-	done
+CeruleanGymMistyScript:
+	faceplayer
+	opentext
+	checkflag ENGINE_CASCADEBADGE
+	iftrue .FightDone
+	writetext MistyIntroText
+	waitbutton
+	closetext
+	winlosstext MistyWinLossText, MistyLossText
+	loadtrainer MISTY, MISTY1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MISTY
+	setevent EVENT_BEAT_SWIMMERF_DIANA
+	setevent EVENT_BEAT_SWIMMERF_BRIANA
+	setevent EVENT_BEAT_SWIMMERM_PARKER
+	opentext
+	writetext ReceivedCascadeBadgeText
+	playsound SFX_GET_BADGE
+	waitsfx
+	setflag ENGINE_CASCADEBADGE
+.FightDone:
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MistyRematchScript
+	writetext MistyFightDoneText
+	waitbutton
+	closetext
+	end
 
-CeruleanGymNote2Text:
-	text "Since MISTY's out,"
-	line "we'll be away too."
-	cont "GYM TRAINERS"
-	done
+MistyRematchScript:
+	checkevent EVENT_MISTY_REMATCH
+	iftrue .RematchDone
+	checkevent EVENT_FOUGHT_LUGIA
+	iffalse .MistyReject
+	writetext MistyRematchText
+	waitbutton
+	closetext
+	winlosstext MistyRematchWinLossText, MistyLossText
+	loadtrainer MISTY, MISTY2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_MISTY_REMATCH
+.RematchDone
+	opentext
+	writetext BeatenMistyAgainText
+	waitbutton
+	closetext
+	end
+
+.MistyReject
+	writetext MistyRejectText
+	waitbutton
+	closetext
+	end
 
 MistyIntroText:
 	text "MISTY: I was ex-"
@@ -412,6 +325,16 @@ MistyRejectText:
 	cont "LUGIA!"
 	done
 
+TrainerSwimmerfDiana:
+	trainer SWIMMERF, DIANA, EVENT_BEAT_SWIMMERF_DIANA, SwimmerfDianaSeenText, SwimmerfDianaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfDianaAfterBattleText
+	waitbutton
+	closetext
+	end
+
 SwimmerfDianaSeenText:
 	text "Sorry about being"
 	line "away. Let's get on"
@@ -427,6 +350,16 @@ SwimmerfDianaAfterBattleText:
 	text "I'll be swimming"
 	line "quietly."
 	done
+
+TrainerSwimmerfBriana:
+	trainer SWIMMERF, BRIANA, EVENT_BEAT_SWIMMERF_BRIANA, SwimmerfBrianaSeenText, SwimmerfBrianaBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmerfBrianaAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SwimmerfBrianaSeenText:
 	text "Don't let my ele-"
@@ -447,6 +380,16 @@ SwimmerfBrianaAfterBattleText:
 	line "you if you get"
 	cont "complacent."
 	done
+
+TrainerSwimmermParker:
+	trainer SWIMMERM, PARKER, EVENT_BEAT_SWIMMERM_PARKER, SwimmermParkerSeenText, SwimmermParkerBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext SwimmermParkerAfterBattleText
+	waitbutton
+	closetext
+	end
 
 SwimmermParkerSeenText:
 	text "Glub…"
@@ -469,6 +412,22 @@ SwimmermParkerAfterBattleText:
 	cont "you'll be crushed!"
 	done
 
+CeruleanGymGuideScript:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_MISTY
+	iftrue .CeruleanGymGuideWinScript
+	writetext CeruleanGymGuideText
+	waitbutton
+	closetext
+	end
+
+.CeruleanGymGuideWinScript:
+	writetext CeruleanGymGuideWinText
+	waitbutton
+	closetext
+	end
+
 CeruleanGymGuideText:
 	text "Yo! CHAMP in"
 	line "making!"
@@ -489,6 +448,44 @@ CeruleanGymGuideWinText:
 	cont "great battle!"
 	done
 
+CeruleanGymStatue1:
+	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
+	iffalse CeruleanGymStatue
+	opentext
+	writetext CeruleanGymNote1Text
+	waitbutton
+	closetext
+	end
+
+CeruleanGymNote1Text:
+	text "Sorry, I'll be out"
+	line "for a while."
+	cont "MISTY, GYM LEADER"
+	done
+
+CeruleanGymStatue2:
+	checkevent EVENT_TRAINERS_IN_CERULEAN_GYM
+	iffalse CeruleanGymStatue
+	opentext
+	writetext CeruleanGymNote2Text
+	waitbutton
+	closetext
+	end
+
+CeruleanGymStatue:
+	checkflag ENGINE_CASCADEBADGE
+	iftrue .Beaten
+	jumpstd GymStatue1Script
+.Beaten:
+	gettrainername STRING_BUFFER_4, MISTY, MISTY1
+	jumpstd GymStatue2Script
+
+CeruleanGymNote2Text:
+	text "Since MISTY's out,"
+	line "we'll be away too."
+	cont "GYM TRAINERS"
+	done
+
 CeruleanGym_MapEvents:
 	db 0, 0 ; filler
 
@@ -499,7 +496,6 @@ CeruleanGym_MapEvents:
 	def_coord_events
 
 	def_bg_events
-	bg_event  3,  8, BGEVENT_ITEM, CeruleanGymHiddenMachinePart
 	bg_event  2, 13, BGEVENT_READ, CeruleanGymStatue1
 	bg_event  6, 13, BGEVENT_READ, CeruleanGymStatue2
 
