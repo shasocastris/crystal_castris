@@ -3407,7 +3407,7 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (11), Goldenrod Underground
+	next_list_item ; GRUNTM (11), Goldenrod Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 38
 	dw MUK
@@ -3429,7 +3429,7 @@ GruntMGroup:
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (13), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (13), Goldenrod Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 42
 	dw MAROWAK
@@ -3437,7 +3437,7 @@ GruntMGroup:
 	dw HAUNTER
 	db -1 ; end
 
-	next_list_item ; GRUNTM (14), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (14), Goldenrod Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 41
 	dw RATICATE
@@ -3445,7 +3445,7 @@ GruntMGroup:
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (15), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (15), Goldenrod Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 40
 	dw MUK
@@ -3531,7 +3531,7 @@ GruntMGroup:
 	dw THUNDERSHOCK, SUPERSONIC, SONICBOOM, THUNDER_WAVE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (24), Goldenrod Underground
+	next_list_item ; GRUNTM (24), Goldenrod Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 40
 	dw MUK
@@ -3539,7 +3539,7 @@ GruntMGroup:
 	dw MAROWAK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (25), Goldenrod Underground
+	next_list_item ; GRUNTM (25), Goldenrod Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 39
 	dw HAUNTER
