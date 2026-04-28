@@ -8,7 +8,7 @@
 	tilecoll WALL, WALL, FLOOR, PC ; 07
 	tilecoll WALL, WALL, WALL, FLOOR ; 08
 	tilecoll WALL, COUNTER, FLOOR, FLOOR ; 09
-	tilecoll WALL, COUNTER, FLOOR, FLOOR ; 0a
+	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 0a
 	tilecoll WALL, WALL, WALL, WALL ; 0b
 	tilecoll WALL, WALL, FLOOR, WALL ; 0c
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 0d
@@ -62,3 +62,5 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 3d
 	tilecoll WALL, WALL, WALL, WALL ; 3e
 	tilecoll WALL, WALL, WALL, WALL ; 3f
+	tilecoll WALL, WALL, FLOOR, WALL ; 40
+	tilecoll FLOOR, COUNTER, FLOOR, FLOOR ; 41

@@ -347,7 +347,7 @@ ENDM
 
 	newgroup INDIGO                                               ; 16
 	map_const ROUTE_23,                                    10,  9 ;  1
-	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  2
+	map_const INDIGO_PLATEAU_POKECENTER_1F,                10,  7 ;  2
 	map_const WILLS_ROOM,                                   5,  9 ;  3
 	map_const KOGAS_ROOM,                                   5,  9 ;  4
 	map_const BRUNOS_ROOM,                                  5,  9 ;  5
