@@ -516,5 +516,8 @@ INCLUDE "maps/SaffronUndergroundWarehouse.asm"
 INCLUDE "maps/Route7UndergroundPathEntrance.asm"
 INCLUDE "maps/Route8UndergroundPathEntrance.asm"
 INCLUDE "maps/SaffronUndergroundSwitchRoom.asm"
+INCLUDE "maps/MountMoonB1.asm"
+INCLUDE "maps/MountMoonB2.asm"
+INCLUDE "maps/MountMoonPath.asm"
 
 ENDSECTION

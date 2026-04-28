@@ -815,6 +815,15 @@ DiglettsCave_Blocks:
 MountMoon_Blocks:
 	INCBIN "maps/MountMoon.ablk"
 
+MountMoonB1_Blocks:
+	INCBIN "maps/MountMoonB1.ablk"
+
+MountMoonB2_Blocks:
+	INCBIN "maps/MountMoonB2.ablk"
+
+MountMoonPath_Blocks:
+	INCBIN "maps/MountMoonPath.ablk"
+
 SeafoamGym_Blocks:
 	INCBIN "maps/SeafoamGym.ablk"
 

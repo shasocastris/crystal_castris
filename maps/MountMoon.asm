@@ -16,7 +16,6 @@ MountMoonNoopScene:
 	end
 
 MountMoonRivalBattleScript:
-	turnobject PLAYER, RIGHT
 	showemote EMOTE_SHOCK, PLAYER, 15
 	special FadeOutMusic
 	pause 15
@@ -69,19 +68,17 @@ MountMoonRivalBattleScript:
 	end
 
 MountMoonRivalMovementBefore:
-	step LEFT
-	step LEFT
-	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
 	step_end
 
 MountMoonRivalMovementAfter:
-	step RIGHT
-	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
+	step UP
+	step UP
+	step UP
+	step UP
 	step_end
 
 MountMoonRivalTextBefore:
@@ -201,18 +198,16 @@ MountMoon_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  3, ROUTE_3, 1
-	warp_event 15, 15, ROUTE_4, 1
-	warp_event 13,  3, MOUNT_MOON, 7
-	warp_event 15, 11, MOUNT_MOON, 8
-	warp_event 25,  5, MOUNT_MOON_SQUARE, 1
-	warp_event 25, 15, MOUNT_MOON_SQUARE, 2
-	warp_event 25,  3, MOUNT_MOON, 3
-	warp_event 25, 13, MOUNT_MOON, 4
+	warp_event 15, 33, ROUTE_3, 1
+	warp_event 13, 21, MOUNT_MOON_PATH, 1
+	warp_event 27, 15, MOUNT_MOON_B1, 4
+	warp_event 35, 31, MOUNT_MOON_B1, 3
+	warp_event 15, 13, MOUNT_MOON_B1, 2
+	warp_event  3,  5, MOUNT_MOON_B1, 1
 
 	def_coord_events
 
 	def_bg_events
 
 	def_object_events
-	object_event  7,  3, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
+	object_event 15, 28, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL

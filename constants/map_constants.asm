@@ -149,7 +149,10 @@ ENDM
 	map_const DRAGON_SHRINE,                                5,  5 ; 82
 	map_const TOHJO_FALLS,                                 15, 10 ; 83
 	map_const DIGLETTS_CAVE,                               10, 18 ; 84
-	map_const MOUNT_MOON,                                  15,  9 ; 85
+	map_const MOUNT_MOON,                                  20, 18 ; 85
+	map_const MOUNT_MOON_B1,                               14, 14 ; 85
+	map_const MOUNT_MOON_B2,                               20, 18 ; 85
+	map_const MOUNT_MOON_PATH,                              9,  9 ; 85
 	map_const UNDERGROUND_PATH,                            14, 14 ; 86
 	map_const ROCK_TUNNEL_1F,                              15, 18 ; 87
 	map_const ROCK_TUNNEL_B1F,                             15, 18 ; 88

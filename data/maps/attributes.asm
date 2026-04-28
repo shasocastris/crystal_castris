@@ -481,6 +481,9 @@ ENDM
 	map_attributes Route42EcruteakGate, ROUTE_42_ECRUTEAK_GATE, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes MountMoon, MOUNT_MOON, $09, 0
+	map_attributes MountMoonB1, MOUNT_MOON_B1, $09, 0
+	map_attributes MountMoonB2, MOUNT_MOON_B2, $09, 0
+	map_attributes MountMoonPath, MOUNT_MOON_PATH, $09, 0
 	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
 	map_attributes RockTunnel1F, ROCK_TUNNEL_1F, $09, 0
 	map_attributes RockTunnelB1F, ROCK_TUNNEL_B1F, $09, 0

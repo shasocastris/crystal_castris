@@ -133,8 +133,7 @@ Route4_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2,  5, MOUNT_MOON, 2
-;	warp_event  0, 13, CERULEAN_CAVE, 1
+	warp_event  2,  5, MOUNT_MOON_B2, 4
 
 	def_coord_events
 
@@ -147,4 +146,3 @@ Route4_MapEvents:
 	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
 	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
 	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
-	object_event 40,  4, SPRITE_UNUSED_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, Route4UnusedGuyScript, EVENT_OPENED_CERULEAN_CAVE
