@@ -49,7 +49,7 @@ CeruleanCave_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 25, 15, CERULEAN_CITY, 7
+	warp_event 25, 15, ROUTE_4, 2
 
 	def_coord_events
 
