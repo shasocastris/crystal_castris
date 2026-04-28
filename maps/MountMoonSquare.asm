@@ -121,6 +121,8 @@ ClefairyFleeMovement:
 	step RIGHT
 	step RIGHT
 	jump_step RIGHT
+	jump_step RIGHT
+	step RIGHT
 	step RIGHT
 	step RIGHT
 	step_end
@@ -134,15 +136,18 @@ MountMoonSquare_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 20,  5, MOUNT_MOON_PATH, 2
-	warp_event 13,  7, MOUNT_MOON_GIFT_SHOP, 1
+	warp_event 24, 11, MOUNT_MOON_PATH, 2
+	warp_event 17,  8, MOUNT_MOON_GIFT_SHOP, 1
 
 	def_coord_events
+	coord_event  6, 11, SCENE_MOUNTMOONSQUARE_CLEFAIRY_DANCE, ClefairyDance
 	coord_event  7, 11, SCENE_MOUNTMOONSQUARE_CLEFAIRY_DANCE, ClefairyDance
+	coord_event  8, 11, SCENE_MOUNTMOONSQUARE_CLEFAIRY_DANCE, ClefairyDance
+	coord_event  9, 11, SCENE_MOUNTMOONSQUARE_CLEFAIRY_DANCE, ClefairyDance
 
 	def_bg_events
 	bg_event  7,  7, BGEVENT_ITEM, MountMoonSquareHiddenMoonStone
-	bg_event 17,  7, BGEVENT_READ, DontLitterSign
+	bg_event 18, 10, BGEVENT_READ, DontLitterSign
 
 	def_object_events
 	object_event  6,  6, SPRITE_FAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_SQUARE_CLEFAIRY

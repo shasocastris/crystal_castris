@@ -594,7 +594,7 @@ ENDM
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0
 	map_attributes OlivinePortPassage, OLIVINE_PORT_PASSAGE, $00, 0
 	map_attributes VermilionPortPassage, VERMILION_PORT_PASSAGE, $00, 0
-	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $2d, 0
+	map_attributes MountMoonSquare, MOUNT_MOON_SQUARE, $71, 0
 	map_attributes MountMoonGiftShop, MOUNT_MOON_GIFT_SHOP, $00, 0
 	map_attributes TinTowerRoof, TIN_TOWER_ROOF, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
