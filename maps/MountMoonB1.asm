@@ -48,8 +48,6 @@ MountMoonB1_MapEvents:
 	def_coord_events
 
 	def_bg_events
-
-	def_object_events
 	bg_event  4, 10, BGEVENT_ITEM, MountMoonB1HiddenFullRestore
 	bg_event 14,  4, BGEVENT_ITEM, MountMoonB1HiddenMaxEther
 	bg_event  4, 25, BGEVENT_ITEM, MountMoonB1HiddenStarPiece

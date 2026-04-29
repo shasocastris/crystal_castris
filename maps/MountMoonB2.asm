@@ -12,6 +12,30 @@ MountMoonB2_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, .CeruleanCaveEntrance
+
+.CeruleanCaveEntrance:
+	checkevent EVENT_DISCOVERED_CERULEAN_CAVE
+	iftrue .UncoverEntrance
+	changeblock 33, 10, $19
+.UncoverEntrance:
+	endcallback
+
+CeruleanCaveEntranceScript:
+	checkevent EVENT_DISCOVERED_CERULEAN_CAVE
+	iftrue .AlreadyFound
+	setevent EVENT_DISCOVERED_CERULEAN_CAVE
+	special FadeOutMusic
+	pause 15
+	earthquake 50
+	showemote EMOTE_SHOCK, PLAYER, 15
+	playsound SFX_STRENGTH
+	changeblock 33, 10, $3f
+	refreshmap
+	end
+
+.AlreadyFound:
+	end
 
 TrainerGruntF14:
 	trainer GRUNTF, GRUNTF_14, EVENT_BEAT_ROCKET_GRUNTF_14, GruntF14SeenText, GruntF14BeatenText, 0, .Script
@@ -213,6 +237,7 @@ MountMoonB2_MapEvents:
 	bg_event 26, 18, BGEVENT_ITEM, MountMoonB2HiddenMaxPotion
 	bg_event 15, 19, BGEVENT_ITEM, MountMoonB2HiddenNugget
 	bg_event 25,  6, BGEVENT_ITEM, MountMoonB2HiddenPPUp
+	bg_event 33, 10, BGEVENT_READ, CeruleanCaveEntranceScript
 
 	def_object_events
 	object_event 21, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MountMoonB2MoonStone, EVENT_MT_MOON_B2_MOON_STONE
