@@ -342,8 +342,17 @@ AbraText:
 	text "ABRA: Aabra…"
 	done
 
+IndigoPlateauPokecenter1FOfficerScript
+	jumptextfaceplayer IndigoPlateauPokecenter1FOfficerText
+
+IndigoPlateauPokecenter1FOfficerText:
+
 IndigoPlateauPokecenterInfoSignScript:
-	jumptext IndigoPlateauPokecenterInfoSignText
+	text "Civilians are only"
+	line "allowed inside"
+	cont "RANGER COMMAND in"
+	cont "case of emergency."
+	done
 
 IndigoPlateauPokecenterInfoSignText:
 	text "#MON LEAGUE"
@@ -383,3 +392,4 @@ IndigoPlateauPokecenter1F_MapEvents:
 	object_event 18,  9, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
 	object_event  4,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, -1
 	object_event  3,  9, SPRITE_ABRA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, -1
+	object_event  0,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FOfficerScript, -1

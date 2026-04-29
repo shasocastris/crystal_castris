@@ -381,9 +381,9 @@ SuperNerdOttoAfterBattleText:
 	cont "I've studied."
 
 	para "Something about"
-	line "the rock formations"
-	cont "in MT.MOON draws"
-	cont "them here."
+	line "the geology in"
+	cont "MT.MOON draws them"
+	cont "here."
 	done
 
 
@@ -403,7 +403,8 @@ PokemaniacAshtonSeenText:
 	cont "site in the world!"
 
 	para "I challenge anyone"
-	line "who says otherwise!"
+	line "who says anything"
+	cont "else!"
 	done
 
 PokemaniacAshtonBeatenText:
