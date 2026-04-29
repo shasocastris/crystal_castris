@@ -1670,24 +1670,24 @@ ScientistGroup:
 	dw MAGNETON
 	db -1 ; end
 
-	next_list_item ; SCIENTIST (4), Goldenrod Radio Tower
+	next_list_item ; SCIENTIST (4), Cerulean Base 2
 	db "MARC@", TRAINERTYPE_NORMAL
-	db 45
+	db 65
 	dw DUGTRIO
-	db 45
+	db 65
 	dw MAGNETON
-	db 45
+	db 66
 	dw DITTO
 	db -1 ; end
 
-	next_list_item ; SCIENTIST (5), Goldenrod Radio Tower
+	next_list_item ; SCIENTIST (5), Cerulean Base 2
 	db "RICH@", TRAINERTYPE_MOVES
-	db 46
+	db 65
 	dw PORYGON2
-	dw CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
-	db 46
+	dw CONVERSION2, TRI_ATTACK, PSYCHIC_M, RECOVER
+	db 66
 	dw GYARADOS
-	dw SURF, DRAGON_RAGE, FLAMETHROWER, REVERSAL
+	dw SURF, HYPER_BEAM, DRAGONBREATH, THUNDERBOLT
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (6), Ruins of Alph Outside
@@ -3399,73 +3399,75 @@ GruntMGroup:
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (4), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (4), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40
+	db 65
 	dw MUK
-	db 40
+	db 65
 	dw RATICATE
-	db 42
+	db 66
 	dw MAROWAK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (5), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (5), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 38
+	db 65
 	dw RATICATE
-	db 38
+	db 65
 	dw MUK
-	db 40
+	db 66
 	dw HAUNTER
-	db 40
+	db 65
 	dw RATICATE
-	db 40
+	db 65
 	dw MUK
 	db -1 ; end
 
-	next_list_item ; GRUNTM (6), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (6), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 44
+	db 65
 	dw ARBOK
-	db 44
+	db 65
 	dw GOLBAT
 	db -1 ; end
 
-	next_list_item ; GRUNTM (7), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (7), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 40
+	db 65
 	dw WEEZING
-	db 40
+	db 65
 	dw HYPNO
-	db 40
+	db 65
 	dw GOLBAT
-	db 40
+	db 66
 	dw RATICATE
 	db -1 ; end
 
-	next_list_item ; GRUNTM (8), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (8), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 44
+	db 65
 	dw HAUNTER
+	db 66
+	dw GENGAR
 	db -1 ; end
 
-	next_list_item ; GRUNTM (9), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (9), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 41
+	db 65
 	dw MAROWAK
-	db 41
+	db 65
 	dw WEEZING
-	db 41
+	db 66
 	dw GYARADOS
 	db -1 ; end
 
-	next_list_item ; GRUNTM (10), Goldenrod Radio Tower
+	next_list_item ; GRUNTM (10), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 39
+	db 65
 	dw RATICATE
-	db 41
+	db 65
 	dw GOLBAT
-	db 39
+	db 65
 	dw MUK
 	db -1 ; end
 
@@ -5700,7 +5702,7 @@ ExecutiveMGroup:
 	end_list_items
 
 PsychicGroup:
-	next_list_item ; PSYCHIC_T (1), Ruins of Alph
+	next_list_item ; PSYCHIC_T (1), Ruins of Alph Outside
 	db "NATHAN@", TRAINERTYPE_NORMAL
 	db 32
 	dw GIRAFARIG
@@ -6267,7 +6269,7 @@ CamperGroup:
 	end_list_items
 
 ExecutiveFGroup:
-	next_list_item ; EXECUTIVEF (2), Team Rocket's Hideout, B2F
+	next_list_item ; EXECUTIVEF (1), Team Rocket's Hideout, B2F
 	db "ARIANA@", TRAINERTYPE_MOVES
 	db 32
 	dw VILEPLUME
@@ -6283,7 +6285,7 @@ ExecutiveFGroup:
 	dw SLUDGE_BOMB, LICK, MINIMIZE, SCREECH
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEF (1), CERULEAN CAVE
+	next_list_item ; EXECUTIVEF (2), Ruins of Alph Outside
 	db "ARIANA@", TRAINERTYPE_MOVES
 	db 45
 	dw ARBOK
@@ -6300,6 +6302,28 @@ ExecutiveFGroup:
 	db 46
 	dw MUK
 	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
+	db -1 ; end
+
+	next_list_item ; EXECUTIVEF (3), Cerulean Base 3
+	db "ARIANA@", TRAINERTYPE_MOVES
+	db 67
+	dw ARBOK
+	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
+	db 67
+	dw VILEPLUME
+	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
+	db 67
+	dw MURKROW
+	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
+	db 68
+	dw HYPNO
+	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
+	db 68
+	dw MUK
+	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
+	db 68
+	dw NIDOQUEEN
+	dw EARTHQUAKE, DOUBLE_KICK, SLUDGE_BOMB, BODY_SLAM
 	db -1 ; end
 
 	end_list_items
@@ -7044,13 +7068,13 @@ GruntFGroup:
 	dw EKANS
 	db -1 ; end
 
-	next_list_item ; GRUNTF (2), Goldenrod Radio Tower
+	next_list_item ; GRUNTF (2), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 44
+	db 65
 	dw ARBOK
-	db 44
+	db 65
 	dw MUK
-	db 44
+	db 66
 	dw SLOWBRO
 	db -1 ; end
 
@@ -7064,15 +7088,15 @@ GruntFGroup:
 	dw WEEPINBELL
 	db -1 ; end
 
-	next_list_item ; GRUNTF (4), Goldenrod Radio Tower
+	next_list_item ; GRUNTF (4), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 38
+	db 65
 	dw ARBOK
-	db 40
+	db 65
 	dw GOLBAT
-	db 38
+	db 65
 	dw SLOWBRO
-	db 41
+	db 66
 	dw VILEPLUME
 	db -1 ; end
 

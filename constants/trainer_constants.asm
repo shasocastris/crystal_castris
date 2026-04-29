@@ -663,6 +663,7 @@ DEF KRIS EQU __trainer_class__
 	trainerclass EXECUTIVEF ; 39
 	const EXECUTIVEF_1
 	const EXECUTIVEF_2
+	const EXECUTIVEF_3
 
 	trainerclass SAGE ; 3a
 	const CHOW
