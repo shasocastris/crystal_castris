@@ -1,5 +1,6 @@
 	object_const_def
 	const MOUNTMOON_RIVAL
+	const VICTORYROAD_POKE_BALL1
 
 MountMoon_MapScripts:
 	def_scene_scripts
@@ -60,6 +61,12 @@ MountMoonRivalBattleScript:
 	writetext MountMoonRivalTextAfter
 	waitbutton
 	closetext
+    special FadeOutToWhite
+	special LoadMapPalettes
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	special FadeInPalettes_EnableDynNoApply
 	applymovement MOUNTMOON_RIVAL, MountMoonRivalMovementAfter
 	disappear MOUNTMOON_RIVAL
 	setscene SCENE_MOUNTMOON_NOOP
@@ -87,30 +94,41 @@ MountMoonRivalTextBefore:
 	para "It's been a while,"
 	line "<PLAYER>."
 
-	para "…Since I lost to"
+	para "LANCE called me to"
+	line "help you finish"
+	cont "TEAM ROCKET once"
+	cont "and for all."
+
+	para "He thought we"
+	line "might work well"
+	cont "after our efforts"
+	cont "in LAVENDER TOWN."
+
+	para "He's giving me too"
+	line "much credit, but"
+	cont "I'm glad to help."
+
+	para "I hate everything"
+	cont "TEAM ROCKET stands"
+	cont "for."
+
+	para "But before we go"
+	line "in there, I need"
+	cont "to know…"
+
+	para "…Are you ready?"
+
+	para "Since I lost to"
 	line "you, I've been"
 	cont "traveling with my"
-	cont "#MON all over."
+	cont "#MON. Trying"
+	cont "to understand"
+	cont "each of them."
 
-	para "Instead of just"
-	line "pushing them to"
-	cont "be stronger…"
-
-	para "I've been trying"
-	line "to understand each"
-	cont "of them."
-
-	para "Some wanted to"
-	line "play. Others need-"
-	cont "ed to rest."
-
-	para "I never noticed"
-	line "before."
-
-	para "<PLAYER>, now I"
-	line "want to show you"
-	cont "what we've learned"
-	cont "together!"
+	para "I think I finally"
+	line "do. Let me show"
+	cont "you what we've"
+	cont "learned together."
 	done
 
 MountMoonRivalTextWin:
@@ -134,64 +152,59 @@ MountMoonRivalTextWin:
 MountMoonRivalTextAfter:
 	text "<……> <……> <……>"
 
-	para "…You won, and I"
-	line "can accept that"
-	cont "now."
+	para "…You won."
+	line "Good."
 
-	para "But more"
-	line "importantly, I"  
-	cont "saw how happy my"
-	cont "#MON looked"
-	cont "during that"
-	cont "battle."
+	para "If you couldn't"
+	line "beat me here, you"
+	cont "wouldn't last five"
+	cont "minutes."
 
-	para "Even the ones" 
-	line "that fainted were"
-	cont "trying their best"
-	cont "for me."
+	para "LANCE left us his"
+	line "special medicine."
 
-	para "I used to think"
-	line "weak #MON were"
-	cont "holding me back."
+	para "He said: 'go in"
+	line "at full strength.'"
+	cont "I'm inclined to"
+	cont "agree."
 
-	para "But there are no"
+	para "I'd come with you,"
+	line "but this is your"
+	cont "fight."
+
+	para "I saw it in your"
+	line "#MON just now."
+	cont "They'd follow you"
+	cont "anywhere."
+
+	para "…There are no"
 	line "weak #MON, are"
-	cont "there? Just"  
+	cont "there? Just"
 	cont "trainers who"
 	cont "don't understand."
 
-	para "…Listen, <PLAYER>."
-
-	para "I still want to" 
-	line "be the greatest"
-	cont "trainer. But now" 
-	cont "I know the right"
-	cont "way to do it."
-
-	para "Together with"
-	line "all my #MON."
-	cont "Not just the"
-	cont "strongest ones."
+	para "Go. I'll be on the"
+	line "lookout for the"
+	cont "secret entrance"
+	cont "too."
 	done
 
 MountMoonRivalTextLoss:
 	text "<……> <……> <……>"
 
-	para "My #MON and I"
-	line "have come so far"
-	cont "together."
+	para "…That's not good"
+	line "enough, <PLAYER>."
 
-	para "I can see it in"
-	line "their eyes now."
-	cont "They trust me."
+	para "TEAM ROCKET is"
+	line "waiting in that"
+	cont "CAVE with something"
+	cont "far worse than me."
 
-	para "And I trust them"
-	line "to give everything"
-	cont "they have."
+	para "Rest your #MON."
+	line "Come back when"
+	cont "you're ready."
 
-	para "This is what real"
-	line "partnership feels"
-	cont "like, isn't it?"
+	para "I'll be here."
 	done
 
 MountMoon_MapEvents:
@@ -211,3 +224,4 @@ MountMoon_MapEvents:
 
 	def_object_events
 	object_event 15, 28, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MT_MOON_RIVAL
+	object_event  3, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, VictoryRoadTMEarthquake, EVENT_VICTORY_ROAD_TM_EARTHQUAKE
