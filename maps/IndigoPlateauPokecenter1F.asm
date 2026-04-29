@@ -342,7 +342,7 @@ AbraText:
 	text "ABRA: Aabra…"
 	done
 
-IndigoPlateauPokecenter1FOfficerScript
+IndigoPlateauPokecenter1FOfficerScript:
 	jumptextfaceplayer IndigoPlateauPokecenter1FOfficerText
 
 IndigoPlateauPokecenter1FOfficerText:
