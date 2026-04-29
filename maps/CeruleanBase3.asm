@@ -1,16 +1,15 @@
 	object_const_def
 
-CeruleanCave_MapScripts:
+CeruleanBase3_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-CeruleanCave_MapEvents:
+CeruleanBase3_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  3,  3, CERULEAN_BASE_1, 1
-	warp_event 25, 15, MOUNT_MOON_B2, 5
+	warp_event  5, 10, CERULEAN_BASE_2, 2
 
 	def_coord_events
 

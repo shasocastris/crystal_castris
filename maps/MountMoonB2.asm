@@ -229,7 +229,7 @@ MountMoonB2_MapEvents:
 	warp_event 25,  9, MOUNT_MOON_B1, 6
 	warp_event 21, 17, MOUNT_MOON_B1, 5
 	warp_event  5, 11, ROUTE_4, 1
-	warp_event 33, 10, CERULEAN_CAVE, 1
+	warp_event 33, 10, CERULEAN_CAVE, 2
 
 	def_coord_events
 

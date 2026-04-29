@@ -708,6 +708,9 @@ ENDM
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
 	map_attributes SilverCaveUnderbelly, SILVER_CAVE_UNDERBELLY, $09, 0
 	map_attributes CeruleanCave, CERULEAN_CAVE, $09, 0
+	map_attributes CeruleanBase1, CERULEAN_BASE_1, $00, 0
+	map_attributes CeruleanBase2, CERULEAN_BASE_2, $00, 0
+	map_attributes CeruleanBase3, CERULEAN_BASE_3, $00, 0
 	map_attributes CherrygroveCafe, CHERRYGROVE_CAFE, $00, 0
 	map_attributes AzaleaLumberYard, AZALEA_LUMBER_YARD, $00, 0
 	map_attributes EcruteakGameHouse, ECRUTEAK_GAME_HOUSE, $00, 0

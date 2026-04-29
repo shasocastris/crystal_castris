@@ -519,5 +519,8 @@ INCLUDE "maps/MountMoon.asm"
 INCLUDE "maps/MountMoonB1.asm"
 INCLUDE "maps/MountMoonB2.asm"
 INCLUDE "maps/MountMoonPath.asm"
+INCLUDE "maps/CeruleanBase1.asm"
+INCLUDE "maps/CeruleanBase2.asm"
+INCLUDE "maps/CeruleanBase3.asm"
 
 ENDSECTION

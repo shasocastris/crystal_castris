@@ -936,6 +936,15 @@ SilverCaveUnderbelly_Blocks:
 CeruleanCave_Blocks:
 	INCBIN "maps/CeruleanCave.ablk"
 
+CeruleanBase1_Blocks:
+	INCBIN "maps/CeruleanBase1.ablk"
+
+CeruleanBase2_Blocks:
+	INCBIN "maps/CeruleanBase2.ablk"
+
+CeruleanBase3_Blocks:
+	INCBIN "maps/CeruleanBase3.ablk"
+
 BlackthornPass_Blocks:
 	INCBIN "maps/BlackthornPass.ablk"
 
