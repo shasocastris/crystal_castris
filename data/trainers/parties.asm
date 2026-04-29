@@ -1783,6 +1783,18 @@ ScientistGroup:
 	dw THUNDER, THUNDER_WAVE, SWIFT, SCREECH
 	db -1 ; end
 
+	next_list_item ; SCIENTIST (15), Mt. Moon B2
+	db "MILES@", TRAINERTYPE_NORMAL
+	db 56
+	dw MAGNETON
+	db 56
+	dw ELECTRODE
+	db 57
+	dw CLEFABLE
+	db 57
+	dw PORYGON
+	db -1 ; end
+
 	end_list_items
 
 YoungsterGroup:
@@ -3348,6 +3360,18 @@ PokemaniacGroup:
 	dw SNORLAX
 	db -1 ; end
 
+	next_list_item ; POKEMANIAC (17), Mt. Moon B2 — FELIX
+	db "FELIX@", TRAINERTYPE_NORMAL
+	db 56
+	dw OMASTAR
+	db 56
+	dw KABUTOPS
+	db 57
+	dw CLEFABLE
+	db 57
+	dw SNORLAX
+	db -1 ; end
+
 	end_list_items
 
 GruntMGroup:
@@ -3697,6 +3721,18 @@ GruntMGroup:
 	dw HAUNTER
 	db 54
 	dw MAROWAK
+	db -1 ; end
+
+	next_list_item ; GRUNTM (38), Mt. Moon B2
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 56
+	dw RATICATE
+	db 56
+	dw GOLBAT
+	db 57
+	dw WEEZING
+	db 57
+	dw ARBOK
 	db -1 ; end
 
 	end_list_items
@@ -7137,6 +7173,30 @@ next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
 	dw GOLBAT
 	db 53
 	dw WEEZING
+	db -1 ; end
+
+	next_list_item ; GRUNTF (14), Mt. Moon B2
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 55
+	dw ARBOK
+	db 55
+	dw GOLBAT
+	db 56
+	dw VILEPLUME
+	db 56
+	dw CLEFABLE
+	db -1 ; end
+
+	next_list_item ; GRUNTF (15), Mt. Moon B2
+	db "GRUNT@", TRAINERTYPE_NORMAL
+	db 55
+	dw GOLBAT
+	db 56
+	dw WEEZING
+	db 56
+	dw ARBOK
+	db 57
+	dw MUK
 	db -1 ; end
 
 	end_list_items

@@ -162,6 +162,7 @@ DEF KRIS EQU __trainer_class__
 	const JAYJAY
 	const CARL
 	const KIP
+	const MILES
 
 	trainerclass YOUNGSTER ; 1c
 	const JOEY1
@@ -332,6 +333,7 @@ DEF KRIS EQU __trainer_class__
 	const MILLER
 	const SANTOS
 	const ASHTON
+	const FELIX
 
 	trainerclass GRUNTM ; 24
 	const GRUNTM_1
@@ -359,11 +361,11 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_23
 	const GRUNTM_24
 	const GRUNTM_25
-	const GRUNTM_26 ; unused
-	const GRUNTM_27 ; unused
+	const GRUNTM_26
+	const GRUNTM_27
 	const GRUNTM_28
 	const GRUNTM_29
-	const GRUNTM_30 ; unused
+	const GRUNTM_30
 	const GRUNTM_31
 	const GRUNTM_32
 	const GRUNTM_33
@@ -371,6 +373,7 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTM_35
 	const GRUNTM_36
 	const GRUNTM_37
+	const GRUNTM_38
 
 	trainerclass GENTLEMAN ; 25
 	const PRESTON
@@ -755,6 +758,8 @@ DEF KRIS EQU __trainer_class__
 	const GRUNTF_11
 	const GRUNTF_12
 	const GRUNTF_13
+	const GRUNTF_14
+	const GRUNTF_15
 
 	trainerclass LINK_KRIS ; 44
 	const LINK_KRIS1
