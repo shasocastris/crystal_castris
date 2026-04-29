@@ -2784,6 +2784,7 @@ wGlitterAndGraceSceneID::                         db
 wRoute39SceneID::                                 db
 wIcePath1FSceneID::                               db
 wLavRadioTower2FSceneID::                         db
+wCeruleanBase3SceneID::                           db
 
 ; fight counts
 
