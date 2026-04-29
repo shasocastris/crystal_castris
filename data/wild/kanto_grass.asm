@@ -51,11 +51,123 @@ KantoGrassWildMons:
 	; nite
 	dbw 6, ZUBAT
 	dbw 8, GEODUDE
-	dbw 8, CUBONE
+	dbw 8, CLEFAIRY
+	dbw 12, PARAS
+	dbw 10, CLEFFA
+	dbw 8, KABUTO
+	dbw 8, KABUTO
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B1
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
 	dbw 12, PARAS
 	dbw 10, CLEFAIRY
+	dbw 8, AERODACTYL
+	dbw 8, AERODACTYL
+	; day
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 12, PARAS
+	dbw 10, CLEFAIRY
+	dbw 8, OMANYTE
+	dbw 8, OMANYTE
+	; nite
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, CLEFAIRY
+	dbw 12, PARAS
+	dbw 10, CLEFFA
 	dbw 8, KABUTO
 	dbw 8, KABUTO
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_B2
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 12, PARAS
+	dbw 10, CLEFAIRY
+	dbw 8, AERODACTYL
+	dbw 8, AERODACTYL
+	; day
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 12, PARAS
+	dbw 10, CLEFAIRY
+	dbw 8, OMANYTE
+	dbw 8, OMANYTE
+	; nite
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, CLEFAIRY
+	dbw 12, PARAS
+	dbw 10, CLEFFA
+	dbw 8, KABUTO
+	dbw 8, KABUTO
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_PATH
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 12, PARAS
+	dbw 10, CLEFAIRY
+	dbw 8, AERODACTYL
+	dbw 8, AERODACTYL
+	; day
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, SANDSHREW
+	dbw 12, PARAS
+	dbw 10, CLEFAIRY
+	dbw 8, OMANYTE
+	dbw 8, OMANYTE
+	; nite
+	dbw 6, ZUBAT
+	dbw 8, GEODUDE
+	dbw 8, CLEFAIRY
+	dbw 12, PARAS
+	dbw 10, CLEFFA
+	dbw 8, KABUTO
+	dbw 8, KABUTO
+	end_grass_wildmons
+
+	def_grass_wildmons MOUNT_MOON_SQUARE
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	dbw 5, SPEAROW
+	dbw 5, RATTATA
+	dbw 8, EKANS
+	dbw 10, RATICATE
+	dbw 10, ARBOK
+	dbw 10, SANDSHREW
+	dbw 10, SANDSHREW
+	; day
+	dbw 5, SPEAROW
+	dbw 5, RATTATA
+	dbw 8, EKANS
+	dbw 10, RATICATE
+	dbw 10, ARBOK
+	dbw 10, SANDSHREW
+	dbw 10, SANDSHREW
+	; nite
+	dbw 5, RATTATA
+	dbw 10, RATTATA
+	dbw 10, RATICATE
+	dbw 6, ZUBAT
+	dbw 5, RATTATA
+	dbw 6, CLEFAIRY
+	dbw 6, CLEFAIRY
 	end_grass_wildmons
 
 	def_grass_wildmons ROCK_TUNNEL_1F

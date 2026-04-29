@@ -9,6 +9,13 @@ KantoWaterWildMons:
 	dbw 20, SEAKING
 	end_water_wildmons
 
+	def_water_wildmons MOUNT_MOON_SQUARE
+	db 4 percent ; encounter rate
+	dbw 20, POLIWAG
+	dbw 20, MARILL
+	dbw 20, HORSEA
+	end_water_wildmons
+
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
 	dbw 35, REMORAID
