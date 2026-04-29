@@ -265,6 +265,7 @@ DEF KRIS EQU __trainer_class__
 	const ALLEN
 	const DARIN
 	const LOGAN
+	const TRAVIS
 
 	trainerclass COOLTRAINERF ; 21
 	const GWEN
@@ -291,6 +292,7 @@ DEF KRIS EQU __trainer_class__
 	const GALEN
 	const KELSEY
 	const NINA
+	const AMBER
 
 	trainerclass BEAUTY ; 22
 	const VICTORIA
@@ -329,6 +331,7 @@ DEF KRIS EQU __trainer_class__
 	const BRENT4
 	const MILLER
 	const SANTOS
+	const ASHTON
 
 	trainerclass GRUNTM ; 24
 	const GRUNTM_1
@@ -508,6 +511,7 @@ DEF KRIS EQU __trainer_class__
 	const NORTON
 	const HUGH
 	const MARKUS
+	const OTTO
 
 	trainerclass GUITARIST ; 2e
 	const CLYDE
@@ -535,6 +539,8 @@ DEF KRIS EQU __trainer_class__
 	const PARRY2
 	const PARRY3
 	const ANTHONY4
+	const MARCOS
+	const CLINT
 
 	trainerclass BIKER ; 30
 	const BIKER_BENNY

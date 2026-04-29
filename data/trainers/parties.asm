@@ -2703,6 +2703,18 @@ CooltrainerMGroup:
 	dw DRAGONBREATH, ICE_BEAM, FLAMETHROWER, SAFEGUARD
 	db -1 ; end
 
+	next_list_item ; COOLTRAINERM (22), Mt. Moon
+	db "TRAVIS@", TRAINERTYPE_NORMAL
+	db 58
+	dw MACHAMP
+	db 59
+	dw RHYDON
+	db 59
+	dw TAUROS
+	db 60
+	dw DRAGONITE
+	db -1 ; end
+
 	end_list_items
 
 CooltrainerFGroup:
@@ -2963,6 +2975,18 @@ CooltrainerFGroup:
 	db 41
 	dw SEADRA
 	dw TWISTER, SURF, SMOKESCREEN, ICE_BEAM
+	db -1 ; end
+
+	next_list_item ; COOLTRAINERF (25), Mt. Moon
+	db "AMBER@", TRAINERTYPE_NORMAL
+	db 58
+	dw JOLTEON
+	db 59
+	dw CLEFABLE
+	db 59
+	dw STARMIE
+	db 60
+	dw ALAKAZAM
 	db -1 ; end
 
 	end_list_items
@@ -3308,6 +3332,20 @@ PokemaniacGroup:
 	dw GENGAR
 	dw SPELL_TAG
 	dw HYPNOSIS, DREAM_EATER, CURSE, CONFUSE_RAY
+	db -1 ; end
+
+	next_list_item ; POKEMANIAC (17), Mt. Moon
+	db "ASHTON@", TRAINERTYPE_NORMAL
+	db 58
+	dw KABUTOPS
+	db 58
+	dw AERODACTYL
+	db 59
+	dw OMASTAR
+	db 59
+	dw LAPRAS
+	db 60
+	dw SNORLAX
 	db -1 ; end
 
 	end_list_items
@@ -4883,6 +4921,20 @@ SuperNerdGroup:
 	dw AMNESIA, SURF, PSYCHIC_M, FLAMETHROWER
 	db -1 ; end
 
+	next_list_item ; SUPER_NERD (15), Mt. Moon
+	db "OTTO@", TRAINERTYPE_NORMAL
+	db 58
+	dw MAGNETON
+	db 58
+	dw CLEFABLE
+	db 59
+	dw PORYGON
+	db 59
+	dw ELECTRODE
+	db 60
+	dw GENGAR
+	db -1 ; end
+
 	end_list_items
 
 GuitaristGroup:
@@ -5111,6 +5163,33 @@ HikerGroup:
 	db 41
 	dw MACHOKE
 	dw KARATE_CHOP, VITAL_THROW, HEADBUTT, DIG
+	db -1 ; end
+
+	next_list_item ; HIKER (23), Mt. Moon
+	db "MARCOS@", TRAINERTYPE_NORMAL
+	db 58
+	dw GOLEM
+	db 58
+	dw ONIX
+	db 59
+	dw RHYDON
+	db 60
+	dw GOLEM
+	db -1 ; end
+
+
+	next_list_item ; HIKER (24), Mt. Moon
+	db "CLINT@", TRAINERTYPE_NORMAL
+	db 58
+	dw MACHOKE
+	db 58
+	dw GRAVELER
+	db 59
+	dw STEELIX
+	db 59
+	dw RHYDON
+	db 60
+	dw GOLEM
 	db -1 ; end
 
 	end_list_items
