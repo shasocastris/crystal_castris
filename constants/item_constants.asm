@@ -166,28 +166,29 @@
 	const SAFARI_LURE  ; 0085
 
 	const RADIANCE_ORB ; 0086
+	const UNOWN_AURA   ; 0087
 
-	const MAGNA_PLANT  ; 0087
-	const TROPIC_PLANT ; 0088
-	const JUMBO_PLANT  ; 0089
+	const MAGNA_PLANT  ; 0088
+	const TROPIC_PLANT ; 0089
+	const JUMBO_PLANT  ; 008A
 
-	const PINKBED      ; 008A
-	const POLKADOTBED  ; 008B
-	const PIKACHUBED   ; 008C
+	const PINKBED      ; 008B
+	const POLKADOTBED  ; 008C
+	const PIKACHUBED   ; 008D
 
-	const NES          ; 008D
-	const N64          ; 008E
-	const VIRTUALBOY   ; 008F
-	const FCOM         ; 0090
+	const NES          ; 008E
+	const N64          ; 008F
+	const VIRTUALBOY   ; 0090
+	const FCOM         ; 0091
 
-	const REDCARPET    ; 0091
-	const BLUECARPET   ; 0092
-	const YELLOWCARPET ; 0093
-	const GREENCARPET  ; 0094
+	const REDCARPET    ; 0092
+	const BLUECARPET   ; 0093
+	const YELLOWCARPET ; 0094
+	const GREENCARPET  ; 0095
 
-	const PIKACHU_POSTER    ; 0095
-	const CLEFAIRY_POSTER   ; 0096
-	const JIGGLYPUFF_POSTER ; 0097
+	const PIKACHU_POSTER    ; 0096
+	const CLEFAIRY_POSTER   ; 0097
+	const JIGGLYPUFF_POSTER ; 0098
 
 DEF NUM_ITEM_POCKET EQU const_value - 1
 

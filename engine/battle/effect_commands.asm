@@ -4661,6 +4661,14 @@ BattleCommand_RadiantStatsBoost:
 	call BattleCommand_EvasionUp2
 	jp BattleCommand_EvasionUp2
 
+BattleCommand_UnownAuraStatsBoost:
+	call BattleCommand_AttackUp2
+	call BattleCommand_DefenseUp2
+	call BattleCommand_SpecialAttackUp2
+	call BattleCommand_SpecialDefenseUp2
+	call BattleCommand_SpeedUp2
+	jp BattleCommand_EvasionUp2
+
 ResetMiss:
 	xor a
 	ld [wAttackMissed], a

@@ -191,6 +191,7 @@ ItemEffects1:
 	dw NoEffect            ; SAFARI_LURE
 
 	dw NoEffect            ; RADIANCE_ORB
+	dw NoEffect            ; UNOWN_AURA
 
 	dw MagnaPlantEffect    ; MAGNA_PLANT
 	dw TropicPlantEffect   ; TROPIC_PLANT

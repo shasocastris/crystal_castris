@@ -91,6 +91,7 @@ if DEF(_DEBUG)
 	giveitem SLEEP_GUARD
 	giveitem SAFARI_LURE
 	giveitem RADIANCE_ORB
+	giveitem UNOWN_AURA
 	giveitem COIN_CASE
 	givecoins 9999
 	; all badges

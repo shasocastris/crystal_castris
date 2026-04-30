@@ -159,28 +159,29 @@ ItemNames::
 	li "SAFARI LURE"  ; 0085
 
 	li "RADIANCE ORB" ; 0086
+	li "UNOWN AURA"   ; 0087
 
-	li "MAGNA PLANT"  ; 0087
-	li "TROPIC PLANT" ; 0088
-	li "JUMBO PLANT"  ; 0089
+	li "MAGNA PLANT"  ; 0088
+	li "TROPIC PLANT" ; 0089
+	li "JUMBO PLANT"  ; 008A
 
-	li "PINK BED"     ; 008A
-	li "POLKADOT BED" ; 008B
-	li "PIKACHU BED"  ; 008C
+	li "PINK BED"     ; 008B
+	li "POLKADOT BED" ; 008C
+	li "PIKACHU BED"  ; 008D
 
-	li "SUPER NES"    ; 008D
-	li "NINTENDO 64"  ; 008E
-	li "VIRTUAL BOY"  ; 008F
-	li "FAMICOM"      ; 0090
+	li "SUPER NES"    ; 008E
+	li "NINTENDO 64"  ; 008F
+	li "VIRTUAL BOY"  ; 0090
+	li "FAMICOM"      ; 0091
 
-	li "RED CARPET"   ; 0091
-	li "BLUE CARPET"  ; 0092
-	li "YELLOWCARPET" ; 0093
-	li "GREEN CARPET" ; 0094
+	li "RED CARPET"   ; 0092
+	li "BLUE CARPET"  ; 0093
+	li "YELLOWCARPET" ; 0094
+	li "GREEN CARPET" ; 0095
 
-	li "PIKA POSTER"  ; 0095
-	li "CLEF POSTER"  ; 0096
-	li "JIGG POSTER"  ; 0097
+	li "PIKA POSTER"  ; 0096
+	li "CLEF POSTER"  ; 0097
+	li "JIGG POSTER"  ; 0098
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

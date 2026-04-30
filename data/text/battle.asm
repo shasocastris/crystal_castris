@@ -1126,3 +1126,13 @@ BattleText_RadianceOrb:
 	para "Its power is now"
 	line "beyond compare!"
 	prompt
+
+BattleText_UnownAura:
+	text "Psychic energies"
+	line "swirl around"
+	cont "<USER>!"
+
+	para "The UNOWN have"
+	line "bestowed there"
+	cont "power!"
+	prompt

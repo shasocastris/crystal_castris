@@ -156,6 +156,7 @@ BattleTurn:
 
 	call HandleBerserkGene
 	call HandleRadiantStatBoost
+	call HandleUnownAuraStatBoost
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
 
@@ -468,6 +469,70 @@ HandleRadiantStatBoost:
 	xor a
 	ld [hl], a
 	farcall BattleCommand_RadiantStatsBoost
+	pop af
+	ret
+
+HandleUnownAuraStatBoost:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .reverse
+
+	call .player
+	jr .enemy
+
+.reverse
+	call .enemy
+	; fallthrough
+
+.player
+	call SetPlayerTurn
+	ld de, wPartyMon1Item
+	ld a, [wCurBattleMon]
+	ld b, a
+	jr .go
+
+.enemy
+	call SetEnemyTurn
+	ld de, wOTPartyMon1Item
+	ld a, [wCurOTMon]
+	ld b, a
+	; fallthrough
+
+.go
+	push de
+	push bc
+	farcall GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndex], a
+	push hl
+	call GetItemIndexFromID
+	cphl16 UNOWN_AURA
+	pop hl
+	pop bc
+	pop de
+	ret nz
+
+	xor a
+	ld [hl], a
+
+	ld h, d
+	ld l, e
+	ld a, b
+	call GetPartyLocation
+	push af
+	call GetBattleVarAddr
+	push hl
+	push af
+	pop hl
+	ld [hl], a
+	ld de, ENDURE
+	call Call_PlayBattleAnim
+	ld hl, BattleText_UnownAura
+	call StdBattleTextbox
+	pop af
+	xor a
+	ld [hl], a
+	farcall BattleCommand_UnownAuraStatsBoost
 	pop af
 	ret
 

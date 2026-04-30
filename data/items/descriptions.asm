@@ -171,28 +171,29 @@ ItemDescriptions1:
 	dw SafariLureDesc   ; 0085
 
 	dw RadianceOrbDesc  ; 0086
+	dw UnownAuraDesc    ; 0087
 
-	dw MagnaPlantDesc   ; 0087
-	dw TropicPlantDesc  ; 0088
-	dw JumboPlantDesc   ; 0089
+	dw MagnaPlantDesc   ; 0088
+	dw TropicPlantDesc  ; 0089
+	dw JumboPlantDesc   ; 008A
 
-	dw PinkBedDesc      ; 008A
-	dw PolkadotBedDesc  ; 008B
-	dw PikachuBedDesc   ; 008C
+	dw PinkBedDesc      ; 008B
+	dw PolkadotBedDesc  ; 008C
+	dw PikachuBedDesc   ; 008D
 
-	dw NESDesc          ; 008D
-	dw N64Desc          ; 008E
-	dw VirtualBoyDesc   ; 008F
-	dw FamicomDesc      ; 0090
+	dw NESDesc          ; 008E
+	dw N64Desc          ; 008F
+	dw VirtualBoyDesc   ; 0090
+	dw FamicomDesc      ; 0091
 
-	dw RedCarpetDesc    ; 0091
-	dw BlueCarpetDesc   ; 0092
-	dw GreenCarpetDesc  ; 0093
-	dw YellowCarpetDesc ; 0094
+	dw RedCarpetDesc    ; 0092
+	dw BlueCarpetDesc   ; 0093
+	dw GreenCarpetDesc  ; 0094
+	dw YellowCarpetDesc ; 0095
 
-	dw PikachuPosterDesc    ; 0095
-	dw ClefairyPosterDesc   ; 0096
-	dw JigglypuffPosterDesc ; 0097
+	dw PikachuPosterDesc    ; 0096
+	dw ClefairyPosterDesc   ; 0097
+	dw JigglypuffPosterDesc ; 0098
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -782,6 +783,10 @@ SafariLureDesc:
 RadianceOrbDesc:
 	db   "Reveals true power"
 	next "of #MON.@"
+
+UnownAuraDesc:
+	db   "A gift of the"
+	next "UNOWN.@"
 
 MagnaPlantDesc:
 TropicPlantDesc:
