@@ -107,8 +107,10 @@ CeruleanBase3ArcherApproachScript:
 	playsound SFX_STRENGTH
 	earthquake 120
 	cry MEWTWO
-	applymovement CERULEANBASE3_MEWTWO, CeruleanBase3MewtwoFleeMovement1
+	applymovement CERULEANBASE3_MEWTWO, CeruleanBase3MewtwoFleeMovement
 	turnobject CERULEANBASE3_MEWTWO, RIGHT
+	turnobject PLAYER, LEFT
+	turnobject CERULEANBASE3_ARCHER, LEFT
 	showemote EMOTE_SHOCK, CERULEANBASE3_MEWTWO, 30
 	pause 30
 	playsound SFX_WARP_TO
@@ -133,8 +135,6 @@ CeruleanBase3ArcherApproachScript:
 	applymovement CERULEANBASE3_LANCE, CeruleanBase3LanceAppearMovement
 	turnobject CERULEANBASE3_LANCE, RIGHT
 	turnobject CERULEANBASE3_FIRST_RANGER, RIGHT
-	turnobject PLAYER, LEFT
-	turnobject CERULEANBASE3_ARCHER, LEFT
 	opentext
 	writetext LanceCapturesArcherText
 	waitbutton
@@ -151,17 +151,12 @@ CeruleanBase3ArcherApproachScript:
 	disappear CERULEANBASE3_ARIANA
 	setscene SCENE_CERULEANBASE3_NOOP
 	setevent EVENT_CLEARED_CERULEAN_CAVE
+	setmapscene CERULEAN_BASE_2, SCENE_CERULEANBASE2_RIVAL
 	playmapmusic
 	end
 
-CeruleanBase3MewtwoFleeMovement1:
+CeruleanBase3MewtwoFleeMovement:
 	step DOWN
-	step_end
-
-CeruleanBase3MewtwoFleeMovement2:
-	jump_step DOWN
-	jump_step DOWN
-	jump_step DOWN
 	step_end
 
 CeruleanBase3LanceAppearMovement:

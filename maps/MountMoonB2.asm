@@ -25,6 +25,7 @@ CeruleanCaveEntranceScript:
 	checkevent EVENT_DISCOVERED_CERULEAN_CAVE
 	iftrue .AlreadyFound
 	setevent EVENT_DISCOVERED_CERULEAN_CAVE
+	setmapscene CERULEAN_BASE_2, SCENE_CERULEANBASE2_NOOP
 	special FadeOutMusic
 	pause 15
 	earthquake 50

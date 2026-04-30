@@ -84,4 +84,5 @@ MapScenes::
 	scene_var ICE_PATH_1F,                                 wIcePath1FSceneID
 	scene_var LAV_RADIO_TOWER_2F,                          wLavRadioTower2FSceneID
 	scene_var CERULEAN_BASE_3,                             wCeruleanBase3SceneID
+	scene_var CERULEAN_BASE_2,                             wCeruleanBase2SceneID
 	db -1 ; end
