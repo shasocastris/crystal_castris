@@ -118,7 +118,7 @@ MountMoonRivalTextBefore:
 	cont "I'm glad to help."
 
 	para "I hate everything"
-	cont "TEAM ROCKET stands"
+	line "TEAM ROCKET stands"
 	cont "for."
 
 	para "But before we go"

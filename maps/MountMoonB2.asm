@@ -32,10 +32,21 @@ CeruleanCaveEntranceScript:
 	playsound SFX_STRENGTH
 	changeblock 33, 10, $3f
 	refreshmap
+	opentext
+	writetext CeruleanCaveEntranceText
+	waitbutton
+	closetext
 	end
 
 .AlreadyFound:
 	end
+
+CeruleanCaveEntranceText:
+	text "A hidden pit!"
+	line "Is this the secret"
+	cont "entrance to"
+	cont "CERULEAN CAVE?"
+	done
 
 TrainerGruntF14:
 	trainer GRUNTF, GRUNTF_14, EVENT_BEAT_ROCKET_GRUNTF_14, GruntF14SeenText, GruntF14BeatenText, 0, .Script

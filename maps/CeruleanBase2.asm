@@ -20,10 +20,7 @@ TrainerGruntM4:
 	end
 
 GruntM4SeenText:
-	text "You made it"
-	line "this deep?"
-
-	para "You're persistent."
+	text "You're persistent."
 	line "I'll give you that."
 	done
 
@@ -55,28 +52,21 @@ TrainerGruntM5:
 	end
 
 GruntM5SeenText:
-	text "Five #MON."
-
-	para "You have no idea"
+	text "You have no idea"
 	line "what you're"
 	cont "walking into."
 	done
 
 GruntM5BeatenText:
-	text "All five…"
+	text "How…?!"
 	done
 
 GruntM5AfterBattleText:
-	text "It's already"
-	line "conditioned."
-
-	para "The signal has"
-	line "been running for"
-	cont "three days."
-
-	para "Whatever you came"
-	line "here to stop…"
-	cont "you're too late."
+	text "Whatever. The"
+	line "profits we'll make"
+	cont "will outweigh any"
+	cont "losses we take"
+	cont "now."
 	done
 
 TrainerGruntM7:
@@ -90,30 +80,18 @@ TrainerGruntM7:
 	end
 
 GruntM7SeenText:
-	text "The signal needs"
-	line "amplification."
+	text "Back off."
 
-	para "That's what I'm"
-	line "here for."
-	cont "Stay back."
+	para "I'm in the middle"
+	line "of something."
 	done
 
 GruntM7BeatenText:
-	text "The frequency…!"
+	text "Tch…"
 	done
 
 GruntM7AfterBattleText:
-	text "HYPNO can boost"
-	line "the psychic range"
-	cont "of any signal."
-
-	para "We've been using"
-	line "them to push the"
-	cont "conditioning"
-	cont "deeper into the"
-	cont "CAVE."
-
-	para "It doesn't matter"
+	text "It doesn't matter"
 	line "now. It's done."
 	done
 
@@ -128,11 +106,8 @@ TrainerGruntM9:
 	end
 
 GruntM9SeenText:
-	text "ARCHER is past"
-	line "this point."
-
-	para "You don't get to"
-	line "walk in there."
+	text "You're not getting"
+	line "past me."
 	done
 
 GruntM9BeatenText:
@@ -141,21 +116,13 @@ GruntM9BeatenText:
 	done
 
 GruntM9AfterBattleText:
-	text "The most powerful"
-	line "#MON in the"
-	cont "world is in there."
+	text "I don't get it."
+	line "How did you beat"
+	cont "everyone?"
 
-	para "Captured. Conditioned."
-	line "Ready to lead"
-	cont "every #MON in"
-	cont "this cave out into"
-	cont "CERULEAN CITY."
-
-	para "ARCHER is the"
-	line "only thing between"
-	cont "you and it."
-
-	para "Good luck."
+	para "Keep going then."
+	line "See how far"
+	cont "it gets you."
 	done
 
 TrainerScientistMarc:
@@ -169,31 +136,31 @@ TrainerScientistMarc:
 	end
 
 ScientistMarcSeenText:
-	text "Unauthorized"
-	line "personnel."
+	text "CERULEAN CAVE had"
+	line "a cave-in three"
+	cont "years ago."
 
-	para "I can't allow any"
-	line "disruption to the"
-	cont "experiment."
+	para "I was on the team"
+	line "that found the new"
+	cont "path inside."
 	done
 
 ScientistMarcBeatenText:
-	text "The data…!"
+	text "What a brat!"
 	done
 
 ScientistMarcAfterBattleText:
-	text "Three weeks of"
-	line "conditioning"
-	cont "work."
+	text "It took a lot of"
+	line "GRUNT work to get"
+	cont "all the materials"
+	cont "and equipment"
+	cont "inside."
 
-	para "We mapped every"
-	line "behavioral response"
-	cont "to the signal."
-	cont "Every threshold."
-
-	para "You can stop us."
-	line "You can't unlearn"
-	cont "what we found."
+	para "Worth it though."
+	line "No one from the"
+	cont "#MON LEAGUE or"
+	cont "the RANGERs ever"
+	cont "found us."
 	done
 
 TrainerScientistRich:
@@ -207,11 +174,11 @@ TrainerScientistRich:
 	end
 
 ScientistRichSeenText:
-	text "The signal output"
-	line "is at peak levels."
-
-	para "I won't let you"
-	line "near the equipment."
+	text "I planned how to"
+	line "seize a shipment"
+	cont "of a MASTER BALL"
+	cont "to the GOLDENROD"
+	cont "RADIO TOWER."
 	done
 
 ScientistRichBeatenText:
@@ -219,20 +186,21 @@ ScientistRichBeatenText:
 	done
 
 ScientistRichAfterBattleText:
-	text "PORYGON2 was"
-	line "designed to model"
-	cont "broadcast patterns."
+	text "The whisper was"
+	line "that the #MON"
+	cont "cloned in the"
+	cont "CINNABAR LAB was"
+	cont "captured and then"
+	cont "released."
 
-	para "We used it to"
-	line "find the exact"
-	cont "frequency that"
-	cont "breaks down a"
-	cont "#MON's resistance"
-	cont "to suggestion."
+	para "It's rumored to be"
+	line "the most powerful"
+	cont "#MON ever seen."
 
-	para "It works."
-	line "Better than anyone"
-	cont "expected."
+	para "And now, finally,"
+	line "that power is"
+	cont "controlled by TEAM"
+	cont "ROCKET."
 	done
 
 CeruleanBase2_MapEvents:
@@ -248,9 +216,9 @@ CeruleanBase2_MapEvents:
 	def_bg_events
 
 	def_object_events
-	object_event  9, 10, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN,  0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM4, EVENT_CLEARED_CERULEAN_CAVE
-	object_event 21, 25, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW,0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM5, EVENT_CLEARED_CERULEAN_CAVE
-	object_event  5, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM7, EVENT_CLEARED_CERULEAN_CAVE
+	object_event  9,  8, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN,  0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerGruntM4, EVENT_CLEARED_CERULEAN_CAVE
+	object_event 21, 25, SPRITE_ROCKET, SPRITEMOVEDATA_SPINRANDOM_SLOW,0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM5, EVENT_CLEARED_CERULEAN_CAVE
+	object_event  5, 19, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerGruntM7, EVENT_CLEARED_CERULEAN_CAVE
 	object_event 17, 15, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerGruntM9, EVENT_CLEARED_CERULEAN_CAVE
 	object_event  8, 26, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerScientistMarc, EVENT_CLEARED_CERULEAN_CAVE
 	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerScientistRich, EVENT_CLEARED_CERULEAN_CAVE

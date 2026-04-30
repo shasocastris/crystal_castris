@@ -37,9 +37,8 @@ GruntM6AfterBattleText:
 	text "You beat me."
 	line "Fine."
 
-	para "But there are"
-	line "more of us deeper"
-	cont "in. A lot more."
+	para "But there are more"
+	line "of us further in."
 	done
 
 TrainerGruntM8:
@@ -53,25 +52,22 @@ TrainerGruntM8:
 	end
 
 GruntM8SeenText:
-	text "You found me."
+	text "Hey!"
 
-	para "Most people run"
-	line "from the dark."
+	para "This area is off"
+	line "limits."
 	done
 
 GruntM8BeatenText:
-	text "Even the shadows"
-	line "weren't enough…"
+	text "You're strong…"
 	done
 
 GruntM8AfterBattleText:
-	text "You have no idea"
-	line "what's waiting"
-	cont "for you in there."
+	text "Fine. Keep going."
 
-	para "This CAVE is its"
-	line "home. Not ours."
-	cont "Not yours."
+	para "There's plenty"
+	line "more of us between"
+	cont "here and the boss."
 	done
 
 TrainerGruntM10:
@@ -100,10 +96,6 @@ GruntM10AfterBattleText:
 	line "than you look."
 
 	para "It won't matter."
-	line "What we're doing"
-	cont "here can't be"
-	cont "undone by one"
-	cont "trainer."
 	done
 
 TrainerGruntF2:
@@ -119,8 +111,6 @@ TrainerGruntF2:
 GruntF2SeenText:
 	text "This area is"
 	line "restricted."
-
-	para "Turn back."
 	done
 
 GruntF2BeatenText:
@@ -135,11 +125,6 @@ GruntF2AfterBattleText:
 
 	para "That was just the"
 	line "beginning."
-
-	para "What's in this"
-	line "CAVE will make"
-	cont "that look like"
-	cont "nothing."
 	done
 
 TrainerGruntF4:
@@ -153,32 +138,24 @@ TrainerGruntF4:
 	end
 
 GruntF4SeenText:
-	text "You actually got"
-	line "through the whole"
-	cont "floor?"
+	text "Nobody told me a"
+	line "trainer got this"
+	cont "far."
 
-	para "I'm the last one"
-	line "before the stairs."
-	cont "You're not passing."
+	para "Doesn't matter."
+	line "You're done here."
 	done
 
 GruntF4BeatenText:
-	text "I don't believe"
-	line "this…"
+	text "Unbelievable…"
 	done
 
 GruntF4AfterBattleText:
-	text "Go then."
+	text "Go ahead."
 
-	para "The ones below are"
-	line "stronger than me."
-
-	para "And ARCHER is"
-	line "below them."
-
-	para "You won't make it"
-	line "to whatever you"
-	cont "came here for."
+	para "You'll hit tougher"
+	line "grunts below, and"
+	cont "ARCHER past them."
 	done
 
 CeruleanBase1_MapEvents:
@@ -194,7 +171,7 @@ CeruleanBase1_MapEvents:
 
 	def_object_events
 	object_event 14, 14, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerGruntM6, EVENT_CLEARED_CERULEAN_CAVE
-	object_event  2, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM8, EVENT_CLEARED_CERULEAN_CAVE
-	object_event 20, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM10, EVENT_CLEARED_CERULEAN_CAVE
+	object_event  2, 16, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerGruntM8, EVENT_CLEARED_CERULEAN_CAVE
+	object_event 20, 12, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 5, TrainerGruntM10, EVENT_CLEARED_CERULEAN_CAVE
 	object_event  8,  4, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGruntF2, EVENT_CLEARED_CERULEAN_CAVE
 	object_event  9, 22, SPRITE_ROCKET_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF4, EVENT_CLEARED_CERULEAN_CAVE
