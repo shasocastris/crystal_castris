@@ -519,6 +519,8 @@ DEF KRIS EQU __trainer_class__
 	trainerclass GUITARIST ; 2e
 	const CLYDE
 	const VINCENT
+	const JOVI
+	const HALEN
 
 	trainerclass HIKER ; 2f
 	const ANTHONY1

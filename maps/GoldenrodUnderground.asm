@@ -16,38 +16,7 @@ GoldenrodUnderground_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, GoldenrodUndergroundResetSwitchesCallback
-	callback MAPCALLBACK_TILES, GoldenrodUndergroundCheckBasementKeyCallback
 	callback MAPCALLBACK_OBJECTS, GoldenrodUndergroundCheckDayOfWeekCallback
-
-GoldenrodUndergroundResetSwitchesCallback:
-	clearevent EVENT_SWITCH_1
-	clearevent EVENT_SWITCH_2
-	clearevent EVENT_SWITCH_3
-	clearevent EVENT_EMERGENCY_SWITCH
-	clearevent EVENT_SWITCH_4
-	clearevent EVENT_SWITCH_5
-	clearevent EVENT_SWITCH_6
-	clearevent EVENT_SWITCH_7
-	clearevent EVENT_SWITCH_8
-	clearevent EVENT_SWITCH_9
-	clearevent EVENT_SWITCH_10
-	clearevent EVENT_SWITCH_11
-	clearevent EVENT_SWITCH_12
-	clearevent EVENT_SWITCH_13
-	clearevent EVENT_SWITCH_14
-	setval 0
-	writemem wUndergroundSwitchPositions
-	endcallback
-
-GoldenrodUndergroundCheckBasementKeyCallback:
-	checkevent EVENT_USED_BASEMENT_KEY
-	iffalse .LockBasementDoor
-	endcallback
-
-.LockBasementDoor:
-	changeblock 16, 6, $3d ; locked door
-	endcallback
 
 GoldenrodUndergroundCheckDayOfWeekCallback:
 	readvar VAR_WEEKDAY
@@ -121,6 +90,28 @@ TrainerSuperNerdEric:
 	closetext
 	end
 
+SuperNerdEricSeenText:
+	text "I got booted out"
+	line "of the GAME COR-"
+	cont "NER."
+
+	para "I was trying to"
+	line "cheat using my"
+	cont "#MON…"
+	done
+
+SuperNerdEricBeatenText:
+	text "…Grumble…"
+	done
+
+SuperNerdEricAfterBattleText:
+	text "Your #MON will"
+	line "like you more if"
+
+	para "you give them"
+	line "haircuts."
+	done
+
 TrainerSuperNerdTeru:
 	trainer SUPER_NERD, TERU, EVENT_BEAT_SUPER_NERD_TERU, SuperNerdTeruSeenText, SuperNerdTeruBeatenText, 0, .Script
 
@@ -130,6 +121,30 @@ TrainerSuperNerdTeru:
 	waitbutton
 	closetext
 	end
+
+SuperNerdTeruSeenText:
+	text "Do you consider"
+	line "type alignments in"
+	cont "battle?"
+
+	para "If you know your"
+	line "type advantages,"
+
+	para "you'll do better"
+	line "in battle."
+	done
+
+SuperNerdTeruBeatenText:
+	text "Ow, ow, ow!"
+	done
+
+SuperNerdTeruAfterBattleText:
+	text "I know my #MON"
+	line "type alignments."
+
+	para "But I only use one"
+	line "type of #MON."
+	done
 
 TrainerPokemaniacIssac:
 	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
@@ -141,6 +156,26 @@ TrainerPokemaniacIssac:
 	closetext
 	end
 
+PokemaniacIssacSeenText:
+	text "My #MON just"
+	line "got a haircut!"
+
+	para "I'll show you how"
+	line "strong it is!"
+	done
+
+PokemaniacIssacBeatenText:
+	text "Aiyeeee!"
+	done
+
+PokemaniacIssacAfterBattleText:
+	text "If the opponent"
+	line "uses MINIMIZE,"
+
+	para "your STOMP becomes"
+	line "more powerful."
+	done
+
 TrainerPokemaniacDonald:
 	trainer POKEMANIAC, DONALD, EVENT_BEAT_POKEMANIAC_DONALD, PokemaniacDonaldSeenText, PokemaniacDonaldBeatenText, 0, .Script
 
@@ -150,6 +185,98 @@ TrainerPokemaniacDonald:
 	waitbutton
 	closetext
 	end
+
+PokemaniacDonaldSeenText:
+	text "I think you have"
+	line "some rare #MON"
+	cont "with you."
+
+	para "Let me see them!"
+	done
+
+PokemaniacDonaldBeatenText:
+	text "Gaah! I lost!"
+	line "That makes me mad!"
+	done
+
+PokemaniacDonaldAfterBattleText:
+	text "Are you making a"
+	line "#DEX? Here's a"
+	cont "hot tip."
+
+	para "The HIKER on ROUTE"
+	line "33, ANTHONY, is a"
+	cont "good guy."
+
+	para "He'll phone you if"
+	line "he sees any rare"
+	cont "#MON."
+	done
+
+TrainerGuitaristJovi:
+	trainer GUITARIST, JOVI, EVENT_BEAT_GUITARIST_JOVI, GuitaristJoviSeenText, GuitaristJoviBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GuitaristJoviAfterBattleText
+	waitbutton
+	closetext
+	end
+
+GuitaristJoviSeenText:
+	text "You're standing"
+	line "on my stage."
+
+	para "Nobody stands on"
+	line "my stage."
+	done
+
+GuitaristJoviBeatenText:
+	text "Turn down for"
+	line "what…?!"
+	done
+
+GuitaristJoviAfterBattleText:
+	text "Not bad."
+
+	para "Come back when"
+	line "you want an"
+	cont "encore."
+	done
+
+
+TrainerGuitaristHalen:
+	trainer GUITARIST, HALEN, EVENT_BEAT_GUITARIST_HALEN, GuitaristHalenSeenText, GuitaristHalenBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext GuitaristHalenAfterBattleText
+	waitbutton
+	closetext
+	end
+
+GuitaristHalenSeenText:
+	text "Right now I'm"
+	line "running on pure"
+	cont "adrenaline."
+
+	para "Bad time to"
+	line "challenge me."
+	done
+
+GuitaristHalenBeatenText:
+	text "You might be"
+	line "crazy enough to"
+	cont "make it."
+	done
+
+GuitaristHalenAfterBattleText:
+	text "That's how you"
+	line "play."
+
+	para "Loud and fast."
+	line "No apologies."
+	done
 
 BitterMerchantScript:
 	opentext
@@ -363,167 +490,6 @@ EitherHaircutBrotherScript_MuchHappier:
 	closetext
 	end
 
-PokegearMerchantScript:
-	jumptextfaceplayer GoldenrodUnderground_MerchantText
-
-BasementDoorScript::
-	opentext
-	checkevent EVENT_USED_BASEMENT_KEY
-	iftrue .Open
-	checkitem BASEMENT_KEY
-	iftrue .Unlock
-	writetext GoldenrodUndergroundTheDoorsLockedText
-	waitbutton
-	closetext
-	end
-
-.Unlock:
-	playsound SFX_TRANSACTION
-	writetext GoldenrodUndergroundBasementKeyOpenedDoorText
-	waitbutton
-	closetext
-	changeblock 16, 6, $2e ; unlocked door
-	refreshmap
-	closetext
-	setevent EVENT_USED_BASEMENT_KEY
-	end
-
-.Open:
-	writetext GoldenrodUndergroundTheDoorIsOpenText
-	waitbutton
-	closetext
-	end
-
-GoldenrodUndergroundScript_ShopClosed:
-	writetext GoldenrodUndergroundWeAreNotOpenTodayText
-	waitbutton
-	closetext
-	end
-
-GoldenrodUndergroundCoinCase:
-	itemball COIN_CASE
-
-GoldenrodUndergroundNoEntrySign:
-	jumptext GoldenrodUndergroundNoEntryText
-
-GoldenrodUndergroundEastWestSign:
-	jumptext GoldenrodUndergroundEastWestText
-
-GoldenrodUndergroundHiddenParlyzHeal:
-	hiddenitem PARLYZ_HEAL, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL
-
-GoldenrodUndergroundHiddenSuperPotion:
-	hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION
-
-GoldenrodUndergroundHiddenAntidote:
-	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
-
-SuperNerdEricSeenText:
-	text "I got booted out"
-	line "of the GAME COR-"
-	cont "NER."
-
-	para "I was trying to"
-	line "cheat using my"
-	cont "#MON…"
-	done
-
-SuperNerdEricBeatenText:
-	text "…Grumble…"
-	done
-
-SuperNerdEricAfterBattleText:
-	text "Your #MON will"
-	line "like you more if"
-
-	para "you give them"
-	line "haircuts."
-	done
-
-SuperNerdTeruSeenText:
-	text "Do you consider"
-	line "type alignments in"
-	cont "battle?"
-
-	para "If you know your"
-	line "type advantages,"
-
-	para "you'll do better"
-	line "in battle."
-	done
-
-SuperNerdTeruBeatenText:
-	text "Ow, ow, ow!"
-	done
-
-SuperNerdTeruAfterBattleText:
-	text "I know my #MON"
-	line "type alignments."
-
-	para "But I only use one"
-	line "type of #MON."
-	done
-
-PokemaniacIssacSeenText:
-	text "My #MON just"
-	line "got a haircut!"
-
-	para "I'll show you how"
-	line "strong it is!"
-	done
-
-PokemaniacIssacBeatenText:
-	text "Aiyeeee!"
-	done
-
-PokemaniacIssacAfterBattleText:
-	text "If the opponent"
-	line "uses MINIMIZE,"
-
-	para "your STOMP becomes"
-	line "more powerful."
-	done
-
-PokemaniacDonaldSeenText:
-	text "I think you have"
-	line "some rare #MON"
-	cont "with you."
-
-	para "Let me see them!"
-	done
-
-PokemaniacDonaldBeatenText:
-	text "Gaah! I lost!"
-	line "That makes me mad!"
-	done
-
-PokemaniacDonaldAfterBattleText:
-	text "Are you making a"
-	line "#DEX? Here's a"
-	cont "hot tip."
-
-	para "The HIKER on ROUTE"
-	line "33, ANTHONY, is a"
-	cont "good guy."
-
-	para "He'll phone you if"
-	line "he sees any rare"
-	cont "#MON."
-	done
-
-GoldenrodUndergroundTheDoorsLockedText:
-	text "The door's locked…"
-	done
-
-GoldenrodUndergroundTheDoorIsOpenText:
-	text "The door is open."
-	done
-
-GoldenrodUndergroundBasementKeyOpenedDoorText:
-	text "The BASEMENT KEY"
-	line "opened the door."
-	done
-
 GoldenrodUndergroundOlderHaircutBrotherOfferHaircutText:
 	text "Welcome!"
 
@@ -639,6 +605,9 @@ HaircutBrosText_MuchHappier:
 	line "delighted!"
 	done
 
+PokegearMerchantScript:
+	jumptextfaceplayer GoldenrodUnderground_MerchantText
+
 GoldenrodUnderground_MerchantText:
 	text "Hey, I remember"
 	line "fixing that"
@@ -648,15 +617,58 @@ GoldenrodUnderground_MerchantText:
 	line "up?"
 	done
 
+GoldenrodUndergroundScript_ShopClosed:
+	writetext GoldenrodUndergroundWeAreNotOpenTodayText
+	waitbutton
+	closetext
+	end
+
 GoldenrodUndergroundWeAreNotOpenTodayText:
 	text "We're not open"
 	line "today."
 	done
 
-GoldenrodUndergroundNoEntryText:
-	text "NO ENTRY BEYOND"
-	line "THIS POINT"
+GoldenrodUndergroundFisherScript:
+	jumptextfaceplayer GoldenrodUndergroundFisherText
+
+GoldenrodUndergroundFisherText:
+	text "Once while I was"
+	line "battling, my"
+
+	para "#MON couldn't"
+	line "make any moves."
+
+	para "The POWER POINTS,"
+	line "or PP, of its"
+
+	para "moves were all"
+	line "gone."
 	done
+
+GoldenrodUndergroundTeacherScript:
+	jumptextfaceplayer GoldenrodUndergroundTeacherText
+
+GoldenrodUndergroundTeacherText:
+	text "My students would"
+	line "never believe that"
+	cont "I spend my time"
+
+	para "listening to those"
+	line "two compete to get"
+	cont "the best riffs."
+	done
+
+GoldenrodUndergroundNorthEastExitSign:
+	jumptext GoldenrodUndergroundNorthEastExitText
+
+GoldenrodUndergroundNorthEastExitText:
+	text "GOLDENROD CITY"
+	line "NORTHEAST EXIT"
+	cont "AHEAD"
+	done
+
+GoldenrodUndergroundEastWestSign:
+	jumptext GoldenrodUndergroundEastWestText
 
 GoldenrodUndergroundEastWestText:
 	text "GOLDENROD EAST-"
@@ -664,23 +676,31 @@ GoldenrodUndergroundEastWestText:
 	cont "CONNECTION"
 	done
 
+GoldenrodUndergroundCoinCase:
+	itemball COIN_CASE
+
+GoldenrodUndergroundHiddenParlyzHeal:
+	hiddenitem PARLYZ_HEAL, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_PARLYZ_HEAL
+
+GoldenrodUndergroundHiddenSuperPotion:
+	hiddenitem SUPER_POTION, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_SUPER_POTION
+
+GoldenrodUndergroundHiddenAntidote:
+	hiddenitem ANTIDOTE, EVENT_GOLDENROD_UNDERGROUND_HIDDEN_ANTIDOTE
+
 GoldenrodUnderground_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
 	warp_event  1,  2, GOLDENROD_UNDERGROUND_ENTRANCES, 4
 	warp_event  1, 34, GOLDENROD_UNDERGROUND_ENTRANCES, 1
-	warp_event 16,  6, GOLDENROD_UNDERGROUND, 5
-	warp_event 25, 21, GOLDENROD_UNDERGROUND, 3
-	warp_event 26, 21, GOLDENROD_UNDERGROUND, 3
-	warp_event 26, 17, GOLDENROD_UNDERGROUND_ENTRANCES, 7
 	warp_event 19, 32, GOLDENROD_UNDERGROUND_ENTRANCES, 7
+	warp_event 25,  2, GOLDENROD_UNDERGROUND_ENTRANCES, 10
 
 	def_coord_events
 
 	def_bg_events
-	bg_event 16,  6, BGEVENT_READ, BasementDoorScript
-	bg_event 17,  6, BGEVENT_READ, GoldenrodUndergroundNoEntrySign
+	bg_event 18,  6, BGEVENT_READ, GoldenrodUndergroundNorthEastExitSign
 	bg_event  4, 13, BGEVENT_ITEM, GoldenrodUndergroundHiddenParlyzHeal
 	bg_event  2, 18, BGEVENT_ITEM, GoldenrodUndergroundHiddenSuperPotion
 	bg_event 15,  8, BGEVENT_ITEM, GoldenrodUndergroundHiddenAntidote
@@ -697,3 +717,7 @@ GoldenrodUnderground_MapEvents:
 	object_event  5, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, YoungerHaircutBrotherScript, EVENT_GOLDENROD_UNDERGROUND_YOUNGER_HAIRCUT_BROTHER
 	object_event  5, 21, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BitterMerchantScript, EVENT_GOLDENROD_UNDERGROUND_GRANNY
 	object_event 16, 29, SPRITE_PHARMACIST, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PokegearMerchantScript, -1
+	object_event 23,  4, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodUndergroundFisherScript, -1
+	object_event 25, 25, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristJovi, -1
+	object_event 23,  8, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristHalen, -1
+	object_event 27, 20, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 2, GoldenrodUndergroundTeacherScript, -1

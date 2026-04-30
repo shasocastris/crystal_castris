@@ -234,7 +234,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; MACHINE_PART
 	dw MacheteEffect      ; MACHETE
 	dw NoEffect           ; LOST_ITEM
-	dw BasementKeyEffect  ; BASEMENT_KEY
+	dw NoEffect           ; BASEMENT_KEY
 	dw NoEffect           ; PASS
 	dw NoEffect           ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
@@ -2674,9 +2674,6 @@ PPsIncreasedText:
 PPRestoredText:
 	text_far _PPRestoredText
 	text_end
-
-BasementKeyEffect:
-	farjp _BasementKey
 
 SacredAshEffect:
 	farcall _SacredAsh

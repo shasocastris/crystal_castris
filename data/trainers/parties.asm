@@ -4998,6 +4998,26 @@ GuitaristGroup:
 	dw MAGNETON
 	db -1 ; end
 
+	next_list_item ; GUITARIST (3), Goldenrod Tunnel
+	db "JOVI@", TRAINERTYPE_NORMAL
+	db 16
+	dw VULPIX
+	db 16
+	dw GEODUDE
+	db 16
+	dw PIKACHU
+	db -1 ; end
+
+	next_list_item ; GUITARIST (4), Goldenrod Tunnel
+	db "HALEN@", TRAINERTYPE_NORMAL
+	db 16
+	dw VOLTORB
+	db 16
+	dw MARILL
+	db 16
+	dw MEOWTH
+	db -1 ; end
+
 	end_list_items
 
 HikerGroup:
