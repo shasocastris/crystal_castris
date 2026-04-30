@@ -4,6 +4,9 @@
 	const CERULEANBASE3_MEWTWO
 	const CERULEANBASE3_LANCE
 	const CERULEANBASE3_FIRST_RANGER
+	const CERULEANBASE3_UNOWN_M
+	const CERULEANBASE3_UNOWN_E
+	const CERULEANBASE3_UNOWN_W
 
 CeruleanBase3_MapScripts:
 	def_scene_scripts
@@ -69,16 +72,17 @@ ArianaBase3AfterText:
 	para "You have beaten"
 	line "me three times."
 
-	para "I won't make"
-	line "excuses."
-
 	para "Perhaps it is for"
 	line "the best."
 
-	para "I can watch your"
-	line "entire team get"
-	cont "crushed by a"
-	cont "single #MON."
+	para "Now you can see"
+	line "that all your work"
+	cont "in KANTO as well"
+	cont "JOHTO did nothing."
+
+	para "You're still about"
+	line "to get crushed by"
+	cont "one #MON."
 	done
 
 CeruleanBase3ArcherApproachScript:
@@ -103,6 +107,24 @@ CeruleanBase3ArcherApproachScript:
 	writetext ArcherBase3AfterText
 	waitbutton
 	closetext
+
+	; Unown disappear
+	pause 30
+	cry UNOWN
+	applymovement CERULEANBASE3_UNOWN_M, CeruleanBase3UnownDisappearMovement
+	disappear CERULEANBASE3_UNOWN_M
+	pause 30
+	playsound SFX_WARP_FROM
+	applymovement CERULEANBASE3_UNOWN_E, CeruleanBase3UnownDisappearMovement
+	disappear CERULEANBASE3_UNOWN_E
+	pause 30
+	playsound SFX_WARP_FROM
+	applymovement CERULEANBASE3_UNOWN_W, CeruleanBase3UnownDisappearMovement
+	disappear CERULEANBASE3_UNOWN_W
+	pause 30
+	playsound SFX_WARP_FROM
+	waitsfx
+
 	; Mewtwo breaks free
 	playsound SFX_STRENGTH
 	earthquake 120
@@ -154,6 +176,10 @@ CeruleanBase3ArcherApproachScript:
 	setmapscene CERULEAN_BASE_2, SCENE_CERULEANBASE2_RIVAL
 	playmapmusic
 	end
+
+CeruleanBase3UnownDisappearMovement:
+	rock_smash 60
+	step_end
 
 CeruleanBase3MewtwoFleeMovement:
 	step DOWN
@@ -216,6 +242,16 @@ ArcherBase3BeforeText:
 	line "not GIOVANNI was"
 	cont "able to do!"
 
+	para "Then we snuck back"
+	line "into the RUINS OF"
+	cont "ALPH and captured"
+	cont "several UNOWN to"
+	cont "help us contain"
+	cont "its immense power."
+
+	para "Thanks for solving"
+	line "all those puzzles!"
+
 	para "And now you get to"
 	line "face the ultimate"
 	cont "#MON, and a"
@@ -233,8 +269,8 @@ ArcherBase3WinText:
 	done
 
 ArcherBase3AfterText:
-	text "Even the armor"
-	line "developed to focus"
+	text "Even the power of"
+	line "the UNOWN to focus"
 	cont "MEWTWO's psychic"
 	cont "energy was not"
 	cont "enough?"
@@ -243,8 +279,7 @@ ArcherBase3AfterText:
 ArcherCursesText:
 	text "And of course, now"
 	line "the worthless"
-	cont "#MON has fled"
-	cont "again."
+	cont "#MON have fled."
 
 	para "The years, the"
 	line "effort, all"
@@ -314,3 +349,6 @@ CeruleanBase3_MapEvents:
 	object_event  5,  2, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CERULEAN_CAVE
 	object_event  5,  8, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DISCOVERED_CERULEAN_CAVE
 	object_event  6,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_DISCOVERED_CERULEAN_CAVE
+	object_event  3,  2, SPRITE_UNOWN_M, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CERULEAN_CAVE
+	object_event  5,  0, SPRITE_UNOWN_E, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CERULEAN_CAVE
+	object_event  8,  2, SPRITE_UNOWN_W, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CERULEAN_CAVE
