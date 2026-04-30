@@ -62,6 +62,7 @@ Landmarks:
 	landmark  52,  52, PewterCityName
 	landmark  64,  52, Route3Name
 	landmark  76,  52, MtMoonName
+	landmark  80,  48, CeruleanCaveName
 	landmark  88,  52, Route4Name
 	landmark 100,  52, CeruleanCityName
 	landmark 100,  44, Route24Name
@@ -145,6 +146,7 @@ CinnabarIslandName:  db "CINNABAR<BSP>ISLAND@"
 IndigoPlateauName:   db "INDIGO<BSP>PLATEAU@"
 VictoryRoadName:     db "VICTORY<BSP>ROAD@"
 MtMoonName:          db "MT.MOON@"
+CeruleanCaveName:    db "CERULEAN<BSP>CAVE@"
 RockTunnelName:      db "ROCK TUNNEL@"
 LavRadioTowerName:   db "LAV<BSP>RADIO TOWER@"
 SeafoamIslandsName:  db "SEAFOAM<BSP>ISLANDS@"
