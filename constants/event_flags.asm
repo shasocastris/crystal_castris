@@ -254,6 +254,8 @@
 	const EVENT_FOUGHT_UNOWN_X
 	const EVENT_FOUGHT_UNOWN_Y
 	const EVENT_FOUGHT_UNOWN_Z
+	const EVENT_DIRECTOR_CALLED_ROUTE_44
+	const EVENT_LANCE_CALLED_ROUTE_2
 ; Unused: next 0 events
 
 	const_next 300

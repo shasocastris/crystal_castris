@@ -17,7 +17,10 @@ Route2_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route2LanceCallback
 
 Route2LanceCallback:
+	checkevent EVENT_LANCE_CALLED_ROUTE_2
+	iftrue .AlreadyCalled
 	specialphonecall SPECIALCALL_LANCE
+.AlreadyCalled
 	endcallback
 
 TrainerBugCatcherRob:

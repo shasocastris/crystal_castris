@@ -1,4 +1,5 @@
 DirectorPhoneCallerScript:
 	farwritetext DirectorPhoneCallerText
 	specialphonecall SPECIALCALL_NONE
+	setevent EVENT_DIRECTOR_CALLED_ROUTE_44
 	end

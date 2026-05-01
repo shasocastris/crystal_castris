@@ -1,4 +1,5 @@
 LancePhoneCallerScript:
 	farwritetext LancePhoneCallerText
 	specialphonecall SPECIALCALL_NONE
+	setevent EVENT_LANCE_CALLED_ROUTE_2
 	end

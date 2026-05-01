@@ -18,7 +18,10 @@ Route44_MapScripts:
 	callback MAPCALLBACK_NEWMAP, Route44GoldenrodRadioDirectorCallback
 
 Route44GoldenrodRadioDirectorCallback:
+	checkevent EVENT_DIRECTOR_CALLED_ROUTE_44
+	iftrue .AlreadyCalled
 	specialphonecall SPECIALCALL_DIRECTOR
+.AlreadyCalled
 	endcallback
 
 TrainerBirdKeeperVance1:
