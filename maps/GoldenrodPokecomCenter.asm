@@ -12,7 +12,6 @@
 
 GoldenrodPokecomCenter_MapScripts:
 	def_scene_scripts
-	scene_const SCENE_GOLDENRODPOKECOMCENTER_GS_BALL
 
 	def_callbacks
 
@@ -291,18 +290,6 @@ GoldenrodPokecomCenterLassText:
 
 	para "#MON that is"
 	line "the toughest."
-	done
-
-GoldenrodPokecomCenterLinkReceptionistPleaseAcceptGSBallText:
-	text "<PLAYER>, isn't it?"
-
-	para "Congratulations!"
-
-	para "As a special deal,"
-	line "a GS BALL has been"
-	cont "sent just for you!"
-
-	para "Please accept it!"
 	done
 
 GoldenrodPokecomCenterLinkReceptionistPleaseDoComeAgainText:
