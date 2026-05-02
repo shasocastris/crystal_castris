@@ -15,7 +15,7 @@ DarkCaveBlackthornEntrance_MapScripts:
 DarkCaveMewCallback:
 	checkevent EVENT_FOUGHT_MEW
 	iftrue .NoAppear
-	checkevent EVENT_BEAT_ELITE_FOUR
+	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
 	iftrue .Appear
 	sjump .NoAppear
 

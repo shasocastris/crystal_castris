@@ -143,6 +143,7 @@ LanceRematchScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
+	setevent EVENT_BEAT_ELITE_FOUR_REMATCH
 	opentext
 	writetext LanceDefeatRematchText
 	waitbutton
