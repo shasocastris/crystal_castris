@@ -10,7 +10,7 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 	def_callbacks
 
 RuinsOfAlphHoOhItemRoomNuggets:
-	itemball NUGGET, 20
+	itemball NUGGET, 2
 
 RuinsOfAlphHoOhItemRoomSacredAsh:
 	itemball SACRED_ASH
