@@ -48,31 +48,42 @@ SaffronGymSabrinaScript:
 	end
 
 SabrinaRematchScript:
-    checkevent EVENT_SABRINA_REMATCH
-    iftrue .RematchDone
-    readvar VAR_UNOWNCOUNT
-    ifnotequal NUM_UNOWN, .SabrinaReject
-    writetext SabrinaRematchText
-    waitbutton
-    closetext
-    winlosstext SabrinaRematchWinLossText, SabrinaLossText
-    loadtrainer SABRINA, SABRINA2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SET
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_SABRINA_REMATCH
-.RematchDone
-    opentext
-    writetext BeatenSabrinaAgainText
-    waitbutton
-    closetext
-    end
+	checkevent EVENT_SABRINA_REMATCH
+	iftrue .RematchDone
+	callasm .CheckPsychicTypeCompletion
+	ifequal 1, .RematchReady
+	writetext SabrinaRejectText
+	waitbutton
+	closetext
+	end
 
-.SabrinaReject
-    writetext SabrinaRejectText
-    waitbutton
-    closetext
-    end
+.RematchReady:
+	writetext SabrinaRematchText
+	waitbutton
+	closetext
+	winlosstext SabrinaRematchWinLossText, SabrinaLossText
+	loadtrainer SABRINA, SABRINA2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SET
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_SABRINA_REMATCH
+
+.RematchDone:
+	opentext
+	writetext BeatenSabrinaAgainText
+	waitbutton
+	closetext
+	end
+
+.CheckPsychicTypeCompletion
+		ld a, PSYCHIC_TYPE
+		farcall CheckAllTypeSpeciesCaught
+		ld a, 0
+		jr nc, .done
+		ld a, 1
+	.done:
+		ld [wScriptVar], a
+		ret
 
 TrainerMediumRebecca:
 	trainer MEDIUM, REBECCA, EVENT_BEAT_MEDIUM_REBECCA, MediumRebeccaSeenText, MediumRebeccaBeatenText, 0, .Script
@@ -225,21 +236,17 @@ SabrinaFightDoneText:
 	done
 
 SabrinaRematchText:
-	text "…Incredible."
+	text "…Remarkable."
 
-	para "My psychic senses"
-	line "detect them all…"
-	cont "Every UNOWN form."
+	para "I sense them all."
+	line "Every psychic"
+	cont "#MON."
 
-	para "You have unlocked"
-	line "the ancient"
-	cont "alphabet of"
-	cont "mystery."
-
-	para "Now you possess"
-	line "the psychic"
-	cont "attunement worthy"
-	cont "of my full power!"
+	para "That knowledge…"
+	line "is the only thing"
+	cont "I respect enough"
+	cont "to face with my"
+	cont "full power."
 	done
 
 SabrinaRematchWinLossText:
@@ -251,41 +258,29 @@ SabrinaRematchWinLossText:
 	done
 
 BeatenSabrinaAgainText:
-	text "The ancient"
-	line "alphabet has"
-	cont "chosen you."
+	text "And now you've"
+	line "beaten me twice."
 
-	para "Your bond with"
-	line "the UNOWN has"
-	cont "unlocked psychic"
-	cont "potential…"
-
-	para "That even I cannot"
-	line "fully comprehend."
+	para "Whatever you face"
+	line "next… I don't"
+	cont "think I need my"
+	cont "powers to know"
+	cont "how it ends."
 	done
 
 SabrinaRejectText:
-	text "I sense you wish"
-	line "to challenge me"
-	cont "once more,"
+	text "I sense great"
+	line "strength in you."
 
-	para "but my psychic"
-	line "powers tell me"
-	cont "you are not yet"
-	cont "ready."
+	para "But not yet the"
+	line "attunement I seek."
 
-	para "In the ancient"
-	line "RUINS OF ALPH,"
-	cont "mysterious #MON"
-	cont "spell out secrets."
+	para "Seek out every"
+	line "psychic #MON."
 
-	para "Capture all 26"
-	line "forms of these"
-	cont "psychic symbols,"
-
-	para "and unlock the"
-	line "mental power to"
-	cont "face me."
+	para "When you have,"
+	line "you'll know."
+	cont "And so will I."
 	done
 
 MediumRebeccaSeenText:

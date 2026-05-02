@@ -1,6 +1,5 @@
 	object_const_def
 	const TOHJOFALLS_POKE_BALL
-	const TOHJOFALLS_MEWTWO
 
 TohjoFalls_MapScripts:
 	def_scene_scripts

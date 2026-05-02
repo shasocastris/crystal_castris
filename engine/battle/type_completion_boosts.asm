@@ -62,7 +62,7 @@ DoTypeCompletionBoosts:
 	ret
 
 
-CheckAllTypeSpeciesCaught:
+CheckAllTypeSpeciesCaught::
 ; Check if all Pokémon of a given type have been caught
 ; Input: a = type constant (NORMAL, FIRE, WATER, etc.)
 ; Output: carry flag set if all caught, clear if any missing
