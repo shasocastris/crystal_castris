@@ -522,5 +522,6 @@ INCLUDE "maps/MountMoonPath.asm"
 INCLUDE "maps/CeruleanBase1.asm"
 INCLUDE "maps/CeruleanBase2.asm"
 INCLUDE "maps/CeruleanBase3.asm"
+INCLUDE "maps/PokemonMansion.asm"
 
 ENDSECTION

@@ -978,4 +978,7 @@ SaffronGameStop_Blocks:
 LavenderOdditiesShop_Blocks:
 	INCBIN "maps/LavenderOdditiesShop.ablk"
 
+PokemonMansion_Blocks:
+	INCBIN "maps/PokemonMansion.ablk"
+
 ENDSECTION
