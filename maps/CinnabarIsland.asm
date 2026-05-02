@@ -1,6 +1,5 @@
 	object_const_def
 	const CINNABARISLAND_BLUE
-	const CINNABARISLAND_ROCK
 
 CinnabarIsland_MapScripts:
 	def_scene_scripts
@@ -134,6 +133,7 @@ CinnabarIsland_MapEvents:
 
 	def_warp_events
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
+	warp_event 10,  5, POKEMON_MANSION, 1
 
 	def_coord_events
 
@@ -144,6 +144,3 @@ CinnabarIsland_MapEvents:
 
 	def_object_events
 	object_event  7,  6, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
-	object_event 10,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandRock, -1
-	object_event 10,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandRock, -1
-	object_event 11,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandRock, -1

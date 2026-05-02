@@ -165,7 +165,7 @@ ENDM
 	map_const CERULEAN_BASE_1,                             13, 14 ; 94
 	map_const CERULEAN_BASE_2,                             15, 15 ; 94
 	map_const CERULEAN_BASE_3,                              6,  6 ; 94
-	map_const POKEMON_MANSION                              15, 13 ; 94
+	map_const POKEMON_MANSION,                             15, 13 ; 94
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
