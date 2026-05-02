@@ -20,6 +20,17 @@ Oak:
 	promptbutton
 	setevent EVENT_TALKED_TO_OAK_IN_KANTO
 .CheckBadges:
+	checkevent EVENT_GOT_GS_BALL_FROM_OAK
+	iftrue .SkipGSBall
+	writetext OakGSBallText
+	promptbutton
+	verbosegiveitem GS_BALL
+	iffalse .SkipGSBall
+	setevent EVENT_GOT_GS_BALL_FROM_OAK
+	setevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
+	closetext
+	end
+.SkipGSBall:
 	checkevent EVENT_BEAT_ELITE_FOUR_REMATCH
 	iftrue .OpenMtSilver
 	readvar VAR_BADGES
@@ -190,14 +201,47 @@ OakYesKantoBadgesText:
 	para "experience is sure"
 	line "to help you."
 
+	para "Once you collect"
+	line "them all, you"
+	cont "should try your"
+	cont "skill facing the"
+	cont "ELITE FOUR again."
+
 	para "Come see me when"
-	line "you get them all."
+	line "you've defeated"
+	cont "their best teams."
 
 	para "I'll have a gift"
 	line "for you."
 
 	para "Keep trying hard,"
 	line "<PLAY_G>!"
+	done
+
+OakGSBallText:
+	text "OAK: Ah, before"
+	line "I forget…"
+
+	para "I've had this for"
+	line "some time now."
+	cont "A peculiar BALL."
+
+	para "Gold and Silver."
+	line "I've never seen"
+	cont "anything like it."
+
+	para "I can't open it"
+	line "and I can't quite"
+	cont "figure out what"
+	cont "it's for."
+
+	para "You travel more"
+	line "than I do these"
+	cont "days. Take it."
+
+	para "Perhaps you'll"
+	line "find someone who"
+	cont "knows what it is."
 	done
 
 OaksAssistant1Text:
