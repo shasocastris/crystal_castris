@@ -14,6 +14,8 @@ SeafoamGymNoopScene:
 SeafoamGymBlaineScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BlaineRematchScript
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .FightDone
 	writetext BlaineIntroText
@@ -39,8 +41,6 @@ SeafoamGymBlaineScript:
 	end
 
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, BlaineRematchScript
 	writetext BlaineFightDoneText
 	waitbutton
 	closetext

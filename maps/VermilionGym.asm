@@ -13,6 +13,8 @@ VermilionGym_MapScripts:
 VermilionGymSurgeScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, LtSurgeRematchScript
 	checkflag ENGINE_THUNDERBADGE
 	iftrue .FightDone
 	writetext LtSurgeIntroText
@@ -38,8 +40,6 @@ VermilionGymSurgeScript:
 	end
 
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, LtSurgeRematchScript
 	writetext LtSurgeFightDoneText
 	waitbutton
 	closetext

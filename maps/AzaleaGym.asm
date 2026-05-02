@@ -24,6 +24,8 @@ AzaleaGym_MapScripts:
 AzaleaGymBugsyScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BugsyRematchScript
 	checkevent EVENT_BEAT_BUGSY
 	iftrue .FightDone
 	writetext BugsyText_INeverLose
@@ -44,8 +46,6 @@ AzaleaGymBugsyScript:
 .FightDone:
 	changeblock 4, 15, $03 ; door
 	changeblock 5, 15, $03 ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, BugsyRematchScript
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY

@@ -14,6 +14,8 @@ SaffronGym_MapScripts:
 SaffronGymSabrinaScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, SabrinaRematchScript
 	checkflag ENGINE_MARSHBADGE
 	iftrue .FightDone
 	writetext SabrinaIntroText
@@ -40,8 +42,6 @@ SaffronGymSabrinaScript:
 	end
 
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, SabrinaRematchScript
 	writetext SabrinaFightDoneText
 	waitbutton
 	closetext

@@ -10,6 +10,8 @@ ViridianGym_MapScripts:
 ViridianGymBlueScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BlueRematchScript
 	checkflag ENGINE_EARTHBADGE
 	iftrue .FightDone
 	writetext LeaderBlueBeforeText
@@ -32,8 +34,6 @@ ViridianGymBlueScript:
 	end
 
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, BlueRematchScript
 	writetext LeaderBlueEpilogueText
 	waitbutton
 	closetext

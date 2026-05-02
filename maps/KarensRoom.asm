@@ -41,10 +41,10 @@ KarensRoomDoorLocksBehindYouScript:
 	end
 
 KarenScript_Battle:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .KarenRematch
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .KarenRematch
 	checkevent EVENT_BEAT_ELITE_4_KAREN
 	iftrue KarenScript_AfterBattle
 	writetext KarenScript_KarenBeforeText
@@ -69,8 +69,6 @@ KarenScript_Battle:
 	end
 
 .KarenRematch:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ELITE_4_KAREN
 	iftrue KarenScript_AfterBattleRematch
 	writetext KarenScript_KarenBeforeRematchText

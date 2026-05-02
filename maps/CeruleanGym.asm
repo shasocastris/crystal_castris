@@ -124,6 +124,8 @@ CeruleanGymGruntByeText:
 CeruleanGymMistyScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MistyRematchScript
 	checkflag ENGINE_CASCADEBADGE
 	iftrue .FightDone
 	writetext MistyIntroText
@@ -144,8 +146,6 @@ CeruleanGymMistyScript:
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, MistyRematchScript
 	writetext MistyFightDoneText
 	waitbutton
 	closetext

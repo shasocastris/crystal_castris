@@ -51,9 +51,9 @@ Script_ApproachLanceFromRight:
 	applymovement PLAYER, MovementData_ApproachLanceFromRight
 LancesRoomLanceScript:
 	turnobject LANCESROOM_LANCE, LEFT
+	opentext
 	readvar VAR_BADGES
 	ifequal NUM_BADGES, LanceRematchScript
-	opentext
 	writetext LanceBattleIntroText
 	waitbutton
 	closetext
@@ -132,8 +132,6 @@ LancesRoomLanceScript:
 	end
 
 LanceRematchScript:
-	turnobject LANCESROOM_LANCE, LEFT
-	opentext
 	writetext LanceBeforeRematchText
 	waitbutton
 	closetext

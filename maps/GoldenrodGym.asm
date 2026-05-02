@@ -30,9 +30,11 @@ GoldenrodGymNoop2Scene:
 
 GoldenrodGymWhitneyScript:
 	faceplayer
+	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, WhitneyRematchScript
 	checkevent EVENT_BEAT_WHITNEY
 	iftrue .FightDone
-	opentext
 	writetext WhitneyBeforeText
 	waitbutton
 	closetext
@@ -51,8 +53,6 @@ GoldenrodGymWhitneyScript:
 .FightDone:
 	changeblock 2, 17, $03 ; door
 	changeblock 3, 17, $03 ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, WhitneyRematchScript
 	opentext
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying

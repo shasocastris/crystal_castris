@@ -17,6 +17,8 @@ FuchsiaGymJanineScript:
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, JanineRematchScript
 	writetext JanineText_DisappointYou
 	waitbutton
 	closetext
@@ -44,8 +46,6 @@ FuchsiaGymJanineScript:
 	faceplayer
 	opentext
 .AfterBattle:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, JanineRematchScript
 	checkevent EVENT_GOT_TM06_TOXIC
 	iftrue .AfterTM
 	writetext JanineText_ToxicSpeech

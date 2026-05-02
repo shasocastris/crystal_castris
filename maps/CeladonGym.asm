@@ -14,6 +14,8 @@ CeladonGym_MapScripts:
 CeladonGymErikaScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ErikaRematchScript
 	checkflag ENGINE_RAINBOWBADGE
 	iftrue .FightDone
 	writetext ErikaBeforeBattleText
@@ -35,8 +37,6 @@ CeladonGymErikaScript:
 	waitsfx
 	setflag ENGINE_RAINBOWBADGE
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, ErikaRematchScript
 	checkevent EVENT_GOT_TM19_GIGA_DRAIN
 	iftrue .GotGigaDrain
 	writetext ErikaExplainTMText

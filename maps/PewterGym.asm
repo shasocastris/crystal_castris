@@ -11,6 +11,8 @@ PewterGym_MapScripts:
 PewterGymBrockScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, BrockRematchScript
 	checkflag ENGINE_BOULDERBADGE
 	iftrue .FightDone
 	writetext BrockIntroText
@@ -34,8 +36,6 @@ PewterGymBrockScript:
 	end
 
 .FightDone:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, BrockRematchScript
 	writetext BrockFightDoneText
 	waitbutton
 	closetext

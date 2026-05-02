@@ -41,10 +41,10 @@ KogasRoomDoorLocksBehindYouScript:
 	end
 
 KogaScript_Battle:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .KogaRematch
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .KogaRematch
 	checkevent EVENT_BEAT_ELITE_4_KOGA
 	iftrue KogaScript_AfterBattle
 	writetext KogaScript_KogaBeforeText
@@ -69,8 +69,6 @@ KogaScript_Battle:
 	end
 
 .KogaRematch:
-    faceplayer
-    opentext
     checkevent EVENT_BEAT_ELITE_4_KOGA
     iftrue KogaScript_AfterBattleRematch
     writetext KogaScript_KogaBeforeRematchText

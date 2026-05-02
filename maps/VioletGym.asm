@@ -21,6 +21,8 @@ VioletGym_MapScripts:
 VioletGymFalknerScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, FalknerRematchScript
 	checkevent EVENT_BEAT_FALKNER
 	iftrue .FightDone
 	writetext FalknerIntroText
@@ -41,8 +43,6 @@ VioletGymFalknerScript:
 .FightDone:
 	changeblock 4, 15, $1C ; door
 	changeblock 5, 15, $1C ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, FalknerRematchScript
 	checkevent EVENT_GOT_TM31_MUD_SLAP
 	iftrue .SpeechAfterTM
 	setevent EVENT_BEAT_BIRD_KEEPER_ROD

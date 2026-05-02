@@ -24,6 +24,8 @@ MahoganyGym_MapScripts:
 MahoganyGymPryceScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, PryceRematchScript
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
 	writetext PryceText_Intro
@@ -46,8 +48,6 @@ MahoganyGymPryceScript:
 .FightDone:
 	changeblock 4, 17, $1C ; door
 	changeblock 5, 17, $1C ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, PryceRematchScript
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE

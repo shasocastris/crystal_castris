@@ -33,6 +33,8 @@ EcruteakGymNoopScene:
 EcruteakGymMortyScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, MortyRematchScript
 	checkevent EVENT_BEAT_MORTY
 	iftrue .FightDone
 	writetext MortyIntroText
@@ -56,8 +58,6 @@ EcruteakGymMortyScript:
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, MortyRematchScript
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
 	setevent EVENT_BEAT_SAGE_JEFFREY

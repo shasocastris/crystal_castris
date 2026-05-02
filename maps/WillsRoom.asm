@@ -41,10 +41,10 @@ WillsRoomDoorLocksBehindYouScript:
 	end
 
 WillScript_Battle:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .WillRematch
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .WillRematch
 	checkevent EVENT_BEAT_ELITE_4_WILL
 	iftrue WillScript_AfterBattle
 	writetext WillScript_WillBeforeText
@@ -69,8 +69,6 @@ WillScript_Battle:
 	end
 
 .WillRematch:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
 	iftrue WillScript_AfterBattleRematch
 	writetext WillScript_WillBeforeRematchText

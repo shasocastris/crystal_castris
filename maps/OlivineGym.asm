@@ -21,6 +21,8 @@ OlivineGym_MapScripts:
 OlivineGymJasmineScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, JasmineRematchScript
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
 	writetext Jasmine_SteelTypeIntro
@@ -43,8 +45,6 @@ OlivineGymJasmineScript:
 .FightDone:
 	changeblock 4, 15, $23 ; door
 	changeblock 5, 15, $23 ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, JasmineRematchScript
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
 	writetext Jasmine_BadgeSpeech

@@ -23,6 +23,8 @@ CianwoodGym_MapScripts:
 CianwoodGymChuckScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ChuckRematchScript
 	checkevent EVENT_BEAT_CHUCK
 	iftrue .FightDone
 	writetext ChuckIntroText1
@@ -58,8 +60,6 @@ CianwoodGymChuckScript:
 .FightDone:
 	changeblock 4, 17, $26 ; door
 	changeblock 5, 17, $26 ; door
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, ChuckRematchScript
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_BLACKBELT_YOSHI

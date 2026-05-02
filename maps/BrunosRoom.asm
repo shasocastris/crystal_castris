@@ -41,10 +41,10 @@ BrunosRoomDoorLocksBehindYouScript:
 	end
 
 BrunoScript_Battle:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, .BrunoRematch
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, .BrunoRematch
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
 	iftrue BrunoScript_AfterBattle
 	writetext BrunoScript_BrunoBeforeText
@@ -69,8 +69,6 @@ BrunoScript_Battle:
 	end
 
 .BrunoRematch:
-	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
 	iftrue BrunoScript_AfterBattleRematch
 	writetext BrunoScript_BrunoBeforeRematchText

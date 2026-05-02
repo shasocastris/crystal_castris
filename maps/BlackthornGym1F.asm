@@ -34,6 +34,8 @@ BlackthornGym1FBouldersCallback:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
+	readvar VAR_BADGES
+	ifequal NUM_BADGES, ClairRematchScript
 	checkflag ENGINE_RISINGBADGE
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
@@ -70,8 +72,6 @@ BlackthornGymClairScript:
 	end
 
 .AlreadyGotBadge:
-	readvar VAR_BADGES
-	ifequal NUM_BADGES, ClairRematchScript
 	checkevent EVENT_GOT_TM24_DRAGONBREATH
 	iftrue .GotTM24
 	writetext BlackthornGymClairText_YouKeptMeWaiting
