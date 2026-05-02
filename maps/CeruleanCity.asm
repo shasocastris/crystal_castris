@@ -319,7 +319,6 @@ CeruleanCity_MapEvents:
 	warp_event 19, 21, CERULEAN_POKECENTER_1F, 1
 	warp_event 30, 23, CERULEAN_GYM, 1
 	warp_event 24, 29, CERULEAN_AQUARIUM, 2
-;	warp_event  0, 13, CERULEAN_CAVE, 1
 
 	def_coord_events
 
@@ -331,7 +330,6 @@ CeruleanCity_MapEvents:
 	bg_event 23,  7, BGEVENT_READ, CeruleanCapeSign
 	bg_event 14, 29, BGEVENT_READ, CeruleanLockedDoor
 	bg_event 20, 21, BGEVENT_READ, CeruleanCityPokecenterSign
-;	bg_event  1, 15, BGEVENT_READ, CeruleanCaveSign
 	bg_event  2, 12, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
 
 	def_object_events
@@ -341,4 +339,3 @@ CeruleanCity_MapEvents:
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
 	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
-;	object_event  0, 14, SPRITE_UNUSED_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_BLACK, OBJECTTYPE_SCRIPT, 0, CeruleanCityUnusedGuyScript, EVENT_OPENED_CERULEAN_CAVE

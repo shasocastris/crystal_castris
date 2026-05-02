@@ -9,8 +9,8 @@ RuinsOfAlphHoOhItemRoom_MapScripts:
 
 	def_callbacks
 
-RuinsOfAlphHoOhItemRoomAmuletCoin:
-	itemball AMULET_COIN
+RuinsOfAlphHoOhItemRoomNuggets:
+	itemball NUGGET, 20
 
 RuinsOfAlphHoOhItemRoomSacredAsh:
 	itemball SACRED_ASH
@@ -46,7 +46,7 @@ RuinsOfAlphHoOhItemRoom_MapEvents:
 	bg_event  5,  1, BGEVENT_READ, RuinsOfAlphHoOhItemRoomAncientReplica
 
 	def_object_events
-	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomAmuletCoin, EVENT_PICKED_UP_GS_BALL_FROM_HO_OH_ITEM_ROOM
+	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomNuggets, EVENT_PICKED_UP_NUGGETS_FROM_HO_OH_ITEM_ROOM
 	object_event  5,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSacredAsh, EVENT_PICKED_UP_SACRED_ASH_FROM_HO_OH_ITEM_ROOM
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomRevivalHerb, EVENT_PICKED_UP_REVIVAL_HERB_FROM_HO_OH_ITEM_ROOM
 	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RuinsOfAlphHoOhItemRoomSunStone, EVENT_PICKED_UP_SUN_STONE_FROM_HO_OH_ITEM_ROOM
