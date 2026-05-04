@@ -333,7 +333,6 @@ GrassTypeSpecies:
 	dw JUMPLUFF
 	dw SUNKERN
 	dw SUNFLORA
-	dw CELEBI
 	dw -1
 
 ElectricTypeSpecies:
