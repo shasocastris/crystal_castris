@@ -1887,15 +1887,25 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (11), Route 11
 	db "OWEN@", TRAINERTYPE_NORMAL
-	db 52
+	db 65
+	dw RATICATE
+	db 66
+	dw FEAROW
+	db 66
+	dw HOUNDOOM
+	db 67
 	dw ARCANINE
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (12), Route 11
 	db "JASON@", TRAINERTYPE_NORMAL
-	db 50
+	db 65
 	dw SANDSLASH
-	db 50
+	db 66
+	dw DUGTRIO
+	db 66
+	dw GENGAR
+	db 67
 	dw CROBAT
 	db -1 ; end
 
@@ -1931,13 +1941,13 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (2), Route 15
 	db "KIPP@", TRAINERTYPE_NORMAL
-	db 43
+	db 64
 	dw ELECTRODE
-	db 43
+	db 65
 	dw MAGNETON
-	db 48
+	db 65
 	dw ELECTRODE
-	db 48
+	db 66
 	dw MAGNETON
 	db -1 ; end
 
@@ -1953,12 +1963,14 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (4), Route 15
 	db "JOHNNY@", TRAINERTYPE_NORMAL
-	db 45
+	db 64
 	dw VILEPLUME
-	db 48
+	db 65
 	dw BELLOSSOM
-	db 50
+	db 65
 	dw VICTREEBEL
+	db 66
+	dw MEGANIUM
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (5), Route 1
@@ -1973,9 +1985,13 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (6), Route 15
 	db "TOMMY@", TRAINERTYPE_NORMAL
-	db 49
+	db 64
 	dw XATU
-	db 51
+	db 65
+	dw HYPNO
+	db 65
+	dw ESPEON
+	db 66
 	dw ALAKAZAM
 	db -1 ; end
 
@@ -1995,13 +2011,13 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (9), Route 15
 	db "BILLY@", TRAINERTYPE_NORMAL
-	db 43
+	db 64
 	dw PARASECT
-	db 43
+	db 65
 	dw SUNFLORA
-	db 43
+	db 65
 	dw POLIWRATH
-	db 52
+	db 66
 	dw DITTO
 	db -1 ; end
 
@@ -2296,16 +2312,26 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (15), Route 13
 	db "PERRY@", TRAINERTYPE_NORMAL
-	db 51
+	db 65
+	dw NOCTOWL
+	db 66
+	dw DODRIO
+	db 66
+	dw PIDGEOT
+	db 67
 	dw FARFETCH_D
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (16), Route 13
 	db "BRET@", TRAINERTYPE_NORMAL
-	db 49
-	dw PIDGEOTTO
-	db 49
+	db 65
+	dw NOCTOWL
+	db 66
+	dw DODRIO
+	db 66
 	dw FEAROW
+	db 67
+	dw PIDGEOT
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (17), Route 27
@@ -3151,11 +3177,13 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (5), Route 13
 	db "BRENDA@", TRAINERTYPE_NORMAL
-	db 46
+	db 65
 	dw CLEFABLE
-	db 48
+	db 66
 	dw WIGGLYTUFF
-	db 50
+	db 66
+	dw NINETALES
+	db 67
 	dw PERSIAN
 	db -1 ; end
 
@@ -3217,11 +3245,13 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (13), Route 14
 	db "VERONICA@", TRAINERTYPE_NORMAL
-	db 48
+	db 64
 	dw WIGGLYTUFF
-	db 48
+	db 65
 	dw FURRET
-	db 50
+	db 65
+	dw PERSIAN
+	db 66
 	dw NINETALES
 	db -1 ; end
 
@@ -3239,10 +3269,14 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (15), Route 12
 	db "THERESA@", TRAINERTYPE_NORMAL
-	db 50
-	dw BELLOSSOM
-	db 48
+	db 65
 	dw AZUMARILL
+	db 66
+	dw BELLOSSOM
+	db 66
+	dw VAPOREON
+	db 67
+	dw NINETALES
 	db -1 ; end
 
 	next_list_item ; BEAUTY (16), Route 38
@@ -4011,15 +4045,25 @@ TeacherGroup:
 
 	next_list_item ; TEACHER (1), Route 15
 	db "COLETTE@", TRAINERTYPE_NORMAL
-	db 54
+	db 64
+	dw MR__MIME
+	db 65
+	dw WIGGLYTUFF
+	db 65
+	dw BLISSEY
+	db 66
 	dw CLEFABLE
 	db -1 ; end
 
 	next_list_item ; TEACHER (2), Route 15
 	db "HILLARY@", TRAINERTYPE_NORMAL
-	db 49
+	db 64
 	dw AIPOM
-	db 54
+	db 65
+	dw GIRAFARIG
+	db 65
+	dw KANGASKHAN
+	db 66
 	dw MAROWAK
 	db -1 ; end
 
@@ -4266,12 +4310,14 @@ FisherGroup:
 
 	next_list_item ; FISHER (4), Route 12
 	db "KYLE@", TRAINERTYPE_NORMAL
-	db 44
+	db 65
 	dw GOLDUCK
-	db 48
-	dw POLIWHIRL
-	db 48
+	db 66
+	dw POLIWRATH
+	db 66
 	dw SEAKING
+	db 67
+	dw KINGLER
 	db -1 ; end
 
 	next_list_item ; FISHER (5), Route 32
@@ -4363,31 +4409,37 @@ FisherGroup:
 
 	next_list_item ; FISHER (13), Route 12
 	db "MARTIN@", TRAINERTYPE_NORMAL
-	db 49
+	db 65
 	dw OCTILLERY
-	db 49
+	db 66
 	dw KINGLER
+	db 66
+	dw QWILFISH
+	db 67
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; FISHER (14), Route 12
 	db "STEPHEN@", TRAINERTYPE_NORMAL
-	db 40
-	dw MAGIKARP
-	db 44
+	db 65
 	dw GYARADOS
-	db 48
+	db 66
 	dw QWILFISH
-	db 48
+	db 66
 	dw TENTACRUEL
+	db 67
+	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; FISHER (15), Route 12
 	db "BARNEY@", TRAINERTYPE_NORMAL
-	db 46
-	dw QWILFISH
-	db 46
+	db 65
 	dw CORSOLA
-	db 46
+	db 66
+	dw QWILFISH
+	db 66
+	dw KINGDRA
+	db 67
 	dw GYARADOS
 	db -1 ; end
 
@@ -5412,14 +5464,14 @@ HikerGroup:
 
 	next_list_item ; HIKER (16), Route 13
 	db "KENNY@", TRAINERTYPE_NORMAL
-	db 43
+	db 65
 	dw SANDSLASH
-	db 45
-	dw DONPHAN
-	db 48
-	dw GOLEM
-	db 45
+	db 66
 	dw GLIGAR
+	db 66
+	dw DONPHAN
+	db 67
+	dw GOLEM
 	db -1 ; end
 
 	next_list_item ; HIKER (17), Route 10
@@ -6034,17 +6086,25 @@ PsychicGroup:
 
 	next_list_item ; PSYCHIC_T (3), Route 11
 	db "HERMAN@", TRAINERTYPE_NORMAL
-	db 46
+	db 65
 	dw XATU
-	db 46
+	db 66
 	dw MR__MIME
-	db 46
+	db 66
 	dw EXEGGUTOR
+	db 67
+	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; PSYCHIC_T (4), Route 11
 	db "FIDEL@", TRAINERTYPE_NORMAL
-	db 51
+	db 65
+	dw HYPNO
+	db 66
+	dw GIRAFARIG
+	db 66
+	dw SLOWKING
+	db 67
 	dw XATU
 	db -1 ; end
 
@@ -7055,42 +7115,54 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (4), Route 13
 	db "JOSHUA@", TRAINERTYPE_ITEM
-	db 38
+	db 65
 	dw PIKACHU
 	dw BERRY
-	db 38
+	db 65
 	dw PIKACHU
 	dw BERRY
-	db 38
+	db 66
 	dw PIKACHU
 	dw BERRY
-	db 38
+	db 66
+	dw PIKACHU
+	dw BERRY
+	db 66
+	dw PIKACHU
+	dw BERRY
+	db 67
 	dw RAICHU
-	dw BERRY
-	db 38
-	dw PIKACHU
-	dw BERRY
-	db 38
-	dw PIKACHU
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (5), Route 14
 	db "CARTER@", TRAINERTYPE_ITEM
-	db 45
+	db 64
 	dw VENUSAUR
 	dw BERRY
-	db 45
+	db 65
+	dw BLASTOISE
+	dw BERRY
+	db 65
 	dw CHARIZARD
 	dw BERRY
-	db 45
-	dw BLASTOISE
+	db 66
+	dw AMPHAROS
 	dw BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (6), Route 14
 	db "TREVOR@", TRAINERTYPE_ITEM
-	db 50
+	db 64
+	dw AZUMARILL
+	dw BERRY
+	db 65
+	dw SLOWKING
+	dw BERRY
+	db 65
+	dw KINGDRA
+	dw BERRY
+	db 66
 	dw GOLDUCK
 	dw BERRY
 	db -1 ; end
@@ -7158,19 +7230,19 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (11), Route 12
 	db "JORDAN@", TRAINERTYPE_ITEM_MOVES
-	db 46
-	dw RAICHU
-	dw BERRY
-	dw THUNDERBOLT, SEISMIC_TOSS, DOUBLE_TEAM, THUNDER_WAVE
-	db 47
-	dw JOLTEON
-	dw BERRY
-	dw THUNDERBOLT, SHADOW_BALL, DOUBLE_KICK, PIN_MISSILE
-	db 45
+	db 65
 	dw MAGNETON
 	dw BERRY
 	dw THUNDERBOLT, TRI_ATTACK, LOCK_ON, ZAP_CANNON
-	db 48
+	db 66
+	dw RAICHU
+	dw BERRY
+	dw THUNDERBOLT, SEISMIC_TOSS, DOUBLE_TEAM, THUNDER_WAVE
+	db 66
+	dw JOLTEON
+	dw BERRY
+	dw THUNDERBOLT, SHADOW_BALL, DOUBLE_KICK, PIN_MISSILE
+	db 67
 	dw ELECTRODE
 	dw BERRY
 	dw THUNDER, EXPLOSION, LIGHT_SCREEN, SWIFT
@@ -7178,14 +7250,17 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (12), Route 13
 	db "ALEX@", TRAINERTYPE_ITEM
-	db 45
+	db 65
 	dw NIDOKING
 	dw BERRY
-	db 45
+	db 66
 	dw SLOWKING
 	dw BERRY
-	db 45
+	db 66
 	dw SEAKING
+	dw BERRY
+	db 67
+	dw KINGDRA
 	dw BERRY
 	db -1 ; end
 
