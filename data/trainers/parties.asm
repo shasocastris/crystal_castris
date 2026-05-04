@@ -2017,22 +2017,26 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (11), SS Aqua
 	db "NATE@", TRAINERTYPE_NORMAL
-	db 49
+	db 55
 	dw LEDIAN
-	db 49
-	dw EXEGGUTOR
-	db 49
+	db 57
 	dw MAGNETON
+	db 58
+	dw XATU
+	db 58
+	dw EXEGGUTOR
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (12), SS Aqua
 	db "RICKY@", TRAINERTYPE_NORMAL
-	db 49
+	db 55
 	dw AIPOM
-	db 49
-	dw DITTO
-	db 49
+	db 57
 	dw PORYGON
+	db 58
+	dw DITTO
+	db 58
+	dw CLEFABLE
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (13), National Park
@@ -2696,14 +2700,14 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (16), SS Aqua
 	db "SEAN@", TRAINERTYPE_NORMAL
-	db 52
-	dw FLAREON
-	db 52
+	db 55
 	dw TANGELA
-	db 52
-	dw TAUROS
-	db 52
+	db 57
+	dw FLAREON
+	db 58
 	dw XATU
+	db 58
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (17), Route 25
@@ -2921,14 +2925,14 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (13), SS Aqua
 	db "CAROL@", TRAINERTYPE_NORMAL
-	db 52
-	dw ELECTRODE
-	db 52
-	dw STARMIE
-	db 52
-	dw NINETALES
-	db 52
+	db 55
 	dw VICTREEBEL
+	db 57
+	dw ELECTRODE
+	db 58
+	dw NINETALES
+	db 58
+	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (14), Route 1
@@ -3143,12 +3147,14 @@ BeautyGroup:
 
 	next_list_item ; BEAUTY (6), SS Aqua
 	db "CASSIE@", TRAINERTYPE_NORMAL
-	db 54
-	dw VILEPLUME
-	db 51
+	db 55
 	dw BUTTERFREE
-	db 51
+	db 57
 	dw BELLOSSOM
+	db 58
+	dw JUMPLUFF ; new mon
+	db 58
+	dw VILEPLUME
 	db -1 ; end
 
 	next_list_item ; BEAUTY (7), Glitter & Grace
@@ -3341,12 +3347,14 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (8), SS Aqua
 	db "ETHAN@", TRAINERTYPE_NORMAL
-	db 48
+	db 55
 	dw GOLEM
-	db 52
-	dw RHYDON
-	db 52
+	db 57
 	dw PUPITAR
+	db 58
+	dw AERODACTYL
+	db 58
+	dw RHYDON
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (9), Route 43
@@ -3883,12 +3891,14 @@ GentlemanGroup:
 
 	next_list_item ; GENTLEMAN (2), SS Aqua
 	db "EDWARD@", TRAINERTYPE_NORMAL
-	db 50
-	dw PERSIAN
-	db 50
-	dw ARCANINE
-	db 50
+	db 55
 	dw POLITOED
+	db 57
+	dw NINETALES
+	db 58
+	dw ARCANINE
+	db 58
+	dw PERSIAN
 	db -1 ; end
 
 	next_list_item ; GENTLEMAN (3), Vermilion Gym
@@ -3995,12 +4005,14 @@ TeacherGroup:
 
 	next_list_item ; TEACHER (3), SS Aqua
 	db "SHIRLEY@", TRAINERTYPE_NORMAL
-	db 53
-	dw WIGGLYTUFF
-	db 52
+	db 55
 	dw NIDOQUEEN
-	db 52
+	db 57
+	dw CLEFABLE
+	db 58
 	dw SLOWKING
+	db 58
+	dw WIGGLYTUFF
 	db -1 ; end
 
 	end_list_items
@@ -4084,12 +4096,14 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (9), SS Aqua
 	db "KEN@", TRAINERTYPE_NORMAL
-	db 46
+	db 55
 	dw ARIADOS
-	db 49
+	db 57
 	dw PINSIR
-	db 49
+	db 58
 	dw SCYTHER
+	db 58
+	dw HERACROSS ; new mon
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (10), Route 31
@@ -4317,14 +4331,14 @@ FisherGroup:
 
 	next_list_item ; FISHER (12), SS Aqua
 	db "JONAH@", TRAINERTYPE_NORMAL
-	db 50
-	dw STARMIE
 	db 55
-	dw OCTILLERY
-	db 50
 	dw LANTURN
-	db 55
+	db 57
+	dw STARMIE
+	db 58
 	dw CLOYSTER
+	db 58
+	dw OCTILLERY
 	db -1 ; end
 
 	next_list_item ; FISHER (13), Route 12
@@ -4910,44 +4924,50 @@ SailorGroup:
 
 	next_list_item ; SAILOR (6), SS Aqua
 	db "JEFF@", TRAINERTYPE_NORMAL
-	db 49
+	db 55
 	dw MACHAMP
-	db 49
+	db 56
 	dw RATICATE
-	db 49
+	db 58
 	dw KINGLER
+	db 58
+	dw POLIWRATH ; new mon
 	db -1 ; end
 
 	next_list_item ; SAILOR (7), SS Aqua
 	db "GARRETT@", TRAINERTYPE_NORMAL
-	db 51
+	db 55
 	dw KINGLER
-	db 51
+	db 56
 	dw LANTURN
-	db 51
+	db 58
 	dw POLIWRATH
+	db 58
+	dw GYARADOS ; new mon
 	db -1 ; end
 
 	next_list_item ; SAILOR (8), SS Aqua
 	db "KENNETH@", TRAINERTYPE_NORMAL
-	db 54
-	dw ARCANINE
-	db 54
+	db 55
 	dw RATICATE
-	db 54
+	db 57
+	dw ARCANINE
+	db 58
 	dw POLIWRATH
-	db 54
+	db 58
 	dw MACHAMP
 	db -1 ; end
 
 	next_list_item ; SAILOR (9), SS Aqua
 	db "STANLY@", TRAINERTYPE_NORMAL
-	db 48
+	db 55
 	dw QUAGSIRE
-	db 50
-	dw MACHOKE
-	db 48
+	db 57
 	dw GOLDUCK
+	db 58
+	dw MACHOKE
+	db 58
+	dw KINGLER ; new mon
 	db -1 ; end
 
 	next_list_item ; SAILOR (10), Route 38
@@ -5075,12 +5095,14 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (9), SS Aqua
 	db "SHAWN@", TRAINERTYPE_NORMAL
-	db 48
-	dw SLOWKING
-	db 50
-	dw MUK
-	db 48
+	db 55
 	dw MAGNETON
+	db 57
+	dw MUK
+	db 58
+	dw SLOWKING
+	db 58
+	dw PORYGON2 ; new mon
 	db -1 ; end
 
 	next_list_item ; SUPER_NERD (10), Goldenrod Tunnel
@@ -5160,12 +5182,14 @@ SuperNerdGroup:
 GuitaristGroup:
 	next_list_item ; GUITARIST (1), SS Aqua
 	db "CLYDE@", TRAINERTYPE_NORMAL
-	db 51
-	dw ELECTABUZZ
-	db 51
-	dw AMPHAROS
-	db 51
+	db 55
 	dw FORRETRESS
+	db 57
+	dw ELECTABUZZ
+	db 58
+	dw AMPHAROS
+	db 58
+	dw JOLTEON ; new mon
 	db -1 ; end
 
 	next_list_item ; GUITARIST (2), Vermilion Gym
@@ -5342,12 +5366,14 @@ HikerGroup:
 
 	next_list_item ; HIKER (14), SS Aqua
 	db "NOLAND@", TRAINERTYPE_NORMAL
-	db 48
+	db 55
 	dw SANDSLASH
-	db 50
-	dw GOLEM
-	db 50
+	db 57
 	dw DUGTRIO
+	db 58
+	dw GOLEM
+	db 58
+	dw STEELIX
 	db -1 ; end
 
 	next_list_item ; HIKER (15), Route 9
@@ -5565,13 +5591,13 @@ BurglarGroup:
 
 	next_list_item ; BURGLAR (3), SS Aqua
 	db "COREY@", TRAINERTYPE_NORMAL
-	db 50
+	db 55
 	dw MAGCARGO
-	db 54
-	dw MAGMAR
-	db 50
+	db 57
 	dw GLIGAR
-	db 56
+	db 58
+	dw MAGMAR
+	db 58
 	dw WEEZING
 	db -1 ; end
 
@@ -5644,12 +5670,14 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (8), SS Aqua
 	db "LYLE@", TRAINERTYPE_NORMAL
-	db 54
-	dw WEEZING
 	db 55
-	dw FLAREON
-	db 54
 	dw NINETALES
+	db 57
+	dw WEEZING
+	db 58
+	dw FLAREON
+	db 58
+	dw RAPIDASH ; new mon
 	db -1 ; end
 
 	end_list_items
@@ -5670,11 +5698,13 @@ JugglerGroup:
 	next_list_item ; JUGGLER (2), SS Aqua
 	db "FRITZ@", TRAINERTYPE_NORMAL
 	db 55
-	dw MR__MIME
-	db 55
-	dw MAGMAR
-	db 55
 	dw MACHOKE
+	db 57
+	dw MAGMAR
+	db 58
+	dw MR__MIME
+	db 58
+	dw ELECTRODE ; new mon
 	db -1 ; end
 
 	next_list_item ; JUGGLER (3), Vermilion Gym
@@ -5851,12 +5881,14 @@ BlackbeltGroup:
 
 	next_list_item ; BLACKBELT_T (9), SS Aqua
 	db "WAI@", TRAINERTYPE_NORMAL
-	db 53
-	dw URSARING
-	db 54
-	dw PRIMEAPE
-	db 51
+	db 55
 	dw MACHOKE
+	db 57
+	dw HITMONLEE ; new mon
+	db 58
+	dw PRIMEAPE
+	db 58
+	dw URSARING
 	db -1 ; end
 
 	end_list_items
@@ -6037,12 +6069,14 @@ PsychicGroup:
 
 	next_list_item ; PSYCHIC_T (12), SS Aqua
 	db "RODNEY@", TRAINERTYPE_NORMAL
-	db 45
-	dw ALAKAZAM
-	db 50
+	db 55
 	dw HYPNO
-	db 50
+	db 57
 	dw ESPEON
+	db 58
+	dw XATU ; new mon
+	db 58
+	dw ALAKAZAM
 	db -1 ; end
 
 	end_list_items
@@ -6113,12 +6147,14 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (8), SS Aqua
 	db "DEBRA@", TRAINERTYPE_NORMAL
-	db 50
-	dw SEAKING
-	db 50
-	dw AZUMARILL
-	db 50
+	db 55
 	dw FURRET
+	db 57
+	dw AZUMARILL
+	db 58
+	dw SEAKING
+	db 58
+	dw WIGGLYTUFF ; new mon
 	db -1 ; end
 
 	next_list_item ; PICNICKER (9), Route 34
@@ -6986,27 +7022,33 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (8), SS Aqua
 	db "JEREMY@", TRAINERTYPE_ITEM
-	db 54
+	db 55
 	dw PERSIAN
 	dw GOLD_BERRY
-	db 54
+	db 57
+	dw RAICHU
+	dw GOLD_BERRY
+	db 58
 	dw GOLDUCK
 	dw GOLD_BERRY
-	db 54
-	dw RAICHU
+	db 58
+	dw SLOWKING ; new mon
 	dw GOLD_BERRY
 	db -1 ; end
 
 	next_list_item ; POKEFANM (9), SS Aqua
 	db "COLIN@", TRAINERTYPE_ITEM
-	db 49
-	dw DELIBIRD
-	dw GOLD_BERRY
-	db 49
+	db 55
 	dw SNEASEL
 	dw GOLD_BERRY
-	db 49
+	db 57
+	dw DELIBIRD
+	dw GOLD_BERRY
+	db 58
 	dw PILOSWINE
+	dw GOLD_BERRY
+	db 58
+	dw JYNX ; new mon
 	dw GOLD_BERRY
 	db -1 ; end
 
@@ -7251,25 +7293,25 @@ TwinsGroup:
 
 	next_list_item ; TWINS (7), SS Aqua
 	db "MEG & PEG@", TRAINERTYPE_NORMAL
-	db 48
+	db 55
 	dw URSARING
-	db 48
+	db 57
 	dw DONPHAN
-	db 48
+	db 58
 	dw TAUROS
-	db 48
+	db 58
 	dw MILTANK
 	db -1 ; end
 
 	next_list_item ; TWINS (8), SS Aqua
 	db "MEG & PEG@", TRAINERTYPE_NORMAL
-	db 48
+	db 55
 	dw DONPHAN
-	db 48
+	db 57
 	dw URSARING
-	db 48
+	db 58
 	dw MILTANK
-	db 48
+	db 58
 	dw TAUROS
 	db -1 ; end
 
@@ -7350,20 +7392,20 @@ PokefanFGroup:
 
 	next_list_item ; POKEFANF (5), SS Aqua
 	db "GEORGIA@", TRAINERTYPE_ITEM
-	db 48
-	dw PERSIAN
-	dw GOLD_BERRY
-	db 48
+	db 55
 	dw VENOMOTH
 	dw GOLD_BERRY
-	db 48
+	db 56
+	dw PERSIAN
+	dw GOLD_BERRY
+	db 57
+	dw MISDREAVUS
+	dw GOLD_BERRY
+	db 58
 	dw GRANBULL
 	dw GOLD_BERRY
-	db 54
+	db 58
 	dw FURRET
-	dw GOLD_BERRY
-	db 48
-	dw MISDREAVUS
 	dw GOLD_BERRY
 	db -1 ; end
 
