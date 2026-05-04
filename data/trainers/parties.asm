@@ -1997,15 +1997,25 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (7), Route 25
 	db "DUDLEY@", TRAINERTYPE_NORMAL
-	db 52
+	db 67
+	dw JUMPLUFF
+	db 68
+	dw VICTREEBEL
+	db 68
+	dw MEGANIUM
+	db 69
 	dw BELLOSSOM
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (8), Route 25
 	db "JOE@", TRAINERTYPE_NORMAL
-	db 50
+	db 67
 	dw TANGELA
-	db 50
+	db 68
+	dw SUNFLORA
+	db 68
+	dw STARMIE
+	db 69
 	dw VAPOREON
 	db -1 ; end
 
@@ -2441,22 +2451,26 @@ LassGroup:
 
 	next_list_item ; LASS (7), Route 25
 	db "LAURA@", TRAINERTYPE_NORMAL
-	db 44
-	dw FERALIGATR
-	db 48
-	dw PIDGEOT
-	db 48
+	db 67
 	dw BELLOSSOM
+	db 68
+	dw PIDGEOT
+	db 68
+	dw AMPHAROS
+	db 69
+	dw FERALIGATR
 	db -1 ; end
 
 	next_list_item ; LASS (8), Route 25
 	db "SHANNON@", TRAINERTYPE_NORMAL
-	db 45
-	dw NIDOQUEEN
-	db 45
-	dw DEWGONG
-	db 49
+	db 67
 	dw PARASECT
+	db 68
+	dw DEWGONG
+	db 68
+	dw WIGGLYTUFF
+	db 69
+	dw NIDOQUEEN
 	db -1 ; end
 
 	next_list_item ; LASS (9), Celadon Gym
@@ -2486,9 +2500,13 @@ LassGroup:
 
 	next_list_item ; LASS (11), Route 25
 	db "ELLEN@", TRAINERTYPE_NORMAL
-	db 46
+	db 67
 	dw WIGGLYTUFF
-	db 51
+	db 68
+	dw CLEFABLE
+	db 68
+	dw BLISSEY
+	db 69
 	dw GRANBULL
 	db -1 ; end
 
@@ -2752,12 +2770,14 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (17), Route 25
 	db "KEVIN@", TRAINERTYPE_NORMAL
-	db 56
-	dw RHYDON
-	db 52
+	db 67
+	dw VENUSAUR
+	db 68
 	dw CHARIZARD
-	db 52
+	db 68
 	dw BLASTOISE
+	db 69
+	dw RHYDON
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERM (18), Victory Road
@@ -3570,10 +3590,14 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (3), Route 5, Route 6, Route 7, Route 8
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 41
+	db 67
 	dw MUK
-	db 41
+	db 68
 	dw RATICATE
+	db 68
+	dw KANGASKHAN
+	db 69
+	dw HOUNDOOM
 	db -1 ; end
 
 	next_list_item ; GRUNTM (4), Cerulean Base 2
@@ -3650,11 +3674,13 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (11), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 58
+	db 72
 	dw MUK
-	db 58
-	dw HAUNTER
-	db 60
+	db 73
+	dw MAGNETON
+	db 73
+	dw GENGAR
+	db 74
 	dw SLOWBRO
 	db -1 ; end
 
@@ -3672,26 +3698,38 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (13), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 62
+	db 72
 	dw MAROWAK
-	db 62
-	dw HAUNTER
+	db 73
+	dw MISDREAVUS
+	db 73
+	dw RHYDON
+	db 74
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (14), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 61
+	db 72
 	dw RATICATE
-	db 61
+	db 73
 	dw GOLBAT
+	db 73
+	dw MUK
+	db 74
+	dw KANGASKHAN
 	db -1 ; end
 
 	next_list_item ; GRUNTM (15), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 60
+	db 72
 	dw MUK
-	db 60
+	db 73
+	dw MAGNETON
+	db 73
 	dw SLOWBRO
+	db 74
+	dw HOUNDOOM
 	db -1 ; end
 
 	next_list_item ; GRUNTM (16), Team Rocket's Hideout, B3F
@@ -3782,36 +3820,50 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (24), Saffron Underground Warehouse
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 60
+	db 72
 	dw MUK
-	db 60
+	db 73
 	dw MAROWAK
+	db 73
+	dw GOLEM
+	db 74
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (25), Saffron Underground Switch Room
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 59
-	dw HAUNTER
-	db 59
+	db 72
 	dw MAROWAK
-	db 59
+	db 73
 	dw SLOWBRO
+	db 73
+	dw GENGAR
+	db 74
+	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; GRUNTM (26), Lav Radio Tower 5F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
+	db 68
 	dw WEEZING
-	db 52
+	db 68
+	dw MUK
+	db 69
 	dw GOLBAT
+	db 69
+	dw HOUNDOOM
 	db -1 ; end
 
 	next_list_item ; GRUNTM (27), Lav Radio Tower 5F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
+	db 68
 	dw ARBOK
-	db 52
-	dw HAUNTER
+	db 68
+	dw MISDREAVUS
+	db 69
+	dw HOUNDOOM
+	db 69
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (28), Team Rocket's Hideout, B3F
@@ -3836,82 +3888,102 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (30), Lav Radio Tower 5F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 53
-	dw GOLBAT
-	db 53
+	db 68
 	dw ARBOK
-	db 53
+	db 68
 	dw WEEZING
+	db 69
+	dw GOLBAT
+	db 69
+	dw PRIMEAPE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (31), Route 24
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
+	db 67
 	dw RATICATE
-	db 52
+	db 67
 	dw HYPNO
-	db 53
+	db 68
 	dw SLOWBRO
-	db 53
+	db 68
 	dw VILEPLUME
-	db 54
+	db 69
 	dw MAGNETON
-	db 54
+	db 69
 	dw GOLBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (32), Lav Radio Tower 3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 48
+	db 68
 	dw ARBOK
-	db 49
+	db 68
+	dw MUK
+	db 69
 	dw GOLBAT
+	db 69
+	dw WEEZING
 	db -1 ; end
 
 	next_list_item ; GRUNTM (33), Lav Radio Tower 3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 48
+	db 68
 	dw RATICATE
-	db 49
+	db 68
 	dw HYPNO
+	db 69
+	dw KANGASKHAN
+	db 69
+	dw MACHAMP
 	db -1 ; end
 
 	next_list_item ; GRUNTM (34), Lav Radio Tower 3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 50
-	dw GOLBAT
-	db 50
+	db 68
 	dw WEEZING
+	db 68
+	dw MAGNETON
+	db 69
+	dw ELECTRODE
+	db 69
+	dw FORRETRESS
 	db -1 ; end
 
 	next_list_item ; GRUNTM (35), Lav Radio Tower 4F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 50
+	db 68
 	dw RATICATE
-	db 51
+	db 68
 	dw GOLBAT
-	db 51
+	db 69
 	dw MUK
+	db 69
+	dw KANGASKHAN
 	db -1 ; end
 
 	next_list_item ; GRUNTM (36), Lav Radio Tower 4F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
-	dw WEEZING
-	db 52
-	dw GOLBAT
-	db 53
+	db 68
 	dw ARBOK
+	db 68
+	dw WEEZING
+	db 69
+	dw GOLBAT
+	db 69
+	dw RHYDON
 	db -1 ; end
 
 	next_list_item ; GRUNTM (37), Lav Radio Tower 4F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
+	db 68
 	dw ELECTRODE
-	db 53
-	dw HAUNTER
-	db 54
+	db 68
+	dw MAGNETON
+	db 69
 	dw MAROWAK
+	db 69
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (38), Mt. Moon B2
@@ -5167,7 +5239,13 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (8), Route 25
 	db "PAT@", TRAINERTYPE_NORMAL
-	db 54
+	db 67
+	dw MAGNETON
+	db 68
+	dw ELECTRODE
+	db 68
+	dw ALAKAZAM
+	db 69
 	dw PORYGON2
 	db -1 ; end
 
@@ -5434,11 +5512,13 @@ HikerGroup:
 
 	next_list_item ; HIKER (13), Route 9
 	db "TIM@", TRAINERTYPE_NORMAL
-	db 48
-	dw MACHAMP
-	db 48
+	db 67
 	dw DUGTRIO
-	db 48
+	db 68
+	dw MACHAMP
+	db 68
+	dw STEELIX
+	db 69
 	dw GOLEM
 	db -1 ; end
 
@@ -5456,10 +5536,14 @@ HikerGroup:
 
 	next_list_item ; HIKER (15), Route 9
 	db "SIDNEY@", TRAINERTYPE_NORMAL
-	db 51
+	db 67
+	dw SANDSLASH
+	db 68
 	dw DUGTRIO
-	db 49
-	dw ONIX
+	db 68
+	dw RHYDON
+	db 69
+	dw STEELIX
 	db -1 ; end
 
 	next_list_item ; HIKER (16), Route 13
@@ -5476,7 +5560,13 @@ HikerGroup:
 
 	next_list_item ; HIKER (17), Route 10
 	db "JIM@", TRAINERTYPE_NORMAL
-	db 52
+	db 67
+	dw GOLEM
+	db 68
+	dw RHYDON
+	db 68
+	dw STEELIX
+	db 69
 	dw MACHAMP
 	db -1 ; end
 
@@ -6010,45 +6100,54 @@ ExecutiveMGroup:
 	dw HOUNDOOM
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (2), Lavender Radio Tower 5F
+	next_list_item ; EXECUTIVEM (2), Lav Radio Tower 5F
 	db "PROTON@", TRAINERTYPE_MOVES
-	db 53
+	db 70
+	dw SLOWKING
+	dw SURF, PSYCHIC_M, AMNESIA, SAFEGUARD
+	db 70
 	dw GOLBAT
 	dw LEECH_LIFE, BITE, CONFUSE_RAY, WING_ATTACK
-	db 53
+	db 70
 	dw KANGASKHAN
 	dw BODY_SLAM, SAFEGUARD, STRENGTH, FIRE_PUNCH
-	db 53
+	db 70
 	dw CLEFABLE
 	dw MOONBLAST, DREAM_EATER, ICE_BEAM, SING
-	db 53
+	db 70
 	dw ELECTRODE
 	dw THUNDER, ROLLOUT, EXPLOSION, SONICBOOM
-	db 53
+	db 70
 	dw RHYDON
 	dw EARTHQUAKE, ROCK_SLIDE, CRUNCH, HORN_DRILL
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (3), Saffron Underground Warehouse
-	db "PETREL@", TRAINERTYPE_MOVES
-	db 61
+	db "PETREL@", TRAINERTYPE_ITEM_MOVES
+	db 75
 	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, TOXIC
-	db 61
-	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THIEF
-	db 61
-	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, FLAMETHROWER
-	db 61
-	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, THUNDERBOLT
-	db 61
-	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, ROLLOUT
-	db 61
-	dw WEEZING
-	dw PSYWAVE, EXPLOSION, SLUDGE_BOMB, HYPER_BEAM
+	dw FOCUS_BAND
+	dw TOXIC, SLUDGE_BOMB, EXPLOSION, FIRE_BLAST
+	db 75
+	dw NIDOKING
+	dw SCOPE_LENS
+	dw EARTHQUAKE, SLUDGE_BOMB, THUNDER, ICE_BEAM
+	db 75
+	dw GENGAR
+	dw SPELL_TAG
+	dw SHADOW_BALL, PSYCHIC_M, THUNDERBOLT, DESTINY_BOND
+	db 75
+	dw HOUNDOOM
+	dw BLACK_GLASSES
+	dw CRUNCH, FLAMETHROWER, SOLARBEAM, SUNNY_DAY
+	db 75
+	dw ALAKAZAM
+	dw TWISTEDSPOON
+	dw PSYCHIC_M, RECOVER, FIRE_PUNCH, ICE_PUNCH
+	db 75
+	dw ARBOK
+	dw KINGS_ROCK
+	dw EARTHQUAKE, GLARE, HYPER_BEAM, SLUDGE_BOMB
 	db -1 ; end
 
 	next_list_item ; EXECUTIVEM (1), Cerulean Cave
@@ -6329,18 +6428,26 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (13), Route 9
 	db "HEIDI@", TRAINERTYPE_NORMAL
-	db 49
+	db 67
 	dw JUMPLUFF
-	db 49
+	db 68
+	dw BELLOSSOM
+	db 68
+	dw CLEFABLE
+	db 69
 	dw NIDOQUEEN
 	db -1 ; end
 
 	next_list_item ; PICNICKER (14), Route 9
 	db "EDNA@", TRAINERTYPE_NORMAL
-	db 46
-	dw NIDORINA
-	db 51
+	db 67
 	dw RAICHU
+	db 68
+	dw NINETALES
+	db 68
+	dw PERSIAN
+	db 69
+	dw NIDOQUEEN
 	db -1 ; end
 
 	next_list_item ; PICNICKER (24), Route 34
@@ -6526,26 +6633,38 @@ CamperGroup:
 
 	next_list_item ; CAMPER (6), Route 25
 	db "LLOYD@", TRAINERTYPE_NORMAL
-	db 51
+	db 67
+	dw DONPHAN
+	db 68
+	dw TAUROS
+	db 68
+	dw URSARING
+	db 69
 	dw NIDOKING
 	db -1 ; end
 
 	next_list_item ; CAMPER (7), Route 9
 	db "DEAN@", TRAINERTYPE_NORMAL
-	db 50
+	db 67
 	dw GOLDUCK
-	db 48
+	db 68
 	dw SANDSLASH
+	db 68
+	dw DONPHAN
+	db 69
+	dw NIDOKING
 	db -1 ; end
 
 	next_list_item ; CAMPER (8), Route 9
 	db "SID@", TRAINERTYPE_NORMAL
-	db 49
-	dw DUGTRIO
-	db 45
-	dw PRIMEAPE
-	db 45
+	db 67
 	dw POLIWRATH
+	db 68
+	dw PRIMEAPE
+	db 68
+	dw DUGTRIO
+	db 69
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; CAMPER (9), Ilex Forest
@@ -7108,7 +7227,16 @@ PokefanMGroup:
 
 	next_list_item ; POKEFANM (3), Route 10
 	db "ROBERT@", TRAINERTYPE_ITEM
-	db 50
+	db 67
+	dw AZUMARILL
+	dw BERRY
+	db 68
+	dw POLITOED
+	dw BERRY
+	db 68
+	dw VAPOREON
+	dw BERRY
+	db 69
 	dw QUAGSIRE
 	dw BERRY
 	db -1 ; end
@@ -7659,12 +7787,14 @@ GruntFGroup:
 
 	next_list_item ; GRUNTF (3), Saffron Underground
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 60
-	dw GLOOM
-	db 60
-	dw HAUNTER
-	db 60
-	dw WEEPINBELL
+	db 72
+	dw VILEPLUME
+	db 73
+	dw VICTREEBEL
+	db 73
+	dw MISDREAVUS
+	db 74
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTF (4), Cerulean Base 1
@@ -7756,28 +7886,38 @@ next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
 
 	next_list_item ; GRUNTF (11), Lav Radio Tower 3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 50
+	db 68
 	dw ARBOK
-	db 51
-	dw GLOOM
+	db 68
+	dw MISDREAVUS
+	db 69
+	dw VILEPLUME
+	db 69
+	dw JYNX
 	db -1 ; end
 
 	next_list_item ; GRUNTF (12), Lav Radio Tower 4F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 51
+	db 68
 	dw GOLBAT
-	db 52
+	db 68
+	dw MURKROW
+	db 69
 	dw VILEPLUME
+	db 69
+	dw MISDREAVUS
 	db -1 ; end
 
 	next_list_item ; GRUNTF (13), Lav Radio Tower 4F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 52
+	db 68
 	dw ARBOK
-	db 52
-	dw GOLBAT
-	db 53
+	db 68
 	dw WEEZING
+	db 69
+	dw GOLBAT
+	db 69
+	dw GRANBULL
 	db -1 ; end
 
 	next_list_item ; GRUNTF (14), Mt. Moon B2
