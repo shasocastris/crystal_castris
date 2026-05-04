@@ -677,29 +677,29 @@ JohtoGrassWildMons:
 	def_grass_wildmons MOUNT_MORTAR_B1F
 	db 30 percent, 30 percent, 30 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 32, GOLBAT
-	dbw 36, GOLBAT
-	dbw 34, RHYHORN
-	dbw 32, MACHOKE
-	dbw 32, GRAVELER
-	dbw 36, CLEFAIRY
-	dbw 36, CLEFABLE
+	dbw 42, GOLBAT
+	dbw 46, GOLBAT
+	dbw 44, RHYHORN
+	dbw 42, MACHOKE
+	dbw 42, GRAVELER
+	dbw 46, CLEFAIRY
+	dbw 46, CLEFABLE
 	; day
-	dbw 32, GOLBAT
-	dbw 36, GOLBAT
-	dbw 34, RHYHORN
-	dbw 32, MACHOKE
-	dbw 32, GRAVELER
-	dbw 36, CLEFAIRY
-	dbw 36, CLEFABLE
+	dbw 42, GOLBAT
+	dbw 46, GOLBAT
+	dbw 44, RHYHORN
+	dbw 42, MACHOKE
+	dbw 42, GRAVELER
+	dbw 46, CLEFAIRY
+	dbw 46, CLEFABLE
 	; nite
-	dbw 32, GOLBAT
-	dbw 36, GOLBAT
-	dbw 34, RHYHORN
-	dbw 32, AZUMARILL
-	dbw 32, GRAVELER
-	dbw 36, CLEFAIRY
-	dbw 36, CLEFABLE
+	dbw 42, GOLBAT
+	dbw 46, GOLBAT
+	dbw 44, RHYHORN
+	dbw 42, AZUMARILL
+	dbw 42, GRAVELER
+	dbw 46, CLEFAIRY
+	dbw 46, CLEFABLE
 	end_grass_wildmons
 
 	def_grass_wildmons ICE_PATH_1F

@@ -67,9 +67,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons MOUNT_MORTAR_B1F
 	db 45 percent ; encounter rate
-	dbw 30, SEAKING
-	dbw 32, AZUMARILL
-	dbw 32, SEADRA
+	dbw 40, SEAKING
+	dbw 42, AZUMARILL
+	dbw 42, SEADRA
 	end_water_wildmons
 
 	def_water_wildmons WHIRL_ISLAND_SW
