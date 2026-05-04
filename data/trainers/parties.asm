@@ -487,27 +487,27 @@ BrockGroup:
 MistyGroup:
 	next_list_item ; MISTY (1), Cerulean Gym
 	db "MISTY@", TRAINERTYPE_ITEM_MOVES
-	db 54
+	db 73
 	dw GOLDUCK
 	dw FOCUS_BAND
 	dw SURF, DISABLE, CROSS_CHOP, PSYCHIC_M
-	db 51
+	db 73
 	dw QUAGSIRE
 	dw QUICK_CLAW
 	dw SURF, AMNESIA, EARTHQUAKE, RAIN_DANCE
-	db 54
+	db 73
 	dw LAPRAS
 	dw LEFTOVERS
 	dw SURF, PERISH_SONG, BLIZZARD, RAIN_DANCE
-	db 53
+	db 73
 	dw POLITOED
 	dw KINGS_ROCK
 	dw WATERFALL, DYNAMICPUNCH, ICE_BEAM, RAIN_DANCE
-	db 56
+	db 73
 	dw FERALIGATR
 	dw SCOPE_LENS
 	dw WATERFALL, CRUNCH, BLIZZARD, EARTHQUAKE
-	db 57
+	db 73
 	dw STARMIE
 	dw BRIGHTPOWDER
 	dw SURF, CONFUSE_RAY, PSYCHIC_M, ICE_BEAM
@@ -4819,12 +4819,14 @@ SwimmerMGroup:
 
 	next_list_item ; SWIMMERM (21), Cerulean Gym
 	db "PARKER@", TRAINERTYPE_NORMAL
-	db 39
+	db 71
 	dw AZUMARILL
-	db 39
+	db 71
 	dw QUAGSIRE
-	db 42
+	db 72
 	dw SEADRA
+	db 72
+	dw LANTURN
 	db -1 ; end
 
 	end_list_items
@@ -4998,16 +5000,26 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (18), Cerulean Gym
 	db "DIANA@", TRAINERTYPE_NORMAL
-	db 45
+	db 71
 	dw GOLDUCK
+	db 71
+	dw VAPOREON
+	db 72
+	dw TENTACRUEL
+	db 72
+	dw AZUMARILL
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (19), Cerulean Gym
 	db "BRIANA@", TRAINERTYPE_NORMAL
-	db 42
+	db 71
 	dw GOLDUCK
-	db 42
+	db 71
 	dw SEAKING
+	db 72
+	dw KINGDRA
+	db 72
+	dw BLASTOISE
 	db -1 ; end
 
 	end_list_items
