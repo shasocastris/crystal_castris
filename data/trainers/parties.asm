@@ -322,7 +322,7 @@ PryceGroup:
 	dw CLOYSTER
 	dw FOCUS_BAND
 	dw SPIKE_CANNON, DOUBLE_TEAM, AURORA_BEAM, SPIKES
-	db 34
+	db 36
 	dw DELIBIRD
 	dw EVN_UP_BERRY
 	dw PRESENT, ICY_WIND, FUTURE_SIGHT, THIEF
@@ -1650,6 +1650,8 @@ ScientistGroup:
 	dw MAGNETON
 	db 32
 	dw WEEZING
+	db 32
+	dw SNEASEL
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (2), Team Rocket's Hideout, B3F
@@ -1658,6 +1660,8 @@ ScientistGroup:
 	dw DITTO
 	db 33
 	dw MAGNETON
+	db 33
+	dw PORYGON
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (3), Team Rocket's Hideout, B1F
@@ -1917,9 +1921,11 @@ YoungsterGroup:
 SchoolboyGroup:
 	next_list_item ; SCHOOLBOY (1), National Park
 	db "JACK@", TRAINERTYPE_NORMAL
-	db 19
-	dw ODDISH
 	db 22
+	dw GLOOM
+	db 24
+	dw GROWLITHE
+	db 24
 	dw VOLTORB
 	db -1 ; end
 
@@ -1938,9 +1944,11 @@ SchoolboyGroup:
 	next_list_item ; SCHOOLBOY (3), Route 36
 	db "ALAN@", TRAINERTYPE_NORMAL
 	db 22
+	dw NATU
+	db 23
 	dw TANGELA
 	db 22
-	dw YANMA
+	dw FLAAFFY
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (4), Route 15
@@ -2031,6 +2039,8 @@ SchoolboyGroup:
 	db "JACK@", TRAINERTYPE_NORMAL
 	db 25
 	dw GLOOM
+	db 26
+	dw GROWLITHE
 	db 28
 	dw VOLTORB
 	db -1 ; end
@@ -2039,12 +2049,16 @@ SchoolboyGroup:
 	db "JACK@", TRAINERTYPE_NORMAL
 	db 34
 	dw GLOOM
+	db 36
+	dw ARCANINE
 	db 38
 	dw ELECTRODE
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (15), Route 36
 	db "ALAN@", TRAINERTYPE_NORMAL
+	db 28
+	dw XATU
 	db 28
 	dw TANGELA
 	db 28
@@ -2088,7 +2102,7 @@ SchoolboyGroup:
 	db 36
 	dw GLOOM
 	db 40
-	dw GROWLITHE
+	dw ARCANINE
 	db 40
 	dw ELECTRODE
 	db -1 ; end
@@ -2099,7 +2113,7 @@ SchoolboyGroup:
 	dw ELECTRODE
 	dw SCREECH, SONICBOOM, ROLLOUT, LIGHT_SCREEN
 	db 42
-	dw GROWLITHE
+	dw ARCANINE
 	dw SUNNY_DAY, LEER, TAKE_DOWN, FLAME_WHEEL
 	db 45
 	dw VILEPLUME
@@ -2158,6 +2172,8 @@ BirdKeeperGroup:
 	dw NOCTOWL
 	db 22
 	dw PIDGEOTTO
+	db 22
+	dw FEAROW
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (4), Olivine Lighthouse
@@ -2351,7 +2367,8 @@ LassGroup:
 	dw GLOOM
 	db 24
 	dw CUBONE
-	db -1 ; end
+	db 23
+	dw SKIPLOOM
 
 	next_list_item ; LASS (5), Olivine Lighthouse
 	db "CONNIE@", TRAINERTYPE_NORMAL
@@ -3217,38 +3234,44 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (4), Route 42
 	db "SHANE@", TRAINERTYPE_NORMAL
-	db 27
-	dw NIDORINA
-	db 28
-	dw NIDORINO
+	db 30
+	dw MAGMAR
+	db 30
+	dw SHUCKLE
+	db 31
+	dw MACHOKE
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (5), Route 43
 	db "BEN@", TRAINERTYPE_NORMAL
-	db 28
+	db 31
+	dw PONYTA
+	db 32
 	dw SLOWBRO
-	db 27
+	db 31
 	dw LEDIAN
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (6), Route 43
 	db "BRENT@", TRAINERTYPE_NORMAL
-	db 27
+	db 31
 	dw LICKITUNG
-	db 28
+	db 32
 	dw KANGASKHAN
-	db 27
+	db 31
 	dw PORYGON
-	db 28
+	db 32
 	dw CHANSEY
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (7), Route 43
 	db "RON@", TRAINERTYPE_NORMAL
-	db 29
+	db 31
 	dw NIDOKING
-	db 30
+	db 32
 	dw AMPHAROS
+	db 32
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (8), SS Aqua
@@ -3341,11 +3364,11 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (15), Mt Mortar, post Ecruteak
 	db "MILLER@", TRAINERTYPE_NORMAL
-	db 27
+	db 30
 	dw NIDOKING
 	db 30
 	dw UMBREON
-	db 27
+	db 30
 	dw NIDOQUEEN
 	db -1 ; end
 
@@ -3554,21 +3577,27 @@ GruntMGroup:
 	dw RATICATE
 	db 32
 	dw TAUROS
+	db 32
+	dw PERSIAN
 	db -1 ; end
 
 	next_list_item ; GRUNTM (17), Team Rocket's Hideout, B2F
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 34
 	dw GOLBAT
+	db 32
+	dw CHARMELEON
+	db 32
+	dw FORRETRESS
 	db -1 ; end
 
 	next_list_item ; GRUNTM (18), Team Rocket's Hideout, B2F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 31
-	dw RATICATE
-	db 31
+	db 33
+	dw GRAVELER
+	db 33
 	dw GOLBAT
-	db 31
+	db 33
 	dw RATICATE
 	db -1 ; end
 
@@ -3578,23 +3607,25 @@ GruntMGroup:
 	dw VENOMOTH
 	db 32
 	dw GOLBAT
+	db 32
+	dw POLIWHIRL
 	db -1 ; end
 
 	next_list_item ; GRUNTM (20), Team Rocket's Hideout, B1F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30
+	db 32
 	dw HYPNO
-	db 31
+	db 33
 	dw GOLBAT
 	db -1 ; end
 
 	next_list_item ; GRUNTM (21), Team Rocket's Hideout, B1F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 30
+	db 32
 	dw GOLBAT
-	db 31
-	dw VENOMOTH
-	db 30
+	db 33
+	dw KOFFING
+	db 32
 	dw RATICATE
 	db -1 ; end
 
@@ -3662,10 +3693,12 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (28), Team Rocket's Hideout, B3F
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 31
+	db 32
 	dw RATICATE
-	db 31
+	db 32
 	dw GRIMER
+	db 32
+	dw SLOWPOKE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (29), Slowpoke Well
@@ -3830,6 +3863,8 @@ SkierGroup:
 	dw JYNX
 	db 33
 	dw DEWGONG
+	db 33
+	dw SLOWKING
 	db -1 ; end
 
 	next_list_item ; SKIER (2), Mahogany Gym
@@ -3838,6 +3873,8 @@ SkierGroup:
 	dw LAPRAS
 	db 34
 	dw DELIBIRD
+	db 34
+	dw MANTINE
 	db -1 ; end
 
 	next_list_item ; SKIER (3), Ice Path 1F
@@ -3966,8 +4003,12 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (8), Route 35
 	db "ARNIE@", TRAINERTYPE_NORMAL
-	db 21
+	db 23
 	dw VENONAT
+	db 22
+	dw LEDIAN
+	db 22
+	dw ARIADOS
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (9), SS Aqua
@@ -4017,12 +4058,22 @@ BugCatcherGroup:
 	next_list_item ; BUG_CATCHER (13), Route 35
 	db "ARNIE@", TRAINERTYPE_NORMAL
 	db 26
+	dw LEDIAN
+	db 26
+	dw ARIADOS
+	db 28
 	dw VENONAT
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (17), Route 35
 	db "ARNIE@", TRAINERTYPE_MOVES
-	db 44
+	db 38
+	dw LEDIAN
+	dw COMET_PUNCH, SWIFT, LIGHT_SCREEN, REFLECT
+	db 38
+	dw ARIADOS
+	dw TWINEEDLE, NIGHT_SHADE, GIGA_DRAIN, STRING_SHOT
+	db 40
 	dw VENOMOTH
 	dw GUST, SUPERSONIC, PSYBEAM, LEECH_LIFE
 	db -1 ; end
@@ -4045,6 +4096,12 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (18), Route 35
 	db "ARNIE@", TRAINERTYPE_MOVES
+	db 46
+	dw LEDIAN
+	dw COMET_PUNCH, SWIFT, LIGHT_SCREEN, REFLECT
+	db 46
+	dw ARIADOS
+	dw TWINEEDLE, NIGHT_SHADE, GIGA_DRAIN, DIG
 	db 48
 	dw VENOMOTH
 	dw GUST, SUPERSONIC, PSYCHIC_M, TOXIC
@@ -4124,18 +4181,20 @@ FisherGroup:
 
 	next_list_item ; FISHER (6), Route 43
 	db "MARVIN@", TRAINERTYPE_NORMAL
-	db 27
+	db 31
 	dw OCTILLERY
-	db 28
+	db 32
 	dw GYARADOS
-	db 27
+	db 31
 	dw OCTILLERY
-	db 29
+	db 33
 	dw GYARADOS
 	db -1 ; end
 
 	next_list_item ; FISHER (7), Route 42
 	db "TULLY@", TRAINERTYPE_NORMAL
+	db 32
+	dw SEAKING
 	db 32
 	dw SEAKING
 	db 32
@@ -4246,6 +4305,8 @@ FisherGroup:
 
 	next_list_item ; FISHER (18), Route 42
 	db "TULLY@", TRAINERTYPE_NORMAL
+	db 40
+	dw SEAKING
 	db 40
 	dw SEAKING
 	db 40
@@ -5116,11 +5177,11 @@ HikerGroup:
 
 	next_list_item ; HIKER (6), Route 42
 	db "BENJAMIN@", TRAINERTYPE_NORMAL
-	db 28
+	db 30
 	dw ONIX
-	db 28
+	db 30
 	dw GOLEM
-	db 28
+	db 30
 	dw DUGTRIO
 	db -1 ; end
 
@@ -5468,10 +5529,12 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (6), Route 35
 	db "WALT@", TRAINERTYPE_NORMAL
-	db 20
-	dw KOFFING
 	db 22
+	dw KOFFING
+	db 24
 	dw MAGMAR
+	db 23
+	dw SLUGMA
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (7), Union Cave
@@ -5706,11 +5769,11 @@ BlackbeltGroup:
 ExecutiveMGroup:
 	next_list_item ; EXECUTIVEM (4), Team Rocket's Hideout
 	db "PETREL@", TRAINERTYPE_NORMAL
-	db 30
+	db 33
 	dw GOLBAT
-	db 30
+	db 33
 	dw RATICATE
-	db 31
+	db 34
 	dw HOUNDOOM
 	db -1 ; end
 
@@ -5800,6 +5863,9 @@ PsychicGroup:
 
 	next_list_item ; PSYCHIC_T (5), Route 37
 	db "GREG@", TRAINERTYPE_MOVES
+	db 27
+	dw MISDREAVUS
+	dw PSYBEAM, DESTINY_BOND, CONFUSE_RAY, PSYWAVE
 	db 27
 	dw HYPNO
 	dw HYPNOSIS, HEADBUTT, DREAM_EATER, CONFUSION
@@ -5906,20 +5972,25 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (3), Route 35
 	db "BROOKE@", TRAINERTYPE_MOVES
-	db 20
+	db 22
 	dw PIKACHU
 	dw THUNDERSHOCK, GROWL, QUICK_ATTACK, DOUBLE_TEAM
-	db 20
+	db 22
 	dw HOUNDOUR
 	dw EMBER, BITE, SMOG, RAGE
+	db 23
+	dw FLAAFFY
+	dw GROWL, THUNDERSHOCK, THUNDER_WAVE, TACKLE
 	db -1 ; end
 
 	next_list_item ; PICNICKER (4), Route 35
 	db "KIM@", TRAINERTYPE_NORMAL
-	db 21
+	db 23
 	dw VULPIX
-	db 21
+	db 23
 	dw YANMA
+	db 22
+	dw SKIPLOOM
 	db -1 ; end
 
 	next_list_item ; PICNICKER (5), Fuchsia Gym
@@ -6020,12 +6091,15 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (16), Route 43
 	db "TIFFANY@", TRAINERTYPE_MOVES
-	db 29
+	db 32
 	dw CLEFABLE
 	dw MOONBLAST, SING, AMNESIA, MOONLIGHT
-	db 29
+	db 32
 	dw BUTTERFREE
 	dw LEECH_LIFE, CONFUSION, HEADBUTT, SLEEP_POWDER
+	db 32
+	dw STARMIE
+	dw BUBBLEBEAM, PSYBEAM, RECOVER, RAPID_SPIN
 	db -1 ; end
 
 	next_list_item ; PICNICKER (17), Route 43
@@ -6036,6 +6110,9 @@ PicnickerGroup:
 	db 38
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
+	db 38
+	dw STARMIE
+	dw SURF, PSYBEAM, RECOVER, CONFUSE_RAY
 	db -1 ; end
 
 	next_list_item ; PICNICKER (18), Route 46
@@ -6060,6 +6137,9 @@ PicnickerGroup:
 	db 47
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
+	db 47
+	dw STARMIE
+	dw SURF, PSYCHIC_M, TRI_ATTACK, CONFUSE_RAY
 	db -1 ; end
 
 	next_list_item ; PICNICKER (21), Route 46
@@ -6112,6 +6192,9 @@ PicnickerGroup:
 	db 52
 	dw BUTTERFREE
 	dw LEECH_LIFE, PSYBEAM, HEADBUTT, SLEEP_POWDER
+	db 52
+	dw STARMIE
+	dw SURF, PSYCHIC_M, THUNDERBOLT, CONFUSE_RAY
 	db -1 ; end
 
 	end_list_items
@@ -6139,20 +6222,22 @@ CamperGroup:
 
 	next_list_item ; CAMPER (3), Route 35
 	db "IVAN@", TRAINERTYPE_NORMAL
-	db 20
-	dw SANDSHREW
-	db 20
-	dw ZUBAT
 	db 21
+	dw SANDSHREW
+	db 21
+	dw ZUBAT
+	db 22
 	dw DIGLETT
 	db -1 ; end
 
 	next_list_item ; CAMPER (4), Route 35
 	db "ELLIOT@", TRAINERTYPE_NORMAL
-	db 20
-	dw SANDSHREW
 	db 22
+	dw SANDSHREW
+	db 23
 	dw MARILL
+	db 22
+	dw WOOPER
 	db -1 ; end
 
 	next_list_item ; CAMPER (5), Fuchsia Gym
@@ -6239,11 +6324,11 @@ CamperGroup:
 
 	next_list_item ; CAMPER (14), National Park
 	db "THOMAS@", TRAINERTYPE_NORMAL
-	db 19
+	db 21
 	dw GEODUDE
-	db 22
+	db 23
 	dw GOLBAT
-	db 20
+	db 22
 	dw PSYDUCK
 	db -1 ; end
 
@@ -6297,11 +6382,11 @@ CamperGroup:
 
 	next_list_item ; CAMPER (19), Route 43
 	db "SPENCER@", TRAINERTYPE_NORMAL
-	db 28
+	db 31
 	dw NOCTOWL
-	db 28
+	db 31
 	dw SANDSLASH
-	db 29
+	db 32
 	dw CROBAT
 	db -1 ; end
 
@@ -6452,19 +6537,23 @@ SageGroup:
 	db "JEFFREY@", TRAINERTYPE_NORMAL
 	db 27
 	dw HAUNTER
+	db 27
+	dw HAUNTER
+	db 28
+	dw MAROWAK
 	db -1 ; end
 
 	next_list_item ; SAGE (6), Ecruteak Gym
 	db "PING@", TRAINERTYPE_NORMAL
-	db 22
+	db 24
 	dw GASTLY
-	db 22
+	db 24
 	dw CUBONE
-	db 22
+	db 24
 	dw GASTLY
-	db 22
-	dw HOUNDOUR
-	db 22
+	db 24
+	dw HOUNDOOM
+	db 24
 	dw GASTLY
 	db -1 ; end
 
@@ -6561,19 +6650,21 @@ SageGroup:
 MediumGroup:
 	next_list_item ; MEDIUM (1), Ecruteak Gym
 	db "MARTHA@", TRAINERTYPE_NORMAL
-	db 24
+	db 26
 	dw KOFFING
-	db 25
+	db 27
 	dw PARASECT
-	db 24
+	db 26
 	dw HAUNTER
 	db -1 ; end
 
 	next_list_item ; MEDIUM (2), Ecruteak Gym
 	db "GRACE@", TRAINERTYPE_NORMAL
-	db 24
+	db 27
 	dw MISDREAVUS
-	db 24
+	db 27
+	dw HAUNTER
+	db 28
 	dw HAUNTER
 	db -1 ; end
 
@@ -6651,6 +6742,8 @@ BoarderGroup:
 	dw SNEASEL
 	db 33
 	dw DELIBIRD
+	db 33
+	dw PILOSWINE
 	db -1 ; end
 
 	next_list_item ; BOARDER (3), Mahogany Gym
@@ -6691,6 +6784,12 @@ BoarderGroup:
 PokefanMGroup:
 	next_list_item ; POKEFANM (1), National Park
 	db "WILLIAM@", TRAINERTYPE_ITEM
+	db 23
+	dw FLAAFFY
+	dw BERRY
+	db 23
+	dw PIKACHU
+	dw BERRY
 	db 24
 	dw RAICHU
 	dw BERRY
@@ -6885,6 +6984,10 @@ KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (2), Ecruteak City
 	db "NAOKO@", TRAINERTYPE_ITEM_MOVES
 	db 28
+	dw EEVEE
+	dw FOCUS_BAND
+	dw HEADBUTT, MUD_SLAP, FLAIL, TOXIC
+	db 28
 	dw FLAREON
 	dw HEAT_ROCK
 	dw FLAME_WHEEL, SUNNY_DAY, QUICK_ATTACK, MUD_SLAP
@@ -6896,6 +6999,10 @@ KimonoGirlGroup:
 
 	next_list_item ; KIMONO_GIRL (3), Ecruteak City
 	db "SAYO@", TRAINERTYPE_ITEM_MOVES
+	db 28
+	dw EEVEE
+	dw FOCUS_BAND
+	dw HEADBUTT, MUD_SLAP, FLAIL, TOXIC
 	db 28
 	dw ESPEON
 	dw ACC_UP_BERRY
@@ -6909,6 +7016,10 @@ KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (4), Ecruteak City
 	db "ZUKI@", TRAINERTYPE_ITEM_MOVES
 	db 28
+	dw EEVEE
+	dw FOCUS_BAND
+	dw HEADBUTT, MUD_SLAP, FLAIL, TOXIC
+	db 28
 	dw UMBREON
 	dw MIRACLEBERRY
 	dw FAINT_ATTACK, CHARM, HIDDEN_POWER, ATTRACT
@@ -6920,6 +7031,10 @@ KimonoGirlGroup:
 
 	next_list_item ; KIMONO_GIRL (5), Ecruteak City
 	db "KUNI@", TRAINERTYPE_ITEM_MOVES
+	db 28
+	dw EEVEE
+	dw FOCUS_BAND
+	dw HEADBUTT, MUD_SLAP, FLAIL, TOXIC
 	db 28
 	dw VAPOREON
 	dw EVN_UP_BERRY
@@ -6933,8 +7048,12 @@ KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (6), Ecruteak City
 	db "MIKI@", TRAINERTYPE_ITEM_MOVES
 	db 28
-	dw JOLTEON
+	dw EEVEE
 	dw FOCUS_BAND
+	dw HEADBUTT, MUD_SLAP, FLAIL, TOXIC
+	db 28
+	dw JOLTEON
+	dw BRIGHTPOWDER
 	dw THUNDERBOLT, FLAIL, ENDURE, FLASH
 	db 30
 	dw JOLTEON
@@ -6974,20 +7093,26 @@ TwinsGroup:
 	next_list_item ; TWINS (2), Route 37
 	db "ANN & ANNE@", TRAINERTYPE_MOVES
 	db 25
-	dw CLEFAIRY
+	dw AZUMARILL
+	dw BUBBLEBEAM, DEFENSE_CURL, ROLLOUT, PRESENT
+	db 25
+	dw CLEFABLE
 	dw PRESENT, ENCORE, DOUBLESLAP, METRONOME
 	db 25
-	dw JIGGLYPUFF
+	dw WIGGLYTUFF
 	dw SING, DEFENSE_CURL, POUND, ROLLOUT
 	db -1 ; end
 
 	next_list_item ; TWINS (3), Route 37
 	db "ANN & ANNE@", TRAINERTYPE_MOVES
 	db 25
-	dw JIGGLYPUFF
+	dw AZUMARILL
+	dw BUBBLEBEAM, DEFENSE_CURL, ROLLOUT, PRESENT
+	db 25
+	dw WIGGLYTUFF
 	dw SING, DEFENSE_CURL, POUND, ROLLOUT
 	db 25
-	dw CLEFAIRY
+	dw CLEFABLE
 	dw PRESENT, ENCORE, DOUBLESLAP, METRONOME
 	db -1 ; end
 
@@ -7055,6 +7180,8 @@ TwinsGroup:
 	dw CUBONE
 	db 22
 	dw PHANPY
+    db 22
+	dw MARILL
 	db -1 ; end
 
 	end_list_items
@@ -7062,6 +7189,12 @@ TwinsGroup:
 PokefanFGroup:
 	next_list_item ; POKEFANF (1), National Park
 	db "BEVERLY@", TRAINERTYPE_ITEM
+	db 22
+	dw SNUBBULL
+	dw BERRY
+	db 23
+	dw CLEFABLE
+	dw BERRY
 	db 23
 	dw GRANBULL
 	dw GOLD_BERRY
@@ -7084,6 +7217,9 @@ PokefanFGroup:
 	dw BERRY
 	db 23
 	dw ARBOK
+	dw BERRY
+	db 22
+	dw BEEDRILL
 	dw BERRY
 	db -1 ; end
 
@@ -7147,6 +7283,8 @@ OfficerGroup:
 	db 28
 	dw MACHOKE
 	db 30
+	dw HOUNDOOM
+	db 30
 	dw ARCANINE
 	db -1 ; end
 
@@ -7201,6 +7339,8 @@ GruntFGroup:
 	dw ARBOK
 	db 33
 	dw GLOOM
+	db 33
+	dw VENOMOTH
 	db -1 ; end
 
 next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
