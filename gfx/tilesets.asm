@@ -524,15 +524,6 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin.lz"
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin.lz"
 
-TilesetMuseumGFX::
-INCBIN "gfx/tilesets/museum.2bpp.lz"
-
-TilesetMuseumMeta::
-INCBIN "data/tilesets/museum_metatiles.bin"
-
-TilesetMuseumColl::
-INCLUDE "data/tilesets/museum_collision.asm"
-
 
 SECTION "Tileset Data 9", ROMX
 
@@ -651,3 +642,21 @@ INCBIN "data/tilesets/omanyte_word_room_attributes.bin.lz"
 
 TilesetAerodactylWordRoomAttr::
 INCBIN "data/tilesets/aerodactyl_word_room_attributes.bin.lz"
+
+TilesetMuseumvTiles2GFX::
+INCBIN "gfx/tilesets/museum.2bpp.vtiles2.lz"
+
+TilesetMuseumvTiles5GFX::
+INCBIN "gfx/tilesets/museum.2bpp.vtiles5.lz"
+
+TilesetMuseumvTiles4GFX::
+INCBIN "gfx/tilesets/museum.2bpp.vtiles4.lz"
+
+TilesetMuseumMeta::
+INCBIN "data/tilesets/museum_metatiles.bin"
+
+TilesetMuseumColl::
+INCLUDE "data/tilesets/museum_collision.asm"
+
+TilesetMuseumAttr::
+INCBIN "data/tilesets/museum_attributes.bin.lz"

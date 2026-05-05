@@ -45,7 +45,6 @@ DEF TILESET_LENGTH EQU 18
 ; roof length (see gfx/tilesets/roofs)
 DEF ROOF_LENGTH EQU 9
 
-; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)
 	const_def
 	const PAL_BG_GRAY   ; 0
