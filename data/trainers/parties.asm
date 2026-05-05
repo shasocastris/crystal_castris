@@ -1676,22 +1676,30 @@ ScientistGroup:
 
 	next_list_item ; SCIENTIST (4), Cerulean Base 2
 	db "MARC@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw DUGTRIO
-	db 65
+	db 75
 	dw MAGNETON
-	db 66
+	db 76
 	dw DITTO
+	db 76
+	dw ELECTRODE
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (5), Cerulean Base 2
 	db "RICH@", TRAINERTYPE_MOVES
-	db 65
+	db 75
 	dw PORYGON2
 	dw CONVERSION2, TRI_ATTACK, PSYCHIC_M, RECOVER
-	db 66
+	db 75
 	dw GYARADOS
 	dw SURF, HYPER_BEAM, DRAGONBREATH, THUNDERBOLT
+	db 76
+	dw STARMIE
+	dw SURF, PSYCHIC_M, THUNDERBOLT, ICE_BEAM
+	db 76
+	dw ALAKAZAM
+	dw PSYCHIC_M, RECOVER, REFLECT, THUNDER_WAVE
 	db -1 ; end
 
 	next_list_item ; SCIENTIST (6), Ruins of Alph Outside
@@ -3622,74 +3630,88 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (4), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw MUK
-	db 65
+	db 75
 	dw RATICATE
-	db 66
+	db 76
 	dw MAROWAK
+	db 76
+	dw GENGAR
 	db -1 ; end
 
 	next_list_item ; GRUNTM (5), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw RATICATE
-	db 65
+	db 75
 	dw MUK
-	db 66
+	db 75
 	dw HAUNTER
-	db 65
+	db 76
 	dw RATICATE
-	db 65
+	db 76
 	dw MUK
 	db -1 ; end
 
 	next_list_item ; GRUNTM (6), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw ARBOK
-	db 65
+	db 75
 	dw GOLBAT
+	db 76
+	dw WEEZING
+	db 76
+	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (7), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw WEEZING
-	db 65
+	db 75
 	dw HYPNO
-	db 65
+	db 75
 	dw GOLBAT
-	db 66
+	db 76
 	dw RATICATE
 	db -1 ; end
 
 	next_list_item ; GRUNTM (8), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw HAUNTER
-	db 66
+	db 75
 	dw GENGAR
+	db 76
+	dw MISDREAVUS
+	db 76
+	dw HYPNO
 	db -1 ; end
 
 	next_list_item ; GRUNTM (9), Cerulean Base 2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw MAROWAK
-	db 65
+	db 75
 	dw WEEZING
-	db 66
+	db 76
 	dw GYARADOS
+	db 76
+	dw ARBOK
 	db -1 ; end
 
 	next_list_item ; GRUNTM (10), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw RATICATE
-	db 65
+	db 75
 	dw GOLBAT
-	db 65
+	db 75
 	dw MUK
+	db 76
+	dw ARBOK
 	db -1 ; end
 
 	next_list_item ; GRUNTM (11), Saffron Underground Switch Room
@@ -6240,9 +6262,9 @@ ExecutiveMGroup:
 	dw EARTHQUAKE, GLARE, HYPER_BEAM, SLUDGE_BOMB
 	db -1 ; end
 
-	next_list_item ; EXECUTIVEM (1), Cerulean Cave
+	next_list_item ; EXECUTIVEM (1), Cerulean Base 3
 	db "ARCHER@", TRAINERTYPE_ITEM_MOVES
-	db 75
+	db 80
 	dw MEWTWO
 	dw UNOWN_AURA
 	dw PSYCHIC_M, SHADOW_BALL, FLAMETHROWER, STRENGTH
@@ -6972,22 +6994,22 @@ ExecutiveFGroup:
 
 	next_list_item ; EXECUTIVEF (3), Cerulean Base 3
 	db "ARIANA@", TRAINERTYPE_MOVES
-	db 67
+	db 75
 	dw ARBOK
 	dw SLUDGE_BOMB, GLARE, CRUNCH, EARTHQUAKE
-	db 67
+	db 75
 	dw VILEPLUME
 	dw GIGA_DRAIN, FAINT_ATTACK, SLEEP_POWDER, MOONLIGHT
-	db 67
+	db 75
 	dw MURKROW
 	dw DRILL_PECK, FAINT_ATTACK, HAZE, NIGHT_SHADE
-	db 68
+	db 76
 	dw HYPNO
 	dw DREAM_EATER, HEADBUTT, HYPNOSIS, PSYCHIC_M
-	db 68
+	db 76
 	dw MUK
 	dw SLUDGE_BOMB, ACID_ARMOR, MINIMIZE, SCREECH
-	db 68
+	db 76
 	dw NIDOQUEEN
 	dw EARTHQUAKE, DOUBLE_KICK, SLUDGE_BOMB, BODY_SLAM
 	db -1 ; end
@@ -7877,12 +7899,14 @@ GruntFGroup:
 
 	next_list_item ; GRUNTF (2), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw ARBOK
-	db 65
+	db 75
 	dw MUK
-	db 66
+	db 76
 	dw SLOWBRO
+	db 76
+	dw VILEPLUME
 	db -1 ; end
 
 	next_list_item ; GRUNTF (3), Saffron Underground
@@ -7899,13 +7923,13 @@ GruntFGroup:
 
 	next_list_item ; GRUNTF (4), Cerulean Base 1
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 65
+	db 75
 	dw ARBOK
-	db 65
+	db 75
 	dw GOLBAT
-	db 65
+	db 75
 	dw SLOWBRO
-	db 66
+	db 76
 	dw VILEPLUME
 	db -1 ; end
 
