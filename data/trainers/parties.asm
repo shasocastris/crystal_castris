@@ -1789,13 +1789,13 @@ ScientistGroup:
 
 	next_list_item ; SCIENTIST (15), Mt. Moon B2
 	db "MILES@", TRAINERTYPE_NORMAL
-	db 56
+	db 73
 	dw MAGNETON
-	db 56
+	db 73
 	dw ELECTRODE
-	db 57
+	db 74
 	dw CLEFABLE
-	db 57
+	db 74
 	dw PORYGON
 	db -1 ; end
 
@@ -1873,16 +1873,26 @@ YoungsterGroup:
 
 	next_list_item ; YOUNGSTER (9), Route 3
 	db "WARREN@", TRAINERTYPE_NORMAL
-	db 52
+	db 71
 	dw FEAROW
+	db 71
+	dw RATICATE
+	db 72
+	dw ARBOK
+	db 72
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (10), Route 3
 	db "JIMMY@", TRAINERTYPE_NORMAL
-	db 50
+	db 71
 	dw RATICATE
-	db 50
+	db 71
 	dw ARBOK
+	db 72
+	dw FEAROW
+	db 72
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; YOUNGSTER (11), Route 11
@@ -1975,12 +1985,14 @@ SchoolboyGroup:
 
 	next_list_item ; SCHOOLBOY (5), Route 1
 	db "DANNY@", TRAINERTYPE_NORMAL
-	db 48
+	db 71
 	dw JYNX
-	db 48
+	db 71
 	dw ELECTABUZZ
-	db 48
+	db 72
 	dw MAGMAR
+	db 72
+	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; SCHOOLBOY (6), Route 15
@@ -2252,10 +2264,14 @@ BirdKeeperGroup:
 
 	next_list_item ; BIRD_KEEPER (8), Route 4
 	db "HANK@", TRAINERTYPE_NORMAL
-	db 53
+	db 71
 	dw FEAROW
-	db 51
+	db 71
 	dw PIDGEOT
+	db 72
+	dw NOCTOWL
+	db 72
+	dw DODRIO
 	db -1 ; end
 
 	next_list_item ; BIRD_KEEPER (9), Route 14
@@ -2834,13 +2850,13 @@ CooltrainerMGroup:
 
 	next_list_item ; COOLTRAINERM (22), Mt. Moon
 	db "TRAVIS@", TRAINERTYPE_NORMAL
-	db 58
+	db 73
 	dw MACHAMP
-	db 59
+	db 73
 	dw RHYDON
-	db 59
+	db 74
 	dw TAUROS
-	db 60
+	db 74
 	dw DRAGONITE
 	db -1 ; end
 
@@ -2997,10 +3013,14 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (14), Route 1
 	db "QUINN@", TRAINERTYPE_NORMAL
-	db 56
+	db 71
 	dw VENUSAUR
-	db 56
+	db 71
 	dw STARMIE
+	db 72
+	dw ARCANINE
+	db 72
+	dw ALAKAZAM
 	db -1 ; end
 
 	next_list_item ; COOLTRAINERF (15), Union Cave, post Surf
@@ -3146,13 +3166,13 @@ CooltrainerFGroup:
 
 	next_list_item ; COOLTRAINERF (25), Mt. Moon
 	db "AMBER@", TRAINERTYPE_NORMAL
-	db 58
+	db 73
 	dw JOLTEON
-	db 59
+	db 73
 	dw CLEFABLE
-	db 59
+	db 74
 	dw STARMIE
-	db 60
+	db 74
 	dw ALAKAZAM
 	db -1 ; end
 
@@ -3541,27 +3561,27 @@ PokemaniacGroup:
 
 	next_list_item ; POKEMANIAC (17), Mt. Moon
 	db "ASHTON@", TRAINERTYPE_NORMAL
-	db 58
-	dw KABUTOPS
-	db 58
+	db 73
+	dw LICKITUNG
+	db 73
 	dw AERODACTYL
-	db 59
-	dw OMASTAR
-	db 59
+	db 74
+	dw NINETALES
+	db 74
 	dw LAPRAS
-	db 60
+	db 74
 	dw SNORLAX
 	db -1 ; end
 
 	next_list_item ; POKEMANIAC (17), Mt. Moon B2 — FELIX
 	db "FELIX@", TRAINERTYPE_NORMAL
-	db 56
+	db 73
 	dw OMASTAR
-	db 56
+	db 73
 	dw KABUTOPS
-	db 57
+	db 74
 	dw CLEFABLE
-	db 57
+	db 74
 	dw SNORLAX
 	db -1 ; end
 
@@ -3988,13 +4008,13 @@ GruntMGroup:
 
 	next_list_item ; GRUNTM (38), Mt. Moon B2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 56
+	db 73
 	dw RATICATE
-	db 56
+	db 73
 	dw GOLBAT
-	db 57
+	db 74
 	dw WEEZING
-	db 57
+	db 74
 	dw ARBOK
 	db -1 ; end
 
@@ -4164,20 +4184,26 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (2), Route 2
 	db "ROB@", TRAINERTYPE_NORMAL
-	db 49
-	dw BEEDRILL
-	db 49
-	dw BUTTERFREE
+	db 71
+	dw FORRETRESS
+	db 71
+	dw PINSIR
+	db 72
+	dw SCIZOR
+	db 72
+	dw HERACROSS
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (3), Route 2
 	db "ED@", TRAINERTYPE_NORMAL
-	db 46
+	db 71
 	dw VENOMOTH
-	db 46
+	db 71
 	dw BUTTERFREE
-	db 46
+	db 72
 	dw BEEDRILL
+	db 72
+	dw SCIZOR
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (4), Route 31
@@ -4272,8 +4298,14 @@ BugCatcherGroup:
 
 	next_list_item ; BUG_CATCHER (12), Route 2
 	db "DOUG@", TRAINERTYPE_NORMAL
-	db 51
+	db 71
 	dw ARIADOS
+	db 71
+	dw SCIZOR
+	db 72
+	dw HERACROSS
+	db 72
+	dw FORRETRESS
 	db -1 ; end
 
 	next_list_item ; BUG_CATCHER (13), Route 35
@@ -4376,8 +4408,14 @@ FisherGroup:
 
 	next_list_item ; FISHER (3), Route 21
 	db "ARNOLD@", TRAINERTYPE_NORMAL
-	db 51
+	db 71
 	dw TENTACRUEL
+	db 71
+	dw KINGLER
+	db 72
+	dw GYARADOS
+	db 72
+	dw SEAKING
 	db -1 ; end
 
 	next_list_item ; FISHER (4), Route 12
@@ -4619,10 +4657,14 @@ FisherGroup:
 SwimmerMGroup:
 	next_list_item ; SWIMMERM (1), Route 19
 	db "HAROLD@", TRAINERTYPE_NORMAL
-	db 49
+	db 71
 	dw OCTILLERY
-	db 46
+	db 71
 	dw SEADRA
+	db 72
+	dw STARMIE
+	db 72
+	dw TENTACRUEL
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (2), Route 40
@@ -4733,68 +4775,86 @@ SwimmerMGroup:
 
 	next_list_item ; SWIMMERM (12), Route 19
 	db "WALTER@", TRAINERTYPE_NORMAL
-	db 46
+	db 71
 	dw POLIWRATH
-	db 44
+	db 71
 	dw TENTACRUEL
-	db 48
+	db 72
 	dw LAPRAS
+	db 72
+	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (13), Route 20
 	db "TONY@", TRAINERTYPE_NORMAL
-	db 45
+	db 71
 	dw GOLDUCK
-	db 47
+	db 71
 	dw STARMIE
-	db 49
+	db 72
 	dw GYARADOS
+	db 72
+	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (14), Route 19
 	db "JEROME@", TRAINERTYPE_NORMAL
-	db 42
+	db 71
 	dw SEADRA
-	db 44
+	db 71
 	dw LANTURN
-	db 46
+	db 72
 	dw TENTACRUEL
-	db 44
+	db 72
 	dw SLOWBRO
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (15), Route 19
 	db "TUCKER@", TRAINERTYPE_NORMAL
-	db 46
+	db 71
 	dw VAPOREON
-	db 51
+	db 71
 	dw CLOYSTER
+	db 72
+	dw LAPRAS
+	db 72
+	dw BLASTOISE
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (16), Route 21
 	db "RICK@", TRAINERTYPE_NORMAL
-	db 44
+	db 71
 	dw DEWGONG
-	db 46
+	db 71
 	dw QUAGSIRE
-	db 51
+	db 72
 	dw KINGDRA
+	db 72
+	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (17), Route 20
 	db "CAMERON@", TRAINERTYPE_NORMAL
-	db 51
+	db 71
 	dw AZUMARILL
+	db 71
+	dw TENTACRUEL
+	db 72
+	dw STARMIE
+	db 72
+	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (18), Route 21
 	db "SETH@", TRAINERTYPE_NORMAL
-	db 45
+	db 71
 	dw STARMIE
-	db 45
+	db 71
 	dw OCTILLERY
-	db 49
+	db 72
 	dw QUAGSIRE
+	db 72
+	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERM (19), Union Cave, post Surf
@@ -4944,8 +5004,14 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (12), Route 19
 	db "DAWN@", TRAINERTYPE_NORMAL
-	db 51
+	db 71
 	dw SEAKING
+	db 71
+	dw VAPOREON
+	db 72
+	dw STARMIE
+	db 72
+	dw LAPRAS
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (13), Mt Mortar, post Surf
@@ -4960,20 +5026,26 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (14), Route 20
 	db "NICOLE@", TRAINERTYPE_NORMAL
-	db 45
+	db 71
 	dw AZUMARILL
-	db 45
+	db 71
 	dw VAPOREON
-	db 49
+	db 72
 	dw LAPRAS
+	db 72
+	dw STARMIE
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (15), Route 20
 	db "LORI@", TRAINERTYPE_NORMAL
-	db 49
+	db 71
 	dw CLOYSTER
-	db 49
+	db 71
 	dw STARMIE
+	db 72
+	dw LAPRAS
+	db 72
+	dw TENTACRUEL
 	db -1 ; end
 
 	next_list_item ; SWIMMERF (16), Mt Mortar, post Surf
@@ -4988,13 +5060,13 @@ SwimmerFGroup:
 
 	next_list_item ; SWIMMERF (17), Route 21
 	db "NIKKI@", TRAINERTYPE_NORMAL
-	db 44
+	db 71
 	dw MANTINE
-	db 44
+	db 71
 	dw LAPRAS
-	db 44
+	db 72
 	dw TENTACRUEL
-	db 44
+	db 72
 	dw DEWGONG
 	db -1 ; end
 
@@ -5333,15 +5405,15 @@ SuperNerdGroup:
 
 	next_list_item ; SUPER_NERD (15), Mt. Moon
 	db "OTTO@", TRAINERTYPE_NORMAL
-	db 58
+	db 73
 	dw MAGNETON
-	db 58
+	db 73
 	dw CLEFABLE
-	db 59
+	db 74
 	dw PORYGON
-	db 59
+	db 74
 	dw ELECTRODE
-	db 60
+	db 74
 	dw GENGAR
 	db -1 ; end
 
@@ -5638,28 +5710,28 @@ HikerGroup:
 
 	next_list_item ; HIKER (23), Mt. Moon
 	db "MARCOS@", TRAINERTYPE_NORMAL
-	db 58
-	dw GOLEM
-	db 58
-	dw ONIX
-	db 59
+	db 73
+	dw STEELIX
+	db 73
+	dw DONPHAN
+	db 74
 	dw RHYDON
-	db 60
+	db 74
 	dw GOLEM
 	db -1 ; end
 
 
 	next_list_item ; HIKER (24), Mt. Moon
 	db "CLINT@", TRAINERTYPE_NORMAL
-	db 58
-	dw MACHOKE
-	db 58
-	dw GRAVELER
-	db 59
+	db 73
+	dw MACHAMP
+	db 73
+	dw MAGCARGO
+	db 74
 	dw STEELIX
-	db 59
+	db 74
 	dw RHYDON
-	db 60
+	db 74
 	dw GOLEM
 	db -1 ; end
 
@@ -5814,12 +5886,14 @@ BurglarGroup:
 FirebreatherGroup:
 	next_list_item ; FIREBREATHER (1), Route 3
 	db "OTIS@", TRAINERTYPE_NORMAL
-	db 45
+	db 71
 	dw MAGMAR
-	db 49
+	db 71
 	dw WEEZING
-	db 45
+	db 72
 	dw RAPIDASH
+	db 72
+	dw ARCANINE
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (2), unused ???
@@ -5840,10 +5914,14 @@ FirebreatherGroup:
 
 	next_list_item ; FIREBREATHER (4), Route 3
 	db "BURT@", TRAINERTYPE_NORMAL
-	db 49
+	db 71
 	dw WEEZING
-	db 49
+	db 71
 	dw MAGCARGO
+	db 72
+	dw MAGMAR
+	db 72
+	dw ARCANINE
 	db -1 ; end
 
 	next_list_item ; FIREBREATHER (5), Union Cave
@@ -6372,16 +6450,26 @@ PicnickerGroup:
 
 	next_list_item ; PICNICKER (6), Route 4
 	db "HOPE@", TRAINERTYPE_NORMAL
-	db 51
+	db 71
 	dw AMPHAROS
+	db 71
+	dw CLEFABLE
+	db 72
+	dw WIGGLYTUFF
+	db 72
+	dw VAPOREON
 	db -1 ; end
 
 	next_list_item ; PICNICKER (7), Route 4
 	db "SHARON@", TRAINERTYPE_NORMAL
-	db 48
+	db 71
 	dw FURRET
-	db 50
+	db 71
 	dw RAPIDASH
+	db 72
+	dw ARCANINE
+	db 72
+	dw TAUROS
 	db -1 ; end
 
 	next_list_item ; PICNICKER (8), SS Aqua
@@ -6756,32 +6844,32 @@ CamperGroup:
 
 	next_list_item ; CAMPER (16), Route 2
 	db "DAVID@", TRAINERTYPE_MOVES
-	db 46
+	db 71
 	dw BUTTERFREE
 	dw SLEEP_POWDER, PSYCHIC_M, GIGA_DRAIN, STUN_SPORE
-	db 47
+	db 71
 	dw PIDGEOT
 	dw WING_ATTACK, STEEL_WING, QUICK_ATTACK, WHIRLWIND
-	db 45
+	db 72
 	dw BEEDRILL
 	dw TWINEEDLE, SLUDGE_BOMB, PURSUIT, AGILITY
-	db 48
+	db 72
 	dw VENOMOTH
 	dw PSYCHIC_M, SLEEP_POWDER, GIGA_DRAIN, TOXIC
 	db -1 ; end
 
 	next_list_item ; CAMPER (17), Route 2
 	db "JOHN@", TRAINERTYPE_MOVES
-	db 47
+	db 71
 	dw RATICATE
 	dw HYPER_FANG, SHADOW_BALL, THUNDER, SUPER_FANG
-	db 48
+	db 71
 	dw FEAROW
 	dw DRILL_PECK, STEEL_WING, MIRROR_MOVE, AGILITY
-	db 46
+	db 72
 	dw NOCTOWL
 	dw PSYCHIC_M, HYPNOSIS, DREAM_EATER, REFLECT
-	db 49
+	db 72
 	dw CROBAT
 	dw SLUDGE_BOMB, FLY, CONFUSE_RAY, TOXIC
 	db -1 ; end
@@ -7934,25 +8022,25 @@ next_list_item ; ROCKET GRUNTF (6), Ruins of Alph Kabuto Chamber
 
 	next_list_item ; GRUNTF (14), Mt. Moon B2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 55
+	db 73
 	dw ARBOK
-	db 55
+	db 73
 	dw GOLBAT
-	db 56
+	db 74
 	dw VILEPLUME
-	db 56
+	db 74
 	dw CLEFABLE
 	db -1 ; end
 
 	next_list_item ; GRUNTF (15), Mt. Moon B2
 	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 55
+	db 73
 	dw GOLBAT
-	db 56
+	db 73
 	dw WEEZING
-	db 56
+	db 74
 	dw ARBOK
-	db 57
+	db 74
 	dw MUK
 	db -1 ; end
 
