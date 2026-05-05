@@ -981,4 +981,7 @@ LavenderOdditiesShop_Blocks:
 PokemonMansion_Blocks:
 	INCBIN "maps/PokemonMansion.ablk"
 
+PewterMuseum1F_Blocks:
+	INCBIN "maps/PewterMuseum1F.ablk"
+
 ENDSECTION
