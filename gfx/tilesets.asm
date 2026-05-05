@@ -653,7 +653,7 @@ TilesetMuseumvTiles4GFX::
 INCBIN "gfx/tilesets/museum.2bpp.vtiles4.lz"
 
 TilesetMuseumMeta::
-INCBIN "data/tilesets/museum_metatiles.bin"
+INCBIN "data/tilesets/museum_metatiles.bin.lz"
 
 TilesetMuseumColl::
 INCLUDE "data/tilesets/museum_collision.asm"
