@@ -1525,17 +1525,17 @@ AskRockSmashText:
 HasRockSmash:
 	ld hl, ROCK_SMASH
 	call CheckPartyMoveIndex
+	jr c, .failed
 	ld de, ENGINE_FOGBADGE
 	call CheckEngineFlag
-	jr nc, .failed
-	; a = carry ? TRUE : FALSE
-	sbc a
-	and TRUE
+	jr c, .failed
+	xor a
 	ld [wScriptVar], a
 	ret
 
 .failed
 	ld a, 1
+	ld [wScriptVar], a
 	ret
 
 FishFunction:
