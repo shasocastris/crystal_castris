@@ -14,6 +14,8 @@ UseAnotherRepelScript::
 	writetext .text
 	yesorno
 	iffalse .done
+	readmem wRepelType
+	writemem wCurItem
 	callasm DoItemEffect
 .done
 	closetext

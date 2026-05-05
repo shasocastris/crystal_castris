@@ -943,6 +943,8 @@ DoRepelStep:
 	ret nz
 
 	ld a, [wRepelType]
+	and a
+	jr z, .wore_off
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
@@ -951,6 +953,10 @@ DoRepelStep:
 	jr nc, .got_script
 	ld a, BANK(UseAnotherRepelScript)
 	ld hl, UseAnotherRepelScript
+	jr .got_script
+.wore_off
+	ld a, BANK(RepelWoreOffScript)
+	ld hl, RepelWoreOffScript
 .got_script
 	call CallScript
 	scf

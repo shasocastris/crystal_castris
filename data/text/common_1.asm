@@ -1001,7 +1001,7 @@ _UseAnotherRepelText::
 	text "Repel's effect"
 	line "wore off."
 
-	para "Use another?"
+	para "it Use another?"
 	done
 
 _PlayerFoundItemText::
