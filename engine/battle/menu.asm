@@ -1,9 +1,16 @@
 LoadBattleMenu:
 	ld hl, BattleMenuHeader
 	call LoadMenuHeader
+.loop
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
 	call InterpretBattleMenu
+	jr nc, .selection_made
+	; B pressed — move cursor to RUN and redisplay menu
+	ld a, 4
+	ld [wBattleMenuCursorPosition], a
+	jr .loop
+.selection_made
 	ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	jmp ExitMenu
@@ -26,7 +33,7 @@ BattleMenuHeader:
 	db 1 ; default option
 
 .MenuData:
-	db STATICMENU_CURSOR | STATICMENU_DISABLE_B ; flags
+	db STATICMENU_CURSOR ; flags
 	dn 2, 2 ; rows, columns
 	db 6 ; spacing
 	dba .Text
