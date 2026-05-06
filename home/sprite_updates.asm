@@ -1,6 +1,4 @@
 DisableSpriteUpdates::
-	xor a
-	ldh [hMapAnims], a
 	ld a, [wStateFlags]
 	res SPRITE_UPDATES_DISABLED_F, a
 	ld [wStateFlags], a
