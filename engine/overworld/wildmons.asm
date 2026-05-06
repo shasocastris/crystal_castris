@@ -538,9 +538,14 @@ InitRoamMons:
 	ld hl, RAIKOU
 	call GetPokemonIDFromIndex
 	ld [wRoamMon1Species], a
+	call SetSeenMon
 	ld hl, ENTEI
 	call GetPokemonIDFromIndex
 	ld [wRoamMon2Species], a
+	call SetSeenMon
+	ld hl, SUICUNE
+	call GetPokemonIDFromIndex
+	call SetSeenMon
 
 ; level
 	ld a, 50
@@ -656,6 +661,9 @@ UpdateRoamMons:
 	jmp _BackUpMapIndices
 
 .Update:
+	call Random
+	and %10000000 ; 50% chance to move
+	ret z
 	ld hl, RoamMaps
 .loop
 ; Are we at the end of the table?
