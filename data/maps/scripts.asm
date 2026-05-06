@@ -523,6 +523,11 @@ INCLUDE "maps/MountMoonPath.asm"
 INCLUDE "maps/CeruleanBase1.asm"
 INCLUDE "maps/CeruleanBase2.asm"
 INCLUDE "maps/CeruleanBase3.asm"
+ENDSECTION
+
+
+SECTION "Map Scripts 29", ROMX
+
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
 
