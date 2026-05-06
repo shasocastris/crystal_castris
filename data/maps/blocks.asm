@@ -984,4 +984,7 @@ PokemonMansion_Blocks:
 PewterMuseum1F_Blocks:
 	INCBIN "maps/PewterMuseum1F.ablk"
 
+PewterMuseum2F_Blocks:
+	INCBIN "maps/PewterMuseum2F.ablk"
+
 ENDSECTION

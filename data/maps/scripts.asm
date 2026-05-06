@@ -505,6 +505,8 @@ INCLUDE "maps/FuchsiaPokemonGiver.asm"
 INCLUDE "maps/ViridianRetiredChampionHouse.asm"
 INCLUDE "maps/LavenderOdditiesShop.asm"
 INCLUDE "maps/PokemonMansion.asm"
+INCLUDE "maps/Route7UndergroundPathEntrance.asm"
+INCLUDE "maps/Route8UndergroundPathEntrance.asm"
 
 
 SECTION "Map Scripts 28", ROMX
@@ -513,8 +515,6 @@ INCLUDE "maps/GoldenrodUnderground.asm"
 INCLUDE "maps/GoldenrodUndergroundEntrances.asm"
 INCLUDE "maps/GoldenrodDeptStoreB1F.asm"
 INCLUDE "maps/SaffronUndergroundWarehouse.asm"
-INCLUDE "maps/Route7UndergroundPathEntrance.asm"
-INCLUDE "maps/Route8UndergroundPathEntrance.asm"
 INCLUDE "maps/SaffronUndergroundSwitchRoom.asm"
 INCLUDE "maps/MountMoon.asm"
 INCLUDE "maps/MountMoonB1.asm"
@@ -524,5 +524,6 @@ INCLUDE "maps/CeruleanBase1.asm"
 INCLUDE "maps/CeruleanBase2.asm"
 INCLUDE "maps/CeruleanBase3.asm"
 INCLUDE "maps/PewterMuseum1F.asm"
+INCLUDE "maps/PewterMuseum2F.asm"
 
 ENDSECTION

@@ -726,3 +726,4 @@ ENDM
 	map_attributes LavenderOdditiesShop, LAVENDER_ODDITIES_SHOP, $00, 0
 	map_attributes PokemonMansion, POKEMON_MANSION, $00, 0
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00, 0
+	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0

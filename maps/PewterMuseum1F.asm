@@ -13,6 +13,7 @@ PewterMuseum1F_MapEvents:
 	warp_event 11,  7, PEWTER_CITY, 6
 	warp_event 16,  7, PEWTER_CITY, 7
 	warp_event 17,  7, PEWTER_CITY, 7
+	warp_event  7,  7, PEWTER_MUSEUM_2F, 1
 
 	def_coord_events
 
