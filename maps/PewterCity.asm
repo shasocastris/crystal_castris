@@ -18,8 +18,25 @@ PewterCityFlypointCallback:
 PewterCityCooltrainerFScript:
 	jumptextfaceplayer PewterCityCooltrainerFText
 
+PewterCityCooltrainerFText:
+	text "Have you visited"
+	line "PEWTER GYM?"
+
+	para "The LEADER uses"
+	line "rock-type #MON."
+	done
+
 PewterCityBugCatcherScript:
 	jumptextfaceplayer PewterCityBugCatcherText
+
+PewterCityBugCatcherText:
+	text "At night, CLEFAIRY"
+	line "come out to play"
+	cont "at MT.MOON."
+
+	para "But not every"
+	line "night."
+	done
 
 PewterCityGrampsScript:
 	faceplayer
@@ -38,50 +55,6 @@ PewterCityGrampsScript:
 	waitbutton
 	closetext
 	end
-
-PewterCitySign:
-	jumptext PewterCitySignText
-
-PewterGymSign:
-	jumptext PewterGymSignText
-
-PewterMuseumSign:
-	jumptext PewterMuseumSignText
-
-PewterCityMtMoonGiftShopSign:
-	jumptext PewterCityMtMoonGiftShopSignText
-
-PewterCityWelcomeSign:
-	jumptext PewterCityWelcomeSignText
-
-PewterCityPokecenterSign:
-	jumpstd PokecenterSignScript
-
-PewterCityMartSign:
-	jumpstd MartSignScript
-
-PewterCityFruitTree1:
-	fruittree FRUITTREE_PEWTER_CITY_1
-
-PewterCityFruitTree2:
-	fruittree FRUITTREE_PEWTER_CITY_2
-
-PewterCityCooltrainerFText:
-	text "Have you visited"
-	line "PEWTER GYM?"
-
-	para "The LEADER uses"
-	line "rock-type #MON."
-	done
-
-PewterCityBugCatcherText:
-	text "At night, CLEFAIRY"
-	line "come out to play"
-	cont "at MT.MOON."
-
-	para "But not every"
-	line "night."
-	done
 
 PewterCityGrampsText:
 	text "Ah, you came all"
@@ -114,10 +87,28 @@ PewterCityGrampsText_GotSilverWing:
 	line "of travel."
 	done
 
+PewterCityPokecenterSign:
+	jumpstd PokecenterSignScript
+
+PewterCityMartSign:
+	jumpstd MartSignScript
+
+PewterCityFruitTree1:
+	fruittree FRUITTREE_PEWTER_CITY_1
+
+PewterCityFruitTree2:
+	fruittree FRUITTREE_PEWTER_CITY_2
+
+PewterCitySign:
+	jumptext PewterCitySignText
+
 PewterCitySignText:
 	text "PEWTER CITY"
 	line "A Stone Gray City"
 	done
+
+PewterGymSign:
+	jumptext PewterGymSignText
 
 PewterGymSignText:
 	text "PEWTER CITY"
@@ -128,14 +119,16 @@ PewterGymSignText:
 	line "#MON Trainer"
 	done
 
-PewterMuseumSignText:
-	text "There's a notice"
-	line "here…"
+PewterMuseumSign:
+	jumptext PewterMuseumSignText
 
-	para "PEWTER MUSEUM OF"
-	line "SCIENCE is closed"
-	cont "for renovations…"
+PewterMuseumSignText:
+	text "PEWTER MUSEUM"
+	line "OF SCIENCE"
 	done
+
+PewterCityMtMoonGiftShopSign:
+	jumptext PewterCityMtMoonGiftShopSignText
 
 PewterCityMtMoonGiftShopSignText:
 	text "There's a notice"
@@ -144,6 +137,9 @@ PewterCityMtMoonGiftShopSignText:
 	para "MT.MOON GIFT SHOP"
 	line "NOW OPEN!"
 	done
+
+PewterCityWelcomeSign:
+	jumptext PewterCityWelcomeSignText
 
 PewterCityWelcomeSignText:
 	text "WELCOME TO"
@@ -159,6 +155,8 @@ PewterCity_MapEvents:
 	warp_event 23, 19, PEWTER_CITY_GREENHOUSE, 2
 	warp_event 13, 25, PEWTER_POKECENTER_1F, 1
 	warp_event  7, 29, PEWTER_SNOOZE_SPEECH_HOUSE, 1
+	warp_event 14,  7, PEWTER_MUSEUM_1F, 1
+	warp_event 19,  5, PEWTER_MUSEUM_1F, 3
 
 	def_coord_events
 
