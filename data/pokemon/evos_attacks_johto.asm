@@ -642,14 +642,14 @@ AmpharosEvosAttacks:
 
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, ABSORB
+	dbw 1, MEGA_DRAIN
 	dbw 1, SWEET_SCENT
 	dbw 1, STUN_SPORE
 	dbw 1, PETAL_DANCE
-	dbw 30, GROWTH
-	dbw 40, SYNTHESIS
-	dbw 50, MOONBLAST
-	dbw 60, SOLARBEAM
+	dbw 29, LEECH_SEED
+	dbw 41, MOONBLAST
+	dbw 53, PETAL_DANCE
+	dbw 65, SOLARBEAM
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:

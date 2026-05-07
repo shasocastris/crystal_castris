@@ -881,47 +881,51 @@ OddishEvosAttacks:
 	dbbw EVOLVE_LEVEL, 21, GLOOM
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
-	dbw 7, SWEET_SCENT
-	dbw 11, SYNTHESIS
-	dbw 14, POISONPOWDER
-	dbw 16, STUN_SPORE
-	dbw 18, SLEEP_POWDER
-	dbw 20, RAZOR_LEAF
-	dbw 23, ACID
-	dbw 28, SWORDS_DANCE
-	dbw 32, MOONLIGHT
-	dbw 35, FLAIL
-	dbw 39, PETAL_DANCE
-	db 0 ; no more level-up moves
+	dbw 5, SWEET_SCENT
+	dbw 9, ACID
+	dbw 13, POISONPOWDER
+	dbw 15, STUN_SPORE
+	dbw 17, SLEEP_POWDER
+	dbw 21, MEGA_DRAIN
+	dbw 25, SYNTHESIS
+	dbw 25, MOONLIGHT
+	dbw 29, RAZOR_LEAF
+	dbw 33, SWORDS_DANCE
+	dbw 37, FLAIL
+	dbw 41, GIGA_DRAIN
+	dbw 45, PETAL_DANCE
+	db 0 ; no more level-up moves, SYNTHESIS, RAZOR_LEAF, SWORDS_DANCE,
 
 GloomEvosAttacks:
 	dbww EVOLVE_ITEM, LEAF_STONE, VILEPLUME
 	dbww EVOLVE_ITEM, SUN_STONE, BELLOSSOM
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
-	dbw 7, SWEET_SCENT
-	dbw 11, SYNTHESIS
-	dbw 14, POISONPOWDER
-	dbw 16, STUN_SPORE
-	dbw 18, SLEEP_POWDER
-	dbw 20, RAZOR_LEAF
-	dbw 24, ACID
-	dbw 30, SWORDS_DANCE
-	dbw 35, MOONLIGHT
-	dbw 39, FLAIL
-	dbw 44, PETAL_DANCE
+	dbw 5, SWEET_SCENT
+	dbw 9, ACID
+	dbw 13, POISONPOWDER
+	dbw 15, STUN_SPORE
+	dbw 17, SLEEP_POWDER
+	dbw 23, MEGA_DRAIN
+	dbw 29, SYNTHESIS
+	dbw 29, MOONLIGHT
+	dbw 35, RAZOR_LEAF
+	dbw 41, SWORDS_DANCE
+	dbw 47, FLAIL
+	dbw 53, GIGA_DRAIN
+	dbw 59, PETAL_DANCE
 	db 0 ; no more level-up moves
 
 VileplumeEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, ABSORB
+	dbw 1, MEGA_DRAIN
 	dbw 1, SWEET_SCENT
 	dbw 1, STUN_SPORE
 	dbw 1, PETAL_DANCE
-	dbw 30, GROWTH
-	dbw 40, MOONLIGHT
-	dbw 50, FAINT_ATTACK
-	dbw 60, PETAL_DANCE
+	dbw 29, LEECH_SEED
+	dbw 41, FAINT_ATTACK
+	dbw 53, PETAL_DANCE
+	dbw 65, SOLARBEAM
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:
