@@ -18,16 +18,16 @@ TrainerClassDVs:
 	dn  7, 13,  8,  7 ; SABRINA
 	dn  9,  8,  8,  8 ; BLAINE
 	dn  9, 13, 13, 13 ; BLUE
-	dn 13, 12, 13, 13 ; WILL
-	dn 13, 12, 13, 13 ; KOGA
-	dn 13, 12, 13, 13 ; BRUNO
+	dn 13, 11, 13, 13 ; WILL
+	dn 13, 11, 13, 13 ; KOGA
+	dn 13, 11, 13, 13 ; BRUNO
 	dn  7, 15, 13, 15 ; KAREN
-	dn 13, 12, 13, 13 ; CHAMPION
-	dn 13, 12, 13, 13 ; RIVAL1
-	dn 13, 12, 13, 13 ; RIVAL2
+	dn 13, 11, 13, 13 ; CHAMPION
+	dn 13, 11, 13, 13 ; RIVAL1
+	dn 13, 11, 13, 13 ; RIVAL2
 	dn  9,  8,  8,  8 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; CAL
-	dn 15, 12, 14, 14 ; RED
+	dn 15, 11, 14, 14 ; RED
 	dn  9,  8,  8,  8 ; SCIENTIST
 	dn  9,  8,  8,  8 ; YOUNGSTER
 	dn  9,  8,  8,  8 ; SCHOOLBOY

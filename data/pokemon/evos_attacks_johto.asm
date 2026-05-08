@@ -455,33 +455,39 @@ ChinchouEvosAttacks:
 	dbbw EVOLVE_LEVEL, 27, LANTURN
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 1, THUNDER_WAVE
-	dbw 5, SUPERSONIC
-	dbw 13, FLAIL
-	dbw 17, WATER_GUN
-	dbw 21, MUD_SLAP
-	dbw 25, SPARK
-	dbw 28, AURORA_BEAM
+	dbw 1, SUPERSONIC
+	dbw 6, THUNDER_WAVE
+	dbw 9, FLAIL
+	dbw 12, WATER_GUN
+	dbw 17, MUD_SLAP
+	dbw 20, SPARK
+	dbw 23, TAKE_DOWN
+	dbw 28, BUBBLEBEAM
 	dbw 31, CONFUSE_RAY
-	dbw 33, SCREECH
-	dbw 37, TAKE_DOWN
-	dbw 41, HYDRO_PUMP
+	dbw 34, THUNDERBOLT
+	dbw 39, AURORA_BEAM
+	dbw 42, SCREECH
+	dbw 45, HYDRO_PUMP
+	dbw 48, THUNDER
 	db 0 ; no more level-up moves
 
 LanturnEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 1, THUNDER_WAVE
-	dbw 5, SUPERSONIC
-	dbw 13, FLAIL
-	dbw 17, WATER_GUN
-	dbw 21, MUD_SLAP
-	dbw 25, SPARK
-	dbw 30, AURORA_BEAM
-	dbw 33, CONFUSE_RAY
-	dbw 39, SCREECH
-	dbw 45, TAKE_DOWN
-	dbw 53, HYDRO_PUMP
+	dbw 1, SUPERSONIC
+	dbw 6, THUNDER_WAVE
+	dbw 9, FLAIL
+	dbw 12, WATER_GUN
+	dbw 17, MUD_SLAP
+	dbw 20, SPARK
+	dbw 23, TAKE_DOWN
+	dbw 30, BUBBLEBEAM
+	dbw 35, CONFUSE_RAY
+	dbw 40, THUNDERBOLT
+	dbw 47, AURORA_BEAM
+	dbw 52, SCREECH
+	dbw 57, HYDRO_PUMP
+	dbw 62, THUNDER
 	db 0 ; no more level-up moves
 
 PichuEvosAttacks:
