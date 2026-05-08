@@ -2450,6 +2450,7 @@ LassGroup:
 	dw CUBONE
 	db 23
 	dw SKIPLOOM
+	db -1 ; end
 
 	next_list_item ; LASS (5), Olivine Lighthouse
 	db "CONNIE@", TRAINERTYPE_NORMAL
