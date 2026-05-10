@@ -83,8 +83,8 @@ DarkCaveVioletEntranceHiddenElixer:
 DarkCaveVioletEntranceHiddenMoonStone:
 	hiddenitem MOON_STONE, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_MOON_STONE
 
-DarkCaveVioletEntranceHiddenMaxRepel:
-	hiddenitem MAX_REPEL, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_MAX_REPEL
+DarkCaveVioletEntranceHiddenMetalCoat:
+	hiddenitem METAL_COAT, EVENT_DARK_CAVE_VIOLET_ENTRANCE_HIDDEN_METAL_COAT
 
 LassMargeSeenText:
 	text "Oh thank goodness!"
@@ -187,7 +187,7 @@ DarkCaveVioletEntrance_MapEvents:
 	def_bg_events
 	bg_event 26,  3, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenElixer
 	bg_event 22, 33, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenMoonStone
-	bg_event  3, 31, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenMaxRepel
+	bg_event  3, 31, BGEVENT_ITEM, DarkCaveVioletEntranceHiddenMetalCoat
 
 	def_object_events
 	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DarkCaveVioletEntranceEther, EVENT_DARK_CAVE_VIOLET_ENTRANCE_ETHER

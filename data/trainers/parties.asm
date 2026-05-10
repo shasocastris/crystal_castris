@@ -1649,7 +1649,7 @@ ScientistGroup:
 	db 32
 	dw MAGNETON
 	db 32
-	dw WEEZING
+	dw KOFFING
 	db 32
 	dw SNEASEL
 	db -1 ; end
@@ -1667,7 +1667,7 @@ ScientistGroup:
 	next_list_item ; SCIENTIST (3), Team Rocket's Hideout, B1F
 	db "JED@", TRAINERTYPE_NORMAL
 	db 31
-	dw WEEZING
+	dw KOFFING
 	db 32
 	dw PORYGON
 	db 31
