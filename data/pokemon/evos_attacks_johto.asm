@@ -984,18 +984,21 @@ WobbuffetEvosAttacks:
 GirafarigEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 1, GROWL
-	dbw 7, CONFUSION
-	dbw 10, AMNESIA
-	dbw 13, STOMP
-	dbw 17, FORESIGHT
-	dbw 20, AGILITY
-	dbw 25, TAKE_DOWN
-	dbw 30, BATON_PASS
-	dbw 35, FUTURE_SIGHT
-	dbw 41, PSYBEAM
-	dbw 48, BEAT_UP
-	dbw 54, CRUNCH
+	dbw 3, GROWL
+	dbw 5, CONFUSION
+	dbw 8, BITE
+	dbw 11, AMNESIA
+	dbw 14, STOMP
+	dbw 17, BEAT_UP
+	dbw 21, TAKE_DOWN
+	dbw 25, AGILITY
+	dbw 29, FUTURE_SIGHT
+	dbw 33, BATON_PASS
+	dbw 38, PSYBEAM
+	dbw 43, FORESIGHT
+	dbw 48, CRUNCH
+	dbw 54, PSYCH_UP
+	dbw 60, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
@@ -1622,17 +1625,20 @@ MagbyEvosAttacks:
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 4, GROWL
-	dbw 8, DEFENSE_CURL
-	dbw 13, STOMP
-	dbw 19, MILK_DRINK
-	dbw 22, SEISMIC_TOSS
-	dbw 26, BIDE
-	dbw 30, PRESENT
-	dbw 34, ROLLOUT
+	dbw 3, GROWL
+	dbw 5, DEFENSE_CURL
+	dbw 8, BIDE
+	dbw 11, STOMP
+	dbw 14, MILK_DRINK
+	dbw 17, SEISMIC_TOSS
+	dbw 21, ROLLOUT
+	dbw 25, PRESENT
 	dbw 29, REVERSAL
-	dbw 43, BODY_SLAM
-	dbw 53, HEAL_BELL
+	dbw 33, BODY_SLAM
+	dbw 38, HEAL_BELL
+	dbw 44, DIZZY_PUNCH
+	dbw 50, CURSE
+	dbw 56, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 BlisseyEvosAttacks:

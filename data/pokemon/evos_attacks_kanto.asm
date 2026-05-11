@@ -2385,15 +2385,21 @@ PinsirEvosAttacks:
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 4, SCARY_FACE
-	dbw 8, RAGE
-	dbw 13, QUICK_ATTACK
-	dbw 19, HORN_ATTACK
-	dbw 26, PURSUIT
-	dbw 34, THRASH
-	dbw 43, REST
-	dbw 53, SKULL_BASH
-	dbw 60, TAKE_DOWN
+	dbw 3, TAIL_WHIP
+	dbw 5, RAGE
+	dbw 8, HORN_ATTACK
+	dbw 11, SCARY_FACE
+	dbw 14, QUICK_ATTACK
+	dbw 17, HEADBUTT
+	dbw 21, REST
+	dbw 25, PURSUIT
+	dbw 29, SWAGGER
+	dbw 33, THRASH
+	dbw 38, TAKE_DOWN
+	dbw 43, SKULL_BASH
+	dbw 48, BODY_SLAM
+	dbw 54, CRUNCH
+	dbw 60, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
