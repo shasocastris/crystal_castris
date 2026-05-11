@@ -845,36 +845,36 @@ ZubatEvosAttacks:
 	dbbw EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
 	dbw 1, LEECH_LIFE
-	dbw 6, SUPERSONIC
+	dbw 5, SUPERSONIC
 	dbw 9, GUST
-	dbw 12, BITE
-	dbw 15, SLUDGE
-	dbw 19, CONFUSE_RAY
-	dbw 23, WING_ATTACK
-	dbw 27, FAINT_ATTACK
-	dbw 32, MEAN_LOOK
-	dbw 36, SLUDGE_BOMB
+	dbw 13, BITE
+	dbw 17, SLUDGE
+	dbw 21, CONFUSE_RAY
+	dbw 25, WING_ATTACK
+	dbw 29, FAINT_ATTACK
+	dbw 33, MEAN_LOOK
+	dbw 37, SLUDGE_BOMB
 	dbw 41, SCREECH
-	dbw 46, HAZE
-	dbw 50, CRUNCH
+	dbw 45, HAZE
+	dbw 49, CRUNCH
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
 	db 0 ; no more evolutions
 	dbw 1, LEECH_LIFE
-	dbw 6, SUPERSONIC
+	dbw 5, SUPERSONIC
 	dbw 9, GUST
-	dbw 12, BITE
-	dbw 15, SLUDGE
-	dbw 19, CONFUSE_RAY
-	dbw 25, WING_ATTACK
-	dbw 30, FAINT_ATTACK
-	dbw 36, MEAN_LOOK
-	dbw 42, SLUDGE_BOMB
-	dbw 48, SCREECH
-	dbw 55, HAZE
-	dbw 60, CRUNCH
+	dbw 13, BITE
+	dbw 17, SLUDGE
+	dbw 21, CONFUSE_RAY
+	dbw 27, WING_ATTACK
+	dbw 33, FAINT_ATTACK
+	dbw 39, MEAN_LOOK
+	dbw 45, SLUDGE_BOMB
+	dbw 51, SCREECH
+	dbw 57, HAZE
+	dbw 63, CRUNCH
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -1802,17 +1802,23 @@ GengarEvosAttacks:
 OnixEvosAttacks:
 	dbww EVOLVE_ITEM, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
+	dbw 1, MUD_SLAP
 	dbw 1, TACKLE
-	dbw 1, SCREECH
-	dbw 10, BIND
-	dbw 14, ROCK_THROW
-	dbw 23, HARDEN
-	dbw 25, FLAIL
-	dbw 27, RAGE
-	dbw 31, ROCK_SLIDE
-	dbw 36, SANDSTORM
-	dbw 40, BODY_SLAM
-	dbw 45, EARTHQUAKE
+	dbw 1, HARDEN
+	dbw 1, BIND
+	dbw 6, SCREECH
+	dbw 9, ROCK_THROW
+	dbw 14, RAGE
+	dbw 17, FLAIL
+	dbw 22, SANDSTORM
+	dbw 25, SLAM
+	dbw 30, ROCK_SLIDE
+	dbw 33, DRAGONBREATH
+	dbw 38, CURSE
+	dbw 41, IRON_TAIL
+	dbw 46, EARTHQUAKE
+	dbw 49, BODY_SLAM
+	dbw 54, HORN_DRILL
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:

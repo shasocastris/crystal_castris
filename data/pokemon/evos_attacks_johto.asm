@@ -437,18 +437,19 @@ CrobatEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, TOXIC
 	dbw 1, LEECH_LIFE
-	dbw 6, SUPERSONIC
+	dbw 5, SUPERSONIC
 	dbw 9, GUST
-	dbw 12, BITE
-	dbw 15, SLUDGE
-	dbw 19, CONFUSE_RAY
-	dbw 25, WING_ATTACK
-	dbw 30, FAINT_ATTACK
-	dbw 36, MEAN_LOOK
-	dbw 42, SLUDGE_BOMB
-	dbw 48, SCREECH
-	dbw 55, HAZE
-	dbw 60, CRUNCH
+	dbw 13, BITE
+	dbw 17, SLUDGE
+	dbw 21, CONFUSE_RAY
+	dbw 27, WING_ATTACK
+	dbw 33, FAINT_ATTACK
+	dbw 39, MEAN_LOOK
+	dbw 45, SLUDGE_BOMB
+	dbw 51, SCREECH
+	dbw 57, HAZE
+	dbw 63, CRUNCH
+	dbw 70, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
@@ -1067,17 +1068,23 @@ GligarEvosAttacks:
 SteelixEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, IRON_TAIL
+	dbw 1, MUD_SLAP
 	dbw 1, TACKLE
-	dbw 1, SCREECH
-	dbw 10, BIND
-	dbw 14, ROCK_THROW
-	dbw 23, HARDEN
-	dbw 25, FLAIL
-	dbw 27, RAGE
-	dbw 31, ROCK_SLIDE
-	dbw 36, SANDSTORM
-	dbw 40, BODY_SLAM
-	dbw 45, SKULL_BASH
+	dbw 1, HARDEN
+	dbw 1, BIND
+	dbw 6, SCREECH
+	dbw 9, ROCK_THROW
+	dbw 14, RAGE
+	dbw 17, FLAIL
+	dbw 22, SANDSTORM
+	dbw 25, SLAM
+	dbw 30, ROCK_SLIDE
+	dbw 33, DRAGONBREATH
+	dbw 38, CURSE
+	dbw 41, IRON_TAIL
+	dbw 46, CRUNCH
+	dbw 49, BODY_SLAM
+	dbw 54, SKULL_BASH
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
@@ -1404,18 +1411,18 @@ HoundourEvosAttacks:
 	dbw 1, LEER
 	dbw 1, EMBER
 	dbw 4, PURSUIT
-	dbw 7, ROAR
-	dbw 10, FIRE_SPIN
-	dbw 13, SMOG
-	dbw 16, RAGE
-	dbw 20, BITE
-	dbw 23, COUNTER
-	dbw 27, FAINT_ATTACK
-	dbw 31, SPITE
-	dbw 35, FLAMETHROWER
-	dbw 39, REVERSAL
-	dbw 43, CRUNCH
-	dbw 47, BEAT_UP
+	dbw 9, SMOG
+	dbw 14, ROAR
+	dbw 17, BITE
+	dbw 22, RAGE
+	dbw 27, BEAT_UP
+	dbw 30, FLAME_WHEEL
+	dbw 35, FAINT_ATTACK
+	dbw 40, REVERSAL
+	dbw 43, FLAMETHROWER
+	dbw 48, CRUNCH
+	dbw 53, SPITE
+	dbw 58, WILL_O_WISP
 	db 0 ; no more level-up moves
 
 HoundoomEvosAttacks:
@@ -1423,18 +1430,18 @@ HoundoomEvosAttacks:
 	dbw 1, LEER
 	dbw 1, EMBER
 	dbw 4, PURSUIT
-	dbw 7, ROAR
-	dbw 10, FIRE_SPIN
-	dbw 13, SMOG
-	dbw 16, RAGE
-	dbw 20, BITE
-	dbw 23, COUNTER
-	dbw 30, FAINT_ATTACK
-	dbw 35, SPITE
-	dbw 41, FLAMETHROWER
-	dbw 46, REVERSAL
-	dbw 52, CRUNCH
-	dbw 57, BEAT_UP
+	dbw 9, SMOG
+	dbw 14, ROAR
+	dbw 17, BITE
+	dbw 22, RAGE
+	dbw 28, BEAT_UP
+	dbw 32, FLAME_WHEEL
+	dbw 38, FAINT_ATTACK
+	dbw 44, REVERSAL
+	dbw 48, FLAMETHROWER
+	dbw 54, CRUNCH
+	dbw 60, SPITE
+	dbw 66, WILL_O_WISP
 	db 0 ; no more level-up moves
 
 KingdraEvosAttacks:
@@ -1505,19 +1512,25 @@ Porygon2EvosAttacks:
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 8, LEER
-	dbw 11, BITE
-	dbw 15, HYPNOSIS
-	dbw 19, SPITE
-	dbw 23, STOMP
-	dbw 27, PSYBEAM
-	dbw 31, SAND_ATTACK
-	dbw 27, REFLECT
+	dbw 1, LEER
+	dbw 3, SPITE
+	dbw 7, BITE
+	dbw 10, HYPNOSIS
+	dbw 13, STOMP
+	dbw 16, SAND_ATTACK
+	dbw 21, PSYBEAM
+	dbw 23, TAKE_DOWN
+	dbw 27, CONFUSE_RAY
+	dbw 31, PSYCH_UP
 	dbw 35, LIGHT_SCREEN
-	dbw 40, TAKE_DOWN
-	dbw 44, DISABLE
-	dbw 49, CONFUSE_RAY
-	dbw 55, PSYCHIC_M
+	dbw 39, DOUBLE_KICK
+	dbw 43, REFLECT
+	dbw 49, DISABLE
+	dbw 53, PSYCHIC_M
+	dbw 58, DOUBLE_EDGE
+	dbw 64, SWAGGER
+	dbw 70, THRASH
+	dbw 75, MEGAHORN
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
