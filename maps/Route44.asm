@@ -155,7 +155,7 @@ TrainerFisherWilton1:
 	opentext
 	checkflag ENGINE_WILTON_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_WILTON_HAS_ITEM
+	checkflag ENGINE_WILTON_HAS_ULTRA_BALL
 	iftrue .HasItem
 	checkcellnum PHONE_FISHER_WILTON
 	iftrue Route44NumberAcceptedM
@@ -198,27 +198,10 @@ TrainerFisherWilton1:
 
 .HasItem:
 	scall Route44GiftM
-	checkevent EVENT_WILTON_HAS_ULTRA_BALL
-	iftrue .UltraBall
-	checkevent EVENT_WILTON_HAS_GREAT_BALL
-	iftrue .GreatBall
-	checkevent EVENT_WILTON_HAS_POKE_BALL
-	iftrue .PokeBall
-.UltraBall:
-	verbosegiveitem ULTRA_BALL
-	iffalse .Route44PackFullM
-	sjump .ItemReceived
-
-.GreatBall:
-	verbosegiveitem GREAT_BALL
-	iffalse .Route44PackFullM
-	sjump .ItemReceived
-
-.PokeBall:
-	verbosegiveitem POKE_BALL
+	verbosegiveitem ULTRA_BALL, 3
 	iffalse .Route44PackFullM
 .ItemReceived:
-	clearflag ENGINE_WILTON_HAS_ITEM
+	clearflag ENGINE_WILTON_HAS_ULTRA_BALL
 	sjump Route44NumberAcceptedM
 
 .Route44PackFullM:
