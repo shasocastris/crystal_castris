@@ -11,6 +11,7 @@
 	const VICTORYROAD_COOLTRAINERM
 	const VICTORYROAD_COOLTRAINERF1
 	const VICTORYROAD_COOLTRAINERF2
+	const VICTORYROAD_PSYCHIC_NATHAN
 
 VictoryRoad_MapScripts:
 	def_scene_scripts
@@ -179,6 +180,16 @@ TrainerCooltrainerfKelsey:
 .Script:
 	opentext
 	writetext CooltrainerfKelseyAfterBattleText
+	waitbutton
+	closetext
+	end
+
+TrainerPsychicNathan:
+	trainer PSYCHIC_T, NATHAN, EVENT_BEAT_PSYCHIC_NATHAN, PsychicNathanSeenText, PsychicNathanBeatenText, 0, .Script
+
+.Script:
+	opentext
+	writetext PsychicNathanAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -485,6 +496,20 @@ JugglerCalebAfterBattleText:
 	cont "battle!"
 	done
 
+PsychicNathanSeenText:
+	text "Hmmm… This is a"
+	line "strange place."
+	done
+
+PsychicNathanBeatenText:
+	text "…"
+	done
+
+PsychicNathanAfterBattleText:
+	text "I like thinking"
+	line "here."
+	done
+
 VictoryRoad_MapEvents:
 	db 0, 0 ; filler
 
@@ -521,3 +546,4 @@ VictoryRoad_MapEvents:
 	object_event 15, 40, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCooltrainermSteve, -1
 	object_event 10, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerfGalen, -1
 	object_event  6, 64, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfKelsey, -1
+	object_event 12, 28, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicNathan, -1

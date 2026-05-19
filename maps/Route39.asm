@@ -492,7 +492,7 @@ PokefanfRuthAfterBattleText:
 	line "care and training,"
 
 	para "they become our"
-	line "beloved companions."
+	line "beloveds."
 	done
 
 PokefanMDerekPikachuIsItText:

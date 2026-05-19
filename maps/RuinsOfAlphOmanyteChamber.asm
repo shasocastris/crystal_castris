@@ -155,16 +155,13 @@ ScientistJayJayAfterBattleText:
 	line "correspond to 26"
 	cont "distinct shapes."
 
-	para "Each puzzle chamber"
-	line "seems to focus on"
-	cont "different variants."
+	para "Each puzzle seems"
+	line "to focus on new"
+	cont "variants."
 
-	para "A trainer who cap-"
-	line "tures all 26 forms"
-
-	para "could theoretically"
-	line "command the entire"
-	cont "ruin structure!"
+	para "Are they some sort"
+	line "of primordial"
+	cont "language?"
 	done
 
 RuinsOfAlphOmanyteChamberAncientReplicaText:

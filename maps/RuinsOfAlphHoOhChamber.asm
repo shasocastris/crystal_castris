@@ -104,12 +104,13 @@ GruntM23AfterBattleText:
 	line "disaster, TEAM"
 	cont "ROCKET needs this."
 
-	para "We're going to rule"
-	line "JOHTO from these"
-	cont "ruins!"
+	para "We're going to"
+	line "rule JOHTO from"
+	cont "these ruins!"
 
-	para "The LEAGUE won't"
-	line "even see us coming!"
+	para "Even the LEAGUE"
+	line "won't see us"
+	cont "coming!"
 	done
 
 GruntF10SeenText:
@@ -158,11 +159,11 @@ ScientistKipBeatenText:
 ScientistKipAfterBattleText:
 	text "My instruments"
 	line "detect 26 distinct"
-	cont "psychic signatures."
+	cont "psychic readings."
 
-	para "Each puzzle chamber"
-	line "should reveal a"
-	cont "different subset."
+	para "Each puzzle should"
+	line "reveal a different"
+	cont "subset."
 
 	para "A trainer who cap-"
 	line "tures every form"

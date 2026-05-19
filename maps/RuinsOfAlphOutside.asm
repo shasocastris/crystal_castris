@@ -529,9 +529,9 @@ RuinsOfAlphOutsideBossFSeenText:
 	line "massive pain."
 
 	para "You disrupted our"
-	line "SLOWPOKE operation."
+	line "SLOWPOKE operation"
 
-	para "You sabotaged our"
+	para "and sabotaged our"
 	line "LAKE OF RAGE"
 	cont "broadcast."
 
@@ -601,10 +601,9 @@ RuinsOfAlphOutsideBossFleeFromSuicuneText:
 	line "always be there to"
 	cont "protect you!"
 
-	para "And when we return,"
-	line "we'll have the"
-	cont "power to crush any"
-	cont "resistance!"
+	para "We'll return with"
+	line "the power to crush"
+	cont "any resistance!"
 	done
 
 RuinsOfAlphOutsideSuicunePostBattleText:
