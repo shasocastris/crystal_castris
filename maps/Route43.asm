@@ -210,7 +210,7 @@ TrainerPicnickerTiffany:
 
 .HasSilverpowder:
 	scall .Gift
-	verbosegiveitem SILVERPOWDER
+	verbosegiveitem SILVERPOWDER, 3
 	iffalse .NoRoom
 	clearflag ENGINE_TIFFANY_HAS_SILVERPOWDER
 	setevent EVENT_TIFFANY_GAVE_SILVERPOWDER

@@ -107,7 +107,7 @@ TrainerBirdKeeperJose2:
 
 .HasStarPiece:
 	scall .Gift
-	verbosegiveitem STAR_PIECE
+	verbosegiveitem STAR_PIECE, 3
 	iffalse .NoRoom
 	clearflag ENGINE_JOSE_HAS_STAR_PIECE
 	sjump .NumberAccepted

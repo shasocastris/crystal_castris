@@ -202,7 +202,7 @@ TrainerPicnickerGina1:
 
 .LeafStone:
 	scall .Gift
-	verbosegiveitem LEAF_STONE
+	verbosegiveitem LEAF_STONE, 3
 	iffalse .BagFull
 	clearflag ENGINE_GINA_HAS_LEAF_STONE
 	setevent EVENT_GINA_GAVE_LEAF_STONE

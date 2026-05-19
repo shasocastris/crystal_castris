@@ -102,7 +102,7 @@ TrainerFisherTully:
 
 .HasWaterStone:
 	scall .Gift
-	verbosegiveitem WATER_STONE
+	verbosegiveitem WATER_STONE, 3
 	iffalse .NoRoom
 	clearflag ENGINE_TULLY_HAS_WATER_STONE
 	setevent EVENT_TULLY_GAVE_WATER_STONE

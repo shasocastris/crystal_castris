@@ -168,7 +168,7 @@ TrainerSchoolboyAlan1:
 
 .GiveFireStone:
 	scall .Gift
-	verbosegiveitem FIRE_STONE
+	verbosegiveitem FIRE_STONE, 3
 	iffalse .BagFull
 	clearflag ENGINE_ALAN_HAS_FIRE_STONE
 	setevent EVENT_ALAN_GAVE_FIRE_STONE

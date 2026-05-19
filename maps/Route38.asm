@@ -111,7 +111,7 @@ TrainerLassDana1:
 
 .TryGiveThunderstone:
 	scall .Gift
-	verbosegiveitem THUNDERSTONE
+	verbosegiveitem THUNDERSTONE, 3
 	iffalse .NoRoomForThunderstone
 	clearflag ENGINE_DANA_HAS_THUNDERSTONE
 	setevent EVENT_DANA_GAVE_THUNDERSTONE
