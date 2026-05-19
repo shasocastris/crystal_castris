@@ -3,13 +3,6 @@ BattleCommand_Thief:
 	and a
 	jr nz, .enemy
 
-; The player needs to be able to steal an item.
-
-	call .playeritem
-	ld a, [hl]
-	and a
-	ret nz
-
 ; The enemy needs to have an item to steal.
 
 	call .enemyitem
@@ -42,11 +35,20 @@ BattleCommand_Thief:
 	ld [hl], a
 	ld [de], a
 
-	call .playeritem
+	ld a, [wNamedObjectIndex]
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld hl, wNumItems
+	call ReceiveItem
+	jr c, .stole
+
+	; Bag is full — give the item back to the enemy
+	call .enemyitem
 	ld a, [wNamedObjectIndex]
 	ld [hl], a
 	ld [de], a
-	jr .stole
+	ret
 
 .enemy
 
