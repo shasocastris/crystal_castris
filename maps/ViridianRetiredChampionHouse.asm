@@ -28,6 +28,7 @@ ViridianRetiredChampionScript:
 	ifequal 1, .FreshWater
 	ifequal 2, .SodaPop
 	ifequal 3, .Lemonade
+	ifequal 4, .BerryJuice
 	; Chose CANCEL or nothing
 	writetext RetiredChampionMaybeNextTimeText
 	waitbutton
@@ -73,7 +74,19 @@ ViridianRetiredChampionScript:
 	ifequal 1, .TeachSwordsDance
 	ifequal 2, .TeachDoubleEdge
 	ifequal 3, .TeachMegaKick
-	ifequal 4, .TeachSoftboiled
+	sjump .Cancelled
+
+.BerryJuice:
+	checkitem BERRY_JUICE
+	iffalse .NoDrink
+	writetext RetiredChampionBerryJuiceText
+	promptbutton
+	loadmenu .BerryJuiceMovesMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .TeachPayDay
+	ifequal 2, .TeachTeleport
+	ifequal 3, .TeachSoftboiledBerry
 	sjump .Cancelled
 
 ; --- Teach routines ---
@@ -124,9 +137,18 @@ ViridianRetiredChampionScript:
 	loadmoveindex MEGA_KICK
 	sjump .DoTeachLemonade
 
-.TeachSoftboiled:
+; Berry Juice moves
+.TeachPayDay:
+	loadmoveindex PAY_DAY
+	sjump .DoTeachBerryJuice
+
+.TeachTeleport:
+	loadmoveindex TELEPORT
+	sjump .DoTeachBerryJuice
+
+.TeachSoftboiledBerry:
 	loadmoveindex SOFTBOILED
-	sjump .DoTeachLemonade
+	sjump .DoTeachBerryJuice
 
 ; --- Drink-specific teach paths ---
 .DoTeachFreshWater:
@@ -147,6 +169,12 @@ ViridianRetiredChampionScript:
 	ifequal FALSE, .SuccessLemonade
 	sjump .Incompatible
 
+.DoTeachBerryJuice:
+	writetext RetiredChampionTeachMoveText
+	special MoveTutor
+	ifequal FALSE, .SuccessBerryJuice
+	sjump .Incompatible
+
 .SuccessFreshWater:
 	takeitem FRESH_WATER
 	sjump .TaughtMove
@@ -157,6 +185,10 @@ ViridianRetiredChampionScript:
 
 .SuccessLemonade:
 	takeitem LEMONADE
+	sjump .TaughtMove
+
+.SuccessBerryJuice:
+	takeitem BERRY_JUICE
 	sjump .TaughtMove
 
 .TaughtMove:
@@ -193,10 +225,11 @@ ViridianRetiredChampionScript:
 
 .DrinkMenuData:
 	db STATICMENU_CURSOR
-	db 4
+	db 5
 	db "FRESH WATER@"
 	db "SODA POP@"
 	db "LEMONADE@"
+	db "BERRY JUICE@"
 	db "CANCEL@"
 
 .FreshWaterMovesMenuHeader:
@@ -235,10 +268,22 @@ ViridianRetiredChampionScript:
 
 .LemonadeMovesData:
 	db STATICMENU_CURSOR
-	db 4
+	db 3
 	db "SWORDS DANCE@"
 	db "DOUBLE-EDGE@"
 	db "MEGA KICK@"
+
+.BerryJuiceMovesMenuHeader:
+	db MENU_BACKUP_TILES
+	menu_coords 0, 2, 15, TEXTBOX_Y - 1
+	dw .BerryJuiceMovesData
+	db 1
+
+.BerryJuiceMovesData:
+	db STATICMENU_CURSOR
+	db 3
+	db "PAY DAY@"
+	db "TELEPORT@"
 	db "SOFTBOILED@"
 
 ; --- Dialogue ---
@@ -315,6 +360,20 @@ RetiredChampionLemonadeText:
 	line "you the techniques"
 	cont "that won me my"
 	cont "trophies."
+	done
+
+RetiredChampionBerryJuiceText:
+	text "BERRY JUICE? Ha,"
+	line "my grandkids drink"
+	cont "that stuff."
+
+	para "Still, a gesture"
+	line "is a gesture."
+
+	para "I'll teach you some"
+	line "tricks you won't"
+	cont "find in any move"
+	cont "guide."
 	done
 
 RetiredChampionTeachMoveText:
