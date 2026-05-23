@@ -67,3 +67,22 @@ CheckItem::
 	ld a, b
 	rst Bankswitch
 	jmp PopBCDEHL
+
+CountItemInBag::
+; [wCurItem] = item *ID* to count.
+; Stores count in wBuffer1 and returns it in a.
+	push hl
+	push de
+	push bc
+	ldh a, [hROMBank]
+	push af
+	ld a, BANK(_CountItemInBag)
+	rst Bankswitch
+
+	call _CountItemInBag
+	ld [wBuffer1], a
+
+	pop bc
+	ld a, b
+	rst Bankswitch
+	jmp PopBCDEHL

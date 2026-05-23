@@ -402,6 +402,33 @@ ReadMart:
 
 INCLUDE "data/items/bargain_shop.asm"
 
+UpdateItemDescriptionAndBagQuantity:
+; Function3 for the buy menu: draws a "Bag ×N" box at top-left, then falls
+; through to the normal item description. Nothing is drawn if the player has
+; zero of the selected item, or if the cursor is on the CANCEL entry.
+	hlcoord 0, 0
+	lb bc, 3, 10
+	call ClearBox
+	ld a, [wMenuSelection]
+	cp -1
+	jr z, .skip_bag_box
+	call CountItemInBag    ; result stored in wBuffer1
+	hlcoord 0, 0
+	lb bc, 1, 8
+	call Textbox
+	hlcoord 1, 1
+	ld de, .BagXString
+	call PlaceString
+	hlcoord 6, 1
+	ld de, wBuffer1
+	lb bc, 1, 2
+	call PrintNum
+.skip_bag_box:
+	farjp UpdateItemDescription
+
+.BagXString:
+	db "Bag ×@"
+
 BuyMenu:
 	call FadeToMenu
 	farcall BlankScreen
@@ -690,7 +717,7 @@ MenuHeader_Buy:
 	dbw 0, wCurMartCount
 	dba PlaceMenuItemName
 	dba .PrintBCDPrices
-	dba UpdateItemDescription
+	dba UpdateItemDescriptionAndBagQuantity
 
 .PrintBCDPrices:
 	ld a, [wScrollingMenuCursorPosition]

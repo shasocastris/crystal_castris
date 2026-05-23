@@ -863,3 +863,106 @@ GetItemPrice:
 	pop bc
 	pop hl
 	ret
+
+_CountItemInBag::
+; Count how many of wCurItem the player has across the appropriate bag pocket.
+; Returns the count in a (0 if not found or pocket type has no quantity).
+	call CheckItemPocket
+	ld a, [wItemAttributeValue]
+	dec a                ; item types are 1-based; make 0-based for JumpTable
+	ld hl, .Pockets
+	jmp JumpTable
+
+.Pockets:
+	dw .Item    ; ITEM (1)
+	dw .KeyItem ; KEY_ITEM (2)
+	dw .Ball    ; BALL (3)
+	dw .TMHM    ; TM_HM (4)
+	dw .Berry   ; BERRIES (5)
+
+.Item:
+; 16-bit index format: [idx_hi][idx_lo][qty] per entry, count byte first
+	ld a, [wCurItem]
+	call GetItemIndexFromID  ; hl = 16-bit index
+	ld b, h
+	ld c, l              ; bc = target index
+	ld hl, wNumItems
+	ld a, [hli]          ; entry count, hl -> first entry
+	ld d, a
+	ld e, 0              ; result accumulator
+	and a
+	jr z, .item_done
+.item_loop:
+	ld a, [hli]          ; index high byte
+	cp b
+	jr nz, .item_mismatch
+	ld a, [hli]          ; index low byte
+	cp c
+	jr nz, .item_no_qty
+	ld a, [hli]          ; quantity
+	add e
+	ld e, a
+	jr .item_next
+.item_mismatch:
+	inc hl               ; skip low byte
+.item_no_qty:
+	inc hl               ; skip quantity
+.item_next:
+	dec d
+	jr nz, .item_loop
+.item_done:
+	ld a, e
+	ret
+
+.Ball:
+	ld hl, wNumBalls
+	jr .low_byte_pocket
+
+.Berry:
+	ld hl, wNumBerries
+
+.low_byte_pocket:
+; Low-byte index format: [idx_lo][qty] per entry, count byte first, $ff terminator
+	push hl
+	ld a, [wCurItem]
+	call GetItemIndexFromID  ; hl = 16-bit index, only low byte used
+	ld d, l              ; d = target low byte
+	pop hl
+	inc hl               ; skip count byte -> first entry
+	ld e, 0
+.low_loop:
+	ld a, [hli]          ; index low byte
+	cp -1
+	jr z, .low_done
+	cp d
+	jr nz, .low_skip
+	ld a, [hli]          ; quantity
+	add e
+	ld e, a
+	jr .low_loop
+.low_skip:
+	inc hl               ; skip quantity
+	jr .low_loop
+.low_done:
+	ld a, e
+	ret
+
+.KeyItem:
+; Key items have no quantity — either owned (1) or not (0).
+	call CheckKeyItems   ; sets carry if found
+	ld a, 0
+	ret nc
+	inc a
+	ret
+
+.TMHM:
+; TMs store their quantity directly in wTMsHMs indexed by TM number.
+	ld a, [wCurItem]
+	ld c, a
+	call GetTMHMNumber   ; c = 1-based TM/HM number
+	dec c                ; 0-based index into wTMsHMs
+	ld b, 0
+	ld hl, wTMsHMs
+	add hl, bc
+	ld a, [hl]
+	ret
