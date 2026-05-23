@@ -376,7 +376,7 @@ MACRO add_mt
 ENDM
 
 DEF MT01 EQU const_value
-add_mt FLAMETHROWER
+	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
 	add_mt SOFTBOILED
