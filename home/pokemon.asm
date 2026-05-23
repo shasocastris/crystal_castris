@@ -232,6 +232,7 @@ GetBaseData::
 	push af
 
 ; Get BaseData
+	ld a, [wCurSpecies]
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
