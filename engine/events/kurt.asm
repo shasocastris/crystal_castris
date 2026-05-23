@@ -170,19 +170,14 @@ Kurt_GetQuantityOfApricorn:
 	ld a, [wCurItem]
 	push hl
 	call GetItemIndexFromID
-	ld d, h
 	ld e, l
 	pop hl
-	ld c, a
 	ld b, 0
 .loop
 	inc hl
 	ld a, [hli]
 	cp -1
 	jr z, .done
-	cp d
-	ld a, [hli]
-	jr nz, .loop
 	cp e
 	jr nz, .loop
 	ld a, [hl]
@@ -216,7 +211,6 @@ Kurt_GiveUpSelectedQuantityOfSelectedApricorn:
 	ld a, [wCurItem]
 	push hl
 	call GetItemIndexFromID
-	ld b, h
 	ld c, l
 	pop hl
 	ld e, $0
@@ -238,9 +232,6 @@ Kurt_GiveUpSelectedQuantityOfSelectedApricorn:
 	cp -1
 	jr z, .okay1
 ; If we haven't found what we're looking for, continue.
-	cp b
-	ld a, [hli]
-	jr nz, .loop1
 	cp c
 	jr nz, .loop1
 ; Increment the result counter and store the bag index of the match.
@@ -354,7 +345,6 @@ Kurt_GetAddressOfApricornQuantity:
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	add hl, bc
 	ld a, [hl]
 	pop bc
 	pop hl
@@ -369,19 +359,14 @@ Kurt_GetRidOfItem:
 	ld b, 0
 	add hl, bc
 	add hl, bc
-	add hl, bc
 	ld a, [wCurItem]
 	push hl
 	call GetItemIndexFromID
-	ld d, h
 	ld e, l
 	pop hl
 	ld a, [hli]
 	cp -1
 	jr z, .done
-	cp d
-	ld a, [hli]
-	jr nz, .done
 	cp e
 	ld a, [hl]
 	jr nz, .done
@@ -396,7 +381,7 @@ Kurt_GetRidOfItem:
 
 .okay
 	push bc
-	ld hl, wNumBerries
+	ld hl, wNumItems
 	ld a, b
 	ld [wItemQuantityChange], a
 	call TossItem

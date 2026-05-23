@@ -4,13 +4,32 @@
 	const KURTSHOUSE_SLOWPOKE
 	const KURTSHOUSE_KURT2
 	const KURTSHOUSE_TWIN2
-	const KURTSHOUSE_DOLL
+
+	const_def 1 ; locked Pokémon ID table entries, used for species checking
+	const KURTSHOUSE_INDEX_RED_APRICORN
+	const KURTSHOUSE_INDEX_BLU_APRICORN
+	const KURTSHOUSE_INDEX_YLW_APRICORN
+	const KURTSHOUSE_INDEX_GRN_APRICORN
+	const KURTSHOUSE_INDEX_WHT_APRICORN
+	const KURTSHOUSE_INDEX_BLK_APRICORN
+	const KURTSHOUSE_INDEX_PNK_APRICORN
 
 KurtsHouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, KurtsHouseLoadReservedIDsCallback
 	callback MAPCALLBACK_OBJECTS, KurtsHouseKurtCallback
+
+KurtsHouseLoadReservedIDsCallback:
+	loaditemindex KURTSHOUSE_INDEX_RED_APRICORN, RED_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_BLU_APRICORN, BLU_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_YLW_APRICORN, YLW_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_GRN_APRICORN, GRN_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_WHT_APRICORN, WHT_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_BLK_APRICORN, BLK_APRICORN
+	loaditemindex KURTSHOUSE_INDEX_PNK_APRICORN, PNK_APRICORN
+	endcallback
 
 KurtsHouseKurtCallback:
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
@@ -72,87 +91,195 @@ Kurt1:
 	verbosegiveitem EXP_SHARE
 	iffalse .NoRoomForBall
 	setevent EVENT_KURT_GAVE_YOU_EXP_SHARE
-	waitbutton
-	closetext
-	turnobject PLAYER, DOWN
-	end
-
 .GotExpShare:
+	checkevent EVENT_GAVE_KURT_RED_APRICORN
+	iftrue .GiveLevelBall
+	checkevent EVENT_GAVE_KURT_BLU_APRICORN
+	iftrue .GiveLureBall
+	checkevent EVENT_GAVE_KURT_YLW_APRICORN
+	iftrue .GiveMoonBall
+	checkevent EVENT_GAVE_KURT_GRN_APRICORN
+	iftrue .GiveFriendBall
+	checkevent EVENT_GAVE_KURT_WHT_APRICORN
+	iftrue .GiveFastBall
+	checkevent EVENT_GAVE_KURT_BLK_APRICORN
+	iftrue .GiveHeavyBall
+	checkevent EVENT_GAVE_KURT_PNK_APRICORN
+	iftrue .GiveLoveBall
 	checkevent EVENT_CAN_GIVE_GS_BALL_TO_KURT
 	iftrue .CanGiveGSBallToKurt
 .NoGSBall:
-	writetext AzaleaTownKurtMoveTutorText
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .CheckApricorns
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	iftrue .CheckApricorns
+	writetext KurtsHouseKurtBallsFromApricornsText
 	waitbutton
-	checkitem POKE_DOLL
-	iffalse .NoPokeDoll
-	writetext AzaleaTownKurtMoveTutorText2
-	loadmenu .MoveMenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .PayDay
-	ifequal 2, .Teleport
-	ifequal 3, .Softboiled
-	sjump .Incompatible
+.CheckApricorns:
+	checkitem RED_APRICORN
+	iftrue .AskApricorn
+	checkitem BLU_APRICORN
+	iftrue .AskApricorn
+	checkitem YLW_APRICORN
+	iftrue .AskApricorn
+	checkitem GRN_APRICORN
+	iftrue .AskApricorn
+	checkitem WHT_APRICORN
+	iftrue .AskApricorn
+	checkitem BLK_APRICORN
+	iftrue .AskApricorn
+	checkitem PNK_APRICORN
+	iftrue .AskApricorn
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .ThatTurnedOutGreat
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	iftrue .IMakeBallsFromApricorns
+	closetext
+	end
 
-.NoPokeDoll:
-	writetext AzaleaTownKurtMoveTutorNoDoll
+.IMakeBallsFromApricorns:
+	writetext KurtsHouseKurtBallsFromApricornsText
 	waitbutton
 	closetext
 	end
 
-.PayDay:
-	loadmoveindex PAY_DAY
-	writetext AzaleaTownKurtMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+.AskApricorn:
+	writetext KurtsHouseKurtAskYouHaveAnApricornText
+	promptbutton
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	special SelectApricornForKurt
+	checkmaplockeditems
+	ifequal FALSE, .Cancel
+	ifequal KURTSHOUSE_INDEX_BLU_APRICORN, .Blu
+	ifequal KURTSHOUSE_INDEX_YLW_APRICORN, .Ylw
+	ifequal KURTSHOUSE_INDEX_GRN_APRICORN, .Grn
+	ifequal KURTSHOUSE_INDEX_WHT_APRICORN, .Wht
+	ifequal KURTSHOUSE_INDEX_BLK_APRICORN, .Blk
+	ifequal KURTSHOUSE_INDEX_PNK_APRICORN, .Pnk
+; .Red
+	setevent EVENT_GAVE_KURT_RED_APRICORN
+	sjump .GaveKurtApricorns
 
-.Teleport:
-	loadmoveindex TELEPORT
-	writetext AzaleaTownKurtMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+.Blu:
+	setevent EVENT_GAVE_KURT_BLU_APRICORN
+	sjump .GaveKurtApricorns
 
-.Softboiled:
-	loadmoveindex SOFTBOILED
-	writetext AzaleaTownKurtMoveText
-	special MoveTutor
-	ifequal FALSE, .TeachMove
-	sjump .Incompatible
+.Ylw:
+	setevent EVENT_GAVE_KURT_YLW_APRICORN
+	sjump .GaveKurtApricorns
 
-.MoveMenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, 15, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
+.Grn:
+	setevent EVENT_GAVE_KURT_GRN_APRICORN
+	sjump .GaveKurtApricorns
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "PAY DAY@"
-	db "TELEPORT@"
-	db "SOFTBOILED@"
-	db "CANCEL@"
+.Wht:
+	setevent EVENT_GAVE_KURT_WHT_APRICORN
+	sjump .GaveKurtApricorns
 
-.TeachMove:
-	writetext AzaleaTownKurtPayment
-	takeitem POKE_DOLL
+.Blk:
+	setevent EVENT_GAVE_KURT_BLK_APRICORN
+	sjump .GaveKurtApricorns
+
+.Pnk:
+	setevent EVENT_GAVE_KURT_PNK_APRICORN
+; fallthrough
+.GaveKurtApricorns:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	writetext KurtsHouseKurtGetStartedText
 	waitbutton
-	writetext AzaleaTownTutorMoveTaught
+	closetext
+	special FadeOutToBlack
+	special ReloadSpritesNoPalettes
+	playsound SFX_WARP_TO
+	waitsfx
+	pause 35
+	sjump Kurt1
+	end
+
+.Cancel:
+	writetext KurtsHouseKurtThatsALetdownText
 	waitbutton
 	closetext
 	end
 
-.Incompatible:
-	writetext AzaleaTownComeBackText
+._ThatTurnedOutGreat:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+.ThatTurnedOutGreat:
+	writetext KurtsHouseKurtTurnedOutGreatText
 	waitbutton
-	closetext
-	end
-
 .NoRoomForBall:
 	closetext
 	end
+
+.GiveLevelBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar LEVEL_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_RED_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveLureBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar LURE_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_BLU_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveMoonBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar MOON_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_YLW_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveFriendBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar FRIEND_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_GRN_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveFastBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar FAST_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_WHT_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveHeavyBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar HEAVY_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_BLK_APRICORN
+	sjump ._ThatTurnedOutGreat
+
+.GiveLoveBall:
+	checkflag ENGINE_KURT_MAKING_BALLS
+	iftrue KurtMakingBallsScript
+	writetext KurtsHouseKurtJustFinishedYourBallText
+	promptbutton
+	verbosegiveitemvar LOVE_BALL, VAR_KURT_APRICORNS
+	iffalse .NoRoomForBall
+	clearevent EVENT_GAVE_KURT_PNK_APRICORN
+	sjump ._ThatTurnedOutGreat
 
 .CanGiveGSBallToKurt:
 	checkevent EVENT_GAVE_GS_BALL_TO_KURT
@@ -212,6 +339,22 @@ Kurt2:
 	opentext
 	checkevent EVENT_GAVE_GS_BALL_TO_KURT
 	iftrue KurtScript_ImCheckingItNow
+KurtMakingBallsScript:
+	checkevent EVENT_BUGGING_KURT_TOO_MUCH
+	iffalse Script_FirstTimeBuggingKurt
+	writetext KurtsHouseKurtDontBotherMeText
+	waitbutton
+	closetext
+	turnobject KURTSHOUSE_KURT2, UP
+	end
+
+Script_FirstTimeBuggingKurt:
+	writetext KurtsHouseKurtGranddaughterHelpingWorkFasterText
+	waitbutton
+	closetext
+	turnobject KURTSHOUSE_KURT2, UP
+	setevent EVENT_BUGGING_KURT_TOO_MUCH
+	end
 
 KurtScript_ImCheckingItNow:
 	writetext KurtsHouseKurtImCheckingItNowText
@@ -224,8 +367,12 @@ KurtScript_ImCheckingItNow:
 
 KurtsGranddaughter1:
 	faceplayer
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue KurtsGranddaughter2Subscript
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue KurtsGranddaughterFunScript
 	checkevent EVENT_FOREST_IS_RESTLESS
-	iftrue .Excited
+	iftrue .Lonely
 	checkevent EVENT_FAST_SHIP_FIRST_TIME
 	iftrue .Dad
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
@@ -238,16 +385,9 @@ KurtsGranddaughter1:
 	closetext
 	end
 
-.Excited:
-	opentext
-	writetext KurtsGranddaughterExcitedText
-	waitbutton
-	closetext
-	end
-
 .SlowpokeBack:
 	opentext
-	writetext KurtsGranddaughterSellApricornsText
+	writetext KurtsGranddaughterSlowpokeBackText
 	waitbutton
 	closetext
 	end
@@ -268,11 +408,28 @@ KurtsGranddaughter1:
 
 KurtsGranddaughter2:
 	faceplayer
+KurtsGranddaughter2Subscript:
 	opentext
+	checkevent EVENT_GAVE_GS_BALL_TO_KURT
+	iftrue .GSBall
+	writetext KurtsGranddaughterHelpText
+	waitbutton
+	closetext
+	turnobject KURTSHOUSE_TWIN2, RIGHT
+	end
+
+.GSBall:
 	writetext KurtsGranddaughterGSBallText
 	waitbutton
 	closetext
 	turnobject KURTSHOUSE_TWIN2, RIGHT
+	end
+
+KurtsGranddaughterFunScript:
+	opentext
+	writetext KurtsGranddaughterFunText
+	waitbutton
+	closetext
 	end
 
 KurtsHouseSlowpoke:
@@ -321,9 +478,6 @@ KurtsHouseKurtGoAroundPlayerThenExitHouseMovement:
 	big_step DOWN
 	step_end
 
-ClefairyDollScript:
-	jumptext ClefairyDollText
-
 KurtsHouseKurtMakingBallsMustWaitText:
 	text "Hm? Who are you?"
 
@@ -331,9 +485,8 @@ KurtsHouseKurtMakingBallsMustWaitText:
 	line "want me to make"
 	cont "some BALLS?"
 
-	para "You can just buy"
-	line "them at the AZALEA"
-	cont "MART."
+	para "Sorry, but that'll"
+	line "have to wait."
 
 	para "Do you know TEAM"
 	line "ROCKET? Ah, don't"
@@ -375,22 +528,71 @@ KurtsHouseKurtHonoredToMakeBallsText:
 
 	para "I like your style!"
 
-	para "Make sure to check"
-	line "out the AZALEA"
-	cont "MART to buy the"
-	cont "# BALLS that"
+	para "I would be honored"
+	line "to make BALLS for"
 
-	para "Maizie and I make."
+	para "a trainer like"
+	line "you."
 
-	para "And when you have"
-	line "some extra time, I"
+	para "This is all I have"
+	line "now, but take it."
+	done
 
-	para "want to teach your"
-	line "#MON some new"
-	cont "moves."
+KurtsHouseKurtBallsFromApricornsText:
+	text "KURT: I make BALLS"
+	line "from APRICORNS."
 
-	para "Until then, here's"
-	line "a gift."
+	para "Collect them from"
+	line "trees and bring"
+	cont "'em to me."
+
+	para "I'll make BALLS"
+	line "out of them."
+	done
+
+KurtsHouseKurtAskYouHaveAnApricornText:
+	text "KURT: You have an"
+	line "APRICORN for me?"
+
+	para "Fine! I'll turn it"
+	line "into a BALL."
+	done
+
+KurtsHouseKurtGetStartedText:
+	text "Kurt: I'll get"
+	line "started right now!"
+	done
+
+KurtsHouseKurtThatsALetdownText:
+	text "KURT: Oh…"
+	line "That's a letdown."
+	done
+
+KurtsHouseKurtDontBotherMeText:
+	text "KURT: I'm working!"
+	line "Don't bother me!"
+	done
+
+KurtsHouseKurtJustFinishedYourBallText:
+	text "KURT: Ah, <PLAYER>!"
+	line "I just finished"
+	cont "your BALL. Here!"
+	done
+
+KurtsHouseKurtTurnedOutGreatText:
+	text "KURT: That turned"
+	line "out great."
+
+	para "Try catching"
+	line "#MON with it."
+	done
+
+KurtsHouseKurtGranddaughterHelpingWorkFasterText:
+	text "KURT: Now that my"
+	line "granddaughter is"
+
+	para "helping me, I can"
+	line "work much faster."
 	done
 
 KurtsHouseKurtWhatIsThatText:
@@ -441,30 +643,14 @@ KurtsGranddaughterSlowpokeGoneText:
 KurtsGranddaughterLonelyText:
 	text "Grandpa's gone…"
 	line "I'm so lonely…"
-
-	para "Even the SLOWPOKE"
-	line "my dad gave me has"
-	cont "disappeared…"
 	done
 
-KurtsGranddaughterExcitedText:
-	text "I've never seen my"
-	line "Grandpa so excited"
+KurtsGranddaughterSlowpokeBackText:
+	text "The SLOWPOKE my"
+	line "dad gave me came"
 
-	para "about any other"
-	line "# BALL!"
-	done
-
-KurtsGranddaughterSellApricornsText:
-	text "If you ever find"
-	line "APRICORNS, you can"
-	cont "sell them at any"
-	cont "# MART."
-
-	para "They get shipped"
-	line "here so Grandpa"
-	cont "and I can make our"
-	cont "specialty BALLS."
+	para "back! Its TAIL is"
+	line "growing back too!"
 	done
 
 KurtsGranddaughterDadText:
@@ -475,6 +661,20 @@ KurtsGranddaughterDadText:
 	para "I have to stay"
 	line "home with Grandpa"
 	cont "and SLOWPOKE."
+	done
+
+KurtsGranddaughterHelpText:
+	text "I get to help"
+	line "Grandpa now!"
+
+	para "We'll make good"
+	line "BALLS for you, so"
+	cont "please wait!"
+	done
+
+KurtsGranddaughterFunText:
+	text "It's fun to make"
+	line "BALLS!"
 	done
 
 KurtsGranddaughterGSBallText:
@@ -501,61 +701,6 @@ KurtsHouseCelebiStatueText:
 	cont "tector."
 	done
 
-AzaleaTownKurtMoveTutorText:
-	text "KURT: I can teach"
-	line "your #MON new"
-	cont "moves."
-
-	para "These were well"
-	line "known when I was"
-	cont "younger, but are"
-	cont "more obscure now."
-	done
-
-AzaleaTownKurtMoveTutorText2:
-	text "What technique"
-	line "would you like to"
-	cont "have one of your"
-	cont "#MON learn?"
-	done
-
-AzaleaTownKurtPayment:
-	text "<PLAYER> gave Kurt"
-	line "the #DOLL."
-	done
-
-AzaleaTownKurtMoveTutorNoDoll:
-	text "Ah, but before I"
-	line "do, could you get"
-
-	para "a #DOLL for"
-	line "Maizie?"
-
-	para "She collects the"
-	line "ones they sell in"
-	cont "GOLDENROD CITY."
-	done
-
-ClefairyDollText:
-	text "One of Maizie's"
-	line "many #DOLLs."
-	done
-
-AzaleaTownTutorMoveTaught:
-	text "You'll definitely"
-	line "go far as a"
-	cont "#MON trainer."
-	done
-
-AzaleaTownComeBackText:
-	text "Come back when"
-	line "you're ready."
-	done
-
-AzaleaTownKurtMoveText:
-	text_start
-	done
-
 KurtsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -580,4 +725,3 @@ KurtsHouse_MapEvents:
 	object_event  6,  3, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsHouseSlowpoke, EVENT_KURTS_HOUSE_SLOWPOKE
 	object_event 14,  3, SPRITE_KURT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Kurt2, EVENT_KURTS_HOUSE_KURT_2
 	object_event 11,  4, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, KurtsGranddaughter2, EVENT_KURTS_HOUSE_GRANDDAUGHTER_2
-	object_event  7,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ClefairyDollScript, EVENT_KURTS_HOUSE_SLOWPOKE
