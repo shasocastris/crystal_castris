@@ -117,37 +117,29 @@ SelectBerryForGreenhouse:
 
 .FindAndRemoveBerry:
 ; Walks berry pocket to find [wCurItem], removes 1.
-; Mirrors Kurt_GetRidOfItem's setup exactly.
 	ld a, [wCurItem]
 	call GetItemIndexFromID
-	ld d, h
 	ld e, l
-	ld hl, wNumBerries + 1
+	ld hl, wNumBerries
 	xor a
 	ld [wCurItemQuantity], a
 .find_loop:
-	ld a, [hli]
+	inc hl
+	ld a, [hli]      ; read idx_l, hl → qty
 	cp -1
-	ret z
-	cp d
-	jr nz, .find_skip
-	ld a, [hli]
+	ret z            ; terminator — not found
 	cp e
-	jr nz, .find_skip2
-	; Found it — wCurItemQuantity has the slot index
-	ld a, 1
-	ld [wItemQuantityChange], a
-	ld hl, wNumBerries
-	jp TossItem
-
-.find_skip:
-	inc hl       ; skip id_lo
-.find_skip2:
-	inc hl       ; skip qty
+	jr z, .found
 	ld a, [wCurItemQuantity]
 	inc a
 	ld [wCurItemQuantity], a
-	jr .find_loop
+	jr .find_loop    ; inc hl at start of next iter skips qty
+
+.found:
+	ld a, 1
+	ld [wItemQuantityChange], a
+	ld hl, wNumItems
+	jp TossItem
 
 .no_berries:
 	xor a
@@ -221,7 +213,6 @@ SelectBerryForGreenhouse:
 	ld a, [wCurItem]
 	push hl
 	call GetItemIndexFromID
-	ld d, h
 	ld e, l
 	pop hl
 	ld b, 0
@@ -230,9 +221,6 @@ SelectBerryForGreenhouse:
 	ld a, [hli]
 	cp -1
 	jr z, .qty_done
-	cp d
-	ld a, [hli]
-	jr nz, .qty_loop
 	cp e
 	jr nz, .qty_loop
 	ld a, [hl]
@@ -298,48 +286,4 @@ ResetGreenhousePlots::
 	; Planted and not yet grown — promote it
 	ld b, SET_FLAG
 	call EventFlagAction
-	ret
-
-
-RemoveOneGreenhouseBerry::
-; Removes 1 of [wScriptVar] from the berry pocket.
-; Walks the pocket manually, same pattern as Kurt_GetRidOfItem.
-	ld a, [wScriptVar]
-	ld [wCurItem], a
-
-	; Convert to the index format stored in the pocket
-	call GetItemIndexFromID
-	ld d, h
-	ld e, l
-
-	; Walk berry pocket entries: [id_hi, id_lo, qty] per slot
-	ld hl, wNumBerries
-	xor a
-	ld [wCurItemQuantity], a
-
-.loop:
-	inc hl
-	ld a, [hli]       ; id_hi
-	cp -1
-	jr z, .not_found  ; hit terminator
-	cp d
-	ld a, [hli]       ; id_lo
-	jr nz, .next
-	cp e
-	jr nz, .next
-
-	; Found it — remove 1
-	ld a, 1
-	ld [wItemQuantityChange], a
-	ld hl, wNumBerries
-	call TossItem
-	ret
-
-.next:
-	ld a, [wCurItemQuantity]
-	inc a
-	ld [wCurItemQuantity], a
-	jr .loop
-
-.not_found:
 	ret
