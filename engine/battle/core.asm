@@ -7625,32 +7625,27 @@ GiveExperiencePoints:
 	ld a, [wBattleParticipantsNotFainted]
 	ld b, a
 	ld c, PARTY_LENGTH
-	ld de, 0
+	ld d, 0
+	ld hl, wPartyMon1Level
 .count_loop
-	push bc
-	push de
-	ld a, e
-	ld hl, wPartyMon1Species
-	call GetPartyLocation
-	ld bc, MON_LEVEL
-	add hl, bc
 	ld a, [hl]
 	cp MAX_LEVEL
-	pop de
-	pop bc
-	jr c, .gains_exp
-	srl b
-	ld a, d
-	jr .no_exp
-.gains_exp
+	jr nc, .no_exp
 	xor a
 	srl b
 	adc d
 	ld d, a
+	jr .advance_hl
 .no_exp
-	inc e
+	srl b
+.advance_hl
+	push de
+	ld de, PARTYMON_STRUCT_LENGTH
+	add hl, de
+	pop de
 	dec c
 	jr nz, .count_loop
+	ld a, d
 	cp 2
 	ret c
 
