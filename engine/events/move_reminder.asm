@@ -24,12 +24,6 @@ MoveReminding:
 	farcall SelectMonFromParty
 	jr c, .cancel
 
-	; Checks if the current selection is an egg. Relative jump to
-	; the ".is_an_egg" local jump if so and continue if not.
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .is_an_egg
-
 	; Checks if the current selection is not a Pokémon. Relative jump to
 	; the ".not_a_pokemon" local jump if so and continue if not.
 	; Prevents continuing if glitched Pokémon are selected.
@@ -84,12 +78,6 @@ MoveReminding:
 ; This ends the dialogue.
 .cancel
 	ld hl, MoveReminderCancelText
-	jp PrintText
-
-; Loads and prints the "MoveReminderEggText" text.
-; This ends the dialogue.
-.is_an_egg
-	ld hl, MoveReminderEggText
 	jp PrintText
 
 ; Loads and prints the "MoveReminderNotaMonText" text.

@@ -56,16 +56,6 @@ _TempMonStatsCalculation:
 	add hl, bc
 	ld d, h
 	ld e, l
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr nz, .not_egg
-	xor a
-	ld [de], a
-	inc de
-	ld [de], a
-	jr .zero_status
-
-.not_egg
 	push bc
 	ld hl, MON_MAXHP
 	add hl, bc

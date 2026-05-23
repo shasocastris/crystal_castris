@@ -449,8 +449,6 @@ AddTempmonToParty:
 
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
-	cp EGG
-	jr z, .egg
 	call SetSeenAndCaughtMon
 	ld hl, wPartyMon1Happiness
 	ld a, [wPartyCount]
@@ -458,7 +456,6 @@ AddTempmonToParty:
 	ld bc, PARTYMON_STRUCT_LENGTH
 	rst AddNTimes
 	ld [hl], BASE_HAPPINESS
-.egg
 
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID

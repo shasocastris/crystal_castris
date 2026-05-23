@@ -3732,11 +3732,6 @@ CheckIfCurPartyMonIsFitToFight:
 	ld c, a
 	ld b, 0
 	add hl, bc
-	ld a, [hl]
-	cp EGG
-	ld hl, BattleText_AnEGGCantBattle
-	jr z, .print_textbox
-
 	ld hl, BattleText_TheresNoWillToBattle
 
 .print_textbox

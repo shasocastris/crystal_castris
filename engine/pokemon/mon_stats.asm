@@ -342,9 +342,6 @@ Unused_PlaceEnemyHPLevel:
 	rst PlaceString
 	call CopyMonToTempMon
 	pop hl
-	ld a, [wCurPartySpecies]
-	cp EGG
-	ret z
 	push hl
 	ld bc, -12
 	add hl, bc

@@ -7,9 +7,6 @@ MoveDeletion:
 	call PrintText
 	farcall SelectMonFromParty
 	jr c, .declined
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Moves + 1
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -41,10 +38,6 @@ MoveDeletion:
 	call PlaySFX
 	call WaitSFX
 	ld hl, .DeleterForgotMoveText
-	jmp PrintText
-
-.egg
-	ld hl, .MailEggText
 	jmp PrintText
 
 .declined

@@ -515,14 +515,7 @@ PlacePartyMonMobileBattleSelection:
 	db "１@", "２@", "３@" ; 1st, 2nd, 3rd
 
 PartyMenuCheckEgg:
-	ld a, LOW(wPartySpecies)
-	add b
-	ld e, a
-	adc HIGH(wPartySpecies)
-	sub e
-	ld d, a
-	ld a, [de]
-	cp EGG
+	or 1
 	ret
 
 GetPartyMenuQualityIndexes:

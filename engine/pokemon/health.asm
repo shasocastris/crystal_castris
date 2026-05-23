@@ -6,8 +6,6 @@ HealParty:
 	ld a, [hli]
 	cp -1
 	ret z
-	cp EGG
-	jr z, .next
 
 	push hl
 	call HealPartyMon

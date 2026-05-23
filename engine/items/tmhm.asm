@@ -93,31 +93,12 @@ ChooseMonToLearnTMHM_NoRefresh:
 	call DelayFrame
 	farcall PartyMenuSelect
 	push af
-	ld a, [wCurPartySpecies]
-	cp EGG
-	pop bc ; now contains the former contents of af
-	jr z, .egg
-	push bc
 	ld hl, wTMHMMoveNameBackup
 	ld de, wStringBuffer2
 	ld bc, MOVE_NAME_LENGTH - 1
 	rst CopyBytes
-	pop af ; now contains the original contents of af
-	ret
-
-.egg
-	push hl
-	push de
-	push bc
-	push af
-	ld de, SFX_WRONG
-	call PlaySFX
-	call WaitSFX
 	pop af
-	pop bc
-	pop de
-	pop hl
-	jr .loopback
+	ret
 
 TeachTMHM:
 	predef CanLearnTMHMMove

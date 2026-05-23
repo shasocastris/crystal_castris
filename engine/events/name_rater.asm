@@ -9,11 +9,7 @@ _NameRater:
 	call PrintText
 	farcall SelectMonFromParty
 	jr c, .cancel
-; He can't rename an egg...
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
-; ... or a Pokemon you got from a trade.
+; He can't rename a Pokemon you got from a trade.
 	call GetCurNickname
 	call CheckIfMonIsYourOT
 	jr c, .traded
@@ -69,10 +65,6 @@ _NameRater:
 
 .cancel
 	ld hl, NameRaterComeAgainText
-	jr .done
-
-.egg
-	ld hl, NameRaterEggText
 
 .done
 	jmp PrintText

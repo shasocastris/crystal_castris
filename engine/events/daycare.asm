@@ -117,9 +117,6 @@ DayCareAskDepositPokemon:
 	ld b, PARTYMENUACTION_GIVE_MON
 	farcall SelectTradeOrDayCareMon
 	jr c, .Declined
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .Egg
 	farcall CheckCurPartyMonFainted
 	jr c, .OutOfUsableMons
 	ld hl, wPartyMon1Item
@@ -137,11 +134,6 @@ DayCareAskDepositPokemon:
 
 .Declined:
 	ld a, DAYCARETEXT_OH_FINE
-	scf
-	ret
-
-.Egg:
-	ld a, DAYCARETEXT_CANT_BREED_EGG
 	scf
 	ret
 

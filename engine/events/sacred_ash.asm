@@ -12,7 +12,6 @@ _SacredAsh:
 
 CheckAnyFaintedMon:
 	ld de, PARTYMON_STRUCT_LENGTH
-	ld bc, wPartySpecies
 	ld hl, wPartyMon1HP
 	ld a, [wPartyCount]
 	and a
@@ -21,16 +20,9 @@ CheckAnyFaintedMon:
 .loop
 	push af
 	push hl
-	ld a, [bc]
-	inc bc
-	cp EGG
-	jr z, .next
-
 	ld a, [hli]
 	or [hl]
 	jr z, .done
-
-.next
 	pop hl
 	add hl, de
 	pop af

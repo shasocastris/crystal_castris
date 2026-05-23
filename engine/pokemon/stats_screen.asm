@@ -109,17 +109,10 @@ MonStatsInit:
 	call ClearTilemap
 	farcall HDMATransferTilemapToWRAMBank3
 	call StatsScreen_CopyToTempMon
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	call StatsScreen_InitUpperHalf
 	ld hl, wStatsScreenFlags
 	set STATS_SCREEN_PLACE_FRONTPIC, [hl]
 	ld h, 4
-	jr StatsScreen_SetJumptableIndex
-
-.egg
-	ld h, 1
 	jr StatsScreen_SetJumptableIndex
 
 EggStatsInit:
@@ -228,9 +221,6 @@ StatsScreen_CopyToTempMon:
 
 .not_tempmon
 	farcall CopyMonToTempMon
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .done
 	ld a, [wMonType]
 	cp BOXMON
 	jr c, .done
@@ -978,15 +968,8 @@ StatsScreen_GetAnimationParam:
 	ld bc, wTempMonSpecies
 ; fallthrough
 .CheckEggFaintedFrzSlp:
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	call CheckFaintedFrzSlp
 	jr c, .FaintedFrzSlp
-.egg
-	xor a
-	scf
-	ret
 
 .Wildmon:
 	ld a, $1

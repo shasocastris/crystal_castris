@@ -847,15 +847,12 @@ TradeAnim_Wait180IfOTEgg:
 
 IsOTTrademonEgg:
 	call TradeAnim_AdvanceScriptPointer
-	ld a, [wOTTrademonSpecies]
-	cp EGG
+	or 1
 	ret
 
 ShowPlayerTrademonStats:
 	ld de, wPlayerTrademonSpecies
 	ld a, [de]
-	cp EGG
-	jr z, TrademonStats_Egg
 	call TrademonStats_MonTemplate
 	ld de, wPlayerTrademonSpecies
 	call TrademonStats_PrintSpeciesNumber
@@ -871,8 +868,6 @@ ShowPlayerTrademonStats:
 ShowOTTrademonStats:
 	ld de, wOTTrademonSpecies
 	ld a, [de]
-	cp EGG
-	jr z, TrademonStats_Egg
 	call TrademonStats_MonTemplate
 	ld de, wOTTrademonSpecies
 	call TrademonStats_PrintSpeciesNumber

@@ -576,13 +576,6 @@ GiveItem:
 	call DelayFrame
 	farcall PartyMenuSelect
 	jr c, .finish
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr nz, .give
-	ld hl, .AnEggCantHoldAnItemText
-	call PrintText
-	jr .loop
-
 .give
 	ld a, [wJumptableIndex]
 	push af
@@ -610,9 +603,7 @@ GiveItem:
 .NoPokemon:
 	ld hl, YouDontHaveAMonText
 	jmp Pack_PrintTextNoScroll
-.AnEggCantHoldAnItemText:
-	text_far _AnEggCantHoldAnItemText
-	text_end
+
 
 BattlePack:
 	ld hl, wItemFlags

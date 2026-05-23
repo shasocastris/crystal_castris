@@ -1141,14 +1141,6 @@ _GetCursorMon:
 	ld de, wBufferMonNickname
 	rst PlaceString
 
-	; If we're dealing with an egg, we're done now.
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	jr nz, .not_egg
-	or 1
-	ret
-
-.not_egg
 	; Species name
 	ld a, [wBufferMonSpecies]
 	ld [wNamedObjectIndex], a
@@ -2119,17 +2111,8 @@ BillsPC_PrepareTransistion:
 	jmp ClearSprites
 
 BillsPC_Moves:
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	ld hl, .CantCheckEggMoves
-	jmp z, BillsPC_PrintText
 	call BillsPC_PrepareTransistion
 	jr BillsPC_ReturnFromTransistion
-
-.CantCheckEggMoves:
-	text "You can't check"
-	line "an EGG's moves!"
-	prompt
 
 BillsPC_GetStorageSpace:
 ; Forces game save until we have at least a free pokedb entries left.
@@ -2494,12 +2477,6 @@ BillsPC_Menu:
 BillsPC_Item:
 	call BillsPC_HideCursorAndMode
 
-	; Eggs can't be given items.
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	ld hl, BillsPC_EggsCantHoldItemsText
-	jmp z, BillsPC_PrintText
-
 	; Give a slightly different menu depending on whether the mon is holding
 	; an item right now or not and whether or not it's Mail.
 	ld a, [wBufferMonItem]
@@ -2630,12 +2607,6 @@ BillsPC_CanReleaseMon:
 	jr c, .done
 	; fallthrough
 .not_last_healthy
-	; Can't release Eggs.
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	ld a, 2
-	ret z
-
 	; Ensure that the mon doesn't know any HMs.
 	push de
 	push hl
@@ -3008,12 +2979,6 @@ BillsPC_SwapStorage:
 	push bc
 	; fallthrough
 .entries_not_full
-	; Don't allow Eggs to hold items.
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	ld a, 7
-	jmp z, .failed
-
 	; Movement from the bag needs special handling.
 	ld a, e
 	inc a

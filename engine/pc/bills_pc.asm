@@ -771,14 +771,6 @@ EncodeBufferMon:
 ; Encodes party_struct wBufferMon in-place to savemon_struct wEncodedBufferMon.
 ; Bytes identical to both structs do not need encoding.
 
-	; Handle EGGs, store as high bit in EXP.
-	ld a, [wBufferMonAltSpecies]
-	ld hl, wEncodedBufferMonIsEgg
-	cp EGG
-	jr nz, .not_egg
-	set IS_EGG_F, [hl]
-	.not_egg
-
 	; Convert species to 16 bit.
 	ld a, [wBufferMonSpecies]
 	call GetPokemonIndexFromID
@@ -1004,19 +996,6 @@ DecodeBufferMon:
 	ld h, a
 	call GetPokemonIDFromIndex
 	ld [wBufferMonSpecies], a
-
-	; Get Egg bit and store in AltSpecies
-	ld hl, wEncodedBufferMonIsEgg
-	ld a, [hl]
-
-	; If EGG, load EGG into AltSpecies, otherwise
-	; load Species into AltSpecies.
-	bit IS_EGG_F, a
-	ld a, [wBufferMonSpecies]
-	jr z, .is_not_egg
-	ld a, EGG
-	res IS_EGG_F, [hl]
-.is_not_egg
 	ld [wBufferMonAltSpecies], a
 
 	; Convert 16-bit Moves Index to 8-bit Move IDs
@@ -1094,16 +1073,6 @@ SetTempPartyMonData:
 	ld a, [hl]
 	ld [de], a
 
-	; Eggs have 0 current HP
-	ld a, [wBufferMonAltSpecies]
-	cp EGG
-	jr nz, .not_egg
-	xor a
-	ld [de], a
-	dec de
-	ld [de], a
-
-.not_egg
 	ld hl, wBufferMonMoves
 	ld de, wBufferMonPP
 	farcall RestoreBufferPP

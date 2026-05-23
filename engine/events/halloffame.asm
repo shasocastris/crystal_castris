@@ -142,10 +142,6 @@ GetHallOfFameParty:
 	ld a, [hli]
 	cp -1
 	jr z, .done
-	cp EGG
-	jr nz, .mon
-	inc c
-	jr .next
 
 .mon
 	push hl
@@ -480,9 +476,6 @@ DisplayHOFMon:
 	ld [wBoxAlignment], a
 	hlcoord 6, 5
 	call _PrepMonFrontpic
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .print_id_no
 	hlcoord 1, 13
 	ld a, '№'
 	ld [hli], a

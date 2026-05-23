@@ -1134,8 +1134,6 @@ Link_FixOTParty_Gen2:
 	sub l
 	ld h, a
 	ld a, [hl]
-	cp EGG
-	jr z, .no_species_update
 	call IsAPokemon
 	jr c, .no_species_update
 	ld a, [wTempSpecies]

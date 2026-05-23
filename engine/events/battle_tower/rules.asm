@@ -205,12 +205,7 @@ CheckPartyValueIsUnique:
 	ret
 
 .isegg
-	push bc
-	ld b, a
-	ld a, [de]
-	cp EGG
-	ld a, b
-	pop bc
+	or 1
 	ret
 
 CheckBTRule_PartyItemsAreUnique:
@@ -218,18 +213,5 @@ CheckBTRule_PartyItemsAreUnique:
 	jr CheckPartyValueIsUnique
 
 CheckBTRule_HasPartyAnEgg:
-	ld hl, wPartyCount
-	ld a, [hli]
-	ld c, a
-.loop
-	ld a, [hli]
-	cp EGG
-	jr z, .found
-	dec c
-	jr nz, .loop
 	and a
-	ret
-
-.found
-	scf
 	ret

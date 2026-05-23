@@ -198,11 +198,6 @@ SwitchPartyMons:
 	jmp CancelPokemonAction
 
 GiveTakePartyMonItem:
-; Eggs can't hold items!
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .cancel
-
 	ld hl, GiveTakeItemMenuData
 	call LoadMenuHeader
 	call VerticalMenu
@@ -922,9 +917,6 @@ DeleteMoveScreen2DMenuData:
 	db PAD_UP | PAD_DOWN | PAD_A | PAD_B ; accepted buttons
 
 ManagePokemonMoves:
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	ld hl, wOptions
 	ld a, [hl]
 	push af
@@ -933,8 +925,6 @@ ManagePokemonMoves:
 	pop af
 	ld [wOptions], a
 	call ClearBGPalettes
-
-.egg
 	xor a
 	ret
 
@@ -1046,29 +1036,16 @@ MoveScreenLoop:
 	ld a, [hl]
 	cp -1
 	jr z, .cycle_left
-	cp EGG
-	ret nz
-	jr .cycle_right
+	ret
 
 .cycle_left
 	ld a, [wCurPartyMon]
 	and a
 	ret z
-.cycle_left_loop
 	ld a, [wCurPartyMon] ; no-optimize Inefficient WRAM increment/decrement (value is needed in a)
 	dec a
 	ld [wCurPartyMon], a
-	ld c, a
-	ld b, 0
-	ld hl, wPartySpecies
-	add hl, bc
-	ld a, [hl]
-	cp EGG
-	ret nz
-	ld a, [wCurPartyMon]
-	and a
-	jr z, .cycle_right
-	jr .cycle_left_loop
+	ret
 
 .a_button
 	call PlayClickSFX

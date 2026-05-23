@@ -2,8 +2,6 @@ IsAPokemon::
 ; Return carry if species a is not a Pokemon.
 	and a
 	jr z, .NotAPokemon
-	cp EGG
-	jr z, .Pokemon
 	cp MON_TABLE_ENTRIES + 1
 	jr c, .Pokemon
 
@@ -233,11 +231,6 @@ GetBaseData::
 	ldh a, [hROMBank]
 	push af
 
-; Egg doesn't have BaseData
-	ld a, [wCurSpecies]
-	cp EGG
-	jr z, .egg
-
 ; Get BaseData
 	call GetPokemonIndexFromID
 	ld b, h
@@ -250,26 +243,6 @@ GetBaseData::
 	ld de, wCurBaseData
 	ld bc, BASE_DATA_SIZE
 	rst CopyBytes
-	jr .end
-
-.egg
-	ld de, UnusedEggPic
-
-; Sprite dimensions
-	ld b, $55 ; 5x5
-	ld hl, wBasePicSize
-	ld [hl], b
-
-; Beta front and back sprites
-; (see pokegold-spaceworld's data/pokemon/base_stats/*)
-	ld hl, wBaseUnusedFrontpic
-	ld a, e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
-	ld a, e
-	ld [hli], a
-	ld [hl], d
 
 .end
 ; Replace Pokedex # with species

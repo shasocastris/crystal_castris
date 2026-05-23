@@ -490,20 +490,12 @@ MailboxPC:
 	call DelayFrame
 	farcall PartyMenuSelect
 	jr c, .exit2
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	ld a, MON_ITEM
 	call GetPartyParamLocation
 	ld a, [hl]
 	and a
 	jr z, .attach_mail
 	ld hl, .MailAlreadyHoldingItemText
-	call PrintText
-	jr .try_again
-
-.egg
-	ld hl, .MailEggText
 	call PrintText
 	jr .try_again
 
@@ -520,10 +512,6 @@ MailboxPC:
 
 .MailAlreadyHoldingItemText:
 	text_far _MailAlreadyHoldingItemText
-	text_end
-
-.MailEggText:
-	text_far _MailEggText
 	text_end
 
 .MailMovedFromBoxText:

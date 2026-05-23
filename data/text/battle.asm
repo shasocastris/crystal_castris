@@ -247,11 +247,6 @@ BattleText_TheresNoWillToBattle:
 	line "battle!"
 	prompt
 
-BattleText_AnEGGCantBattle:
-	text "An EGG can't"
-	line "battle!"
-	prompt
-
 BattleText_CantEscape2:
 	text "Can't escape!"
 	prompt

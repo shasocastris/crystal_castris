@@ -219,8 +219,6 @@ PokeAnim_DeinitFrames:
 
 AnimateMon_CheckIfPokemon:
 	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .fail
 	call IsAPokemon
 	jr c, .fail
 	and a
@@ -416,8 +414,7 @@ PokeAnim_IsUnown:
 	ret
 
 PokeAnim_IsEgg:
-	ld a, [wPokeAnimSpecies]
-	cp EGG
+	or 1
 	ret
 
 PokeAnim_GetPointer:

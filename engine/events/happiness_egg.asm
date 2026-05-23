@@ -1,18 +1,7 @@
 GetFirstPokemonHappiness:
-	ld hl, wPartyMon1Happiness
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld de, wPartySpecies
-.loop
-	ld a, [de]
-	cp EGG
-	jr nz, .done
-	inc de
-	add hl, bc
-	jr .loop
-
-.done
+	ld a, [wPartySpecies]
 	ld [wNamedObjectIndex], a
-	ld a, [hl]
+	ld a, [wPartyMon1Happiness]
 	ld [wScriptVar], a
 	call GetPokemonName
 	jmp CopyPokemonName_Buffer1_Buffer3
@@ -20,28 +9,13 @@ GetFirstPokemonHappiness:
 CheckFirstMonIsEgg:
 	ld a, [wPartySpecies]
 	ld [wNamedObjectIndex], a
-	cp EGG
-	ld a, TRUE
-	jr z, .egg
 	xor a
-
-.egg
 	ld [wScriptVar], a
 	call GetPokemonName
 	jmp CopyPokemonName_Buffer1_Buffer3
 
 ChangeHappiness:
 ; Perform happiness action c on wCurPartyMon
-
-	ld a, [wCurPartyMon]
-	inc a
-	ld e, a
-	ld d, 0
-	ld hl, wPartySpecies - 1
-	add hl, de
-	ld a, [hl]
-	cp EGG
-	ret z
 
 	push bc
 	ld hl, wPartyMon1Happiness

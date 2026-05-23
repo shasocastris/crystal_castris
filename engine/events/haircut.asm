@@ -33,9 +33,6 @@ HaircutOrGrooming:
 	farcall SelectMonFromParty
 	pop hl
 	jr c, .nope
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
 	push hl
 	call GetCurNickname
 	call CopyPokemonName_Buffer1_Buffer3
@@ -58,11 +55,6 @@ HaircutOrGrooming:
 
 .nope
 	xor a
-	ld [wScriptVar], a
-	ret
-
-.egg
-	ld a, 1
 	ld [wScriptVar], a
 	ret
 

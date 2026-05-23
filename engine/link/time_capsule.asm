@@ -13,8 +13,6 @@ ValidateOTTrademon:
 	add hl, bc
 	ld a, [hl]
 	pop hl
-	cp EGG
-	jr z, .matching_or_egg
 	cp [hl]
 	jr nz, .abnormal
 
