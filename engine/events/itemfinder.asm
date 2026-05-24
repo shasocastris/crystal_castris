@@ -100,6 +100,7 @@ DetectFieldMove:
 	refreshmap
 	special UpdateTimePals
 	callasm .DetectCry
+	callasm .LoadMonName
 	writetext .DetectedSomethingText
 	closetext
 	end
@@ -107,9 +108,14 @@ DetectFieldMove:
 .Script_NothingDetected:
 	refreshmap
 	special UpdateTimePals
+	callasm .LoadMonName
 	writetext .NothingDetectedText
 	closetext
 	end
+
+.LoadMonName:
+	farcall GetPartyNickname
+	ret
 
 .DetectedSomethingText:
 	text_far _DetectedSomethingText

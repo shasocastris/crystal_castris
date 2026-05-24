@@ -461,13 +461,17 @@ _ItemfinderNopeText::
 	prompt
 
 _DetectedSomethingText::
-	text "An item is hidden"
-	line "nearby!"
+	text_ram wStringBuffer2
+	text " has"
+	line "detected a nearby"
+	cont "hidden item!"
 	prompt
 
 _NothingDetectedText::
-	text "No hidden items"
-	line "were detected."
+	text_ram wStringBuffer2
+	text " didn't"
+	line "detect any hidden"
+	cont "items."
 	prompt
 
 _PoisonFaintText::
