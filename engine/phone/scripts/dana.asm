@@ -40,7 +40,7 @@ DanaPhoneCallerScript:
 	ifequal 0, DanaHasThunderstone
 
 .Thunderstone:
-	farscall PhoneScript_Random11
+	farscall PhoneScript_Random3
 	ifequal 0, DanaHasThunderstone
 
 .Generic:

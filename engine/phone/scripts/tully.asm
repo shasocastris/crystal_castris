@@ -40,7 +40,7 @@ TullyPhoneCallerScript:
 	ifequal 0, TullyFoundWaterStone
 
 .WaterStone:
-	farscall PhoneScript_Random11
+    	farscall PhoneScript_Random3
 	ifequal 0, TullyFoundWaterStone
 
 .Generic:

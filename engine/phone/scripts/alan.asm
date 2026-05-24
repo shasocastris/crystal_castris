@@ -40,7 +40,7 @@ AlanPhoneCallerScript:
 	ifequal 0, AlanHasFireStone
 
 .FireStone:
-	farscall PhoneScript_Random11
+	farscall PhoneScript_Random3
 	ifequal 0, AlanHasFireStone
 
 .Generic:
