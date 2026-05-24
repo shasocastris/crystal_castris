@@ -33,7 +33,7 @@ TrainerJugglerIrwin:
 	loadvar VAR_CALLERID, PHONE_JUGGLER_IRWIN
 	opentext
 	checkcellnum PHONE_JUGGLER_IRWIN
-	iftrue Route35NumberAcceptedM
+	iftrue .Registered
 	checkevent EVENT_IRWIN_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskedAlready
 	writetext JugglerIrwinAfterBattleText
@@ -51,6 +51,21 @@ TrainerJugglerIrwin:
 	gettrainername STRING_BUFFER_3, JUGGLER, IRWIN1
 	scall Route35RegisteredNumberM
 	sjump Route35NumberAcceptedM
+
+.Registered:
+	checkflag ENGINE_IRWIN_HAS_PP_UP
+	iftrue .GivePPUps
+	sjump Route35NumberAcceptedM
+
+.GivePPUps:
+	scall Route35GiftM
+	verbosegiveitem PP_UP, 3
+	iffalse .NoRoom
+	clearflag ENGINE_IRWIN_HAS_PP_UP
+	sjump Route35NumberAcceptedM
+
+.NoRoom:
+	sjump Route35PackFullM
 
 Route35AskNumber1M:
 	jumpstd AskNumber1MScript
@@ -78,6 +93,14 @@ Route35PhoneFullM:
 
 Route35RematchM:
 	jumpstd RematchMScript
+	end
+
+Route35GiftM:
+	jumpstd GiftMScript
+	end
+
+Route35PackFullM:
+	jumpstd PackFullMScript
 	end
 
 TrainerCamperIvan:

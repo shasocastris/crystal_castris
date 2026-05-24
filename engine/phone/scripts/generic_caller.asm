@@ -902,6 +902,8 @@ PhoneScript_FoundItem_Male:
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
 	ifequal PHONE_FISHER_WILTON, .Wilton
+	ifequal PHONE_BLACKBELT_KENJI, .Kenji
+	ifequal PHONE_JUGGLER_IRWIN, .Irwin
 
 .Jose:
 	farwritetext JoseFoundItemText
@@ -925,6 +927,14 @@ PhoneScript_FoundItem_Male:
 
 .Wilton:
 	farwritetext WiltonFoundItemText
+	end
+
+.Kenji:
+	farwritetext KenjiFoundItemText
+	end
+
+.Irwin:
+	farwritetext IrwinFoundItemText
 	end
 
 PhoneScript_FoundItem_Female:

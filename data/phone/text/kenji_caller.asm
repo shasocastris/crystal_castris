@@ -1,3 +1,31 @@
+KenjiFoundItemText:
+	text_ram wStringBuffer3
+	text " here!"
+
+	para "I found some fine"
+	line "BIG MUSHROOMs on"
+	cont "my training path!"
+
+	para "They are yours if"
+	line "you want them."
+
+	para "Come find me at @"
+	text_ram wStringBuffer5
+	text "."
+	done
+
+KenjiComePickUpText:
+	text "The BIG MUSHROOMs?"
+
+	para "Still waiting for"
+	line "you at @"
+	text_ram wStringBuffer5
+	text "."
+
+	para "Come by whenever"
+	line "you are ready!"
+	done
+
 KenjiHangUpText:
 	text "Anyway, we'll chat"
 	line "again!"

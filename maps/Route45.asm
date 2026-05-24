@@ -48,6 +48,8 @@ TrainerBlackbeltKenji:
 	sjump Route45NumberAcceptedM
 
 .Registered:
+	checkflag ENGINE_KENJI_HAS_BIG_MUSHROOM
+	iftrue .GiveMushrooms
 	readvar VAR_KENJI_BREAK
 	ifnotequal 1, Route45NumberAcceptedM
 	checktime MORN
@@ -74,6 +76,13 @@ TrainerBlackbeltKenji:
 	waitbutton
 	closetext
 	end
+
+.GiveMushrooms:
+	scall Route45GiftM
+	verbosegiveitem BIG_MUSHROOM, 3
+	iffalse .NoRoom
+	clearflag ENGINE_KENJI_HAS_BIG_MUSHROOM
+	sjump Route45NumberAcceptedM
 
 .NoRoom:
 	sjump Route45PackFullM

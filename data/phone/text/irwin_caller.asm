@@ -1,3 +1,27 @@
+IrwinFoundItemText:
+	text "I saw, I saw!"
+
+	para "Some PP UPs fell"
+	line "right out of my"
+	cont "juggling bag!"
+
+	para "They're yours!"
+	line "Come find me at @"
+	text_ram wStringBuffer5
+	text "!"
+	done
+
+IrwinComePickUpText:
+	text "Those PP UPs!"
+
+	para "Still here for you"
+	line "at @"
+	text_ram wStringBuffer5
+	text "!"
+
+	para "Come get them!"
+	done
+
 IrwinHangUpText:
 	text "I hate having to"
 	line "hang up on you!"
