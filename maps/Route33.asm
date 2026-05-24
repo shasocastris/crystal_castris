@@ -67,6 +67,36 @@ TrainerHikerAnthony:
 	startbattle
 	reloadmapafterbattle
 	clearflag ENGINE_ANTHONY_READY_FOR_REMATCH
+	checkevent EVENT_ANTHONY_ZINC
+	iftrue .HasZinc
+	checkevent EVENT_GOT_ZINC_FROM_ANTHONY
+	iftrue .GotZinc
+	scall .RematchGift
+	verbosegiveitem ZINC
+	iffalse .PackFull
+	setevent EVENT_GOT_ZINC_FROM_ANTHONY
+	sjump .NumberAccepted
+
+.GotZinc:
+	end
+
+.HasZinc:
+	opentext
+	writetext HikerAnthonyGivesZincText
+	waitbutton
+	verbosegiveitem ZINC
+	iffalse .PackFull
+	clearevent EVENT_ANTHONY_ZINC
+	setevent EVENT_GOT_ZINC_FROM_ANTHONY
+	sjump .NumberAccepted
+
+.PackFull:
+	setevent EVENT_ANTHONY_ZINC
+	jumpstd PackFullMScript
+	end
+
+.RematchGift:
+	jumpstd RematchGiftMScript
 	end
 
 .Swarm:
@@ -126,6 +156,17 @@ HikerAnthony2AfterText:
 	text "We HIKERS are at"
 	line "our best in the"
 	cont "mountains."
+	done
+
+HikerAnthonyGivesZincText:
+	text "You again!"
+
+	para "I've been training"
+	line "my defense hard."
+
+	para "Here, take this"
+	line "ZINC. Toughen up"
+	cont "your special side!"
 	done
 
 HikerAnthonyDunsparceText:

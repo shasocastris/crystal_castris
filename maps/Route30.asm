@@ -97,7 +97,7 @@ TrainerYoungsterJoey:
 	checkevent EVENT_GOT_HP_UP_FROM_JOEY
 	iftrue .done
 	scall .RematchGift
-	verbosegiveitem HP_UP
+	verbosegiveitem HP_UP, 3
 	iffalse .PackFull
 	setevent EVENT_GOT_HP_UP_FROM_JOEY
 	sjump .NumberAccepted
