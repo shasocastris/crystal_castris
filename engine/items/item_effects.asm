@@ -240,6 +240,7 @@ ItemEffectsKeyItems:
 	dw NoEffect           ; SQUIRTBOTTLE
 	dw NoEffect           ; RAINBOW_WING
 	dw PokeFluteEffect    ; POKE_FLUTE
+	dw JackhammerEffect   ; JACKHAMMER
 .IndirectEnd:
 
 ItemEffectsBalls:
@@ -2357,6 +2358,11 @@ MacheteEffect:
 	ld [wUsingHMItem], a
 	call MacheteFunction
 	ret
+
+JackhammerEffect:
+	ld a, 1
+	ld [wUsingHMItem], a
+	jmp JackhammerFunction
 
 BlueCardEffect:
 	ld hl, .BlueCardBalanceText

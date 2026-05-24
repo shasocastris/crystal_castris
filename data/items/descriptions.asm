@@ -220,6 +220,7 @@ ItemDescriptionsKeyItems:
 	dw SquirtBottleDesc ; 0114
 	dw RainbowWingDesc  ; 0115
 	dw PokeFluteDesc    ; 0116
+	dw JackhammerDesc   ; 0117
 .IndirectEnd:
 
 ItemDescriptionsBalls:
@@ -910,6 +911,10 @@ RainbowWingDesc:
 PokeFluteDesc:
 	db   "Plays a pleasant"
 	next "melody.@"
+
+JackhammerDesc:
+	db   "Smashes boulders"
+	next "and loose rocks.@"
 
 MasterBallDesc:
 	db   "The best BALL. It"

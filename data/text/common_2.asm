@@ -1380,3 +1380,16 @@ _AskMacheteText::
 	para "Want to use your"
 	line "MACHETE?"
 	done
+
+_UseJackhammerText::
+	text "You smashed"
+	line "the rock!"
+	prompt
+
+_AskJackhammerText::
+	text "This rock looks"
+	line "breakable."
+
+	para "Want to use the"
+	line "JACKHAMMER?"
+	done

@@ -1468,6 +1468,7 @@ RockSmashScript:
 	callasm GetPartyNickname
 	writetext UseRockSmashText
 	closetext
+SmashRockBody:
 	special WaitSFX
 	playsound SFX_STRENGTH
 	earthquake 84
@@ -1502,6 +1503,7 @@ UseRockSmashText:
 AskRockSmashScript:
 	callasm HasRockSmash
 	ifequal 1, .no
+	ifequal 2, .jackhammer
 
 	opentext
 	writetext AskRockSmashText
@@ -1509,6 +1511,15 @@ AskRockSmashScript:
 	iftrue RockSmashScript
 	closetext
 	end
+
+.jackhammer
+	opentext
+	writetext AskJackhammerText
+	yesorno
+	iftrue JackhammerScript
+	closetext
+	end
+
 .no
 	jumptext MaySmashText
 
@@ -1521,6 +1532,12 @@ AskRockSmashText:
 	text_end
 
 HasRockSmash:
+	ld a, LOW(JACKHAMMER)
+	ld hl, wKeyItems
+	ld de, 1
+	call IsInArray
+	jr c, .jackhammer
+
 	ld hl, ROCK_SMASH
 	call CheckPartyMoveIndex
 	jr c, .failed
@@ -1531,10 +1548,55 @@ HasRockSmash:
 	ld [wScriptVar], a
 	ret
 
+.jackhammer
+	ld a, 2
+	ld [wScriptVar], a
+	ret
+
 .failed
 	ld a, 1
 	ld [wScriptVar], a
 	ret
+
+JackhammerFunction:
+	call TryJackhammerFromMenu
+	and JUMPTABLE_INDEX_MASK
+	ld [wFieldMoveSucceeded], a
+	ret
+
+TryJackhammerFromMenu:
+	call GetFacingObject
+	jr c, .no_rock
+	ld a, d
+	cp SPRITEMOVEDATA_SMASHABLE_ROCK
+	jr nz, .no_rock
+
+	ld hl, JackhammerFromMenuScript
+	call QueueScript
+	ld a, JUMPTABLE_EXIT | $1
+	ret
+
+.no_rock
+	call FieldMoveFailed
+	ld a, JUMPTABLE_EXIT
+	ret
+
+JackhammerFromMenuScript:
+	refreshmap
+	special UpdateTimePals
+
+JackhammerScript:
+	writetext UseJackhammerText
+	closetext
+	sjump SmashRockBody
+
+UseJackhammerText:
+	text_far _UseJackhammerText
+	text_end
+
+AskJackhammerText:
+	text_far _AskJackhammerText
+	text_end
 
 FishFunction:
 	ld a, e
