@@ -49,7 +49,7 @@ GinaPhoneCallerScript:
 	ifequal 0, GinaHasLeafStone
 	checkflag ENGINE_FLYPOINT_GOLDENROD
 	iffalse .Generic
-	farscall PhoneScript_Random3
+	farscall PhoneScript_Random2
 	ifequal 0, GinaWantsBattle
 
 .Generic:

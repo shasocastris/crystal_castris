@@ -34,7 +34,7 @@ TiffanyPhoneCallerScript:
 	iftrue .Generic
 	checkflag ENGINE_TIFFANY_HAS_SILVERPOWDER
 	iftrue .Generic
-	farscall PhoneScript_Random3
+	farscall PhoneScript_Random2
 	ifequal 0, TiffanyWantsBattle
 	checkevent EVENT_TIFFANY_GAVE_SILVERPOWDER
 	iftrue .PinkBow

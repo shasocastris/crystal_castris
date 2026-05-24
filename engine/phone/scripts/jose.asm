@@ -32,7 +32,7 @@ JosePhoneCallerScript:
 	iftrue .Generic
 	checkflag ENGINE_JOSE_HAS_STAR_PIECE
 	iftrue .Generic
-	farscall PhoneScript_Random3
+	farscall PhoneScript_Random2
 	ifequal 0, JoseWantsBattle
 	farscall PhoneScript_Random2
 	ifequal 0, JoseHasStarPiece
