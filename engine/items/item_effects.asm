@@ -2047,42 +2047,30 @@ GetOneFifthMaxHP:
 	ret
 
 GetHealingItemAmount:
-	push hl
-	ld hl, HealingHPAmounts
-	; [hl] == $ffff?
-.check
-	push hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	cphl16 $ffff
-	pop hl
-	jr z, .not_found ; branch if $ffff
-	call GetItemIDFromHL
-	ld b, a
 	ld a, [wCurItem]
+	push bc
+	ld b, a
+	farcall GetItemHeldEffect
+	ld a, c
+	cp -1 ; -1 means restore to full HP
+	jr z, .full_hp
+	ld e, c
+	ld d, 0
+	pop bc
+	ret
 
+.full_hp
+	pop bc
+	push hl
+	ld hl, .MaxStatValue
+	ld e, [hl]
 	inc hl
-	inc hl ; hl at price
-
-	cp b
-	jr z, .done
-	inc hl
-	inc hl
-	jr .check
-
-.not_found:
-	inc hl
-	inc hl
-	scf
-.done
-	ld a, [hli]
 	ld d, [hl]
-	ld e, a
 	pop hl
 	ret
 
-INCLUDE "data/items/heal_hp.asm"
+.MaxStatValue:
+	dw MAX_STAT_VALUE
 
 Softboiled_MilkDrinkFunction:
 ; Softboiled/Milk Drink in the field
