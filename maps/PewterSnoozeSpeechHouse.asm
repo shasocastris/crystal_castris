@@ -7,15 +7,46 @@ PewterSnoozeSpeechHouse_MapScripts:
 	def_callbacks
 
 PewterSnoozeSpeechHouseGrampsScript:
-	jumptextfaceplayer PewterSnoozeSpeechHouseGrampsText
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_PEWTER_GRAMPS_JACKHAMMER
+	iftrue .GotJackhammer
+	writetext PewterSnoozeSpeechHouseReceiveJackhammerText
+	promptbutton
+	verbosegiveitem JACKHAMMER
+	setevent EVENT_GOT_PEWTER_GRAMPS_JACKHAMMER
+.GotJackhammer:
+	writetext PewterSnoozeSpeechHouseGotJackhammerText
+	waitbutton
+	closetext
+	end
 
 PewterSnoozeSpeechHouseBookshelf:
 	jumpstd PictureBookshelfScript
 
-PewterSnoozeSpeechHouseGrampsText:
-	text "I like snoozing"
-	line "with the radio on…"
-	cont "…Zzzz…"
+PewterSnoozeSpeechHouseReceiveJackhammerText:
+	text "A young trainer!"
+	line "I used to mine"
+	cont "PEWTER mountains"
+	cont "for thirty years."
+
+	para "I don't get around"
+	line "like I once did."
+	cont "Put my JACKHAMMER"
+	cont "to better use."
+	done
+
+PewterSnoozeSpeechHouseGotJackhammerText:
+	text "That JACKHAMMER'll"
+	line "crack any rock you"
+	cont "come across."
+
+	para "No need for a"
+	line "#MON that knows"
+	cont "ROCK SMASH!"
+
+	para "Try it out on any"
+	line "loose boulder."
 	done
 
 PewterSnoozeSpeechHouse_MapEvents:
