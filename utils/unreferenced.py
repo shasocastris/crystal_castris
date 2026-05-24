@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from glob import iglob
 
 import re
+import sys
 
 invalid_rx = re.compile(r'''
 	\.
@@ -29,7 +30,8 @@ class Label:
 	line_no = None
 
 labels = {}
-with open('pokecrystal.sym', 'r', encoding='utf8') as sym_file:
+sym_filename = sys.argv[1] if len(sys.argv) > 1 else 'pokecrystal.sym'
+with open(sym_filename, 'r', encoding='utf8') as sym_file:
 	for line in sym_file:
 		if (line := line.split(';', 1)[0].rstrip()):
 			address, label = line.split(maxsplit=1)
