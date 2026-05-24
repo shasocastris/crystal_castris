@@ -48,3 +48,73 @@ ItemFinder:
 .ItemfinderNopeText:
 	text_far _ItemfinderNopeText
 	text_end
+
+_BattleCommand_Detect:
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [wEnemyMonItem]
+	jr z, .checkitem
+
+.enemy
+	ld a, [wBattleMonItem]
+
+.checkitem
+	and a
+	jr z, .failed
+
+	ld [wNamedObjectIndex], a
+	call GetItemName
+	ld hl, DetectedHoldingText
+	jp StdBattleTextbox
+
+.failed
+	ld hl, ButItFailedText
+	jp StdBattleTextbox
+
+DetectFieldMove:
+	farcall CheckForHiddenItems
+	jr c, .found
+
+	ld hl, .Script_NothingDetected
+	jr .queue
+
+.found
+	ld hl, .Script_DetectedSomething
+
+.queue
+	call QueueScript
+	ld a, 1
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.DetectCry:
+	ld a, [wCurPartyMon]
+	ld hl, wPartySpecies
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hl]
+	jp PlayMonCry
+
+.Script_DetectedSomething:
+	refreshmap
+	special UpdateTimePals
+	callasm .DetectCry
+	writetext .DetectedSomethingText
+	closetext
+	end
+
+.Script_NothingDetected:
+	refreshmap
+	special UpdateTimePals
+	writetext .NothingDetectedText
+	closetext
+	end
+
+.DetectedSomethingText:
+	text_far _DetectedSomethingText
+	text_end
+
+.NothingDetectedText:
+	text_far _NothingDetectedText
+	text_end

@@ -957,6 +957,13 @@ CantEscapeNowText:
 	line "can't escape now!"
 	prompt
 
+DetectedHoldingText:
+	text "<TARGET>"
+	line "is holding @"
+	text_ram wStringBuffer1
+	text_start
+	prompt
+
 StartedNightmareText:
 	text "<TARGET>"
 	line "started to have a"

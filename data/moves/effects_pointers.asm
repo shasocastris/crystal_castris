@@ -158,4 +158,5 @@ MoveEffectsPointers:
 	dw DefenseCurl
 	dw FreezeHit
 	dw Hail
+	dw Detect
 	assert_table_length NUM_MOVE_EFFECTS

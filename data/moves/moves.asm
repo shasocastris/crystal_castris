@@ -225,7 +225,7 @@ MovesGen2:
 	move EFFECT_DESTINY_BOND,        0, GHOST,         STATUS,   100,  5,   0      ;DESTINY_BOND
 	move EFFECT_PERISH_SONG,         0, NORMAL,        STATUS,   100,  5,   0      ;PERISH_SONG
 	move EFFECT_SPEED_DOWN_HIT,     55, ICE,           SPECIAL,   95, 15, 100      ;ICY_WIND
-	move EFFECT_PROTECT,             0, FIGHTING,      STATUS,   100,  5,   0      ;DETECT
+	move EFFECT_DETECT,              0, FIGHTING,      STATUS,   100,  5,   0      ;DETECT
 	move EFFECT_MULTI_HIT,          25, GROUND,        PHYSICAL,  80, 10,   0      ;BONE_RUSH
 	move EFFECT_LOCK_ON,             0, NORMAL,        STATUS,   100,  5,   0      ;LOCK_ON
 	move EFFECT_RAMPAGE,           120, DRAGON,        PHYSICAL, 100, 10,   0      ;OUTRAGE

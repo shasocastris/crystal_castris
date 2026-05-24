@@ -2102,3 +2102,10 @@ Hail:
 	doturn
 	starthail
 	endmove
+
+Detect:
+	checkobedience
+	usedmovetext
+	doturn
+	detectitem
+	endmove

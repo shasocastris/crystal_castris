@@ -460,6 +460,16 @@ _ItemfinderNopeText::
 	line "isn't responding."
 	prompt
 
+_DetectedSomethingText::
+	text "An item is hidden"
+	line "nearby!"
+	prompt
+
+_NothingDetectedText::
+	text "No hidden items"
+	line "were detected."
+	prompt
+
 _PoisonFaintText::
 	text_ram wStringBuffer3
 	text_start

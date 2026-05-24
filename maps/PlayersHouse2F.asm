@@ -160,7 +160,7 @@ if DEF(_DEBUG)
 	setflag ENGINE_CREDITS_SKIP
 	; good party
 	givepoke MEWTWO, 100, BRIGHTPOWDER
-	givepokemove THIEF,       wPartyMon1, 1
+	givepokemove DETECT,       wPartyMon1, 1
 	loadmem wPartyMon1Happiness, $ff
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS

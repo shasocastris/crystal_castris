@@ -6572,6 +6572,8 @@ INCLUDE "engine/battle/move_effects/thunder.asm"
 
 INCLUDE "engine/battle/move_effects/hail.asm"
 
+INCLUDE "engine/battle/move_effects/detect.asm"
+
 CheckHiddenOpponent:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
