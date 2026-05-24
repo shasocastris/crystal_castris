@@ -959,9 +959,10 @@ CantEscapeNowText:
 
 DetectedHoldingText:
 	text "<TARGET>"
-	line "is holding @"
+	line "is holding a"
+	cont "@"
 	text_ram wStringBuffer1
-	text_start
+	text "!"
 	prompt
 
 StartedNightmareText:
