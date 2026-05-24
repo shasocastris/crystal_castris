@@ -165,29 +165,22 @@ WillScript_WillDefeatText:
 	done
 
 WillScript_WillBeforeRematchText:
-	text "Welcome back to my"
-	line "chamber of illusion!"
+	text "Welcome back to"
+	line "my chamber."
 
 	para "I see you've"
 	line "returned for"
-	cont "another psychic"
-	cont "challenge."
+	cont "another match."
 
 	para "My powers have"
-	line "grown stronger"
-	cont "since our last"
-	cont "encounter."
+	line "grown since our"
+	cont "last encounter."
 
 	para "I've mastered new"
-	line "techniques that"
-	cont "will bend reality"
-	cont "itself!"
+	line "techniques you"
+	cont "have yet to see."
 
-	para "Can you see"
-	line "through my"
-	cont "enhanced illusions?"
-
-	para "Let us find out!"
+	para "Shall we begin?"
 	done
 
 WillScript_WillDefeatRematchText:
