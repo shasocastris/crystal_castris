@@ -1566,7 +1566,7 @@ BattleCommand_CheckHit:
 	call .FlyDigMoves
 	jr nz, .Miss
 
-	call .ThunderRain
+	call .ThunderHurricaneRain
 	ret z
 
 	call .BlizzardHail
@@ -1731,13 +1731,16 @@ BattleCommand_CheckHit:
 	dw MAGNITUDE
 	dw -1
 
-.ThunderRain:
+.ThunderHurricaneRain:
 ; Return z if the current move always hits in rain, and it is raining.
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
+	jr z, .check_rain
+	cp EFFECT_HURRICANE
 	ret nz
 
+.check_rain
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret

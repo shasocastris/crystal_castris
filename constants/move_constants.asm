@@ -263,6 +263,46 @@ DEF GEN1_MOVES EQU const_value - 1
 	const WILL_O_WISP  ; fe
 	const SUDDEN_CHILL ; ff
 	const HAIL         ; 100
+	const DRAGON_CLAW    ; 101
+	const DRAGON_PULSE   ; 102
+	const AERIAL_ACE     ; 103
+	const AIR_SLASH      ; 104
+	const BRAVE_BIRD     ; 105
+	const SHADOW_CLAW    ; 106
+	const IRON_HEAD      ; 107
+	const FLASH_CANNON   ; 108
+	const BULLET_PUNCH   ; 109
+	const STONE_EDGE     ; 10a
+	const POWER_GEM      ; 10b
+	const ROCK_BLAST     ; 10c
+	const EARTH_POWER    ; 10d
+	const BULLDOZE       ; 10e
+	const ICE_SHARD      ; 10f
+	const ICICLE_CRASH   ; 110
+	const WILD_CHARGE    ; 111
+	const SCALD          ; 112
+	const AQUA_JET       ; 113
+	const AQUA_TAIL      ; 114
+	const WATER_PULSE    ; 115
+	const ENERGY_BALL    ; 116
+	const SEED_BOMB      ; 117
+	const POWER_WHIP     ; 118
+	const DRAIN_PUNCH    ; 119
+	const FOCUS_BLAST    ; 11a
+	const X_SCISSOR      ; 11b
+	const BUG_BUZZ       ; 11c
+	const DARK_PULSE     ; 11d
+	const NIGHT_SLASH    ; 11e
+	const AURA_SPHERE    ; 11f
+	const DAZZLING_GLEAM ; 120
+	const DISARM_VOICE   ; 121
+	const DRAIN_KISS     ; 122
+	const ZEN_HEADBUTT   ; 123
+	const EXTRASENSORY   ; 124
+	const GUNK_SHOT      ; 125
+	const POISON_JAB     ; 126
+	const HYPER_VOICE    ; 127
+	const HURRICANE      ; 128
 DEF GEN2_MOVES EQU const_value - 1
 
 DEF NUM_ATTACKS EQU const_value - 1

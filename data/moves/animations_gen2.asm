@@ -90,6 +90,46 @@ BattleAnimationsGen2::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_SuddenChill
 	dw BattleAnim_Hail
+	dw BattleAnim_Dragonbreath     ; DRAGON_CLAW
+	dw BattleAnim_Aeroblast        ; DRAGON_PULSE
+	dw BattleAnim_FaintAttack      ; AERIAL_ACE
+	dw BattleAnim_WingAttack       ; AIR_SLASH
+	dw BattleAnim_WingAttack       ; BRAVE_BIRD
+	dw BattleAnim_ShadowBall       ; SHADOW_CLAW
+	dw BattleAnim_IronTail         ; IRON_HEAD
+	dw BattleAnim_ZapCannon        ; FLASH_CANNON
+	dw BattleAnim_MachPunch        ; BULLET_PUNCH
+	dw BattleAnim_BoneRush         ; STONE_EDGE
+	dw BattleAnim_Ancientpower     ; POWER_GEM
+	dw BattleAnim_PinMissile       ; ROCK_BLAST
+	dw BattleAnim_Magnitude        ; EARTH_POWER
+	dw BattleAnim_Magnitude        ; BULLDOZE
+	dw BattleAnim_IcePunch         ; ICE_SHARD
+	dw BattleAnim_IcyWind          ; ICICLE_CRASH
+	dw BattleAnim_Spark            ; WILD_CHARGE
+	dw BattleAnim_Surf             ; SCALD
+	dw BattleAnim_Surf             ; AQUA_JET
+	dw BattleAnim_Surf             ; AQUA_TAIL
+	dw BattleAnim_WaterGun         ; WATER_PULSE
+	dw BattleAnim_GigaDrain        ; ENERGY_BALL
+	dw BattleAnim_SludgeBomb       ; SEED_BOMB
+	dw BattleAnim_VineWhip         ; POWER_WHIP
+	dw BattleAnim_CrossChop        ; DRAIN_PUNCH
+	dw BattleAnim_ZapCannon        ; FOCUS_BLAST
+	dw BattleAnim_Cut              ; X_SCISSOR
+	dw BattleAnim_CottonSpore      ; BUG_BUZZ
+	dw BattleAnim_ShadowBall       ; DARK_PULSE
+	dw BattleAnim_Bite             ; NIGHT_SLASH
+	dw BattleAnim_ZapCannon        ; AURA_SPHERE
+	dw BattleAnim_Moonblast        ; DAZZLING_GLEAM
+	dw BattleAnim_Supersonic       ; DISARM_VOICE
+	dw BattleAnim_GigaDrain        ; DRAIN_KISS
+	dw BattleAnim_Headbutt         ; ZEN_HEADBUTT
+	dw BattleAnim_HiddenPower      ; EXTRASENSORY
+	dw BattleAnim_SludgeBomb       ; GUNK_SHOT
+	dw BattleAnim_Acid             ; POISON_JAB
+	dw BattleAnim_Supersonic       ; HYPER_VOICE
+	dw BattleAnim_Twister          ; HURRICANE
 .IndirectEnd::
 
 BattleAnim_Sketch:

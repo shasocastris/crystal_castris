@@ -265,6 +265,46 @@ MoveDescriptionsGen2:
 	dw WillOWispDescription
 	dw SuddenChillDescription
 	dw HailDescription
+	dw DragonClawDescription
+	dw DragonPulseDescription
+	dw AerialAceDescription
+	dw AirSlashDescription
+	dw BraveBirdDescription
+	dw ShadowClawDescription
+	dw IronHeadDescription
+	dw FlashCannonDescription
+	dw BulletPunchDescription
+	dw StoneEdgeDescription
+	dw PowerGemDescription
+	dw RockBlastDescription
+	dw EarthPowerDescription
+	dw BulldozeDescription
+	dw IceShardDescription
+	dw IcicleCrashDescription
+	dw WildChargeDescription
+	dw ScaldDescription
+	dw AquaJetDescription
+	dw AquaTailDescription
+	dw WaterPulseDescription
+	dw EnergyBallDescription
+	dw SeedBombDescription
+	dw PowerWhipDescription
+	dw DrainPunchDescription
+	dw FocusBlastDescription
+	dw XScissorDescription
+	dw BugBuzzDescription
+	dw DarkPulseDescription
+	dw NightSlashDescription
+	dw AuraSphereDescription
+	dw DazzlingGleamDescription
+	dw DisarmVoiceDescription
+	dw DrainKissDescription
+	dw ZenHeadbuttDescription
+	dw ExtrasensoryDescription
+	dw GunkShotDescription
+	dw PoisonJabDescription
+	dw HyperVoiceDescription
+	dw HurricaneDescription
 .IndirectEnd::
 
 InvalidMoveDescription:
@@ -1293,3 +1333,163 @@ SuddenChillDescription:
 HailDescription:
 	db   "Inflicts damage"
 	line "every turn.@"
+
+DragonClawDescription:
+	db   "Slashes with sharp"
+	line "dragon claws.@"
+
+DragonPulseDescription:
+	db   "Fires a dragon"
+	line "energy pulse.@"
+
+AerialAceDescription:
+	db   "A flying strike"
+	line "that never misses.@"
+
+AirSlashDescription:
+	db   "Slashes with wings."
+	line "May cause flinch.@"
+
+BraveBirdDescription:
+	db   "A reckless flying"
+	line "tackle. Damages user.@"
+
+ShadowClawDescription:
+	db   "Slashes with a"
+	line "shadow claw.@"
+
+IronHeadDescription:
+	db   "Strikes with iron"
+	line "head. May flinch.@"
+
+FlashCannonDescription:
+	db   "Fires a steel beam."
+	line "May lower SPCL.DEF.@"
+
+BulletPunchDescription:
+	db   "A fast steel punch"
+	line "that strikes first.@"
+
+StoneEdgeDescription:
+	db   "Hurls sharp rocks"
+	line "with great force.@"
+
+PowerGemDescription:
+	db   "Fires gem-like rays"
+	line "at the foe.@"
+
+RockBlastDescription:
+	db   "Hurls rocks at the"
+	line "foe 2-5 times.@"
+
+EarthPowerDescription:
+	db   "Taps the earth's"
+	line "power. Lowers SPCL.DEF.@"
+
+BulldozeDescription:
+	db   "Stomps the ground."
+	line "Lowers foe's SPEED.@"
+
+IceShardDescription:
+	db   "An ice shard thrown"
+	line "to strike first.@"
+
+IcicleCrashDescription:
+	db   "Drops icicles on"
+	line "foe. May cause flinch.@"
+
+WildChargeDescription:
+	db   "A wild electric"
+	line "tackle. Damages user.@"
+
+ScaldDescription:
+	db   "Scalding water."
+	line "May cause a burn.@"
+
+AquaJetDescription:
+	db   "A water strike"
+	line "that goes first.@"
+
+AquaTailDescription:
+	db   "Strikes with tail"
+	line "like a wave.@"
+
+WaterPulseDescription:
+	db   "A water pulse that"
+	line "may cause confusion.@"
+
+EnergyBallDescription:
+	db   "A grass energy ball."
+	line "May lower SPCL.DEF.@"
+
+SeedBombDescription:
+	db   "Explodes a barrage"
+	line "of hard seeds.@"
+
+PowerWhipDescription:
+	db   "Violently whips the"
+	line "foe with vines.@"
+
+DrainPunchDescription:
+	db   "A punch that steals"
+	line "the foe's HP.@"
+
+FocusBlastDescription:
+	db   "Focuses power into"
+	line "an intense blast.@"
+
+XScissorDescription:
+	db   "Slashes the foe"
+	line "with crossed claws.@"
+
+BugBuzzDescription:
+	db   "A vibrating buzz"
+	line "may lower SPCL.DEF.@"
+
+DarkPulseDescription:
+	db   "A dark pulse that"
+	line "may cause flinching.@"
+
+NightSlashDescription:
+	db   "Slashes when the"
+	line "foe lets its guard down.@"
+
+AuraSphereDescription:
+	db   "Fires a sphere of"
+	line "aura. Never misses.@"
+
+DazzlingGleamDescription:
+	db   "Attacks with a"
+	line "dazzling gleam.@"
+
+DisarmVoiceDescription:
+	db   "An attack that"
+	line "never misses.@"
+
+DrainKissDescription:
+	db   "A kiss that drains"
+	line "the foe's HP.@"
+
+ZenHeadbuttDescription:
+	db   "A focused headbutt."
+	line "May cause flinching.@"
+
+ExtrasensoryDescription:
+	db   "Attacks with a"
+	line "powerful 6th sense.@"
+
+GunkShotDescription:
+	db   "Shoots filthy junk"
+	line "at the foe.@"
+
+PoisonJabDescription:
+	db   "A poisonous jab"
+	line "that may poison.@"
+
+HyperVoiceDescription:
+	db   "A loud, echoing"
+	line "voice attack.@"
+
+HurricaneDescription:
+	db   "Whips up a storm"
+	line "that may confuse.@"
