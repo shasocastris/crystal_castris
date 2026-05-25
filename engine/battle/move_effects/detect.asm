@@ -1,0 +1,2 @@
+BattleCommand_Detect:
+	farjp _BattleCommand_Detect
