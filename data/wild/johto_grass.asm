@@ -1301,13 +1301,13 @@ JohtoGrassWildMons:
 	dbw 4, PIDGEY
 	dbw 4, PIDGEY
 	; day
-	dbw 3, LEDYBA
-	dbw 3, MARILL
-	dbw 4, HOPPIP
-	dbw 4, CATERPIE
-	dbw 3, WEEDLE
-	dbw 4, PIDGEY
-	dbw 4, PIDGEY
+	dbw 3, ELECTIVIRE
+	dbw 3, ELECTIVIRE
+	dbw 4, ELECTIVIRE
+	dbw 4, ELECTIVIRE
+	dbw 3, ELECTIVIRE
+	dbw 4, ELECTIVIRE
+	dbw 4, ELECTIVIRE
 	; nite
 	dbw 3, SPINARAK
 	dbw 3, HOOTHOOT

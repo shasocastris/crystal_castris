@@ -351,6 +351,7 @@ ElectricTypeSpecies:
 	dw FLAAFFY
 	dw AMPHAROS
 	dw ELEKID
+	dw ELECTIVIRE
 	dw -1
 
 PsychicTypeSpecies:

@@ -2332,6 +2332,7 @@ JynxEvosAttacks:
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
+	dbbw EVOLVE_ITEM, THUNDERSTONE, ELECTIVIRE
 	db 0 ; no more evolutions
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
