@@ -783,4 +783,6 @@ SECTION "Pics 20", ROMX
 
 AmbipomFrontpic:    INCBIN "gfx/pokemon/ambipom/front.animated.2bpp.lz"
 AmbipomBackpic:     INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
+AnnihilapeFrontpic: INCBIN "gfx/pokemon/annihilape/front.animated.2bpp.lz"
+AnnihilapeBackpic:  INCBIN "gfx/pokemon/annihilape/back.2bpp.lz"
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

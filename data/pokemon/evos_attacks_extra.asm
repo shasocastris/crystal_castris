@@ -3,6 +3,7 @@ SECTION "Evolutions and Attacks 3", ROMX
 EvosAttacksPointers3::
 	dw ElectivireEvosAttacks
 	dw AmbipomEvosAttacks
+	dw AnnihilapeEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -27,6 +28,19 @@ AmbipomEvosAttacks:
 	dbw 38, AGILITY
 	dbw 48, BATON_PASS
 	dbw 57, SWIFT
+	db 0 ; no more level-up moves
+
+AnnihilapeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 9, KARATE_CHOP
+	dbw 17, LOW_KICK
+	dbw 25, SEISMIC_TOSS
+	dbw 33, RAGE
+	dbw 41, CROSS_CHOP
+	dbw 49, SUBMISSION
+	dbw 57, NIGHT_SHADE
 	db 0 ; no more level-up moves
 
 	db 0 ; no more level-up moves

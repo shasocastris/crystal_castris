@@ -76,6 +76,7 @@ FightingTypeSpecies:
 	dw HERACROSS
 	dw TYROGUE
 	dw HITMONTOP
+	dw ANNIHILAPE
 	dw -1
 
 FlyingTypeSpecies:

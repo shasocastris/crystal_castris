@@ -254,4 +254,5 @@ FirstEvoStages::
 	dw CELEBI
 	dw ELEKID
 	dw AIPOM      ; AMBIPOM first stage is AIPOM
+	dw MANKEY     ; ANNIHILAPE first stage is MANKEY
 	assert_table_length NUM_POKEMON

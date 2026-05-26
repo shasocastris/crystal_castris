@@ -1140,6 +1140,7 @@ MankeyEvosAttacks:
 	db 0 ; no more level-up moves
 
 PrimeapeEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, ANNIHILAPE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, RAGE
 	dbw 1, SCRATCH

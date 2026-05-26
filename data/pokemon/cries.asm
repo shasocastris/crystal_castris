@@ -259,4 +259,5 @@ PokemonCries::
 	mon_cry CRY_ENTEI,       330,  273 ; CELEBI
 	mon_cry CRY_VOLTORB,       0,  288 ; ELECTIVIRE
 	mon_cry CRY_AIPOM,         0,  256 ; AMBIPOM
+	mon_cry CRY_RAIKOU,        0,  256 ; ANNIHILAPE
 	assert_table_length NUM_POKEMON

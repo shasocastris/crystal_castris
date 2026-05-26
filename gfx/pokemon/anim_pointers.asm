@@ -253,4 +253,5 @@ AnimationPointers:
 	dw CelebiAnimation
 	dw ElectivireAnimation
 	dw AmbipomAnimation
+	dw AnnihilapeAnimation
 	assert_table_length NUM_POKEMON

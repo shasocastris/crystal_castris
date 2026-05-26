@@ -257,4 +257,5 @@ PokemonNames::
 	dname "CELEBI"
 	dname "ELECTIVIRE"
 	dname "AMBIPOM"
+	dname "ANNIHILAPE"
 	assert_table_length NUM_POKEMON

@@ -255,4 +255,5 @@ NewPokedexOrder:
 	dw CELEBI
 	dw ELECTIVIRE
 	dw AMBIPOM
+	dw ANNIHILAPE
 	assert_table_length NUM_POKEMON

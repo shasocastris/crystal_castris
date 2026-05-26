@@ -255,4 +255,5 @@ Pokered_MonIndices:
 	db WOBBUFFET
 	db ELECTABUZZ
 	db AIPOM
+	db MANKEY
 	assert_table_length NUM_POKEMON + 1
