@@ -267,5 +267,6 @@ FramesPointers:
 	dba YanmegaFrames
 	dba GliscorFrames
 	dba PorygonZFrames
+	dba SirfetchdFrames
 	dba TangrowthFrames
 	assert_table_length NUM_POKEMON

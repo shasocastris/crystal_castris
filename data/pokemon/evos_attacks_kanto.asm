@@ -1590,6 +1590,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
+	dbww EVOLVE_ITEM, STICK, SIRFETCH_D
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 7, SAND_ATTACK

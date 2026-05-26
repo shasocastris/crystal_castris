@@ -268,5 +268,6 @@ FirstEvoStages::
 	dw YANMA      ; YANMEGA (no pre-baby)
 	dw GLIGAR     ; GLISCOR
 	dw PORYGON    ; PORYGON_Z
+	dw FARFETCH_D ; SIRFETCH_D
 	dw TANGELA    ; TANGROWTH
 	assert_table_length NUM_POKEMON

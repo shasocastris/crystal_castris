@@ -269,5 +269,6 @@ Pokered_MonIndices:
 	db YANMA
 	db GOLBAT     ; GLISCOR
 	db PORYGON    ; PORYGON_Z
+	db FARFETCH_D ; SIRFETCH_D
 	db TANGELA    ; TANGROWTH
 	assert_table_length NUM_POKEMON + 1

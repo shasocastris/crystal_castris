@@ -17,6 +17,7 @@ EvosAttacksPointers3::
 	dw YanmegaEvosAttacks
 	dw GliscorEvosAttacks
 	dw PorygonZEvosAttacks
+	dw SirfetchdEvosAttacks
 	dw TangrowthEvosAttacks
 .IndirectEnd::
 
@@ -224,6 +225,19 @@ PorygonZEvosAttacks:
 	dbw 33, THUNDER
 	dbw 41, PSYCHIC_M
 	dbw 49, DOUBLE_TEAM
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+SirfetchdEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, LEER
+	dbw 9, FURY_ATTACK
+	dbw 17, SLASH
+	dbw 25, SWORDS_DANCE
+	dbw 33, DETECT
+	dbw 41, CROSS_CHOP
+	dbw 49, AGILITY
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

@@ -267,5 +267,6 @@ AnimationPointers:
 	dw YanmegaAnimation
 	dw GliscorAnimation
 	dw PorygonZAnimation
+	dw SirfetchdAnimation
 	dw TangrowthAnimation
 	assert_table_length NUM_POKEMON

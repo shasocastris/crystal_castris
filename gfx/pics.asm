@@ -751,6 +751,8 @@ GliscorFrontpic:    INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
 GliscorBackpic:     INCBIN "gfx/pokemon/gliscor/back.2bpp.lz"
 PorygonZFrontpic:   INCBIN "gfx/pokemon/porygon_z/front.animated.2bpp.lz"
 PorygonZBackpic:    INCBIN "gfx/pokemon/porygon_z/back.2bpp.lz"
+SirfetchdFrontpic:  INCBIN "gfx/pokemon/sirfetch_d/front.animated.2bpp.lz"
+SirfetchdBackpic:   INCBIN "gfx/pokemon/sirfetch_d/back.2bpp.lz"
 TangrowthFrontpic:  INCBIN "gfx/pokemon/tangrowth/front.animated.2bpp.lz"
 TangrowthBackpic:   INCBIN "gfx/pokemon/tangrowth/back.2bpp.lz"
 
