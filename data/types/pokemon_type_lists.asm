@@ -398,6 +398,7 @@ IceTypeSpecies:
 	dw PILOSWINE
 	dw DELIBIRD
 	dw SMOOCHUM
+	dw WEAVILE
 	dw -1
 
 DragonTypeSpecies:
@@ -417,6 +418,7 @@ DarkTypeSpecies:
 	dw GENGAR
 	dw GIRAFARIG
 	dw VILEPLUME
+	dw WEAVILE
 	dw -1
 
 FairyTypeSpecies:

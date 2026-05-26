@@ -264,5 +264,6 @@ IconPointers:
 	dw MamoswineIcon
 	dw RhyperiorIcon
 	dw TogekissIcon
+	dw WeavileIcon
 	dw YanmegaIcon
 	assert_table_length NUM_POKEMON + 1

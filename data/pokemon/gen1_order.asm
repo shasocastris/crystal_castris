@@ -261,5 +261,6 @@ Pokered_MonIndices:
 	db SWINUB
 	db RHYHORN
 	db TOGEPI
+	db SNEASEL
 	db YANMA
 	assert_table_length NUM_POKEMON + 1

@@ -263,5 +263,6 @@ PokemonNames::
 	dname "MAMOSWINE"
 	dname "RHYPERIOR"
 	dname "TOGEKISS"
+	dname "WEAVILE"
 	dname "YANMEGA"
 	assert_table_length NUM_POKEMON

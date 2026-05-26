@@ -732,6 +732,9 @@ RhyperiorFrontpic:  INCBIN "gfx/pokemon/rhyperior/front.animated.2bpp.lz"
 RhyperiorBackpic:   INCBIN "gfx/pokemon/rhyperior/back.2bpp.lz"
 TogekissFrontpic:   INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
 TogekissBackpic:    INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
+WeavileFrontpic:    INCBIN "gfx/pokemon/weavile/front.animated.2bpp.lz"
+WeavileBackpic:     INCBIN "gfx/pokemon/weavile/back.2bpp.lz"
+
 SECTION "Pics 21", ROMX
 
 YanmegaFrontpic:    INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"

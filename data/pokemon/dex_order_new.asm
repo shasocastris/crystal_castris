@@ -261,5 +261,6 @@ NewPokedexOrder:
 	dw MAMOSWINE
 	dw RHYPERIOR
 	dw TOGEKISS
+	dw WEAVILE
 	dw YANMEGA
 	assert_table_length NUM_POKEMON
