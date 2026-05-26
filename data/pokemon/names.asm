@@ -265,6 +265,7 @@ PokemonNames::
 	dname "MAMOSWINE"
 	dname "MISMAGIUS"
 	dname "RHYPERIOR"
+	dname "SYLVEON"
 	dname "TOGEKISS"
 	dname "WEAVILE"
 	dname "YANMEGA"

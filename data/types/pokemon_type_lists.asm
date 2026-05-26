@@ -199,6 +199,7 @@ RockTypeSpecies:
 	dw LARVITAR
 	dw PUPITAR
 	dw TYRANITAR
+	dw RHYPERIOR
 	dw -1
 
 BugTypeSpecies:
@@ -233,6 +234,7 @@ GhostTypeSpecies:
 	dw GENGAR
 	dw MISDREAVUS
 	dw MISMAGIUS
+	dw ANNIHILAPE
 	dw -1
 
 SteelTypeSpecies:
@@ -401,6 +403,7 @@ IceTypeSpecies:
 	dw PILOSWINE
 	dw DELIBIRD
 	dw SMOOCHUM
+	dw MAMOSWINE
 	dw WEAVILE
 	dw -1
 
@@ -442,4 +445,6 @@ FairyTypeSpecies:
 	dw BELLOSSOM
 	dw LEDYBA
 	dw LEDIAN
+	dw SYLVEON
+	dw TOGEKISS
 	dw -1

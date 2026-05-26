@@ -262,6 +262,7 @@ FirstEvoStages::
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
 	dw MISDREAVUS ; MISMAGIUS (no pre-baby)
 	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN
+	dw EEVEE      ; SYLVEON
 	dw TOGEPI     ; TOGEKISS first stage is TOGEPI
 	dw SNEASEL    ; WEAVILE (no pre-baby)
 	dw YANMA      ; YANMEGA (no pre-baby)

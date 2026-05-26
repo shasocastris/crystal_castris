@@ -263,6 +263,7 @@ Pokered_MonIndices:
 	db SWINUB
 	db MISDREAVUS
 	db RHYHORN
+	db EEVEE
 	db TOGEPI
 	db SNEASEL
 	db YANMA

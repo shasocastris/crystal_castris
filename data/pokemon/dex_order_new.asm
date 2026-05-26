@@ -263,6 +263,7 @@ NewPokedexOrder:
 	dw MAMOSWINE
 	dw MISMAGIUS
 	dw RHYPERIOR
+	dw SYLVEON
 	dw TOGEKISS
 	dw WEAVILE
 	dw YANMEGA

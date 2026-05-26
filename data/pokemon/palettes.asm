@@ -555,6 +555,8 @@ INCBIN "gfx/pokemon/mismagius/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/mismagius/shiny.pal"
 INCBIN "gfx/pokemon/rhyperior/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/rhyperior/shiny.pal"
+INCBIN "gfx/pokemon/sylveon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/sylveon/shiny.pal"
 INCBIN "gfx/pokemon/togekiss/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/togekiss/shiny.pal"
 INCBIN "gfx/pokemon/weavile/normal.gbcpal", middle_colors

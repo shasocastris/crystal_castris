@@ -538,6 +538,8 @@ PokemonPicPointers::
 	dba MismagiusBackpic
 	dba RhyperiorFrontpic
 	dba RhyperiorBackpic
+	dba SylveonFrontpic
+	dba SylveonBackpic
 	dba TogekissFrontpic
 	dba TogekissBackpic
 	dba WeavileFrontpic

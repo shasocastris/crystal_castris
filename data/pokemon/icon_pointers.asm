@@ -266,6 +266,7 @@ IconPointers:
 	dw MamoswineIcon
 	dw MismagiusIcon
 	dw RhyperiorIcon
+	dw SylveonIcon
 	dw TogekissIcon
 	dw WeavileIcon
 	dw YanmegaIcon

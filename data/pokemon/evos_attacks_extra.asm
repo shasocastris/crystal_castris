@@ -11,6 +11,7 @@ EvosAttacksPointers3::
 	dw MamoswineEvosAttacks
 	dw MismagiusEvosAttacks
 	dw RhyperiorEvosAttacks
+	dw SylveonEvosAttacks
 	dw TogekissEvosAttacks
 	dw WeavileEvosAttacks
 	dw YanmegaEvosAttacks
@@ -68,6 +69,19 @@ AnnihilapeEvosAttacks:
 	dbw 57, NIGHT_SHADE
 	db 0 ; no more level-up moves
 
+HonchkrowEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, LEER
+	dbw 9, WING_ATTACK
+	dbw 17, FAINT_ATTACK
+	dbw 25, SWAGGER
+	dbw 33, MEAN_LOOK
+	dbw 41, PURSUIT
+	dbw 49, BEAT_UP
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
 LeafeonEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
@@ -79,6 +93,31 @@ LeafeonEvosAttacks:
 	dbw 41, GIGA_DRAIN
 	dbw 49, SYNTHESIS
 	dbw 57, SOLARBEAM
+	db 0 ; no more level-up moves
+
+LickilickyEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LICK
+	dbw 7, SUPERSONIC
+	dbw 15, STOMP
+	dbw 22, DISABLE
+	dbw 29, WRAP
+	dbw 36, SCREECH
+	dbw 44, ROLLOUT
+	dbw 52, SLAM
+	dbw 58, BODY_SLAM
+	db 0 ; no more level-up moves
+
+MamoswineEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HORN_ATTACK
+	dbw 1, POWDER_SNOW
+	dbw 10, MIST
+	dbw 20, ICY_WIND
+	dbw 30, FURY_ATTACK
+	dbw 40, TAKE_DOWN
+	dbw 50, EARTHQUAKE
+	dbw 60, BLIZZARD
 	db 0 ; no more level-up moves
 
 MismagiusEvosAttacks:
@@ -94,6 +133,69 @@ MismagiusEvosAttacks:
 	dbw 57, SHADOW_BALL
 	db 0 ; no more level-up moves
 
+RhyperiorEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HORN_ATTACK
+	dbw 1, TAIL_WHIP
+	dbw 9, STOMP
+	dbw 17, FURY_ATTACK
+	dbw 25, SCARY_FACE
+	dbw 33, ROCK_THROW
+	dbw 41, HORN_DRILL
+	dbw 49, ROCK_SLIDE
+	dbw 57, EARTHQUAKE
+	db 0 ; no more level-up moves
+
+SylveonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 9, SAND_ATTACK
+	dbw 17, SWIFT
+	dbw 25, QUICK_ATTACK
+	dbw 33, PSYCH_UP
+	dbw 41, PSYCHIC_M
+	dbw 49, BARRIER
+	dbw 57, MOONBLAST
+	db 0 ; no more level-up moves
+
+TogekissEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, DOUBLESLAP
+	dbw 1, GROWL
+	dbw 9, ENCORE
+	dbw 17, SAFEGUARD
+	dbw 25, ANCIENTPOWER
+	dbw 33, SWIFT
+	dbw 41, WING_ATTACK
+	dbw 49, EXTREMESPEED
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+WeavileEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 9, QUICK_ATTACK
+	dbw 17, FAINT_ATTACK
+	dbw 25, ICY_WIND
+	dbw 33, SLASH
+	dbw 41, BEAT_UP
+	dbw 49, SCREECH
+	dbw 57, BLIZZARD
+	db 0 ; no more level-up moves
+
+YanmegaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GUST
+	dbw 1, FORESIGHT
+	dbw 9, QUICK_ATTACK
+	dbw 17, WING_ATTACK
+	dbw 25, DETECT
+	dbw 33, ANCIENTPOWER
+	dbw 41, SCREECH
+	dbw 49, SWIFT
+	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ENDSECTION

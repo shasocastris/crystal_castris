@@ -261,6 +261,7 @@ AnimationIdlePointers:
 	dw MamoswineAnimationIdle
 	dw MismagiusAnimationIdle
 	dw RhyperiorAnimationIdle
+	dw SylveonAnimationIdle
 	dw TogekissAnimationIdle
 	dw WeavileAnimationIdle
 	dw YanmegaAnimationIdle

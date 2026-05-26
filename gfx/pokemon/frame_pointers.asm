@@ -261,6 +261,7 @@ FramesPointers:
 	dba MamoswineFrames
 	dba MismagiusFrames
 	dba RhyperiorFrames
+	dba SylveonFrames
 	dba TogekissFrames
 	dba WeavileFrames
 	dba YanmegaFrames

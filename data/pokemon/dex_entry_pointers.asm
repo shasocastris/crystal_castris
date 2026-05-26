@@ -262,6 +262,7 @@ PokedexDataPointerTable:
 	dba MamoswinePokedexEntry
 	dba MismagiusPokedexEntry
 	dba RhyperiorPokedexEntry
+	dba SylveonPokedexEntry
 	dba TogekissPokedexEntry
 	dba WeavilePokedexEntry
 	dba YanmegaPokedexEntry

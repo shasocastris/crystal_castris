@@ -230,6 +230,7 @@ AlphabeticalPokedexOrder:
 	dw SUNFLORA
 	dw SUNKERN
 	dw SWINUB
+	dw SYLVEON
 	dw TANGELA
 	dw TAUROS
 	dw TEDDIURSA

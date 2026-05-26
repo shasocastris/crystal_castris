@@ -261,6 +261,7 @@ AnimationPointers:
 	dw MamoswineAnimation
 	dw MismagiusAnimation
 	dw RhyperiorAnimation
+	dw SylveonAnimation
 	dw TogekissAnimation
 	dw WeavileAnimation
 	dw YanmegaAnimation

@@ -267,6 +267,7 @@ PokemonCries::
 	mon_cry CRY_MARILL,        0,  256 ; MAMOSWINE
 	mon_cry CRY_HOOTHOOT,      0,  288 ; MISMAGIUS
 	mon_cry CRY_RHYDON,        0,  256 ; RHYPERIOR
+	mon_cry CRY_VENONAT,     192,  256 ; SYLVEON
 	mon_cry CRY_TOGEPI,        0,  256 ; TOGEKISS
 	mon_cry CRY_WOOPER,        0,  288 ; WEAVILE
 	mon_cry CRY_TOTODILE,      0,  256 ; YANMEGA

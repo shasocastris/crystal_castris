@@ -261,6 +261,7 @@ BitmasksPointers:
 	dw MamoswineBitmasks
 	dw MismagiBitmasks
 	dw RhyperiorBitmasks
+	dw SylveonBitmasks
 	dw TogekissBitmasks
 	dw WeavileBitmasks
 	dw YanmegaBitmasks

@@ -271,6 +271,7 @@ MonMenuIconPals:
 	icon_pals BROWN, BLUE    ; MAMOSWINE
 	icon_pals PURPLE, PINK   ; MISMAGIUS
 	icon_pals BROWN, GRAY    ; RHYPERIOR
+	icon_pals PINK,  BLUE    ; SYLVEON
 	icon_pals GRAY,  BLUE    ; TOGEKISS
 	icon_pals BLUE,  GRAY    ; WEAVILE
 	icon_pals GREEN, BLUE    ; YANMEGA
