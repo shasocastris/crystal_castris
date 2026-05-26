@@ -259,6 +259,7 @@ PokemonNames::
 	dname "MAGMORTAR"
 	dname "AMBIPOM"
 	dname "ANNIHILAPE"
+	dname "HONCHKROW"
 	dname "LEAFEON"
 	dname "MAMOSWINE"
 	dname "RHYPERIOR"

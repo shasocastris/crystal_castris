@@ -921,6 +921,7 @@ UmbreonEvosAttacks:
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, HONCHKROW
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 6, QUICK_ATTACK

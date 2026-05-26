@@ -257,6 +257,7 @@ Pokered_MonIndices:
 	db MAGMAR
 	db AIPOM
 	db MANKEY
+	db MURKROW
 	db EEVEE
 	db SWINUB
 	db RHYHORN

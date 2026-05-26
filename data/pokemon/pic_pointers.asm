@@ -526,6 +526,8 @@ PokemonPicPointers::
 	dba AmbipomBackpic
 	dba AnnihilapeFrontpic
 	dba AnnihilapeBackpic
+	dba HonchkrowFrontpic
+	dba HonchkrowBackpic
 	dba LeafeonFrontpic
 	dba LeafeonBackpic
 	dba MamoswineFrontpic

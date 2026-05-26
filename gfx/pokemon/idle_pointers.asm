@@ -255,6 +255,7 @@ AnimationIdlePointers:
 	dw MagmortarAnimationIdle
 	dw AmbipomAnimationIdle
 	dw AnnihilapeAnimationIdle
+	dw HonchkrowAnimationIdle
 	dw LeafeonAnimationIdle
 	dw MamoswineAnimationIdle
 	dw RhyperiorAnimationIdle

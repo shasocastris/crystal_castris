@@ -543,6 +543,8 @@ INCBIN "gfx/pokemon/ambipom/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/ambipom/shiny.pal"
 INCBIN "gfx/pokemon/annihilape/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/annihilape/shiny.pal"
+INCBIN "gfx/pokemon/honchkrow/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/honchkrow/shiny.pal"
 INCBIN "gfx/pokemon/leafeon/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/leafeon/shiny.pal"
 INCBIN "gfx/pokemon/mamoswine/normal.gbcpal", middle_colors

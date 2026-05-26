@@ -265,6 +265,7 @@ MonMenuIconPals:
 	icon_pals RED,   BROWN   ; MAGMORTAR
 	icon_pals BROWN, PINK    ; AMBIPOM
 	icon_pals PURPLE, GRAY   ; ANNIHILAPE
+	icon_pals PURPLE, GRAY   ; HONCHKROW
 	icon_pals GREEN, BROWN   ; LEAFEON
 	icon_pals BROWN, BLUE    ; MAMOSWINE
 	icon_pals BROWN, GRAY    ; RHYPERIOR

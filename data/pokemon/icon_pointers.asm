@@ -260,6 +260,7 @@ IconPointers:
 	dw MagmortarIcon
 	dw AmbipomIcon
 	dw AnnihilapeIcon
+	dw HonchkrowIcon
 	dw LeafeonIcon
 	dw MamoswineIcon
 	dw RhyperiorIcon

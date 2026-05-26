@@ -255,6 +255,7 @@ BitmasksPointers:
 	dw MagmortarBitmasks
 	dw AmbipomBitmasks
 	dw AnnihilapeBitmasks
+	dw HonchkrowBitmasks
 	dw LeafeonBitmasks
 	dw MamoswineBitmasks
 	dw RhyperiorBitmasks

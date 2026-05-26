@@ -255,6 +255,7 @@ AnimationPointers:
 	dw MagmortarAnimation
 	dw AmbipomAnimation
 	dw AnnihilapeAnimation
+	dw HonchkrowAnimation
 	dw LeafeonAnimation
 	dw MamoswineAnimation
 	dw RhyperiorAnimation

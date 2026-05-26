@@ -256,6 +256,7 @@ FirstEvoStages::
 	dw MAGBY
 	dw AIPOM      ; AMBIPOM first stage is AIPOM
 	dw MANKEY     ; ANNIHILAPE first stage is MANKEY
+	dw MURKROW    ; HONCHKROW (no pre-baby)
 	dw EEVEE      ; LEAFEON
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
 	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN

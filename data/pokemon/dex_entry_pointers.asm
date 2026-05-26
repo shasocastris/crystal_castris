@@ -256,6 +256,7 @@ PokedexDataPointerTable:
 	dba MagmortarPokedexEntry
 	dba AmbipomPokedexEntry
 	dba AnnihilapePokedexEntry
+	dba HonchkrowPokedexEntry
 	dba LeafeonPokedexEntry
 	dba MamoswinePokedexEntry
 	dba RhyperiorPokedexEntry

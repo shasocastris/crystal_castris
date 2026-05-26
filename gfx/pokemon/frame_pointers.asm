@@ -255,6 +255,7 @@ FramesPointers:
 	dba MagmortarFrames
 	dba AmbipomFrames
 	dba AnnihilapeFrames
+	dba HonchkrowFrames
 	dba LeafeonFrames
 	dba MamoswineFrames
 	dba RhyperiorFrames

@@ -110,6 +110,7 @@ FlyingTypeSpecies:
 	dw GYARADOS
 	dw BUTTERFREE
 	dw SCYTHER
+	dw HONCHKROW
 	dw TOGEKISS
 	dw YANMEGA
 	dw -1
@@ -418,6 +419,7 @@ DarkTypeSpecies:
 	dw GENGAR
 	dw GIRAFARIG
 	dw VILEPLUME
+	dw HONCHKROW
 	dw WEAVILE
 	dw -1
 

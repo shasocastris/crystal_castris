@@ -5,6 +5,7 @@ EvosAttacksPointers3::
 	dw MagmortarEvosAttacks
 	dw AmbipomEvosAttacks
 	dw AnnihilapeEvosAttacks
+	dw HonchkrowEvosAttacks
 	dw LeafeonEvosAttacks
 	dw MamoswineEvosAttacks
 	dw RhyperiorEvosAttacks
