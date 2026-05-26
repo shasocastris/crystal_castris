@@ -550,4 +550,6 @@ PokemonPicPointers::
 	dba GliscorBackpic
 	dba PorygonZFrontpic
 	dba PorygonZBackpic
+	dba TangrowthFrontpic
+	dba TangrowthBackpic
 	assert_table_length NUM_POKEMON + 1

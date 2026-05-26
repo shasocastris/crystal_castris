@@ -350,6 +350,7 @@ GrassTypeSpecies:
 	dw SUNKERN
 	dw SUNFLORA
 	dw LEAFEON
+	dw TANGROWTH
 	dw -1
 
 ElectricTypeSpecies:

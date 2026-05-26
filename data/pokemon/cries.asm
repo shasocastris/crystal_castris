@@ -273,4 +273,5 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,      0,  256 ; YANMEGA
 	mon_cry CRY_GLIGAR,        0,  256 ; GLISCOR
 	mon_cry CRY_GIRAFARIG,     0,  256 ; PORYGON_Z
+	mon_cry CRY_SUNFLORA,      0,  256 ; TANGROWTH
 	assert_table_length NUM_POKEMON

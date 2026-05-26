@@ -269,4 +269,5 @@ NewPokedexOrder:
 	dw YANMEGA
 	dw GLISCOR
 	dw PORYGON_Z
+	dw TANGROWTH
 	assert_table_length NUM_POKEMON

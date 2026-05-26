@@ -17,6 +17,7 @@ EvosAttacksPointers3::
 	dw YanmegaEvosAttacks
 	dw GliscorEvosAttacks
 	dw PorygonZEvosAttacks
+	dw TangrowthEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -224,6 +225,19 @@ PorygonZEvosAttacks:
 	dbw 41, PSYCHIC_M
 	dbw 49, DOUBLE_TEAM
 	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+TangrowthEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, BIND
+	dbw 1, GROWTH
+	dbw 9, MEGA_DRAIN
+	dbw 17, SLAM
+	dbw 25, SLEEP_POWDER
+	dbw 33, STUN_SPORE
+	dbw 41, GIGA_DRAIN
+	dbw 49, LEECH_SEED
+	dbw 57, SOLARBEAM
 	db 0 ; no more level-up moves
 
 ENDSECTION

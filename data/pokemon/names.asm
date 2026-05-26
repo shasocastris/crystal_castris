@@ -271,4 +271,5 @@ PokemonNames::
 	dname "YANMEGA"
 	dname "GLISCOR"
 	dname "PORYGON-Z"
+	dname "TANGROWTH"
 	assert_table_length NUM_POKEMON
