@@ -273,6 +273,7 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,      0,  256 ; YANMEGA
 	mon_cry CRY_RAICHU,        0,  256 ; GLACEON
 	mon_cry CRY_GLIGAR,        0,  256 ; GLISCOR
+	mon_cry CRY_MAREEP,        0,  256 ; MAGNEZONE
 	mon_cry CRY_GIRAFARIG,     0,  256 ; PORYGON_Z
 	mon_cry CRY_NIDOQUEEN,     0,  256 ; SIRFETCH_D
 	mon_cry CRY_SUNFLORA,      0,  256 ; TANGROWTH

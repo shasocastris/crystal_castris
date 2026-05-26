@@ -250,6 +250,7 @@ SteelTypeSpecies:
 	dw SCIZOR
 	dw SKARMORY
 	dw BLASTOISE
+	dw MAGNEZONE
 	dw -1
 
 FireTypeSpecies:
@@ -372,6 +373,7 @@ ElectricTypeSpecies:
 	dw AMPHAROS
 	dw ELEKID
 	dw ELECTIVIRE
+	dw MAGNEZONE
 	dw -1
 
 PsychicTypeSpecies:

@@ -267,6 +267,7 @@ AnimationPointers:
 	dw YanmegaAnimation
 	dw GlaceonAnimation
 	dw GliscorAnimation
+	dw MagnezoneAnimation
 	dw PorygonZAnimation
 	dw SirfetchdAnimation
 	dw TangrowthAnimation

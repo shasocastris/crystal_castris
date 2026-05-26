@@ -269,6 +269,7 @@ NewPokedexOrder:
 	dw YANMEGA
 	dw GLACEON
 	dw GLISCOR
+	dw MAGNEZONE
 	dw PORYGON_Z
 	dw SIRFETCH_D
 	dw TANGROWTH

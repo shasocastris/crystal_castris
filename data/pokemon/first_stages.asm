@@ -268,6 +268,7 @@ FirstEvoStages::
 	dw YANMA      ; YANMEGA (no pre-baby)
 	dw EEVEE      ; GLACEON
 	dw GLIGAR     ; GLISCOR
+	dw MAGNEMITE  ; MAGNEZONE
 	dw PORYGON    ; PORYGON_Z
 	dw FARFETCH_D ; SIRFETCH_D
 	dw TANGELA    ; TANGROWTH

@@ -550,6 +550,8 @@ PokemonPicPointers::
 	dba GlaceonBackpic
 	dba GliscorFrontpic
 	dba GliscorBackpic
+	dba MagnezoneFrontpic
+	dba MagnezoneBackpic
 	dba PorygonZFrontpic
 	dba PorygonZBackpic
 	dba SirfetchdFrontpic

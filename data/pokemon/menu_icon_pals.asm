@@ -277,6 +277,7 @@ MonMenuIconPals:
 	icon_pals GREEN, BLUE    ; YANMEGA
 	icon_pals BLUE,  GRAY    ; GLACEON
 	icon_pals PURPLE,GREEN   ; GLISCOR
+	icon_pals GRAY,  BLUE    ; MAGNEZONE
 	icon_pals RED,   TEAL    ; PORYGON_Z
 	icon_pals BROWN, GREEN   ; SIRFETCH_D
 	icon_pals GREEN, BROWN   ; TANGROWTH

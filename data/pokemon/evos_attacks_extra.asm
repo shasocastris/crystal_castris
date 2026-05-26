@@ -17,6 +17,7 @@ EvosAttacksPointers3::
 	dw YanmegaEvosAttacks
 	dw GlaceonEvosAttacks
 	dw GliscorEvosAttacks
+	dw MagnezoneEvosAttacks
 	dw PorygonZEvosAttacks
 	dw SirfetchdEvosAttacks
 	dw TangrowthEvosAttacks
@@ -227,6 +228,19 @@ GliscorEvosAttacks:
 	dbw 33, SCARY_FACE
 	dbw 41, EARTHQUAKE
 	dbw 49, SWORDS_DANCE
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+MagnezoneEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, THUNDERSHOCK
+	dbw 9, THUNDER_WAVE
+	dbw 17, SUPERSONIC
+	dbw 25, THUNDERBOLT
+	dbw 33, SCREECH
+	dbw 41, THUNDER
+	dbw 49, FLASH
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

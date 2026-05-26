@@ -268,6 +268,7 @@ PokedexDataPointerTable:
 	dba YanmegaPokedexEntry
 	dba GlaceonPokedexEntry
 	dba GliscorPokedexEntry
+	dba MagnezonePokedexEntry
 	dba PorygonZPokedexEntry
 	dba SirfetchdPokedexEntry
 	dba TangrowthPokedexEntry

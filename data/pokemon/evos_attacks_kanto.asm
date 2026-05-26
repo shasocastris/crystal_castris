@@ -1573,6 +1573,7 @@ MagnemiteEvosAttacks:
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
+	dbww EVOLVE_ITEM, THUNDERSTONE, MAGNEZONE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, TRI_ATTACK
 	dbw 1, TACKLE

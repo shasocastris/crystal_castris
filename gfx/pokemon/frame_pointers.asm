@@ -267,6 +267,7 @@ FramesPointers:
 	dba YanmegaFrames
 	dba GlaceonFrames
 	dba GliscorFrames
+	dba MagnezoneFrames
 	dba PorygonZFrames
 	dba SirfetchdFrames
 	dba TangrowthFrames

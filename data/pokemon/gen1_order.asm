@@ -269,6 +269,7 @@ Pokered_MonIndices:
 	db YANMA
 	db EEVEE      ; GLACEON
 	db GOLBAT     ; GLISCOR
+	db MAGNETON   ; MAGNEZONE
 	db PORYGON    ; PORYGON_Z
 	db FARFETCH_D ; SIRFETCH_D
 	db TANGELA    ; TANGROWTH

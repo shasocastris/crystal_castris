@@ -271,6 +271,7 @@ PokemonNames::
 	dname "YANMEGA"
 	dname "GLACEON"
 	dname "GLISCOR"
+	dname "MAGNEZONE"
 	dname "PORYGON-Z"
 	dname "SIRFETCH'D"
 	dname "TANGROWTH"

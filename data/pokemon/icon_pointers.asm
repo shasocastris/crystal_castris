@@ -272,6 +272,7 @@ IconPointers:
 	dw YanmegaIcon
 	dw GlaceonIcon
 	dw GliscorIcon
+	dw MagnezoneIcon
 	dw PorygonZIcon
 	dw SirfetchdIcon
 	dw TangrowthIcon
