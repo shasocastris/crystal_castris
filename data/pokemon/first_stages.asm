@@ -258,6 +258,7 @@ FirstEvoStages::
 	dw MANKEY     ; ANNIHILAPE first stage is MANKEY
 	dw MURKROW    ; HONCHKROW (no pre-baby)
 	dw EEVEE      ; LEAFEON
+	dw LICKITUNG  ; LICKILICKY (no pre-baby)
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
 	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN
 	dw TOGEPI     ; TOGEKISS first stage is TOGEPI

@@ -259,6 +259,7 @@ Pokered_MonIndices:
 	db MANKEY
 	db MURKROW
 	db EEVEE
+	db LICKITUNG
 	db SWINUB
 	db RHYHORN
 	db TOGEPI

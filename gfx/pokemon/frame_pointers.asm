@@ -257,6 +257,7 @@ FramesPointers:
 	dba AnnihilapeFrames
 	dba HonchkrowFrames
 	dba LeafeonFrames
+	dba LickilickyFrames
 	dba MamoswineFrames
 	dba RhyperiorFrames
 	dba TogekissFrames

@@ -2034,6 +2034,7 @@ HitmonchanEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, LICKILICKY
 	db 0 ; no more evolutions
 	dbw 1, LICK
 	dbw 7, SUPERSONIC

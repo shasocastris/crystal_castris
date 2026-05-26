@@ -258,6 +258,7 @@ PokedexDataPointerTable:
 	dba AnnihilapePokedexEntry
 	dba HonchkrowPokedexEntry
 	dba LeafeonPokedexEntry
+	dba LickilickyPokedexEntry
 	dba MamoswinePokedexEntry
 	dba RhyperiorPokedexEntry
 	dba TogekissPokedexEntry

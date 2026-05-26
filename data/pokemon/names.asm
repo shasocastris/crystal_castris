@@ -261,6 +261,7 @@ PokemonNames::
 	dname "ANNIHILAPE"
 	dname "HONCHKROW"
 	dname "LEAFEON"
+	dname "LICKILICKY"
 	dname "MAMOSWINE"
 	dname "RHYPERIOR"
 	dname "TOGEKISS"

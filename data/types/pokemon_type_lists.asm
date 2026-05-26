@@ -37,6 +37,7 @@ NormalTypeSpecies:
 	dw DODUO
 	dw DODRIO
 	dw LICKITUNG
+	dw LICKILICKY
 	dw CHANSEY
 	dw KANGASKHAN
 	dw TAUROS

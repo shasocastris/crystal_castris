@@ -257,6 +257,7 @@ AnimationPointers:
 	dw AnnihilapeAnimation
 	dw HonchkrowAnimation
 	dw LeafeonAnimation
+	dw LickilickyAnimation
 	dw MamoswineAnimation
 	dw RhyperiorAnimation
 	dw TogekissAnimation

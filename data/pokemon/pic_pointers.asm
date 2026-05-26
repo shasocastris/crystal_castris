@@ -530,6 +530,8 @@ PokemonPicPointers::
 	dba HonchkrowBackpic
 	dba LeafeonFrontpic
 	dba LeafeonBackpic
+	dba LickilickyFrontpic
+	dba LickilickyBackpic
 	dba MamoswineFrontpic
 	dba MamoswineBackpic
 	dba RhyperiorFrontpic

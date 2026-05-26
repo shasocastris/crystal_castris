@@ -262,6 +262,7 @@ IconPointers:
 	dw AnnihilapeIcon
 	dw HonchkrowIcon
 	dw LeafeonIcon
+	dw LickilickyIcon
 	dw MamoswineIcon
 	dw RhyperiorIcon
 	dw TogekissIcon

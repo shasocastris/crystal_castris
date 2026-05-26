@@ -257,6 +257,7 @@ BitmasksPointers:
 	dw AnnihilapeBitmasks
 	dw HonchkrowBitmasks
 	dw LeafeonBitmasks
+	dw LickilickyBitmasks
 	dw MamoswineBitmasks
 	dw RhyperiorBitmasks
 	dw TogekissBitmasks

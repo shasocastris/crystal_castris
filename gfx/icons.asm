@@ -263,6 +263,7 @@ AnnihilapeIcon:: INCBIN "gfx/icons/annihilape.2bpp"
 SECTION "Mon Icons 3", ROMX
 HonchkrowIcon::  INCBIN "gfx/icons/honchkrow.2bpp"
 LeafeonIcon::    INCBIN "gfx/icons/leafeon.2bpp"
+LickilickyIcon:: INCBIN "gfx/icons/lickilicky.2bpp"
 MamoswineIcon::  INCBIN "gfx/icons/mamoswine.2bpp"
 RhyperiorIcon::  INCBIN "gfx/icons/rhyperior.2bpp"
 TogekissIcon::   INCBIN "gfx/icons/togekiss.2bpp"

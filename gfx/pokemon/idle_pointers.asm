@@ -257,6 +257,7 @@ AnimationIdlePointers:
 	dw AnnihilapeAnimationIdle
 	dw HonchkrowAnimationIdle
 	dw LeafeonAnimationIdle
+	dw LickilickyAnimationIdle
 	dw MamoswineAnimationIdle
 	dw RhyperiorAnimationIdle
 	dw TogekissAnimationIdle

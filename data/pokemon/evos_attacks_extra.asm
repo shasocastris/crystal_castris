@@ -7,6 +7,7 @@ EvosAttacksPointers3::
 	dw AnnihilapeEvosAttacks
 	dw HonchkrowEvosAttacks
 	dw LeafeonEvosAttacks
+	dw LickilickyEvosAttacks
 	dw MamoswineEvosAttacks
 	dw RhyperiorEvosAttacks
 	dw TogekissEvosAttacks
