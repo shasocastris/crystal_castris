@@ -63,6 +63,7 @@ NormalTypeSpecies:
 	dw SMEARGLE
 	dw MILTANK
 	dw BLISSEY
+	dw PORYGON_Z
 	dw -1
 
 FightingTypeSpecies:

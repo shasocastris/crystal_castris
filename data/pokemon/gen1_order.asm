@@ -268,4 +268,5 @@ Pokered_MonIndices:
 	db SNEASEL
 	db YANMA
 	db GOLBAT     ; GLISCOR
+	db PORYGON    ; PORYGON_Z
 	assert_table_length NUM_POKEMON + 1

@@ -16,6 +16,7 @@ EvosAttacksPointers3::
 	dw WeavileEvosAttacks
 	dw YanmegaEvosAttacks
 	dw GliscorEvosAttacks
+	dw PorygonZEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -209,6 +210,19 @@ GliscorEvosAttacks:
 	dbw 33, SCARY_FACE
 	dbw 41, EARTHQUAKE
 	dbw 49, SWORDS_DANCE
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+PorygonZEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, PSYBEAM
+	dbw 9, AGILITY
+	dbw 17, TRI_ATTACK
+	dbw 25, RECOVER
+	dbw 33, THUNDER
+	dbw 41, PSYCHIC_M
+	dbw 49, DOUBLE_TEAM
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

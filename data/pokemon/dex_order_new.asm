@@ -268,4 +268,5 @@ NewPokedexOrder:
 	dw WEAVILE
 	dw YANMEGA
 	dw GLISCOR
+	dw PORYGON_Z
 	assert_table_length NUM_POKEMON

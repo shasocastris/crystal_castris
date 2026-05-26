@@ -270,4 +270,5 @@ PokemonNames::
 	dname "WEAVILE"
 	dname "YANMEGA"
 	dname "GLISCOR"
+	dname "PORYGON-Z"
 	assert_table_length NUM_POKEMON

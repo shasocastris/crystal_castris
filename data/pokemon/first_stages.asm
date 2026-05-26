@@ -267,4 +267,5 @@ FirstEvoStages::
 	dw SNEASEL    ; WEAVILE (no pre-baby)
 	dw YANMA      ; YANMEGA (no pre-baby)
 	dw GLIGAR     ; GLISCOR
+	dw PORYGON    ; PORYGON_Z
 	assert_table_length NUM_POKEMON

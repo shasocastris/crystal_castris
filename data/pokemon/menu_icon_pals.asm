@@ -276,4 +276,5 @@ MonMenuIconPals:
 	icon_pals BLUE,  GRAY    ; WEAVILE
 	icon_pals GREEN, BLUE    ; YANMEGA
 	icon_pals PURPLE,GREEN   ; GLISCOR
+	icon_pals RED,   TEAL    ; PORYGON_Z
 	assert_table_length NUM_POKEMON
