@@ -259,4 +259,5 @@ NewPokedexOrder:
 	dw ANNIHILAPE
 	dw LEAFEON
 	dw MAMOSWINE
+	dw RHYPERIOR
 	assert_table_length NUM_POKEMON

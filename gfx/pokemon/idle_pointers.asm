@@ -257,4 +257,5 @@ AnimationIdlePointers:
 	dw AnnihilapeAnimationIdle
 	dw LeafeonAnimationIdle
 	dw MamoswineAnimationIdle
+	dw RhyperiorAnimationIdle
 	assert_table_length NUM_POKEMON

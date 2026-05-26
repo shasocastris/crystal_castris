@@ -259,4 +259,5 @@ Pokered_MonIndices:
 	db MANKEY
 	db EEVEE
 	db SWINUB
+	db RHYHORN
 	assert_table_length NUM_POKEMON + 1

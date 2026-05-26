@@ -258,4 +258,5 @@ FirstEvoStages::
 	dw MANKEY     ; ANNIHILAPE first stage is MANKEY
 	dw EEVEE      ; LEAFEON
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
+	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN
 	assert_table_length NUM_POKEMON

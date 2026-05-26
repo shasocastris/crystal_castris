@@ -263,4 +263,5 @@ PokemonCries::
 	mon_cry CRY_RAIKOU,        0,  256 ; ANNIHILAPE
 	mon_cry CRY_VENONAT,     128,  256 ; LEAFEON
 	mon_cry CRY_MARILL,        0,  256 ; MAMOSWINE
+	mon_cry CRY_RHYDON,        0,  256 ; RHYPERIOR
 	assert_table_length NUM_POKEMON

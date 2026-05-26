@@ -173,6 +173,7 @@ GroundTypeSpecies:
 	dw ARIADOS
 	dw SPINARAK
 	dw MAMOSWINE
+	dw RHYPERIOR
 	dw -1
 
 RockTypeSpecies:

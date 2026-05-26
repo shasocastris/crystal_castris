@@ -1,0 +1,17 @@
+	db 0 ; species ID placeholder
+
+	db 115, 140, 130,  40,  55,  55
+	evs  0,   3,   0,   0,   0,   0
+	;   hp  atk  def  spd  sat  sdf
+
+	db GROUND, ROCK ; type
+	db 30 ; catch rate
+	db 241 ; base exp
+	dw NO_ITEM, NO_ITEM ; items
+	db GENDER_F50 ; gender ratio
+	INCBIN "gfx/pokemon/rhyperior/front.dimensions"
+	dw NULL, NULL ; unused (beta front/back pics)
+	db GROWTH_SLOW ; growth rate
+	; tm/hm learnset
+	tmhm HEADBUTT, CURSE, ROLLOUT, TOXIC, PSYCH_UP, HIDDEN_POWER, SNORE, HYPER_BEAM, PROTECT, ENDURE, FRUSTRATION, RETURN, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, EARTHQUAKE, SWIFT, DEFENSE_CURL, DETECT, REST, ATTRACT, THUNDER, BLIZZARD, SUBSTITUTE, ROCK_SMASH, DIG, BODY_SLAM, MEGA_PUNCH, SURF, COUNTER
+	; end

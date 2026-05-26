@@ -261,4 +261,5 @@ PokemonNames::
 	dname "ANNIHILAPE"
 	dname "LEAFEON"
 	dname "MAMOSWINE"
+	dname "RHYPERIOR"
 	assert_table_length NUM_POKEMON
