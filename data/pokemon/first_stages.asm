@@ -259,4 +259,5 @@ FirstEvoStages::
 	dw EEVEE      ; LEAFEON
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
 	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN
+	dw TOGEPI     ; TOGEKISS first stage is TOGEPI
 	assert_table_length NUM_POKEMON

@@ -8,6 +8,7 @@ EvosAttacksPointers3::
 	dw LeafeonEvosAttacks
 	dw MamoswineEvosAttacks
 	dw RhyperiorEvosAttacks
+	dw TogekissEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:

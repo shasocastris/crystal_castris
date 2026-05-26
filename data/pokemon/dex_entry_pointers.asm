@@ -259,4 +259,5 @@ PokedexDataPointerTable:
 	dba LeafeonPokedexEntry
 	dba MamoswinePokedexEntry
 	dba RhyperiorPokedexEntry
+	dba TogekissPokedexEntry
 	assert_table_length NUM_POKEMON

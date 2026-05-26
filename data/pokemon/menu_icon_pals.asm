@@ -268,4 +268,5 @@ MonMenuIconPals:
 	icon_pals GREEN, BROWN   ; LEAFEON
 	icon_pals BROWN, BLUE    ; MAMOSWINE
 	icon_pals BROWN, GRAY    ; RHYPERIOR
+	icon_pals GRAY,  BLUE    ; TOGEKISS
 	assert_table_length NUM_POKEMON

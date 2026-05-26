@@ -264,4 +264,5 @@ PokemonCries::
 	mon_cry CRY_VENONAT,     128,  256 ; LEAFEON
 	mon_cry CRY_MARILL,        0,  256 ; MAMOSWINE
 	mon_cry CRY_RHYDON,        0,  256 ; RHYPERIOR
+	mon_cry CRY_TOGEPI,        0,  256 ; TOGEKISS
 	assert_table_length NUM_POKEMON

@@ -260,4 +260,5 @@ NewPokedexOrder:
 	dw LEAFEON
 	dw MAMOSWINE
 	dw RHYPERIOR
+	dw TOGEKISS
 	assert_table_length NUM_POKEMON

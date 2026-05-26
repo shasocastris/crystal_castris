@@ -110,6 +110,7 @@ FlyingTypeSpecies:
 	dw GYARADOS
 	dw BUTTERFREE
 	dw SCYTHER
+	dw TOGEKISS
 	dw -1
 
 PoisonTypeSpecies:

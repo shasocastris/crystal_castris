@@ -544,6 +544,7 @@ TogepiEvosAttacks:
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
+	dbww EVOLVE_ITEM, SUN_STONE, TOGEKISS
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, SWIFT
 	dbw 1, DOUBLESLAP
