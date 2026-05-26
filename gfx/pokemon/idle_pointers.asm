@@ -265,6 +265,7 @@ AnimationIdlePointers:
 	dw TogekissAnimationIdle
 	dw WeavileAnimationIdle
 	dw YanmegaAnimationIdle
+	dw GlaceonAnimationIdle
 	dw GliscorAnimationIdle
 	dw PorygonZAnimationIdle
 	dw SirfetchdAnimationIdle

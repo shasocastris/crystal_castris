@@ -15,6 +15,7 @@ EvosAttacksPointers3::
 	dw TogekissEvosAttacks
 	dw WeavileEvosAttacks
 	dw YanmegaEvosAttacks
+	dw GlaceonEvosAttacks
 	dw GliscorEvosAttacks
 	dw PorygonZEvosAttacks
 	dw SirfetchdEvosAttacks
@@ -200,6 +201,19 @@ YanmegaEvosAttacks:
 	dbw 41, SCREECH
 	dbw 49, SWIFT
 	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+GlaceonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 9, ICY_WIND
+	dbw 17, BITE
+	dbw 25, AURORA_BEAM
+	dbw 33, DOUBLE_TEAM
+	dbw 41, ICE_BEAM
+	dbw 49, BARRIER
+	dbw 57, BLIZZARD
 	db 0 ; no more level-up moves
 
 GliscorEvosAttacks:

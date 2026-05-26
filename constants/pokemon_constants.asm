@@ -287,6 +287,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const TOGEKISS    ; 107
 	const WEAVILE     ; 108
 	const YANMEGA     ; 109
+	const GLACEON     ; 10a
 	const GLISCOR     ; 10b
 	const PORYGON_Z   ; 10d
 	const SIRFETCH_D  ; 10e

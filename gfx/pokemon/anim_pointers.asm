@@ -265,6 +265,7 @@ AnimationPointers:
 	dw TogekissAnimation
 	dw WeavileAnimation
 	dw YanmegaAnimation
+	dw GlaceonAnimation
 	dw GliscorAnimation
 	dw PorygonZAnimation
 	dw SirfetchdAnimation

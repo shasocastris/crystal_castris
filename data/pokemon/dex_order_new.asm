@@ -267,6 +267,7 @@ NewPokedexOrder:
 	dw TOGEKISS
 	dw WEAVILE
 	dw YANMEGA
+	dw GLACEON
 	dw GLISCOR
 	dw PORYGON_Z
 	dw SIRFETCH_D

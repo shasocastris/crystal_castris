@@ -265,6 +265,7 @@ BitmasksPointers:
 	dw TogekissBitmasks
 	dw WeavileBitmasks
 	dw YanmegaBitmasks
+	dw GlaceonBitmasks
 	dw GliscorBitmasks
 	dw PorygonZBitmasks
 	dw SirfetchdBitmasks

@@ -269,6 +269,7 @@ PokemonNames::
 	dname "TOGEKISS"
 	dname "WEAVILE"
 	dname "YANMEGA"
+	dname "GLACEON"
 	dname "GLISCOR"
 	dname "PORYGON-Z"
 	dname "SIRFETCH'D"

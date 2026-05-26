@@ -409,6 +409,7 @@ IceTypeSpecies:
 	dw SMOOCHUM
 	dw MAMOSWINE
 	dw WEAVILE
+	dw GLACEON
 	dw -1
 
 DragonTypeSpecies:

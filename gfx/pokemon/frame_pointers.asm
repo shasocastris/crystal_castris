@@ -265,6 +265,7 @@ FramesPointers:
 	dba TogekissFrames
 	dba WeavileFrames
 	dba YanmegaFrames
+	dba GlaceonFrames
 	dba GliscorFrames
 	dba PorygonZFrames
 	dba SirfetchdFrames

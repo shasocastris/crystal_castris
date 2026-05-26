@@ -546,6 +546,8 @@ PokemonPicPointers::
 	dba WeavileBackpic
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
+	dba GlaceonFrontpic
+	dba GlaceonBackpic
 	dba GliscorFrontpic
 	dba GliscorBackpic
 	dba PorygonZFrontpic

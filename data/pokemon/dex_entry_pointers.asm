@@ -266,6 +266,7 @@ PokedexDataPointerTable:
 	dba TogekissPokedexEntry
 	dba WeavilePokedexEntry
 	dba YanmegaPokedexEntry
+	dba GlaceonPokedexEntry
 	dba GliscorPokedexEntry
 	dba PorygonZPokedexEntry
 	dba SirfetchdPokedexEntry

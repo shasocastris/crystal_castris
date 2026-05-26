@@ -270,6 +270,7 @@ IconPointers:
 	dw TogekissIcon
 	dw WeavileIcon
 	dw YanmegaIcon
+	dw GlaceonIcon
 	dw GliscorIcon
 	dw PorygonZIcon
 	dw SirfetchdIcon

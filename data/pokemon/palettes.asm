@@ -563,6 +563,8 @@ INCBIN "gfx/pokemon/weavile/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/weavile/shiny.pal"
 INCBIN "gfx/pokemon/yanmega/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/yanmega/shiny.pal"
+INCBIN "gfx/pokemon/glaceon/normal.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/glaceon/shiny.pal"
 INCBIN "gfx/pokemon/gliscor/normal.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/gliscor/shiny.pal"
 INCBIN "gfx/pokemon/porygon_z/normal.gbcpal", middle_colors

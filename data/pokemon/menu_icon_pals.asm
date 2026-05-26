@@ -275,6 +275,7 @@ MonMenuIconPals:
 	icon_pals GRAY,  BLUE    ; TOGEKISS
 	icon_pals BLUE,  GRAY    ; WEAVILE
 	icon_pals GREEN, BLUE    ; YANMEGA
+	icon_pals BLUE,  GRAY    ; GLACEON
 	icon_pals PURPLE,GREEN   ; GLISCOR
 	icon_pals RED,   TEAL    ; PORYGON_Z
 	icon_pals BROWN, GREEN   ; SIRFETCH_D

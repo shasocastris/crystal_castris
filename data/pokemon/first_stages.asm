@@ -266,6 +266,7 @@ FirstEvoStages::
 	dw TOGEPI     ; TOGEKISS first stage is TOGEPI
 	dw SNEASEL    ; WEAVILE (no pre-baby)
 	dw YANMA      ; YANMEGA (no pre-baby)
+	dw EEVEE      ; GLACEON
 	dw GLIGAR     ; GLISCOR
 	dw PORYGON    ; PORYGON_Z
 	dw FARFETCH_D ; SIRFETCH_D

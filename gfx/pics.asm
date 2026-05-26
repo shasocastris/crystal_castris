@@ -747,6 +747,8 @@ SECTION "Pics 21", ROMX
 
 YanmegaFrontpic:    INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
 YanmegaBackpic:     INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
+GlaceonFrontpic:    INCBIN "gfx/pokemon/glaceon/front.animated.2bpp.lz"
+GlaceonBackpic:     INCBIN "gfx/pokemon/glaceon/back.2bpp.lz"
 GliscorFrontpic:    INCBIN "gfx/pokemon/gliscor/front.animated.2bpp.lz"
 GliscorBackpic:     INCBIN "gfx/pokemon/gliscor/back.2bpp.lz"
 PorygonZFrontpic:   INCBIN "gfx/pokemon/porygon_z/front.animated.2bpp.lz"
