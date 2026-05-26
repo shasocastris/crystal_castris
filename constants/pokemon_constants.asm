@@ -281,6 +281,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const LEAFEON     ; 101
 	const LICKILICKY  ; 102
 	const MAMOSWINE   ; 103
+	const MISMAGIUS   ; 104
 	const RHYPERIOR   ; 105
 	const TOGEKISS    ; 107
 	const WEAVILE     ; 108

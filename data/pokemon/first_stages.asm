@@ -260,6 +260,7 @@ FirstEvoStages::
 	dw EEVEE      ; LEAFEON
 	dw LICKITUNG  ; LICKILICKY (no pre-baby)
 	dw SWINUB     ; MAMOSWINE first stage is SWINUB
+	dw MISDREAVUS ; MISMAGIUS (no pre-baby)
 	dw RHYHORN    ; RHYPERIOR first stage is RHYHORN
 	dw TOGEPI     ; TOGEKISS first stage is TOGEPI
 	dw SNEASEL    ; WEAVILE (no pre-baby)

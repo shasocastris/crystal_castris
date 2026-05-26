@@ -263,6 +263,7 @@ PokemonNames::
 	dname "LEAFEON"
 	dname "LICKILICKY"
 	dname "MAMOSWINE"
+	dname "MISMAGIUS"
 	dname "RHYPERIOR"
 	dname "TOGEKISS"
 	dname "WEAVILE"

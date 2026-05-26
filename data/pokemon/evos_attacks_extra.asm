@@ -9,6 +9,7 @@ EvosAttacksPointers3::
 	dw LeafeonEvosAttacks
 	dw LickilickyEvosAttacks
 	dw MamoswineEvosAttacks
+	dw MismagiusEvosAttacks
 	dw RhyperiorEvosAttacks
 	dw TogekissEvosAttacks
 	dw WeavileEvosAttacks
@@ -78,6 +79,19 @@ LeafeonEvosAttacks:
 	dbw 41, GIGA_DRAIN
 	dbw 49, SYNTHESIS
 	dbw 57, SOLARBEAM
+	db 0 ; no more level-up moves
+
+MismagiusEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, PSYWAVE
+	dbw 9, SPITE
+	dbw 17, CONFUSION
+	dbw 25, MEAN_LOOK
+	dbw 33, SCREECH
+	dbw 41, PERISH_SONG
+	dbw 49, DESTINY_BOND
+	dbw 57, SHADOW_BALL
 	db 0 ; no more level-up moves
 
 	db 0 ; no more level-up moves

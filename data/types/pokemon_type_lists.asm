@@ -232,6 +232,7 @@ GhostTypeSpecies:
 	dw HAUNTER
 	dw GENGAR
 	dw MISDREAVUS
+	dw MISMAGIUS
 	dw -1
 
 SteelTypeSpecies:

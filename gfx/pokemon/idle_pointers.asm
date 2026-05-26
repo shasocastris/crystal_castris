@@ -259,6 +259,7 @@ AnimationIdlePointers:
 	dw LeafeonAnimationIdle
 	dw LickilickyAnimationIdle
 	dw MamoswineAnimationIdle
+	dw MismagiusAnimationIdle
 	dw RhyperiorAnimationIdle
 	dw TogekissAnimationIdle
 	dw WeavileAnimationIdle

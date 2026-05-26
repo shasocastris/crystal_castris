@@ -259,6 +259,7 @@ AnimationPointers:
 	dw LeafeonAnimation
 	dw LickilickyAnimation
 	dw MamoswineAnimation
+	dw MismagiusAnimation
 	dw RhyperiorAnimation
 	dw TogekissAnimation
 	dw WeavileAnimation

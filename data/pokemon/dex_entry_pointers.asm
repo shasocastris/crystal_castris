@@ -260,6 +260,7 @@ PokedexDataPointerTable:
 	dba LeafeonPokedexEntry
 	dba LickilickyPokedexEntry
 	dba MamoswinePokedexEntry
+	dba MismagiusPokedexEntry
 	dba RhyperiorPokedexEntry
 	dba TogekissPokedexEntry
 	dba WeavilePokedexEntry

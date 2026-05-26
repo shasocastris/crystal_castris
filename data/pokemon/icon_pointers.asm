@@ -264,6 +264,7 @@ IconPointers:
 	dw LeafeonIcon
 	dw LickilickyIcon
 	dw MamoswineIcon
+	dw MismagiusIcon
 	dw RhyperiorIcon
 	dw TogekissIcon
 	dw WeavileIcon

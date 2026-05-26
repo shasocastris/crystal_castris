@@ -261,6 +261,7 @@ Pokered_MonIndices:
 	db EEVEE
 	db LICKITUNG
 	db SWINUB
+	db MISDREAVUS
 	db RHYHORN
 	db TOGEPI
 	db SNEASEL

@@ -269,6 +269,7 @@ MonMenuIconPals:
 	icon_pals GREEN, BROWN   ; LEAFEON
 	icon_pals PINK,  GRAY    ; LICKILICKY
 	icon_pals BROWN, BLUE    ; MAMOSWINE
+	icon_pals PURPLE, PINK   ; MISMAGIUS
 	icon_pals BROWN, GRAY    ; RHYPERIOR
 	icon_pals GRAY,  BLUE    ; TOGEKISS
 	icon_pals BLUE,  GRAY    ; WEAVILE
