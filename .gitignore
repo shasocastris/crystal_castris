@@ -42,3 +42,14 @@ gfx/pokemon/*/*/frames.asm
 *.sn*
 *.sa*
 *.sg1
+
+# random files
+/docs/no_pokemon_center_design.md
+/docs/pseudo_abilities.md
+/docs/images/pokemon_tiles.png
+/docs/images/Lorelai.png
+/docs/images/koga.png
+/docs/images/karen.png
+/docs/images/greensmom.png
+/docs/images/GraniteVillage.png
+/tools/bpp2png
