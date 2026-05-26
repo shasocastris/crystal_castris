@@ -15,6 +15,7 @@ EvosAttacksPointers3::
 	dw TogekissEvosAttacks
 	dw WeavileEvosAttacks
 	dw YanmegaEvosAttacks
+	dw GliscorEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -195,6 +196,19 @@ YanmegaEvosAttacks:
 	dbw 33, ANCIENTPOWER
 	dbw 41, SCREECH
 	dbw 49, SWIFT
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+GliscorEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POISON_STING
+	dbw 1, LEER
+	dbw 9, SAND_ATTACK
+	dbw 17, FURY_CUTTER
+	dbw 25, SLASH
+	dbw 33, SCARY_FACE
+	dbw 41, EARTHQUAKE
+	dbw 49, SWORDS_DANCE
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

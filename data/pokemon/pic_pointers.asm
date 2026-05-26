@@ -546,4 +546,6 @@ PokemonPicPointers::
 	dba WeavileBackpic
 	dba YanmegaFrontpic
 	dba YanmegaBackpic
+	dba GliscorFrontpic
+	dba GliscorBackpic
 	assert_table_length NUM_POKEMON + 1

@@ -114,6 +114,7 @@ FlyingTypeSpecies:
 	dw HONCHKROW
 	dw TOGEKISS
 	dw YANMEGA
+	dw GLISCOR
 	dw -1
 
 PoisonTypeSpecies:
@@ -178,6 +179,7 @@ GroundTypeSpecies:
 	dw SPINARAK
 	dw MAMOSWINE
 	dw RHYPERIOR
+	dw GLISCOR
 	dw -1
 
 RockTypeSpecies:

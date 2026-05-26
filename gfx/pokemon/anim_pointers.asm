@@ -265,4 +265,5 @@ AnimationPointers:
 	dw TogekissAnimation
 	dw WeavileAnimation
 	dw YanmegaAnimation
+	dw GliscorAnimation
 	assert_table_length NUM_POKEMON

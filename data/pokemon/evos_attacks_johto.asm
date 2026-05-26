@@ -1058,6 +1058,7 @@ DunsparceEvosAttacks:
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, GLISCOR
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 6, SAND_ATTACK

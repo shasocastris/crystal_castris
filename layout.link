@@ -36,7 +36,6 @@ ROMX $01
 	"Tileset Data 10"
 ROMX $02
 	"bank2"
-	"Tileset Data 9"
 ROMX $03
 	"bank3"
 	"VWF"
@@ -91,7 +90,6 @@ ROMX $13
 	"bank13_2"
 ROMX $14
 	"bank14"
-	"Unused Egg Pic"
 ROMX $15
 	"Map Scripts 1"
 ROMX $16
@@ -161,6 +159,8 @@ ROMX $33
 	"Extra Songs 2"
 ROMX $34
 	"Pic Animations 1"
+ROMX $79
+	"Pic Animations 4"
 ROMX $35
 	"Pic Animations 2"
 ROMX $36
@@ -315,6 +315,9 @@ ROMX $77
 	"European Mail"
 ROMX $78
 	"Tileset Data 8"
+ROMX $7a
+	"Tileset Data 9"
+	"Unused Egg Pic"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c

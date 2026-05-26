@@ -287,6 +287,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const TOGEKISS    ; 107
 	const WEAVILE     ; 108
 	const YANMEGA     ; 109
+	const GLISCOR     ; 10b
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

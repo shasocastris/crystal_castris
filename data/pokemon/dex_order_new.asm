@@ -267,4 +267,5 @@ NewPokedexOrder:
 	dw TOGEKISS
 	dw WEAVILE
 	dw YANMEGA
+	dw GLISCOR
 	assert_table_length NUM_POKEMON

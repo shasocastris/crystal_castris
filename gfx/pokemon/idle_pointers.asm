@@ -265,4 +265,5 @@ AnimationIdlePointers:
 	dw TogekissAnimationIdle
 	dw WeavileAnimationIdle
 	dw YanmegaAnimationIdle
+	dw GliscorAnimationIdle
 	assert_table_length NUM_POKEMON

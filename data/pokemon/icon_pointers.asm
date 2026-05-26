@@ -270,4 +270,5 @@ IconPointers:
 	dw TogekissIcon
 	dw WeavileIcon
 	dw YanmegaIcon
+	dw GliscorIcon
 	assert_table_length NUM_POKEMON + 1

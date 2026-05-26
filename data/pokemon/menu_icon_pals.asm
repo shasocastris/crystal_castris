@@ -275,4 +275,5 @@ MonMenuIconPals:
 	icon_pals GRAY,  BLUE    ; TOGEKISS
 	icon_pals BLUE,  GRAY    ; WEAVILE
 	icon_pals GREEN, BLUE    ; YANMEGA
+	icon_pals PURPLE,GREEN   ; GLISCOR
 	assert_table_length NUM_POKEMON

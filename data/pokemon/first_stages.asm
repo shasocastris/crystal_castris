@@ -266,4 +266,5 @@ FirstEvoStages::
 	dw TOGEPI     ; TOGEKISS first stage is TOGEPI
 	dw SNEASEL    ; WEAVILE (no pre-baby)
 	dw YANMA      ; YANMEGA (no pre-baby)
+	dw GLIGAR     ; GLISCOR
 	assert_table_length NUM_POKEMON

@@ -269,4 +269,5 @@ PokemonNames::
 	dname "TOGEKISS"
 	dname "WEAVILE"
 	dname "YANMEGA"
+	dname "GLISCOR"
 	assert_table_length NUM_POKEMON

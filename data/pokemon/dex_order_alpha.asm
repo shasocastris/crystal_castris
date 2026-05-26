@@ -74,6 +74,7 @@ AlphabeticalPokedexOrder:
 	dw GEODUDE
 	dw GIRAFARIG
 	dw GLIGAR
+	dw GLISCOR
 	dw GLOOM
 	dw GOLBAT
 	dw GOLDEEN

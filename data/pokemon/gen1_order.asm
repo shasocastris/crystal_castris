@@ -267,4 +267,5 @@ Pokered_MonIndices:
 	db TOGEPI
 	db SNEASEL
 	db YANMA
+	db GOLBAT     ; GLISCOR
 	assert_table_length NUM_POKEMON + 1

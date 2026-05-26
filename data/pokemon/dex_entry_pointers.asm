@@ -266,4 +266,5 @@ PokedexDataPointerTable:
 	dba TogekissPokedexEntry
 	dba WeavilePokedexEntry
 	dba YanmegaPokedexEntry
+	dba GliscorPokedexEntry
 	assert_table_length NUM_POKEMON
