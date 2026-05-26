@@ -259,4 +259,5 @@ AnimationPointers:
 	dw MamoswineAnimation
 	dw RhyperiorAnimation
 	dw TogekissAnimation
+	dw YanmegaAnimation
 	assert_table_length NUM_POKEMON

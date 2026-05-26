@@ -836,6 +836,7 @@ SunfloraEvosAttacks:
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
+	dbww EVOLVE_ITEM, LEAF_STONE, YANMEGA
 	db 0 ; no more evolutions
 	dbw 1, GUST
 	dbw 1, FORESIGHT

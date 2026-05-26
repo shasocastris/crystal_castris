@@ -111,6 +111,7 @@ FlyingTypeSpecies:
 	dw BUTTERFREE
 	dw SCYTHER
 	dw TOGEKISS
+	dw YANMEGA
 	dw -1
 
 PoisonTypeSpecies:
@@ -221,6 +222,7 @@ BugTypeSpecies:
 	dw SCIZOR
 	dw SHUCKLE
 	dw HERACROSS
+	dw YANMEGA
 	dw -1
 
 GhostTypeSpecies:
