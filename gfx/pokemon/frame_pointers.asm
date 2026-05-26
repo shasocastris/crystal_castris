@@ -255,4 +255,5 @@ FramesPointers:
 	dba MagmortarFrames
 	dba AmbipomFrames
 	dba AnnihilapeFrames
+	dba LeafeonFrames
 	assert_table_length NUM_POKEMON

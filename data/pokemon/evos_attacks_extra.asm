@@ -5,6 +5,7 @@ EvosAttacksPointers3::
 	dw MagmortarEvosAttacks
 	dw AmbipomEvosAttacks
 	dw AnnihilapeEvosAttacks
+	dw LeafeonEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -57,6 +58,19 @@ AnnihilapeEvosAttacks:
 	dbw 41, CROSS_CHOP
 	dbw 49, SUBMISSION
 	dbw 57, NIGHT_SHADE
+	db 0 ; no more level-up moves
+
+LeafeonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 9, SAND_ATTACK
+	dbw 17, RAZOR_LEAF
+	dbw 25, SWIFT
+	dbw 33, LEECH_SEED
+	dbw 41, GIGA_DRAIN
+	dbw 49, SYNTHESIS
+	dbw 57, SOLARBEAM
 	db 0 ; no more level-up moves
 
 	db 0 ; no more level-up moves

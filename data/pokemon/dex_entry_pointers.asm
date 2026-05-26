@@ -256,4 +256,5 @@ PokedexDataPointerTable:
 	dba MagmortarPokedexEntry
 	dba AmbipomPokedexEntry
 	dba AnnihilapePokedexEntry
+	dba LeafeonPokedexEntry
 	assert_table_length NUM_POKEMON

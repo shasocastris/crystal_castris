@@ -257,4 +257,5 @@ Pokered_MonIndices:
 	db MAGMAR
 	db AIPOM
 	db MANKEY
+	db EEVEE
 	assert_table_length NUM_POKEMON + 1

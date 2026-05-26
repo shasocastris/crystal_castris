@@ -336,6 +336,7 @@ GrassTypeSpecies:
 	dw JUMPLUFF
 	dw SUNKERN
 	dw SUNFLORA
+	dw LEAFEON
 	dw -1
 
 ElectricTypeSpecies:

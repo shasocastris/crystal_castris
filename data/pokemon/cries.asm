@@ -261,4 +261,5 @@ PokemonCries::
 	mon_cry CRY_CHARMANDER,    0,  192 ; MAGMORTAR
 	mon_cry CRY_AIPOM,         0,  256 ; AMBIPOM
 	mon_cry CRY_RAIKOU,        0,  256 ; ANNIHILAPE
+	mon_cry CRY_VENONAT,     128,  256 ; LEAFEON
 	assert_table_length NUM_POKEMON

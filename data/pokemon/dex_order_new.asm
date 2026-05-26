@@ -257,4 +257,5 @@ NewPokedexOrder:
 	dw MAGMORTAR
 	dw AMBIPOM
 	dw ANNIHILAPE
+	dw LEAFEON
 	assert_table_length NUM_POKEMON

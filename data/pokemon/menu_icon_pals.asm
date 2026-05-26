@@ -265,4 +265,5 @@ MonMenuIconPals:
 	icon_pals RED,   BROWN   ; MAGMORTAR
 	icon_pals BROWN, PINK    ; AMBIPOM
 	icon_pals PURPLE, GRAY   ; ANNIHILAPE
+	icon_pals GREEN, BROWN   ; LEAFEON
 	assert_table_length NUM_POKEMON

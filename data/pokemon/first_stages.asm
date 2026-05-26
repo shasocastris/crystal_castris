@@ -256,4 +256,5 @@ FirstEvoStages::
 	dw MAGBY
 	dw AIPOM      ; AMBIPOM first stage is AIPOM
 	dw MANKEY     ; ANNIHILAPE first stage is MANKEY
+	dw EEVEE      ; LEAFEON
 	assert_table_length NUM_POKEMON
