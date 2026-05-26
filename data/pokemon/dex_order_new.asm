@@ -254,6 +254,7 @@ NewPokedexOrder:
 	dw MEW
 	dw CELEBI
 	dw ELECTIVIRE
+	dw MAGMORTAR
 	dw AMBIPOM
 	dw ANNIHILAPE
 	assert_table_length NUM_POKEMON

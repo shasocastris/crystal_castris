@@ -248,6 +248,7 @@ FireTypeSpecies:
 	dw PONYTA
 	dw RAPIDASH
 	dw MAGMAR
+	dw MAGMORTAR
 	dw FLAREON
 	dw MOLTRES
 	dw CYNDAQUIL

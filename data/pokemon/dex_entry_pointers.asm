@@ -253,6 +253,7 @@ PokedexDataPointerTable:
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
 	dba ElectivirePokedexEntry
+	dba MagmortarPokedexEntry
 	dba AmbipomPokedexEntry
 	dba AnnihilapePokedexEntry
 	assert_table_length NUM_POKEMON

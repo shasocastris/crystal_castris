@@ -2,6 +2,7 @@ SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
 	dw ElectivireEvosAttacks
+	dw MagmortarEvosAttacks
 	dw AmbipomEvosAttacks
 	dw AnnihilapeEvosAttacks
 .IndirectEnd::
@@ -17,6 +18,21 @@ ElectivireEvosAttacks:
 	dbw 41, THUNDERBOLT
 	dbw 49, CROSS_CHOP
 	dbw 57, THUNDER
+	db 0 ; no more level-up moves
+
+MagmortarEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, EMBER
+	dbw 7, LEER
+	dbw 13, SMOG
+	dbw 19, FIRE_PUNCH
+	dbw 25, SMOKESCREEN
+	dbw 33, SUNNY_DAY
+	dbw 41, FLAMETHROWER
+	dbw 49, CROSS_CHOP
+	dbw 57, FIRE_BLAST
+	db 0 ; no more level-up moves
+
 AmbipomEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH

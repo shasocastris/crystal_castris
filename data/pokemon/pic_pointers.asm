@@ -520,6 +520,8 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba ElectivireFrontpic
 	dba ElectivireBackpic
+	dba MagmortarFrontpic
+	dba MagmortarBackpic
 	dba AmbipomFrontpic
 	dba AmbipomBackpic
 	dba AnnihilapeFrontpic

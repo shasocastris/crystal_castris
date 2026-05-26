@@ -125,6 +125,7 @@ AlphabeticalPokedexOrder:
 	dw MAGCARGO
 	dw MAGIKARP
 	dw MAGMAR
+	dw MAGMORTAR
 	dw MAGNEMITE
 	dw MAGNETON
 	dw MANKEY

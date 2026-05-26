@@ -273,7 +273,8 @@ DEF JOHTO_POKEMON EQU const_value
 	const HO_OH      ; fa
 	const CELEBI     ; fb
 DEF NUM_JOHTO_POKEMON EQU const_value - 1
-	const ELECTIVIRE ; fc
+	const ELECTIVIRE  ; fc
+	const MAGMORTAR   ; fd
 	const AMBIPOM     ; fe
 	const ANNIHILAPE  ; ff
 DEF NUM_POKEMON EQU const_value - 1

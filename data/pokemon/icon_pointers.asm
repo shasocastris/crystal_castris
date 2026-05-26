@@ -257,6 +257,7 @@ IconPointers:
 	dw HoOhIcon
 	dw CelebiIcon
 	dw ElectivireIcon
+	dw MagmortarIcon
 	dw AmbipomIcon
 	dw AnnihilapeIcon
 	assert_table_length NUM_POKEMON + 1
