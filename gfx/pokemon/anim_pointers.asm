@@ -256,4 +256,5 @@ AnimationPointers:
 	dw AmbipomAnimation
 	dw AnnihilapeAnimation
 	dw LeafeonAnimation
+	dw MamoswineAnimation
 	assert_table_length NUM_POKEMON

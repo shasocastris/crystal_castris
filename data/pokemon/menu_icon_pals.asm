@@ -266,4 +266,5 @@ MonMenuIconPals:
 	icon_pals BROWN, PINK    ; AMBIPOM
 	icon_pals PURPLE, GRAY   ; ANNIHILAPE
 	icon_pals GREEN, BROWN   ; LEAFEON
+	icon_pals BROWN, BLUE    ; MAMOSWINE
 	assert_table_length NUM_POKEMON

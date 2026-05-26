@@ -261,4 +261,5 @@ IconPointers:
 	dw AmbipomIcon
 	dw AnnihilapeIcon
 	dw LeafeonIcon
+	dw MamoswineIcon
 	assert_table_length NUM_POKEMON + 1

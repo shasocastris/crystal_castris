@@ -172,6 +172,7 @@ GroundTypeSpecies:
 	dw PUPITAR
 	dw ARIADOS
 	dw SPINARAK
+	dw MAMOSWINE
 	dw -1
 
 RockTypeSpecies:

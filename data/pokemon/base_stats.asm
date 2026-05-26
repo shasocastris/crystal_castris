@@ -291,4 +291,5 @@ INCLUDE "data/pokemon/base_stats/magmortar.asm"
 INCLUDE "data/pokemon/base_stats/ambipom.asm"
 INCLUDE "data/pokemon/base_stats/annihilape.asm"
 INCLUDE "data/pokemon/base_stats/leafeon.asm"
+INCLUDE "data/pokemon/base_stats/mamoswine.asm"
 .IndirectEnd::

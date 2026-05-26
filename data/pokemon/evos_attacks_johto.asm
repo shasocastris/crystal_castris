@@ -1300,6 +1300,7 @@ SwinubEvosAttacks:
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
+	dbww EVOLVE_ITEM, WATER_STONE, MAMOSWINE
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, ICY_WIND
 	dbw 1, HORN_ATTACK

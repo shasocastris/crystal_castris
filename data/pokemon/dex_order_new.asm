@@ -258,4 +258,5 @@ NewPokedexOrder:
 	dw AMBIPOM
 	dw ANNIHILAPE
 	dw LEAFEON
+	dw MAMOSWINE
 	assert_table_length NUM_POKEMON

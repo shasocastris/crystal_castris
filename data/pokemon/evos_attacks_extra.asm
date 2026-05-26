@@ -6,6 +6,7 @@ EvosAttacksPointers3::
 	dw AmbipomEvosAttacks
 	dw AnnihilapeEvosAttacks
 	dw LeafeonEvosAttacks
+	dw MamoswineEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:

@@ -528,4 +528,6 @@ PokemonPicPointers::
 	dba AnnihilapeBackpic
 	dba LeafeonFrontpic
 	dba LeafeonBackpic
+	dba MamoswineFrontpic
+	dba MamoswineBackpic
 	assert_table_length NUM_POKEMON + 1

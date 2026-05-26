@@ -278,6 +278,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const AMBIPOM     ; fe
 	const ANNIHILAPE  ; ff
 	const LEAFEON     ; 101
+	const MAMOSWINE   ; 103
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3
