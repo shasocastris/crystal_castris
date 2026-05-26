@@ -757,5 +757,7 @@ SirfetchdFrontpic:  INCBIN "gfx/pokemon/sirfetch_d/front.animated.2bpp.lz"
 SirfetchdBackpic:   INCBIN "gfx/pokemon/sirfetch_d/back.2bpp.lz"
 TangrowthFrontpic:  INCBIN "gfx/pokemon/tangrowth/front.animated.2bpp.lz"
 TangrowthBackpic:   INCBIN "gfx/pokemon/tangrowth/back.2bpp.lz"
+WyrdeerFrontpic:    INCBIN "gfx/pokemon/wyrdeer/front.animated.2bpp.lz"
+WyrdeerBackpic:     INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
 
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

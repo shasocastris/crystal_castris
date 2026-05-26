@@ -270,4 +270,5 @@ AnimationIdlePointers:
 	dw PorygonZAnimationIdle
 	dw SirfetchdAnimationIdle
 	dw TangrowthAnimationIdle
+	dw WyrdeerAnimationIdle
 	assert_table_length NUM_POKEMON

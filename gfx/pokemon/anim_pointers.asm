@@ -270,4 +270,5 @@ AnimationPointers:
 	dw PorygonZAnimation
 	dw SirfetchdAnimation
 	dw TangrowthAnimation
+	dw WyrdeerAnimation
 	assert_table_length NUM_POKEMON

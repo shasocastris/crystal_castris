@@ -272,4 +272,5 @@ NewPokedexOrder:
 	dw PORYGON_Z
 	dw SIRFETCH_D
 	dw TANGROWTH
+	dw WYRDEER
 	assert_table_length NUM_POKEMON

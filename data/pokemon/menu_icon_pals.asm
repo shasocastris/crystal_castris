@@ -280,4 +280,5 @@ MonMenuIconPals:
 	icon_pals RED,   TEAL    ; PORYGON_Z
 	icon_pals BROWN, GREEN   ; SIRFETCH_D
 	icon_pals GREEN, BROWN   ; TANGROWTH
+	icon_pals BROWN, PURPLE  ; WYRDEER
 	assert_table_length NUM_POKEMON

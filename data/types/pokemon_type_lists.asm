@@ -64,6 +64,7 @@ NormalTypeSpecies:
 	dw MILTANK
 	dw BLISSEY
 	dw PORYGON_Z
+	dw WYRDEER
 	dw -1
 
 FightingTypeSpecies:
@@ -79,6 +80,7 @@ FightingTypeSpecies:
 	dw TYROGUE
 	dw HITMONTOP
 	dw ANNIHILAPE
+	dw SIRFETCH_D
 	dw -1
 
 FlyingTypeSpecies:
@@ -395,6 +397,7 @@ PsychicTypeSpecies:
 	dw WOBBUFFET
 	dw STANTLER
 	dw VENOMOTH
+	dw WYRDEER
 	dw -1
 
 IceTypeSpecies:

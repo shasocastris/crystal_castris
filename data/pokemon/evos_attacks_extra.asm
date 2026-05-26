@@ -20,6 +20,7 @@ EvosAttacksPointers3::
 	dw PorygonZEvosAttacks
 	dw SirfetchdEvosAttacks
 	dw TangrowthEvosAttacks
+	dw WyrdeerEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -266,6 +267,19 @@ TangrowthEvosAttacks:
 	dbw 41, GIGA_DRAIN
 	dbw 49, LEECH_SEED
 	dbw 57, SOLARBEAM
+	db 0 ; no more level-up moves
+
+WyrdeerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 9, PSYBEAM
+	dbw 17, HYPNOSIS
+	dbw 25, STOMP
+	dbw 33, CONFUSION
+	dbw 41, PSYCHIC_M
+	dbw 49, AGILITY
+	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ENDSECTION

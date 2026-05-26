@@ -292,6 +292,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const PORYGON_Z   ; 10d
 	const SIRFETCH_D  ; 10e
 	const TANGROWTH   ; 10f
+	const WYRDEER     ; 110
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

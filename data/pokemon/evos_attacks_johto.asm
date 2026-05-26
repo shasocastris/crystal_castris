@@ -1522,6 +1522,7 @@ Porygon2EvosAttacks:
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
+	dbww EVOLVE_ITEM, SUN_STONE, WYRDEER
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, LEER

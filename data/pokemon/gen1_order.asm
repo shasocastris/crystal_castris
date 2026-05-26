@@ -272,4 +272,5 @@ Pokered_MonIndices:
 	db PORYGON    ; PORYGON_Z
 	db FARFETCH_D ; SIRFETCH_D
 	db TANGELA    ; TANGROWTH
+	db TAUROS     ; WYRDEER
 	assert_table_length NUM_POKEMON + 1
