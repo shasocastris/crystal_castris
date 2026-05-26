@@ -53,6 +53,7 @@ NormalTypeSpecies:
 	dw JIGGLYPUFF
 	dw WIGGLYTUFF
 	dw AIPOM
+	dw AMBIPOM
 	dw DUNSPARCE
 	dw TEDDIURSA
 	dw URSARING

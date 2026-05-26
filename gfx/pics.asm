@@ -781,4 +781,6 @@ ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
 
 SECTION "Pics 20", ROMX
 
+AmbipomFrontpic:    INCBIN "gfx/pokemon/ambipom/front.animated.2bpp.lz"
+AmbipomBackpic:     INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

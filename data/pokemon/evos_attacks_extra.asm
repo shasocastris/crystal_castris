@@ -2,6 +2,7 @@ SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
 	dw ElectivireEvosAttacks
+	dw AmbipomEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -15,6 +16,19 @@ ElectivireEvosAttacks:
 	dbw 41, THUNDERBOLT
 	dbw 49, CROSS_CHOP
 	dbw 57, THUNDER
+AmbipomEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, TAIL_WHIP
+	dbw 10, FURY_SWIPES
+	dbw 15, SCREECH
+	dbw 22, SLAM
+	dbw 30, DOUBLESLAP
+	dbw 38, AGILITY
+	dbw 48, BATON_PASS
+	dbw 57, SWIFT
+	db 0 ; no more level-up moves
+
 	db 0 ; no more level-up moves
 
 ENDSECTION

@@ -252,4 +252,5 @@ FramesPointers:
 	dba HoOhFrames
 	dba CelebiFrames
 	dba ElectivireFrames
+	dba AmbipomFrames
 	assert_table_length NUM_POKEMON

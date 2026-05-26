@@ -6,6 +6,7 @@ AlphabeticalPokedexOrder:
 	dw AERODACTYL
 	dw AIPOM
 	dw ALAKAZAM
+	dw AMBIPOM
 	dw AMPHAROS
 	dw ARBOK
 	dw ARCANINE

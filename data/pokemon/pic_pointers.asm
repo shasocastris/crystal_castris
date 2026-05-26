@@ -520,4 +520,6 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba ElectivireFrontpic
 	dba ElectivireBackpic
+	dba AmbipomFrontpic
+	dba AmbipomBackpic
 	assert_table_length NUM_POKEMON + 1

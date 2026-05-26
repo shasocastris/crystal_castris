@@ -253,4 +253,5 @@ FirstEvoStages::
 	dw HO_OH
 	dw CELEBI
 	dw ELEKID
+	dw AIPOM      ; AMBIPOM first stage is AIPOM
 	assert_table_length NUM_POKEMON
