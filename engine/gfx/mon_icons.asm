@@ -493,13 +493,16 @@ GetIconBank:
 	ld a, [wCurIcon]
 	call GetPokemonIndexFromID
 	ld a, h
-	cp HIGH(MAGIKARP) ; first species in "Mon Icons 2"
+	and a
+	jr nz, .icons3 ; species >= $100 (HONCHKROW+) are in Mon Icons 3
+	ld a, l
+	cp LOW(MAGIKARP) ; first species in "Mon Icons 2"
 	lb bc, BANK("Mon Icons 1"), 8
 	jr c, .return
-	ld a, l
-	cp LOW(MAGIKARP)
-	jr c, .return
 	ld b, BANK("Mon Icons 2")
+	jr .return
+.icons3
+	lb bc, BANK("Mon Icons 3"), 8
 .return
 	pop hl
 	ret
