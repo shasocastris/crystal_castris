@@ -260,7 +260,10 @@ ElectivireIcon::  INCBIN "gfx/icons/electivire.2bpp"
 MagmortarIcon::   INCBIN "gfx/icons/magmortar.2bpp"
 AmbipomIcon::    INCBIN "gfx/icons/ambipom.2bpp"
 AnnihilapeIcon:: INCBIN "gfx/icons/annihilape.2bpp"
+
+
 SECTION "Mon Icons 3", ROMX
+
 HonchkrowIcon::  INCBIN "gfx/icons/honchkrow.2bpp"
 LeafeonIcon::    INCBIN "gfx/icons/leafeon.2bpp"
 LickilickyIcon:: INCBIN "gfx/icons/lickilicky.2bpp"
@@ -278,4 +281,3 @@ PorygonZIcon::   INCBIN "gfx/icons/porygon_z.2bpp"
 SirfetchdIcon::  INCBIN "gfx/icons/sirfetch_d.2bpp"
 TangrowthIcon::  INCBIN "gfx/icons/tangrowth.2bpp"
 WyrdeerIcon::    INCBIN "gfx/icons/wyrdeer.2bpp"
-EggIcon::        INCBIN "gfx/icons/egg.2bpp"

@@ -1,4 +1,4 @@
-	dw EggIcon  ; EGG is -3
+	dw NullIcon ; unused
 	dw NullIcon ; unused
 	dw NullIcon ; unused
 IconPointers:

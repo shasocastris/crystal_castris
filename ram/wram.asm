@@ -2435,9 +2435,6 @@ wPokedexShowPointerAddr:: dw
 wPokedexShowPointerBank:: db
 
 NEXTU
-wUnusedEggHatchFlag:: db
-
-NEXTU
 ; enemy party
 wOTPartyData::
 wOTPlayerName:: ds NAME_LENGTH

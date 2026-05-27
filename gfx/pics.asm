@@ -710,16 +710,10 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
-; Seems to be an accidental copy of the previous bank
-
 ElectivireBackpic:   INCBIN "gfx/pokemon/electivire/back.2bpp.lz"
 ElectivireFrontpic:  INCBIN "gfx/pokemon/electivire/front.animated.2bpp.lz"
 MagmortarFrontpic:   INCBIN "gfx/pokemon/magmortar/front.animated.2bpp.lz"
 MagmortarBackpic:    INCBIN "gfx/pokemon/magmortar/back.2bpp.lz"
-
-
-SECTION "Pics 20", ROMX
-
 AmbipomFrontpic:    INCBIN "gfx/pokemon/ambipom/front.animated.2bpp.lz"
 AmbipomBackpic:     INCBIN "gfx/pokemon/ambipom/back.2bpp.lz"
 AnnihilapeFrontpic: INCBIN "gfx/pokemon/annihilape/front.animated.2bpp.lz"
@@ -736,15 +730,16 @@ MismagiusFrontpic:  INCBIN "gfx/pokemon/mismagius/front.animated.2bpp.lz"
 MismagiusBackpic:   INCBIN "gfx/pokemon/mismagius/back.2bpp.lz"
 RhyperiorFrontpic:  INCBIN "gfx/pokemon/rhyperior/front.animated.2bpp.lz"
 RhyperiorBackpic:   INCBIN "gfx/pokemon/rhyperior/back.2bpp.lz"
+
+
+SECTION "Pics 20", ROMX
+
 SylveonFrontpic:    INCBIN "gfx/pokemon/sylveon/front.animated.2bpp.lz"
 SylveonBackpic:     INCBIN "gfx/pokemon/sylveon/back.2bpp.lz"
 TogekissFrontpic:   INCBIN "gfx/pokemon/togekiss/front.animated.2bpp.lz"
 TogekissBackpic:    INCBIN "gfx/pokemon/togekiss/back.2bpp.lz"
 WeavileFrontpic:    INCBIN "gfx/pokemon/weavile/front.animated.2bpp.lz"
 WeavileBackpic:     INCBIN "gfx/pokemon/weavile/back.2bpp.lz"
-
-SECTION "Pics 21", ROMX
-
 YanmegaFrontpic:    INCBIN "gfx/pokemon/yanmega/front.animated.2bpp.lz"
 YanmegaBackpic:     INCBIN "gfx/pokemon/yanmega/back.2bpp.lz"
 GlaceonFrontpic:    INCBIN "gfx/pokemon/glaceon/front.animated.2bpp.lz"
