@@ -186,26 +186,6 @@ if DEF(_DEBUG)
 	givepokemove SUDDEN_CHILL, wPartyMon5, 3
 	givepoke DITTO, 50, METAL_POWDER
 	givepokemove TELEPORT,  wPartyMon6, 1
-	givepoke MAGMORTAR,  75
-	givepoke AMBIPOM,    75
-	givepoke ANNIHILAPE, 75
-	givepoke HONCHKROW,  75
-	givepoke LEAFEON,    75
-	givepoke LICKILICKY, 75
-	givepoke MAMOSWINE,  75
-	givepoke MISMAGIUS,  75
-	givepoke RHYPERIOR,  75
-	givepoke SYLVEON,    75
-	givepoke TOGEKISS,   75
-	givepoke WEAVILE,    75
-	givepoke YANMEGA,    75
-	givepoke GLACEON,    75
-	givepoke GLISCOR,    75
-	givepoke MAGNEZONE,  75
-	givepoke PORYGON_Z,  75
-	givepoke SIRFETCH_D, 75
-	givepoke TANGROWTH,  75
-	givepoke WYRDEER,    75
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
