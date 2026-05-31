@@ -273,5 +273,8 @@ INCBIN "gfx/footprints/porygon_z.1bpp"
 INCBIN "gfx/footprints/sirfetch_d.1bpp"
 INCBIN "gfx/footprints/tangrowth.1bpp"
 INCBIN "gfx/footprints/wyrdeer.1bpp"
+INCBIN "gfx/footprints/farigiraf.1bpp"
+INCBIN "gfx/footprints/dudunsparc.1bpp"
+INCBIN "gfx/footprints/ursaluna.1bpp"
 
 	assert_table_length NUM_POKEMON

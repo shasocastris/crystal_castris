@@ -1,10 +1,10 @@
 	db "JUBILEE@" ; species name
-	dw 150, 380 ; height, weight
+	dw 411, 84 ; height, weight
 
-	db   "TOGEKISS brings"
-	next "joy and happiness"
-	next "wherever it flies."
+	db   "It will never show"
+	next "where there is"
+	next "strife. Its"
 
-	page "It never appears"
-	next "where conflict and"
-	next "sorrow exist.@"
+	page "sightings have"
+	next "become rare"
+	next "recently.@"

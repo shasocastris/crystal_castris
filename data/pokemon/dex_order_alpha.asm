@@ -51,6 +51,7 @@ AlphabeticalPokedexOrder:
 	dw DRATINI
 	dw DROWZEE
 	dw DUGTRIO
+	dw DUDUNSPARC
 	dw DUNSPARCE
 	dw EEVEE
 	dw EKANS
@@ -63,6 +64,7 @@ AlphabeticalPokedexOrder:
 	dw EXEGGCUTE
 	dw EXEGGUTOR
 	dw FARFETCH_D
+	dw FARIGIRAF
 	dw FEAROW
 	dw FERALIGATR
 	dw FLAAFFY
@@ -251,6 +253,7 @@ AlphabeticalPokedexOrder:
 	dw TYROGUE
 	dw UMBREON
 	dw UNOWN
+	dw URSALUNA
 	dw URSARING
 	dw VAPOREON
 	dw VENOMOTH

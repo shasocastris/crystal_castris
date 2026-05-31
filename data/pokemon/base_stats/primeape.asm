@@ -1,10 +1,10 @@
 	db 0 ; species ID placeholder
 
-	db 110, 115,  80,  90,  50,  90
-	evs  0,   3,   0,   0,   0,   0
+	db  65, 105,  60,  95,  60,  70
+	evs  0,   2,   0,   0,   0,   0
 	;   hp  atk  def  spd  sat  sdf
 
-	db FIGHTING, GHOST ; type
+	db FIGHTING, FIGHTING ; type
 	db 25 ; catch rate
 	db 149 ; base exp
 	dw NO_ITEM, NO_ITEM ; items

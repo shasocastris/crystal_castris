@@ -1,10 +1,10 @@
 	db "VIRTUAL@" ; species name
-	dw 87, 750 ; height, weight
+	dw 211, 75 ; height, weight
 
-	db   "PORYGON-Z was"
-	next "upgraded with a"
-	next "DUBIOUS DISC but"
+	db   "Additional code"
+	next "was installed to"
+	next "make it a better"
 
-	page "its behavior has"
-	next "become erratic"
+	page "#MON. However,"
+	next "it became erratic"
 	next "and unstable.@"

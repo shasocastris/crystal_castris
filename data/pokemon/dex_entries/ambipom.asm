@@ -1,10 +1,10 @@
 	db "LONG TAIL@" ; species name
-	dw 120, 203 ; height, weight
+	dw 311, 45 ; height, weight
 
-	db   "AMBIPOM uses its"
-	next "two tails to"
-	next "perform many tasks"
+	db   "Split into two,"
+	next "the tails are so"
+	next "adept at handling"
 
-	page "at once with great"
-	next "dexterity"
-	next "and skill.@"
+	page "and doing things,"
+	next "AMBIPOM rarely"
+	next "uses its hands.@"

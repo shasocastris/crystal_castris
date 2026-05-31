@@ -1,10 +1,10 @@
 	db "RAGEMONKEY@" ; species name
-	dw 120, 560 ; height, weight
+	dw 311, 126 ; height, weight
 
-	db   "When ANNIHILAPE"
-	next "lets its rage"
-	next "transcend the"
+	db   "Opponents struck"
+	next "by the rage kept"
+	next "hidden in its"
 
-	page "physical world,"
-	next "its ghost power"
-	next "overflows wildly.@"
+	page "heart will be"
+	next "shattered to their"
+	next "core.@"

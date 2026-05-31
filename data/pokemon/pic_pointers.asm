@@ -560,4 +560,10 @@ PokemonPicPointers::
 	dba TangrowthBackpic
 	dba WyrdeerFrontpic
 	dba WyrdeerBackpic
+	dba FarigirafFrontpic
+	dba FarigirafBackpic
+	dba DudunspareFrontpic
+	dba DudunspareBackpic
+	dba UrsalunaFrontpic
+	dba UrsalunaBackpic
 	assert_table_length NUM_POKEMON + 1

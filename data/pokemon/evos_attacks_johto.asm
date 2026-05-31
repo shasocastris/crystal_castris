@@ -987,6 +987,7 @@ WobbuffetEvosAttacks:
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
+	dbbw EVOLVE_LEVEL, 32, FARIGIRAF
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 3, GROWL
@@ -1042,6 +1043,7 @@ ForretressEvosAttacks:
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, DUDUNSPARC
 	db 0 ; no more evolutions
 	dbw 1, RAGE
 	dbw 5, DEFENSE_CURL
@@ -1243,6 +1245,7 @@ TeddiursaEvosAttacks:
 	db 0 ; no more level-up moves
 
 UrsaringEvosAttacks:
+	dbww EVOLVE_ITEM, MOON_STONE, URSALUNA
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER

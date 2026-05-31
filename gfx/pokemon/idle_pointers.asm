@@ -272,4 +272,7 @@ AnimationIdlePointers:
 	dw SirfetchdAnimationIdle
 	dw TangrowthAnimationIdle
 	dw WyrdeerAnimationIdle
+	dw FarigirafAnimationIdle
+	dw DudunsparceAnimationIdle
+	dw UrsalunaAnimationIdle
 	assert_table_length NUM_POKEMON

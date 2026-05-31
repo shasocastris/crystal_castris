@@ -1,10 +1,10 @@
 	db "LICKING@" ; species name
-	dw 170, 1400 ; height, weight
+	dw 507, 309 ; height, weight
 
-	db   "LICKILICKY wraps"
-	next "its tongue around"
-	next "anything it finds."
+	db   "The long tongue is"
+	next "always soggy with"
+	next "slobber. The"
 
-	page "It coats objects"
-	next "with a numbing"
-	next "saliva.@"
+	page "saliva contains a"
+	next "solvent that"
+	next "causes numbness.@"

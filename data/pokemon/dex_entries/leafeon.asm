@@ -1,10 +1,10 @@
 	db "VERDANT@" ; species name
-	dw 100, 255 ; height, weight
+	dw 303, 56 ; height, weight
 
-	db   "LEAFEON bathes in"
-	next "sunlight and does"
-	next "photosynthesis."
+	db   "It basically does"
+	next "not fight. With"
+	next "cells similar to"
 
-	page "It lives quietly"
-	next "in forests"
-	next "without conflict.@"
+	page "those of plants,"
+	next "it can perform"
+	next "photosynthesis.@"

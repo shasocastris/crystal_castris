@@ -278,4 +278,7 @@ PokemonCries::
 	mon_cry CRY_NIDOQUEEN,     0,  256 ; SIRFETCH_D
 	mon_cry CRY_SUNFLORA,      0,  256 ; TANGROWTH
 	mon_cry CRY_GIRAFARIG,   128,  256 ; WYRDEER
+	mon_cry CRY_GIRAFARIG,    64,  256 ; FARIGIRAF
+	mon_cry CRY_DUNSPARCE,     0,  256 ; DUDUNSPARC
+	mon_cry CRY_TEDDIURSA,   800,  256 ; URSALUNA
 	assert_table_length NUM_POKEMON

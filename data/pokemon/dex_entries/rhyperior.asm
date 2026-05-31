@@ -1,9 +1,9 @@
 	db "DRILL@" ; species name
-	dw 240, 2825 ; height, weight
+	dw 710, 624 ; height, weight
 
-	db   "RHYPERIOR channels"
-	next "electricity"
-	next "through its body"
+	db   "It puts rocks in"
+	next "holes in its palms"
+	next "and uses muscles"
 
 	page "to launch rocks"
 	next "from the holes"

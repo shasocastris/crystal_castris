@@ -273,4 +273,7 @@ PokedexDataPointerTable:
 	dba SirfetchdPokedexEntry
 	dba TangrowthPokedexEntry
 	dba WyrdeerPokedexEntry
+	dba FarigirafPokedexEntry
+	dba DudunsparcePokedexEntry
+	dba UrsalunaPokedexEntry
 	assert_table_length NUM_POKEMON

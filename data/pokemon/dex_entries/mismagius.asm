@@ -1,10 +1,10 @@
 	db "MAGICAL@" ; species name
-	dw 71, 95 ; height, weight
+	dw 211, 10 ; height, weight
 
-	db   "MISMAGIUS floats"
-	next "through the night"
-	next "casting powerful"
+	db   "Its cries sound"
+	next "like incantations."
+	next "Those hearing it"
 
-	page "curses, bringing"
-	next "nightmares to"
-	next "its victims.@"
+	page "are tormented by"
+	next "headaches and"
+	next "hallucinations.@"

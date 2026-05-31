@@ -1,7 +1,7 @@
 	db 0 ; species ID placeholder
 
-	db  60,  60,  60, 105, 105, 105
-	evs  0,   0,   0,   0,   1,   1
+	db  60,  60,  60,  85,  85,  85
+	evs  0,   0,   0,   0,   0,   1
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, GHOST ; type

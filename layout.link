@@ -323,6 +323,8 @@ ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $76
 	"Pics 20"
+ROMX $79
+	"Pics 21"
 ROMX $7d
 	"Mon Icons 3"
 ROMX $7e

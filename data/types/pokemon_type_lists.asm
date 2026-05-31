@@ -58,6 +58,7 @@ NormalTypeSpecies:
 	dw DUNSPARCE
 	dw TEDDIURSA
 	dw URSARING
+	dw URSALUNA
 	dw PORYGON2
 	dw STANTLER
 	dw SMEARGLE
@@ -183,6 +184,8 @@ GroundTypeSpecies:
 	dw MAMOSWINE
 	dw RHYPERIOR
 	dw GLISCOR
+	dw DUDUNSPARC
+	dw URSALUNA
 	dw -1
 
 RockTypeSpecies:
@@ -400,6 +403,7 @@ PsychicTypeSpecies:
 	dw STANTLER
 	dw VENOMOTH
 	dw WYRDEER
+	dw FARIGIRAF
 	dw -1
 
 IceTypeSpecies:
@@ -436,6 +440,7 @@ DarkTypeSpecies:
 	dw VILEPLUME
 	dw HONCHKROW
 	dw WEAVILE
+	dw FARIGIRAF
 	dw -1
 
 FairyTypeSpecies:
@@ -457,4 +462,5 @@ FairyTypeSpecies:
 	dw LEDIAN
 	dw SYLVEON
 	dw TOGEKISS
+	dw DUDUNSPARC
 	dw -1

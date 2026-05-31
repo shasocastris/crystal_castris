@@ -1,10 +1,10 @@
 	db "BIG HORN@" ; species name
-	dw 180, 954 ; height, weight
+	dw 511, 210 ; height, weight
 
-	db   "WYRDEER uses its"
-	next "antlers to read"
-	next "the spiritual"
+	db   "The black orbs"
+	next "shine with an"
+	next "uncanny light"
 
-	page "energy of forests."
-	next "It guides lost"
-	next "travelers safely.@"
+	page "which WYRDEER uses"
+	next "to make invisible"
+	next "barriers.@"
