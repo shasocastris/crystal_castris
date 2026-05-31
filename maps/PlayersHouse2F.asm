@@ -92,6 +92,7 @@ if DEF(_DEBUG)
 	giveitem SAFARI_LURE
 	giveitem RADIANCE_ORB
 	giveitem UNOWN_AURA
+	giveitem MYSTIC_DEW
 ;	giveitem JACKHAMMER
 	giveitem COIN_CASE
 	givecoins 9999

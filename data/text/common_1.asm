@@ -100,6 +100,12 @@ _HealthReturnedText::
 	line "health returned."
 	done
 
+_FullyHealedText::
+	text_ram wStringBuffer1
+	text_start
+	line "was fully healed."
+	done
+
 _RevitalizedText::
 	text_ram wStringBuffer1
 	text_start

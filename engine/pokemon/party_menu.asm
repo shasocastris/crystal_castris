@@ -742,6 +742,7 @@ PrintPartyMenuActionText:
 	dw .RevitalizedText
 	dw .GrewToLevelText
 	dw .CameToItsSensesText
+	dw .FullyHealedText
 
 .RecoveredSomeHPText:
 	text_far _RecoveredSomeHPText
@@ -781,6 +782,10 @@ PrintPartyMenuActionText:
 
 .CameToItsSensesText:
 	text_far _CameToItsSensesText
+	text_end
+
+.FullyHealedText:
+	text_far _FullyHealedText
 	text_end
 
 .PrintText:

@@ -73,7 +73,7 @@ ItemEffects1:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 
 	dw SacredAshEffect     ; SACRED_ASH
-	dw SacredAshEffect     ; MYSTIC_DEW
+	dw MysticDewEffect     ; MYSTIC_DEW
 
 	dw RestoreHPEffect     ; BERRY_JUICE
 
@@ -2667,6 +2667,79 @@ SacredAshEffect:
 	cp $1
 	ret nz
 	jp UseDisposableItem
+
+MysticDewEffect:
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMon
+	jmp c, StatusHealer_ExitMenu
+
+	call IsMonFainted
+	jmp z, StatusHealer_NoEffect
+
+	; Heal HP to full and cure all status
+	xor a
+	ld [wLowHealthAlarm], a
+	call ReviveFullHP
+	ld a, MON_STATUS
+	call GetPartyParamLocation
+	xor a
+	ld [hli], a
+	ld [hl], a
+	call HealStatus
+	call BattlemonRestoreHealth
+	call HealHP_SFX_GFX
+	ld a, PARTYMENUTEXT_FULLY_HEALED
+	ld [wPartyMenuActionText], a
+	call ItemActionTextWaitButton
+
+	; Restore all move PP to max
+	xor a
+	ld [wMonType], a
+	ld hl, wMenuCursorY
+	ld [hl], a
+	ld b, NUM_MOVES
+.moveLoop
+	push bc
+	ld hl, wPartyMon1Moves
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call GetMthMoveOfNthPartymon
+	ld a, [hl]
+	and a
+	jr z, .next
+	call GetMaxPPOfMove
+	ld hl, wPartyMon1PP
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call GetMthMoveOfNthPartymon
+	ld a, [wTempPP]
+	ld b, a
+	ld a, [hl]
+	and PP_UP_MASK
+	or b
+	ld [hl], a
+.next
+	ld hl, wMenuCursorY
+	inc [hl]
+	pop bc
+	dec b
+	jr nz, .moveLoop
+
+	; Sync PP to battle mon if selected mon is active in battle
+	ld a, [wBattleMode]
+	and a
+	jr z, .done
+	ld a, [wCurPartyMon]
+	ld b, a
+	ld a, [wCurBattleMon]
+	cp b
+	jr nz, .done
+	ld a, [wPlayerSubStatus5]
+	bit SUBSTATUS_TRANSFORMED, a
+	call z, BattleRestorePP.UpdateBattleMonPP
+
+.done
+	call UseDisposableItem
+	xor a
+	ret
 
 MagnaPlantEffect:
 	ld c, DECOFLAG_MAGNAPLANT

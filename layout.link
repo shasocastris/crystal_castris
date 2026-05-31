@@ -40,7 +40,6 @@ ROMX $03
 	"bank3"
 	"VWF"
 	"mobile5C"
-	"Battle Weather Images"
 ROMX $04
 	"bank4"
 	"Tileset Data 11"
@@ -59,6 +58,7 @@ ROMX $08
 	"Tileset Data 3"
 ROMX $09
 	"bank9"
+	"Battle Weather Images"
 ROMX $0a
 	"bankA"
 	"Trainer Backpics"

@@ -116,6 +116,7 @@ DEF NUM_PARTYMENUACTIONS EQU const_value
 	const PARTYMENUTEXT_REVIVE
 	const PARTYMENUTEXT_LEVEL_UP
 	const PARTYMENUTEXT_HEAL_CONFUSION
+	const PARTYMENUTEXT_FULLY_HEALED
 
 ; Naming types (see engine/menus/naming_screen.asm)
 	const_def
