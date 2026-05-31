@@ -759,4 +759,8 @@ WyrdeerBackpic:     INCBIN "gfx/pokemon/wyrdeer/back.2bpp.lz"
 FarigirafFrontpic:    INCBIN "gfx/pokemon/farigiraf/front.animated.2bpp.lz"
 FarigirafBackpic:     INCBIN "gfx/pokemon/farigiraf/back.2bpp.lz"
 
+SECTION "Pics 21", ROMX
+DudunspareFrontpic:    INCBIN "gfx/pokemon/dudunsparc/front.animated.2bpp.lz"
+DudunspareBackpic:     INCBIN "gfx/pokemon/dudunsparc/back.2bpp.lz"
+
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

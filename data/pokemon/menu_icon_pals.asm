@@ -283,4 +283,5 @@ MonMenuIconPals:
 	icon_pals GREEN, BROWN   ; TANGROWTH
 	icon_pals BROWN, PURPLE  ; WYRDEER
 	icon_pals RED,   BLUE    ; FARIGIRAF
+	icon_pals BROWN,  PINK   ; DUDUNSPARC
 	assert_table_length NUM_POKEMON

@@ -51,6 +51,7 @@ AlphabeticalPokedexOrder:
 	dw DRATINI
 	dw DROWZEE
 	dw DUGTRIO
+	dw DUDUNSPARC
 	dw DUNSPARCE
 	dw EEVEE
 	dw EKANS

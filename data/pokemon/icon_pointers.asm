@@ -278,4 +278,5 @@ IconPointers:
 	dw TangrowthIcon
 	dw WyrdeerIcon
 	dw FarigirafIcon
+	dw DudunsparceIcon
 	assert_table_length NUM_POKEMON + 1

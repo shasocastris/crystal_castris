@@ -294,6 +294,7 @@ DEF NUM_JOHTO_POKEMON EQU const_value - 1
 	const TANGROWTH   ; 10f
 	const WYRDEER     ; 110
 	const FARIGIRAF   ; 111
+	const DUDUNSPARC  ; 112
 DEF NUM_POKEMON EQU const_value - 1
 
 DEF EGG EQU -3

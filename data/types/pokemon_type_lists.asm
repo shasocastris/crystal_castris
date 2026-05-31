@@ -183,6 +183,7 @@ GroundTypeSpecies:
 	dw MAMOSWINE
 	dw RHYPERIOR
 	dw GLISCOR
+	dw DUDUNSPARC
 	dw -1
 
 RockTypeSpecies:
@@ -459,4 +460,5 @@ FairyTypeSpecies:
 	dw LEDIAN
 	dw SYLVEON
 	dw TOGEKISS
+	dw DUDUNSPARC
 	dw -1

@@ -275,4 +275,5 @@ NewPokedexOrder:
 	dw TANGROWTH
 	dw WYRDEER
 	dw FARIGIRAF
+	dw DUDUNSPARC
 	assert_table_length NUM_POKEMON

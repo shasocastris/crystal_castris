@@ -275,4 +275,5 @@ Pokered_MonIndices:
 	db TANGELA    ; TANGROWTH
 	db TAUROS     ; WYRDEER
 	db GIRAFARIG  ; FARIGIRAF
+	db DUNSPARCE  ; DUDUNSPARC
 	assert_table_length NUM_POKEMON + 1

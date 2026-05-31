@@ -23,6 +23,7 @@ EvosAttacksPointers3::
 	dw TangrowthEvosAttacks
 	dw WyrdeerEvosAttacks
 	dw FarigirafEvosAttacks
+	dw DudunsparceEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -309,6 +310,19 @@ FarigirafEvosAttacks:
 	dbw 33, BATON_PASS
 	dbw 41, FUTURE_SIGHT
 	dbw 49, PSYCHIC_M
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+DudunsparceEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, RAGE
+	dbw 1, DEFENSE_CURL
+	dbw 9, MUD_SLAP
+	dbw 17, GLARE
+	dbw 25, BITE
+	dbw 33, ANCIENTPOWER
+	dbw 41, EARTHQUAKE
+	dbw 49, COMET_PUNCH
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
