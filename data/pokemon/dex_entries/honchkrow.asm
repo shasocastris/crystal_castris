@@ -1,5 +1,5 @@
 	db "BIG BOSS@" ; species name
-	dw 92, 273 ; height, weight
+	dw 211, 60 ; height, weight
 
 	db   "HONCHKROW commands"
 	next "flocks of MURKROW"

@@ -1,10 +1,10 @@
 	db "VINE@" ; species name
-	dw 200, 1286 ; height, weight
+	dw 607, 284 ; height, weight
 
-	db   "TANGROWTH envelops"
-	next "prey with curling"
-	next "vines. It moves"
+	db   "It ensnares prey"
+	next "by extending arms"
+	next "made of vines."
 
-	page "by swinging its"
-	next "vines to propel"
-	next "itself forward.@"
+	page "Losing arms to"
+	next "predators does not"
+	next "trouble it.@"

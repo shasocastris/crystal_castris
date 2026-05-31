@@ -1,8 +1,8 @@
 	db "TWIN TUSK@" ; species name
-	dw 250, 2910 ; height, weight
+	dw 802, 642 ; height, weight
 
-	db   "MAMOSWINE's twin"
-	next "tusks of ice"
+	db   "The impressive"
+	next "twin tusks of ice"
 	next "regrow if broken."
 
 	page "This #MON has"

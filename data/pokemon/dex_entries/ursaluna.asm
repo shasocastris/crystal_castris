@@ -1,10 +1,10 @@
 	db "PEAT@" ; species name
-	dw 710, 639 ; height (cm), weight (0.1 lbs)
+	dw 710, 639 ; height, weight
 
-	db   "URSALUNA digs"
+	db   "By digging through"
 	next "through frozen"
-	next "tundra with ease."
+	next "tundra, URSALUNA"
 
-	page "It detects buried"
+	page "detects buried"
 	next "items with a"
 	next "special organ.@"

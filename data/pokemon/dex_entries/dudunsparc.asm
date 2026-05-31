@@ -1,10 +1,10 @@
 	db "LONG BODY@" ; species name
-	dw 180, 1435 ; height (cm), weight (0.1 lbs)
+	dw 1110, 86 ; height, weight
 
-	db   "DUDUNSPARC is a"
-	next "rare two-segment"
-	next "form of DUNSPARCE."
+	db   "It uses its hard"
+	next "tail to make its"
+	next "nest by boring"
 
-	page "It coils around"
-	next "foes and squeezes"
-	next "with great force.@"
+	page "holes into bedrock"
+	next "that can extend up"
+	next "to six miles.@"

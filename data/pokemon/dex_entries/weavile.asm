@@ -1,10 +1,10 @@
 	db "SHARP CLAW@" ; species name
-	dw 111, 754 ; height, weight
+	dw 307, 75 ; height, weight
 
-	db   "WEAVILE hunts in"
-	next "packs of four or"
-	next "five, using its"
+	db   "They live in cold"
+	next "regions, forming "
+	next "groups of four or"
 
-	page "claws and speed"
-	next "to take down"
-	next "large prey.@"
+	page "or five that hunt"
+	next "with impressive"
+	next "coordination.@"

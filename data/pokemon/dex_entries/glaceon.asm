@@ -1,10 +1,10 @@
 	db "FRESH SNOW@" ; species name
-	dw 80, 259 ; height, weight
+	dw 207, 57 ; height, weight
 
-	db   "GLACEON can freeze"
-	next "moisture in the"
-	next "air to make"
+	db   "As a protective"
+	next "technique, it can"
+	next "completely freeze"
 
-	page "diamond dust. Its"
-	next "fur can drop to"
-	next "minus 75 degrees.@"
+	page "its fur to make"
+	next "its hairs stand"
+	next "like needles.@"

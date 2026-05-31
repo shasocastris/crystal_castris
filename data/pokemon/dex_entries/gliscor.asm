@@ -1,5 +1,5 @@
 	db "FANG SCORP@" ; species name
-	dw 200, 425 ; height, weight
+	dw 607, 94 ; height, weight
 
 	db   "GLISCOR hangs from"
 	next "tall trees and"

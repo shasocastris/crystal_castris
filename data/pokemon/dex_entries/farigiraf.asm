@@ -1,10 +1,10 @@
 	db "LONG NECK@" ; species name
-	dw 160, 1000 ; height (cm), weight (0.1 lbs)
+	dw 1006, 353 ; height, weight
 
-	db   "FARIGIRAF uses"
-	next "its long neck to"
-	next "survey all around"
+	db   "The sync between"
+	next "the head and the"
+	next "tail means its"
 
-	page "it. Its tail has"
-	next "a second brain to"
-	next "watch its back.@"
+	page "psychic power is"
+	next "10x stronger than"
+	next "GIRAFARIG's.@"

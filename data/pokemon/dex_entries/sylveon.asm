@@ -1,10 +1,10 @@
 	db "INTERTWIN@" ; species name
-	dw 100, 235 ; height, weight
+	dw 303, 52 ; height, weight
 
-	db   "SYLVEON wraps its"
-	next "ribbon feelers"
-	next "around its trainer"
+	db   "It sends an aura"
+	next "that radiates from"
+	next "its ribbonlike"
 
-	page "and emits a"
-	next "calming aura"
-	next "as it walks.@"
+	page "feelers to calm"
+	next "its Trainer and"
+	next "other #MON.@"

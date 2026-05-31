@@ -1,10 +1,10 @@
 	db "THNDRBOLT@" ; species name
-	dw 180, 1385 ; height, weight
+	dw 511, 306 ; height, weight
 
-	db   "ELECTIVIRE grabs"
-	next "foes with its twin"
-	next "tails to deliver"
+	db   "It pushes the tips"
+	next "of its two tails"
+	next "against the foe,"
 
-	page "jolts of over"
-	next "20,000 volts of"
-	next "electricity.@"
+	page "then lets loose"
+	next "with over 20,000"
+	next "watts of power.@"

@@ -1,9 +1,9 @@
 	db "MAGNETAREA@" ; species name
-	dw 120, 1803 ; height, weight
+	dw 311, 397 ; height, weight
 
-	db   "MAGNEZONE emits a"
+	db   "It evolved to emit"
 	next "powerful magnetic"
-	next "field that draws"
+	next "fields that draw"
 
 	page "iron particles,"
 	next "forming a barrier"
