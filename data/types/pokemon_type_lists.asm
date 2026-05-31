@@ -58,6 +58,7 @@ NormalTypeSpecies:
 	dw DUNSPARCE
 	dw TEDDIURSA
 	dw URSARING
+	dw URSALUNA
 	dw PORYGON2
 	dw STANTLER
 	dw SMEARGLE
@@ -184,6 +185,7 @@ GroundTypeSpecies:
 	dw RHYPERIOR
 	dw GLISCOR
 	dw DUDUNSPARC
+	dw URSALUNA
 	dw -1
 
 RockTypeSpecies:

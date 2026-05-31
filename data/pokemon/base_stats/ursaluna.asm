@@ -1,0 +1,17 @@
+	db 0 ; species ID placeholder
+
+	db 130, 140, 105,  50,  45,  80
+	evs  0,   3,   0,   0,   0,   0
+	;   hp  atk  def  spd  sat  sdf
+
+	db GROUND, NORMAL ; type
+	db 20 ; catch rate
+	db 246 ; base exp
+	dw NO_ITEM, NO_ITEM ; items
+	db GENDER_F50 ; gender ratio
+	INCBIN "gfx/pokemon/ursaluna/front.dimensions"
+	dw NULL, NULL ; unused (beta front/back pics)
+	db GROWTH_MEDIUM_FAST ; growth rate
+	; tm/hm learnset
+	tmhm DYNAMICPUNCH, HEADBUTT, CURSE, ROLLOUT, ROAR, TOXIC, ZAP_CANNON, PURSUIT, HIDDEN_POWER, SUNNY_DAY, SNORE, HYPER_BEAM, PROTECT, ENDURE, FRUSTRATION, EARTHQUAKE, RETURN, DIG, MUD_SLAP, DOUBLE_TEAM, ICE_PUNCH, SWAGGER, SLEEP_TALK, SWIFT, DEFENSE_CURL, THUNDERPUNCH, REST, ATTRACT, THIEF, FIRE_PUNCH, FURY_CUTTER, CUT, STRENGTH, ROCK_SMASH, SEISMIC_TOSS, COUNTER, BODY_SLAM, SUBSTITUTE, MEGA_PUNCH, SWORDS_DANCE, DOUBLE_EDGE, MEGA_KICK
+	; end

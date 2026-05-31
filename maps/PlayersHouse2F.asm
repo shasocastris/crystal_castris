@@ -177,14 +177,14 @@ if DEF(_DEBUG)
 	givepokemove HEADBUTT,   wPartyMon3, 2
 	givepokemove WATERFALL,  wPartyMon3, 3
 	; misc pokemon for testing
-	givepoke AMPHAROS, 50, EXP_SHARE
+	givepoke DUDUNSPARC, 50, EXP_SHARE
 	givepokemove HIDDEN_POWER,    wPartyMon4, 3
-	givepoke DUDUNSPARC, 50, MIRACLE_SEED
+	givepoke URSALUNA, 50, MIRACLE_SEED
 ;	givepokemove PSYWAVE,      wPartyMon5, 0
 ;	givepokemove SUNNY_DAY,    wPartyMon5, 1
 ;	givepokemove SOLARBEAM,    wPartyMon5, 2
 ;	givepokemove SUDDEN_CHILL, wPartyMon5, 3
-	givepoke DITTO, 50, METAL_POWDER
+	givepoke FARIGIRAF, 50, METAL_POWDER
 	givepokemove TELEPORT,  wPartyMon6, 1
 	; intro events
 	addcellnum PHONE_MOM

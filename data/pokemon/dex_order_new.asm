@@ -276,4 +276,5 @@ NewPokedexOrder:
 	dw WYRDEER
 	dw FARIGIRAF
 	dw DUDUNSPARC
+	dw URSALUNA
 	assert_table_length NUM_POKEMON

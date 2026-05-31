@@ -24,6 +24,7 @@ EvosAttacksPointers3::
 	dw WyrdeerEvosAttacks
 	dw FarigirafEvosAttacks
 	dw DudunsparceEvosAttacks
+	dw UrsalunaEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -323,6 +324,19 @@ DudunsparceEvosAttacks:
 	dbw 33, ANCIENTPOWER
 	dbw 41, EARTHQUAKE
 	dbw 49, COMET_PUNCH
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+UrsalunaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 9, SLASH
+	dbw 17, REST
+	dbw 25, EARTHQUAKE
+	dbw 33, CRUNCH
+	dbw 41, THRASH
+	dbw 49, SWORDS_DANCE
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

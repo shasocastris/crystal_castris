@@ -309,4 +309,5 @@ INCLUDE "data/pokemon/base_stats/tangrowth.asm"
 INCLUDE "data/pokemon/base_stats/wyrdeer.asm"
 INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 INCLUDE "data/pokemon/base_stats/dudunsparc.asm"
+INCLUDE "data/pokemon/base_stats/ursaluna.asm"
 .IndirectEnd::

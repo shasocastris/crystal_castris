@@ -581,5 +581,7 @@ INCLUDE "gfx/pokemon/farigiraf/normal.pal"
 INCLUDE "gfx/pokemon/farigiraf/shiny.pal"
 INCLUDE "gfx/pokemon/dudunsparc/normal.pal"
 INCLUDE "gfx/pokemon/dudunsparc/shiny.pal"
+INCLUDE "gfx/pokemon/ursaluna/normal.pal"
+INCLUDE "gfx/pokemon/ursaluna/shiny.pal"
 
 	assert_table_length NUM_POKEMON + 1

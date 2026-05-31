@@ -253,6 +253,7 @@ AlphabeticalPokedexOrder:
 	dw TYROGUE
 	dw UMBREON
 	dw UNOWN
+	dw URSALUNA
 	dw URSARING
 	dw VAPOREON
 	dw VENOMOTH

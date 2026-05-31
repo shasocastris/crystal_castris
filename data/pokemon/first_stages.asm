@@ -275,4 +275,5 @@ FirstEvoStages::
 	dw STANTLER   ; WYRDEER
 	dw GIRAFARIG  ; FARIGIRAF
 	dw DUNSPARCE  ; DUDUNSPARC
+	dw TEDDIURSA  ; URSALUNA
 	assert_table_length NUM_POKEMON

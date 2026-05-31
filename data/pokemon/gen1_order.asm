@@ -276,4 +276,5 @@ Pokered_MonIndices:
 	db TAUROS     ; WYRDEER
 	db GIRAFARIG  ; FARIGIRAF
 	db DUNSPARCE  ; DUDUNSPARC
+	db URSARING   ; URSALUNA
 	assert_table_length NUM_POKEMON + 1

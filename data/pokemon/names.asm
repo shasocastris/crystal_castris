@@ -278,4 +278,5 @@ PokemonNames::
 	dname "WYRDEER"
 	dname "FARIGIRAF"
 	dname "DUDUNSPARC"
+	dname "URSALUNA"
 	assert_table_length NUM_POKEMON
