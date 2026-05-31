@@ -273,4 +273,5 @@ FirstEvoStages::
 	dw FARFETCH_D ; SIRFETCH_D
 	dw TANGELA    ; TANGROWTH
 	dw STANTLER   ; WYRDEER
+	dw GIRAFARIG  ; FARIGIRAF
 	assert_table_length NUM_POKEMON

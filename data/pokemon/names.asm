@@ -276,4 +276,5 @@ PokemonNames::
 	dname "SIRFETCH'D"
 	dname "TANGROWTH"
 	dname "WYRDEER"
+	dname "FARIGIRAF"
 	assert_table_length NUM_POKEMON

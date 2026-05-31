@@ -22,6 +22,7 @@ EvosAttacksPointers3::
 	dw SirfetchdEvosAttacks
 	dw TangrowthEvosAttacks
 	dw WyrdeerEvosAttacks
+	dw FarigirafEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -293,6 +294,21 @@ WyrdeerEvosAttacks:
 	dbw 33, CONFUSION
 	dbw 41, PSYCHIC_M
 	dbw 49, AGILITY
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+FarigirafEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 1, CONFUSION
+	dbw 1, BITE
+	dbw 9, AMNESIA
+	dbw 17, STOMP
+	dbw 25, CRUNCH
+	dbw 33, BATON_PASS
+	dbw 41, FUTURE_SIGHT
+	dbw 49, PSYCHIC_M
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 

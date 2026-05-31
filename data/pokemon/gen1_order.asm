@@ -274,4 +274,5 @@ Pokered_MonIndices:
 	db FARFETCH_D ; SIRFETCH_D
 	db TANGELA    ; TANGROWTH
 	db TAUROS     ; WYRDEER
+	db GIRAFARIG  ; FARIGIRAF
 	assert_table_length NUM_POKEMON + 1

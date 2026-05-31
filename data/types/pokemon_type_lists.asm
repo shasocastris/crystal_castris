@@ -400,6 +400,7 @@ PsychicTypeSpecies:
 	dw STANTLER
 	dw VENOMOTH
 	dw WYRDEER
+	dw FARIGIRAF
 	dw -1
 
 IceTypeSpecies:
@@ -436,6 +437,7 @@ DarkTypeSpecies:
 	dw VILEPLUME
 	dw HONCHKROW
 	dw WEAVILE
+	dw FARIGIRAF
 	dw -1
 
 FairyTypeSpecies:

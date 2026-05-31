@@ -272,4 +272,5 @@ FramesPointers:
 	dba SirfetchdFrames
 	dba TangrowthFrames
 	dba WyrdeerFrames
+	dba FarigirafFrames
 	assert_table_length NUM_POKEMON

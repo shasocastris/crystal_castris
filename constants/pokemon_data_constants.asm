@@ -25,8 +25,8 @@ DEF BASE_ITEM_1             rw
 DEF BASE_ITEM_2             rw
 DEF BASE_GENDER             rb
 DEF BASE_PIC_SIZE           rb
-DEF BASE_FRONTPIC           rw
-DEF BASE_BACKPIC            rw
+DEF BASE_FRONTPIC           rw ; unused
+DEF BASE_BACKPIC            rw ; unused
 DEF BASE_GROWTH_RATE        rb
 DEF BASE_TMHM               rb (NUM_TM_HM_TUTOR + 7) / 8
 DEF BASE_DATA_SIZE EQU _RS

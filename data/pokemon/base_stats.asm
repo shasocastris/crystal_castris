@@ -307,4 +307,5 @@ INCLUDE "data/pokemon/base_stats/porygon_z.asm"
 INCLUDE "data/pokemon/base_stats/sirfetch_d.asm"
 INCLUDE "data/pokemon/base_stats/tangrowth.asm"
 INCLUDE "data/pokemon/base_stats/wyrdeer.asm"
+INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 .IndirectEnd::

@@ -274,4 +274,5 @@ NewPokedexOrder:
 	dw SIRFETCH_D
 	dw TANGROWTH
 	dw WYRDEER
+	dw FARIGIRAF
 	assert_table_length NUM_POKEMON

@@ -272,4 +272,5 @@ BitmasksPointers:
 	dw SirfetchdBitmasks
 	dw TangrowthBitmasks
 	dw WyrdeerBitmasks
+	dw FarigirafBitmasks
 	assert_table_length NUM_POKEMON

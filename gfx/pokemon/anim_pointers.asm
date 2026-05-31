@@ -272,4 +272,5 @@ AnimationPointers:
 	dw SirfetchdAnimation
 	dw TangrowthAnimation
 	dw WyrdeerAnimation
+	dw FarigirafAnimation
 	assert_table_length NUM_POKEMON
