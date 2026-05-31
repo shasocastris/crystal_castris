@@ -9268,11 +9268,12 @@ BattleStartMessage:
 
 GetWeatherImage:
 	ld a, [wBattleWeather]
-	and a
-	ret z
 	ld de, RainWeatherImage
 	lb bc, PAL_BATTLE_OB_BLUE, 4
 	cp WEATHER_RAIN
+	jr z, .done
+	ld de, HailWeatherImage
+	cp WEATHER_HAIL
 	jr z, .done
 	ld de, SunWeatherImage
 	ld b, PAL_BATTLE_OB_YELLOW
@@ -9282,7 +9283,7 @@ GetWeatherImage:
 	ld b, PAL_BATTLE_OB_BROWN
 	cp WEATHER_SANDSTORM
 	ret nz
-	
+
 .done
 	push bc
 	ld b, BANK(WeatherImages) ; c = 4

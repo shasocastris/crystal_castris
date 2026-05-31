@@ -161,9 +161,10 @@ if DEF(_DEBUG)
 	setflag ENGINE_CREDITS_SKIP
 	; good party
 	givepoke MEWTWO, 100, BRIGHTPOWDER
-	givepokemove HURRICANE,      wPartyMon1, 1
-	givepokemove RAIN_DANCE,     wPartyMon1, 2
-	givepokemove POISON_JAB,     wPartyMon1, 3
+	givepokemove HURRICANE,      wPartyMon1, 0
+	givepokemove RAIN_DANCE,     wPartyMon1, 1
+	givepokemove POISON_JAB,     wPartyMon1, 2
+	givepokemove HAIL,           wPartyMon1, 3
 	loadmem wPartyMon1Happiness, $ff
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
