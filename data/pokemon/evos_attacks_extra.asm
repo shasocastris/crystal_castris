@@ -242,9 +242,12 @@ MagnezoneEvosAttacks:
 	dbw 17, SUPERSONIC
 	dbw 25, THUNDERBOLT
 	dbw 33, SCREECH
-	dbw 41, THUNDER
-	dbw 49, FLASH
-	dbw 57, HYPER_BEAM
+	dbw 40, IRON_HEAD
+	dbw 48, THUNDER
+	dbw 55, FLASH
+	dbw 60, FLASH_CANNON
+	dbw 70, WILD_CHARGE
+	dbw 80, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 PorygonZEvosAttacks:
@@ -265,12 +268,17 @@ SirfetchdEvosAttacks:
 	dbw 1, PECK
 	dbw 1, LEER
 	dbw 9, FURY_ATTACK
-	dbw 17, SLASH
-	dbw 25, SWORDS_DANCE
-	dbw 33, DETECT
-	dbw 41, CROSS_CHOP
-	dbw 49, AGILITY
-	dbw 57, HYPER_BEAM
+	dbw 17, AERIAL_ACE
+	dbw 25, SLASH
+	dbw 33, SWORDS_DANCE
+	dbw 38, DETECT
+	dbw 43, NIGHT_SLASH
+	dbw 50, IRON_HEAD
+	dbw 55, CROSS_CHOP
+	dbw 60, AGILITY
+	dbw 65, FOCUS_BLAST
+	dbw 72, HYPER_BEAM
+	dbw 80, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 TangrowthEvosAttacks:

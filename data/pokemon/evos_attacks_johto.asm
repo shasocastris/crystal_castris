@@ -445,11 +445,13 @@ CrobatEvosAttacks:
 	dbw 27, WING_ATTACK
 	dbw 33, FAINT_ATTACK
 	dbw 39, MEAN_LOOK
-	dbw 45, SLUDGE_BOMB
-	dbw 51, SCREECH
-	dbw 57, HAZE
-	dbw 63, CRUNCH
-	dbw 70, SKY_ATTACK
+	dbw 45, AIR_SLASH
+	dbw 51, SLUDGE_BOMB
+	dbw 57, SCREECH
+	dbw 63, HAZE
+	dbw 69, POISON_JAB
+	dbw 75, CRUNCH
+	dbw 81, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
@@ -655,9 +657,12 @@ BellossomEvosAttacks:
 	dbw 1, STUN_SPORE
 	dbw 1, PETAL_DANCE
 	dbw 29, LEECH_SEED
+	dbw 35, SEED_BOMB
 	dbw 41, MOONBLAST
+	dbw 47, ENERGY_BALL
 	dbw 53, PETAL_DANCE
 	dbw 65, SOLARBEAM
+	dbw 78, DAZZLING_GLEAM
 	db 0 ; no more level-up moves
 
 MarillEvosAttacks:
@@ -718,10 +723,13 @@ PolitoedEvosAttacks:
 	dbw 5, HYPNOSIS
 	dbw 15, DOUBLESLAP
 	dbw 25, BUBBLEBEAM
+	dbw 30, SCALD
 	dbw 35, BODY_SLAM
+	dbw 39, AQUA_JET
 	dbw 45, PERISH_SONG
-	dbw 55, SWAGGER
-	dbw 65, HYDRO_PUMP
+	dbw 51, SWAGGER
+	dbw 66, HYDRO_PUMP
+	dbw 75, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:
@@ -949,9 +957,12 @@ SlowkingEvosAttacks:
 	dbw 29, DISABLE
 	dbw 32, BELLY_DRUM
 	dbw 34, HEADBUTT
-	dbw 43, AMNESIA
+	dbw 38, SCALD
 	dbw 43, SWAGGER
-	dbw 48, PSYCHIC_M
+	dbw 48, AMNESIA
+	dbw 53, ZEN_HEADBUTT
+	dbw 60, PSYCHIC_M
+	dbw 70, EXTRASENSORY
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
