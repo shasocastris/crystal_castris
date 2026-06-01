@@ -172,8 +172,10 @@ BulbasaurEvosAttacks:
 	dbw 32, GROWTH
 	dbw 35, SAFEGUARD
 	dbw 39, SYNTHESIS
-	dbw 43, SKULL_BASH
-	dbw 46, SOLARBEAM
+	dbw 43, SLUDGE_BOMB
+	dbw 47, SKULL_BASH
+	dbw 51, ENERGY_BALL
+	dbw 55, SOLARBEAM
 	db 0 ; no more level-up moves
 
 IvysaurEvosAttacks:
@@ -194,8 +196,10 @@ IvysaurEvosAttacks:
 	dbw 38, GROWTH
 	dbw 42, SAFEGUARD
 	dbw 47, SYNTHESIS
-	dbw 51, SKULL_BASH
-	dbw 56, SOLARBEAM
+	dbw 51, SLUDGE_BOMB
+	dbw 56, SKULL_BASH
+	dbw 60, ENERGY_BALL
+	dbw 65, SOLARBEAM
 	db 0 ; no more level-up moves
 
 VenusaurEvosAttacks:
@@ -217,8 +221,11 @@ VenusaurEvosAttacks:
 	dbw 41, GROWTH
 	dbw 47, SAFEGUARD
 	dbw 53, SYNTHESIS
-	dbw 58, SKULL_BASH
-	dbw 65, SOLARBEAM
+	dbw 58, SLUDGE_BOMB
+	dbw 64, SKULL_BASH
+	dbw 69, ENERGY_BALL
+	dbw 75, SOLARBEAM
+	dbw 80, POWER_WHIP
 	db 0 ; no more level-up moves
 
 CharmanderEvosAttacks:
@@ -238,8 +245,10 @@ CharmanderEvosAttacks:
 	dbw 37, SLASH
 	dbw 40, ROCK_SLIDE
 	dbw 43, DRAGON_RAGE
-	dbw 46, ANCIENTPOWER
-	dbw 49, OUTRAGE
+	dbw 46, DRAGON_CLAW
+	dbw 49, ANCIENTPOWER
+	dbw 52, AIR_SLASH
+	dbw 55, OUTRAGE
 	db 0 ; no more level-up moves
 
 CharmeleonEvosAttacks:
@@ -259,8 +268,10 @@ CharmeleonEvosAttacks:
 	dbw 41, SLASH
 	dbw 44, ROCK_SLIDE
 	dbw 48, DRAGON_RAGE
-	dbw 52, ANCIENTPOWER
-	dbw 55, OUTRAGE
+	dbw 52, DRAGON_CLAW
+	dbw 56, ANCIENTPOWER
+	dbw 61, AIR_SLASH
+	dbw 65, OUTRAGE
 	db 0 ; no more level-up moves
 
 CharizardEvosAttacks:
@@ -282,8 +293,10 @@ CharizardEvosAttacks:
 	dbw 49, SLASH
 	dbw 53, ROCK_SLIDE
 	dbw 58, DRAGON_RAGE
-	dbw 61, ANCIENTPOWER
-	dbw 65, OUTRAGE
+	dbw 61, DRAGON_CLAW
+	dbw 67, ANCIENTPOWER
+	dbw 73, AIR_SLASH
+	dbw 80, OUTRAGE
 	db 0 ; no more level-up moves
 
 SquirtleEvosAttacks:
@@ -303,9 +316,11 @@ SquirtleEvosAttacks:
 	dbw 30, FLAIL
 	dbw 33, RAIN_DANCE
 	dbw 37, FORESIGHT
-	dbw 40, SKULL_BASH
+	dbw 40, IRON_HEAD
 	dbw 43, MIRROR_COAT
-	dbw 47, HYDRO_PUMP
+	dbw 47, AQUA_TAIL
+	dbw 51, SKULL_BASH
+	dbw 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 WartortleEvosAttacks:
@@ -325,9 +340,11 @@ WartortleEvosAttacks:
 	dbw 34, FLAIL
 	dbw 37, RAIN_DANCE
 	dbw 41, FORESIGHT
-	dbw 45, SKULL_BASH
+	dbw 45, IRON_HEAD
 	dbw 49, MIRROR_COAT
-	dbw 53, HYDRO_PUMP
+	dbw 53, AQUA_TAIL
+	dbw 59, SKULL_BASH
+	dbw 65, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 BlastoiseEvosAttacks:
@@ -348,9 +365,12 @@ BlastoiseEvosAttacks:
 	dbw 35, SURF
 	dbw 42, RAIN_DANCE
 	dbw 48, FORESIGHT
-	dbw 55, SKULL_BASH
-	dbw 62, MIRROR_COAT
-	dbw 68, HYDRO_PUMP
+	dbw 54, IRON_HEAD
+	dbw 60, MIRROR_COAT
+	dbw 65, AQUA_TAIL
+	dbw 71, SKULL_BASH
+	dbw 77, HYDRO_PUMP
+	dbw 80, FLASH_CANNON
 	db 0 ; no more level-up moves
 
 CaterpieEvosAttacks:
