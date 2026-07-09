@@ -147,7 +147,7 @@ ViridianRetiredChampionScript:
 	sjump .DoTeachBerryJuice
 
 .TeachSoftboiledBerry:
-	loadmoveindex SOFTBOILED
+	loadmoveindex NOURISHMENT
 	sjump .DoTeachBerryJuice
 
 ; --- Drink-specific teach paths ---

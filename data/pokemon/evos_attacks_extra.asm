@@ -44,7 +44,7 @@ MagmortarEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 7, LEER
-	dbw 13, SMOG
+	dbw 13, SLUDGE
 	dbw 19, FIRE_PUNCH
 	dbw 25, SMOKESCREEN
 	dbw 33, SUNNY_DAY
@@ -56,11 +56,10 @@ MagmortarEvosAttacks:
 AmbipomEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
-	dbw 1, TAIL_WHIP
-	dbw 10, FURY_SWIPES
+	dbw 1, LEER
+	dbw 10, FURY_STRIKES
 	dbw 15, SCREECH
 	dbw 22, SLAM
-	dbw 30, DOUBLESLAP
 	dbw 38, AGILITY
 	dbw 48, BATON_PASS
 	dbw 57, SWIFT
@@ -71,7 +70,6 @@ AnnihilapeEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 9, KARATE_CHOP
-	dbw 17, LOW_KICK
 	dbw 25, SEISMIC_TOSS
 	dbw 33, RAGE
 	dbw 41, CROSS_CHOP
@@ -88,15 +86,14 @@ HonchkrowEvosAttacks:
 	dbw 25, SWAGGER
 	dbw 33, MEAN_LOOK
 	dbw 41, PURSUIT
-	dbw 49, BEAT_UP
 	dbw 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LeafeonEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
-	dbw 9, SAND_ATTACK
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 9, MUD_SLAP
 	dbw 17, RAZOR_LEAF
 	dbw 25, SWIFT
 	dbw 33, LEECH_SEED
@@ -124,7 +121,7 @@ MamoswineEvosAttacks:
 	dbw 1, POWDER_SNOW
 	dbw 10, MIST
 	dbw 20, ICY_WIND
-	dbw 30, FURY_ATTACK
+	dbw 30, FURY_STRIKES
 	dbw 40, TAKE_DOWN
 	dbw 50, EARTHQUAKE
 	dbw 60, BLIZZARD
@@ -146,21 +143,21 @@ MismagiusEvosAttacks:
 RhyperiorEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, HORN_ATTACK
-	dbw 1, TAIL_WHIP
+	dbw 1, LEER
 	dbw 9, STOMP
-	dbw 17, FURY_ATTACK
+	dbw 17, FURY_STRIKES
 	dbw 25, SCARY_FACE
 	dbw 33, ROCK_THROW
-	dbw 41, HORN_DRILL
+	dbw 41, STONE_EDGE
 	dbw 49, ROCK_SLIDE
 	dbw 57, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 SylveonEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
-	dbw 9, SAND_ATTACK
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 9, MUD_SLAP
 	dbw 17, SWIFT
 	dbw 25, QUICK_ATTACK
 	dbw 33, PSYCH_UP
@@ -171,7 +168,7 @@ SylveonEvosAttacks:
 
 TogekissEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, DOUBLESLAP
+	dbw 1, FURY_STRIKES
 	dbw 1, GROWL
 	dbw 9, ENCORE
 	dbw 17, SAFEGUARD
@@ -190,7 +187,6 @@ WeavileEvosAttacks:
 	dbw 17, FAINT_ATTACK
 	dbw 25, ICY_WIND
 	dbw 33, SLASH
-	dbw 41, BEAT_UP
 	dbw 49, SCREECH
 	dbw 57, BLIZZARD
 	db 0 ; no more level-up moves
@@ -201,7 +197,7 @@ YanmegaEvosAttacks:
 	dbw 1, FORESIGHT
 	dbw 9, QUICK_ATTACK
 	dbw 17, WING_ATTACK
-	dbw 25, DETECT
+	dbw 25, PROTECT
 	dbw 33, ANCIENTPOWER
 	dbw 41, SCREECH
 	dbw 49, SWIFT
@@ -210,8 +206,8 @@ YanmegaEvosAttacks:
 
 GlaceonEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
+	dbw 1, SCRATCH
+	dbw 1, LEER
 	dbw 9, ICY_WIND
 	dbw 17, BITE
 	dbw 25, AURORA_BEAM
@@ -225,7 +221,7 @@ GliscorEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, POISON_STING
 	dbw 1, LEER
-	dbw 9, SAND_ATTACK
+	dbw 9, MUD_SLAP
 	dbw 17, FURY_CUTTER
 	dbw 25, SLASH
 	dbw 33, SCARY_FACE
@@ -236,7 +232,7 @@ GliscorEvosAttacks:
 
 MagnezoneEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, THUNDERSHOCK
 	dbw 9, THUNDER_WAVE
 	dbw 17, SUPERSONIC
@@ -252,7 +248,7 @@ MagnezoneEvosAttacks:
 
 PorygonZEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, PSYBEAM
 	dbw 9, AGILITY
 	dbw 17, TRI_ATTACK
@@ -267,11 +263,11 @@ SirfetchdEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, LEER
-	dbw 9, FURY_ATTACK
+	dbw 9, FURY_STRIKES
 	dbw 17, AERIAL_ACE
 	dbw 25, SLASH
 	dbw 33, SWORDS_DANCE
-	dbw 38, DETECT
+	dbw 38, PROTECT
 	dbw 43, NIGHT_SLASH
 	dbw 50, IRON_HEAD
 	dbw 55, CROSS_CHOP
@@ -296,7 +292,7 @@ TangrowthEvosAttacks:
 
 WyrdeerEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 9, PSYBEAM
 	dbw 17, HYPNOSIS
@@ -309,7 +305,7 @@ WyrdeerEvosAttacks:
 
 FarigirafEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 1, CONFUSION
 	dbw 1, BITE

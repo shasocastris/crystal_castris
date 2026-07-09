@@ -2,7 +2,6 @@
 
 EncoreMoves:
 	dw SWORDS_DANCE
-	dw WHIRLWIND
 	dw LEER
 	dw ROAR
 	dw DISABLE
@@ -18,17 +17,11 @@ EncoreMoves:
 	dw HAZE
 	dw FOCUS_ENERGY
 	dw DREAM_EATER
-	dw POISON_GAS
 	dw SPLASH
-	dw SHARPEN
 	dw CONVERSION
 	dw SUPER_FANG
 	dw SUBSTITUTE
-	dw TRIPLE_KICK
-	dw SPIDER_WEB
-	dw MIND_READER
 	dw FLAME_WHEEL
 	dw AEROBLAST
-	dw COTTON_SPORE
 	dw POWDER_SNOW
 	dw -1 ; end

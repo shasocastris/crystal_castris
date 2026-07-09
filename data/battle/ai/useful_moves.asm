@@ -19,6 +19,6 @@ UsefulMoves:
 	dw HYPNOSIS
 	dw RECOVER
 	dw FIRE_BLAST
-	dw SOFTBOILED
+	dw NOURISHMENT
 	dw SUPER_FANG
 	dw -1 ; end

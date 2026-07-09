@@ -8,7 +8,6 @@ MetronomeExcepts:
 	dw COUNTER
 	dw MIRROR_COAT
 	dw PROTECT
-	dw DETECT
 	dw ENDURE
 	dw DESTINY_BOND
 	dw SLEEP_TALK

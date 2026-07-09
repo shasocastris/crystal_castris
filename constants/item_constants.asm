@@ -303,7 +303,7 @@ DEF TM01 EQU const_value
 	add_tm HIDDEN_POWER ; 0409
 	add_tm SUNNY_DAY    ; 040A
 	add_tm SWEET_SCENT  ; 040B
-	add_tm SNORE        ; 040C
+	add_tm SWEET_KISS   ; 040C
 	add_tm BLIZZARD     ; 040D
 	add_tm HYPER_BEAM   ; 040E
 	add_tm ICY_WIND     ; 040F
@@ -311,7 +311,7 @@ DEF TM01 EQU const_value
 	add_tm RAIN_DANCE   ; 0411
 	add_tm GIGA_DRAIN   ; 0412
 	add_tm ENDURE       ; 0413
-	add_tm FRUSTRATION  ; 0414
+	add_tm PAIN_SPLIT   ; 0414
 	add_tm SOLARBEAM    ; 0415
 	add_tm IRON_TAIL    ; 0416
 	add_tm DRAGONBREATH ; 0417
@@ -380,7 +380,7 @@ DEF MT01 EQU const_value
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
-	add_mt SOFTBOILED
+	add_mt NOURISHMENT
 	add_mt PAY_DAY
 	add_mt TELEPORT
 	add_mt SEISMIC_TOSS

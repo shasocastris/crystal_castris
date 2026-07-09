@@ -6,9 +6,7 @@
 ; - BattleAnimations (see data/moves/animations.asm)
 	const_def
 	const NO_MOVE      ; 00
-	const POUND        ; 01
 	const KARATE_CHOP  ; 02
-	const DOUBLESLAP   ; 03
 	const COMET_PUNCH  ; 04
 	const MEGA_PUNCH   ; 05
 	const PAY_DAY      ; 06
@@ -16,14 +14,11 @@
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SCRATCH      ; 0a
-	const VICEGRIP     ; 0b
-	const GUILLOTINE   ; 0c
 	const RAZOR_WIND   ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
 	const WING_ATTACK  ; 11
-	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const BIND         ; 14
 	const SLAM         ; 15
@@ -31,20 +26,15 @@
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
-	const JUMP_KICK    ; 1a
 	const ROLLING_KICK ; 1b
-	const SAND_ATTACK  ; 1c
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
-	const FURY_ATTACK  ; 1f
-	const HORN_DRILL   ; 20
-	const TACKLE       ; 21
+	const FURY_STRIKES ; 1f
 	const BODY_SLAM    ; 22
 	const WRAP         ; 23
 	const TAKE_DOWN    ; 24
 	const THRASH       ; 25
 	const DOUBLE_EDGE  ; 26
-	const TAIL_WHIP    ; 27
 	const POISON_STING ; 28
 	const TWINEEDLE    ; 29
 	const PIN_MISSILE  ; 2a
@@ -72,7 +62,6 @@
 	const PECK         ; 40
 	const DRILL_PECK   ; 41
 	const SUBMISSION   ; 42
-	const LOW_KICK     ; 43
 	const COUNTER      ; 44
 	const SEISMIC_TOSS ; 45
 	const STRENGTH     ; 46
@@ -95,7 +84,6 @@
 	const THUNDER      ; 57
 	const ROCK_THROW   ; 58
 	const EARTHQUAKE   ; 59
-	const FISSURE      ; 5a
 	const DIG          ; 5b
 	const TOXIC        ; 5c
 	const CONFUSION    ; 5d
@@ -115,20 +103,16 @@
 	const MINIMIZE     ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
-	const WITHDRAW     ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
 	const LIGHT_SCREEN ; 71
 	const HAZE         ; 72
 	const REFLECT      ; 73
 	const FOCUS_ENERGY ; 74
-	const BIDE         ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
 	const SELFDESTRUCT ; 78
-	const EGG_BOMB     ; 79
 	const LICK         ; 7a
-	const SMOG         ; 7b
 	const SLUDGE       ; 7c
 	const BONE_CLUB    ; 7d
 	const FIRE_BLAST   ; 7e
@@ -139,32 +123,24 @@
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86
-	const SOFTBOILED   ; 87
+	const NOURISHMENT  ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
-	const POISON_GAS   ; 8b
-	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
 	const LOVELY_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
-	const DIZZY_PUNCH  ; 92
 	const SPORE        ; 93
 	const FLASH        ; 94
 	const PSYWAVE      ; 95
 	const SPLASH       ; 96
-	const ACID_ARMOR   ; 97
 	const CRABHAMMER   ; 98
-	const EXPLOSION    ; 99
-	const FURY_SWIPES  ; 9a
 	const BONEMERANG   ; 9b
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
-	const SHARPEN      ; 9f
 	const CONVERSION   ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
@@ -173,18 +149,13 @@
 	const STRUGGLE     ; a5
 DEF GEN1_MOVES EQU const_value - 1
 	const SKETCH       ; a6
-	const TRIPLE_KICK  ; a7
 	const THIEF        ; a8
-	const SPIDER_WEB   ; a9
-	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
 	const FLAME_WHEEL  ; ac
-	const SNORE        ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const CONVERSION2  ; b0
 	const AEROBLAST    ; b1
-	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
 	const POWDER_SNOW  ; b5
@@ -204,7 +175,6 @@ DEF GEN1_MOVES EQU const_value - 1
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
 	const DETECT       ; c5
-	const BONE_RUSH    ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
@@ -214,7 +184,6 @@ DEF GEN1_MOVES EQU const_value - 1
 	const ROLLOUT      ; cd
 	const FALSE_SWIPE  ; ce
 	const SWAGGER      ; cf
-	const MILK_DRINK   ; d0
 	const SPARK        ; d1
 	const FURY_CUTTER  ; d2
 	const STEEL_WING   ; d3
@@ -224,7 +193,6 @@ DEF GEN1_MOVES EQU const_value - 1
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const PRESENT      ; d9
-	const FRUSTRATION  ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd
@@ -257,7 +225,6 @@ DEF GEN1_MOVES EQU const_value - 1
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb
 	const MOONBLAST    ; fc
 	const PLAY_ROUGH   ; fd
 	const WILL_O_WISP  ; fe

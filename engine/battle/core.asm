@@ -736,14 +736,14 @@ ParsePlayerAction:
 	jr nz, .locked_in
 	xor a
 	ld [wMoveSelectionMenuType], a
-	if HIGH(POUND)
-		ld a, HIGH(POUND)
+	if HIGH(KARATE_CHOP)
+		ld a, HIGH(KARATE_CHOP)
 	endc
 	ld [wFXAnimID + 1], a
-	if LOW(POUND) == (HIGH(POUND) + 1)
+	if LOW(KARATE_CHOP) == (HIGH(KARATE_CHOP) + 1)
 		inc a
 	else
-		ld a, LOW(POUND)
+		ld a, LOW(KARATE_CHOP)
 	endc
 	ld [wFXAnimID], a
 	call MoveSelectionScreen

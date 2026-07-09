@@ -275,9 +275,7 @@ InitBattleAnimBuffer:
 	ret
 
 .extra_offset_moves
-	dw KINESIS
-	dw SOFTBOILED
-	dw MILK_DRINK
+	dw NOURISHMENT
 	dw -1
 
 GetBattleAnimTileOffset:

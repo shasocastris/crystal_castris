@@ -1,8 +1,6 @@
 BattleAnimationsGen1::
 	dw BattleAnim_Dummy
-	dw BattleAnim_Pound
 	dw BattleAnim_KarateChop
-	dw BattleAnim_Doubleslap
 	dw BattleAnim_CometPunch
 	dw BattleAnim_MegaPunch
 	dw BattleAnim_PayDay
@@ -10,14 +8,11 @@ BattleAnimationsGen1::
 	dw BattleAnim_IcePunch
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
-	dw BattleAnim_Vicegrip
-	dw BattleAnim_Guillotine
 	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
 	dw BattleAnim_Gust
 	dw BattleAnim_WingAttack
-	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
 	dw BattleAnim_Bind
 	dw BattleAnim_Slam
@@ -25,20 +20,15 @@ BattleAnimationsGen1::
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
 	dw BattleAnim_MegaKick
-	dw BattleAnim_JumpKick
 	dw BattleAnim_RollingKick
-	dw BattleAnim_SandAttack
 	dw BattleAnim_Headbutt
 	dw BattleAnim_HornAttack
-	dw BattleAnim_FuryAttack
-	dw BattleAnim_HornDrill
-	dw BattleAnim_Tackle
+	dw BattleAnim_FurySwipes
 	dw BattleAnim_BodySlam
 	dw BattleAnim_Wrap
 	dw BattleAnim_TakeDown
 	dw BattleAnim_Thrash
 	dw BattleAnim_DoubleEdge
-	dw BattleAnim_TailWhip
 	dw BattleAnim_PoisonSting
 	dw BattleAnim_Twineedle
 	dw BattleAnim_PinMissile
@@ -66,7 +56,6 @@ BattleAnimationsGen1::
 	dw BattleAnim_Peck
 	dw BattleAnim_DrillPeck
 	dw BattleAnim_Submission
-	dw BattleAnim_LowKick
 	dw BattleAnim_Counter
 	dw BattleAnim_SeismicToss
 	dw BattleAnim_Strength
@@ -89,7 +78,6 @@ BattleAnimationsGen1::
 	dw BattleAnim_Thunder
 	dw BattleAnim_RockThrow
 	dw BattleAnim_Earthquake
-	dw BattleAnim_Fissure
 	dw BattleAnim_Dig
 	dw BattleAnim_Toxic
 	dw BattleAnim_Confusion
@@ -109,20 +97,16 @@ BattleAnimationsGen1::
 	dw BattleAnim_Minimize
 	dw BattleAnim_Smokescreen
 	dw BattleAnim_ConfuseRay
-	dw BattleAnim_Withdraw
 	dw BattleAnim_DefenseCurl
 	dw BattleAnim_Barrier
 	dw BattleAnim_LightScreen
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
 	dw BattleAnim_FocusEnergy
-	dw BattleAnim_Bide
 	dw BattleAnim_Metronome
 	dw BattleAnim_MirrorMove
 	dw BattleAnim_Selfdestruct
-	dw BattleAnim_EggBomb
 	dw BattleAnim_Lick
-	dw BattleAnim_Smog
 	dw BattleAnim_Sludge
 	dw BattleAnim_BoneClub
 	dw BattleAnim_FireBlast
@@ -133,32 +117,24 @@ BattleAnimationsGen1::
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
-	dw BattleAnim_Kinesis
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
-	dw BattleAnim_PoisonGas
-	dw BattleAnim_Barrage
 	dw BattleAnim_LeechLife
 	dw BattleAnim_LovelyKiss
 	dw BattleAnim_SkyAttack
 	dw BattleAnim_Transform
 	dw BattleAnim_Bubble
-	dw BattleAnim_DizzyPunch
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
 	dw BattleAnim_Psywave
 	dw BattleAnim_Splash
-	dw BattleAnim_AcidArmor
 	dw BattleAnim_Crabhammer
-	dw BattleAnim_Explosion
-	dw BattleAnim_FurySwipes
 	dw BattleAnim_Bonemerang
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang
-	dw BattleAnim_Sharpen
 	dw BattleAnim_Conversion
 	dw BattleAnim_TriAttack
 	dw BattleAnim_SuperFang

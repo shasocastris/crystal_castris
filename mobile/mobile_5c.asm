@@ -18,7 +18,7 @@ CheckBTMonMovesForErrors:
 	cp MOVE_TABLE_ENTRIES + 1
 	jr c, .okay
 	push hl
-	ld hl, POUND
+	ld hl, KARATE_CHOP
 	call GetMoveIDFromIndex
 	pop hl
 	ld [hl], a

@@ -6,9 +6,7 @@ MoveDescriptions::
 	indirect_table_end
 
 MoveDescriptionsGen1:
-	dw PoundDescription
 	dw KarateChopDescription
-	dw DoubleslapDescription
 	dw CometPunchDescription
 	dw MegaPunchDescription
 	dw PayDayDescription
@@ -16,14 +14,11 @@ MoveDescriptionsGen1:
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
-	dw GuillotineDescription
 	dw RazorWindDescription
 	dw SwordsDanceDescription
 	dw CutDescription
 	dw GustDescription
 	dw WingAttackDescription
-	dw WhirlwindDescription
 	dw FlyDescription
 	dw BindDescription
 	dw SlamDescription
@@ -31,20 +26,15 @@ MoveDescriptionsGen1:
 	dw StompDescription
 	dw DoubleKickDescription
 	dw MegaKickDescription
-	dw JumpKickDescription
 	dw RollingKickDescription
-	dw SandAttackDescription
 	dw HeadbuttDescription
 	dw HornAttackDescription
-	dw FuryAttackDescription
-	dw HornDrillDescription
-	dw TackleDescription
+	dw FurySwipesDescription
 	dw BodySlamDescription
 	dw WrapDescription
 	dw TakeDownDescription
 	dw ThrashDescription
 	dw DoubleEdgeDescription
-	dw TailWhipDescription
 	dw PoisonStingDescription
 	dw TwineedleDescription
 	dw PinMissileDescription
@@ -72,7 +62,6 @@ MoveDescriptionsGen1:
 	dw PeckDescription
 	dw DrillPeckDescription
 	dw SubmissionDescription
-	dw LowKickDescription
 	dw CounterDescription
 	dw SeismicTossDescription
 	dw StrengthDescription
@@ -95,7 +84,6 @@ MoveDescriptionsGen1:
 	dw ThunderDescription
 	dw RockThrowDescription
 	dw EarthquakeDescription
-	dw FissureDescription
 	dw DigDescription
 	dw ToxicDescription
 	dw ConfusionDescription
@@ -115,20 +103,16 @@ MoveDescriptionsGen1:
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
-	dw WithdrawDescription
 	dw DefenseCurlDescription
 	dw BarrierDescription
 	dw LightScreenDescription
 	dw HazeDescription
 	dw ReflectDescription
 	dw FocusEnergyDescription
-	dw BideDescription
 	dw MetronomeDescription
 	dw MirrorMoveDescription
 	dw SelfdestructDescription
-	dw EggBombDescription
 	dw LickDescription
-	dw SmogDescription
 	dw SludgeDescription
 	dw BoneClubDescription
 	dw FireBlastDescription
@@ -139,32 +123,24 @@ MoveDescriptionsGen1:
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
-	dw KinesisDescription
 	dw SoftboiledDescription
 	dw HiJumpKickDescription
 	dw GlareDescription
 	dw DreamEaterDescription
-	dw PoisonGasDescription
-	dw BarrageDescription
 	dw LeechLifeDescription
 	dw LovelyKissDescription
 	dw SkyAttackDescription
 	dw TransformDescription
 	dw BubbleDescription
-	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
 	dw PsywaveDescription
 	dw SplashDescription
-	dw AcidArmorDescription
 	dw CrabhammerDescription
-	dw ExplosionDescription
-	dw FurySwipesDescription
 	dw BonemerangDescription
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
-	dw SharpenDescription
 	dw ConversionDescription
 	dw TriAttackDescription
 	dw SuperFangDescription
@@ -175,18 +151,13 @@ MoveDescriptionsGen1:
 
 MoveDescriptionsGen2:
 	dw SketchDescription
-	dw TripleKickDescription
 	dw ThiefDescription
-	dw SpiderWebDescription
-	dw MindReaderDescription
 	dw NightmareDescription
 	dw FlameWheelDescription
-	dw SnoreDescription
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
 	dw AeroblastDescription
-	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
 	dw PowderSnowDescription
@@ -206,7 +177,6 @@ MoveDescriptionsGen2:
 	dw PerishSongDescription
 	dw IcyWindDescription
 	dw DetectDescription
-	dw BoneRushDescription
 	dw LockOnDescription
 	dw OutrageDescription
 	dw SandstormDescription
@@ -216,7 +186,6 @@ MoveDescriptionsGen2:
 	dw RolloutDescription
 	dw FalseSwipeDescription
 	dw SwaggerDescription
-	dw MilkDrinkDescription
 	dw SparkDescription
 	dw FuryCutterDescription
 	dw SteelWingDescription
@@ -226,7 +195,6 @@ MoveDescriptionsGen2:
 	dw HealBellDescription
 	dw ReturnDescription
 	dw PresentDescription
-	dw FrustrationDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
 	dw SacredFireDescription
@@ -259,7 +227,6 @@ MoveDescriptionsGen2:
 	dw FutureSightDescription
 	dw RockSmashDescription
 	dw WhirlpoolDescription
-	dw BeatUpDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
 	dw WillOWispDescription

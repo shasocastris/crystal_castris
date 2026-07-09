@@ -187,7 +187,6 @@ BattleCommand_CheckTurn:
 	jmp EndTurn
 
 .sleep_bypass_moves
-	dw SNORE
 	dw SLEEP_TALK
 	dw -1
 
@@ -403,7 +402,6 @@ CheckEnemyTurn:
 	jmp EndTurn
 
 .sleep_bypass_moves
-	dw SNORE
 	dw SLEEP_TALK
 	dw -1
 
@@ -907,7 +905,6 @@ IgnoreSleepOnly:
 	ret
 
 .sleep_moves
-	dw SNORE
 	dw SLEEP_TALK
 	dw -1
 
@@ -1720,14 +1717,12 @@ BattleCommand_CheckHit:
 
 .FlyMoves:
 	dw GUST
-	dw WHIRLWIND
 	dw THUNDER
 	dw TWISTER
 	dw -1
 
 .DigMoves:
 	dw EARTHQUAKE
-	dw FISSURE
 	dw MAGNITUDE
 	dw -1
 
