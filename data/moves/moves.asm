@@ -282,7 +282,7 @@ MovesGen2:
 	move EFFECT_SP_DEF_DOWN_HIT,    90, BUG,           SPECIAL,  100, 10,  10      ;BUG_BUZZ
 	move EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20      ;DARK_PULSE
 	move EFFECT_NORMAL_HIT,         70, DARK,          PHYSICAL, 100, 15,   0      ;NIGHT_SLASH
-	move EFFECT_ALWAYS_HIT,         80, FAIRY,         SPECIAL,  100, 20,   0      ;AURA_SPHERE
+	move EFFECT_ALWAYS_HIT,         80, FIGHTING,      SPECIAL,  100, 20,   0      ;AURA_SPHERE
 	move EFFECT_NORMAL_HIT,         80, FAIRY,         SPECIAL,  100, 10,   0      ;DAZZLING_GLEAM
 	move EFFECT_ALWAYS_HIT,         40, FAIRY,         SPECIAL,  100, 15,   0      ;DISARM_VOICE
 	move EFFECT_LEECH_HIT,          50, FAIRY,         SPECIAL,  100, 10,   0      ;DRAIN_KISS
