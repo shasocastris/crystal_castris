@@ -67,6 +67,7 @@ AmbipomEvosAttacks:
 
 AnnihilapeEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, SHADOW_CLAW
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 9, KARATE_CHOP
@@ -268,13 +269,12 @@ SirfetchdEvosAttacks:
 	dbw 25, SLASH
 	dbw 33, SWORDS_DANCE
 	dbw 38, PROTECT
-	dbw 43, NIGHT_SLASH
-	dbw 50, IRON_HEAD
-	dbw 55, CROSS_CHOP
-	dbw 60, AGILITY
-	dbw 65, FOCUS_BLAST
-	dbw 72, HYPER_BEAM
-	dbw 80, BRAVE_BIRD
+	dbw 43, IRON_HEAD
+	dbw 50, CROSS_CHOP
+	dbw 55, AGILITY
+	dbw 60, FOCUS_BLAST
+	dbw 65, HYPER_BEAM
+	dbw 72, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 TangrowthEvosAttacks:

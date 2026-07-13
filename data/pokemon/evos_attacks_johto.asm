@@ -956,7 +956,6 @@ SlowkingEvosAttacks:
 	dbw 48, AMNESIA
 	dbw 53, ZEN_HEADBUTT
 	dbw 60, PSYCHIC_M
-	dbw 70, EXTRASENSORY
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
