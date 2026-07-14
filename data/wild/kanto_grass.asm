@@ -957,29 +957,29 @@ KantoGrassWildMons:
 	def_grass_wildmons CERULEAN_CAVE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 59, CROBAT
-	dbw 60, GOLEM
-	dbw 60, MACHAMP
-	dbw 62, STEELIX
-	dbw 61, NIDOKING
-	dbw 63, TYRANITAR
-	dbw 63, TYRANITAR
+	dbw 59, AMBIPOM
+	dbw 60, ELECTIVIRE
+	dbw 60, MAGNEZONE
+	dbw 62, SIRFETCH_D
+	dbw 61, ANNIHILAPE
+	dbw 63, TANGROWTH
+	dbw 63, WYRDEER
 	; day
-	dbw 59, CROBAT
-	dbw 60, GOLEM
-	dbw 60, ALAKAZAM
-	dbw 62, STEELIX
-	dbw 61, NIDOQUEEN
-	dbw 63, TYRANITAR
-	dbw 63, TYRANITAR
+	dbw 59, YANMEGA
+	dbw 60, LICKILICKY
+	dbw 60, DUDUNSPARC
+	dbw 62, PORYGON_Z
+	dbw 61, TOGEKISS
+	dbw 63, LEAFEON
+	dbw 63, FARIGIRAF
 	; nite
-	dbw 59, CROBAT
-	dbw 60, GENGAR
-	dbw 60, ALAKAZAM
-	dbw 60, URSARING
-	dbw 62, URSARING
-	dbw 62, TYRANITAR
-	dbw 62, TYRANITAR
+	dbw 59, HONCHKROW
+	dbw 60, SYLVEON
+	dbw 60, ELECTIVIRE
+	dbw 60, MAGNEZONE
+	dbw 62, WYRDEER
+	dbw 62, FARIGIRAF
+	dbw 62, ANNIHILAPE
 	end_grass_wildmons
 
 	def_grass_wildmons SAFARI_ZONE

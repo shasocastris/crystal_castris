@@ -1073,15 +1073,15 @@ JohtoGrassWildMons:
 	dbw 74, URSARING
 	dbw 72, GOLEM
 	dbw 75, RHYDON
-	dbw 75, SANDSLASH
+	dbw 75, RHYPERIOR
 	dbw 25, LARVITAR
 	dbw 50, PUPITAR
 	; day
 	dbw 73, GOLEM
 	dbw 74, STEELIX
 	dbw 72, SANDSLASH
-	dbw 75, URSARING
-	dbw 75, GOLEM
+	dbw 75, URSALUNA
+	dbw 75, GLISCOR
 	dbw 25, LARVITAR
 	dbw 50, PUPITAR
 	; nite
@@ -1098,14 +1098,14 @@ JohtoGrassWildMons:
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 76, MAGCARGO
-	dbw 77, MAGMAR
+	dbw 77, MAGMORTAR
 	dbw 77, GOLEM
 	dbw 79, HOUNDOOM
 	dbw 76, WEEZING
 	dbw 78, FLAREON
 	dbw 78, FLAREON
 	; day
-	dbw 76, MAGMAR
+	dbw 76, MAGMORTAR
 	dbw 77, MAGCARGO
 	dbw 77, WEEZING
 	dbw 79, GOLEM
@@ -1117,7 +1117,7 @@ JohtoGrassWildMons:
 	dbw 77, GOLEM
 	dbw 77, MAGCARGO
 	dbw 79, WEEZING
-	dbw 75, MAGMAR
+	dbw 75, MAGMORTAR
 	dbw 79, FLAREON
 	dbw 79, FLAREON
 	end_grass_wildmons
@@ -1146,8 +1146,8 @@ JohtoGrassWildMons:
 	dbw 81, KADABRA
 	dbw 81, CROBAT
 	dbw 83, VAPOREON
-	dbw 80, MISDREAVUS
-	dbw 80, MISDREAVUS
+	dbw 80, MISMAGIUS
+	dbw 80, MISMAGIUS
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ITEM_ROOMS ; no weather
@@ -1157,51 +1157,51 @@ JohtoGrassWildMons:
 	dbw 81, PARASECT
 	dbw 85, MISDREAVUS
 	dbw 81, CROBAT
-	dbw 83, PARASECT
-	dbw 85, MISDREAVUS
-	dbw 87, MISDREAVUS
+	dbw 83, TANGROWTH
+	dbw 85, MISMAGIUS
+	dbw 87, MISMAGIUS
 	; day
 	dbw 83, CROBAT
 	dbw 81, PARASECT
 	dbw 85, MISDREAVUS
 	dbw 81, CROBAT
-	dbw 83, PARASECT
-	dbw 85, MISDREAVUS
-	dbw 87, MISDREAVUS
+	dbw 83, TANGROWTH
+	dbw 85, MISMAGIUS
+	dbw 87, MISMAGIUS
 	; nite
 	dbw 83, CROBAT
 	dbw 81, PARASECT
 	dbw 85, MISDREAVUS
 	dbw 81, CROBAT
-	dbw 83, PARASECT
-	dbw 85, MISDREAVUS
-	dbw 87, MISDREAVUS
+	dbw 83, TANGROWTH
+	dbw 85, MISMAGIUS
+	dbw 87, MISMAGIUS
 	end_grass_wildmons
 
 	def_grass_wildmons SILVER_CAVE_ROOM_3  ; weather: hail
 	db 40 percent, 40 percent, 40 percent ; encounter rates: morn/day/nite
 	; morn
-	dbw 88, PILOSWINE
+	dbw 88, MAMOSWINE
 	dbw 86, JYNX
-	dbw 87, DELIBIRD
+	dbw 87, GLACEON
 	dbw 88, CLOYSTER
-	dbw 89, SNEASEL
+	dbw 89, WEAVILE
 	dbw 87, TYRANITAR
 	dbw 90, TYRANITAR
 	; day
 	dbw 88, JYNX
 	dbw 86, CLOYSTER
-	dbw 87, PILOSWINE
-	dbw 88, DELIBIRD
-	dbw 89, SNEASEL
-	dbw 87, TYRANITAR
-	dbw 90, TYRANITAR
+	dbw 87, MAMOSWINE
+	dbw 88, WEAVILE
+	dbw 89, TYRANITAR
+	dbw 87, GLACEON
+	dbw 90, GLACEON
 	; nite
-	dbw 88, SNEASEL
+	dbw 88, WEAVILE
 	dbw 86, JYNX
-	dbw 87, TYRANITAR
+	dbw 87, GLACEON
 	dbw 88, CLOYSTER
-	dbw 89, PILOSWINE
+	dbw 89, MAMOSWINE
 	dbw 87, DELIBIRD
 	dbw 90, DELIBIRD
 	end_grass_wildmons
