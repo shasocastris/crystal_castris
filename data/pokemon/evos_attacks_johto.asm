@@ -521,12 +521,13 @@ LanturnEvosAttacks:
 PichuEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
 	db 0 ; no more evolutions
-	dbw 1, THUNDERSHOCK
 	dbw 1, CHARM
-	dbw 6, LEER
-	dbw 8, THUNDER_WAVE
-	dbw 11, SWEET_KISS
-	dbw 16, THUNDERPUNCH
+	dbw 1, THUNDERSHOCK
+	dbw 4, LEER
+	dbw 6, QUICK_ATTACK
+	dbw 9, THUNDER_WAVE
+	dbw 14, THUNDERPUNCH
+	dbw 16, SWEET_KISS
 	db 0 ; no more level-up moves
 
 CleffaEvosAttacks:
@@ -534,40 +535,49 @@ CleffaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, CHARM
-	dbw 4, ENCORE
-	dbw 8, SING
-	dbw 13, SWEET_KISS
-	dbw 18, MEGA_PUNCH
+	dbw 4, DISARM_VOICE
+	dbw 6, ENCORE
+	dbw 9, COMET_PUNCH
+	dbw 13, SING
+	dbw 16, MEGA_PUNCH
+	dbw 18, SWEET_KISS
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
 	db 0 ; no more evolutions
-	dbw 1, SING
+	dbw 1, SCRATCH
 	dbw 1, CHARM
-	dbw 4, DEFENSE_CURL
-	dbw 9, SCRATCH
-	dbw 14, SWEET_KISS
-	dbw 18, MEGA_PUNCH
+	dbw 4, DISARM_VOICE
+	dbw 6, SING
+	dbw 9, COMET_PUNCH
+	dbw 13, DEFENSE_CURL
+	dbw 16, MEGA_PUNCH
+	dbw 18, SWEET_KISS
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
 	db 0 ; no more evolutions
-	dbw 1, FURY_STRIKES
 	dbw 1, CHARM
-	dbw 4, GUST
-	dbw 7, METRONOME
-	dbw 13, MOONLIGHT
-	dbw 18, SWEET_KISS
-	dbw 22, DISABLE
-	dbw 25, ENCORE
-	dbw 28, MOONBLAST
+	dbw 1, FURY_STRIKES
+	dbw 4, METRONOME
+	dbw 6, GUST
+	dbw 9, MOONLIGHT
+	dbw 11, DISARM_VOICE
+	dbw 14, SWEET_KISS
+	dbw 17, POWDER_SNOW
+	dbw 20, DISABLE
+	dbw 23, SWIFT
+	dbw 26, ENCORE
+	dbw 28, AIR_SLASH
 	dbw 31, SAFEGUARD
-	dbw 34, MIMIC
-	dbw 38, GROWTH
-	dbw 41, MINIMIZE
-	dbw 45, GIGA_DRAIN
+	dbw 34, GIGA_DRAIN
+	dbw 37, MIMIC
+	dbw 40, DAZZLING_GLEAM
+	dbw 42, GROWTH
+	dbw 44, MOONBLAST
+	dbw 45, MINIMIZE
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
@@ -578,16 +588,19 @@ TogeticEvosAttacks:
 	dbw 1, CHARM
 	dbw 4, GUST
 	dbw 7, METRONOME
+	dbw 10, DISARM_VOICE
 	dbw 13, MOONLIGHT
-	dbw 18, SWEET_KISS
-	dbw 22, DOUBLE_EDGE
-	dbw 25, ENCORE
-	dbw 28, MOONBLAST
-	dbw 31, SAFEGUARD
-	dbw 34, HEADBUTT
-	dbw 38, GROWTH
-	dbw 41, ANCIENTPOWER
-	dbw 45, GIGA_DRAIN
+	dbw 17, ANCIENTPOWER
+	dbw 20, SWEET_KISS
+	dbw 24, HEADBUTT
+	dbw 28, ENCORE
+	dbw 32, AIR_SLASH
+	dbw 36, SAFEGUARD
+	dbw 40, DAZZLING_GLEAM
+	dbw 44, GROWTH
+	dbw 48, GIGA_DRAIN
+	dbw 52, MOONBLAST
+	dbw 56, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
