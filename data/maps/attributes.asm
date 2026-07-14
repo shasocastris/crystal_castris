@@ -139,7 +139,7 @@ ENDM
 	connection south, Route43, ROUTE_43, 5
 
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH | WEST
-	connection south, Route45, ROUTE_45, 0
+	connection south, Route45, ROUTE_45, -2
 	connection west, Route44, ROUTE_44, 9
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, EAST
@@ -226,7 +226,7 @@ ENDM
 	connection east, BlackthornCity, BLACKTHORN_CITY, -9
 
 	map_attributes Route45, ROUTE_45, $71, NORTH | WEST
-	connection north, BlackthornCity, BLACKTHORN_CITY, 0
+	connection north, BlackthornCity, BLACKTHORN_CITY, 2
 	connection west, Route46, ROUTE_46, 37
 
 	map_attributes Route46, ROUTE_46, $05, SOUTH | EAST
