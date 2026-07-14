@@ -606,32 +606,34 @@ TogeticEvosAttacks:
 NatuEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, XATU
 	db 0 ; no more evolutions
-	dbw 1, PECK
 	dbw 1, LEER
+	dbw 1, PECK
 	dbw 5, QUICK_ATTACK
-	dbw 10, NIGHT_SHADE
-	dbw 15, FAINT_ATTACK
-	dbw 20, TELEPORT
-	dbw 25, HAZE
-	dbw 30, FUTURE_SIGHT
-	dbw 35, STEEL_WING
-	dbw 40, CONFUSE_RAY
-	dbw 45, DRILL_PECK
-	dbw 50, PSYCHIC_M
+	dbw 9, NIGHT_SHADE
+	dbw 13, TELEPORT
+	dbw 17, FAINT_ATTACK
+	dbw 21, FUTURE_SIGHT
+	dbw 25, CONFUSE_RAY
+	dbw 29, STEEL_WING
+	dbw 33, HAZE
+	dbw 37, AIR_SLASH
+	dbw 41, DRILL_PECK
+	dbw 45, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 XatuEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, PECK
 	dbw 1, LEER
+	dbw 1, PECK
 	dbw 5, QUICK_ATTACK
-	dbw 10, NIGHT_SHADE
-	dbw 15, FAINT_ATTACK
-	dbw 20, TELEPORT
-	dbw 25, HAZE
-	dbw 32, FUTURE_SIGHT
+	dbw 9, NIGHT_SHADE
+	dbw 13, TELEPORT
+	dbw 17, FAINT_ATTACK
+	dbw 21, CONFUSE_RAY
+	dbw 26, FUTURE_SIGHT
+	dbw 32, HAZE
 	dbw 38, STEEL_WING
-	dbw 45, CONFUSE_RAY
+	dbw 44, AIR_SLASH
 	dbw 52, DRILL_PECK
 	dbw 60, PSYCHIC_M
 	db 0 ; no more level-up moves
@@ -641,14 +643,15 @@ MareepEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, GROWL
-	dbw 9, THUNDERSHOCK
-	dbw 13, SCREECH
-	dbw 16, THUNDER_WAVE
-	dbw 20, SAFEGUARD
-	dbw 27, BODY_SLAM
-	dbw 30, LIGHT_SCREEN
-	dbw 34, THUNDERBOLT
-	dbw 37, THUNDER
+	dbw 5, THUNDERSHOCK
+	dbw 9, SCREECH
+	dbw 13, BODY_SLAM
+	dbw 17, THUNDER_WAVE
+	dbw 21, THUNDERBOLT
+	dbw 25, SAFEGUARD
+	dbw 29, THUNDER
+	dbw 33, LIGHT_SCREEN
+	dbw 37, ZAP_CANNON
 	dbw 41, REFLECT
 	db 0 ; no more level-up moves
 
@@ -659,12 +662,13 @@ FlaaffyEvosAttacks:
 	dbw 1, GROWL
 	dbw 9, THUNDERSHOCK
 	dbw 13, SCREECH
-	dbw 18, THUNDER_WAVE
-	dbw 22, SAFEGUARD
-	dbw 32, BODY_SLAM
-	dbw 36, LIGHT_SCREEN
-	dbw 40, THUNDERBOLT
-	dbw 45, THUNDER
+	dbw 18, BODY_SLAM
+	dbw 22, THUNDER_WAVE
+	dbw 27, THUNDERBOLT
+	dbw 32, SAFEGUARD
+	dbw 38, THUNDER
+	dbw 44, LIGHT_SCREEN
+	dbw 48, ZAP_CANNON
 	dbw 51, REFLECT
 	db 0 ; no more level-up moves
 
@@ -675,13 +679,14 @@ AmpharosEvosAttacks:
 	dbw 1, GROWL
 	dbw 9, THUNDERSHOCK
 	dbw 13, SCREECH
-	dbw 18, THUNDER_WAVE
-	dbw 22, SAFEGUARD
+	dbw 18, BODY_SLAM
+	dbw 22, THUNDER_WAVE
 	dbw 29, THUNDERPUNCH
-	dbw 36, BODY_SLAM
-	dbw 42, LIGHT_SCREEN
-	dbw 49, THUNDERBOLT
+	dbw 36, SAFEGUARD
+	dbw 42, THUNDERBOLT
+	dbw 49, LIGHT_SCREEN
 	dbw 57, THUNDER
+	dbw 62, ZAP_CANNON
 	dbw 65, REFLECT
 	db 0 ; no more level-up moves
 
@@ -747,8 +752,9 @@ SudowoodoEvosAttacks:
 	dbw 33, COUNTER
 	dbw 41, FAINT_ATTACK
 	dbw 49, SLAM
-	dbw 57, DOUBLE_EDGE
-	dbw 65, SELFDESTRUCT
+	dbw 57, STONE_EDGE
+	dbw 63, DOUBLE_EDGE
+	dbw 70, SELFDESTRUCT
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -762,7 +768,8 @@ PolitoedEvosAttacks:
 	dbw 35, BODY_SLAM
 	dbw 39, AQUA_JET
 	dbw 45, PERISH_SONG
-	dbw 51, SWAGGER
+	dbw 51, HYPER_VOICE
+	dbw 57, SWAGGER
 	dbw 66, HYDRO_PUMP
 	dbw 75, RAIN_DANCE
 	db 0 ; no more level-up moves
