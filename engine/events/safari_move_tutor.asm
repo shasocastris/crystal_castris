@@ -1,26 +1,26 @@
-; engine/events/pcny_move_tutor.asm
+; engine/events/safari_move_tutor.asm
 ;
-; The PCNY Event Move Tutor: an evolution-line-gated tutor. The player picks a
-; Pokemon; if that species has a PCNY move (see PCNYTutorMoves) AND every member
+; The Safari Zone Move Tutor: an evolution-line-gated tutor. The player picks a
+; Pokemon; if that species has a tutor move (see SafariZoneMoveTutorMoves) AND every member
 ; of its evolutionary line has been caught (see PokemonEvoLines), the move is
 ; taught for free. Composes existing party-menu / teach-move infrastructure.
 ;
-; PCNYMoveTutor returns a result code in wScriptVar for the calling script:
+; SafariZoneMoveTutor returns a result code in wScriptVar for the calling script:
 ;   0 (FALSE) taught the move
-;   1         chosen species has no PCNY move
+;   1         chosen species has no tutor move
 ;   2         evolutionary line not fully caught yet
 ;   3         the mon already knows the move
 ;   4         couldn't learn it (no room / declined)
 ;   5         player cancelled the selection
 
-DEF PCNY_TAUGHT          EQU 0
-DEF PCNY_NO_MOVE         EQU 1
-DEF PCNY_LINE_INCOMPLETE EQU 2
-DEF PCNY_ALREADY_KNOWS   EQU 3
-DEF PCNY_NO_ROOM         EQU 4
-DEF PCNY_CANCEL          EQU 5
+DEF SAFARI_TUTOR_TAUGHT          EQU 0
+DEF SAFARI_TUTOR_NO_MOVE         EQU 1
+DEF SAFARI_TUTOR_LINE_INCOMPLETE EQU 2
+DEF SAFARI_TUTOR_ALREADY_KNOWS   EQU 3
+DEF SAFARI_TUTOR_NO_ROOM         EQU 4
+DEF SAFARI_TUTOR_CANCEL          EQU 5
 
-PCNYMoveTutor:
+SafariZoneMoveTutor:
 	; Run everything in one menu submenu (FadeToMenu..CloseSubmenu) so the party
 	; picker and LearnMove's move-forget UI render in the menu layer instead of
 	; under the overworld map/sprites.
@@ -53,7 +53,7 @@ PCNYMoveTutor:
 	call IsAPokemon
 	jr c, .no_move
 
-	call GetPCNYMoveForSpecies ; carry = found; de = move index; b = LINE_* id
+	call GetSafariZoneMoveTutorMove ; carry = found; de = move index; b = LINE_* id
 	jr nc, .no_move
 
 	push de ; save move index
@@ -88,43 +88,43 @@ PCNYMoveTutor:
 
 	ld c, HAPPINESS_LEARNMOVE
 	farcall ChangeHappiness
-	ld a, PCNY_TAUGHT
+	ld a, SAFARI_TUTOR_TAUGHT
 	jr .done
 
 .already_knows:
-	ld a, PCNY_ALREADY_KNOWS
+	ld a, SAFARI_TUTOR_ALREADY_KNOWS
 	jr .done
 
 .no_room:
-	ld a, PCNY_NO_ROOM
+	ld a, SAFARI_TUTOR_NO_ROOM
 	jr .done
 
 .no_move:
-	ld a, PCNY_NO_MOVE
+	ld a, SAFARI_TUTOR_NO_MOVE
 	jr .done
 
 .line_incomplete:
-	ld a, PCNY_LINE_INCOMPLETE
+	ld a, SAFARI_TUTOR_LINE_INCOMPLETE
 	jr .done
 
 .cancel:
-	ld a, PCNY_CANCEL
+	ld a, SAFARI_TUTOR_CANCEL
 .done:
 	ld [wScriptVar], a
 	jmp CloseSubmenu
 
-; Look up the chosen mon's species in PCNYTutorMoves.
+; Look up the chosen mon's species in SafariZoneMoveTutorMoves.
 ; wCurPartySpecies holds an 8-bit runtime ID; the table is keyed by 16-bit
 ; species index, so convert first, then match.
 ; Row format: dw species index, dw move index, db LINE_* id (5 bytes).
 ; Output: carry set if found -> de = move index, b = LINE_* id.
-;         carry clear if the species has no PCNY move.
-GetPCNYMoveForSpecies:
+;         carry clear if the species has no tutor move.
+GetSafariZoneMoveTutorMove:
 	ld a, [wCurPartySpecies]
 	call GetPokemonIndexFromID ; hl = 16-bit species index
 	ld d, h
 	ld e, l ; de = target species index
-	ld hl, PCNYTutorMoves
+	ld hl, SafariZoneMoveTutorMoves
 .loop:
 	ld a, [hli]
 	ld c, a ; row species low
@@ -247,4 +247,4 @@ CheckLineCaughtFlag:
 	ret
 
 INCLUDE "data/pokemon/evo_lines.asm"
-INCLUDE "data/pokemon/pcny_tutor_moves.asm"
+INCLUDE "data/pokemon/safari_move_tutor_moves.asm"

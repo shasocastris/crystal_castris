@@ -128,7 +128,7 @@ SpecialsPointers::
 	add_special Reset ; bank 0
 	add_special MoveTutor
 	add_special MoveTutorNoCheck
-	add_special PCNYMoveTutor
+	add_special SafariZoneMoveTutor
 	add_special OmanyteChamber
 	add_special BattleTowerAction
 	add_special DisplayUnownWords

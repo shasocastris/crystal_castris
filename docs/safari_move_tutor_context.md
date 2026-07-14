@@ -1,7 +1,7 @@
-# PCNY Event Move Tutor — Design Context for Crystal Eclipse
+# Safari Zone Move Tutor — Design Context for Crystal Eclipse
 
 This document summarizes design decisions made in a planning conversation for a new
-feature: an evolution-line-gated move tutor that teaches the "PCNY event" movepool
+feature: an evolution-line-gated move tutor that teaches the event-distribution movepool
 (moves historically distributed on real-world Pokémon Center New York event
 Pokémon — see [Bulbapedia's list](https://bulbapedia.bulbagarden.net/wiki/List_of_PCNY_event_Pok%C3%A9mon_distributions_in_Generation_II))
 to the matching species in Crystal Eclipse.
@@ -9,13 +9,13 @@ to the matching species in Crystal Eclipse.
 Project background: Crystal Eclipse is a pokécrystal disassembly ROM hack, RGBDS-flavored
 SM83 assembly, MBC3 mapper. See project knowledge for full project context (type
 completion boosts, physical/special split, custom moves, etc.) — this doc covers only
-the PCNY tutor feature.
+the Safari Zone tutor feature.
 
 ---
 
 ## 1. Feature summary
 
-A tutor NPC teaches a curated, **one-move-per-species** list of PCNY event moves.
+A tutor NPC teaches a curated, **one-move-per-species** list of event-distribution moves.
 A move for a given species is only offered once **every member of that species'
 full evolutionary line** (including branches) has been marked caught in the Pokédex.
 
@@ -46,10 +46,10 @@ This is species-first, not move-first, and there is no move-selection menu becau
 species has exactly one candidate move.
 
 ```
-PCNYMoveTutorScript:
+SafariZoneMainOfficeMoveTutorScript:
     faceplayer
     opentext
-    writetext PCNYTutorIntroText
+    writetext SafariZoneMainOfficeMoveTutorIntroText
     yesorno
     iffalse .Refused
 
@@ -57,22 +57,22 @@ PCNYMoveTutorScript:
     jr c, .Cancelled
     ; wCurPartySpecies now set
 
-    callasm GetPCNYMoveForSpecies     ; table lookup by species -> move id in wScriptVar, or -1
+    callasm GetSafariZoneMoveTutorMove     ; table lookup by species -> move id in wScriptVar, or -1
     ld a, [wScriptVar]
     cp -1
-    jr z, .NothingForThisMon          ; this species has no PCNY move defined
+    jr z, .NothingForThisMon          ; this species has no tutor move defined
 
     callasm CheckLineFullyCaught_ForCurSpecies   ; see §4/§5
     iffalse .LineIncomplete            ; "come back once you've caught the whole family" text
 
     loadmoveindex ...                  ; move id from the lookup above
-    writetext PCNYTutorMoveText
+    writetext SafariZoneMainOfficeMoveTutorMoveText
     special MoveTutor
     ifequal FALSE, .TeachMove
     sjump .Incompatible
 ```
 
-Key point: a player with no PCNY-eligible species in their party/boxes never sees any
+Key point: a player with no tutor-eligible species in their party/boxes never sees any
 move-related screen at all — `ChooseMonToLearnTMHM` runs first, so there's nothing to
 build a list against until a specific mon is chosen.
 
@@ -86,7 +86,7 @@ A `LINE_*` → species-list lookup, formatted like the existing `PokemonTypeList
 convention (`table_width 3`, `db LINE_id : dw pointer`, each pointer leading to a
 `dw`-terminated `-1`-sentinel species list).
 
-Scoped to only the ~85 evolutionary lines that actually contain a PCNY-listed species
+Scoped to only the ~85 evolutionary lines that actually contain a tutor-listed species
 (not the full Pokédex) — see the file for the complete table and inline comments.
 
 **Branching-line design decision (as specified):** branches require **every** branch
@@ -106,9 +106,9 @@ member caught, not just the ancestor chain to the target species. This affects:
   inferred as still-present rather than directly confirmed in the searched excerpts —
   low risk, but worth a glance at `evos_attacks_kanto.asm` directly.
 
-### 4b. `PCNYTutorMoves` table — **needs to be authored**, single-row-per-species
+### 4b. `SafariZoneMoveTutorMoves` table — **needs to be authored**, single-row-per-species
 
-Originally scoped as multi-row (all Bulbapedia PCNY entries per species), but per the
+Originally scoped as multi-row (all Bulbapedia entries per species), but per the
 finalized single-move-per-species design, this needs a **curation pass**: for any
 species with more than one candidate move in the source list, only one is kept.
 
@@ -139,7 +139,7 @@ the line containing that species, pulled from the table in §4a.
 
 ### 4c. Supporting routines — **need to be written**
 
-- `GetPCNYMoveForSpecies`: linear scan of `PCNYTutorMoves` for `wCurPartySpecies`,
+- `GetSafariZoneMoveTutorMove`: linear scan of `SafariZoneMoveTutorMoves` for `wCurPartySpecies`,
   returns move id (or `-1`) via `wScriptVar`.
 - `CheckLineFullyCaught` (or a per-call variant `CheckLineFullyCaught_ForCurSpecies`):
   walks a `PokemonEvoLines` species list through `CheckPokedexCaughtFlag`, sets
@@ -209,7 +209,7 @@ Still needed:
   for gating tutor availability (e.g. post-game unlock condition, if any is desired
   beyond per-move line-completion)
 - `std_scripts.asm` — check for an existing reusable NPC-interaction pattern before
-  hand-writing `PCNYMoveTutorScript` from scratch
+  hand-writing `SafariZoneMainOfficeMoveTutorScript` from scratch
 
 ---
 
@@ -224,8 +224,8 @@ Still needed:
    gated, item-cost gated like Kurt's tutor) beyond per-move line-completion — not yet
    decided, current design assumes the tutor is simply available and each move's
    availability is governed purely by dex-completion state.
-5. Write `GetPCNYMoveForSpecies` and `CheckLineFullyCaught` per the pseudocode in §3/§4c.
-6. Write the actual NPC script (`PCNYMoveTutorScript` per §3) and its dialogue text,
+5. Write `GetSafariZoneMoveTutorMove` and `CheckLineFullyCaught` per the pseudocode in §3/§4c.
+6. Write the actual NPC script (`SafariZoneMainOfficeMoveTutorScript` per §3) and its dialogue text,
    respecting the project's 18-character dialogue line limit convention.
 
 ---

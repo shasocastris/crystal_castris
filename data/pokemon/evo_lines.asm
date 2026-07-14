@@ -1,6 +1,6 @@
 ; data/pokemon/evo_lines.asm
 ;
-; Evolution-line groupings used to gate the PCNY Event Move Tutor: a tutor
+; Evolution-line groupings used to gate the Safari Zone Move Tutor: a tutor
 ; move for a given species only unlocks once every member of that species'
 ; full evolutionary line (including branches) has been caught in the dex.
 ;
@@ -8,13 +8,13 @@
 ;   PokemonEvoLines is a LINE_* -> pointer table, each pointer leads to a
 ;   dw-terminated (-1) species list consumed by CheckLineFullyCaught.
 ;
-; Scope: only lines that actually have a row in data/pokemon/pcny_tutor_moves.asm
-; are included. Species with no PCNY tutor move (legendaries, Magikarp, Togepi,
+; Scope: only lines that actually have a row in data/pokemon/safari_move_tutor_moves.asm
+; are included. Species with no tutor move (legendaries, Magikarp, Togepi,
 ; Mareep, Sunkern, etc.) are intentionally omitted — they'd be dead data.
 ;
 ; NOTE ON BRANCHES: branching lines (Poliwag, Eevee, Tyrogue, Oddish/Bellossom)
 ; require catching every branch, not just the direct ancestor chain to the
-; PCNY target species. See the "branching lines" design note from our move
+; tutor target species. See the "branching lines" design note from our move
 ; tutor discussion — flip this per-line to a subset list instead if you'd
 ; rather not require the full branching tree for lines like Eevee.
 
