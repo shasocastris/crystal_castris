@@ -99,8 +99,9 @@ SafariZoneOfficeSignText:
 	line "here…"
 
 	para "SAFARI ZONE OFFICE"
-	line "is closed until"
-	cont "further notice."
+	line "is now lab space"
+	cont "studying #MON"
+	cont "evolution."
 	done
 
 WardensHomeSignText:
