@@ -1007,13 +1007,14 @@ SlowkingEvosAttacks:
 	dbw 20, CONFUSION
 	dbw 25, FUTURE_SIGHT
 	dbw 29, DISABLE
-	dbw 32, BELLY_DRUM
-	dbw 34, HEADBUTT
+	dbw 32, HEADBUTT
+	dbw 35, BELLY_DRUM
 	dbw 38, SCALD
 	dbw 43, SWAGGER
-	dbw 48, AMNESIA
-	dbw 53, ZEN_HEADBUTT
-	dbw 60, PSYCHIC_M
+	dbw 48, ZEN_HEADBUTT
+	dbw 53, AMNESIA
+	dbw 58, DAZZLING_GLEAM
+	dbw 62, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
@@ -1022,13 +1023,16 @@ MisdreavusEvosAttacks:
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
 	dbw 6, SPITE
-	dbw 12, CONFUSE_RAY
-	dbw 16, SCREECH
-	dbw 19, MEAN_LOOK
-	dbw 23, DESTINY_BOND
-	dbw 27, PSYBEAM
-	dbw 31, SHADOW_BALL
-	dbw 36, PAIN_SPLIT
+	dbw 9, PSYBEAM
+	dbw 13, CONFUSE_RAY
+	dbw 16, SHADOW_BALL
+	dbw 19, SCREECH
+	dbw 23, DAZZLING_GLEAM
+	dbw 27, MEAN_LOOK
+	dbw 31, DARK_PULSE
+	dbw 35, DESTINY_BOND
+	dbw 39, PSYCHIC_M
+	dbw 43, PAIN_SPLIT
 	dbw 46, PERISH_SONG
 	db 0 ; no more level-up moves
 
@@ -1080,6 +1084,7 @@ PinecoEvosAttacks:
 	dbw 19, SWIFT
 	dbw 22, RAPID_SPIN
 	dbw 25, REFLECT
+	dbw 29, IRON_HEAD
 	dbw 33, FLAIL
 	dbw 43, SPIKES
 	dbw 50, DOUBLE_EDGE
@@ -1095,6 +1100,7 @@ ForretressEvosAttacks:
 	dbw 19, SWIFT
 	dbw 22, RAPID_SPIN
 	dbw 25, REFLECT
+	dbw 30, IRON_HEAD
 	dbw 34, FLAIL
 	dbw 49, SPIKES
 	dbw 59, DOUBLE_EDGE
@@ -1107,8 +1113,8 @@ DunsparceEvosAttacks:
 	dbw 5, DEFENSE_CURL
 	dbw 9, MUD_SLAP
 	dbw 13, GLARE
-	dbw 18, SPITE
-	dbw 22, ANCIENTPOWER
+	dbw 18, ANCIENTPOWER
+	dbw 22, SPITE
 	dbw 26, PURSUIT
 	dbw 28, BITE
 	dbw 30, SCREECH
@@ -1129,7 +1135,8 @@ GligarEvosAttacks:
 	dbw 28, FAINT_ATTACK
 	dbw 32, COUNTER
 	dbw 36, SLASH
-	dbw 44, SCREECH
+	dbw 40, SCREECH
+	dbw 44, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
@@ -1146,12 +1153,14 @@ SteelixEvosAttacks:
 	dbw 22, SANDSTORM
 	dbw 25, SLAM
 	dbw 30, ROCK_SLIDE
-	dbw 33, DRAGONBREATH
+	dbw 34, DRAGONBREATH
 	dbw 38, CURSE
-	dbw 41, IRON_TAIL
-	dbw 46, CRUNCH
-	dbw 49, BODY_SLAM
-	dbw 54, SKULL_BASH
+	dbw 42, IRON_HEAD
+	dbw 46, IRON_TAIL
+	dbw 50, CRUNCH
+	dbw 54, EARTHQUAKE
+	dbw 58, BODY_SLAM
+	dbw 62, SKULL_BASH
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
