@@ -38,6 +38,7 @@ ElectivireEvosAttacks:
 	dbw 41, THUNDERBOLT
 	dbw 49, CROSS_CHOP
 	dbw 57, THUNDER
+	dbw 65, WILD_CHARGE
 	db 0 ; no more level-up moves
 
 MagmortarEvosAttacks:
@@ -47,10 +48,11 @@ MagmortarEvosAttacks:
 	dbw 13, SLUDGE
 	dbw 19, FIRE_PUNCH
 	dbw 25, SMOKESCREEN
-	dbw 33, SUNNY_DAY
-	dbw 41, FLAMETHROWER
+	dbw 33, FLAMETHROWER
+	dbw 41, SUNNY_DAY
 	dbw 49, CROSS_CHOP
 	dbw 57, FIRE_BLAST
+	dbw 65, FOCUS_BLAST
 	db 0 ; no more level-up moves
 
 AmbipomEvosAttacks:
@@ -85,9 +87,11 @@ HonchkrowEvosAttacks:
 	dbw 9, WING_ATTACK
 	dbw 17, FAINT_ATTACK
 	dbw 25, SWAGGER
-	dbw 33, MEAN_LOOK
-	dbw 41, PURSUIT
-	dbw 57, HYPER_BEAM
+	dbw 33, PURSUIT
+	dbw 41, MEAN_LOOK
+	dbw 49, DARK_PULSE
+	dbw 57, BRAVE_BIRD
+	dbw 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LeafeonEvosAttacks:
@@ -99,6 +103,7 @@ LeafeonEvosAttacks:
 	dbw 25, SWIFT
 	dbw 33, LEECH_SEED
 	dbw 41, GIGA_DRAIN
+	dbw 44, SEED_BOMB
 	dbw 49, SYNTHESIS
 	dbw 57, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -113,6 +118,7 @@ LickilickyEvosAttacks:
 	dbw 36, SCREECH
 	dbw 44, ROLLOUT
 	dbw 52, SLAM
+	dbw 55, POWER_WHIP
 	dbw 58, BODY_SLAM
 	db 0 ; no more level-up moves
 
@@ -122,10 +128,12 @@ MamoswineEvosAttacks:
 	dbw 1, POWDER_SNOW
 	dbw 10, MIST
 	dbw 20, ICY_WIND
-	dbw 30, FURY_STRIKES
-	dbw 40, TAKE_DOWN
+	dbw 30, ICE_SHARD
+	dbw 35, FURY_STRIKES
+	dbw 42, TAKE_DOWN
 	dbw 50, EARTHQUAKE
 	dbw 60, BLIZZARD
+	dbw 65, STONE_EDGE
 	db 0 ; no more level-up moves
 
 MismagiusEvosAttacks:
@@ -133,12 +141,15 @@ MismagiusEvosAttacks:
 	dbw 1, GROWL
 	dbw 1, PSYWAVE
 	dbw 9, SPITE
-	dbw 17, CONFUSION
-	dbw 25, MEAN_LOOK
+	dbw 15, CONFUSION
+	dbw 21, MEAN_LOOK
+	dbw 27, SHADOW_BALL
 	dbw 33, SCREECH
-	dbw 41, PERISH_SONG
-	dbw 49, DESTINY_BOND
-	dbw 57, SHADOW_BALL
+	dbw 39, DAZZLING_GLEAM
+	dbw 45, PERISH_SONG
+	dbw 49, DARK_PULSE
+	dbw 53, DESTINY_BOND
+	dbw 57, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 RhyperiorEvosAttacks:
@@ -163,6 +174,7 @@ SylveonEvosAttacks:
 	dbw 25, QUICK_ATTACK
 	dbw 33, PSYCH_UP
 	dbw 41, PSYCHIC_M
+	dbw 44, DAZZLING_GLEAM
 	dbw 49, BARRIER
 	dbw 57, MOONBLAST
 	db 0 ; no more level-up moves
@@ -172,12 +184,14 @@ TogekissEvosAttacks:
 	dbw 1, FURY_STRIKES
 	dbw 1, GROWL
 	dbw 9, ENCORE
-	dbw 17, SAFEGUARD
-	dbw 25, ANCIENTPOWER
-	dbw 33, SWIFT
-	dbw 41, WING_ATTACK
-	dbw 49, EXTREMESPEED
-	dbw 57, HYPER_BEAM
+	dbw 16, SWIFT
+	dbw 23, SAFEGUARD
+	dbw 30, ANCIENTPOWER
+	dbw 37, AIR_SLASH
+	dbw 44, DAZZLING_GLEAM
+	dbw 51, EXTREMESPEED
+	dbw 55, MOONBLAST
+	dbw 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 WeavileEvosAttacks:
@@ -188,7 +202,9 @@ WeavileEvosAttacks:
 	dbw 17, FAINT_ATTACK
 	dbw 25, ICY_WIND
 	dbw 33, SLASH
+	dbw 41, ICE_SHARD
 	dbw 49, SCREECH
+	dbw 53, CRUNCH
 	dbw 57, BLIZZARD
 	db 0 ; no more level-up moves
 
@@ -197,12 +213,13 @@ YanmegaEvosAttacks:
 	dbw 1, GUST
 	dbw 1, FORESIGHT
 	dbw 9, QUICK_ATTACK
-	dbw 17, WING_ATTACK
+	dbw 17, AIR_SLASH
 	dbw 25, PROTECT
 	dbw 33, ANCIENTPOWER
-	dbw 41, SCREECH
-	dbw 49, SWIFT
-	dbw 57, HYPER_BEAM
+	dbw 41, BUG_BUZZ
+	dbw 49, SCREECH
+	dbw 57, SWIFT
+	dbw 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 GlaceonEvosAttacks:
@@ -224,11 +241,13 @@ GliscorEvosAttacks:
 	dbw 1, LEER
 	dbw 9, MUD_SLAP
 	dbw 17, FURY_CUTTER
-	dbw 25, SLASH
-	dbw 33, SCARY_FACE
+	dbw 25, SCARY_FACE
+	dbw 33, AERIAL_ACE
 	dbw 41, EARTHQUAKE
-	dbw 49, SWORDS_DANCE
-	dbw 57, HYPER_BEAM
+	dbw 49, SLASH
+	dbw 55, SWORDS_DANCE
+	dbw 60, STONE_EDGE
+	dbw 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 MagnezoneEvosAttacks:
@@ -256,8 +275,10 @@ PorygonZEvosAttacks:
 	dbw 25, RECOVER
 	dbw 33, THUNDER
 	dbw 41, PSYCHIC_M
+	dbw 45, DARK_PULSE
 	dbw 49, DOUBLE_TEAM
-	dbw 57, HYPER_BEAM
+	dbw 57, FLASH_CANNON
+	dbw 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 SirfetchdEvosAttacks:
@@ -284,10 +305,11 @@ TangrowthEvosAttacks:
 	dbw 9, MEGA_DRAIN
 	dbw 17, SLAM
 	dbw 25, SLEEP_POWDER
-	dbw 33, STUN_SPORE
-	dbw 41, GIGA_DRAIN
+	dbw 33, GIGA_DRAIN
+	dbw 41, STUN_SPORE
 	dbw 49, LEECH_SEED
 	dbw 57, SOLARBEAM
+	dbw 65, POWER_WHIP
 	db 0 ; no more level-up moves
 
 WyrdeerEvosAttacks:
@@ -300,7 +322,7 @@ WyrdeerEvosAttacks:
 	dbw 33, CONFUSION
 	dbw 41, PSYCHIC_M
 	dbw 49, AGILITY
-	dbw 57, HYPER_BEAM
+	dbw 57, MEGAHORN
 	db 0 ; no more level-up moves
 
 FarigirafEvosAttacks:
