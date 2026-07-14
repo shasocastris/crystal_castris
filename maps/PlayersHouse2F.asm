@@ -188,6 +188,8 @@ if DEF(_DEBUG)
 ;	givepokemove SUDDEN_CHILL, wPartyMon5, 3
 	givepoke FARIGIRAF, 50, METAL_POWDER
 	givepokemove TELEPORT,  wPartyMon6, 1
+	givepoke PICHU, 5
+	givepoke PIKACHU, 15
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
