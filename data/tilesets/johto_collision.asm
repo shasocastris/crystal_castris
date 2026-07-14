@@ -156,9 +156,17 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 9b
 	tilecoll WALL, WALL, WARP_SURF_LEFT, WATER ; 9c
 	tilecoll WARP_SURF_LEFT, WATER, WARP_SURF_LEFT, WATER ; 9d
-	tilecoll WATER, WARP_SURF_RIGHT, WATER, WARP_SURF_RIGHT ; 9e
-	tilecoll WALL, WALL, WATER, WARP_SURF_RIGHT ; 9f
-	tilecoll WALL, WALL, WALL, WALL ; 9c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9f
+	tilecoll WARP_SURF_RIGHT, WATER, WARP_SURF_RIGHT, WATER ; 9e
+	tilecoll WALL, WALL, WARP_SURF_RIGHT, WATER ; 9f
+	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; a0
+	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; a1
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; a2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a3
+	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; a4
+	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; a5
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; a6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll WALL, WALL, WALL, WALL ; a8
+	tilecoll WALL, WALL, WALL, WALL ; a9
+	tilecoll WALL, WALL, WALL, WALL ; aa
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ab

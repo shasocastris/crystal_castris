@@ -189,7 +189,7 @@ ENDM
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
-	map_const ROUTE_45,                                    10, 48 ;  8
+	map_const ROUTE_45,                                    12, 48 ;  8
 	map_const ROUTE_46,                                    10, 18 ;  9
 	map_const BLACKTHORN_CITY,                             20, 18 ; 10
 	map_const BLACKTHORN_RANGER_STATION,                    5,  4 ; 11
