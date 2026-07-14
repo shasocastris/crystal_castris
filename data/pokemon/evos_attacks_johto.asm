@@ -108,18 +108,20 @@ ChikoritaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, GROWL
-	dbw 6, RAZOR_LEAF
-	dbw 9, CONSTRICT
-	dbw 12, REFLECT
-	dbw 15, POISONPOWDER
-	dbw 18, FLAIL
-	dbw 22, SYNTHESIS
-	dbw 26, LEECH_SEED
-	dbw 29, BODY_SLAM
-	dbw 33, COUNTER
-	dbw 36, LIGHT_SCREEN
-	dbw 40, ANCIENTPOWER
-	dbw 43, SAFEGUARD
+	dbw 4, RAZOR_LEAF
+	dbw 7, REFLECT
+	dbw 10, CONSTRICT
+	dbw 13, POISONPOWDER
+	dbw 16, FLAIL
+	dbw 19, SYNTHESIS
+	dbw 22, ANCIENTPOWER
+	dbw 25, LEECH_SEED
+	dbw 28, BODY_SLAM
+	dbw 31, SEED_BOMB
+	dbw 34, LIGHT_SCREEN
+	dbw 37, COUNTER
+	dbw 40, SAFEGUARD
+	dbw 43, ENERGY_BALL
 	dbw 46, SWORDS_DANCE
 	dbw 50, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -129,20 +131,22 @@ BayleefEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, GROWL
-	dbw 6, RAZOR_LEAF
-	dbw 9, CONSTRICT
-	dbw 12, REFLECT
-	dbw 15, POISONPOWDER
-	dbw 19, FLAIL
-	dbw 23, SYNTHESIS
+	dbw 4, RAZOR_LEAF
+	dbw 7, REFLECT
+	dbw 10, CONSTRICT
+	dbw 13, POISONPOWDER
+	dbw 16, FLAIL
+	dbw 19, SYNTHESIS
+	dbw 23, ANCIENTPOWER
 	dbw 27, LEECH_SEED
 	dbw 31, BODY_SLAM
-	dbw 34, COUNTER
+	dbw 35, SEED_BOMB
 	dbw 39, LIGHT_SCREEN
-	dbw 44, ANCIENTPOWER
+	dbw 43, COUNTER
 	dbw 47, SAFEGUARD
-	dbw 51, SWORDS_DANCE
-	dbw 55, SOLARBEAM
+	dbw 51, ENERGY_BALL
+	dbw 55, SWORDS_DANCE
+	dbw 59, SOLARBEAM
 	db 0 ; no more level-up moves
 
 MeganiumEvosAttacks:
@@ -150,21 +154,23 @@ MeganiumEvosAttacks:
 	dbw LEARN_EVO_MOVE, PETAL_DANCE
 	dbw 1, SCRATCH
 	dbw 1, GROWL
-	dbw 6, RAZOR_LEAF
-	dbw 9, CONSTRICT
-	dbw 12, REFLECT
-	dbw 15, POISONPOWDER
-	dbw 19, FLAIL
-	dbw 23, SYNTHESIS
+	dbw 4, RAZOR_LEAF
+	dbw 7, REFLECT
+	dbw 10, CONSTRICT
+	dbw 13, POISONPOWDER
+	dbw 16, FLAIL
+	dbw 19, SYNTHESIS
+	dbw 23, ANCIENTPOWER
 	dbw 27, LEECH_SEED
 	dbw 31, BODY_SLAM
-	dbw 34, COUNTER
-	dbw 35, PETAL_DANCE
-	dbw 41, LIGHT_SCREEN
-	dbw 46, ANCIENTPOWER
-	dbw 51, SAFEGUARD
-	dbw 56, SWORDS_DANCE
-	dbw 61, SOLARBEAM
+	dbw 35, SEED_BOMB
+	dbw 39, LIGHT_SCREEN
+	dbw 43, COUNTER
+	dbw 47, SAFEGUARD
+	dbw 51, ENERGY_BALL
+	dbw 56, PETAL_DANCE
+	dbw 61, SWORDS_DANCE
+	dbw 66, SOLARBEAM
 	db 0 ; no more level-up moves
 
 CyndaquilEvosAttacks:
@@ -183,6 +189,7 @@ CyndaquilEvosAttacks:
 	dbw 36, SWIFT
 	dbw 41, SUBMISSION
 	dbw 46, FLAMETHROWER
+	dbw 50, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 QuilavaEvosAttacks:
@@ -201,6 +208,7 @@ QuilavaEvosAttacks:
 	dbw 42, SWIFT
 	dbw 48, SUBMISSION
 	dbw 54, FLAMETHROWER
+	dbw 60, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TyphlosionEvosAttacks:
@@ -220,6 +228,7 @@ TyphlosionEvosAttacks:
 	dbw 45, SWIFT
 	dbw 53, SUBMISSION
 	dbw 60, FLAMETHROWER
+	dbw 68, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TotodileEvosAttacks:
@@ -232,12 +241,14 @@ TotodileEvosAttacks:
 	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 20, BITE
-	dbw 23, THRASH
-	dbw 27, SCARY_FACE
-	dbw 31, CRUNCH
-	dbw 35, SLASH
-	dbw 39, ROCK_SLIDE
+	dbw 23, SCARY_FACE
+	dbw 27, THRASH
+	dbw 30, WATERFALL
+	dbw 33, CRUNCH
+	dbw 36, SLASH
+	dbw 40, ROCK_SLIDE
 	dbw 43, SCREECH
+	dbw 47, CRABHAMMER
 	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -251,12 +262,15 @@ CroconawEvosAttacks:
 	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 21, BITE
-	dbw 24, THRASH
-	dbw 28, SCARY_FACE
-	dbw 32, SLASH
-	dbw 41, ROCK_SLIDE
-	dbw 45, SCREECH
-	dbw 55, HYDRO_PUMP
+	dbw 24, SCARY_FACE
+	dbw 28, THRASH
+	dbw 32, WATERFALL
+	dbw 36, CRUNCH
+	dbw 40, SLASH
+	dbw 44, ROCK_SLIDE
+	dbw 48, SCREECH
+	dbw 53, CRABHAMMER
+	dbw 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 FeraligatrEvosAttacks:
@@ -269,13 +283,15 @@ FeraligatrEvosAttacks:
 	dbw 13, RAGE
 	dbw 17, ANCIENTPOWER
 	dbw 21, BITE
-	dbw 24, THRASH
-	dbw 28, SCARY_FACE
-	dbw 32, SLASH
-	dbw 35, CRUNCH
-	dbw 42, ROCK_SLIDE
-	dbw 47, SCREECH
-	dbw 58, HYDRO_PUMP
+	dbw 24, SCARY_FACE
+	dbw 29, THRASH
+	dbw 34, WATERFALL
+	dbw 38, CRUNCH
+	dbw 42, SLASH
+	dbw 47, ROCK_SLIDE
+	dbw 52, SCREECH
+	dbw 57, CRABHAMMER
+	dbw 62, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
