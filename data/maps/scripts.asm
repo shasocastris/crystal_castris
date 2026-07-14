@@ -340,7 +340,6 @@ INCLUDE "maps/BlackthornMart.asm"
 INCLUDE "maps/BlackthornPokecenter1F.asm"
 INCLUDE "maps/MoveDeletersHouse.asm"
 INCLUDE "maps/FuchsiaMart.asm"
-INCLUDE "maps/SafariZoneMainOffice.asm"
 INCLUDE "maps/BillsOlderSistersHouse.asm"
 INCLUDE "maps/FuchsiaPokecenter1F.asm"
 INCLUDE "maps/FuchsiaPokecenter2FBeta.asm"
@@ -530,5 +529,6 @@ SECTION "Map Scripts 29", ROMX
 
 INCLUDE "maps/PewterMuseum1F.asm"
 INCLUDE "maps/PewterMuseum2F.asm"
+INCLUDE "maps/SafariZoneMainOffice.asm"
 
 ENDSECTION
