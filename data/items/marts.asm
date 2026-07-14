@@ -318,13 +318,14 @@ MartCeladon4F:
 	dw SURF_MAIL
 
 MartCeladon5F1:
-	db 6 ; # items
+	db 7 ; # items
 	dw HP_UP
 	dw PROTEIN
 	dw IRON
 	dw CARBOS
 	dw CALCIUM
 	dw ZINC
+	dw PP_UP
 
 MartCeladon5F2:
 	db 8 ; # items
