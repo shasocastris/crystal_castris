@@ -779,21 +779,23 @@ HoppipEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 1, ABSORB
-	dbw 5, SYNTHESIS
-	dbw 5, LEER
-	dbw 8, ENCORE
-	dbw 10, SCRATCH
-	dbw 13, POISONPOWDER
-	dbw 13, STUN_SPORE
-	dbw 15, SPORE
-	dbw 17, CONFUSION
-	dbw 20, MEGA_DRAIN
-	dbw 22, LEECH_SEED
-	dbw 25, SAFEGUARD
-	dbw 30, PAY_DAY
-	dbw 34, REFLECT
-	dbw 37, AMNESIA
-	dbw 40, GIGA_DRAIN
+	dbw 4, LEER
+	dbw 6, SYNTHESIS
+	dbw 8, SCRATCH
+	dbw 11, POISONPOWDER
+	dbw 14, CONFUSION
+	dbw 16, STUN_SPORE
+	dbw 19, MEGA_DRAIN
+	dbw 22, ENCORE
+	dbw 25, PAY_DAY
+	dbw 28, SPORE
+	dbw 31, AIR_SLASH
+	dbw 34, LEECH_SEED
+	dbw 37, GIGA_DRAIN
+	dbw 40, SAFEGUARD
+	dbw 43, ENERGY_BALL
+	dbw 46, REFLECT
+	dbw 49, AMNESIA
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -801,42 +803,46 @@ SkiploomEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 1, ABSORB
-	dbw 5, SYNTHESIS
-	dbw 5, LEER
-	dbw 8, ENCORE
-	dbw 10, SCRATCH
-	dbw 13, POISONPOWDER
-	dbw 13, STUN_SPORE
-	dbw 15, SPORE
-	dbw 17, CONFUSION
-	dbw 22, MEGA_DRAIN
-	dbw 26, LEECH_SEED
-	dbw 29, SAFEGUARD
-	dbw 36, PAY_DAY
-	dbw 41, REFLECT
-	dbw 46, AMNESIA
-	dbw 51, GIGA_DRAIN
+	dbw 4, LEER
+	dbw 6, SYNTHESIS
+	dbw 8, SCRATCH
+	dbw 11, POISONPOWDER
+	dbw 14, CONFUSION
+	dbw 17, STUN_SPORE
+	dbw 20, MEGA_DRAIN
+	dbw 23, ENCORE
+	dbw 27, PAY_DAY
+	dbw 31, SPORE
+	dbw 35, AIR_SLASH
+	dbw 39, LEECH_SEED
+	dbw 43, GIGA_DRAIN
+	dbw 47, SAFEGUARD
+	dbw 51, ENERGY_BALL
+	dbw 55, REFLECT
+	dbw 59, AMNESIA
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SPLASH
 	dbw 1, ABSORB
-	dbw 5, SYNTHESIS
-	dbw 5, LEER
-	dbw 8, ENCORE
-	dbw 10, SCRATCH
-	dbw 13, POISONPOWDER
-	dbw 13, STUN_SPORE
-	dbw 15, SPORE
-	dbw 17, CONFUSION
-	dbw 22, MEGA_DRAIN
-	dbw 26, LEECH_SEED
-	dbw 33, SAFEGUARD
-	dbw 40, PAY_DAY
-	dbw 44, REFLECT
-	dbw 49, AMNESIA
-	dbw 54, GIGA_DRAIN
+	dbw 4, LEER
+	dbw 6, SYNTHESIS
+	dbw 8, SCRATCH
+	dbw 11, POISONPOWDER
+	dbw 14, CONFUSION
+	dbw 17, STUN_SPORE
+	dbw 20, MEGA_DRAIN
+	dbw 24, ENCORE
+	dbw 28, PAY_DAY
+	dbw 33, SPORE
+	dbw 38, AIR_SLASH
+	dbw 43, LEECH_SEED
+	dbw 48, GIGA_DRAIN
+	dbw 53, SAFEGUARD
+	dbw 58, ENERGY_BALL
+	dbw 63, REFLECT
+	dbw 68, AMNESIA
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
@@ -853,9 +859,8 @@ AipomEvosAttacks:
 	dbw 23, SLAM
 	dbw 27, SWIFT
 	dbw 31, SPITE
-	dbw 36, SCREECH
-	dbw 46, AGILITY
-	dbw 50, FAINT_ATTACK
+	dbw 36, FAINT_ATTACK
+	dbw 44, AGILITY
 	db 0 ; no more level-up moves
 
 SunkernEvosAttacks:
@@ -892,14 +897,15 @@ YanmaEvosAttacks:
 	dbw 7, QUICK_ATTACK
 	dbw 10, LEECH_LIFE
 	dbw 13, DOUBLE_TEAM
-	dbw 16, ROAR
-	dbw 19, SONICBOOM
+	dbw 16, SONICBOOM
+	dbw 19, ROAR
 	dbw 22, REVERSAL
 	dbw 25, PROTECT
 	dbw 28, ANCIENTPOWER
 	dbw 31, SUPERSONIC
-	dbw 37, WING_ATTACK
-	dbw 43, SCREECH
+	dbw 34, WING_ATTACK
+	dbw 37, SCREECH
+	dbw 40, BUG_BUZZ
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -907,29 +913,31 @@ WooperEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WATER_GUN
 	dbw 1, LEER
-	dbw 11, SLAM
-	dbw 16, SAFEGUARD
-	dbw 21, AMNESIA
-	dbw 26, BODY_SLAM
-	dbw 31, EARTHQUAKE
-	dbw 36, ANCIENTPOWER
-	dbw 41, RAIN_DANCE
-	dbw 51, MIST
-	dbw 51, HAZE
+	dbw 7, SLAM
+	dbw 12, SAFEGUARD
+	dbw 17, BODY_SLAM
+	dbw 22, AMNESIA
+	dbw 27, WATERFALL
+	dbw 31, RAIN_DANCE
+	dbw 35, EARTHQUAKE
+	dbw 39, MIST
+	dbw 43, ANCIENTPOWER
+	dbw 47, HAZE
 	db 0 ; no more level-up moves
 
 QuagsireEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WATER_GUN
 	dbw 1, LEER
-	dbw 11, SLAM
-	dbw 16, SAFEGUARD
+	dbw 7, SLAM
+	dbw 12, SAFEGUARD
+	dbw 17, BODY_SLAM
 	dbw 23, AMNESIA
-	dbw 29, BODY_SLAM
-	dbw 35, EARTHQUAKE
-	dbw 41, ANCIENTPOWER
-	dbw 47, RAIN_DANCE
-	dbw 59, MIST
+	dbw 29, WATERFALL
+	dbw 35, RAIN_DANCE
+	dbw 41, EARTHQUAKE
+	dbw 47, MIST
+	dbw 53, ANCIENTPOWER
 	dbw 59, HAZE
 	db 0 ; no more level-up moves
 
@@ -949,6 +957,7 @@ EspeonEvosAttacks:
 	dbw 42, PSYCH_UP
 	dbw 47, PSYCHIC_M
 	dbw 52, MORNING_SUN
+	dbw 58, DAZZLING_GLEAM
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -961,12 +970,14 @@ UmbreonEvosAttacks:
 	dbw 20, FLAIL
 	dbw 23, QUICK_ATTACK
 	dbw 27, CHARM
-	dbw 30, CONFUSE_RAY
-	dbw 33, FAINT_ATTACK
-	dbw 36, MOONBLAST
-	dbw 42, MEAN_LOOK
-	dbw 47, SCREECH
-	dbw 52, MOONLIGHT
+	dbw 31, FAINT_ATTACK
+	dbw 35, CONFUSE_RAY
+	dbw 39, MOONBLAST
+	dbw 43, MEAN_LOOK
+	dbw 47, SHADOW_CLAW
+	dbw 51, SCREECH
+	dbw 55, DARK_PULSE
+	dbw 59, MOONLIGHT
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
