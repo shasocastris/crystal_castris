@@ -1567,6 +1567,7 @@ PhanpyEvosAttacks:
 	dbw 33, ROLLOUT
 	dbw 37, BODY_SLAM
 	dbw 41, ENDURE
+	dbw 45, EARTHQUAKE
 	dbw 49, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -1595,10 +1596,12 @@ Porygon2EvosAttacks:
 	dbw 9, AGILITY
 	dbw 12, PSYBEAM
 	dbw 20, RECOVER
-	dbw 24, DEFENSE_CURL
-	dbw 32, LOCK_ON
-	dbw 36, TRI_ATTACK
-	dbw 44, ZAP_CANNON
+	dbw 24, TRI_ATTACK
+	dbw 28, LOCK_ON
+	dbw 32, ZAP_CANNON
+	dbw 36, DEFENSE_CURL
+	dbw 45, DARK_PULSE
+	dbw 60, FLASH_CANNON
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:
@@ -1612,17 +1615,17 @@ StantlerEvosAttacks:
 	dbw 13, STOMP
 	dbw 16, MUD_SLAP
 	dbw 21, PSYBEAM
-	dbw 23, TAKE_DOWN
-	dbw 27, CONFUSE_RAY
+	dbw 23, CONFUSE_RAY
+	dbw 27, TAKE_DOWN
 	dbw 31, PSYCH_UP
-	dbw 35, LIGHT_SCREEN
-	dbw 39, DOUBLE_KICK
-	dbw 43, REFLECT
-	dbw 49, DISABLE
-	dbw 53, PSYCHIC_M
-	dbw 58, DOUBLE_EDGE
-	dbw 64, SWAGGER
-	dbw 70, THRASH
+	dbw 35, DOUBLE_KICK
+	dbw 39, LIGHT_SCREEN
+	dbw 43, PSYCHIC_M
+	dbw 49, REFLECT
+	dbw 53, DOUBLE_EDGE
+	dbw 58, DISABLE
+	dbw 64, THRASH
+	dbw 70, SWAGGER
 	dbw 75, MEGAHORN
 	db 0 ; no more level-up moves
 
@@ -1657,15 +1660,14 @@ HitmontopEvosAttacks:
 	dbw LEARN_EVO_MOVE, ROLLING_KICK
 	dbw 1, ROLLING_KICK
 	dbw 7, FOCUS_ENERGY
-	dbw 13, PURSUIT
 	dbw 10, RAPID_SPIN
+	dbw 13, PURSUIT
 	dbw 19, QUICK_ATTACK
 	dbw 22, MACH_PUNCH
-	dbw 25, RAPID_SPIN
-	dbw 28, HI_JUMP_KICK
-	dbw 31, COUNTER
-	dbw 34, LOCK_ON
-	dbw 37, AGILITY
+	dbw 25, LOCK_ON
+	dbw 28, COUNTER
+	dbw 31, AGILITY
+	dbw 37, HI_JUMP_KICK
 	dbw 43, PROTECT
 	db 0 ; no more level-up moves
 
@@ -1676,6 +1678,7 @@ SmoochumEvosAttacks:
 	dbw 1, LICK
 	dbw 9, SWEET_KISS
 	dbw 13, POWDER_SNOW
+	dbw 17, ICE_SHARD
 	dbw 21, CONFUSION
 	dbw 25, SING
 	dbw 33, MEAN_LOOK
@@ -1691,6 +1694,7 @@ ElekidEvosAttacks:
 	dbw 1, LEER
 	dbw 9, THUNDERPUNCH
 	dbw 17, LIGHT_SCREEN
+	dbw 21, BULLET_PUNCH
 	dbw 25, SWIFT
 	dbw 33, SCREECH
 	dbw 41, THUNDERBOLT
@@ -1703,22 +1707,23 @@ MagbyEvosAttacks:
 	dbw 1, EMBER
 	dbw 7, LEER
 	dbw 13, SLUDGE
+	dbw 15, DRAIN_PUNCH
 	dbw 19, FIRE_PUNCH
 	dbw 25, SMOKESCREEN
-	dbw 31, SUNNY_DAY
-	dbw 37, FLAMETHROWER
-	dbw 43, CONFUSE_RAY
-	dbw 49, FIRE_BLAST
+	dbw 31, FLAMETHROWER
+	dbw 37, SUNNY_DAY
+	dbw 43, FIRE_BLAST
+	dbw 49, CONFUSE_RAY
 	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 3, GROWL
-	dbw 5, DEFENSE_CURL
-	dbw 11, STOMP
-	dbw 14, NOURISHMENT
-	dbw 17, SEISMIC_TOSS
+	dbw 7, STOMP
+	dbw 11, DEFENSE_CURL
+	dbw 14, SEISMIC_TOSS
+	dbw 17, NOURISHMENT
 	dbw 21, ROLLOUT
 	dbw 25, PRESENT
 	dbw 29, REVERSAL
@@ -1734,17 +1739,19 @@ BlisseyEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 5, GROWL
 	dbw 9, LEER
-	dbw 13, NOURISHMENT
-	dbw 17, FURY_STRIKES
-	dbw 23, MINIMIZE
-	dbw 29, SING
-	dbw 32, PRESENT
-	dbw 35, BODY_SLAM
-	dbw 38, METRONOME
-	dbw 41, DEFENSE_CURL
-	dbw 45, HEAL_BELL
-	dbw 49, LIGHT_SCREEN
-	dbw 57, DOUBLE_EDGE
+	dbw 13, FURY_STRIKES
+	dbw 18, NOURISHMENT
+	dbw 23, PRESENT
+	dbw 28, MINIMIZE
+	dbw 33, BODY_SLAM
+	dbw 38, SING
+	dbw 43, ICE_BEAM
+	dbw 48, METRONOME
+	dbw 53, DOUBLE_EDGE
+	dbw 58, DEFENSE_CURL
+	dbw 63, AURA_SPHERE
+	dbw 68, HEAL_BELL
+	dbw 73, LIGHT_SCREEN
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:
@@ -1888,6 +1895,7 @@ CelebiEvosAttacks:
 	dbw 10, SAFEGUARD
 	dbw 20, ANCIENTPOWER
 	dbw 30, FUTURE_SIGHT
+	dbw 35, ENERGY_BALL
 	dbw 40, BATON_PASS
 	dbw 50, PERISH_SONG
 	db 0 ; no more level-up moves
