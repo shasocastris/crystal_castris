@@ -33,6 +33,7 @@ ElectivireEvosAttacks:
 	dbw 1, LEER
 	dbw 9, THUNDERPUNCH
 	dbw 17, LIGHT_SCREEN
+	dbw 21, BULLET_PUNCH
 	dbw 25, SWIFT
 	dbw 33, SCREECH
 	dbw 41, THUNDERBOLT
@@ -46,6 +47,7 @@ MagmortarEvosAttacks:
 	dbw 1, EMBER
 	dbw 7, LEER
 	dbw 13, SLUDGE
+	dbw 16, DRAIN_PUNCH
 	dbw 19, FIRE_PUNCH
 	dbw 25, SMOKESCREEN
 	dbw 33, FLAMETHROWER
@@ -73,11 +75,13 @@ AnnihilapeEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 9, KARATE_CHOP
+	dbw 17, MACH_PUNCH
 	dbw 25, SEISMIC_TOSS
-	dbw 33, RAGE
-	dbw 41, CROSS_CHOP
-	dbw 49, SUBMISSION
-	dbw 57, NIGHT_SHADE
+	dbw 33, DRAIN_PUNCH
+	dbw 41, RAGE
+	dbw 49, CROSS_CHOP
+	dbw 57, SUBMISSION
+	dbw 65, NIGHT_SHADE
 	db 0 ; no more level-up moves
 
 HonchkrowEvosAttacks:

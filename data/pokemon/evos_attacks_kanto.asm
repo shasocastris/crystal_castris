@@ -2325,11 +2325,11 @@ TangelaEvosAttacks:
 	dbw 19, VINE_WHIP
 	dbw 22, FLAIL
 	dbw 25, BIND
-	dbw 50, AMNESIA
 	dbw 31, MEGA_DRAIN
 	dbw 34, STUN_SPORE
 	dbw 40, SLAM
 	dbw 46, GROWTH
+	dbw 50, AMNESIA
 	db 0 ; no more level-up moves
 
 KangaskhanEvosAttacks:
@@ -2493,6 +2493,7 @@ JynxEvosAttacks:
 	dbw 13, POWDER_SNOW
 	dbw 17, MEDITATE
 	dbw 21, HAIL
+	dbw 23, ICE_SHARD
 	dbw 25, ICE_PUNCH
 	dbw 30, PSYBEAM
 	dbw 35, MEAN_LOOK
@@ -2510,6 +2511,7 @@ ElectabuzzEvosAttacks:
 	dbw 9, THUNDERPUNCH
 	dbw 13, KARATE_CHOP
 	dbw 17, LIGHT_SCREEN
+	dbw 19, BULLET_PUNCH
 	dbw 21, BARRIER
 	dbw 25, SWIFT
 	dbw 30, ROLLING_KICK
@@ -2527,6 +2529,7 @@ MagmarEvosAttacks:
 	dbw 7, LEER
 	dbw 13, FIRE_SPIN
 	dbw 16, KARATE_CHOP
+	dbw 17, DRAIN_PUNCH
 	dbw 19, FIRE_PUNCH
 	dbw 22, MEGA_PUNCH
 	dbw 25, SMOKESCREEN
@@ -2800,7 +2803,7 @@ AerodactylEvosAttacks:
 	dbw 15, BITE
 	dbw 19, PURSUIT
 	dbw 22, SUPERSONIC
-	dbw 85, FORESIGHT
+	dbw 25, FORESIGHT
 	dbw 29, ANCIENTPOWER
 	dbw 33, ROCK_SLIDE
 	dbw 36, SCARY_FACE
