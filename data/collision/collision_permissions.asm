@@ -116,13 +116,13 @@ CollisionPermissionTable::
 	db LAND_TILE         ; COLL_WARP_CARPET_DOWN
 	db LAND_TILE         ; COLL_DOOR
 	db LAND_TILE         ; COLL_LADDER
-	db LAND_TILE         ; COLL_STAIRCASE_73
+	db WATER_TILE        ; COLL_WARP_SURF_DOWN
 	db LAND_TILE         ; COLL_CAVE_74
-	db LAND_TILE         ; COLL_DOOR_75
+	db WATER_TILE        ; COLL_WARP_SURF_LEFT
 	db LAND_TILE         ; COLL_WARP_CARPET_LEFT
-	db LAND_TILE         ; COLL_WARP_77
+	db WATER_TILE        ; COLL_WARP_SURF_UP
 	db LAND_TILE         ; COLL_WARP_CARPET_UP
-	db LAND_TILE         ; COLL_DOOR_79
+	db WATER_TILE        ; COLL_WARP_SURF_RIGHT
 	db LAND_TILE         ; COLL_STAIRCASE
 	db LAND_TILE         ; COLL_CAVE
 	db LAND_TILE         ; COLL_WARP_PANEL

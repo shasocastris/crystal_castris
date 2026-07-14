@@ -1905,7 +1905,8 @@ wFacingDirection:: db
 wWalkingX:: db
 wWalkingY:: db
 wWalkingTileCollision:: db
-	ds 6
+wWarpedWhileSurfing:: db
+	ds 5
 wPlayerTurningDirection:: db
 
 NEXTU

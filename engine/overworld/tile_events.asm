@@ -27,6 +27,14 @@ CheckDirectionalWarp::
 	jr z, .directional
 	cp COLL_WARP_CARPET_RIGHT
 	jr z, .directional
+	cp COLL_WARP_SURF_DOWN
+	jr z, .directional
+	cp COLL_WARP_SURF_LEFT
+	jr z, .directional
+	cp COLL_WARP_SURF_UP
+	jr z, .directional
+	cp COLL_WARP_SURF_RIGHT
+	jr z, .directional
 	scf
 	ret
 
@@ -42,13 +50,13 @@ CheckWarpFacingDown:
 
 .blocks
 	db COLL_DOOR
-	db COLL_DOOR_79
+	db COLL_WARP_SURF_RIGHT
 	db COLL_STAIRCASE
-	db COLL_STAIRCASE_73
+	db COLL_WARP_SURF_DOWN
 	db COLL_CAVE
 	db COLL_CAVE_74
 	db COLL_WARP_PANEL
-	db COLL_DOOR_75
+	db COLL_WARP_SURF_LEFT
 	db COLL_DOOR_7D
 	db -1
 

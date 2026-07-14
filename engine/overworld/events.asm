@@ -1008,7 +1008,18 @@ InvalidEventScript:
 WarpToNewMapScript:
 	warpsound
 	newloadmap MAPSETUP_DOOR
+	callasm MaybeRestoreSurfState
 	end
+
+MaybeRestoreSurfState:
+	ld a, [wWarpedWhileSurfing]
+	and a
+	ret z                        ; not a surf warp, do nothing
+	xor a
+	ld [wWarpedWhileSurfing], a  ; clear the flag immediately
+	ld a, [wSurfingPlayerState]  ; PLAYER_SURF or PLAYER_SURF_PIKA, set when surf started
+	ld [wPlayerState], a
+	jmp UpdatePlayerSprite       ; update sprite to surfing form, then ret via jp
 
 FallIntoMapScript:
 	newloadmap MAPSETUP_FALL

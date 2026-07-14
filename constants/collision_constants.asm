@@ -66,13 +66,13 @@ DEF COLL_PIT_68            EQU $68 ; unused
 DEF COLL_WARP_CARPET_DOWN  EQU $70
 DEF COLL_DOOR              EQU $71
 DEF COLL_LADDER            EQU $72
-DEF COLL_STAIRCASE_73      EQU $73 ; unused
+DEF COLL_WARP_SURF_DOWN    EQU $73  ; NEW: directional water warp, facing down
 DEF COLL_CAVE_74           EQU $74 ; unused
-DEF COLL_DOOR_75           EQU $75 ; unused
+DEF COLL_WARP_SURF_LEFT    EQU $75  ; NEW: directional water warp, facing left
 DEF COLL_WARP_CARPET_LEFT  EQU $76
-DEF COLL_WARP_77           EQU $77 ; unused
+DEF COLL_WARP_SURF_UP      EQU $77  ; NEW: directional water warp, facing up
 DEF COLL_WARP_CARPET_UP    EQU $78
-DEF COLL_DOOR_79           EQU $79 ; unused
+DEF COLL_WARP_SURF_RIGHT   EQU $79  ; NEW: directional water warp, facing right
 DEF COLL_STAIRCASE         EQU $7a
 DEF COLL_CAVE              EQU $7b
 DEF COLL_WARP_PANEL        EQU $7c

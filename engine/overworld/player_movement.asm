@@ -85,6 +85,8 @@ endc
 	ret c
 	call .CheckTurning
 	ret c
+	call .CheckWarp   ; ADD THIS
+	ret c
 	call .TrySurf
 	ret c
 	jr .NotMoving
@@ -220,8 +222,6 @@ endc
 .warps
 	ld a, c
 	cp COLL_DOOR
-	jr z, .down
-	cp COLL_DOOR_79
 	jr z, .down
 	cp COLL_STAIRCASE
 	jr z, .down
@@ -442,8 +442,32 @@ endc
 	add hl, de
 	ld a, [wPlayerTileCollision]
 	cp [hl]
+	jr z, .matched_edge_warp
+	ld hl, .EdgeWarpsSurf
+	add hl, de
+	ld a, [wPlayerTileCollision]
+	cp [hl]
 	jr nz, .not_warp
 
+.matched_edge_warp
+	; Set flag based on tile type only — no second write needed
+	ld a, [wPlayerTileCollision]
+	cp COLL_WARP_SURF_DOWN
+	jr z, .set_surf_warp_flag
+	cp COLL_WARP_SURF_UP
+	jr z, .set_surf_warp_flag
+	cp COLL_WARP_SURF_LEFT
+	jr z, .set_surf_warp_flag
+	cp COLL_WARP_SURF_RIGHT
+	jr nz, .clear_surf_warp_flag
+.set_surf_warp_flag
+	ld a, TRUE
+	ld [wWarpedWhileSurfing], a
+	jr .check_warp_direction
+.clear_surf_warp_flag
+	xor a
+	ld [wWarpedWhileSurfing], a
+.check_warp_direction
 	ld a, TRUE
 	ld [wWalkingIntoEdgeWarp], a
 	ld a, [wWalkingDirection]
@@ -472,6 +496,12 @@ endc
 	db COLL_WARP_CARPET_UP
 	db COLL_WARP_CARPET_LEFT
 	db COLL_WARP_CARPET_RIGHT
+
+.EdgeWarpsSurf:
+	db COLL_WARP_SURF_DOWN
+	db COLL_WARP_SURF_UP
+	db COLL_WARP_SURF_LEFT
+	db COLL_WARP_SURF_RIGHT
 
 .DoStep:
 	ld e, a

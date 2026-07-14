@@ -9,6 +9,9 @@ BlackthornPass_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
+	warp_event  4,  5, ROUTE_45, 2
+	warp_event  4,  6, ROUTE_45, 3
+	warp_event  4,  7, ROUTE_45, 4
 
 	def_coord_events
 

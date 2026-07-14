@@ -177,7 +177,7 @@ CheckStandingOnEntrance::
 	ld a, [wPlayerTileCollision]
 	cp COLL_DOOR
 	ret z
-	cp COLL_DOOR_79
+	cp COLL_WARP_SURF_RIGHT
 	ret z
 	cp COLL_STAIRCASE
 	ret z
