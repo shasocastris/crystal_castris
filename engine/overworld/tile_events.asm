@@ -50,14 +50,13 @@ CheckWarpFacingDown:
 
 .blocks
 	db COLL_DOOR
-	db COLL_WARP_SURF_RIGHT
 	db COLL_STAIRCASE
-	db COLL_WARP_SURF_DOWN
 	db COLL_CAVE
 	db COLL_CAVE_74
 	db COLL_WARP_PANEL
-	db COLL_WARP_SURF_LEFT
 	db COLL_DOOR_7D
+	; Surf warps ($73/$75/$79) are deliberately excluded: like carpet warps,
+	; they preserve the player's facing instead of forcing them to face down.
 	db -1
 
 CheckGrassCollision::

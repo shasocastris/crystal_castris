@@ -151,7 +151,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 96
 	tilecoll WALL, WALL, WALL, WALL ; 97
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 99
+	tilecoll WALL, WATERFALL, WALL, WATERFALL ; 99
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; 9a
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 9b
 	tilecoll WALL, WALL, WARP_SURF_LEFT, WATER ; 9c

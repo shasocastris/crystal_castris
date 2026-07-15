@@ -191,7 +191,7 @@ ENDM
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const ROUTE_45,                                    12, 48 ;  8
 	map_const ROUTE_46,                                    10, 18 ;  9
-	map_const BLACKTHORN_CITY,                             20, 19 ; 10
+	map_const BLACKTHORN_CITY,                             26, 19 ; 10
 	map_const BLACKTHORN_RANGER_STATION,                    5,  4 ; 11
 	endgroup
 
