@@ -85,4 +85,5 @@ MapScenes::
 	scene_var LAV_RADIO_TOWER_2F,                          wLavRadioTower2FSceneID
 	scene_var CERULEAN_BASE_3,                             wCeruleanBase3SceneID
 	scene_var CERULEAN_BASE_2,                             wCeruleanBase2SceneID
+	scene_var BLACKTHORN_CITY,                             wBlackthornCitySceneID
 	db -1 ; end

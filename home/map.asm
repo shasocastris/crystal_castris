@@ -1377,6 +1377,9 @@ SaveScreen_LoadConnection::
 	jr nz, .row
 	ret
 
+GenericFinishBridge::
+	ld a, 1
+	ld [wOverworldDelaySkip], a
 GetMovementPermissions::
 	xor a
 	ld [wTilePermissions], a

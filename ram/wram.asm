@@ -1906,7 +1906,8 @@ wWalkingX:: db
 wWalkingY:: db
 wWalkingTileCollision:: db
 wWarpedWhileSurfing:: db
-	ds 5
+wWalkingOnBridge:: db
+	ds 4
 wPlayerTurningDirection:: db
 
 NEXTU
@@ -2784,6 +2785,7 @@ wIcePath1FSceneID::                               db
 wLavRadioTower2FSceneID::                         db
 wCeruleanBase3SceneID::                           db
 wCeruleanBase2SceneID::                           db
+wBlackthornCitySceneID::                          db
 
 ; fight counts
 

@@ -95,6 +95,12 @@ MACRO callasm
 	dba \1
 ENDM
 
+MACRO callthisasm
+	callasm .thisasm\@
+	end
+.thisasm\@
+ENDM
+
 	const special_command ; $0f
 MACRO special
 	db special_command

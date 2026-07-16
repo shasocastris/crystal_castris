@@ -13,10 +13,49 @@ BlackthornCity_MapScripts:
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, BlackthornCityFlypointCallback
+	callback MAPCALLBACK_TILES, BlackthornRiverBridgeCallback
 
 BlackthornCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
 	endcallback
+
+; Restore path: on map (re)load, repaint the bridge to match the persisted scene.
+; scene 0 = underfoot (surf-under water, the .ablk default), scene 1 = overhead (walk-across deck).
+BlackthornRiverBridgeCallback:
+	checkscene
+	iftrue .deck
+	callasm BlackthornBridgePaintWater
+	endcallback
+
+.deck:
+	callasm BlackthornBridgePaintDeck
+	endcallback
+
+BlackthornBridgePaintDeck:
+	changebridgeblock 12, 34, $a3, BLACKTHORN_CITY
+	changebridgeblock 12, 36, $a3, BLACKTHORN_CITY
+	jmp BufferScreen
+
+BlackthornBridgePaintWater:
+	changebridgeblock 12, 34, $a3, BLACKTHORN_CITY
+	changebridgeblock 12, 36, $a3, BLACKTHORN_CITY
+	jmp BufferScreen
+
+; Writer path: swap blocks, persist the new scene, recompute collision.
+BlackthornBridgeWalkTrigger:
+	callasm BlackthornBridgePaintDeck
+	callthisasm
+	ld a, $1                    ; overhead / deck = scene 1
+	jr BlackthornBridge_Finish
+
+BlackthornBridgeSurfTrigger:
+	callasm BlackthornBridgePaintWater
+	callthisasm
+	xor a                       ; underfoot / water = scene 0 (default)
+BlackthornBridge_Finish:
+	ld [wWalkingOnBridge], a
+	ld [wBlackthornCitySceneID], a
+	jmp GenericFinishBridge
 
 BlackthornSuperNerdScript:
 	faceplayer
@@ -325,6 +364,18 @@ BlackthornCity_MapEvents:
 	warp_event 20,  1, DRAGONS_DEN_1F, 1
 
 	def_coord_events
+	; Overhead (deck) triggers: active while underfoot (scene 0, default); land N/S, both columns
+	coord_event 12, 34, 0, BlackthornBridgeWalkTrigger
+	coord_event 13, 34, 0, BlackthornBridgeWalkTrigger
+	coord_event 12, 38, 0, BlackthornBridgeWalkTrigger
+	coord_event 13, 38, 0, BlackthornBridgeWalkTrigger
+;	; Underfoot (water) triggers: active while overhead (scene 1); water tiles W/E
+	coord_event 12, 33, 1, BlackthornBridgeSurfTrigger
+	coord_event 13, 33, 1, BlackthornBridgeSurfTrigger
+	coord_event 11, 38, 1, BlackthornBridgeSurfTrigger
+	coord_event 12, 39, 1, BlackthornBridgeSurfTrigger
+	coord_event 13, 39, 1, BlackthornBridgeSurfTrigger
+;	coord_event 14, 37, 1, BlackthornBridgeSurfTrigger
 
 	def_bg_events
 	bg_event 34, 24, BGEVENT_READ, BlackthornCitySign
