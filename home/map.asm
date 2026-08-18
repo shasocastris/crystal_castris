@@ -1078,28 +1078,6 @@ ScrollMapRight::
 	ret
 
 ReloadWalkedTile:
-; Stage the 2x4 tile region the player sprite covers, so a block swapped underneath the
-; player (see the Blackthorn bridge) reaches VRAM on the next step instead of waiting for
-; the region to scroll off and back on.
-;
-; The scroll path only ever pushes the leading row/column, so a block already on screen is
-; never repainted. This appends 4 more 16x8 units at the player's own screen position,
-; using the 8 bytes reserved at the head of each staging buffer. It is only sufficient
-; because the swapped blocks differ solely in the BG-over-OBJ priority bit, which is
-; observable only where the player sprite overlaps them.
-;
-; INVARIANT: hBGMapTileCount is now 24/22 unconditionally, so UpdateBGMapBuffer always drains
-; the 4 units at offset 0. That is only safe because every writer of hBGMapUpdate is one of the
-; four ScrollMap routines below, and all four call this first -- so slots 0-3 are never stale
-; when a drain runs. If you ever add another hBGMapUpdate writer, it must refill them too.
-; (Before the first scroll, ClearWRAM has zeroed them, so the pointers are $0000 and the
-; writes land in ROM, where they are ignored.)
-;
-; The player's map tile is tilemap (8,8) -- its object is placed at wXCoord/wYCoord + 4
-; (engine/overworld/player_object.asm:76-85), and OBJECT_SPRITE_X/Y are (delta & $f) << 4
-; pixels, so 4 << 4 = 64 px = 8 tiles. The sprite is drawn 4 px higher than its tile
-; (map_objects.asm adds 12 to OBJECT_SPRITE_Y against OAM's 16), so it spans rows 7-9;
-; rows 6-9 is the 4-row window that covers it.
 	hlcoord 8, 6
 	ld de, wBGMapBuffer
 	call .CommitTiles
@@ -1468,6 +1446,18 @@ SaveScreen_LoadConnection::
 	ret
 
 GenericFinishBridge::
+	call LoadOverworldTilemapAndAttrmapPals
+	call ReloadWalkedTile
+
+	ldh a, [hBGMapUpdate]
+	and a
+	jr nz, .update_pending
+	ld a, 4
+	ldh [hBGMapTileCount], a
+	ld a, 1
+	ldh [hBGMapUpdate], a
+.update_pending
+
 	ld a, 1
 	ld [wOverworldDelaySkip], a
 GetMovementPermissions::
