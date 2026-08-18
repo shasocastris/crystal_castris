@@ -21,13 +21,14 @@ BlackthornCityFlypointCallback:
 
 ; Restore path: on map (re)load, repaint the bridge to match the persisted scene.
 ; scene 0 = underfoot (surf-under water, the .ablk default), scene 1 = overhead (walk-across deck).
-; ifequal 1 rather than iftrue: checkscene returns -1 whenever wCurMapSceneScriptPointer is
-; null (only HandleNewMap ever sets it), and iftrue would take -1 for "deck". Testing for 1
-; explicitly makes both 0 and -1 fall back to the .ablk default, which is the water state.
+; ifequal 1 rather than iftrue: Script_checkscene stores -1 when wCurMapSceneScriptPointer is
+; null, and Script_iftrue jumps on any nonzero, so iftrue would read -1 as "deck" and strand a
+; walkable bridge over the river. The pointer is only ever filled by GetCurrentMapSceneID,
+; which HandleNewMap alone calls -- HandleContinueMap does not. Testing for 1 explicitly makes
+; both 0 and -1 fall back to the .ablk default, which is the water state.
 BlackthornRiverBridgeCallback:
 	checkscene
-;	ifequal 1, .deck
-	iftrue .deck
+	ifequal 1, .deck
 	callasm BlackthornBridgePaintWater
 	endcallback
 
@@ -199,9 +200,6 @@ BlackthornCityTrainerTips:
 
 BlackthornCityPokecenterSign:
 	jumpstd PokecenterSignScript
-
-BlackthornCityMartSign:
-	jumpstd MartSignScript
 
 Text_ClairIsIn:
 	text "CLAIR, our GYM"
