@@ -19,13 +19,6 @@ BlackthornCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
 	endcallback
 
-; Restore path: on map (re)load, repaint the bridge to match the persisted scene.
-; scene 0 = underfoot (surf-under water, the .ablk default), scene 1 = overhead (walk-across deck).
-; ifequal 1 rather than iftrue: Script_checkscene stores -1 when wCurMapSceneScriptPointer is
-; null, and Script_iftrue jumps on any nonzero, so iftrue would read -1 as "deck" and strand a
-; walkable bridge over the river. The pointer is only ever filled by GetCurrentMapSceneID,
-; which HandleNewMap alone calls -- HandleContinueMap does not. Testing for 1 explicitly makes
-; both 0 and -1 fall back to the .ablk default, which is the water state.
 BlackthornRiverBridgeCallback:
 	checkscene
 	ifequal 1, .deck
@@ -36,43 +29,16 @@ BlackthornRiverBridgeCallback:
 	callasm BlackthornBridgePaintDeck
 	endcallback
 
-; Overhead: $a3 is the plain bridge deck -- LEFT_WALL/RIGHT_WALL collision (walkable with
-; side rails) and no priority bit in johto_attributes, so the player draws over it.
 BlackthornBridgePaintDeck:
 	changebridgeblock 12, 34, $a3, BLACKTHORN_CITY
 	changebridgeblock 12, 36, $a3, BLACKTHORN_CITY
 	jmp BufferScreen
 
-; Underfoot: same bridge art, but WATER collision and the priority bit set, so the deck
-; draws over the surfing player. $a7 keeps the riverbank WALL in its top half (tile row 34,
-; matching the $85 blocks either side); $ab is water all the way down.
 BlackthornBridgePaintWater:
 	changebridgeblock 12, 34, $a7, BLACKTHORN_CITY
 	changebridgeblock 12, 36, $ab, BLACKTHORN_CITY
 	jmp BufferScreen
 
-; Writer path: swap blocks, persist the new scene, recompute collision.
-;
-; There is deliberately no repaint here. BufferScreen only copies wOverworldMapBlocks into
-; wScreenSave -- it never rebuilds wTilemap/wAttrmap and never touches VRAM -- so the swap
-; changes collision while the screen keeps showing whatever was painted when those blocks
-; last scrolled in. That stale picture is now corrected by ReloadWalkedTile (home/map.asm),
-; which every ScrollMap* runs: it pushes the 2x4 tile region under the player on the next
-; scrolling step, tiles and attributes both.
-;
-; That tiny push is enough only because $a3 and $a7/$ab have byte-identical art and differ
-; solely in bit 7 of their attributes, so the only observable difference is sprite
-; occlusion, and occlusion is only observable where the player sprite actually is.
-;
-; Two consequences worth knowing. The swap does not reach VRAM during the step that landed
-; on the trigger -- that step's WRAM rebuild ran ~16 frames earlier -- so it lands on the
-; next step; the triggers sit one tile outside the deck precisely so the player is always
-; arriving rather than stopping. And ReloadWalkedTile only runs from ScrollMap*, so turning
-; in place or walking into a wall repaints nothing.
-;
-; GenericFinishBridge is kept rather than a bare GetMovementPermissions: it falls through to
-; it, and additionally sets wOverworldDelaySkip so this HandleMap iteration costs no display
-; frame. Without it there is one visible standing frame before walking resumes.
 BlackthornBridgeSurfTrigger:
 	callasm BlackthornBridgePaintWater
 	callthisasm
