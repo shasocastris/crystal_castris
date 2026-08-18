@@ -1060,10 +1060,22 @@ SECTION "Video", WRAM0
 
 UNION
 ; bg map
-wBGMapBuffer::    ds 2 * SCREEN_WIDTH
-wBGMapPalBuffer:: ds 2 * SCREEN_WIDTH
-wBGMapBufferPointers:: ds 20 * 2
+; The first 8 bytes of each buffer are reserved for ReloadWalkedTile (home/map.asm),
+; which stages 4 extra 16x8 units at the player's own screen position. The scroll path
+; stages its row/column from +8 onwards. 2 * SCREEN_WIDTH + 8 == 2 * SCREEN_HEIGHT + 12,
+; so one size covers both the 20-unit row and the 18-unit column.
+wBGMapBuffer::    ds 8 + 2 * SCREEN_WIDTH
 wBGMapBufferEnd::
+wBGMapPalBuffer:: ds 8 + 2 * SCREEN_WIDTH
+wBGMapPalBufferEnd::
+wBGMapBufferPointers:: ds (4 + 20) * 2 ; 24 bg map addresses (16x8 tiles)
+wBGMapBufferPointersEnd::
+
+; UpdateBGMapBuffer increments only the LOW byte of its source pointers (inc c / inc e),
+; so these two buffers must not cross a 256 byte boundary. wBGMapBufferPointers is exempt:
+; it is read by relocating SP onto it and popping, which increments the full 16 bits.
+assert HIGH(wBGMapBuffer) == HIGH(wBGMapBufferEnd - 1)
+assert HIGH(wBGMapPalBuffer) == HIGH(wBGMapPalBufferEnd - 1)
 
 NEXTU
 ; credits

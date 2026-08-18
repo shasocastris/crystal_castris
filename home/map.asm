@@ -995,11 +995,12 @@ ComputeROMXChecksum::
 endc
 
 ScrollMapUp::
+	call ReloadWalkedTile
 	hlcoord 0, 0
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapRow
 	hlcoord 0, 0, wAttrmap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapRow
 	ld a, [wBGMapAnchor]
 	ld e, a
@@ -1011,11 +1012,12 @@ ScrollMapUp::
 	ret
 
 ScrollMapDown::
+	call ReloadWalkedTile
 	hlcoord 0, SCREEN_HEIGHT - 2
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapRow
 	hlcoord 0, SCREEN_HEIGHT - 2, wAttrmap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapRow
 	ld hl, wBGMapAnchor
 	ld a, [hli]
@@ -1035,11 +1037,12 @@ ScrollMapDown::
 	ret
 
 ScrollMapLeft::
+	call ReloadWalkedTile
 	hlcoord 0, 0
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapColumn
 	hlcoord 0, 0, wAttrmap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
 	ld e, a
@@ -1051,11 +1054,12 @@ ScrollMapLeft::
 	ret
 
 ScrollMapRight::
+	call ReloadWalkedTile
 	hlcoord SCREEN_WIDTH - 2, 0
-	ld de, wBGMapBuffer
+	ld de, wBGMapBuffer + 8
 	call BackupBGMapColumn
 	hlcoord SCREEN_WIDTH - 2, 0, wAttrmap
-	ld de, wBGMapPalBuffer
+	ld de, wBGMapPalBuffer + 8
 	call BackupBGMapColumn
 	ld a, [wBGMapAnchor]
 	ld e, a
@@ -1071,6 +1075,92 @@ ScrollMapRight::
 	call UpdateBGMapColumn
 	ld a, $1
 	ldh [hBGMapUpdate], a
+	ret
+
+ReloadWalkedTile:
+; Stage the 2x4 tile region the player sprite covers, so a block swapped underneath the
+; player (see the Blackthorn bridge) reaches VRAM on the next step instead of waiting for
+; the region to scroll off and back on.
+;
+; The scroll path only ever pushes the leading row/column, so a block already on screen is
+; never repainted. This appends 4 more 16x8 units at the player's own screen position,
+; using the 8 bytes reserved at the head of each staging buffer. It is only sufficient
+; because the swapped blocks differ solely in the BG-over-OBJ priority bit, which is
+; observable only where the player sprite overlaps them.
+;
+; INVARIANT: hBGMapTileCount is now 24/22 unconditionally, so UpdateBGMapBuffer always drains
+; the 4 units at offset 0. That is only safe because every writer of hBGMapUpdate is one of the
+; four ScrollMap routines below, and all four call this first -- so slots 0-3 are never stale
+; when a drain runs. If you ever add another hBGMapUpdate writer, it must refill them too.
+; (Before the first scroll, ClearWRAM has zeroed them, so the pointers are $0000 and the
+; writes land in ROM, where they are ignored.)
+;
+; The player's map tile is tilemap (8,8) -- its object is placed at wXCoord/wYCoord + 4
+; (engine/overworld/player_object.asm:76-85), and OBJECT_SPRITE_X/Y are (delta & $f) << 4
+; pixels, so 4 << 4 = 64 px = 8 tiles. The sprite is drawn 4 px higher than its tile
+; (map_objects.asm adds 12 to OBJECT_SPRITE_Y against OAM's 16), so it spans rows 7-9;
+; rows 6-9 is the 4-row window that covers it.
+	hlcoord 8, 6
+	ld de, wBGMapBuffer
+	call .CommitTiles
+	hlcoord 8, 6, wAttrmap
+	ld de, wBGMapPalBuffer
+	call .CommitTiles
+
+; hl = wBGMapAnchor + 8 columns + 6 rows. The column add has to wrap within the row, so
+; rotate the 5 column bits up to the top of the byte, add there, and rotate back.
+	ld a, [wBGMapAnchor]
+	swap a
+	rrca
+	add 8 << 3 ; += 8 columns, wrapping mod 32
+	rlca
+	swap a
+	add 6 * TILEMAP_WIDTH ; += 6 rows
+	ld l, a
+	ld a, [wBGMapAnchor + 1]
+	adc 0
+	ld h, a
+	ld c, 4
+	ld de, wBGMapBufferPointers ; 4 pointers, at offset 0
+.ptr_loop
+; cap h at HIGH(vBGMap0)
+	ld a, h
+	and %00000011
+	or HIGH(vBGMap0)
+	ld h, a
+	ld a, l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	inc de
+	ld a, TILEMAP_WIDTH
+	call .AddHLDecC
+	jr nz, .ptr_loop
+	ret
+
+.CommitTiles:
+	ld c, 4 ; 4 rows of 2 tiles
+.tile_loop
+	ld a, [hli]
+	ld [de], a
+	inc de
+	ld a, [hl]
+	ld [de], a
+	inc de
+	ld a, SCREEN_WIDTH - 1
+	call .AddHLDecC
+	jr nz, .tile_loop
+	ret
+
+.AddHLDecC:
+; hl += a
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	dec c
 	ret
 
 BackupBGMapRow::
@@ -1103,7 +1193,7 @@ BackupBGMapColumn::
 	ret
 
 UpdateBGMapRow::
-	ld hl, wBGMapBufferPointers
+	ld hl, wBGMapBufferPointers + 8
 	push de
 	call .iteration
 	pop de
@@ -1127,12 +1217,12 @@ UpdateBGMapRow::
 	ld e, a
 	dec c
 	jr nz, .loop
-	ld a, SCREEN_WIDTH
+	ld a, SCREEN_WIDTH + 4 ; + ReloadWalkedTile's 4 units
 	ldh [hBGMapTileCount], a
 	ret
 
 UpdateBGMapColumn::
-	ld hl, wBGMapBufferPointers
+	ld hl, wBGMapBufferPointers + 8
 	ld c, SCREEN_HEIGHT
 .loop
 	ld a, e
@@ -1153,7 +1243,7 @@ UpdateBGMapColumn::
 .skip
 	dec c
 	jr nz, .loop
-	ld a, SCREEN_HEIGHT
+	ld a, SCREEN_HEIGHT + 4 ; + ReloadWalkedTile's 4 units
 	ldh [hBGMapTileCount], a
 	ret
 

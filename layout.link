@@ -342,7 +342,11 @@ WRAM0
 	"Sprites"
 	"Tilemap"
 	"Miscellaneous"
-	align 8
+	; pret aligned this to $100 for the Game Boy Printer buffers (pret/pokecrystal#808).
+	; The printer was removed here, so the alignment only burnt $c7e8-$c7ff. align 3 keeps
+	; the section at $c7e8 rather than letting it float with "Miscellaneous", and hands the
+	; 24 bytes to "Video" for ReloadWalkedTile's staging.
+	align 3
 	"Overworld Map"
 	align 4
 	"Video"

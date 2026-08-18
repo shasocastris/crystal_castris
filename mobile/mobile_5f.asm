@@ -2206,7 +2206,7 @@ Function17f4f6:
 	ld h, a
 	ld a, [wcd47]
 	ld c, a
-	ld a, [wBGMapPalBuffer]
+	ld a, [wcd51] ; was spelled wBGMapPalBuffer, which no longer aliases $cd48
 	ld b, a
 	ld a, [wcd2e]
 .asm_17f509
