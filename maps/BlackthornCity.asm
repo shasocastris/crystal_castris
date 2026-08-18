@@ -21,8 +21,12 @@ BlackthornCityFlypointCallback:
 
 ; Restore path: on map (re)load, repaint the bridge to match the persisted scene.
 ; scene 0 = underfoot (surf-under water, the .ablk default), scene 1 = overhead (walk-across deck).
+; ifequal 1 rather than iftrue: checkscene returns -1 whenever wCurMapSceneScriptPointer is
+; null (only HandleNewMap ever sets it), and iftrue would take -1 for "deck". Testing for 1
+; explicitly makes both 0 and -1 fall back to the .ablk default, which is the water state.
 BlackthornRiverBridgeCallback:
 	checkscene
+;	ifequal 1, .deck
 	iftrue .deck
 	callasm BlackthornBridgePaintWater
 	endcallback
@@ -31,27 +35,39 @@ BlackthornRiverBridgeCallback:
 	callasm BlackthornBridgePaintDeck
 	endcallback
 
+; Overhead: $a3 is the plain bridge deck -- LEFT_WALL/RIGHT_WALL collision (walkable with
+; side rails) and no priority bit in johto_attributes, so the player draws over it.
 BlackthornBridgePaintDeck:
 	changebridgeblock 12, 34, $a3, BLACKTHORN_CITY
 	changebridgeblock 12, 36, $a3, BLACKTHORN_CITY
 	jmp BufferScreen
 
+; Underfoot: same bridge art, but WATER collision and the priority bit set, so the deck
+; draws over the surfing player. $a7 keeps the riverbank WALL in its top half (tile row 34,
+; matching the $85 blocks either side); $ab is water all the way down.
 BlackthornBridgePaintWater:
-	changebridgeblock 12, 34, $a3, BLACKTHORN_CITY
-	changebridgeblock 12, 36, $a3, BLACKTHORN_CITY
+	changebridgeblock 12, 34, $a7, BLACKTHORN_CITY
+	changebridgeblock 12, 36, $ab, BLACKTHORN_CITY
 	jmp BufferScreen
 
-; Writer path: swap blocks, persist the new scene, recompute collision.
-BlackthornBridgeWalkTrigger:
-	callasm BlackthornBridgePaintDeck
-	callthisasm
-	ld a, $1                    ; overhead / deck = scene 1
-	jr BlackthornBridge_Finish
-
+; Writer path: swap blocks, repaint the screen, persist the new scene, recompute collision.
+;
+; refreshmap is required, not decorative. BufferScreen only copies wOverworldMapBlocks into
+; wScreenSave; it never rebuilds wTilemap/wAttrmap or touches VRAM, so on its own the swap
+; changes collision but nothing on screen. That is invisible for most bridges because their
+; two block sets differ in art -- but $a3/$a7/$ab are byte-for-byte identical metatiles that
+; differ *only* in collision and the priority attribute, so the attrmap rebuild inside
+; refreshmap (LoadOverworldTilemapAndAttrmapPals + HDMA transfer) is the entire visible effect.
 BlackthornBridgeSurfTrigger:
 	callasm BlackthornBridgePaintWater
 	callthisasm
 	xor a                       ; underfoot / water = scene 0 (default)
+	jr BlackthornBridge_Finish
+
+BlackthornBridgeWalkTrigger:
+	callasm BlackthornBridgePaintDeck
+	callthisasm
+	ld a, $1                    ; overhead / deck = scene 1
 BlackthornBridge_Finish:
 	ld [wWalkingOnBridge], a
 	ld [wBlackthornCitySceneID], a
@@ -364,18 +380,28 @@ BlackthornCity_MapEvents:
 	warp_event 20,  1, DRAGONS_DEN_1F, 1
 
 	def_coord_events
-	; Overhead (deck) triggers: active while underfoot (scene 0, default); land N/S, both columns
-	coord_event 12, 34, 0, BlackthornBridgeWalkTrigger
-	coord_event 13, 34, 0, BlackthornBridgeWalkTrigger
+	; The bridge deck covers tiles x = 12-13, y = 34-37; the river runs east-west beneath it.
+	; The priority blocks ($a7/$ab) are the resting state, so a surfer always passes under.
+	; Triggers sit on the approach path north and south of the deck, never on the deck itself.
+	;
+	; Ring 1 (one tile out) hands the deck to the player: repaint to the no-priority $a3 just
+	; before they step on, so the swap is hidden by the step.
+	; Active only in the water state (scene 0), so a walker returning across the deck does not
+	; re-fire them.
+	coord_event 12, 33, 0, BlackthornBridgeWalkTrigger
+	coord_event 13, 33, 0, BlackthornBridgeWalkTrigger
 	coord_event 12, 38, 0, BlackthornBridgeWalkTrigger
 	coord_event 13, 38, 0, BlackthornBridgeWalkTrigger
-;	; Underfoot (water) triggers: active while overhead (scene 1); water tiles W/E
-	coord_event 12, 33, 1, BlackthornBridgeSurfTrigger
-	coord_event 13, 33, 1, BlackthornBridgeSurfTrigger
+	; Ring 2 (two tiles out, plus the west step-off tiles at x = 11) takes it back: repaint to
+	; the priority $a7/$ab once the player has left the approach, restoring the surf-under state.
+	; Active only in the deck state (scene 1). Ring 2 sits outside ring 1, so leaving the bridge
+	; always crosses ring 1 first and ring 2 second -- never the reverse.
+	coord_event 11, 33, 1, BlackthornBridgeSurfTrigger
+	coord_event 12, 32, 1, BlackthornBridgeSurfTrigger
+	coord_event 13, 32, 1, BlackthornBridgeSurfTrigger
 	coord_event 11, 38, 1, BlackthornBridgeSurfTrigger
 	coord_event 12, 39, 1, BlackthornBridgeSurfTrigger
 	coord_event 13, 39, 1, BlackthornBridgeSurfTrigger
-;	coord_event 14, 37, 1, BlackthornBridgeSurfTrigger
 
 	def_bg_events
 	bg_event 34, 24, BGEVENT_READ, BlackthornCitySign
