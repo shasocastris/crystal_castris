@@ -50,26 +50,32 @@ BlackthornBridgePaintWater:
 	changebridgeblock 12, 36, $ab, BLACKTHORN_CITY
 	jmp BufferScreen
 
-; Writer path: swap blocks, repaint the screen, persist the new scene, recompute collision.
+; Writer path: swap blocks, persist the new scene, recompute collision.
 ;
-; The repaint is paint / reanchormap / closetext, and the order matters.
+; There is deliberately no repaint here. BufferScreen only copies wOverworldMapBlocks into
+; wScreenSave -- it never rebuilds wTilemap/wAttrmap and never touches VRAM -- so the swap
+; changes collision while the screen keeps showing whatever was painted when those blocks
+; last scrolled in. That stale picture is now corrected by ReloadWalkedTile (home/map.asm),
+; which every ScrollMap* runs: it pushes the 2x4 tile region under the player on the next
+; scrolling step, tiles and attributes both.
 ;
-; BufferScreen only copies wOverworldMapBlocks into wScreenSave -- it never rebuilds
-; wTilemap/wAttrmap and never touches VRAM, so on its own the swap changes collision while
-; the screen keeps showing whatever was painted when those blocks last scrolled in.
+; That tiny push is enough only because $a3 and $a7/$ab have byte-identical art and differ
+; solely in bit 7 of their attributes, so the only observable difference is sprite
+; occlusion, and occlusion is only observable where the player sprite actually is.
 ;
-; refreshmap ALONE is not enough and actively breaks the map: its
-; HDMATransferTilemapAndAttrmap_Overworld blits to a fixed vBGMap0 origin, but while
-; walking the screen is anchored at wBGMapAnchor with non-zero hSCX/hSCY, so everything
-; lands displaced. reanchormap resets the anchor and scroll (compensating object positions
-; via ApplyBGMapAnchorToObjects) so a transfer lands where the screen actually is. This is
-; precisely why a Repel-expiry message repaints the bridge correctly: opentext reanchors
-; before drawing. Unlike opentext, ReanchorMap never calls SpeechTextbox, so no textbox
-; appears. Compare maps/BrunosRoom.asm:31-37, which uses the same trio.
+; Two consequences worth knowing. The swap does not reach VRAM during the step that landed
+; on the trigger -- that step's WRAM rebuild ran ~16 frames earlier -- so it lands on the
+; next step; the triggers sit one tile outside the deck precisely so the player is always
+; arriving rather than stopping. And ReloadWalkedTile only runs from ScrollMap*, so turning
+; in place or walking into a wall repaints nothing.
 ;
-; Painting BEFORE the reanchor is what lets a separate refreshmap be dropped:
-; .ReanchorBGMap already calls LoadOverworldTilemapAndAttrmapPals, so it rebuilds from the
-; freshly swapped blocks itself.
+; GenericFinishBridge is kept rather than a bare GetMovementPermissions: it falls through to
+; it, and additionally sets wOverworldDelaySkip so this HandleMap iteration costs no display
+; frame. Without it there is one visible standing frame before walking resumes.
+;
+; BlackthornBridgeRepaint below is the old full-screen reanchor. It is no longer called, and
+; is kept for scripted moments where a one-frame hitch reads as part of the animation --
+; the same reason Polished Crystal kept its own as RefreshScreenFast.
 BlackthornBridgeSurfTrigger:
 	callasm BlackthornBridgePaintWater
 	callthisasm
@@ -83,9 +89,13 @@ BlackthornBridgeWalkTrigger:
 BlackthornBridge_Finish:
 	ld [wWalkingOnBridge], a
 	ld [wBlackthornCitySceneID], a
-	call BlackthornBridgeRepaint
 	jmp GenericFinishBridge
 
+; UNUSED since ReloadWalkedTile took over the bridge repaint. Kept deliberately: it is still
+; the right tool whenever a whole-screen rebuild really is needed and a one-frame hitch is
+; acceptable or even wanted, and it is the instant rollback if the targeted repaint proves
+; insufficient -- restore the `call BlackthornBridgeRepaint` in BlackthornBridge_Finish.
+;
 ; The reanchor-and-transfer that the reanchormap/closetext pair performed, minus the work
 ; that only exists to set up and tear down a textbox.
 ;
