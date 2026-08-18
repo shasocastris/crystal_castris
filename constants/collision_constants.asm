@@ -109,7 +109,7 @@ DEF COLL_UP_LEFT_WALL      EQU $b7 ; unused
 DEF COLL_RIGHT_BUOY        EQU $c0 ; unused
 DEF COLL_LEFT_BUOY         EQU $c1 ; unused
 DEF COLL_UP_BUOY           EQU $c2 ; unused
-DEF COLL_DOWN_BUOY         EQU $c3 ; unused
+DEF COLL_DOWN_BUOY         EQU $c3 ; water you cannot leave downward (Blackthorn bridge underside)
 DEF COLL_DOWN_RIGHT_BUOY   EQU $c4 ; unused
 DEF COLL_DOWN_LEFT_BUOY    EQU $c5 ; unused
 DEF COLL_UP_RIGHT_BUOY     EQU $c6 ; unused

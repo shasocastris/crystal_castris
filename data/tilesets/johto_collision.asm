@@ -169,4 +169,4 @@
 	tilecoll WATER, WALL, WATER, WARP_SURF_RIGHT ; a8
 	tilecoll WALL, WALL, WALL, WATER ; a9
 	tilecoll WALL, WALL, WATER, WALL ; aa
-	tilecoll WATER, WATER, WATER, WATER ; ab
+	tilecoll WATER, WATER, DOWN_BUOY, DOWN_BUOY ; ab
