@@ -52,12 +52,24 @@ BlackthornBridgePaintWater:
 
 ; Writer path: swap blocks, repaint the screen, persist the new scene, recompute collision.
 ;
-; refreshmap is required, not decorative. BufferScreen only copies wOverworldMapBlocks into
-; wScreenSave; it never rebuilds wTilemap/wAttrmap or touches VRAM, so on its own the swap
-; changes collision but nothing on screen. That is invisible for most bridges because their
-; two block sets differ in art -- but $a3/$a7/$ab are byte-for-byte identical metatiles that
-; differ *only* in collision and the priority attribute, so the attrmap rebuild inside
-; refreshmap (LoadOverworldTilemapAndAttrmapPals + HDMA transfer) is the entire visible effect.
+; The repaint is paint / reanchormap / closetext, and the order matters.
+;
+; BufferScreen only copies wOverworldMapBlocks into wScreenSave -- it never rebuilds
+; wTilemap/wAttrmap and never touches VRAM, so on its own the swap changes collision while
+; the screen keeps showing whatever was painted when those blocks last scrolled in.
+;
+; refreshmap ALONE is not enough and actively breaks the map: its
+; HDMATransferTilemapAndAttrmap_Overworld blits to a fixed vBGMap0 origin, but while
+; walking the screen is anchored at wBGMapAnchor with non-zero hSCX/hSCY, so everything
+; lands displaced. reanchormap resets the anchor and scroll (compensating object positions
+; via ApplyBGMapAnchorToObjects) so a transfer lands where the screen actually is. This is
+; precisely why a Repel-expiry message repaints the bridge correctly: opentext reanchors
+; before drawing. Unlike opentext, ReanchorMap never calls SpeechTextbox, so no textbox
+; appears. Compare maps/BrunosRoom.asm:31-37, which uses the same trio.
+;
+; Painting BEFORE the reanchor is what lets a separate refreshmap be dropped:
+; .ReanchorBGMap already calls LoadOverworldTilemapAndAttrmapPals, so it rebuilds from the
+; freshly swapped blocks itself.
 BlackthornBridgeSurfTrigger:
 	callasm BlackthornBridgePaintWater
 	callthisasm
@@ -71,7 +83,91 @@ BlackthornBridgeWalkTrigger:
 BlackthornBridge_Finish:
 	ld [wWalkingOnBridge], a
 	ld [wBlackthornCitySceneID], a
+	call BlackthornBridgeRepaint
 	jmp GenericFinishBridge
+
+; The reanchor-and-transfer that the reanchormap/closetext pair performed, minus the work
+; that only exists to set up and tear down a textbox.
+;
+; ReanchorMap additionally calls LoadFonts_NoOAMUpdate, which writes font tiles over sprite
+; GFX in VRAM -- that is the ONLY reason closetext then has to run RefreshSprites to put
+; them back. Skipping the font load makes the sprite reload unnecessary, so both go.
+;
+; That also drops the rest of closetext: its LoadOverworldTilemapAndAttrmapPals +
+; HDMATransferTilemapAndAttrmap_Menu were a second full rebuild and transfer on top of the
+; one below, and its closing InitMapNameSign is the map-name banner, which has no business
+; firing when you step onto a bridge. All that remains to undo by hand is hWY (left at 0 by
+; .ReanchorBGMap) and TEXT_STATE_F (set by ReanchorBGMap_NoOAMUpdate).
+;
+; This is .ReanchorBGMap (engine/overworld/init_map.asm) inlined with the textbox-only work
+; removed. Two things are dropped, both provably dead for a block swap:
+;
+;   * LoadOW_BGPal7 + ApplyPals + hCGBPalUpdate -- loads BG palette 7 with the TEXT palette
+;     and re-pushes every palette. Swapping a block changes no palette, and we draw no text.
+;     (Also saves bank switches to 12 and 02.)
+;   * HDMATransfer_FillBGMap0WithBlack -- blanks vBGMap0 so a textbox starts from a clean
+;     slate. We overwrite vBGMap0 wholesale immediately afterwards, so it is a full HDMA
+;     spent on pixels that never appear.
+;
+; What is deliberately KEPT is the vBGMap0/vBGMap1 double-buffer, which is what stops the
+; rebuild from flashing. LCDC_DEFAULT is LCDC_BG_9800 | LCDC_WIN_9C00 | LCDC_WIN_ON: the BG
+; reads vBGMap0, the window reads vBGMap1 and is always enabled, parked off-screen at
+; hWY = $90. So the map is drawn into vBGMap1 first and hWY dropped to 0, letting the
+; window hold a finished picture over the whole screen while vBGMap0 is re-anchored and
+; retransferred underneath; hWY back to $90 then reveals it. Removing that would trade this
+; hitch for a visible tear.
+BlackthornBridgeRepaint:
+	call ClearWindowData
+	ldh a, [hOAMUpdate]
+	push af
+	ld a, $1
+	ldh [hOAMUpdate], a
+
+	ld hl, rIE
+	res B_IE_STAT, [hl]
+	xor a
+	ldh [hLCDCPointer], a
+	ldh [hBGMapMode], a
+	ld a, $90
+	ldh [hWY], a
+
+	; Rebuild wTilemap/wAttrmap from the freshly swapped blocks. WRAM only, sub-block aware.
+	call LoadOverworldTilemapAndAttrmapPals
+
+	; Front buffer: paint the finished map into the window's map, then bring the window
+	; over the screen so the BG can be rebuilt out of sight.
+	ld a, HIGH(vBGMap1)
+	ldh [hBGMapAddress + 1], a
+	xor a
+	ldh [hBGMapAddress], a
+	call HDMATransferTilemapAndAttrmap_Menu
+	xor a
+	ldh [hBGMapMode], a
+	ldh [hWY], a
+
+	; Put the anchor and scroll back to the origin. This is the whole point of reanchoring:
+	; the HDMA below always writes to a fixed vBGMap0 origin, so the screen has to agree.
+	ld a, HIGH(vBGMap0)
+	ldh [hBGMapAddress + 1], a
+	xor a
+	ldh [hBGMapAddress], a
+	ld [wBGMapAnchor], a
+	ld a, HIGH(vBGMap0)
+	ld [wBGMapAnchor + 1], a
+	xor a
+	ldh [hSCX], a
+	ldh [hSCY], a
+	farcall ApplyBGMapAnchorToObjects
+
+	; Back buffer, now aligned with the screen.
+	call HDMATransferTilemapAndAttrmap_Menu
+
+	; Reveal it. Nothing here ever set TEXT_STATE_F, so there is none to clear.
+	ld a, $90
+	ldh [hWY], a
+	pop af
+	ldh [hOAMUpdate], a
+	ret
 
 BlackthornSuperNerdScript:
 	faceplayer

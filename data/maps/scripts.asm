@@ -46,6 +46,10 @@ SECTION "Map Scripts 3", ROMX
 
 INCLUDE "maps/NationalPark.asm"
 INCLUDE "maps/NationalParkBugContest.asm"
+; Moved out of "Map Scripts 22", which sits within ~64 bytes of full; the bridge repaint
+; routine overflows it. Bank comes from BANK(\1_MapScripts) in data/maps/attributes.asm,
+; so a map can move between sections freely.
+INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/RadioTower1F.asm"
 INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
@@ -403,7 +407,6 @@ INCLUDE "maps/PewterSnoozeSpeechHouse.asm"
 SECTION "Map Scripts 22", ROMX
 
 INCLUDE "maps/EcruteakCity.asm"
-INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/Route26.asm"
 INCLUDE "maps/Route28.asm"
 INCLUDE "maps/Route31.asm"
