@@ -2680,8 +2680,6 @@ _UpdateSprites::
 	jr nz, .loop
 	ret
 
-; Exported so map scripts can reanchor the BG map themselves (see
-; maps/BlackthornCity.asm BlackthornBridgeRepaint).
 ApplyBGMapAnchorToObjects::
 	push hl
 	push de

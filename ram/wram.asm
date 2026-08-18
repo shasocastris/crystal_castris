@@ -1918,8 +1918,7 @@ wWalkingX:: db
 wWalkingY:: db
 wWalkingTileCollision:: db
 wWarpedWhileSurfing:: db
-wWalkingOnBridge:: db
-	ds 4
+	ds 5 ; was wWalkingOnBridge + ds 4; the bridge scene byte is the only state needed
 wPlayerTurningDirection:: db
 
 NEXTU
