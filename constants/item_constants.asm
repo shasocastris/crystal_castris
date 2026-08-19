@@ -77,35 +77,35 @@
 	const MIST_STONE   ; 0039
 
 	const EXP_SHARE    ; 003A
+	const LUCKY_EGG    ; 003B
 
-	const MIRACLE_SEED ; 003B
-	const SILVERPOWDER ; 003C
-	const POISON_BARB  ; 003D
-	const CHARCOAL     ; 003E
-	const MYSTIC_WATER ; 003F
-	const NEVERMELTICE ; 0040
-	const MAGNET       ; 0041
-	const BLACKBELT_I  ; 0042
-	const HARD_STONE   ; 0043
-	const SOFT_SAND    ; 0044
-	const TWISTEDSPOON ; 0045
-	const PINK_BOW     ; 0046
-	const POLKADOT_BOW ; 0047
-	const SHARP_BEAK   ; 0048
-	const SPELL_TAG    ; 0049
-	const BLACKGLASSES ; 004A
-	const METAL_COAT   ; 004B
-	const DRAGON_FANG  ; 004C
+	const MIRACLE_SEED ; 003C
+	const SILVERPOWDER ; 003D
+	const POISON_BARB  ; 003E
+	const CHARCOAL     ; 003F
+	const MYSTIC_WATER ; 0040
+	const NEVERMELTICE ; 0041
+	const MAGNET       ; 0042
+	const BLACKBELT_I  ; 0043
+	const HARD_STONE   ; 0044
+	const SOFT_SAND    ; 0045
+	const TWISTEDSPOON ; 0046
+	const PINK_BOW     ; 0047
+	const POLKADOT_BOW ; 0048
+	const SHARP_BEAK   ; 0049
+	const SPELL_TAG    ; 004A
+	const BLACKGLASSES ; 004B
+	const METAL_COAT   ; 004C
+	const DRAGON_FANG  ; 004D
 
-	const BERSERK_GENE ; 004D
- 	const BRIGHTPOWDER ; 004E
-	const QUICK_CLAW   ; 004F
-	const KINGS_ROCK   ; 0050
-	const AMULET_COIN  ; 0051
-	const CLEANSE_TAG  ; 0052
-	const SMOKE_BALL   ; 0053
-	const FOCUS_BAND   ; 0054
-	const LUCKY_EGG    ; 0055
+	const BERSERK_GENE ; 004E
+ 	const BRIGHTPOWDER ; 004F
+	const QUICK_CLAW   ; 0050
+	const KINGS_ROCK   ; 0051
+	const AMULET_COIN  ; 0052
+	const CLEANSE_TAG  ; 0053
+	const SMOKE_BALL   ; 0054
+	const FOCUS_BAND   ; 0055
 	const LEFTOVERS    ; 0056
 	const SCOPE_LENS   ; 0057
 

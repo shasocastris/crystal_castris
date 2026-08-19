@@ -82,35 +82,35 @@ ItemDescriptions1:
 	dw MistStoneDesc    ; 0039
 
 	dw ExpShareDesc     ; 003A
+	dw LuckyEggDesc     ; 003B
 
-	dw MiracleSeedDesc  ; 003B
-	dw SilverPowderDesc ; 003C
-	dw PoisonBarbDesc   ; 003D
-	dw CharcoalDesc     ; 003E
-	dw MysticWaterDesc  ; 003F
-	dw NeverMeltIceDesc ; 0040
-	dw MagnetDesc       ; 0041
-	dw BlackbeltDesc    ; 0042
-	dw HardStoneDesc    ; 0043
-	dw SoftSandDesc     ; 0044
-	dw TwistedSpoonDesc ; 0045
-	dw PinkBowDesc      ; 0046
-	dw PolkadotBowDesc  ; 0047
-	dw SharpBeakDesc    ; 0048
-	dw SpellTagDesc     ; 0049
-	dw BlackGlassesDesc ; 004A
-	dw MetalCoatDesc    ; 004B
-	dw DragonFangDesc   ; 004C
+	dw MiracleSeedDesc  ; 003C
+	dw SilverPowderDesc ; 003D
+	dw PoisonBarbDesc   ; 003E
+	dw CharcoalDesc     ; 003F
+	dw MysticWaterDesc  ; 0040
+	dw NeverMeltIceDesc ; 0041
+	dw MagnetDesc       ; 0042
+	dw BlackbeltDesc    ; 0043
+	dw HardStoneDesc    ; 0044
+	dw SoftSandDesc     ; 0045
+	dw TwistedSpoonDesc ; 0046
+	dw PinkBowDesc      ; 0047
+	dw PolkadotBowDesc  ; 0048
+	dw SharpBeakDesc    ; 0049
+	dw SpellTagDesc     ; 004A
+	dw BlackGlassesDesc ; 004B
+	dw MetalCoatDesc    ; 004C
+	dw DragonFangDesc   ; 004D
 
-	dw BerserkGeneDesc  ; 004D
-	dw BrightpowderDesc ; 004E
-	dw QuickClawDesc    ; 004F
-	dw KingsRockDesc    ; 0050
-	dw AmuletCoinDesc   ; 0051
-	dw CleanseTagDesc   ; 0052
-	dw SmokeBallDesc    ; 0053
-	dw FocusBandDesc    ; 0054
-	dw LuckyEggDesc     ; 0055
+	dw BerserkGeneDesc  ; 004E
+	dw BrightpowderDesc ; 004F
+	dw QuickClawDesc    ; 0050
+	dw KingsRockDesc    ; 0051
+	dw AmuletCoinDesc   ; 0052
+	dw CleanseTagDesc   ; 0053
+	dw SmokeBallDesc    ; 0054
+	dw FocusBandDesc    ; 0055
 	dw LeftoversDesc    ; 0056
 	dw ScopeLensDesc    ; 0057
 
@@ -481,6 +481,10 @@ ExpShareDesc:
 	db   "Shares battle EXP."
 	next "Points.@"
 
+LuckyEggDesc:
+	db   "Earns extra EXP."
+	next "points.@"
+
 MiracleSeedDesc:
 	db   "Powers up grass-"
 	next "type moves.@"
@@ -584,10 +588,6 @@ SmokeBallDesc:
 FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing.@"
-
-LuckyEggDesc:
-	db   "Earns extra EXP."
-	next "points.@"
 
 LeftoversDesc:
 	db   "Restores HP during"

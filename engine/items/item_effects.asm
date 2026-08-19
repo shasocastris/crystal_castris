@@ -102,6 +102,7 @@ ItemEffects1:
 	dw EvoStoneEffect      ; MIST_STONE
 
 	dw NoEffect            ; EXP_SHARE
+	dw NoEffect            ; LUCKY_EGG
 
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; SILVERPOWDER
@@ -130,7 +131,6 @@ ItemEffects1:
 	dw NoEffect            ; CLEANSE_TAG
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; LUCKY_EGG
 	dw NoEffect            ; LEFTOVERS
 	dw NoEffect            ; SCOPE_LENS
 

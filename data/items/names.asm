@@ -71,35 +71,35 @@ ItemNames::
 	li "MIST STONE"   ; 0039
 
 	li "EXP.SHARE"    ; 003A
+	li "LUCKY EGG"    ; 003B
 
-	li "MIRACLE SEED" ; 003B
-	li "SILVERPOWDER" ; 003C
-	li "POISON BARB"  ; 003D
-	li "CHARCOAL"     ; 003E
-	li "MYSTIC WATER" ; 003F
-	li "NEVERMELTICE" ; 0040
-	li "MAGNET"       ; 0041
-	li "BLACKBELT"    ; 0042
-	li "HARD STONE"   ; 0043
-	li "SOFT SAND"    ; 0044
-	li "TWISTEDSPOON" ; 0045
-	li "PINK BOW"     ; 0046
-	li "POLKADOT BOW" ; 0047
-	li "SHARP BEAK"   ; 0048
-	li "SPELL TAG"    ; 0049
-	li "BLACKGLASSES" ; 004A
-	li "METAL COAT"   ; 004B
-	li "DRAGON FANG"  ; 004C
+	li "MIRACLE SEED" ; 003C
+	li "SILVERPOWDER" ; 003D
+	li "POISON BARB"  ; 003E
+	li "CHARCOAL"     ; 003F
+	li "MYSTIC WATER" ; 0040
+	li "NEVERMELTICE" ; 0041
+	li "MAGNET"       ; 0042
+	li "BLACKBELT"    ; 0043
+	li "HARD STONE"   ; 0044
+	li "SOFT SAND"    ; 0045
+	li "TWISTEDSPOON" ; 0046
+	li "PINK BOW"     ; 0047
+	li "POLKADOT BOW" ; 0048
+	li "SHARP BEAK"   ; 0049
+	li "SPELL TAG"    ; 004A
+	li "BLACKGLASSES" ; 004B
+	li "METAL COAT"   ; 004C
+	li "DRAGON FANG"  ; 004D
 
-	li "BERSERK GENE" ; 004D
-	li "BRIGHTPOWDER" ; 004E
-	li "QUICK CLAW"   ; 004F
-	li "KING'S ROCK"  ; 0050
-	li "AMULET COIN"  ; 0051
-	li "CLEANSE TAG"  ; 0052
-	li "SMOKE BALL"   ; 0053
-	li "FOCUS BAND"   ; 0054
-	li "LUCKY EGG"    ; 0055
+	li "BERSERK GENE" ; 004E
+	li "BRIGHTPOWDER" ; 004F
+	li "QUICK CLAW"   ; 0050
+	li "KING'S ROCK"  ; 0051
+	li "AMULET COIN"  ; 0052
+	li "CLEANSE TAG"  ; 0053
+	li "SMOKE BALL"   ; 0054
+	li "FOCUS BAND"   ; 0055
 	li "LEFTOVERS"    ; 0056
 	li "SCOPE LENS"   ; 0057
 	li "LIGHT BALL"   ; 0058
