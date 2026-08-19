@@ -100,8 +100,8 @@ ItemDescriptions1:
 	dw SharpBeakDesc    ; 0049
 	dw SpellTagDesc     ; 004A
 	dw BlackGlassesDesc ; 004B
-	dw MetalCoatDesc    ; 004C
-	dw DragonFangDesc   ; 004D
+	dw DragonFangDesc   ; 004C
+	dw IronPlateDesc    ; 004D
 
 	dw BerserkGeneDesc  ; 004E
 	dw BrightpowderDesc ; 004F
@@ -121,79 +121,80 @@ ItemDescriptions1:
 	dw MetalPowderDesc  ; 005C
 
 	dw DragonScaleDesc  ; 005D
-	dw UpGradeDesc      ; 005E
-	dw RazorClawDesc    ; 005F
-	dw DubiousDiscDesc  ; 0060
-	dw ProtectorDesc    ; 0061
+	dw MetalCoatDesc    ; 005E
+	dw UpGradeDesc      ; 005F
+	dw RazorClawDesc    ; 0060
+	dw DubiousDiscDesc  ; 0061
+	dw ProtectorDesc    ; 0062
 
-	dw SilverLeafDesc   ; 0062
-	dw GoldLeafDesc     ; 0063
+	dw SilverLeafDesc   ; 0063
+	dw GoldLeafDesc     ; 0064
 
-	dw NuggetDesc       ; 0064
-	dw TinyMushroomDesc ; 0065
-	dw BigMushroomDesc  ; 0066
-	dw PearlDesc        ; 0067
-	dw BigPearlDesc     ; 0068
-	dw StardustDesc     ; 0069
-	dw StarPieceDesc    ; 006A
-	dw BrickPieceDesc   ; 006B
-	dw SlowpokeTailDesc ; 006C
+	dw NuggetDesc       ; 0065
+	dw TinyMushroomDesc ; 0066
+	dw BigMushroomDesc  ; 0067
+	dw PearlDesc        ; 0068
+	dw BigPearlDesc     ; 0069
+	dw StardustDesc     ; 006A
+	dw StarPieceDesc    ; 006B
+	dw BrickPieceDesc   ; 006C
+	dw SlowpokeTailDesc ; 006D
 
-	dw NormalBoxDesc    ; 006D
-	dw GorgeousBoxDesc  ; 006E
+	dw NormalBoxDesc    ; 006E
+	dw GorgeousBoxDesc  ; 006F
 
-	dw FlowerMailDesc   ; 006F
-	dw SurfMailDesc     ; 0070
-	dw LiteBlueMailDesc ; 0071
-	dw PortraitMailDesc ; 0072
-	dw LovelyMailDesc   ; 0073
-	dw EonMailDesc      ; 0074
-	dw MorphMailDesc    ; 0075
-	dw BlueSkyMailDesc  ; 0076
-	dw MusicMailDesc    ; 0077
-	dw MirageMailDesc   ; 0078
+	dw FlowerMailDesc   ; 0070
+	dw SurfMailDesc     ; 0071
+	dw LiteBlueMailDesc ; 0072
+	dw PortraitMailDesc ; 0073
+	dw LovelyMailDesc   ; 0074
+	dw EonMailDesc      ; 0075
+	dw MorphMailDesc    ; 0076
+	dw BlueSkyMailDesc  ; 0077
+	dw MusicMailDesc    ; 0078
+	dw MirageMailDesc   ; 0079
 
-	dw PoisonGuardDesc  ; 0079
-	dw BurnGuardDesc    ; 007A
-	dw FreezeGuardDesc  ; 007B
-	dw SleepGuardDesc   ; 007C
-	dw ParlyzGuardDesc  ; 007D
-	dw ConfuseGuardDesc ; 007E
+	dw PoisonGuardDesc  ; 007A
+	dw BurnGuardDesc    ; 007B
+	dw FreezeGuardDesc  ; 007C
+	dw SleepGuardDesc   ; 007D
+	dw ParlyzGuardDesc  ; 007E
+	dw ConfuseGuardDesc ; 007F
 
-	dw DampRockDesc     ; 007F
-	dw HeatRockDesc     ; 0080
-	dw SmoothRockDesc   ; 0081
-	dw IcyRockDesc      ; 0082
+	dw DampRockDesc     ; 0080
+	dw HeatRockDesc     ; 0081
+	dw SmoothRockDesc   ; 0082
+	dw IcyRockDesc      ; 0083
 
-	dw LightClayDesc    ; 0083
-	dw GripClawDesc     ; 0084
+	dw LightClayDesc    ; 0084
+	dw GripClawDesc     ; 0085
 
-	dw SafariLureDesc   ; 0085
+	dw SafariLureDesc   ; 0086
 
-	dw RadianceOrbDesc  ; 0086
-	dw UnownAuraDesc    ; 0087
+	dw RadianceOrbDesc  ; 0087
+	dw UnownAuraDesc    ; 0088
 
-	dw MagnaPlantDesc   ; 0088
-	dw TropicPlantDesc  ; 0089
-	dw JumboPlantDesc   ; 008A
+	dw MagnaPlantDesc   ; 0089
+	dw TropicPlantDesc  ; 008A
+	dw JumboPlantDesc   ; 008B
 
-	dw PinkBedDesc      ; 008B
-	dw PolkadotBedDesc  ; 008C
-	dw PikachuBedDesc   ; 008D
+	dw PinkBedDesc      ; 008C
+	dw PolkadotBedDesc  ; 008D
+	dw PikachuBedDesc   ; 008E
 
-	dw NESDesc          ; 008E
-	dw N64Desc          ; 008F
-	dw VirtualBoyDesc   ; 0090
-	dw FamicomDesc      ; 0091
+	dw NESDesc          ; 008F
+	dw N64Desc          ; 0090
+	dw VirtualBoyDesc   ; 0091
+	dw FamicomDesc      ; 0092
 
-	dw RedCarpetDesc    ; 0092
-	dw BlueCarpetDesc   ; 0093
-	dw GreenCarpetDesc  ; 0094
-	dw YellowCarpetDesc ; 0095
+	dw RedCarpetDesc    ; 0093
+	dw BlueCarpetDesc   ; 0094
+	dw GreenCarpetDesc  ; 0095
+	dw YellowCarpetDesc ; 0096
 
-	dw PikachuPosterDesc    ; 0096
-	dw ClefairyPosterDesc   ; 0097
-	dw JigglypuffPosterDesc ; 0098
+	dw PikachuPosterDesc    ; 0097
+	dw ClefairyPosterDesc   ; 0098
+	dw JigglypuffPosterDesc ; 0099
 .IndirectEnd:
 
 ItemDescriptionsKeyItems:
@@ -549,12 +550,12 @@ BlackGlassesDesc:
 	db   "Powers up dark-"
 	next "type moves.@"
 
-MetalCoatDesc:
-	db   "Powers up steel-"
-	next "type moves.@"
-
 DragonFangDesc:
 	db   "Powers up dragon-"
+	next "type moves.@"
+
+IronPlateDesc:
+	db   "Powers up steel-"
 	next "type moves.@"
 
 BerserkGeneDesc:
@@ -619,6 +620,10 @@ MetalPowderDesc:
 
 DragonScaleDesc:
 	db   "A rare dragon-type"
+	next "item.@"
+
+MetalCoatDesc:
+	db   "A rare steel-type"
 	next "item.@"
 
 UpGradeDesc:

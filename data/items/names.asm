@@ -89,8 +89,8 @@ ItemNames::
 	li "SHARP BEAK"   ; 0049
 	li "SPELL TAG"    ; 004A
 	li "BLACKGLASSES" ; 004B
-	li "METAL COAT"   ; 004C
-	li "DRAGON FANG"  ; 004D
+	li "DRAGON FANG"  ; 004C
+	li "IRON PLATE"   ; 004D
 
 	li "BERSERK GENE" ; 004E
 	li "BRIGHTPOWDER" ; 004F
@@ -109,79 +109,80 @@ ItemNames::
 	li "METAL POWDER" ; 005C
 
 	li "DRAGON SCALE" ; 005D
-	li "UP-GRADE"     ; 005E
-	li "RAZOR CLAW"   ; 005F
-	li "DUBIOUS DISC" ; 0060
-	li "PROTECTOR"    ; 0061
+	li "METAL COAT"   ; 005E
+	li "UP-GRADE"     ; 005F
+	li "RAZOR CLAW"   ; 0060
+	li "DUBIOUS DISC" ; 0061
+	li "PROTECTOR"    ; 0062
 
-	li "SILVER LEAF"  ; 0062
-	li "GOLD LEAF"    ; 0063
+	li "SILVER LEAF"  ; 0063
+	li "GOLD LEAF"    ; 0064
 
-	li "NUGGET"       ; 0064
-	li "TINYMUSHROOM" ; 0065
-	li "BIG MUSHROOM" ; 0066
-	li "PEARL"        ; 0067
-	li "BIG PEARL"    ; 0068
-	li "STARDUST"     ; 0069
-	li "STAR PIECE"   ; 006A
-	li "BRICK PIECE"  ; 006B
-	li "SLOWPOKETAIL" ; 006C
+	li "NUGGET"       ; 0065
+	li "TINYMUSHROOM" ; 0066
+	li "BIG MUSHROOM" ; 0067
+	li "PEARL"        ; 0068
+	li "BIG PEARL"    ; 0069
+	li "STARDUST"     ; 006A
+	li "STAR PIECE"   ; 006B
+	li "BRICK PIECE"  ; 006C
+	li "SLOWPOKETAIL" ; 006D
 
-	li "NORMAL BOX"   ; 006D
-	li "GORGEOUS BOX" ; 006E
+	li "NORMAL BOX"   ; 006E
+	li "GORGEOUS BOX" ; 006F
 
-	li "FLOWER MAIL"  ; 006F
-	li "SURF MAIL"    ; 0070
-	li "LITEBLUEMAIL" ; 0071
-	li "PORTRAITMAIL" ; 0072
-	li "LOVELY MAIL"  ; 0073
-	li "EON MAIL"     ; 0074
-	li "MORPH MAIL"   ; 0075
-	li "BLUESKY MAIL" ; 0076
-	li "MUSIC MAIL"   ; 0077
-	li "MIRAGE MAIL"  ; 0078
+	li "FLOWER MAIL"  ; 0070
+	li "SURF MAIL"    ; 0071
+	li "LITEBLUEMAIL" ; 0072
+	li "PORTRAITMAIL" ; 0073
+	li "LOVELY MAIL"  ; 0074
+	li "EON MAIL"     ; 0075
+	li "MORPH MAIL"   ; 0076
+	li "BLUESKY MAIL" ; 0077
+	li "MUSIC MAIL"   ; 0078
+	li "MIRAGE MAIL"  ; 0079
 
-	li "POISON GUARD" ; 0079
-	li "BURN GUARD"   ; 007A
-	li "FREEZE GUARD" ; 007B
-	li "SLEEP GUARD"  ; 007C
-	li "PARLYZ GUARD" ; 007D
-	li "CONFUSEGUARD" ; 007E
+	li "POISON GUARD" ; 007A
+	li "BURN GUARD"   ; 007B
+	li "FREEZE GUARD" ; 007C
+	li "SLEEP GUARD"  ; 007D
+	li "PARLYZ GUARD" ; 007E
+	li "CONFUSEGUARD" ; 007F
 
-	li "DAMP ROCK"    ; 007F
-	li "HEAT ROCK"    ; 0080
-	li "SMOOTH ROCK"  ; 0081
-	li "ICY ROCK"     ; 0082
+	li "DAMP ROCK"    ; 0080
+	li "HEAT ROCK"    ; 0081
+	li "SMOOTH ROCK"  ; 0082
+	li "ICY ROCK"     ; 0083
 
-	li "LIGHT CLAY"   ; 0083
-	li "GRIP CLAW"    ; 0084
+	li "LIGHT CLAY"   ; 0084
+	li "GRIP CLAW"    ; 0085
 
-	li "SAFARI LURE"  ; 0085
+	li "SAFARI LURE"  ; 0086
 
-	li "RADIANCE ORB" ; 0086
-	li "UNOWN AURA"   ; 0087
+	li "RADIANCE ORB" ; 0087
+	li "UNOWN AURA"   ; 0088
 
-	li "MAGNA PLANT"  ; 0088
-	li "TROPIC PLANT" ; 0089
-	li "JUMBO PLANT"  ; 008A
+	li "MAGNA PLANT"  ; 0089
+	li "TROPIC PLANT" ; 008A
+	li "JUMBO PLANT"  ; 008B
 
-	li "PINK BED"     ; 008B
-	li "POLKADOT BED" ; 008C
-	li "PIKACHU BED"  ; 008D
+	li "PINK BED"     ; 008C
+	li "POLKADOT BED" ; 008D
+	li "PIKACHU BED"  ; 008E
 
-	li "SUPER NES"    ; 008E
-	li "NINTENDO 64"  ; 008F
-	li "VIRTUAL BOY"  ; 0090
-	li "FAMICOM"      ; 0091
+	li "SUPER NES"    ; 008F
+	li "NINTENDO 64"  ; 0090
+	li "VIRTUAL BOY"  ; 0091
+	li "FAMICOM"      ; 0092
 
-	li "RED CARPET"   ; 0092
-	li "BLUE CARPET"  ; 0093
-	li "YELLOWCARPET" ; 0094
-	li "GREEN CARPET" ; 0095
+	li "RED CARPET"   ; 0093
+	li "BLUE CARPET"  ; 0094
+	li "YELLOWCARPET" ; 0095
+	li "GREEN CARPET" ; 0096
 
-	li "PIKA POSTER"  ; 0096
-	li "CLEF POSTER"  ; 0097
-	li "JIGG POSTER"  ; 0098
+	li "PIKA POSTER"  ; 0097
+	li "CLEF POSTER"  ; 0098
+	li "JIGG POSTER"  ; 0099
 	assert_list_length NUM_ITEM_POCKET
 
 KeyItemNames::

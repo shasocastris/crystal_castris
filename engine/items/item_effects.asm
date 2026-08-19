@@ -120,8 +120,8 @@ ItemEffects1:
 	dw NoEffect            ; SHARP_BEAK
 	dw NoEffect            ; SPELL_TAG
 	dw NoEffect            ; BLACKGLASSES
-	dw EvoStoneEffect      ; METAL_COAT
 	dw NoEffect            ; DRAGON_FANG
+	dw NoEffect            ; IRON_PLATE
 
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; BRIGHTPOWDER
@@ -141,6 +141,7 @@ ItemEffects1:
 	dw NoEffect            ; METAL_POWDER
 
 	dw EvoStoneEffect      ; DRAGON_SCALE
+	dw EvoStoneEffect      ; METAL_COAT
 	dw EvoStoneEffect      ; UP_GRADE
 	dw EvoStoneEffect      ; RAZOR_CLAW
 	dw EvoStoneEffect      ; DUBIOUS_DISC

@@ -95,8 +95,8 @@
 	const SHARP_BEAK   ; 0049
 	const SPELL_TAG    ; 004A
 	const BLACKGLASSES ; 004B
-	const METAL_COAT   ; 004C
-	const DRAGON_FANG  ; 004D
+	const DRAGON_FANG  ; 004C
+	const IRON_PLATE   ; 004D
 
 	const BERSERK_GENE ; 004E
  	const BRIGHTPOWDER ; 004F
@@ -116,79 +116,80 @@
 	const METAL_POWDER ; 005C
 
 	const DRAGON_SCALE ; 005D
-	const UP_GRADE     ; 005E
-	const RAZOR_CLAW   ; 005F
-	const DUBIOUS_DISC ; 0060
-	const PROTECTOR    ; 0061
+	const METAL_COAT   ; 005E
+	const UP_GRADE     ; 005F
+	const RAZOR_CLAW   ; 0060
+	const DUBIOUS_DISC ; 0061
+	const PROTECTOR    ; 0062
 
-	const SILVER_LEAF  ; 0062
-	const GOLD_LEAF    ; 0063
+	const SILVER_LEAF  ; 0063
+	const GOLD_LEAF    ; 0064
 
-	const NUGGET       ; 0064
-	const TINYMUSHROOM ; 0065
-	const BIG_MUSHROOM ; 0066
-	const PEARL        ; 0067
-	const BIG_PEARL    ; 0068
-	const STARDUST     ; 0069
-	const STAR_PIECE   ; 006A
-	const BRICK_PIECE  ; 006B
-	const SLOWPOKETAIL ; 006C
+	const NUGGET       ; 0065
+	const TINYMUSHROOM ; 0066
+	const BIG_MUSHROOM ; 0067
+	const PEARL        ; 0068
+	const BIG_PEARL    ; 0069
+	const STARDUST     ; 006A
+	const STAR_PIECE   ; 006B
+	const BRICK_PIECE  ; 006C
+	const SLOWPOKETAIL ; 006D
 
-	const NORMAL_BOX   ; 006D
-	const GORGEOUS_BOX ; 006E
+	const NORMAL_BOX   ; 006E
+	const GORGEOUS_BOX ; 006F
 
-	const FLOWER_MAIL  ; 006F
-	const SURF_MAIL    ; 0070
-	const LITEBLUEMAIL ; 0071
-	const PORTRAITMAIL ; 0072
-	const LOVELY_MAIL  ; 0073
-	const EON_MAIL     ; 0074
-	const MORPH_MAIL   ; 0075
-	const BLUESKY_MAIL ; 0076
-	const MUSIC_MAIL   ; 0077
-	const MIRAGE_MAIL  ; 0078
+	const FLOWER_MAIL  ; 0070
+	const SURF_MAIL    ; 0071
+	const LITEBLUEMAIL ; 0072
+	const PORTRAITMAIL ; 0073
+	const LOVELY_MAIL  ; 0074
+	const EON_MAIL     ; 0075
+	const MORPH_MAIL   ; 0076
+	const BLUESKY_MAIL ; 0077
+	const MUSIC_MAIL   ; 0078
+	const MIRAGE_MAIL  ; 0079
 
-	const POISON_GUARD ; 0079
-	const BURN_GUARD   ; 007A
-	const FREEZE_GUARD ; 007B
-	const SLEEP_GUARD  ; 007C
-	const PARLYZ_GUARD ; 007D
-	const CONFUSEGUARD ; 007E
+	const POISON_GUARD ; 007A
+	const BURN_GUARD   ; 007B
+	const FREEZE_GUARD ; 007C
+	const SLEEP_GUARD  ; 007D
+	const PARLYZ_GUARD ; 007E
+	const CONFUSEGUARD ; 007F
 
-	const DAMP_ROCK    ; 007F
-	const HEAT_ROCK    ; 0080
-	const SMOOTH_ROCK  ; 0081
-	const ICY_ROCK     ; 0082
+	const DAMP_ROCK    ; 0080
+	const HEAT_ROCK    ; 0081
+	const SMOOTH_ROCK  ; 0082
+	const ICY_ROCK     ; 0083
 
-	const LIGHT_CLAY   ; 0083
-	const GRIP_CLAW    ; 0084
+	const LIGHT_CLAY   ; 0084
+	const GRIP_CLAW    ; 0085
 
-	const SAFARI_LURE  ; 0085
+	const SAFARI_LURE  ; 0086
 
-	const RADIANCE_ORB ; 0086
-	const UNOWN_AURA   ; 0087
+	const RADIANCE_ORB ; 0087
+	const UNOWN_AURA   ; 0088
 
-	const MAGNA_PLANT  ; 0088
-	const TROPIC_PLANT ; 0089
-	const JUMBO_PLANT  ; 008A
+	const MAGNA_PLANT  ; 0089
+	const TROPIC_PLANT ; 008A
+	const JUMBO_PLANT  ; 008B
 
-	const PINKBED      ; 008B
-	const POLKADOTBED  ; 008C
-	const PIKACHUBED   ; 008D
+	const PINKBED      ; 008C
+	const POLKADOTBED  ; 008D
+	const PIKACHUBED   ; 008E
 
-	const NES          ; 008E
-	const N64          ; 008F
-	const VIRTUALBOY   ; 0090
-	const FCOM         ; 0091
+	const NES          ; 008F
+	const N64          ; 0090
+	const VIRTUALBOY   ; 0091
+	const FCOM         ; 0092
 
-	const REDCARPET    ; 0092
-	const BLUECARPET   ; 0093
-	const YELLOWCARPET ; 0094
-	const GREENCARPET  ; 0095
+	const REDCARPET    ; 0093
+	const BLUECARPET   ; 0094
+	const YELLOWCARPET ; 0095
+	const GREENCARPET  ; 0096
 
-	const PIKACHU_POSTER    ; 0096
-	const CLEFAIRY_POSTER   ; 0097
-	const JIGGLYPUFF_POSTER ; 0098
+	const PIKACHU_POSTER    ; 0097
+	const CLEFAIRY_POSTER   ; 0098
+	const JIGGLYPUFF_POSTER ; 0099
 
 DEF NUM_ITEM_POCKET EQU const_value - 1
 
