@@ -805,6 +805,9 @@ CeladonGym_Blocks:
 CeladonCafe_Blocks:
 	INCBIN "maps/CeladonCafe.ablk"
 
+CeladonGreenhouse_Blocks:
+	INCBIN "maps/CeladonGreenhouse.ablk"
+
 RockTunnel1F_Blocks:
 	INCBIN "maps/RockTunnel1F.ablk"
 
@@ -968,8 +971,8 @@ OlivineRestaurant_Blocks:
 BlackthornRangerStation_Blocks:
 	INCBIN "maps/BlackthornRangerStation.ablk"
 
-PewterCityGreenhouse_Blocks:
-	INCBIN "maps/PewterCityGreenhouse.ablk"
+PewterForge_Blocks:
+	INCBIN "maps/PewterForge.ablk"
 
 CeruleanAquarium_Blocks:
 	INCBIN "maps/CeruleanAquarium.ablk"

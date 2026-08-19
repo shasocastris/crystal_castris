@@ -648,6 +648,7 @@ ENDM
 	map_attributes CeladonGameCornerPrizeRoom, CELADON_GAME_CORNER_PRIZE_ROOM, $00, 0
 	map_attributes CeladonGym, CELADON_GYM, $00, 0
 	map_attributes CeladonCafe, CELADON_CAFE, $00, 0
+	map_attributes CeladonGreenhouse, CELADON_GREENHOUSE, $00, 0
 	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
 	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
 	map_attributes Route7SaffronGate, ROUTE_7_SAFFRON_GATE, $00, 0
@@ -716,7 +717,7 @@ ENDM
 	map_attributes EcruteakGameHouse, ECRUTEAK_GAME_HOUSE, $00, 0
 	map_attributes OlivineRestaurant, OLIVINE_RESTAURANT, $00, 0
 	map_attributes BlackthornRangerStation, BLACKTHORN_RANGER_STATION, $00, 0
-	map_attributes PewterCityGreenhouse, PEWTER_CITY_GREENHOUSE, $00, 0
+	map_attributes PewterForge, PEWTER_FORGE, $00, 0
 	map_attributes CeruleanAquarium, CERULEAN_AQUARIUM, $00, 0
 	map_attributes VermilionGrampsHouse, VERMILION_GRAMPS_HOUSE, $00, 0
 	map_attributes VermilionMysteryGiftHouse, VERMILION_MYSTERY_GIFT_HOUSE, $00, 0

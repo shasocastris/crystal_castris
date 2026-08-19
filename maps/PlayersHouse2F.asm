@@ -95,6 +95,8 @@ if DEF(_DEBUG)
 	giveitem MYSTIC_DEW
 ;	giveitem JACKHAMMER
 	giveitem COIN_CASE
+	giveitem METAL_POWDER
+	giveitem BRICK_PIECE, 5
 	givecoins 9999
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE

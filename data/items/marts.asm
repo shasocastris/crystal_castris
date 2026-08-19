@@ -445,12 +445,11 @@ MartLavenderOddities1:
 	dw REVIVAL_HERB
 
 MartLavenderOddities2:
-	db 8 ; # items
+	db 7 ; # items
 	dw SPELL_TAG
 	dw CLEANSE_TAG
 	dw SMOKE_BALL
 	dw BLACKGLASSES
-	dw IRON_PLATE
 	dw POKE_DOLL
 	dw DIRE_HIT
 	dw GUARD_SPEC

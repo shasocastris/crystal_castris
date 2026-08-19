@@ -331,7 +331,7 @@ ENDM
 	map_const PEWTER_POKECENTER_1F,                         5,  4 ;  6
 	map_const PEWTER_POKECENTER_2F_BETA,                    8,  4 ;  7
 	map_const PEWTER_SNOOZE_SPEECH_HOUSE,                   4,  4 ;  8
-	map_const PEWTER_CITY_GREENHOUSE,                       9,  7 ;  9
+	map_const PEWTER_FORGE,                                 4,  4 ;  9
 	map_const PEWTER_MUSEUM_1F,                            10,  4 ; 10
 	map_const PEWTER_MUSEUM_2F,                             7,  4 ; 11
 	endgroup
@@ -441,6 +441,7 @@ ENDM
 	map_const ROUTE_7_SAFFRON_GATE,                         5,  4 ; 25
 	map_const ROUTE_7_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_17_ROUTE_18_GATE,                       5,  4 ; 26
+	map_const CELADON_GREENHOUSE,                           9,  7 ; 27
 	endgroup
 
 	newgroup CIANWOOD                                             ; 22

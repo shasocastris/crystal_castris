@@ -1,13 +1,13 @@
 	object_const_def
-	const PEWTERCITY_GREENHOUSE_GYM_GUIDE
-	const PEWTERCITY_GREENHOUSE_BUG_CATCHER
-	const PEWTERCITY_GREENHOUSE_SAILOR
-	const PEWTERCITY_GREENHOUSE_FRUIT_TREE1
-	const PEWTERCITY_GREENHOUSE_FRUIT_TREE2
-	const PEWTERCITY_GREENHOUSE_FRUIT_TREE3
-	const PEWTERCITY_GREENHOUSE_FRUIT_TREE4
+	const CELADON_GREENHOUSE_GYM_GUIDE
+	const CELADON_GREENHOUSE_BUG_CATCHER
+	const CELADON_GREENHOUSE_SAILOR
+	const CELADON_GREENHOUSE_FRUIT_TREE1
+	const CELADON_GREENHOUSE_FRUIT_TREE2
+	const CELADON_GREENHOUSE_FRUIT_TREE3
+	const CELADON_GREENHOUSE_FRUIT_TREE4
 
-PewterCityGreenhouse_MapScripts:
+CeladonGreenhouse_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
@@ -596,12 +596,12 @@ GreenhouseWeirdTreeText:
 	line "you of a #MON."
 	done
 
-PewterCityGreenhouse_MapEvents:
+CeladonGreenhouse_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  2, 13, PEWTER_CITY, 3
-	warp_event  3, 13, PEWTER_CITY, 3
+	warp_event  2, 13, CELADON_CITY, 10
+	warp_event  3, 13, CELADON_CITY, 10
 
 	def_coord_events
 
