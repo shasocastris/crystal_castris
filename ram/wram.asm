@@ -2797,6 +2797,7 @@ wLavRadioTower2FSceneID::                         db
 wCeruleanBase3SceneID::                           db
 wCeruleanBase2SceneID::                           db
 wBlackthornCitySceneID::                          db
+wRoute45SceneID::                                 db
 
 ; fight counts
 

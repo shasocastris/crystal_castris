@@ -19,6 +19,67 @@ Route45_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_TILES, Route45BridgeCallback
+
+; scene 0 = surf under (the .ablk default), scene 1 = walk over.
+; ifequal 1, not iftrue: checkscene returns -1 when wCurMapSceneScriptPointer is null.
+Route45BridgeCallback:
+	checkscene
+	ifequal 1, .deck
+	callasm Route45BridgePaintWater
+	endcallback
+
+.deck:
+	callasm Route45BridgePaintDeck
+	endcallback
+
+; $89 is the same bridge art with FLOOR collision and no priority bit.
+Route45BridgePaintDeck:
+	changebridgeblock 10,  4, $89, ROUTE_45
+	changebridgeblock 12,  4, $89, ROUTE_45
+	changebridgeblock  8, 24, $89, ROUTE_45
+	changebridgeblock 10, 24, $89, ROUTE_45
+	changebridgeblock 10, 36, $89, ROUTE_45
+	changebridgeblock 12, 36, $89, ROUTE_45
+	changebridgeblock 10, 48, $89, ROUTE_45
+	changebridgeblock 12, 48, $89, ROUTE_45
+	changebridgeblock  8, 66, $89, ROUTE_45
+	changebridgeblock 10, 66, $89, ROUTE_45
+	changebridgeblock  6, 82, $89, ROUTE_45
+	changebridgeblock  8, 82, $89, ROUTE_45
+	jmp BufferScreen
+
+; $98/$99 keep the WALL abutments and set priority over the two channel tiles between them.
+; All six crossings share wRoute45SceneID, so every trigger repaints all twelve blocks. They
+; are 20+ tiles apart against a 9-tile viewport, so two are never on screen together.
+Route45BridgePaintWater:
+	changebridgeblock 10,  4, $98, ROUTE_45
+	changebridgeblock 12,  4, $99, ROUTE_45
+	changebridgeblock  8, 24, $98, ROUTE_45
+	changebridgeblock 10, 24, $99, ROUTE_45
+	changebridgeblock 10, 36, $98, ROUTE_45
+	changebridgeblock 12, 36, $99, ROUTE_45
+	changebridgeblock 10, 48, $98, ROUTE_45
+	changebridgeblock 12, 48, $99, ROUTE_45
+	changebridgeblock  8, 66, $98, ROUTE_45
+	changebridgeblock 10, 66, $99, ROUTE_45
+	changebridgeblock  6, 82, $98, ROUTE_45
+	changebridgeblock  8, 82, $99, ROUTE_45
+	jmp BufferScreen
+
+Route45BridgeSurfTrigger:
+	callasm Route45BridgePaintWater
+	callthisasm
+	xor a
+	jr Route45Bridge_Finish
+
+Route45BridgeWalkTrigger:
+	callasm Route45BridgePaintDeck
+	callthisasm
+	ld a, $1
+Route45Bridge_Finish:
+	ld [wRoute45SceneID], a
+	jmp GenericFinishBridge
 
 TrainerBlackbeltKenji:
 	trainer BLACKBELT_T, KENJI, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
@@ -517,6 +578,89 @@ Route45_MapEvents:
 	warp_event 17, 89, BLACKTHORN_PASS, 3
 
 	def_coord_events
+	; Six crossings, all the same shape: WALL abutment, two water tiles, WALL abutment.
+	; Engage sits one tile out from the deck, revert two tiles out, so walking in always
+	; crosses revert (gated on scene 1, so it is inert) before engage, and walking out
+	; always crosses engage (gated on scene 0, inert) before revert.
+	; The trailing entries per crossing are flanking reverts. The engage tiles sit on the
+	; open riverbank, so a player can step off them sideways instead of onto the deck, which
+	; would leave the bridge walkable and block the river. HOP_DOWN ledges count here: they
+	; are LAND_TILE in collision_permissions.asm, so they are standable, not hop-through.
+	; crossing 1: deck x = 10-13, y = 4-5
+	coord_event  9,  4, 0, Route45BridgeWalkTrigger
+	coord_event  9,  5, 0, Route45BridgeWalkTrigger
+	coord_event 14,  4, 0, Route45BridgeWalkTrigger
+	coord_event 14,  5, 0, Route45BridgeWalkTrigger
+	coord_event  8,  4, 1, Route45BridgeSurfTrigger
+	coord_event  8,  5, 1, Route45BridgeSurfTrigger
+	coord_event 15,  4, 1, Route45BridgeSurfTrigger
+	coord_event 15,  5, 1, Route45BridgeSurfTrigger
+	coord_event  9,  3, 1, Route45BridgeSurfTrigger
+	coord_event 14,  3, 1, Route45BridgeSurfTrigger
+	coord_event 14,  6, 1, Route45BridgeSurfTrigger
+	; crossing 2: deck x = 8-11, y = 24-25
+	coord_event  7, 24, 0, Route45BridgeWalkTrigger
+	coord_event  7, 25, 0, Route45BridgeWalkTrigger
+	coord_event 12, 24, 0, Route45BridgeWalkTrigger
+	coord_event 12, 25, 0, Route45BridgeWalkTrigger
+	coord_event  6, 24, 1, Route45BridgeSurfTrigger
+	coord_event  6, 25, 1, Route45BridgeSurfTrigger
+	coord_event 13, 24, 1, Route45BridgeSurfTrigger
+	coord_event 13, 25, 1, Route45BridgeSurfTrigger
+	coord_event  7, 23, 1, Route45BridgeSurfTrigger
+	coord_event  7, 26, 1, Route45BridgeSurfTrigger
+	; crossing 3: deck x = 10-13, y = 36-37
+	coord_event  9, 36, 0, Route45BridgeWalkTrigger
+	coord_event  9, 37, 0, Route45BridgeWalkTrigger
+	coord_event 14, 36, 0, Route45BridgeWalkTrigger
+	coord_event 14, 37, 0, Route45BridgeWalkTrigger
+	coord_event  8, 36, 1, Route45BridgeSurfTrigger
+	coord_event  8, 37, 1, Route45BridgeSurfTrigger
+	coord_event 15, 36, 1, Route45BridgeSurfTrigger
+	coord_event 15, 37, 1, Route45BridgeSurfTrigger
+	coord_event  9, 35, 1, Route45BridgeSurfTrigger
+	coord_event  9, 38, 1, Route45BridgeSurfTrigger
+	coord_event 14, 35, 1, Route45BridgeSurfTrigger
+	coord_event 14, 38, 1, Route45BridgeSurfTrigger
+	; crossing 4: deck x = 10-13, y = 48-49
+	coord_event  9, 48, 0, Route45BridgeWalkTrigger
+	coord_event  9, 49, 0, Route45BridgeWalkTrigger
+	coord_event 14, 48, 0, Route45BridgeWalkTrigger
+	coord_event 14, 49, 0, Route45BridgeWalkTrigger
+	coord_event  8, 48, 1, Route45BridgeSurfTrigger
+	coord_event  8, 49, 1, Route45BridgeSurfTrigger
+	coord_event 15, 48, 1, Route45BridgeSurfTrigger
+	coord_event 15, 49, 1, Route45BridgeSurfTrigger
+	coord_event  9, 47, 1, Route45BridgeSurfTrigger
+	coord_event 14, 47, 1, Route45BridgeSurfTrigger
+	coord_event 14, 50, 1, Route45BridgeSurfTrigger
+	; crossing 5: deck x = 8-11, y = 66-67
+	coord_event  7, 66, 0, Route45BridgeWalkTrigger
+	coord_event  7, 67, 0, Route45BridgeWalkTrigger
+	coord_event 12, 66, 0, Route45BridgeWalkTrigger
+	coord_event 12, 67, 0, Route45BridgeWalkTrigger
+	coord_event  6, 66, 1, Route45BridgeSurfTrigger
+	coord_event  6, 67, 1, Route45BridgeSurfTrigger
+	coord_event 13, 66, 1, Route45BridgeSurfTrigger
+	coord_event 13, 67, 1, Route45BridgeSurfTrigger
+	coord_event  7, 68, 1, Route45BridgeSurfTrigger
+	coord_event 12, 65, 1, Route45BridgeSurfTrigger
+	coord_event 12, 68, 1, Route45BridgeSurfTrigger
+	; crossing 6: deck x = 6-9, y = 82-83
+	coord_event  5, 82, 0, Route45BridgeWalkTrigger
+	coord_event  5, 83, 0, Route45BridgeWalkTrigger
+	coord_event 10, 82, 0, Route45BridgeWalkTrigger
+	coord_event 10, 83, 0, Route45BridgeWalkTrigger
+	coord_event  4, 82, 1, Route45BridgeSurfTrigger
+	coord_event  4, 83, 1, Route45BridgeSurfTrigger
+	coord_event 11, 82, 1, Route45BridgeSurfTrigger
+	coord_event 11, 83, 1, Route45BridgeSurfTrigger
+	coord_event  5, 81, 1, Route45BridgeSurfTrigger
+	; special triggers to account for flying from bridge
+	coord_event  9, 85, 1, Route45BridgeSurfTrigger
+	coord_event 11,  1, 1, Route45BridgeSurfTrigger
+	coord_event 12,  1, 1, Route45BridgeSurfTrigger
+
 
 	def_bg_events
 	bg_event 17,  3, BGEVENT_READ, Route45Sign
@@ -525,15 +669,15 @@ Route45_MapEvents:
 	def_object_events
 	object_event 12, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerErik, -1
 	object_event 19, 63, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerMichael, -1
-	object_event  7, 26, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
+	object_event  6, 26, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerParry, -1
 	object_event 13, 63, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerHikerTimothy, -1
-	object_event 16, 48, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltKenji, -1
+	object_event 17, 48, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltKenji, -1
 	object_event 21, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermRyan, -1
 	object_event  6, 31, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerfKelly, -1
 	object_event 21, 77, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route45FruitTree1, -1
 	object_event 20, 79, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route45FruitTree2, -1
 	object_event 21, 75, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route45FruitTree3, -1
-	object_event  8, 49, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Nugget, EVENT_ROUTE_45_NUGGET
+	object_event  7, 49, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Nugget, EVENT_ROUTE_45_NUGGET
 	object_event  5, 57, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Revive, EVENT_ROUTE_45_REVIVE
 	object_event  7, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45Elixer, EVENT_ROUTE_45_ELIXER
 	object_event 15, 30, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route45MaxPotion, EVENT_ROUTE_45_MAX_POTION
