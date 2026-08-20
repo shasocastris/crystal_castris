@@ -143,7 +143,7 @@ DrawEnemyHUDBorder:
 	dec a
 	ret nz
 	ld a, [wTempEnemyMonSpecies]
-	call CheckCaughtMon
+	call CheckCaughtForm ; the variant and its base are marked separately
 	ret z
 	hlcoord 1, 1
 	ld [hl], $5d

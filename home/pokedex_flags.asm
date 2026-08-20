@@ -77,6 +77,7 @@ SetSeenAndCaughtMon::
 	call SetSeenMonIndex
 	pop de
 SetCaughtMonIndex::
+	call SetVariantCaught
 	ld hl, wPokedexCaught
 	jr SetPokedexStatusMonIndex
 
@@ -159,6 +160,96 @@ GetPokemonBaseIndexFromID::
 	call GetVariantBase
 	ld h, d
 	ld l, e
+	ret
+
+SetVariantCaught:
+; Record that the player caught this variant, if it is one. The base species'
+; shared Pokedex bit is set separately by the caller falling through into
+; SetCaughtMonIndex, so a variant capture marks both.
+; Called only from the caught-set path; the seen and check paths must not.
+; in: de = 16-bit species index, before GetVariantBase resolves it
+; preserves everything
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	ret c ; an ordinary species; the shared bit is enough
+	push hl
+	push de
+	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wVariantCaught)
+	ldh [rSVBK], a
+	ld a, e
+	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
+	ld e, a
+	ld d, 0
+	ld hl, wVariantCaught
+	ld b, SET_FLAG
+	call FlagAction
+	pop af
+	ldh [rSVBK], a
+	pop bc
+	pop de
+	pop hl
+	ret
+
+CheckCaughtForm::
+; As CheckCaughtMon, but answers for the *form* rather than the species.
+; A variant and its base share one Pokedex bit, so CheckCaughtMon reports true
+; for either once one of them is caught.
+; in:  a = 8-bit species ID
+; out: z if this form has not been caught, nz if it has
+; preserves bc, de and hl
+	push hl
+	push de
+	push bc
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	jr nc, .variant
+	call CheckCaughtMonIndex
+	jr .done
+
+.variant
+	call CheckVariantCaught
+
+.done
+	pop bc ; pops do not disturb the z flag FlagAction left
+	pop de
+	pop hl
+	ret
+
+CheckVariantCaught::
+; in: de = 16-bit variant index
+; out: z if not caught, nz if caught
+; preserves bc, de and hl
+	push hl
+	push de
+	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wVariantCaught)
+	ldh [rSVBK], a
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld e, a
+	ld d, 0
+	ld hl, wVariantCaught
+	ld b, CHECK_FLAG
+	call FlagAction
+	pop af
+	ldh [rSVBK], a
+	pop bc
+	pop de
+	pop hl
+	ld a, c
+	and a
 	ret
 
 GetSpeciesVariant::

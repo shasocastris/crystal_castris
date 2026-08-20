@@ -179,10 +179,15 @@ DisplayDexEntry:
 	lb bc, 2, (4 << 4) | 4
 	call PrintNum
 	pop de
-; place Caught ball icon
+; place Caught ball icon -- per form, since a variant and its base share one
+; Pokedex bit and CheckCaughtMon would report true for either
+	ld a, [wTempSpecies]
+	call CheckCaughtForm
+	jr z, .skip_ball
 	hlcoord 16, 1
 	ld a, $4f ; pokeball icon
-	ld [hli], a
+	ld [hl], a
+.skip_ball
 
 .skip_weight
 ; Page 1

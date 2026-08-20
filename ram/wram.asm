@@ -2991,7 +2991,15 @@ wEndPokedexCaught::
 ; state, so this is margin for real new species only. When NUM_POKEMON grows,
 ; delete one byte here per byte the flag_array gains. Must stay adjacent to
 ; wPokedexCaught.
-	ds 4
+;
+; One byte of it is spent on wVariantCaught: a variant and its base share a
+; single Pokedex bit, so that bit cannot say which form was actually caught.
+; The Pokedex and battle-HUD caught markers ask this instead. Only the variant
+; needs its own bit -- an ordinary species is answered correctly by the shared
+; one.
+wVariantCaught:: flag_array NUM_VARIANTS
+wEndVariantCaught::
+	ds 3
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 ; M0 reservation, as above, for the seen array. INTENTIONALLY UNUSED.
