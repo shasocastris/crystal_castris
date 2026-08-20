@@ -394,6 +394,7 @@ Pokedex_InitDexEntryScreen:
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG
+	call Pokedex_DrawFormIndicator
 	call Pokedex_InitArrowCursor
 	call Pokedex_GetDisplayedMon
 	ld a, l
@@ -534,6 +535,7 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_LoadCurrentFootprint
+	call Pokedex_DrawFormIndicator
 	call Pokedex_GetDisplayedMon
 	ld a, l
 	ld [wPrevDexEntry], a
@@ -605,6 +607,7 @@ DexEntryScreen_MenuActionJumptable:
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetDisplayedMon
+	call Pokedex_DrawFormIndicator
 	farcall DisplayDexEntry
 	jmp Pokedex_DrawFootprint
 
@@ -1305,29 +1308,6 @@ Pokedex_DrawDexEntryScreenBG:
 	ld [hli], a
 	ld [hl], $6c ; new curved text border, right
 
-; START > FORM, drawn only when this species has a variant the player has
-; caught. That makes the indicator double as the hint that the form view exists
-; at all -- there is nothing else telling the player to press START.
-	call Pokedex_SelectedMonHasCaughtVariant
-	jr nc, .no_form_indicator
-	hlcoord 9, 0
-	ld [hl], $6b ; curved text border, left
-	inc hl
-	ld a, $41 ; START 1
-	ld [hli], a
-	inc a ; $42, START 2
-	ld [hli], a
-	inc a ; $43, START 3
-	ld [hli], a
-	ld a, $62 ; FORM 1
-	ld [hli], a
-	inc a ; $63, FORM 2
-	ld [hli], a
-	inc a ; $64, FORM 3
-	ld [hli], a
-	ld [hl], $6c ; curved text border, right
-.no_form_indicator
-
 	hlcoord 1, 10
 	ld bc, 19
 	ld a, $61
@@ -1820,6 +1800,35 @@ Pokedex_GetSelectedMon:
 	ld [wTempSpecies], a
 	ret
 
+Pokedex_DrawFormIndicator:
+; START > FORM, to the right of SELECT > SHINY, drawn only when this species has
+; a variant the player has caught. The indicator doubles as the hint that the
+; form view exists at all -- nothing else tells the player to press START.
+;
+; Deliberately NOT part of Pokedex_DrawDexEntryScreenBG: that runs on the
+; post-catch new-entry screen too, where the listing cursor is meaningless and
+; START does nothing. Call this only once wTempSpecies holds the species on
+; screen.
+	call Pokedex_SelectedMonHasCaughtVariant
+	ret nc
+	hlcoord 9, 0
+	ld [hl], $6b ; curved text border, left
+	inc hl
+	ld a, $41 ; START 1
+	ld [hli], a
+	inc a ; $42, START 2
+	ld [hli], a
+	inc a ; $43, START 3
+	ld [hli], a
+	ld a, $62 ; FORM 1
+	ld [hli], a
+	inc a ; $63, FORM 2
+	ld [hli], a
+	inc a ; $64, FORM 3
+	ld [hli], a
+	ld [hl], $6c ; curved text border, right
+	ret
+
 Pokedex_GetDisplayedMon:
 ; As Pokedex_GetSelectedMon, but yields the variant when the form view is on.
 ; Only the dex entry screen's *display* path uses this. The listing, its
@@ -1848,9 +1857,20 @@ Pokedex_GetDisplayedMon:
 	ret
 
 Pokedex_SelectedMonHasCaughtVariant:
-; out: carry set if the selected species has a variant the player has caught
+; out: carry set if the species on screen has a variant the player has caught
 ; clobbers a, bc, de and hl
-	call Pokedex_GetSelectedMon
+;
+; Reads wTempSpecies rather than calling Pokedex_GetSelectedMon. That routine is
+; NOT a pure read -- it overwrites wTempSpecies, locks LOCKED_MON_ID_DEX_SELECTED
+; and indexes wPokedexOrder by the listing cursor, which is meaningless on any
+; screen reached without going through the list. Calling it from the entry
+; screen's BG draw corrupted the species out from under DisplayDexEntry and fed
+; a garbage index to the 16-bit allocator.
+;
+; Resolves to the base first, so this still reports true while the form view is
+; already toggled on and wTempSpecies holds the variant.
+	ld a, [wTempSpecies]
+	call GetPokemonBaseIndexFromID
 	ld d, h
 	ld e, l
 	call GetSpeciesVariant
