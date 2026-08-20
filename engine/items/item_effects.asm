@@ -887,6 +887,18 @@ HeavyBallMultiplier:
 	inc hl
 	call GetFarWord
 
+	; This hack stores dex weight in whole pounds; the conversion below is
+	; vanilla's and expects tenths of a pound, so scale by 10 first. Without
+	; it every species lands under the first threshold -- even Snorlax, the
+	; heaviest at 1014 -- and Heavy Ball is a flat -20. de is dead here.
+	ld d, h
+	ld e, l
+	add hl, hl ; x2
+	add hl, hl ; x4
+	add hl, hl ; x8
+	add hl, de ; x9
+	add hl, de ; x10
+
 	srl h
 	rr l
 	ld b, h
