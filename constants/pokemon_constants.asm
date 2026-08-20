@@ -1,22 +1,34 @@
 ; pokemon ids
-; indexes for:
+;
+; Tables sized NUM_POKEMON_AND_VARIANTS -- these cover variant species too, so
+; a new variant needs an entry in every one of them:
 ; - PokemonNames (see data/pokemon/names.asm)
 ; - BaseData (see data/pokemon/base_stats.asm)
-; - EvosAttacksPointers (see data/pokemon/evos_attacks_pointers.asm)
-; - EggMovePointers (see data/pokemon/egg_move_pointers.asm)
+; - EvosAttacksPointers (see data/pokemon/evos_attacks.asm)
 ; - PokemonCries (see data/pokemon/cries.asm)
 ; - IconPointers (see data/pokemon/icon_pointers.asm)
+; - MonMenuIconPals (see data/pokemon/menu_icon_pals.asm)
 ; - PokemonPicPointers (see data/pokemon/pic_pointers.asm)
 ; - PokemonPalettes (see data/pokemon/palettes.asm)
-; - PokedexDataPointerTable (see data/pokemon/dex_entry_pointers.asm)
-; - AlphabeticalPokedexOrder (see data/pokemon/dex_order_alpha.asm)
-; - NewPokedexOrder (see data/pokemon/dex_order_new.asm)
-; - Pokered_MonIndices (see data/pokemon/gen1_order.asm)
-; - Footprints (see gfx/footprints.asm)
+; - FirstEvoStages (see data/pokemon/first_stages.asm)
 ; - AnimationPointers (see gfx/pokemon/anim_pointers.asm)
 ; - AnimationIdlePointers (see gfx/pokemon/idle_pointers.asm)
 ; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
 ; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
+;
+; Tables sized NUM_POKEMON -- these stop at the last real species, and variants
+; must NOT be added to them. A variant reaches these through its base species
+; via GetVariantBase, not on its own:
+; - PokedexDataPointerTable (see data/pokemon/dex_entry_pointers.asm)
+; - AlphabeticalPokedexOrder (see data/pokemon/dex_order_alpha.asm)
+; - NewPokedexOrder (see data/pokemon/dex_order_new.asm)
+; - Footprints (see gfx/footprints.asm)
+; - wPokedexCaught / wPokedexSeen (see ram/wram.asm)
+;
+; Not indexed by species at all, despite their table lengths -- do not extend:
+; - Pokered_MonIndices (see data/pokemon/gen1_order.asm) -- gen 1 index order
+; - PokemonTypeLists (see data/types/pokemon_type_lists.asm) -- keyed by type
+; - PokemonEvoLines (see data/pokemon/evo_lines.asm) -- keyed by LINE_*
 	const_def 1
 	const BULBASAUR  ; 01
 	const IVYSAUR    ; 02
