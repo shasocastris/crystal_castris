@@ -124,6 +124,7 @@ rept 3
 endr
 	ld [hl], a
 	farcall ResetGreenhousePlots
+	farcall FinishForgeOrder
 	ld hl, wKenjiBreakTimer
 	ld a, [hl]
 	and a

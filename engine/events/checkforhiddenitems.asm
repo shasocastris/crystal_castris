@@ -122,7 +122,7 @@ RockItemEncounter:
 	dbw 2, BRIGHTPOWDER
 	dbw 2, KINGS_ROCK
 	dbw 2, THICK_CLUB
-	dbw 4, METAL_POWDER
+	dbw 2, METAL_POWDER
 	db -1
 
 TreeItemEncounter:

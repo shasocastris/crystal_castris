@@ -9,6 +9,10 @@ PewterForge_MapScripts:
 PewterForgeSmithScript:
 	faceplayer
 	opentext
+	checkevent EVENT_PEWTER_FORGE_ORDER_READY
+	iftrue .Collect
+	checkevent EVENT_PEWTER_FORGE_ORDER_PLACED
+	iftrue .StillWorking
 	writetext PewterForgeSmithText
 	yesorno
 	iffalse .Declined
@@ -19,19 +23,33 @@ PewterForgeSmithScript:
 	takeitem BRICK_PIECE, 5
 	iffalse .NoMaterials
 	takeitem METAL_POWDER, 1
-	; giveitem must come last: it sets wCurItem, which itemnotify names.
-	giveitem IRON_PLATE
-	iffalse .Refund
+	setevent EVENT_PEWTER_FORGE_ORDER_PLACED
+	writetext PewterForgeOrderPlacedText
+	waitbutton
+	closetext
+	end
+
+.StillWorking:
+	writetext PewterForgeStillWorkingText
+	waitbutton
+	closetext
+	end
+
+.Collect:
 	writetext PewterForgeForgedText
 	promptbutton
+	; Flags stay set until the plate is actually in hand, so a full
+	; pack just means the smith holds onto it.
+	giveitem IRON_PLATE
+	iffalse .PackFull
+	clearevent EVENT_PEWTER_FORGE_ORDER_PLACED
+	clearevent EVENT_PEWTER_FORGE_ORDER_READY
 	specialsound
 	itemnotify
 	closetext
 	end
 
-.Refund:
-	giveitem BRICK_PIECE, 5
-	giveitem METAL_POWDER, 1
+.PackFull:
 	writetext PewterForgePackFullText
 	waitbutton
 	closetext
@@ -53,12 +71,12 @@ PewterForgeFurnaceScript:
 	jumptext PewterForgeFurnaceText
 
 PewterForgeSmithText:
-	text "I beat steel into"
+	text "I beat ores into"
 	line "shape here."
 
 	para "Bring me METAL"
 	line "POWDER and five"
-	cont "BRICK PIECES…"
+	cont "BRICK PIECES"
 
 	para "and I'll forge you"
 	line "an IRON PLATE."
@@ -67,12 +85,28 @@ PewterForgeSmithText:
 	line "work?"
 	done
 
-PewterForgeForgedText:
-	text "The bricks line"
-	line "the furnace…"
+PewterForgeOrderPlacedText:
+	text "Good, you have the"
+	line "raw materials."
 
-	para "The powder melts"
-	line "and folds flat."
+	text "Leave them with me"
+	line "and come back"
+	cont "tomorrow."
+	done
+
+PewterForgeStillWorkingText:
+	text "The steel's still"
+	line "in the furnace."
+
+	para "Give it until"
+	line "tomorrow."
+	done
+
+PewterForgeForgedText:
+	text "Here you go!"
+
+	para "One IRON PLATE,"
+	line "as asked."
 	done
 
 PewterForgeNoMaterialsText:
@@ -95,6 +129,9 @@ PewterForgeDeclinedText:
 PewterForgePackFullText:
 	text "Your PACK is too"
 	line "full to carry it."
+
+	para "I'll keep it here"
+	line "until you're back."
 	done
 
 PewterForgeFurnaceText:

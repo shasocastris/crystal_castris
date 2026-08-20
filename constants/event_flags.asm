@@ -341,7 +341,11 @@
 	const EVENT_MT_MOON_B2_HIDDEN_PP_UP
 	const EVENT_MT_MOON_PATH_HIDDEN_MAX_REPEL
 	const EVENT_MT_MOON_PATH_HIDDEN_STARDUST
-; Unused: next 239 events
+; Pewter Forge order state: PLACED is set when the smith takes the
+; materials, READY when the daily reset finishes the order.
+	const EVENT_PEWTER_FORGE_ORDER_PLACED
+	const EVENT_PEWTER_FORGE_ORDER_READY
+; Unused: next 237 events
 
 	const_next 600
 ; Kurt Apricorn events

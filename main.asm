@@ -625,6 +625,7 @@ SECTION "bank77", ROMX
 INCLUDE "engine/rtc/print_hours_mins.asm"
 INCLUDE "engine/events/diploma.asm"
 INCLUDE "engine/events/greenhouse.asm"
+INCLUDE "engine/events/forge.asm"
 INCLUDE "engine/pokedex/pokedex_3.asm"
 INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 
