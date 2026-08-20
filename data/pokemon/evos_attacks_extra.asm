@@ -27,7 +27,7 @@ EvosAttacksPointers3::
 	dw UrsalunaEvosAttacks
 	dw CursolaEvosAttacks
 	dw CorsolaKantoEvosAttacks
-	dw RaichuJohtoEvosAttacks
+	dw RaichuOrangeEvosAttacks
 	dw DragoniteKantoEvosAttacks
 .IndirectEnd::
 
@@ -413,7 +413,7 @@ CursolaEvosAttacks:
 	dbw 54, PERISH_SONG
 	db 0 ; no more level-up moves
 
-RaichuJohtoEvosAttacks:
+RaichuOrangeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw LEARN_EVO_MOVE, PSYCHIC_M
 	dbw 1, THUNDER_WAVE

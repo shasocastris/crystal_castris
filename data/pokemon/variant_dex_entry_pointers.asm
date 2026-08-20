@@ -7,6 +7,6 @@ VariantPokedexEntries:
 ; reads their entry text from here instead.
 	table_width 3
 	dba CorsolaKantoPokedexEntry
-	dba RaichuJohtoPokedexEntry
+	dba RaichuOrangePokedexEntry
 	dba DragoniteKantoPokedexEntry
 	assert_table_length NUM_VARIANTS

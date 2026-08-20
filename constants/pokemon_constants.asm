@@ -343,8 +343,53 @@ endc
 DEF VARIANTS_START EQU const_value
 
 	const CORSOLA_KANTO ; Galarian Corsola; Kanto coastal waters
-	const RAICHU_JOHTO  ; Alolan Raichu; the Johto form, from a Johto Pikachu
+	const RAICHU_ORANGE ; Alolan Raichu. TEMPORARILY obtained in Johto -- see the
+	                    ; reserved roster below and PikachuEvosAttacks.
 	const DRAGONITE_KANTO ; Dragon/Flying; from a Dragonair that levels in Kanto
+
+; --- RESERVED ROSTER (Bryan's final list) ---
+; Names only. A variant is not a `const` until every species-indexed table has a
+; row for it -- adding a bare one fails ~15 assert_table_length checks, because
+; those tables are direct-indexed and a gap would read whatever follows.
+; Promote a name to a const above when it is fleshed out.
+;
+; 25 of MAX_VARIANTS 32. The saved arrays are already sized for the ceiling, so
+; every one of these is paid for: adding them shifts nothing in the save block.
+;
+;   Orange Islands (M3)     Kanto
+;   -------------------     -----
+;   RAICHU_ORANGE   [done]  PONYTA_KANTO
+;   SANDSHREW_ORANGE        RAPIDASH_KANTO
+;   SANDSLASH_ORANGE        SLOWPOKE_KANTO
+;   VULPIX_ORANGE           SLOWBRO_KANTO
+;   NINETALES_ORANGE        SLOWKING_KANTO
+;   GROWLITHE_ORANGE        WEEZING_KANTO
+;   ARCANINE_ORANGE         CORSOLA_KANTO      [done]
+;   GEODUDE_ORANGE          DRAGONITE_KANTO    [done]
+;   GRAVELER_ORANGE
+;   GOLEM_ORANGE
+;   GRIMER_ORANGE
+;   MUK_ORANGE
+;   EXEGGUTOR_ORANGE
+;   MAROWAK_ORANGE
+;   VOLTORB_ORANGE
+;   ELECTRODE_ORANGE
+;   DRAGONITE_ORANGE
+;
+; A name may reference a region that does not exist yet -- it is just an
+; identifier. ORANGE_REGION itself arrives with M3; until then an _ORANGE form
+; can be defined but not region-gated, and has no way to be obtained.
+;
+; ⚠️ DRAGONITE is the only base with TWO variants. GetSpeciesVariant returns the
+; FIRST match and stops, so the Pokedex form toggle can only ever reach one of
+; them. Catching, stats, typing and type lists are all fine; only the dex view
+; is limited. Cycling needs a "next variant after this one" helper -- worth
+; doing when DRAGONITE_ORANGE lands, not before.
+;
+; ⚠️ RAICHU_ORANGE is implemented but obtained in JOHTO for now: Pikachu's
+; EVOLVE_REGION gate still names JOHTO_REGION, deliberately, so that a gate in
+; front of an EVOLVE_ITEM entry stays exercised by shipping data. Re-gate it to
+; ORANGE_REGION and move its acquisition when M3 lands.
 
 DEF NUM_VARIANTS EQU const_value - VARIANTS_START
 DEF NUM_POKEMON_AND_VARIANTS EQU const_value - 1

@@ -589,8 +589,8 @@ INCLUDE "gfx/pokemon/cursola/shiny.pal"
 ; --- variants (past NUM_POKEMON) ---
 INCLUDE "gfx/pokemon/corsola_kanto/normal.pal"
 INCLUDE "gfx/pokemon/corsola_kanto/shiny.pal"
-INCLUDE "gfx/pokemon/raichu_johto/normal.pal"
-INCLUDE "gfx/pokemon/raichu_johto/shiny.pal"
+INCLUDE "gfx/pokemon/raichu_orange/normal.pal"
+INCLUDE "gfx/pokemon/raichu_orange/shiny.pal"
 ; Dragonite's sprite with a blue palette instead of orange -- the only thing
 ; that distinguishes the Kanto form on screen, deliberately, for now.
 INCLUDE "gfx/pokemon/dragonite_kanto/normal.pal"

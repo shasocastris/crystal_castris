@@ -287,6 +287,6 @@ MonMenuIconPals:
 	icon_pals BROWN,  GREEN  ; URSALUNA
 	icon_pals GRAY,   PURPLE ; CURSOLA
 	icon_pals GRAY,   PURPLE ; CORSOLA_KANTO
-	icon_pals BROWN,  RED    ; RAICHU_JOHTO
+	icon_pals BROWN,  RED    ; RAICHU_ORANGE
 	icon_pals BLUE,   TEAL   ; DRAGONITE_KANTO (blue; whole body takes the accent)
 	assert_table_length NUM_POKEMON_AND_VARIANTS

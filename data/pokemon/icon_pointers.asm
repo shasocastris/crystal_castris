@@ -282,6 +282,6 @@ IconPointers:
 	dw UrsalunaIcon
 	dw CursolaIcon
 	dw CorsolaKantoIcon
-	dw RaichuJohtoIcon
+	dw RaichuOrangeIcon
 	dw DragoniteKantoIcon
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

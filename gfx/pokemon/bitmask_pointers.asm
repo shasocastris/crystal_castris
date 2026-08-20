@@ -277,6 +277,6 @@ BitmasksPointers:
 	dw UrsalunaBitmasks
 	dw CursolaBitmasks
 	dw CorsolaKantoBitmasks
-	dw RaichuJohtoBitmasks
+	dw RaichuOrangeBitmasks
 	dw DragoniteBitmasks
 	assert_table_length NUM_POKEMON_AND_VARIANTS

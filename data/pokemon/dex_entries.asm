@@ -291,5 +291,5 @@ CursolaPokedexEntry::    INCLUDE "data/pokemon/dex_entries/cursola.asm"
 
 ; --- variants (no Pokedex slot; reached via VariantPokedexEntries) ---
 CorsolaKantoPokedexEntry:: INCLUDE "data/pokemon/dex_entries/corsola_kanto.asm"
-RaichuJohtoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/raichu_johto.asm"
+RaichuOrangePokedexEntry::  INCLUDE "data/pokemon/dex_entries/raichu_orange.asm"
 DragoniteKantoPokedexEntry:: INCLUDE "data/pokemon/dex_entries/dragonite_kanto.asm"

@@ -632,8 +632,11 @@ ArbokEvosAttacks:
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
+	; TODO(M3): JOHTO_REGION is a placeholder. RAICHU_ORANGE belongs to the
+	; Orange Islands; it is gated here only so that a gate in front of an
+	; EVOLVE_ITEM entry has shipping data behind it before ORANGE_REGION exists.
 	db   EVOLVE_REGION, JOHTO_REGION
-	dbww EVOLVE_ITEM, THUNDERSTONE, RAICHU_JOHTO
+	dbww EVOLVE_ITEM, THUNDERSTONE, RAICHU_ORANGE
 	db   EVOLVE_REGION, KANTO_REGION
 	dbww EVOLVE_ITEM, THUNDERSTONE, RAICHU
 	db 0 ; no more evolutions

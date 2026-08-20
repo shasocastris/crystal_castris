@@ -286,7 +286,7 @@ DudunsparceIcon::    INCBIN "gfx/icons/dudunsparc.2bpp"
 UrsalunaIcon::    INCBIN "gfx/icons/ursaluna.2bpp"
 CursolaIcon::    INCBIN "gfx/icons/cursola.2bpp" ; PLACEHOLDER: copy of corsola.png, needs its own art
 CorsolaKantoIcon::    INCBIN "gfx/icons/corsola_kanto.2bpp" ; PLACEHOLDER: copy of corsola.png, needs its own art
-RaichuJohtoIcon::    INCBIN "gfx/icons/raichu_johto.2bpp" ; PLACEHOLDER: copy of raichu.png, needs its own art
+RaichuOrangeIcon::    INCBIN "gfx/icons/raichu_orange.2bpp" ; PLACEHOLDER: copy of raichu.png, needs its own art
 ; Dragonite's icon art with its shared-orange pixels folded into the accent, so
 ; PAL_ICON_BLUE colours the whole body. It needs its own copy rather than
 ; reusing DragoniteIcon because GetIconBank derives the bank from the species
