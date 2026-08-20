@@ -308,6 +308,26 @@ if NUM_POKEMON > 999
 	fail "Too many Pokémon defined!"
 endc
 
+; --- VARIANT SPECIES (no Pokédex entries) ---
+; Real species with their own base stats, types, sprites and learnsets,
+; numbered past NUM_POKEMON so that every table indexed by NUM_POKEMON is
+; unaffected. They redirect to their base species for all Pokédex purposes
+; (see GetVariantBase), which is also what makes them count toward the type
+; completion boost and Prof. Oak's rating.
+;
+; Do NOT add these to any dex-ordered table, to the seen/caught flag arrays,
+; to data/types/pokemon_type_lists.asm, or to a *Line list in
+; data/pokemon/evo_lines.asm. See docs/regional_variants_implementation_context.md.
+;
+; This block must stay above the "Unown forms" const_def below, which resets
+; const_value to 1.
+DEF VARIANTS_START EQU const_value
+
+	const CORSOLA_KANTO ; Galarian Corsola; Kanto coastal waters
+
+DEF NUM_VARIANTS EQU const_value - VARIANTS_START
+DEF NUM_POKEMON_AND_VARIANTS EQU const_value - 1
+
 ; Unown forms
 ; indexes for:
 ; - UnownWords (see data/pokemon/unown_words.asm)
