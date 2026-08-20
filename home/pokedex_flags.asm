@@ -101,6 +101,7 @@ CheckSeenMonIndex::
 CheckPokedexStatusMonIndex:
 	ld b, CHECK_FLAG
 FlagActionBaseOne:
+	call GetVariantBase
 	dec de
 	jmp FlagAction
 
@@ -109,3 +110,37 @@ GetPokemonFlagIndex:
 	ld d, h
 	ld e, l
 	ret
+
+GetVariantBase::
+; Variant species hold no Pokédex bits of their own, so every seen/caught
+; operation on a variant acts on the species it varies. That redirect is the
+; entire mechanism by which a caught variant counts toward the base species'
+; dex entry, the type completion boost and Prof. Oak's rating.
+; It is also what keeps variants in bounds: wPokedexSeen/wPokedexCaught are
+; flag_array NUM_POKEMON, and a variant index would set a bit in the unused
+; tail of the last byte, which CountSetBits16 would then count as a caught mon.
+; in:  de = 16-bit species index
+; out: de = base species index if de was a variant, unchanged otherwise
+; preserves bc and hl; clobbers a
+	assert HIGH(VARIANTS_START) == HIGH(NUM_POKEMON_AND_VARIANTS), \
+		"variant indexes straddle a $100 boundary; GetVariantBase needs a 16-bit subtract"
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	ret c ; below VARIANTS_START, so a real species
+	push hl
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld l, a
+	ld h, 0
+	add hl, hl
+	ld de, VariantBaseSpecies
+	add hl, de
+	ld a, [hli]
+	ld e, a
+	ld d, [hl]
+	pop hl
+	ret
+
+INCLUDE "data/pokemon/variant_bases.asm"
