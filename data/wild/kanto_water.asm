@@ -69,7 +69,7 @@ KantoWaterWildMons:
 	db 6 percent ; encounter rate
 	dbw 35, TENTACOOL
 	dbw 30, TENTACOOL
-	dbw 35, OCTILLERY
+	dbw 35, CORSOLA_KANTO ; 10% slot; the Johto form is fishing-only
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_20
