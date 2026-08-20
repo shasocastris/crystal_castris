@@ -27,6 +27,9 @@ MoveReminding:
 	; Checks if the current selection is not a Pokémon. Relative jump to
 	; the ".not_a_pokemon" local jump if so and continue if not.
 	; Prevents continuing if glitched Pokémon are selected.
+	; IsAPokemon reads the species from a; SelectMonFromParty leaves it in
+	; wCurPartySpecies, and returns through ReturnToMapWithSpeechTextbox.
+	ld a, [wCurPartySpecies]
 	call IsAPokemon
 	jr c, .not_a_pokemon
 
