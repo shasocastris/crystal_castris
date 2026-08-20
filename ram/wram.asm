@@ -2915,7 +2915,22 @@ wCurRegion:: db          ; M3 third region. Cached RegionCheck result.
 wOvercastRandomDay:: db  ; M4 weather. Day the weekly overcast roll was made.
 wOvercastRandomMaps:: db ; M4 weather. Which maps that roll selected.
 wOvercastReserved:: ds 4 ; M4 weather. Per-map / story-gated overcast state.
-wReservedSaveData:: ds 8 ; Unassigned saved-data reserve for future milestones.
+
+; M1 regional variants. Which *form* of a species the player has caught: a
+; variant and its base share one Pokedex bit, set by either, so that bit cannot
+; say which was actually caught. CheckCaughtForm asks these instead, and they
+; back the Pokedex ball and the battle HUD's owned marker.
+;
+; Sized for MAX_VARIANTS rather than NUM_VARIANTS on purpose. These are saved,
+; so their size pins the offset of everything after them; reserving the ceiling
+; now lets the roster grow to 32 without a further save-format break. They took
+; the whole of the former wReservedSaveData -- the unassigned 8-byte reserve is
+; therefore SPENT, and the next saved byte M2 or M4 needs must come from
+; somewhere else.
+wVariantCaught:: flag_array MAX_VARIANTS
+wEndVariantCaught::
+wVariantBaseCaught:: flag_array MAX_VARIANTS
+wEndVariantBaseCaught::
 ; --- END M0 SAVE RESERVATION ---
 
 wPlayerDataEnd::
@@ -2992,21 +3007,10 @@ wEndPokedexCaught::
 ; delete one byte here per byte the flag_array gains. Must stay adjacent to
 ; wPokedexCaught.
 ;
-; One byte of it is spent on wVariantCaught: a variant and its base share a
-; single Pokedex bit, so that bit cannot say which form was actually caught.
-; The Pokedex and battle-HUD caught markers ask this instead. Only the variant
-; needs its own bit -- an ordinary species is answered correctly by the shared
-; one.
-wVariantCaught:: flag_array NUM_VARIANTS
-wEndVariantCaught::
-; And the mirror: set when the base form of a species that has a variant is
-; caught. Both are needed because the shared Pokedex bit is set by *either*
-; form -- catching a Kanto Corsola registers CORSOLA, which is decision 1
-; working as intended and is what keeps the dex count and type-completion gates
-; correct. These two bits are what the caught markers ask instead.
-wVariantBaseCaught:: flag_array NUM_VARIANTS
-wEndVariantBaseCaught::
-	ds 2
+; The per-form caught bits used to live here. They moved to wPlayerData so the
+; roster could exceed 8 variants; this block is margin for real new species
+; again, in full.
+	ds 4
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 ; M0 reservation, as above, for the seen array. INTENTIONALLY UNUSED.

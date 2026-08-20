@@ -327,9 +327,13 @@ endc
 ; (see GetVariantBase), which is also what makes them count toward the type
 ; completion boost and Prof. Oak's rating.
 ;
-; Do NOT add these to any dex-ordered table, to the seen/caught flag arrays,
-; to data/types/pokemon_type_lists.asm, or to a *Line list in
-; data/pokemon/evo_lines.asm. See docs/regional_variants_implementation_context.md.
+; Do NOT add these to any dex-ordered table, to the seen/caught flag arrays, or
+; to a *Line list in data/pokemon/evo_lines.asm. They DO belong in
+; data/types/pokemon_type_lists.asm, under their own type rather than the base
+; species' -- see docs/regional_variants_implementation_context.md.
+;
+; APPEND ONLY. VariantBaseSpecies is indexed by position in this block, and
+; assert_table_length cannot catch a reordering.
 ;
 ; This block must stay above the "Unown forms" const_def below, which resets
 ; const_value to 1.
@@ -339,6 +343,15 @@ DEF VARIANTS_START EQU const_value
 
 DEF NUM_VARIANTS EQU const_value - VARIANTS_START
 DEF NUM_POKEMON_AND_VARIANTS EQU const_value - 1
+
+; Ceiling on the variant roster, fixed because wVariantCaught and
+; wVariantBaseCaught are saved: their size is what pins everything after them in
+; the save block, so it is reserved for MAX_VARIANTS up front and NUM_VARIANTS
+; may grow into it freely. Raising this is a save-format break.
+DEF MAX_VARIANTS EQU 32
+if NUM_VARIANTS > MAX_VARIANTS
+	fail "Too many variant species -- see wVariantCaught in ram/wram.asm"
+endc
 
 ; Unown forms
 ; indexes for:
