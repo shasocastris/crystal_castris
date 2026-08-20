@@ -388,13 +388,14 @@ Pokedex_InitDexEntryScreen:
 	call LowVolume
 	xor a ; page 1
 	ld [wPokedexStatus], a
+	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld a, l
 	ld [wPrevDexEntry], a
 	ld a, h
@@ -404,7 +405,7 @@ Pokedex_InitDexEntryScreen:
 	call WaitBGMap
 	ld a, $a7
 	ldh [hWX], a
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
@@ -426,6 +427,9 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [hl]
 	and PAD_SELECT
 	jr nz, .toggle_shininess
+	ld a, [hl]
+	and PAD_START
+	jr nz, .toggle_form
 	call Pokedex_NextOrPreviousDexEntry
 	ret nc
 	jmp Pokedex_IncrementDexPointer
@@ -448,6 +452,34 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [wPrevDexEntryJumptableIndex]
 	ld [wJumptableIndex], a
 	ret
+
+.toggle_form
+; Swap between the base species and its variant. Unlike the shiny toggle this
+; changes tiles as well as palettes -- sprite, dex entry text, classification
+; and dimensions all differ -- so it needs the full entry redraw, not just a
+; palette refresh.
+	call Pokedex_SelectedMonHasCaughtVariant
+	jr nc, .no_form
+	ld hl, wPokedexVariantToggle
+	ld a, [hl]
+	xor 1
+	ld [hl], a
+	xor a
+	ldh [hBGMapMode], a
+	call Pokedex_RedisplayDexEntry
+	call Pokedex_LoadSelectedMonTiles
+	call WaitBGMap
+	call Pokedex_GetDisplayedMon
+	ld [wCurPartySpecies], a
+	ld a, SCGB_POKEDEX
+	call Pokedex_GetSGBLayout
+	ld a, [wCurPartySpecies]
+	jmp PlayMonCry
+
+.no_form
+	ld de, SFX_BUMP
+	call PlaySFX
+	jmp WaitSFX
 
 .toggle_shininess
 ; toggle the current shininess setting
@@ -483,7 +515,7 @@ Pokedex_Page:
 	ld a, [wPokedexStatus]
 	xor 1 ; toggle page
 	ld [wPokedexStatus], a
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld a, l
 	ld [wPrevDexEntry], a
 	ld a, h
@@ -496,12 +528,13 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_BlackOutBG
 	xor a ; page 1
 	ld [wPokedexStatus], a
+	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_LoadCurrentFootprint
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld a, l
 	ld [wPrevDexEntry], a
 	ld a, h
@@ -510,7 +543,7 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
 	call WaitBGMap
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
@@ -556,7 +589,7 @@ DexEntryScreen_MenuActionJumptable:
 	call Pokedex_RedisplayDexEntry
 	call Pokedex_LoadSelectedMonTiles
 	call WaitBGMap
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	jmp Pokedex_GetSGBLayout
@@ -571,7 +604,7 @@ DexEntryScreen_MenuActionJumptable:
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	farcall DisplayDexEntry
 	jmp Pokedex_DrawFootprint
 
@@ -1272,6 +1305,29 @@ Pokedex_DrawDexEntryScreenBG:
 	ld [hli], a
 	ld [hl], $6c ; new curved text border, right
 
+; START > FORM, drawn only when this species has a variant the player has
+; caught. That makes the indicator double as the hint that the form view exists
+; at all -- there is nothing else telling the player to press START.
+	call Pokedex_SelectedMonHasCaughtVariant
+	jr nc, .no_form_indicator
+	hlcoord 9, 0
+	ld [hl], $6b ; curved text border, left
+	inc hl
+	ld a, $41 ; START 1
+	ld [hli], a
+	inc a ; $42, START 2
+	ld [hli], a
+	inc a ; $43, START 3
+	ld [hli], a
+	ld a, $62 ; FORM 1
+	ld [hli], a
+	inc a ; $63, FORM 2
+	ld [hli], a
+	inc a ; $64, FORM 3
+	ld [hli], a
+	ld [hl], $6c ; curved text border, right
+.no_form_indicator
+
 	hlcoord 1, 10
 	ld bc, 19
 	ld a, $61
@@ -1762,6 +1818,50 @@ Pokedex_GetSelectedMon:
 	call LockPokemonID
 	pop hl
 	ld [wTempSpecies], a
+	ret
+
+Pokedex_GetDisplayedMon:
+; As Pokedex_GetSelectedMon, but yields the variant when the form view is on.
+; Only the dex entry screen's *display* path uses this. The listing, its
+; seen-checks and the footprint must keep seeing the base species.
+; out: a = 8-bit ID, hl = 16-bit index, wTempSpecies = the 8-bit ID
+	call Pokedex_GetSelectedMon
+	ld a, [wPokedexVariantToggle]
+	and a
+	jr z, .base
+	ld d, h
+	ld e, l
+	push hl
+	call GetSpeciesVariant
+	pop hl
+	jr nc, .base
+	ld h, d
+	ld l, e
+	push hl
+	call GetPokemonIDFromIndex
+	ld [wTempSpecies], a
+	pop hl
+	ret
+
+.base
+	ld a, [wTempSpecies]
+	ret
+
+Pokedex_SelectedMonHasCaughtVariant:
+; out: carry set if the selected species has a variant the player has caught
+; clobbers a, bc, de and hl
+	call Pokedex_GetSelectedMon
+	ld d, h
+	ld e, l
+	call GetSpeciesVariant
+	ret nc ; no variant for this species
+	call CheckVariantCaught
+	jr z, .not_caught
+	scf
+	ret
+
+.not_caught
+	and a
 	ret
 
 Pokedex_CheckSeen:
@@ -2667,7 +2767,7 @@ Pokedex_LoadPointer:
 
 Pokedex_LoadSelectedMonTiles:
 ; Loads the tiles of the currently selected Pokémon.
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon
 	call Pokedex_CheckSeen
 	jr z, .QuestionMark
 	ld a, [wFirstUnownSeen]

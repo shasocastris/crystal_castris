@@ -3,6 +3,7 @@ NewPokedexEntry:
 	push af
 	xor a
 	ld [wPokedexShinyToggle], a
+	ld [wPokedexVariantToggle], a
 	ldh [hMapAnims], a
 	call LowVolume
 	call ClearBGPalettes

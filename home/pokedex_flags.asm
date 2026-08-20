@@ -203,6 +203,10 @@ CheckVariantCaught::
 	push hl
 	push de
 	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wVariantCaught)
+	ldh [rSVBK], a
 	ld a, e
 	sub LOW(VARIANTS_START)
 	ld e, a
@@ -210,6 +214,8 @@ CheckVariantCaught::
 	ld hl, wVariantCaught
 	ld b, CHECK_FLAG
 	call FlagAction
+	pop af
+	ldh [rSVBK], a
 	pop bc
 	pop de
 	pop hl

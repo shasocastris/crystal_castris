@@ -236,6 +236,9 @@ String_pokemon:
 GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl
+	ld a, [wPokedexVariantToggle]
+	and a
+	jr nz, .variant
 	ld a, b
 	call GetPokemonBaseIndexFromID ; variants share their base species' entry
 	dec hl
@@ -244,6 +247,25 @@ GetDexEntryPointer:
 	add hl, hl
 	add hl, de
 	ld de, PokedexDataPointerTable
+	jr .read
+
+.variant
+; Variants are absent from PokedexDataPointerTable by design -- it must stay
+; sized NUM_POKEMON -- so the form view reads the parallel table instead,
+; indexed by (species index - VARIANTS_START).
+	ld a, b
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(VARIANTS_START)
+	ld l, a
+	ld h, 0
+	ld d, h
+	ld e, l
+	add hl, hl
+	add hl, de
+	ld de, VariantPokedexEntries
+
+.read
 	add hl, de
 	ld a, [hli]
 	ld b, a
