@@ -255,7 +255,24 @@ LoadMapAttributes_SkipObjects::
 	ld a, TRUE ; skip object events
 	jr ReadMapEvents
 
+UpdateCurRegion::
+; Refresh the cached region. RegionCheck reads wMapGroup / wMapNumber, so this
+; must run after they are set for the map being loaded. Cached rather than
+; asked because DetermineEvolutionItemResults needs it once per party member
+; while drawing the ABLE/NOT ABLE column.
+	push bc
+	push de
+	push hl
+	farcall RegionCheck
+	ld a, e
+	ld [wCurRegion], a
+	pop hl
+	pop de
+	pop bc
+	ret
+
 CopyMapPartialAndAttributes::
+	call UpdateCurRegion
 	call CopyMapPartial
 	call SwitchToMapAttributesBank
 	call GetMapAttributesPointer

@@ -205,6 +205,10 @@ DEF NUM_HOF_TEAMS EQU 30
 	const EVOLVE_ITEM
 	const EVOLVE_HAPPINESS
 	const EVOLVE_STAT
+; A gate, not a method: "dbb EVOLVE_REGION, region" is 2 bytes and guards the
+; single entry that follows, which may use any method above. Outside that
+; region the guarded entry is skipped. Gates do not nest.
+	const EVOLVE_REGION
 
 ; EVOLVE_HAPPINESS triggers
 	const_def 1

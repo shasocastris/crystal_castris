@@ -63,6 +63,20 @@ EvolveAfterBattle_MasterLoop:
 
 	ld b, a
 
+	cp EVOLVE_REGION
+	jr nz, .not_region
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wCurRegion]
+	cp b
+	jr z, .loop ; in region: evaluate the entry it guards
+	call GetNextEvoAttackByte ; out of region: skip that entry entirely
+	ld b, a
+	and a
+	jr z, EvolveAfterBattle_MasterLoop
+	jmp .dont_evolve_check
+
+.not_region
 	ld a, [wLinkMode]
 	and a
 	jmp nz, .dont_evolve_check
@@ -618,6 +632,11 @@ SkipEvolutions::
 	inc hl
 	and a
 	ret z
+	cp EVOLVE_REGION
+	jr nz, .not_region
+	inc hl ; a 2-byte gate, and it does not terminate the block
+	jr SkipEvolutions
+.not_region
 	cp EVOLVE_LEVEL
 	jr z, .no_extra_skip
 	cp EVOLVE_HAPPINESS
@@ -641,6 +660,8 @@ DetermineEvolutionItemResults::
 	call GetNextEvoAttackByte
 	and a
 	ret z
+	cp EVOLVE_REGION
+	jr z, .region
 	cp EVOLVE_LEVEL
 	jr z, .skip_species_parameter_byte
 	cp EVOLVE_HAPPINESS
@@ -656,6 +677,20 @@ DetermineEvolutionItemResults::
 	ld d, h
 	ld e, l
 	ret
+
+.region
+	call GetNextEvoAttackByte
+	ld b, a
+	ld a, [wCurRegion]
+	cp b
+	jr z, .loop ; in region: let the entry it guards answer for itself
+	call GetNextEvoAttackByte ; out of region: skip it without matching the item
+	and a
+	ret z
+	cp EVOLVE_LEVEL
+	jr z, .skip_species_parameter_byte
+	cp EVOLVE_HAPPINESS
+	jr z, .skip_species_parameter_byte
 
 .skip_species_parameter_word
 	inc hl

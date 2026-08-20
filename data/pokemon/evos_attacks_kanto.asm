@@ -632,6 +632,9 @@ ArbokEvosAttacks:
 	db 0 ; no more level-up moves
 
 PikachuEvosAttacks:
+	db   EVOLVE_REGION, JOHTO_REGION
+	dbbw EVOLVE_LEVEL, 22, RAICHU_JOHTO
+	db   EVOLVE_REGION, KANTO_REGION
 	dbww EVOLVE_ITEM, THUNDERSTONE, RAICHU
 	db 0 ; no more evolutions
 	dbw 1, THUNDERSHOCK
