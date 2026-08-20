@@ -110,7 +110,7 @@ DisplayDexEntry:
 	ld [hli], a
 	push hl
 	ld a, [wTempSpecies]
-	call GetPokemonIndexFromID
+	call GetPokemonBaseIndexFromID ; a variant shows its base species' number
 	ld b, l
 	ld c, h
 	ld hl, sp + 0
@@ -237,7 +237,7 @@ GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl
 	ld a, b
-	call GetPokemonIndexFromID
+	call GetPokemonBaseIndexFromID ; variants share their base species' entry
 	dec hl
 	ld d, h
 	ld e, l

@@ -2695,7 +2695,7 @@ Pokedex_LoadCurrentFootprint:
 
 Pokedex_LoadAnyFootprint:
 	ld a, [wTempSpecies]
-	call GetPokemonIndexFromID
+	call GetPokemonBaseIndexFromID ; Footprints is sized NUM_POKEMON
 	dec hl
 	add hl, hl
 	add hl, hl

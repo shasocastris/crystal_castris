@@ -858,7 +858,7 @@ HeavyBallMultiplier:
 ; else add 30 to catch rate if weight < 409.6 kg
 ; else add 40 to catch rate
 	ld a, [wEnemyMonSpecies]
-	call GetPokemonIndexFromID
+	call GetPokemonBaseIndexFromID ; PokedexDataPointerTable is sized NUM_POKEMON
 	dec hl
 	ld d, h
 	ld e, l

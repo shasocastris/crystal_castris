@@ -638,7 +638,7 @@ PokedexShow1:
 
 PokedexShow2:
 	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
+	call GetPokemonBaseIndexFromID ; PokedexDataPointerTable is sized NUM_POKEMON
 	dec hl
 	ld b, h
 	ld c, l

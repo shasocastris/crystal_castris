@@ -143,4 +143,22 @@ GetVariantBase::
 	pop hl
 	ret
 
+GetPokemonBaseIndexFromID::
+; As GetPokemonIndexFromID, but resolves a variant to the species it varies.
+; Use this instead of GetPokemonIndexFromID whenever the result indexes a table
+; sized NUM_POKEMON -- PokedexDataPointerTable, Footprints, the printed dex
+; number. Variant indexes run past the end of those tables, so indexing them
+; raw reads whatever data follows, which is how a variant's dex entry turns
+; into garbage text and a corrupt footprint.
+; in:  a  = 8-bit species ID
+; out: hl = 16-bit index of the base species
+; clobbers a and de; preserves bc
+	call GetPokemonIndexFromID
+	ld d, h
+	ld e, l
+	call GetVariantBase
+	ld h, d
+	ld l, e
+	ret
+
 INCLUDE "data/pokemon/variant_bases.asm"
