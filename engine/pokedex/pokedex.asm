@@ -1721,12 +1721,12 @@ Pokedex_PlaceDefaultStringIfNotSeen:
 
 Pokedex_DrawFootprint:
 	hlcoord 18, 1
-	ld a, $62
+	ld a, FOOTPRINT_TILE
 	ld [hli], a
 	inc a
 	ld [hl], a
 	hlcoord 18, 2
-	ld a, $64
+	ld a, FOOTPRINT_TILE + 2
 	ld [hli], a
 	inc a
 	ld [hl], a
@@ -2693,6 +2693,12 @@ Pokedex_LoadSelectedMonTiles:
 Pokedex_LoadCurrentFootprint:
 	call Pokedex_GetSelectedMon
 
+; The footprint is decompressed into VRAM at runtime, so these four tiles are
+; scratch and cannot hold static art. They used to sit at $62-$65, which is
+; inside the pokedex.png block; moved above it so that region is free for the
+; VARIANT indicator. $71-$7e are unused; $7f is a row-fill tile.
+DEF FOOTPRINT_TILE EQU $71
+
 Pokedex_LoadAnyFootprint:
 	ld a, [wTempSpecies]
 	call GetPokemonBaseIndexFromID ; Footprints is sized NUM_POKEMON
@@ -2707,7 +2713,7 @@ Pokedex_LoadAnyFootprint:
 
 	ld e, l
 	ld d, h
-	ld hl, vTiles2 tile $62
+	ld hl, vTiles2 tile FOOTPRINT_TILE
 	lb bc, BANK(Footprints), 4
 	jmp Request1bpp
 
