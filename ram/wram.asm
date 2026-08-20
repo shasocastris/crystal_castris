@@ -2998,12 +2998,24 @@ wEndVariantCaught::
 ; "caught a real Corsola" from "caught a Kanto Corsola".
 wVariantBaseCaught:: flag_array NUM_VARIANTS
 wEndVariantBaseCaught::
+; The same split for seen. The Pokedex lists anything seen, and the redirect
+; marks the base species seen for a variant encounter too, so without these the
+; dex would offer a base form the player has never actually met.
+wVariantSeen:: flag_array NUM_VARIANTS
+wEndVariantSeen::
+wVariantBaseSeen:: flag_array NUM_VARIANTS
+wEndVariantBaseSeen::
 ; Remainder of the M0 reservation for M1 and any later species additions.
 ; INTENTIONALLY UNUSED. When NUM_POKEMON or NUM_VARIANTS grows, delete one byte
 ; here per byte the arrays above gain, so nothing after this point moves.
 ; Once this reaches zero the saved block grows and saves are invalidated: at
 ; present numbering that is 32 variants, or 32 more species.
-	ds 2
+;
+; NOTE: this reservation is now FULLY SPENT. The four variant flag arrays above
+; cost one byte each at NUM_VARIANTS <= 8; past that they need two bytes each
+; and there is nothing left to take. The next saved byte after that grows the
+; block and invalidates saves. wReservedSaveData in wPlayerData still has its
+; 8 bytes free and is the place to go next.
 
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::

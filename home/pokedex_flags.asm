@@ -84,6 +84,7 @@ SetCaughtMonIndex::
 SetSeenMon::
 	call GetPokemonFlagIndex
 SetSeenMonIndex::
+	call SetVariantSeen
 	ld hl, wPokedexSeen
 SetPokedexStatusMonIndex:
 	ld b, SET_FLAG
@@ -161,6 +162,60 @@ GetPokemonBaseIndexFromID::
 	ld h, d
 	ld l, e
 	ret
+
+SetVariantSeen:
+; The seen counterpart of SetVariantCaught. Called only from the seen-set path.
+; in: de = 16-bit species index, before GetVariantBase resolves it
+; preserves everything
+	push hl
+	push de
+	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wVariantSeen)
+	ldh [rSVBK], a
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	jr nc, .variant_form
+	call GetSpeciesVariant ; clobbers hl, so pick the array after it
+	jr nc, .done ; an ordinary species with no variant
+	ld hl, wVariantBaseSeen
+	jr .set
+
+.variant_form
+	ld hl, wVariantSeen
+
+.set
+	ld a, e
+	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
+	ld e, a
+	ld d, 0
+	ld b, SET_FLAG
+	call FlagAction
+
+.done
+	pop af
+	ldh [rSVBK], a
+	pop bc
+	pop de
+	pop hl
+	ret
+
+CheckVariantSeen::
+; in: de = 16-bit variant index
+; out: z if this form has not been seen, nz if it has
+; preserves bc, de and hl
+	ld hl, wVariantSeen
+	jr _CheckVariantFlag
+
+CheckVariantBaseSeen::
+; in: de = 16-bit variant index
+; out: z if the base form has not been seen, nz if it has
+; preserves bc, de and hl
+	ld hl, wVariantBaseSeen
+	jr _CheckVariantFlag
 
 SetVariantCaught:
 ; Record which *form* the player just caught, for the Pokedex form view.
