@@ -291,7 +291,7 @@ HoothootLine:   dw HOOTHOOT, NOCTOWL, -1
 LedybaLine:     dw LEDYBA, LEDIAN, -1
 SpinarakLine:   dw SPINARAK, ARIADOS, -1
 ChinchouLine:   dw CHINCHOU, LANTURN, -1
-PichuLine:      dw PICHU, PIKACHU, RAICHU, -1
+PichuLine:      dw PICHU, PIKACHU, RAICHU, RAICHU_JOHTO, -1
 CleffaLine:     dw CLEFFA, CLEFAIRY, CLEFABLE, -1
 IgglybuffLine:  dw IGGLYBUFF, JIGGLYPUFF, WIGGLYTUFF, -1
 TogepiLine:     dw TOGEPI, TOGETIC, -1

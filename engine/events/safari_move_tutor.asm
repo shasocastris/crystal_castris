@@ -208,9 +208,7 @@ CheckLineFullyCaught:
 .not_terminator:
 	push hl
 	push de
-	ld h, d
-	ld l, e
-	call CheckLineCaughtFlag ; z = not caught, nz = caught
+	call CheckCaughtFormIndex ; z = not caught, nz = caught
 	pop de
 	pop hl
 	jr z, .missing
@@ -223,27 +221,6 @@ CheckLineFullyCaught:
 .missing:
 .not_found:
 	and a
-	ret
-
-; Local copy of the CheckPokedexCaughtFlag logic (kept here so this feature is
-; self-contained and bank-independent; only depends on home routines).
-; Input: hl = 16-bit species index. Returns: z if NOT caught, nz if caught.
-; Destroys: de.
-CheckLineCaughtFlag:
-	push bc
-	push hl
-	call GetPokemonIDFromIndex
-	call GetPokemonIndexFromID
-	ld d, h
-	ld e, l
-	ld hl, wPokedexCaught
-	ld b, CHECK_FLAG
-	dec de
-	call FlagAction
-	ld a, c
-	and a
-	pop hl
-	pop bc
 	ret
 
 INCLUDE "data/pokemon/evo_lines.asm"

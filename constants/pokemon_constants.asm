@@ -328,10 +328,12 @@ endc
 ; (see GetVariantBase), which is also what makes them count toward the type
 ; completion boost and Prof. Oak's rating.
 ;
-; Do NOT add these to any dex-ordered table, to the seen/caught flag arrays, or
-; to a *Line list in data/pokemon/evo_lines.asm. They DO belong in
-; data/types/pokemon_type_lists.asm, under their own type rather than the base
-; species' -- see docs/regional_variants_implementation_context.md.
+; Do NOT add these to any dex-ordered table or to the seen/caught flag arrays.
+; They DO belong in data/types/pokemon_type_lists.asm and in a *Line list in
+; data/pokemon/evo_lines.asm, under their own form rather than the base
+; species' -- both ask CheckCaughtForm, so a variant listed there means "this
+; form specifically", and listing the base means the base form specifically.
+; See docs/regional_variants_implementation_context.md.
 ;
 ; APPEND ONLY. VariantBaseSpecies is indexed by position in this block, and
 ; assert_table_length cannot catch a reordering.
