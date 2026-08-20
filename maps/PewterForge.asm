@@ -89,7 +89,7 @@ PewterForgeOrderPlacedText:
 	text "Good, you have the"
 	line "raw materials."
 
-	text "Leave them with me"
+	para "Leave them with me"
 	line "and come back"
 	cont "tomorrow."
 	done
