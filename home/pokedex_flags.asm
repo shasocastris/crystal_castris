@@ -213,10 +213,22 @@ CheckCaughtForm::
 ; preserves bc, de and hl
 	push hl
 	push de
-	push bc
 	call GetPokemonIndexFromID
 	ld d, h
 	ld e, l
+	call CheckCaughtFormIndex
+	pop de ; pops leave the z flag alone
+	pop hl
+	ret
+
+CheckCaughtFormIndex::
+; The same question for a caller that already holds the 16-bit index.
+; in:  de = 16-bit species index
+; out: z if this form has not been caught, nz if it has
+; preserves bc, de and hl
+	push hl
+	push de
+	push bc
 	ld a, e
 	sub LOW(VARIANTS_START)
 	ld a, d

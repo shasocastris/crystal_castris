@@ -243,6 +243,7 @@ GhostTypeSpecies:
 	dw MISDREAVUS
 	dw MISMAGIUS
 	dw ANNIHILAPE
+	dw CORSOLA_KANTO
 	dw -1
 
 SteelTypeSpecies:

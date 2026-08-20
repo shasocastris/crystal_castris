@@ -145,27 +145,17 @@ CheckPokedexCaughtFlag:
 ; Returns: z flag set if NOT caught, nz flag set if caught
 ; Destroys: de
 	push bc
-	push hl
+	push de
 
-	; Convert species index to Pokédex flag index via two-step conversion
-	; Step 1: Species → Pokédex ID, Step 2: ID → Flag index
-	call GetPokemonIDFromIndex
-	call GetPokemonIndexFromID
+	; A type list names a *form*, not just a species. A variant and its base
+	; share one Pokédex bit that either of them sets, so the shared bit cannot
+	; answer for a list that names one form specifically -- and a variant index
+	; would fall in the unused tail of the array, a bit nothing ever sets.
 	ld d, h
 	ld e, l
+	call CheckCaughtFormIndex
 
-	; Check caught bit using game's flag system
-	; Pokédex IDs are 1-based but bit array is 0-indexed
-	ld hl, wPokedexCaught
-	ld b, CHECK_FLAG
-	dec de
-	call FlagAction
-
-	; FlagAction returns result in C; convert to Z flag
-	ld a, c
-	and a
-
-	pop hl
+	pop de
 	pop bc
 	ret
 

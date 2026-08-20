@@ -164,6 +164,7 @@ SometimesFleeMons:
 	dw SHELLDER
 	dw CLOYSTER
 	dw CORSOLA
+	dw CORSOLA_KANTO
 	dw REMORAID
 	dw OCTILLERY
 	dw CHINCHOU
