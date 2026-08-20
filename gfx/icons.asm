@@ -286,3 +286,4 @@ DudunsparceIcon::    INCBIN "gfx/icons/dudunsparc.2bpp"
 UrsalunaIcon::    INCBIN "gfx/icons/ursaluna.2bpp"
 CursolaIcon::    INCBIN "gfx/icons/cursola.2bpp" ; PLACEHOLDER: copy of corsola.png, needs its own art
 CorsolaKantoIcon::    INCBIN "gfx/icons/corsola_kanto.2bpp" ; PLACEHOLDER: copy of corsola.png, needs its own art
+RaichuJohtoIcon::    INCBIN "gfx/icons/raichu_johto.2bpp" ; PLACEHOLDER: copy of raichu.png, needs its own art

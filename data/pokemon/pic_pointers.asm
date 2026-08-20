@@ -570,4 +570,6 @@ PokemonPicPointers::
 	dba CursolaBackpic
 	dba CorsolaKantoFrontpic
 	dba CorsolaKantoBackpic
+	dba RaichuJohtoFrontpic
+	dba RaichuJohtoBackpic
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

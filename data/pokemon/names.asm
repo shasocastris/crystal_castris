@@ -281,4 +281,5 @@ PokemonNames::
 	dname "URSALUNA"
 	dname "CURSOLA"
 	dname "CORSOLA"
+	dname "RAICHU"
 	assert_table_length NUM_POKEMON_AND_VARIANTS

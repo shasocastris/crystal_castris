@@ -277,4 +277,5 @@ AnimationIdlePointers:
 	dw UrsalunaAnimationIdle
 	dw CursolaAnimationIdle
 	dw CorsolaKantoAnimationIdle
+	dw RaichuJohtoAnimationIdle
 	assert_table_length NUM_POKEMON_AND_VARIANTS

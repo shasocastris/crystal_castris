@@ -768,5 +768,7 @@ CursolaFrontpic:    INCBIN "gfx/pokemon/cursola/front.animated.2bpp.lz"
 CursolaBackpic:     INCBIN "gfx/pokemon/cursola/back.2bpp.lz"
 CorsolaKantoFrontpic:    INCBIN "gfx/pokemon/corsola_kanto/front.animated.2bpp.lz"
 CorsolaKantoBackpic:     INCBIN "gfx/pokemon/corsola_kanto/back.2bpp.lz"
+RaichuJohtoFrontpic:    INCBIN "gfx/pokemon/raichu_johto/front.animated.2bpp.lz"
+RaichuJohtoBackpic:     INCBIN "gfx/pokemon/raichu_johto/back.2bpp.lz"
 
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

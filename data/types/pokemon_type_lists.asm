@@ -379,6 +379,7 @@ ElectricTypeSpecies:
 	dw ELEKID
 	dw ELECTIVIRE
 	dw MAGNEZONE
+	dw RAICHU_JOHTO
 	dw -1
 
 PsychicTypeSpecies:
@@ -406,6 +407,7 @@ PsychicTypeSpecies:
 	dw VENOMOTH
 	dw WYRDEER
 	dw FARIGIRAF
+	dw RAICHU_JOHTO
 	dw -1
 
 IceTypeSpecies:

@@ -277,4 +277,5 @@ FramesPointers:
 	dba UrsalunaFrames
 	dba CursolaFrames
 	dba CorsolaKantoFrames
+	dba RaichuJohtoFrames
 	assert_table_length NUM_POKEMON_AND_VARIANTS

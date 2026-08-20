@@ -27,6 +27,7 @@ EvosAttacksPointers3::
 	dw UrsalunaEvosAttacks
 	dw CursolaEvosAttacks
 	dw CorsolaKantoEvosAttacks
+	dw RaichuJohtoEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -409,6 +410,16 @@ CursolaEvosAttacks:
 	dbw 42, MIRROR_COAT
 	dbw 48, POWER_GEM
 	dbw 54, PERISH_SONG
+	db 0 ; no more level-up moves
+
+RaichuJohtoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, PSYCHIC_M
+	dbw 1, THUNDER_WAVE
+	dbw 1, DOUBLE_TEAM
+	dbw 1, IRON_TAIL
+	dbw 1, THUNDERBOLT
+	dbw 1, CONFUSION
 	db 0 ; no more level-up moves
 
 ENDSECTION

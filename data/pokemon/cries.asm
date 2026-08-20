@@ -283,4 +283,5 @@ PokemonCries::
 	mon_cry CRY_TEDDIURSA,   800,  256 ; URSALUNA
 	mon_cry CRY_MAGCARGO,   -128,  384 ; CURSOLA
 	mon_cry CRY_MAGCARGO,     96,  320 ; CORSOLA_KANTO
+	mon_cry CRY_RAICHU,      160,  160 ; RAICHU_JOHTO
 	assert_table_length NUM_POKEMON_AND_VARIANTS

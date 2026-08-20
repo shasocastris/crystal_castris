@@ -341,6 +341,7 @@ endc
 DEF VARIANTS_START EQU const_value
 
 	const CORSOLA_KANTO ; Galarian Corsola; Kanto coastal waters
+	const RAICHU_JOHTO  ; Alolan Raichu; the Johto form, from a Johto Pikachu
 
 DEF NUM_VARIANTS EQU const_value - VARIANTS_START
 DEF NUM_POKEMON_AND_VARIANTS EQU const_value - 1

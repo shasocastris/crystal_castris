@@ -589,4 +589,6 @@ INCLUDE "gfx/pokemon/cursola/shiny.pal"
 ; --- variants (past NUM_POKEMON) ---
 INCLUDE "gfx/pokemon/corsola_kanto/normal.pal"
 INCLUDE "gfx/pokemon/corsola_kanto/shiny.pal"
+INCLUDE "gfx/pokemon/raichu_johto/normal.pal"
+INCLUDE "gfx/pokemon/raichu_johto/shiny.pal"
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

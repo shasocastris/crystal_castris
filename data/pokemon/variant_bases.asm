@@ -6,4 +6,5 @@ VariantBaseSpecies:
 ; reordering, so keep the two lists in step by hand.
 	table_width 2
 	dw CORSOLA ; CORSOLA_KANTO
+	dw RAICHU  ; RAICHU_JOHTO
 	assert_table_length NUM_VARIANTS

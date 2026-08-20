@@ -1,0 +1,17 @@
+	db 0 ; species ID placeholder
+
+	db  60,  85,  50, 110,  95,  85
+	evs  0,   0,   0,   0,   3,   0
+	;   hp  atk  def  spd  sat  sdf
+
+	db ELECTRIC, PSYCHIC_TYPE ; type
+	db 25 ; catch rate
+	db 122 ; base exp
+	dw NO_ITEM, BERRY ; items
+	db GENDER_F50 ; gender ratio
+	INCBIN "gfx/pokemon/raichu_johto/front.dimensions"
+	dw NULL, NULL ; unused (beta front/back pics)
+	db GROWTH_MEDIUM_FAST ; growth rate
+	; tm/hm learnset
+	tmhm DYNAMICPUNCH, HEADBUTT, CURSE, ROLLOUT, TOXIC, ZAP_CANNON, HIDDEN_POWER, SWEET_KISS, HYPER_BEAM, PROTECT, RAIN_DANCE, ENDURE, PAIN_SPLIT, IRON_TAIL, THUNDER, RETURN, PSYCHIC_M, MUD_SLAP, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, SWIFT, DEFENSE_CURL, THUNDERPUNCH, REST, ATTRACT, PSYCH_UP, THIEF, STRENGTH, FLASH, THUNDERBOLT, PAY_DAY, SEISMIC_TOSS, REFLECT, BODY_SLAM, SUBSTITUTE, MEGA_PUNCH, SWORDS_DANCE
+	; end
