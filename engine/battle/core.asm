@@ -903,7 +903,8 @@ TryEnemyFlee:
 	ld c, l
 	ld de, 2
 	ld hl, AlwaysFleeMons
-	call IsInWordArray
+	ld a, BANK(AlwaysFleeMons)
+	call IsInFarWordArray
 	jr c, .Flee
 
 	call BattleRandom
@@ -913,7 +914,8 @@ TryEnemyFlee:
 	push af
 	; de preserved from last call
 	ld hl, OftenFleeMons
-	call IsInWordArray
+	ld a, BANK(OftenFleeMons)
+	call IsInFarWordArray
 	pop de
 	jr c, .Flee
 
@@ -923,7 +925,8 @@ TryEnemyFlee:
 
 	ld de, 2
 	ld hl, SometimesFleeMons
-	call IsInWordArray
+	ld a, BANK(SometimesFleeMons)
+	call IsInFarWordArray
 	jr c, .Flee
 
 .Stay:
@@ -934,7 +937,6 @@ TryEnemyFlee:
 	scf
 	ret
 
-INCLUDE "data/wild/flee_mons.asm"
 
 CompareMovePriority:
 ; Compare the priority of the player and enemy's moves.

@@ -39,6 +39,32 @@ IsInWordArray::
 	scf
 	ret
 
+IsInFarWordArray::
+; Same as IsInWordArray, but the array lives in another bank.
+; in:  a = bank, bc = value, de = 2, hl = array
+; out: carry set if found
+; clobbers a and hl; preserves bc and de
+;
+; The carry is set after the bank is restored rather than carried across it,
+; because pop af would clobber it.
+	ldh [hTempBank], a
+	ldh a, [hROMBank]
+	push af
+	ldh a, [hTempBank]
+	rst Bankswitch
+	call IsInWordArray
+	jr c, .found
+	pop af
+	rst Bankswitch
+	and a
+	ret
+
+.found
+	pop af
+	rst Bankswitch
+	scf
+	ret
+
 SkipNames::
 ; Skip a names.
 	ld bc, NAME_LENGTH
