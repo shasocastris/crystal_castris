@@ -388,19 +388,18 @@ Pokedex_InitDexEntryScreen:
 	call LowVolume
 	xor a ; page 1
 	ld [wPokedexStatus], a
-	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DefaultFormForSelectedMon
-	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_InitArrowCursor
-	call Pokedex_GetDisplayedMon
-	ld a, l
+	call Pokedex_GetDisplayedMon ; settles wTempSpecies before the type is drawn
+	ld a, l ; hl is the index; the BG draw below clobbers it
 	ld [wPrevDexEntry], a
 	ld a, h
 	ld [wPrevDexEntry + 1], a
+	call Pokedex_DrawDexEntryScreenBG
+	call Pokedex_InitArrowCursor
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
 	call Pokedex_DrawFormIndicator
@@ -466,13 +465,13 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [hl]
 	xor 1
 	ld [hl], a
+	call Pokedex_GetDisplayedMon
+	ld [wCurPartySpecies], a
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_RedisplayDexEntry
 	call Pokedex_LoadSelectedMonTiles
 	call WaitBGMap
-	call Pokedex_GetDisplayedMon
-	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
 	ld a, [wCurPartySpecies]
@@ -530,18 +529,17 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_BlackOutBG
 	xor a ; page 1
 	ld [wPokedexStatus], a
-	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
-	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_InitArrowCursor
 	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DefaultFormForSelectedMon
-	call Pokedex_GetDisplayedMon
-	ld a, l
+	call Pokedex_GetDisplayedMon ; settles wTempSpecies before the type is drawn
+	ld a, l ; hl is the index; the BG draw below clobbers it
 	ld [wPrevDexEntry], a
 	ld a, h
 	ld [wPrevDexEntry + 1], a
+	call Pokedex_DrawDexEntryScreenBG
+	call Pokedex_InitArrowCursor
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
@@ -577,7 +575,7 @@ DexEntryScreen_MenuActionJumptable:
 	ldh [hWX], a
 	ld a, $90
 	ldh [hWY], a
-	call Pokedex_GetSelectedMon
+	call Pokedex_GetDisplayedMon ; the variant is found in different places
 	ld a, [wDexCurLocation]
 	ld e, a
 	predef Pokedex_GetArea
@@ -607,8 +605,8 @@ DexEntryScreen_MenuActionJumptable:
 	jmp PlayCry
 
 Pokedex_RedisplayDexEntry:
+	call Pokedex_GetDisplayedMon ; before the BG draw, which prints the types
 	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_GetDisplayedMon
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
 	jmp Pokedex_DrawFormIndicator
