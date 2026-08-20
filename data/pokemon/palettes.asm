@@ -583,6 +583,8 @@ INCLUDE "gfx/pokemon/dudunsparc/normal.pal"
 INCLUDE "gfx/pokemon/dudunsparc/shiny.pal"
 INCLUDE "gfx/pokemon/ursaluna/normal.pal"
 INCLUDE "gfx/pokemon/ursaluna/shiny.pal"
+INCLUDE "gfx/pokemon/cursola/normal.pal"
+INCLUDE "gfx/pokemon/cursola/shiny.pal"
 
 ; --- variants (past NUM_POKEMON) ---
 INCLUDE "gfx/pokemon/corsola_kanto/normal.pal"

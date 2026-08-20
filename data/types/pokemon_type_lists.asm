@@ -244,6 +244,7 @@ GhostTypeSpecies:
 	dw MISMAGIUS
 	dw ANNIHILAPE
 	dw CORSOLA_KANTO
+	dw CURSOLA
 	dw -1
 
 SteelTypeSpecies:

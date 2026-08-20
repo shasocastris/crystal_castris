@@ -285,5 +285,6 @@ MonMenuIconPals:
 	icon_pals RED,   BLUE    ; FARIGIRAF
 	icon_pals BROWN,  PINK   ; DUDUNSPARC
 	icon_pals BROWN,  GREEN  ; URSALUNA
+	icon_pals GRAY,   PURPLE ; CURSOLA
 	icon_pals GRAY,   PURPLE ; CORSOLA_KANTO
 	assert_table_length NUM_POKEMON_AND_VARIANTS

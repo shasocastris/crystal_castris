@@ -310,6 +310,7 @@ INCLUDE "data/pokemon/base_stats/wyrdeer.asm"
 INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 INCLUDE "data/pokemon/base_stats/dudunsparc.asm"
 INCLUDE "data/pokemon/base_stats/ursaluna.asm"
+INCLUDE "data/pokemon/base_stats/cursola.asm"
 ; --- variants (past NUM_POKEMON) ---
 INCLUDE "data/pokemon/base_stats/corsola_kanto.asm"
 .IndirectEnd::

@@ -281,5 +281,6 @@ PokemonCries::
 	mon_cry CRY_GIRAFARIG,    64,  256 ; FARIGIRAF
 	mon_cry CRY_DUNSPARCE,     0,  256 ; DUDUNSPARC
 	mon_cry CRY_TEDDIURSA,   800,  256 ; URSALUNA
+	mon_cry CRY_MAGCARGO,   -128,  384 ; CURSOLA
 	mon_cry CRY_MAGCARGO,     96,  320 ; CORSOLA_KANTO
 	assert_table_length NUM_POKEMON_AND_VARIANTS

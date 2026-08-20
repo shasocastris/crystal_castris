@@ -276,5 +276,6 @@ INCBIN "gfx/footprints/wyrdeer.1bpp"
 INCBIN "gfx/footprints/farigiraf.1bpp"
 INCBIN "gfx/footprints/dudunsparc.1bpp"
 INCBIN "gfx/footprints/ursaluna.1bpp"
+INCBIN "gfx/footprints/cursola.1bpp" ; PLACEHOLDER: copy of corsola.png
 
 	assert_table_length NUM_POKEMON

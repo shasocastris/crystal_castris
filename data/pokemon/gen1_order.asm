@@ -277,4 +277,5 @@ Pokered_MonIndices:
 	db GIRAFARIG  ; FARIGIRAF
 	db DUNSPARCE  ; DUDUNSPARC
 	db URSARING   ; URSALUNA
+	db CORSOLA    ; CURSOLA
 	assert_table_length NUM_POKEMON + 1

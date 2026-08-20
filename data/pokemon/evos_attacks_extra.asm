@@ -25,6 +25,7 @@ EvosAttacksPointers3::
 	dw FarigirafEvosAttacks
 	dw DudunsparceEvosAttacks
 	dw UrsalunaEvosAttacks
+	dw CursolaEvosAttacks
 	dw CorsolaKantoEvosAttacks
 .IndirectEnd::
 
@@ -372,6 +373,7 @@ UrsalunaEvosAttacks:
 	db 0 ; no more level-up moves
 
 CorsolaKantoEvosAttacks:
+	dbbw EVOLVE_LEVEL, 38, CURSOLA
 	db 0 ; no more evolutions
 	dbw 1, LICK
 	dbw 7, HARDEN
@@ -387,6 +389,25 @@ CorsolaKantoEvosAttacks:
 	dbw 37, SHADOW_BALL
 	dbw 40, MIRROR_COAT
 	dbw 44, POWER_GEM
+	db 0 ; no more level-up moves
+
+CursolaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LICK
+	dbw 1, HARDEN
+	dbw 1, DISABLE
+	dbw 1, SPITE
+	dbw 16, CONFUSE_RAY
+	dbw 19, AMNESIA
+	dbw 22, CURSE
+	dbw 25, NIGHT_SHADE
+	dbw 28, PAIN_SPLIT
+	dbw 31, WILL_O_WISP
+	dbw 34, ANCIENTPOWER
+	dbw 37, SHADOW_BALL
+	dbw 42, MIRROR_COAT
+	dbw 48, POWER_GEM
+	dbw 54, PERISH_SONG
 	db 0 ; no more level-up moves
 
 ENDSECTION

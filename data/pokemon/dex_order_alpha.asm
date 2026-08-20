@@ -38,6 +38,7 @@ AlphabeticalPokedexOrder:
 	dw CROBAT
 	dw CROCONAW
 	dw CUBONE
+	dw CURSOLA
 	dw CYNDAQUIL
 	dw DELIBIRD
 	dw DEWGONG

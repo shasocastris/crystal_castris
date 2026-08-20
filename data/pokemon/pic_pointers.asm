@@ -566,6 +566,8 @@ PokemonPicPointers::
 	dba DudunspareBackpic
 	dba UrsalunaFrontpic
 	dba UrsalunaBackpic
+	dba CursolaFrontpic
+	dba CursolaBackpic
 	dba CorsolaKantoFrontpic
 	dba CorsolaKantoBackpic
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1
