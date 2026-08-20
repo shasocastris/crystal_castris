@@ -402,6 +402,7 @@ Pokedex_InitDexEntryScreen:
 	call Pokedex_InitArrowCursor
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
+	call Pokedex_LoadSelectedMonTiles ; the list loaded this with the old form
 	call Pokedex_DrawFormIndicator
 	call WaitBGMap
 	ld a, $a7
@@ -442,6 +443,8 @@ Pokedex_UpdateDexEntryScreen:
 	jp hl
 
 .return_to_prev_screen
+	xor a
+	ld [wPokedexVariantToggle], a ; the listing shows base species only
 	ld a, [wLastVolume]
 	and a
 	jr z, .max_volume
