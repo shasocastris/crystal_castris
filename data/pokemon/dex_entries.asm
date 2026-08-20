@@ -287,3 +287,6 @@ WyrdeerPokedexEntry::    INCLUDE "data/pokemon/dex_entries/wyrdeer.asm"
 FarigirafPokedexEntry::  INCLUDE "data/pokemon/dex_entries/farigiraf.asm"
 DudunsparcePokedexEntry:: INCLUDE "data/pokemon/dex_entries/dudunsparc.asm"
 UrsalunaPokedexEntry::   INCLUDE "data/pokemon/dex_entries/ursaluna.asm"
+
+; --- variants (no Pokedex slot; reached via VariantPokedexEntries) ---
+CorsolaKantoPokedexEntry:: INCLUDE "data/pokemon/dex_entries/corsola_kanto.asm"

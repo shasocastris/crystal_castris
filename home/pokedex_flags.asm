@@ -77,6 +77,7 @@ SetSeenAndCaughtMon::
 	call SetSeenMonIndex
 	pop de
 SetCaughtMonIndex::
+	call SetVariantCaught
 	ld hl, wPokedexCaught
 	jr SetPokedexStatusMonIndex
 
@@ -159,6 +160,102 @@ GetPokemonBaseIndexFromID::
 	call GetVariantBase
 	ld h, d
 	ld l, e
+	ret
+
+SetVariantCaught:
+; Record that the player has caught this variant, if it is one.
+; The base species' own caught bit is set separately by the caller falling
+; through into SetCaughtMonIndex, so both are marked.
+; Called only from the caught-set path, which is the only path that means
+; "caught" -- the seen and check paths must not touch this.
+; in: de = 16-bit species index, before GetVariantBase resolves it
+; preserves everything. Relies on the caller having selected BANK(wPokedexCaught),
+; which is the same bank, since wVariantCaught sits directly after it.
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	ret c ; a real species, nothing to record
+	push hl
+	push de
+	push bc
+	ld a, e
+	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
+	ld e, a
+	ld d, 0
+	ld hl, wVariantCaught
+	ld b, SET_FLAG
+	call FlagAction
+	pop bc
+	pop de
+	pop hl
+	ret
+
+CheckVariantCaught::
+; in: de = 16-bit variant index
+; out: z if not caught (or not a variant), nz if caught
+; preserves bc, de and hl
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	jr c, .not_a_variant
+	push hl
+	push de
+	push bc
+	ld a, e
+	sub LOW(VARIANTS_START)
+	ld e, a
+	ld d, 0
+	ld hl, wVariantCaught
+	ld b, CHECK_FLAG
+	call FlagAction
+	pop bc
+	pop de
+	pop hl
+	ld a, c
+	and a
+	ret
+
+.not_a_variant
+	xor a
+	ret
+
+GetSpeciesVariant::
+; Find the variant whose base species is de, for the Pokedex form view.
+; in:  de = 16-bit species index
+; out: carry set and de = the variant's index, if this species has one;
+;      carry clear and de unchanged if it does not
+; preserves bc; clobbers a and hl
+	push bc
+	ld hl, VariantBaseSpecies
+	ld b, NUM_VARIANTS
+	ld c, 0
+.loop
+	ld a, [hli]
+	cp e
+	jr nz, .next
+	ld a, [hl]
+	cp d
+	jr z, .found
+.next
+	inc hl
+	inc c
+	dec b
+	jr nz, .loop
+	pop bc
+	and a ; no variant for this species
+	ret
+
+.found
+	ld a, c
+	add LOW(VARIANTS_START)
+	ld e, a
+	ld a, HIGH(VARIANTS_START)
+	adc 0
+	ld d, a
+	pop bc
+	scf
 	ret
 
 INCLUDE "data/pokemon/variant_bases.asm"

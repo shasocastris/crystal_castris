@@ -376,3 +376,4 @@ DisplayDexMonType:
     db "FAIR@"
 
 INCLUDE "data/pokemon/dex_entry_pointers.asm"
+INCLUDE "data/pokemon/variant_dex_entry_pointers.asm"

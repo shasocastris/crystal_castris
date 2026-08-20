@@ -2984,12 +2984,19 @@ wPartyMonNicknamesEnd::
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
-; M0 reservation for M1 (regional variants) and any later species additions:
-; headroom for ~32 more dex entries. INTENTIONALLY UNUSED. Variants do not get
-; their own dex bits under the roadmap §4.2 design, so this is margin for real
-; new species only. When NUM_POKEMON grows, delete one byte here per byte the
-; flag_array gains. Must stay adjacent to wPokedexCaught.
-	ds 4
+; Variants hold no Pokedex slot, so catching one sets its *base* species' bit
+; above and nothing else. This records the variant itself, which is what gates
+; the Pokedex form view (START on the dex entry screen). Filled from the M0
+; reservation below rather than added to the saved block, so it costs no save
+; break. NOTE: this and the padding must stay adjacent to wPokedexCaught.
+wVariantCaught:: flag_array NUM_VARIANTS
+wEndVariantCaught::
+; Remainder of the M0 reservation for M1 and any later species additions.
+; INTENTIONALLY UNUSED. When NUM_POKEMON or NUM_VARIANTS grows, delete one byte
+; here per byte the arrays above gain, so nothing after this point moves.
+; Once this reaches zero the saved block grows and saves are invalidated: at
+; present numbering that is 32 variants, or 32 more species.
+	ds 3
 
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
