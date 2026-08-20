@@ -393,8 +393,8 @@ Pokedex_InitDexEntryScreen:
 	ldh [hBGMapMode], a
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
+	call Pokedex_DefaultFormForSelectedMon
 	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_DrawFormIndicator
 	call Pokedex_InitArrowCursor
 	call Pokedex_GetDisplayedMon
 	ld a, l
@@ -403,6 +403,7 @@ Pokedex_InitDexEntryScreen:
 	ld [wPrevDexEntry + 1], a
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
+	call Pokedex_DrawFormIndicator
 	call WaitBGMap
 	ld a, $a7
 	ldh [hWX], a
@@ -535,7 +536,7 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_LoadCurrentFootprint
-	call Pokedex_DrawFormIndicator
+	call Pokedex_DefaultFormForSelectedMon
 	call Pokedex_GetDisplayedMon
 	ld a, l
 	ld [wPrevDexEntry], a
@@ -544,6 +545,7 @@ Pokedex_ReinitDexEntryScreen:
 	farcall DisplayDexEntry
 	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
+	call Pokedex_DrawFormIndicator
 	call WaitBGMap
 	call Pokedex_GetDisplayedMon
 	ld [wCurPartySpecies], a
@@ -607,9 +609,9 @@ DexEntryScreen_MenuActionJumptable:
 Pokedex_RedisplayDexEntry:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetDisplayedMon
-	call Pokedex_DrawFormIndicator
 	farcall DisplayDexEntry
-	jmp Pokedex_DrawFootprint
+	call Pokedex_DrawFootprint
+	jmp Pokedex_DrawFormIndicator
 
 Pokedex_InitOptionScreen:
 	xor a
@@ -1800,6 +1802,28 @@ Pokedex_GetSelectedMon:
 	ld [wTempSpecies], a
 	ret
 
+Pokedex_DefaultFormForSelectedMon:
+; Open the entry on the variant when that is the only form the player has
+; caught, and on the base otherwise. Needed because catching a variant also
+; sets the base species' caught bit, so the dex would otherwise always show a
+; base form the player has never actually seen.
+; Call once wTempSpecies holds the selected species.
+	xor a
+	ld [wPokedexVariantToggle], a
+	ld a, [wTempSpecies]
+	call GetPokemonBaseIndexFromID
+	ld d, h
+	ld e, l
+	call GetSpeciesVariant
+	ret nc ; no variant for this species
+	call CheckVariantCaught
+	ret z ; variant not caught, so the base is all there is
+	call CheckVariantBaseCaught
+	ret nz ; both caught, so open on the base
+	ld a, 1
+	ld [wPokedexVariantToggle], a
+	ret
+
 Pokedex_DrawFormIndicator:
 ; START > FORM, to the right of SELECT > SHINY, drawn only when this species has
 ; a variant the player has caught. The indicator doubles as the hint that the
@@ -1857,7 +1881,9 @@ Pokedex_GetDisplayedMon:
 	ret
 
 Pokedex_SelectedMonHasCaughtVariant:
-; out: carry set if the species on screen has a variant the player has caught
+; out: carry set if the player has caught BOTH forms, i.e. there is another form
+;      to switch to. Catching only one form gives nothing to toggle, so the
+;      indicator stays hidden and the dex simply opens on the form you have.
 ; clobbers a, bc, de and hl
 ;
 ; Reads wTempSpecies rather than calling Pokedex_GetSelectedMon. That routine is
@@ -1876,6 +1902,8 @@ Pokedex_SelectedMonHasCaughtVariant:
 	call GetSpeciesVariant
 	ret nc ; no variant for this species
 	call CheckVariantCaught
+	jr z, .not_caught
+	call CheckVariantBaseCaught
 	jr z, .not_caught
 	scf
 	ret

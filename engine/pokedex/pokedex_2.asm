@@ -236,11 +236,16 @@ String_pokemon:
 GetDexEntryPointer:
 ; return dex entry pointer b:de
 	push hl
-	ld a, [wPokedexVariantToggle]
-	and a
-	jr nz, .variant
+; Branch on whether the species being shown IS a variant, not on the form
+; toggle. The post-catch screen shows a caught variant without the toggle ever
+; being set, and it should get the variant's own entry too.
 	ld a, b
-	call GetPokemonBaseIndexFromID ; variants share their base species' entry
+	call GetPokemonIndexFromID
+	ld a, l
+	sub LOW(VARIANTS_START)
+	ld a, h
+	sbc HIGH(VARIANTS_START)
+	jr nc, .variant
 	dec hl
 	ld d, h
 	ld e, l
@@ -251,10 +256,8 @@ GetDexEntryPointer:
 
 .variant
 ; Variants are absent from PokedexDataPointerTable by design -- it must stay
-; sized NUM_POKEMON -- so the form view reads the parallel table instead,
+; sized NUM_POKEMON -- so their entry comes from the parallel table instead,
 ; indexed by (species index - VARIANTS_START).
-	ld a, b
-	call GetPokemonIndexFromID
 	ld a, l
 	sub LOW(VARIANTS_START)
 	ld l, a

@@ -2992,12 +2992,18 @@ wEndPokedexCaught::
 ; break. NOTE: this and the padding must stay adjacent to wPokedexCaught.
 wVariantCaught:: flag_array NUM_VARIANTS
 wEndVariantCaught::
+; The mirror of the above: set when the player catches the *base* form of a
+; species that has a variant. Needed because the Layer 4 redirect marks the base
+; species caught for a variant capture too, so wPokedexCaught alone cannot tell
+; "caught a real Corsola" from "caught a Kanto Corsola".
+wVariantBaseCaught:: flag_array NUM_VARIANTS
+wEndVariantBaseCaught::
 ; Remainder of the M0 reservation for M1 and any later species additions.
 ; INTENTIONALLY UNUSED. When NUM_POKEMON or NUM_VARIANTS grows, delete one byte
 ; here per byte the arrays above gain, so nothing after this point moves.
 ; Once this reaches zero the saved block grows and saves are invalidated: at
 ; present numbering that is 32 variants, or 32 more species.
-	ds 3
+	ds 2
 
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::

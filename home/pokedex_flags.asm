@@ -163,38 +163,59 @@ GetPokemonBaseIndexFromID::
 	ret
 
 SetVariantCaught:
-; Record that the player has caught this variant, if it is one.
-; The base species' own caught bit is set separately by the caller falling
-; through into SetCaughtMonIndex, so both are marked.
-; Called only from the caught-set path, which is the only path that means
-; "caught" -- the seen and check paths must not touch this.
+; Record which *form* the player just caught, for the Pokedex form view.
+; wPokedexCaught cannot answer this on its own: the Layer 4 redirect marks the
+; base species caught for a variant capture too.
+; Called only from the caught-set path -- the seen and check paths must not
+; touch these.
 ; in: de = 16-bit species index, before GetVariantBase resolves it
-; preserves everything. Relies on the caller having selected BANK(wPokedexCaught),
-; which is the same bank, since wVariantCaught sits directly after it.
+; preserves everything
+	push hl
+	push de
+	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wVariantCaught)
+	ldh [rSVBK], a
 	ld a, e
 	sub LOW(VARIANTS_START)
 	ld a, d
 	sbc HIGH(VARIANTS_START)
-	ret c ; a real species, nothing to record
-	push hl
-	push de
-	push bc
+	ld hl, wVariantCaught
+	jr nc, .got_position ; de is the variant itself
+; otherwise it is a real species: record it only if it is one a variant varies
+	call GetSpeciesVariant
+	jr nc, .done
+	ld hl, wVariantBaseCaught
+.got_position
 	ld a, e
 	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
 	ld e, a
 	ld d, 0
-	ld hl, wVariantCaught
 	ld b, SET_FLAG
 	call FlagAction
+.done
+	pop af
+	ldh [rSVBK], a
 	pop bc
 	pop de
 	pop hl
 	ret
 
+CheckVariantBaseCaught::
+; in: de = 16-bit variant index
+; out: z if the base form has not been caught, nz if it has
+; preserves bc, de and hl
+	ld hl, wVariantBaseCaught
+	jr _CheckVariantFlag
+
+
 CheckVariantCaught::
 ; in: de = 16-bit variant index
 ; out: z if not caught (or not a variant), nz if caught
 ; preserves bc, de and hl
+	ld hl, wVariantCaught
+_CheckVariantFlag:
 	ld a, e
 	sub LOW(VARIANTS_START)
 	ld a, d
@@ -211,7 +232,6 @@ CheckVariantCaught::
 	sub LOW(VARIANTS_START)
 	ld e, a
 	ld d, 0
-	ld hl, wVariantCaught
 	ld b, CHECK_FLAG
 	call FlagAction
 	pop af
