@@ -314,4 +314,5 @@ INCLUDE "data/pokemon/base_stats/cursola.asm"
 ; --- variants (past NUM_POKEMON) ---
 INCLUDE "data/pokemon/base_stats/corsola_kanto.asm"
 INCLUDE "data/pokemon/base_stats/raichu_johto.asm"
+INCLUDE "data/pokemon/base_stats/dragonite_kanto.asm"
 .IndirectEnd::

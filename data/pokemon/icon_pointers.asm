@@ -283,4 +283,5 @@ IconPointers:
 	dw CursolaIcon
 	dw CorsolaKantoIcon
 	dw RaichuJohtoIcon
+	dw DragoniteIcon ; shares Dragonite's icon
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

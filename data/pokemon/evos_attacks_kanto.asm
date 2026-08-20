@@ -2906,7 +2906,9 @@ DratiniEvosAttacks:
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
-	dbbw EVOLVE_LEVEL, 55, DRAGONITE
+	db   EVOLVE_REGION, KANTO_REGION
+	dbbw EVOLVE_LEVEL, 55, DRAGONITE_KANTO
+	dbbw EVOLVE_LEVEL, 55, DRAGONITE ; ungated fallback: every other region
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER

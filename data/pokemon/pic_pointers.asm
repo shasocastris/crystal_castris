@@ -572,4 +572,6 @@ PokemonPicPointers::
 	dba CorsolaKantoBackpic
 	dba RaichuJohtoFrontpic
 	dba RaichuJohtoBackpic
+	dba DragoniteFrontpic ; shares Dragonite's sprite; only the palette differs
+	dba DragoniteBackpic
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

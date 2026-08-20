@@ -278,4 +278,5 @@ AnimationPointers:
 	dw CursolaAnimation
 	dw CorsolaKantoAnimation
 	dw RaichuJohtoAnimation
+	dw DragoniteAnimation
 	assert_table_length NUM_POKEMON_AND_VARIANTS

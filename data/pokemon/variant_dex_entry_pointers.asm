@@ -8,4 +8,5 @@ VariantPokedexEntries:
 	table_width 3
 	dba CorsolaKantoPokedexEntry
 	dba RaichuJohtoPokedexEntry
+	dba DragoniteKantoPokedexEntry
 	assert_table_length NUM_VARIANTS

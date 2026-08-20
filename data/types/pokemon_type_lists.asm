@@ -119,6 +119,7 @@ FlyingTypeSpecies:
 	dw TOGEKISS
 	dw YANMEGA
 	dw GLISCOR
+	dw DRAGONITE_KANTO
 	dw -1
 
 PoisonTypeSpecies:
@@ -430,6 +431,7 @@ DragonTypeSpecies:
 	dw DRAGONAIR
 	dw DRAGONITE
 	dw KINGDRA
+	dw DRAGONITE_KANTO
 	dw -1
 
 DarkTypeSpecies:

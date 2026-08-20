@@ -7,4 +7,5 @@ VariantBaseSpecies:
 	table_width 2
 	dw CORSOLA ; CORSOLA_KANTO
 	dw RAICHU  ; RAICHU_JOHTO
+	dw DRAGONITE ; DRAGONITE_KANTO
 	assert_table_length NUM_VARIANTS

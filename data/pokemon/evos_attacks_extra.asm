@@ -28,6 +28,7 @@ EvosAttacksPointers3::
 	dw CursolaEvosAttacks
 	dw CorsolaKantoEvosAttacks
 	dw RaichuJohtoEvosAttacks
+	dw DragoniteKantoEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -420,6 +421,26 @@ RaichuJohtoEvosAttacks:
 	dbw 1, IRON_TAIL
 	dbw 1, THUNDERBOLT
 	dbw 1, CONFUSION
+	db 0 ; no more level-up moves
+
+DragoniteKantoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, WING_ATTACK
+	dbw 1, WRAP
+	dbw 1, LEER
+	dbw 8, THUNDER_WAVE
+	dbw 15, TWISTER
+	dbw 18, SUPERSONIC
+	dbw 22, DRAGON_RAGE
+	dbw 25, LIGHT_SCREEN
+	dbw 29, SLAM
+	dbw 34, MIST
+	dbw 34, HAZE
+	dbw 38, AGILITY
+	dbw 47, SAFEGUARD
+	dbw 54, WING_ATTACK
+	dbw 61, OUTRAGE
+	dbw 75, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ENDSECTION
