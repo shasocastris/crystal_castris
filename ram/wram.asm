@@ -2999,7 +2999,14 @@ wEndPokedexCaught::
 ; one.
 wVariantCaught:: flag_array NUM_VARIANTS
 wEndVariantCaught::
-	ds 3
+; And the mirror: set when the base form of a species that has a variant is
+; caught. Both are needed because the shared Pokedex bit is set by *either*
+; form -- catching a Kanto Corsola registers CORSOLA, which is decision 1
+; working as intended and is what keeps the dex count and type-completion gates
+; correct. These two bits are what the caught markers ask instead.
+wVariantBaseCaught:: flag_array NUM_VARIANTS
+wEndVariantBaseCaught::
+	ds 2
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 ; M0 reservation, as above, for the seen array. INTENTIONALLY UNUSED.

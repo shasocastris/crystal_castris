@@ -163,17 +163,11 @@ GetPokemonBaseIndexFromID::
 	ret
 
 SetVariantCaught:
-; Record that the player caught this variant, if it is one. The base species'
-; shared Pokedex bit is set separately by the caller falling through into
-; SetCaughtMonIndex, so a variant capture marks both.
+; Record which *form* the player just caught. The shared Pokedex bit is set by
+; the caller falling through into SetCaughtMonIndex and cannot distinguish them.
 ; Called only from the caught-set path; the seen and check paths must not.
 ; in: de = 16-bit species index, before GetVariantBase resolves it
 ; preserves everything
-	ld a, e
-	sub LOW(VARIANTS_START)
-	ld a, d
-	sbc HIGH(VARIANTS_START)
-	ret c ; an ordinary species; the shared bit is enough
 	push hl
 	push de
 	push bc
@@ -182,12 +176,27 @@ SetVariantCaught:
 	ld a, BANK(wVariantCaught)
 	ldh [rSVBK], a
 	ld a, e
+	sub LOW(VARIANTS_START)
+	ld a, d
+	sbc HIGH(VARIANTS_START)
+	jr nc, .variant_form
+	call GetSpeciesVariant ; clobbers hl, so pick the array after it
+	jr nc, .done ; an ordinary species with no variant needs no bit of its own
+	ld hl, wVariantBaseCaught
+	jr .set
+
+.variant_form
+	ld hl, wVariantCaught
+
+.set
+	ld a, e
 	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
 	ld e, a
 	ld d, 0
-	ld hl, wVariantCaught
 	ld b, SET_FLAG
 	call FlagAction
+
+.done
 	pop af
 	ldh [rSVBK], a
 	pop bc
@@ -197,8 +206,8 @@ SetVariantCaught:
 
 CheckCaughtForm::
 ; As CheckCaughtMon, but answers for the *form* rather than the species.
-; A variant and its base share one Pokedex bit, so CheckCaughtMon reports true
-; for either once one of them is caught.
+; A variant and its base share one Pokedex bit, which either form sets, so
+; CheckCaughtMon reports true for both once one of them is caught.
 ; in:  a = 8-bit species ID
 ; out: z if this form has not been caught, nz if it has
 ; preserves bc, de and hl
@@ -212,22 +221,31 @@ CheckCaughtForm::
 	sub LOW(VARIANTS_START)
 	ld a, d
 	sbc HIGH(VARIANTS_START)
-	jr nc, .variant
-	call CheckCaughtMonIndex
+	jr nc, .variant_form
+	call GetSpeciesVariant
+	jr nc, .shared_bit ; no variant exists, so the Pokedex bit is the answer
+	ld hl, wVariantBaseCaught
+	jr .check
+
+.variant_form
+	ld hl, wVariantCaught
+
+.check
+	call _CheckVariantFormFlag
 	jr .done
 
-.variant
-	call CheckVariantCaught
+.shared_bit
+	call CheckCaughtMonIndex
 
 .done
-	pop bc ; pops do not disturb the z flag FlagAction left
+	pop bc ; pops leave the z flag alone
 	pop de
 	pop hl
 	ret
 
-CheckVariantCaught::
-; in: de = 16-bit variant index
-; out: z if not caught, nz if caught
+_CheckVariantFormFlag:
+; in:  hl = flag array, de = 16-bit variant index
+; out: z if clear, nz if set
 ; preserves bc, de and hl
 	push hl
 	push de
@@ -240,12 +258,11 @@ CheckVariantCaught::
 	sub LOW(VARIANTS_START)
 	ld e, a
 	ld d, 0
-	ld hl, wVariantCaught
 	ld b, CHECK_FLAG
 	call FlagAction
 	pop af
 	ldh [rSVBK], a
-	ld a, c ; FlagAction answers in c, so read it before pop bc restores it
+	ld a, c ; FlagAction answers in c; read it before pop bc restores it
 	pop bc
 	pop de
 	pop hl
