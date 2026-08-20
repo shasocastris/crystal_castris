@@ -803,19 +803,23 @@ _BackUpMapIndices:
 INCLUDE "data/wild/roammon_maps.asm"
 
 ValidateTempWildMonSpecies:
+; Bounded by NUM_POKEMON_AND_VARIANTS, not NUM_POKEMON: variant species are
+; numbered past NUM_POKEMON and are valid wild encounters. Bounding this by
+; NUM_POKEMON makes a variant in a grass or water table silently produce no
+; encounter at all.
 	ld a, h
 	or l
 	scf
 	ret z
 	ld a, h
-	if LOW(NUM_POKEMON) == $FF
-		cp HIGH(NUM_POKEMON) + 1
+	if LOW(NUM_POKEMON_AND_VARIANTS) == $FF
+		cp HIGH(NUM_POKEMON_AND_VARIANTS) + 1
 	else
-		cp HIGH(NUM_POKEMON)
+		cp HIGH(NUM_POKEMON_AND_VARIANTS)
 		ccf
 		ret nz
 		ld a, l
-		cp LOW(NUM_POKEMON) + 1
+		cp LOW(NUM_POKEMON_AND_VARIANTS) + 1
 	endc
 	ccf
 	ret
