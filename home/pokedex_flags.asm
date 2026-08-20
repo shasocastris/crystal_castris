@@ -245,11 +245,11 @@ CheckVariantCaught::
 	call FlagAction
 	pop af
 	ldh [rSVBK], a
+	ld a, c ; FlagAction answers in c, so read it before pop bc restores it
 	pop bc
 	pop de
 	pop hl
-	ld a, c
-	and a
+	and a ; pops leave the flags alone, so set z from the result here
 	ret
 
 GetSpeciesVariant::
