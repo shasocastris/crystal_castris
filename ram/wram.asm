@@ -2985,38 +2985,13 @@ wPartyMonNicknamesEnd::
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
-; Variants hold no Pokedex slot, so catching one sets its *base* species' bit
-; above and nothing else. This records the variant itself, which is what gates
-; the Pokedex form view (START on the dex entry screen). Filled from the M0
-; reservation below rather than added to the saved block, so it costs no save
-; break. NOTE: this and the padding must stay adjacent to wPokedexCaught.
-wVariantCaught:: flag_array NUM_VARIANTS
-wEndVariantCaught::
-; The mirror of the above: set when the player catches the *base* form of a
-; species that has a variant. Needed because the Layer 4 redirect marks the base
-; species caught for a variant capture too, so wPokedexCaught alone cannot tell
-; "caught a real Corsola" from "caught a Kanto Corsola".
-wVariantBaseCaught:: flag_array NUM_VARIANTS
-wEndVariantBaseCaught::
-; The same split for seen. The Pokedex lists anything seen, and the redirect
-; marks the base species seen for a variant encounter too, so without these the
-; dex would offer a base form the player has never actually met.
-wVariantSeen:: flag_array NUM_VARIANTS
-wEndVariantSeen::
-wVariantBaseSeen:: flag_array NUM_VARIANTS
-wEndVariantBaseSeen::
-; Remainder of the M0 reservation for M1 and any later species additions.
-; INTENTIONALLY UNUSED. When NUM_POKEMON or NUM_VARIANTS grows, delete one byte
-; here per byte the arrays above gain, so nothing after this point moves.
-; Once this reaches zero the saved block grows and saves are invalidated: at
-; present numbering that is 32 variants, or 32 more species.
-;
-; NOTE: this reservation is now FULLY SPENT. The four variant flag arrays above
-; cost one byte each at NUM_VARIANTS <= 8; past that they need two bytes each
-; and there is nothing left to take. The next saved byte after that grows the
-; block and invalidates saves. wReservedSaveData in wPlayerData still has its
-; 8 bytes free and is the place to go next.
-
+; M0 reservation for M1 (regional variants) and any later species additions:
+; headroom for ~32 more dex entries. INTENTIONALLY UNUSED. Variants do not get
+; their own dex bits, and the Pokedex form view deliberately keeps no per-form
+; state, so this is margin for real new species only. When NUM_POKEMON grows,
+; delete one byte here per byte the flag_array gains. Must stay adjacent to
+; wPokedexCaught.
+	ds 4
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
 ; M0 reservation, as above, for the seen array. INTENTIONALLY UNUSED.

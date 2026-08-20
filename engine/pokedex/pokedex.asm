@@ -388,11 +388,11 @@ Pokedex_InitDexEntryScreen:
 	call LowVolume
 	xor a ; page 1
 	ld [wPokedexStatus], a
+	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
 	call Pokedex_LoadCurrentFootprint
-	call Pokedex_DefaultFormForSelectedMon
 	call Pokedex_GetDisplayedMon ; settles wTempSpecies before the type is drawn
 	ld a, l ; hl is the index; the BG draw below clobbers it
 	ld [wPrevDexEntry], a
@@ -462,7 +462,7 @@ Pokedex_UpdateDexEntryScreen:
 ; changes tiles as well as palettes -- sprite, dex entry text, classification
 ; and dimensions all differ -- so it needs the full entry redraw, not just a
 ; palette refresh.
-	call Pokedex_SelectedMonHasCaughtVariant
+	call Pokedex_SelectedMonHasVariant
 	jr nc, .no_form
 	ld hl, wPokedexVariantToggle
 	ld a, [hl]
@@ -532,10 +532,10 @@ Pokedex_ReinitDexEntryScreen:
 	call Pokedex_BlackOutBG
 	xor a ; page 1
 	ld [wPokedexStatus], a
+	ld [wPokedexVariantToggle], a ; always open on the base form
 	xor a
 	ldh [hBGMapMode], a
 	call Pokedex_LoadCurrentFootprint
-	call Pokedex_DefaultFormForSelectedMon
 	call Pokedex_GetDisplayedMon ; settles wTempSpecies before the type is drawn
 	ld a, l ; hl is the index; the BG draw below clobbers it
 	ld [wPrevDexEntry], a
@@ -1803,28 +1803,6 @@ Pokedex_GetSelectedMon:
 	ld [wTempSpecies], a
 	ret
 
-Pokedex_DefaultFormForSelectedMon:
-; Open the entry on the variant when that is the only form the player has met,
-; and on the base otherwise. Needed because the redirect sets the base species'
-; seen and caught bits for a variant encounter too, so the dex would otherwise
-; always show a base form the player has never actually met.
-; Call once wTempSpecies holds the selected species.
-	xor a
-	ld [wPokedexVariantToggle], a
-	ld a, [wTempSpecies]
-	call GetPokemonBaseIndexFromID
-	ld d, h
-	ld e, l
-	call GetSpeciesVariant
-	ret nc ; no variant for this species
-	call CheckVariantSeen
-	ret z ; variant never met, so the base is all there is
-	call CheckVariantBaseSeen
-	ret nz ; both met, so open on the base
-	ld a, 1
-	ld [wPokedexVariantToggle], a
-	ret
-
 Pokedex_DrawFormIndicator:
 ; START > FORM, to the right of SELECT > SHINY, drawn only when this species has
 ; a variant the player has caught. The indicator doubles as the hint that the
@@ -1834,7 +1812,7 @@ Pokedex_DrawFormIndicator:
 ; post-catch new-entry screen too, where the listing cursor is meaningless and
 ; START does nothing. Call this only once wTempSpecies holds the species on
 ; screen.
-	call Pokedex_SelectedMonHasCaughtVariant
+	call Pokedex_SelectedMonHasVariant
 	ret nc
 	hlcoord 9, 0
 	ld [hl], $6b ; curved text border, left
@@ -1881,12 +1859,15 @@ Pokedex_GetDisplayedMon:
 	ld a, [wTempSpecies]
 	ret
 
-Pokedex_SelectedMonHasCaughtVariant:
-; out: carry set if the player has met BOTH forms, i.e. there is another form to
-;      switch to. Gated on *seen* rather than caught: encountering a form is
-;      enough to know it exists, and catching always implies seeing. Having met
-;      only one form gives nothing to toggle, so the indicator stays hidden and
-;      the dex simply opens on the form you have met.
+Pokedex_SelectedMonHasVariant:
+; out: carry set if this species has a variant at all
+; clobbers a, bc, de and hl
+;
+; Deliberately keeps NO per-form seen/caught state. Tracking it cost four saved
+; flag arrays -- the whole M0 dex reservation -- to hide something the dex gives
+; away cheaply anyway, and it did not prevent any of the bugs this screen
+; actually had. The indicator therefore shows for any species with a variant,
+; which also serves as the hint that the form exists.
 ; clobbers a, bc, de and hl
 ;
 ; Reads wTempSpecies rather than calling Pokedex_GetSelectedMon. That routine is
@@ -1902,18 +1883,7 @@ Pokedex_SelectedMonHasCaughtVariant:
 	call GetPokemonBaseIndexFromID
 	ld d, h
 	ld e, l
-	call GetSpeciesVariant
-	ret nc ; no variant for this species
-	call CheckVariantSeen
-	jr z, .not_caught
-	call CheckVariantBaseSeen
-	jr z, .not_caught
-	scf
-	ret
-
-.not_caught
-	and a
-	ret
+	jmp GetSpeciesVariant ; carry set when this species has one
 
 Pokedex_CheckSeen:
 	push de

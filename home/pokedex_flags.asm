@@ -77,14 +77,12 @@ SetSeenAndCaughtMon::
 	call SetSeenMonIndex
 	pop de
 SetCaughtMonIndex::
-	call SetVariantCaught
 	ld hl, wPokedexCaught
 	jr SetPokedexStatusMonIndex
 
 SetSeenMon::
 	call GetPokemonFlagIndex
 SetSeenMonIndex::
-	call SetVariantSeen
 	ld hl, wPokedexSeen
 SetPokedexStatusMonIndex:
 	ld b, SET_FLAG
@@ -161,145 +159,6 @@ GetPokemonBaseIndexFromID::
 	call GetVariantBase
 	ld h, d
 	ld l, e
-	ret
-
-SetVariantSeen:
-; The seen counterpart of SetVariantCaught. Called only from the seen-set path.
-; in: de = 16-bit species index, before GetVariantBase resolves it
-; preserves everything
-	push hl
-	push de
-	push bc
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wVariantSeen)
-	ldh [rSVBK], a
-	ld a, e
-	sub LOW(VARIANTS_START)
-	ld a, d
-	sbc HIGH(VARIANTS_START)
-	jr nc, .variant_form
-	call GetSpeciesVariant ; clobbers hl, so pick the array after it
-	jr nc, .done ; an ordinary species with no variant
-	ld hl, wVariantBaseSeen
-	jr .set
-
-.variant_form
-	ld hl, wVariantSeen
-
-.set
-	ld a, e
-	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
-	ld e, a
-	ld d, 0
-	ld b, SET_FLAG
-	call FlagAction
-
-.done
-	pop af
-	ldh [rSVBK], a
-	pop bc
-	pop de
-	pop hl
-	ret
-
-CheckVariantSeen::
-; in: de = 16-bit variant index
-; out: z if this form has not been seen, nz if it has
-; preserves bc, de and hl
-	ld hl, wVariantSeen
-	jr _CheckVariantFlag
-
-CheckVariantBaseSeen::
-; in: de = 16-bit variant index
-; out: z if the base form has not been seen, nz if it has
-; preserves bc, de and hl
-	ld hl, wVariantBaseSeen
-	jr _CheckVariantFlag
-
-SetVariantCaught:
-; Record which *form* the player just caught, for the Pokedex form view.
-; wPokedexCaught cannot answer this on its own: the Layer 4 redirect marks the
-; base species caught for a variant capture too.
-; Called only from the caught-set path -- the seen and check paths must not
-; touch these.
-; in: de = 16-bit species index, before GetVariantBase resolves it
-; preserves everything
-	push hl
-	push de
-	push bc
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wVariantCaught)
-	ldh [rSVBK], a
-	ld a, e
-	sub LOW(VARIANTS_START)
-	ld a, d
-	sbc HIGH(VARIANTS_START)
-	ld hl, wVariantCaught
-	jr nc, .got_position ; de is the variant itself
-; otherwise it is a real species: record it only if it is one a variant varies
-	call GetSpeciesVariant
-	jr nc, .done
-	ld hl, wVariantBaseCaught
-.got_position
-	ld a, e
-	sub LOW(VARIANTS_START) ; position in the variant block, 0-based
-	ld e, a
-	ld d, 0
-	ld b, SET_FLAG
-	call FlagAction
-.done
-	pop af
-	ldh [rSVBK], a
-	pop bc
-	pop de
-	pop hl
-	ret
-
-CheckVariantBaseCaught::
-; in: de = 16-bit variant index
-; out: z if the base form has not been caught, nz if it has
-; preserves bc, de and hl
-	ld hl, wVariantBaseCaught
-	jr _CheckVariantFlag
-
-
-CheckVariantCaught::
-; in: de = 16-bit variant index
-; out: z if not caught (or not a variant), nz if caught
-; preserves bc, de and hl
-	ld hl, wVariantCaught
-_CheckVariantFlag:
-	ld a, e
-	sub LOW(VARIANTS_START)
-	ld a, d
-	sbc HIGH(VARIANTS_START)
-	jr c, .not_a_variant
-	push hl
-	push de
-	push bc
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wVariantCaught)
-	ldh [rSVBK], a
-	ld a, e
-	sub LOW(VARIANTS_START)
-	ld e, a
-	ld d, 0
-	ld b, CHECK_FLAG
-	call FlagAction
-	pop af
-	ldh [rSVBK], a
-	pop bc
-	pop de
-	pop hl
-	ld a, c
-	and a
-	ret
-
-.not_a_variant
-	xor a
 	ret
 
 GetSpeciesVariant::
