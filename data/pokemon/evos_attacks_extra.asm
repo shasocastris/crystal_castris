@@ -25,7 +25,7 @@ EvosAttacksPointers3::
 	dw FarigirafEvosAttacks
 	dw DudunsparceEvosAttacks
 	dw UrsalunaEvosAttacks
-	dw CorsolaEvosAttacks ; CORSOLA_KANTO - placeholder, own learnset in phase 6
+	dw CorsolaKantoEvosAttacks
 .IndirectEnd::
 
 ElectivireEvosAttacks:
@@ -369,6 +369,24 @@ UrsalunaEvosAttacks:
 	dbw 41, THRASH
 	dbw 49, SWORDS_DANCE
 	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+CorsolaKantoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LICK
+	dbw 7, HARDEN
+	dbw 10, DISABLE
+	dbw 13, SPITE
+	dbw 16, CONFUSE_RAY
+	dbw 19, AMNESIA
+	dbw 22, CURSE
+	dbw 25, NIGHT_SHADE
+	dbw 28, PAIN_SPLIT
+	dbw 31, WILL_O_WISP
+	dbw 34, ANCIENTPOWER
+	dbw 37, SHADOW_BALL
+	dbw 40, MIRROR_COAT
+	dbw 44, POWER_GEM
 	db 0 ; no more level-up moves
 
 ENDSECTION
