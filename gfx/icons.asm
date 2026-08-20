@@ -284,3 +284,4 @@ WyrdeerIcon::    INCBIN "gfx/icons/wyrdeer.2bpp"
 FarigirafIcon::    INCBIN "gfx/icons/farigiraf.2bpp"
 DudunsparceIcon::    INCBIN "gfx/icons/dudunsparc.2bpp"
 UrsalunaIcon::    INCBIN "gfx/icons/ursaluna.2bpp"
+CorsolaKantoIcon::    INCBIN "gfx/icons/corsola_kanto.2bpp" ; PLACEHOLDER: copy of corsola.png, needs its own art
