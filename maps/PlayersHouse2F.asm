@@ -192,6 +192,9 @@ if DEF(_DEBUG)
 	givepokemove TELEPORT,  wPartyMon6, 1
 	givepoke PICHU, 5
 	givepoke PIKACHU, 15
+	givepoke DRATINI, 54
+	givepoke DRATINI, 54
+	givepoke CORSOLA_KANTO, 36
 	; intro events
 	addcellnum PHONE_MOM
 	setmapscene PLAYERS_HOUSE_1F, $1
