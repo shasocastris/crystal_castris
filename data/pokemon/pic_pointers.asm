@@ -458,8 +458,8 @@ PokemonPicPointers::
 	dba SwinubBackpic
 	dba PiloswineFrontpic
 	dba PiloswineBackpic
-	dba CorsolaFrontpic
-	dba CorsolaBackpic
+	dba CorsolaKantoFrontpic
+	dba CorsolaKantoBackpic
 	dba RemoraidFrontpic
 	dba RemoraidBackpic
 	dba OctilleryFrontpic

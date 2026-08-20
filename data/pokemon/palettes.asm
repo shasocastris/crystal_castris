@@ -585,7 +585,6 @@ INCLUDE "gfx/pokemon/ursaluna/normal.pal"
 INCLUDE "gfx/pokemon/ursaluna/shiny.pal"
 
 ; --- variants (past NUM_POKEMON) ---
-; CORSOLA_KANTO - base Corsola's palette as a placeholder; own palette in phase 4
-INCBIN "gfx/pokemon/corsola/normal.gbcpal", middle_colors
-INCLUDE "gfx/pokemon/corsola/shiny.pal"
+INCLUDE "gfx/pokemon/corsola_kanto/normal.pal"
+INCLUDE "gfx/pokemon/corsola_kanto/shiny.pal"
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

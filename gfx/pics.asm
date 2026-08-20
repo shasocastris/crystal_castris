@@ -764,5 +764,7 @@ DudunspareFrontpic:    INCBIN "gfx/pokemon/dudunsparc/front.animated.2bpp.lz"
 DudunspareBackpic:     INCBIN "gfx/pokemon/dudunsparc/back.2bpp.lz"
 UrsalunaFrontpic:    INCBIN "gfx/pokemon/ursaluna/front.animated.2bpp.lz"
 UrsalunaBackpic:     INCBIN "gfx/pokemon/ursaluna/back.2bpp.lz"
+CorsolaKantoFrontpic:    INCBIN "gfx/pokemon/corsola_kanto/front.animated.2bpp.lz"
+CorsolaKantoBackpic:     INCBIN "gfx/pokemon/corsola_kanto/back.2bpp.lz"
 
 KrisTrainerPic: INCBIN "gfx/trainers/kris.2bpp.lz"

@@ -221,7 +221,7 @@ FramesPointers:
 	dba MagcargoFrames
 	dba SwinubFrames
 	dba PiloswineFrames
-	dba CorsolaFrames
+	dba CorsolaKantoFrames
 	dba RemoraidFrames
 	dba OctilleryFrames
 	dba DelibirdFrames

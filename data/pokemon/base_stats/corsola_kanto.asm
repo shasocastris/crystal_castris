@@ -9,7 +9,7 @@
 	db 120 ; base exp
 	dw NO_ITEM, NO_ITEM ; items
 	db GENDER_F75 ; gender ratio
-	INCBIN "gfx/pokemon/corsola/front.dimensions"
+	INCBIN "gfx/pokemon/corsola_kanto/front.dimensions"
 	dw NULL, NULL ; unused (beta front/back pics)
 	db GROWTH_FAST ; growth rate
 	; tm/hm learnset
