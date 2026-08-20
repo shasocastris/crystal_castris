@@ -199,31 +199,9 @@ GetRemindableMoves:
 ; Skips the evolution data to start at the learnset for the
 ; currently selected Pokémon in the "EvosAttacksPointers"
 ; table. This is "db 0 ; no more evolutions".
-.skip_evos
-	ld a, [hTemp] ; EvosAttacksPointers bank
-	call GetFarByte
-	inc hl
-	and a
-	jr z, .skip_evos_done
-	dec a
-	assert EVOLVE_LEVEL == 1
-	jr z, .skip_four_bytes
-	dec a
-	assert EVOLVE_ITEM == 2
-	jr z, .skip_four_bytes
-	dec a
-	assert EVOLVE_HAPPINESS == 3
-	jr z, .skip_three_bytes
-	assert EVOLVE_STAT == 4
-.skip_four_bytes
-	inc hl
-.skip_three_bytes
-	inc hl
-	inc hl
-	inc hl
-	jr .skip_evos
-
-.skip_evos_done
+; b is free here: the move count was pushed above and is popped back later.
+	ld b, a ; EvosAttacksPointers bank, still in a
+	call FarSkipEvolutions
 
 ; Loops through the move list until it reaches
 ; the end of the "EvosAttacksPointers" table
