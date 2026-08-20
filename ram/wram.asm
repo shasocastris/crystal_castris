@@ -2901,11 +2901,32 @@ wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still
 wBikeStep:: dw
 wKurtApricornQuantity:: db
 
+; --- M0 SAVE RESERVATION ---
+; Reserved by milestone M0 (docs/major_systems_roadmap.md §3) so that M1-M4 can
+; fill these in without a further save-format break. Every byte below is
+; INTENTIONALLY UNUSED until the milestone named on it lands. Do not reclaim
+; them for unrelated features, and do not move them: doing either costs another
+; save break, which is the one thing this block exists to prevent.
+wSeason:: db             ; M2 seasons. Season index 0-3, not a bitmask. Saved so
+                         ; a season change across a reload can be detected.
+wSeasonalFlags:: db      ; M2 seasons. Once-per-season event bits, cleared on change.
+wCurRegion:: db          ; M3 third region. Cached RegionCheck result.
+wOvercastRandomDay:: db  ; M4 weather. Day the weekly overcast roll was made.
+wOvercastRandomMaps:: db ; M4 weather. Which maps that roll selected.
+wOvercastReserved:: ds 4 ; M4 weather. Per-map / story-gated overcast state.
+wReservedSaveData:: ds 8 ; Unassigned saved-data reserve for future milestones.
+; --- END M0 SAVE RESERVATION ---
+
 wPlayerDataEnd::
 
 wCurMapData::
 
 wVisitedSpawns:: flag_array NUM_SPAWNS
+; M0 reservation for M3 (third region): headroom for ~32 more SPAWN_* points.
+; INTENTIONALLY UNUSED. When NUM_SPAWNS grows, flag_array above grows with it,
+; so delete one byte here per byte gained to keep everything after this point
+; at the same save offset. Must stay adjacent to wVisitedSpawns.
+	ds 4
 
 wDigWarpNumber:: db
 wDigMapGroup::   db
@@ -2926,6 +2947,10 @@ wMapNumber:: db
 wYCoord:: db
 wXCoord:: db
 wScreenSave:: ds SCREEN_META_WIDTH * SCREEN_META_HEIGHT
+
+; M0 reservation for M3 (third region): visited-landmark / visited-map state for
+; the Orange Islands, sized high on purpose. INTENTIONALLY UNUSED.
+wReservedRegionMapData:: ds 8
 
 wCurMapDataEnd::
 
@@ -2959,9 +2984,17 @@ wPartyMonNicknamesEnd::
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
+; M0 reservation for M1 (regional variants) and any later species additions:
+; headroom for ~32 more dex entries. INTENTIONALLY UNUSED. Variants do not get
+; their own dex bits under the roadmap §4.2 design, so this is margin for real
+; new species only. When NUM_POKEMON grows, delete one byte here per byte the
+; flag_array gains. Must stay adjacent to wPokedexCaught.
+	ds 4
 
 wPokedexSeen:: flag_array NUM_POKEMON
 wEndPokedexSeen::
+; M0 reservation, as above, for the seen array. INTENTIONALLY UNUSED.
+	ds 4
 
 wUnownDex:: ds NUM_UNOWN
 wUnlockedUnowns:: db

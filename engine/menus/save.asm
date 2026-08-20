@@ -372,6 +372,8 @@ SaveIndexTables:
 	ld de, sPokemonIndexTable
 	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
 	rst CopyBytes
+	ld a, BANK(sItemIndexTable) ; not the same bank as sPokemonIndexTable
+	call OpenSRAM
 	ld hl, wItemIndexTable
 	ld de, sItemIndexTable
 	ld bc, wItemIndexTableEnd - wItemIndexTable
@@ -682,6 +684,8 @@ LoadIndexTables:
 	ld de, wPokemonIndexTable
 	ld bc, wPokemonIndexTableEnd - wPokemonIndexTable
 	rst CopyBytes
+	ld a, BANK(sItemIndexTable) ; not the same bank as sPokemonIndexTable
+	call OpenSRAM
 	ld hl, sItemIndexTable
 	ld de, wItemIndexTable
 	ld bc, wItemIndexTableEnd - wItemIndexTable
