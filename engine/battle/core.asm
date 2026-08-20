@@ -7571,7 +7571,7 @@ GiveExperiencePoints:
 	xor a ; PARTYMON
 	ld [wMonType], a
 	ld a, [wCurSpecies]
-	ld [wTempSpecies], a ; unused?
+	ld [wTempSpecies], a ; LearnLevelMoves reads this
 	ld a, [wCurPartyLevel]
 	push af
 	ld c, a

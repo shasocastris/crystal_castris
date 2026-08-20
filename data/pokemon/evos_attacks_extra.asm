@@ -393,6 +393,7 @@ CorsolaKantoEvosAttacks:
 
 CursolaEvosAttacks:
 	db 0 ; no more evolutions
+	dbw LEARN_EVO_MOVE, HYPNOSIS
 	dbw 1, LICK
 	dbw 1, HARDEN
 	dbw 1, DISABLE
