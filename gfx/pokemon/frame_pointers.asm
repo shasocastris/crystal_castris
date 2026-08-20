@@ -221,7 +221,7 @@ FramesPointers:
 	dba MagcargoFrames
 	dba SwinubFrames
 	dba PiloswineFrames
-	dba CorsolaKantoFrames
+	dba CorsolaFrames
 	dba RemoraidFrames
 	dba OctilleryFrames
 	dba DelibirdFrames
@@ -275,5 +275,5 @@ FramesPointers:
 	dba FarigirafFrames
 	dba DudunsparceFrames
 	dba UrsalunaFrames
-	dba CorsolaFrames
+	dba CorsolaKantoFrames
 	assert_table_length NUM_POKEMON_AND_VARIANTS

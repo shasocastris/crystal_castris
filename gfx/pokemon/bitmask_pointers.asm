@@ -221,7 +221,7 @@ BitmasksPointers:
 	dw MagcargoBitmasks
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
-	dw CorsolaKantoBitmasks
+	dw CorsolaBitmasks
 	dw RemoraidBitmasks
 	dw OctilleryBitmasks
 	dw DelibirdBitmasks
@@ -275,5 +275,5 @@ BitmasksPointers:
 	dw FarigirafBitmasks
 	dw DudunsparceBitmasks
 	dw UrsalunaBitmasks
-	dw CorsolaBitmasks
+	dw CorsolaKantoBitmasks
 	assert_table_length NUM_POKEMON_AND_VARIANTS

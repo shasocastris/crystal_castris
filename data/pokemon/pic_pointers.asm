@@ -458,8 +458,8 @@ PokemonPicPointers::
 	dba SwinubBackpic
 	dba PiloswineFrontpic
 	dba PiloswineBackpic
-	dba CorsolaKantoFrontpic
-	dba CorsolaKantoBackpic
+	dba CorsolaFrontpic
+	dba CorsolaBackpic
 	dba RemoraidFrontpic
 	dba RemoraidBackpic
 	dba OctilleryFrontpic
@@ -566,6 +566,6 @@ PokemonPicPointers::
 	dba DudunspareBackpic
 	dba UrsalunaFrontpic
 	dba UrsalunaBackpic
-	dba CorsolaFrontpic
-	dba CorsolaBackpic
+	dba CorsolaKantoFrontpic
+	dba CorsolaKantoBackpic
 	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

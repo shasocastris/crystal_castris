@@ -221,7 +221,7 @@ AnimationPointers:
 	dw MagcargoAnimation
 	dw SwinubAnimation
 	dw PiloswineAnimation
-	dw CorsolaKantoAnimation
+	dw CorsolaAnimation
 	dw RemoraidAnimation
 	dw OctilleryAnimation
 	dw DelibirdAnimation
@@ -275,5 +275,5 @@ AnimationPointers:
 	dw FarigirafAnimation
 	dw DudunsparceAnimation
 	dw UrsalunaAnimation
-	dw CorsolaAnimation
+	dw CorsolaKantoAnimation
 	assert_table_length NUM_POKEMON_AND_VARIANTS
