@@ -279,4 +279,5 @@ PokemonNames::
 	dname "FARIGIRAF"
 	dname "DUDUNSPARC"
 	dname "URSALUNA"
-	assert_table_length NUM_POKEMON
+	dname "CORSOLA"
+	assert_table_length NUM_POKEMON_AND_VARIANTS

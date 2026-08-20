@@ -275,4 +275,5 @@ AnimationIdlePointers:
 	dw FarigirafAnimationIdle
 	dw DudunsparceAnimationIdle
 	dw UrsalunaAnimationIdle
-	assert_table_length NUM_POKEMON
+	dw CorsolaAnimationIdle
+	assert_table_length NUM_POKEMON_AND_VARIANTS

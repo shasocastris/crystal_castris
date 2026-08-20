@@ -280,4 +280,5 @@ IconPointers:
 	dw FarigirafIcon
 	dw DudunsparceIcon
 	dw UrsalunaIcon
-	assert_table_length NUM_POKEMON + 1
+	dw CorsolaIcon
+	assert_table_length NUM_POKEMON_AND_VARIANTS + 1

@@ -276,4 +276,5 @@ FirstEvoStages::
 	dw GIRAFARIG  ; FARIGIRAF
 	dw DUNSPARCE  ; DUDUNSPARC
 	dw TEDDIURSA  ; URSALUNA
-	assert_table_length NUM_POKEMON
+	dw CORSOLA_KANTO ; CORSOLA_KANTO (no evolutions)
+	assert_table_length NUM_POKEMON_AND_VARIANTS

@@ -31,7 +31,7 @@ ENDM
 
 BaseData::
 	indirect_table BASE_DATA_SIZE, 1
-	indirect_entries NUM_POKEMON, BaseData1
+	indirect_entries NUM_POKEMON_AND_VARIANTS, BaseData1
 	indirect_table_end
 
 BaseData1:
@@ -310,4 +310,6 @@ INCLUDE "data/pokemon/base_stats/wyrdeer.asm"
 INCLUDE "data/pokemon/base_stats/farigiraf.asm"
 INCLUDE "data/pokemon/base_stats/dudunsparc.asm"
 INCLUDE "data/pokemon/base_stats/ursaluna.asm"
+; --- variants (past NUM_POKEMON) ---
+INCLUDE "data/pokemon/base_stats/corsola_kanto.asm"
 .IndirectEnd::

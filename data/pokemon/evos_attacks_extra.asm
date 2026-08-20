@@ -25,6 +25,7 @@ EvosAttacksPointers3::
 	dw FarigirafEvosAttacks
 	dw DudunsparceEvosAttacks
 	dw UrsalunaEvosAttacks
+	dw CorsolaEvosAttacks ; CORSOLA_KANTO - placeholder, own learnset in phase 6
 .IndirectEnd::
 
 ElectivireEvosAttacks:
