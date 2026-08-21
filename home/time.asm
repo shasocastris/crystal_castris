@@ -162,12 +162,17 @@ FixTime::
 	ret
 
 InitTimeOfDay::
+; New game, Oak's "set the time" prompt.
 	xor a
 	ld [wStringBuffer2], a
 	ld [wStringBuffer2 + 3], a
-	jr InitTime
+	farcall _InitTime
+	farjp AlignStartDayToSpring
 
 InitDayOfWeek::
+; New game, the weekday Mom asks for in the Pokegear scene. This re-anchors
+; wStartDay from scratch, so it must re-align the season too -- otherwise it
+; undoes InitTimeOfDay's alignment and the game starts in an arbitrary season.
 	call UpdateTime
 	ldh a, [hHours]
 	ld [wStringBuffer2 + 1], a
@@ -175,8 +180,12 @@ InitDayOfWeek::
 	ld [wStringBuffer2 + 2], a
 	ldh a, [hSeconds]
 	ld [wStringBuffer2 + 3], a
+	farcall _InitTime
+	farjp AlignStartDayToSpring
 
 InitTime::
+; Clock reset. Deliberately does NOT re-align: it exists to let the player
+; correct an existing calendar, not to restart it.
 	farjp _InitTime
 
 ClearClock::

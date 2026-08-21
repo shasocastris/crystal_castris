@@ -1,6 +1,80 @@
 _InitializeStartDay:
 	jmp InitializeStartDay
 
+GetSeason::
+; Returns the current season index (0-3) in a, and caches it in wSeason.
+;
+; The RTC day counter has a period of 140 days: FixDays mods hRTCDayLo by 140,
+; and FixTime then adds wStartDay without re-modding, so wCurDay runs over
+; [wStartDay, wStartDay + 139] rather than 0-139. What makes the cycle continuous
+; is the period, not the range -- 140 is a multiple of SEASON_CYCLE_DAYS, so at
+; the wrap wCurDay drops by 139 and -139 mod 28 is +1, one day forward as normal.
+;
+; Do NOT replace the mod with a shift: 140 is not divisible by any power of two
+; above 4, and you would get a visible season skip roughly every five months.
+	ld a, [wCurDay]
+.mod
+	sub SEASON_CYCLE_DAYS
+	jr nc, .mod
+	add SEASON_CYCLE_DAYS ; 0 <= a < SEASON_CYCLE_DAYS
+	ld b, SPRING_F
+	cp 7
+	jr c, .got
+	inc b
+	cp 14
+	jr c, .got
+	inc b
+	cp 21
+	jr c, .got
+	inc b
+.got
+IF DEF(_DEBUG)
+	ld a, [wDebugSeasonOverride]
+	and ANYSEASON ; a stray poke in the high nibble must not run the loop away
+	jr z, .no_override
+	ld c, a
+	ld b, -1
+.find_bit
+	inc b
+	srl c
+	jr nc, .find_bit
+.no_override
+ENDC
+	ld a, b
+	ld [wSeason], a
+	ret
+
+AlignStartDayToSpring::
+; A new game must begin in SPRING. _InitTime leaves wStartDay congruent to
+; -hRTCDayLo mod 7, so wCurDay starts on a multiple of 7 -- a season boundary --
+; but not necessarily boundary zero: on a cartridge whose RTC has been running,
+; hRTCDayLo of 10 gives wCurDay 14, which is AUTUMN. Only a fresh RTC lands on
+; SPRING by itself, which is why this looks correct in an emulator.
+;
+; Add the multiple of 7 that reaches the next SPRING. Multiples of 7 preserve the
+; day of the week, so the Lucky Number reset and Buena's password are unaffected,
+; and wStartDay is already saved, so this costs no save-format change.
+	call UpdateTime ; refresh wCurDay against the wStartDay _InitTime just set
+	call GetSeason
+	and a
+	ret z ; already SPRING
+; Wind forward to the next SPRING. The nudge is always a whole number of weeks,
+; which is what keeps the day of the week intact -- the player picks a weekday in
+; the Mom scene, and wCurDay mod 7 is what stores it. Do not "simplify" this to
+; SEASON_CYCLE_DAYS - (wCurDay mod SEASON_CYCLE_DAYS): that also lands on SPRING,
+; but forces wCurDay to a multiple of 28 and silently resets the weekday.
+	ld b, a
+	ld a, SEASON_CYCLE_DAYS
+.back_to_spring
+	sub 7
+	dec b
+	jr nz, .back_to_spring ; 21, 14 or 7
+	ld hl, wStartDay
+	add [hl]
+	ld [hl], a
+	call UpdateTime
+	jr GetSeason
+
 ClearDailyTimers:
 	xor a
 	ld [wLuckyNumberDayTimer], a
@@ -99,6 +173,17 @@ CheckDailyResetTimer::
 	ld hl, wDailyResetTimer
 	call CheckDayDependentEventHL
 	ret nc
+; Only one day rollover in seven is a season change. Clearing wSeasonalFlags
+; unconditionally here would turn every once-per-season event into a daily one.
+; This must stay above the xor a below, which the flag clears rely on.
+	ld a, [wSeason]
+	ld b, a
+	call GetSeason
+	cp b
+	jr z, .no_season_change
+	xor a
+	ld [wSeasonalFlags], a
+.no_season_change
 	xor a
 	ld hl, wDailyFlags1
 rept 2

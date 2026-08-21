@@ -150,6 +150,22 @@ DEF NUM_DAYTIMES EQU const_value
 
 DEF ANYTIME EQU MORN | DAY | EVE | NITE
 
+; wSeason::
+; shift_const gives both the index (WINTER_F, for table lookups) and the bit
+; (WINTER, for script masks), mirroring MORN_F / MORN above.
+	const_def
+	shift_const SPRING ; SPRING_F = 0, SPRING = %0001
+	shift_const SUMMER ; SUMMER_F = 1, SUMMER = %0010
+	shift_const AUTUMN ; AUTUMN_F = 2, AUTUMN = %0100
+	shift_const WINTER ; WINTER_F = 3, WINTER = %1000
+DEF NUM_SEASONS EQU const_value
+
+DEF ANYSEASON EQU SPRING | SUMMER | AUTUMN | WINTER
+
+; Length of the season cycle in days. GetSeason relies on the RTC day counter's
+; 140-day period being an exact multiple of this.
+DEF SEASON_CYCLE_DAYS EQU NUM_SEASONS * 7
+
 ; wTimeOfDayPalFlags::
 DEF FORCED_PALSET_F EQU 7
 
