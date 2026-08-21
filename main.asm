@@ -27,6 +27,7 @@ INCLUDE "engine/gfx/color.asm"
 SECTION "bank3", ROMX
 
 INCLUDE "engine/events/checktime.asm"
+INCLUDE "engine/events/checkseason.asm"
 INCLUDE "engine/events/specials.asm"
 INCLUDE "engine/math/print_num.asm"
 INCLUDE "engine/pokemon/health.asm"

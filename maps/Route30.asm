@@ -191,6 +191,38 @@ Route30YoungsterScript:
 Route30CooltrainerFScript:
 	jumptextfaceplayer Route30CooltrainerFText
 
+Route30SeasonWatcherScript:
+	faceplayer
+	opentext
+	checkseason SPRING
+	iftrue .Spring
+	checkseason SUMMER
+	iftrue .Summer
+	checkseason AUTUMN
+	iftrue .Autumn
+	writetext Route30SeasonWatcherWinterText
+	waitbutton
+	closetext
+	end
+
+.Spring:
+	writetext Route30SeasonWatcherSpringText
+	waitbutton
+	closetext
+	end
+
+.Summer:
+	writetext Route30SeasonWatcherSummerText
+	waitbutton
+	closetext
+	end
+
+.Autumn:
+	writetext Route30SeasonWatcherAutumnText
+	waitbutton
+	closetext
+	end
+
 Route30Sign:
 	jumptext Route30SignText
 
@@ -337,6 +369,35 @@ Route30CooltrainerFText:
 	cont "prepare to battle."
 	done
 
+Route30SeasonWatcherSpringText:
+	text "The berry trees"
+	line "are budding."
+
+	para "Give them a few"
+	line "weeks yet."
+	done
+
+Route30SeasonWatcherSummerText:
+	text "Hot one today."
+
+	para "The BUG #MON"
+	line "never stop."
+	done
+
+Route30SeasonWatcherAutumnText:
+	text "Berries are in."
+
+	para "Best picking"
+	line "of the year."
+	done
+
+Route30SeasonWatcherWinterText:
+	text "Trees are bare."
+
+	para "Not much out"
+	line "here but wind."
+	done
+
 Route30SignText:
 	text "ROUTE 30"
 
@@ -408,6 +469,7 @@ Route30_MapEvents:
 	object_event  5, 39, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree1, -1
 	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
+	object_event  4, 13, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30SeasonWatcherScript, -1
 	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
 	object_event 23, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30FullHeal, EVENT_ROUTE_30_FULL_HEAL
 	object_event 25, 57, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, 0, 0, 0, -1

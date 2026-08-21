@@ -1092,4 +1092,16 @@ MACRO loadmoveindex
 	dw \1
 ENDM
 
+; Appended at the END of this list on purpose. These constants are assigned
+; sequentially, so inserting next to checktime_command would renumber every
+; opcode after it -- transparent to rgbasm, silently breaking for raw db opcode
+; bytes, saved BGB breakpoint scripts and external tooling.
+; $ad verified in the built ROM. Most ; $xx comments above have drifted as
+; commands were removed; trust the assembler, not them.
+	const checkseason_command ; $ad
+MACRO checkseason
+	db checkseason_command
+	db \1 ; season
+ENDM
+
 DEF NUM_EVENT_COMMANDS EQU const_value

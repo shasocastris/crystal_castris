@@ -233,6 +233,7 @@ ScriptCommandTable:
 	dw Script_checkmaplockeditems        ; ad
 	dw Script_givepokemove               ; ae
 	dw Script_loadmoveindex              ; af
+	dw Script_checkseason                ; ad
 	assert_table_length NUM_EVENT_COMMANDS
 
 StartScript:
@@ -1784,6 +1785,17 @@ Script_checktime:
 	xor a
 	ld [wScriptVar], a
 	farcall CheckTime
+	rst GetScriptByte
+	and c
+	ret z
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+Script_checkseason:
+	xor a
+	ld [wScriptVar], a
+	farcall CheckSeason
 	rst GetScriptByte
 	and c
 	ret z
