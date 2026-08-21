@@ -497,25 +497,84 @@ PokegearClock_Joypad:
 	ret
 
 Pokegear_UpdateClock:
+; Two lines in a 14-column box (columns 3-16):
+;   WED    WINTER
+;   MORN 10:23 AM
+; The weekday is abbreviated to three letters because the full names go up to
+; WEDNESDAY, and 9 + a gap + a 6-letter season needs 16 columns.
+; Left column starts at 4 so the weekday and the time of day line up.
 	hlcoord 3, 5
 	lb bc, 5, 14
 	call ClearBox
+
+	call GetWeekday
+	ld hl, .Weekdays
+	call .GetNthWord
+	hlcoord 4, 6
+	rst PlaceString
+
+	ld a, [wSeason]
+	maskbits NUM_SEASONS ; wSeason is poked by hand when testing
+	ld hl, .Seasons
+	call .GetNthWord
+	hlcoord 10, 6
+	rst PlaceString
+
+; wTimeOfDay is what the overworld runs on, so the clock cannot disagree with it
+	ld a, [wTimeOfDay]
+	maskbits NUM_DAYTIMES
+	ld hl, .TimesOfDay
+	call .GetNthWord
+	hlcoord 4, 8
+	rst PlaceString
+
 	ldh a, [hHours]
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 6, 8
+	decoord 9, 8
 	farcall PrintHoursMins
-	ld hl, .GearTodayText
-	bccoord 6, 6
-	jmp PrintTextboxTextAt
+	ret
 
-	db "ごぜん@"
-	db "ごご@"
+.GetNthWord:
+; a = index, hl = table of dw. Returns the string in de.
+	add a
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld d, h
+	ld e, l
+	ret
 
-.GearTodayText:
-	text_far _GearTodayText
-	text_end
+.Weekdays:
+	dw .Sun, .Mon, .Tue, .Wed, .Thu, .Fri, .Sat
+.Seasons:
+; entries correspond to SPRING_F, SUMMER_F, AUTUMN_F, WINTER_F
+	dw .Spring, .Summer, .Autumn, .Winter
+.TimesOfDay:
+; entries correspond to MORN_F, DAY_F, NITE_F, EVE_F
+	dw .Morn, .Day, .Nite, .Eve
+
+.Sun: db "SUN@"
+.Mon: db "MON@"
+.Tue: db "TUE@"
+.Wed: db "WED@"
+.Thu: db "THU@"
+.Fri: db "FRI@"
+.Sat: db "SAT@"
+
+.Spring: db "SPRING@"
+.Summer: db "SUMMER@"
+.Autumn: db "AUTUMN@"
+.Winter: db "WINTER@"
+
+.Morn: db "MORN@"
+.Day:  db "DAY@"
+.Nite: db "NITE@"
+.Eve:  db "EVE@"
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
