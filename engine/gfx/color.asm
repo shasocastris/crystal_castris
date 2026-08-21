@@ -974,6 +974,22 @@ LoadMapPals:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	; Outdoor palettes carry a season axis; indoor, cave and dungeon do not,
+	; which is what keeps winter out of Sprout Tower.
+	ld a, [wEnvironment]
+	cp TOWN
+	jr z, .seasonal
+	cp ROUTE
+	jr nz, .no_season
+.seasonal
+	ld a, [wSeason]
+	maskbits NUM_SEASONS ; wSeason is poked by hand when testing
+	swap a
+	add a ; season * 32, one season's block of four time-of-day rows
+	ld e, a
+	ld d, 0
+	add hl, de
+.no_season
 	; Futher refine by time of day
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES

@@ -53,3 +53,31 @@
 	RGB 23,23,31, 18,19,31, 13,12,31, 07,07,07 ; day
 	RGB 15,13,27, 10,09,20, 04,03,18, 00,00,00 ; nite
 	RGB 31,21,14, 16,14,23, 11,09,23, 06,05,05 ; eve
+
+; --- SEASONAL PAL_BG_GREEN ---
+; Indexes $2c-$37, referenced from EnvironmentColorsPointers.OutdoorColors.
+; SUMMER is the base game and reuses $02/$0a/$12/$1a above.
+; Foliage is the only palette with a season axis: BROWN measured identical in
+; both reference hacks, YELLOW likewise, and ROOF is handled by RoofPals.
+
+; spring green -- Pokemon Coral. Cooler and deeper than summer: about -4 red
+; across the ramp and +5 blue in the dark steps.
+	RGB 18,31,10, 08,26,07, 00,14,05, 07,07,07 ; $2c morn
+	RGB 18,31,10, 08,26,07, 00,14,05, 07,07,07 ; $2d day
+	RGB 10,14,23, 06,11,19, 00,11,13, 00,00,00 ; $2e nite
+	RGB 17,24,06, 07,20,05, 00,10,04, 06,05,05 ; $2f eve [derived]
+
+; autumn green -- Pokemon Halloween. A hue replacement, not a tint: the ramp
+; becomes amber and gets brighter, the darkest step going 05,14,00 -> 23,09,02.
+	RGB 31,22,10, 26,16,01, 23,09,02, 07,07,07 ; $30 morn
+	RGB 31,22,10, 26,16,01, 23,09,02, 07,07,07 ; $31 day
+	RGB 15,14,24, 12,03,05, 09,04,08, 00,00,00 ; $32 nite
+	RGB 29,17,06, 24,12,02, 21,06,03, 06,05,05 ; $33 eve [derived]
+
+; winter green -- Pokemon Christmas, which collapses every outdoor palette onto
+; one icy ramp. It does that because its tileset is redrawn as snow; on our
+; unmodified foliage tiles this may read as cyan paint rather than frost.
+	RGB 28,31,16, 01,27,27, 05,17,31, 07,07,07 ; $34 morn
+	RGB 27,31,27, 01,27,27, 05,17,31, 07,07,07 ; $35 day
+	RGB 15,14,24, 00,10,22, 00,07,15, 00,00,00 ; $36 nite
+	RGB 31,21,14, 01,20,20, 04,13,23, 06,05,05 ; $37 eve [derived]
