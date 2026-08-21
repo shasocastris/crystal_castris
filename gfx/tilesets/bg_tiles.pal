@@ -74,10 +74,16 @@
 	RGB 15,14,24, 12,03,05, 09,04,08, 00,00,00 ; $32 nite
 	RGB 29,17,06, 24,12,02, 21,06,03, 06,05,05 ; $33 eve [derived]
 
-; winter green -- Pokemon Christmas, which collapses every outdoor palette onto
-; one icy ramp. It does that because its tileset is redrawn as snow; on our
-; unmodified foliage tiles this may read as cyan paint rather than frost.
-	RGB 28,31,16, 01,27,27, 05,17,31, 07,07,07 ; $34 morn
-	RGB 27,31,27, 01,27,27, 05,17,31, 07,07,07 ; $35 day
-	RGB 15,14,24, 00,10,22, 00,07,15, 00,00,00 ; $36 nite
-	RGB 31,21,14, 01,20,20, 04,13,23, 06,05,05 ; $37 eve [derived]
+; winter green -- HAND-AUTHORED, not measured. Christmas's values were tried
+; first and read as cyan paint: it collapses every outdoor palette onto one icy
+; ramp, which works there because its tileset is redrawn as snow. Ours is not,
+; so the palette has to sell winter on grass-textured tiles.
+;
+; Built from vanilla instead: crush the green, push blue, and lift the whole
+; ramp slightly, keeping the light/mid/dark ordering so the tile texture still
+; reads. Aims at frost rather than snow -- one palette serves both open ground
+; and tree canopy, and snow-white ground would turn the trees to slush.
+	RGB 26,29,31, 15,20,24, 08,12,18, 07,07,07 ; $34 morn
+	RGB 26,29,31, 15,20,24, 08,12,18, 07,07,07 ; $35 day
+	RGB 15,14,24, 11,13,21, 06,09,16, 00,00,00 ; $36 nite
+	RGB 27,24,20, 15,16,20, 07,09,15, 06,05,05 ; $37 eve
