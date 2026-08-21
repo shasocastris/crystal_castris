@@ -62,7 +62,6 @@ ROMX $09
 ROMX $0a
 	"bankA"
 	"Trainer Backpics"
-	"Map Attributes"
 ROMX $0b
 	"bankB"
 ROMX $0c

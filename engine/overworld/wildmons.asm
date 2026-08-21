@@ -424,6 +424,8 @@ _GrassWildmonLookup:
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
+	call _SeasonGrassWildmonCheck
+	ret c
 	ld hl, JohtoGrassWildMons
 	ld de, KantoGrassWildMons
 	call _JohtoWildmonCheck
@@ -434,6 +436,8 @@ _WaterWildmonLookup:
 	ld hl, SwarmWaterWildMons
 	ld bc, WATER_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
+	ret c
+	call _SeasonWaterWildmonCheck
 	ret c
 	ld hl, JohtoWaterWildMons
 	ld de, KantoWaterWildMons
@@ -1024,5 +1028,45 @@ INCLUDE "data/wild/johto_grass.asm"
 INCLUDE "data/wild/johto_water.asm"
 INCLUDE "data/wild/kanto_grass.asm"
 INCLUDE "data/wild/kanto_water.asm"
+; Placed down here, away from _GrassWildmonLookup, on purpose: inserting it up
+; there stretches the existing jr _NormalWildmonOK past its 128-byte reach.
+;
+; Called after the swarm check so swarms still win -- they are event-driven and
+; rarer than the ambient seasonal table. bc still holds the wilddata stride the
+; swarm check was set up with.
+_SeasonGrassWildmonCheck:
+	ld hl, SeasonGrassTables
+	jr _SeasonWildmonCheck
+
+_SeasonWaterWildmonCheck:
+	ld hl, SeasonWaterTables
+_SeasonWildmonCheck:
+	ld a, [wSeason]
+	maskbits NUM_SEASONS ; wSeason gets poked by hand in testing; never index off the end
+	add a
+	ld e, a
+	ld d, 0
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	call CopyCurrMapDE
+	jmp LookUpWildmonsForMapDE
+
+SeasonGrassTables:
+; entries correspond to SPRING_F, SUMMER_F, AUTUMN_F, WINTER_F
+	dw SpringGrassWildMons
+	dw SummerGrassWildMons
+	dw AutumnGrassWildMons
+	dw WinterGrassWildMons
+
+SeasonWaterTables:
+	dw SpringWaterWildMons
+	dw SummerWaterWildMons
+	dw AutumnWaterWildMons
+	dw WinterWaterWildMons
+
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+INCLUDE "data/wild/season_grass.asm"
+INCLUDE "data/wild/season_water.asm"
