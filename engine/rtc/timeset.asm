@@ -587,27 +587,28 @@ PrintHour:
 	jmp PrintTwoDigitNumberLeftAlign
 
 GetTimeOfDayString:
+; Shares GetTimeOfDayForHour with the overworld so the clock cannot disagree
+; with the world about what time of day it is -- the boundaries are seasonal.
 	ld a, c
-	cp MORN_HOUR
-	jr c, .nite
-	cp DAY_HOUR
-	jr c, .morn
-	cp EVE_HOUR
-	jr c, .day
-	cp NITE_HOUR
-	jr c, .eve
-.nite
-	ld de, .nite_string
+	call GetTimeOfDayForHour
+	add a
+	ld e, a
+	ld d, 0
+	ld hl, .strings
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld e, l
+	ld d, h
 	ret
-.morn
-	ld de, .morn_string
-	ret
-.day
-	ld de, .day_string
-	ret
-.eve
-	ld de, .eve_string
-	ret
+
+.strings:
+; entries correspond to MORN_F, DAY_F, NITE_F, EVE_F
+	dw .morn_string
+	dw .day_string
+	dw .nite_string
+	dw .eve_string
 
 .nite_string: db "NITE@"
 .morn_string: db "MORN@"
