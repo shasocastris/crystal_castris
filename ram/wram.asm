@@ -3200,14 +3200,6 @@ wPokeDB1UsedEntries:: flag_array MONDB_ENTRIES
 wPokeDB2UsedEntries:: flag_array MONDB_ENTRIES
 wPokeDBUsedEntriesEnd::
 
-IF DEF(_DEBUG)
-; Debug season override. 0 = follow the RTC; otherwise a SEASON_* bit mask whose
-; lowest set bit GetSeason returns instead. Poke it in BGB to test a season
-; without waiting a week per season. Deliberately in UNSAVED wram: it must never
-; enter the save format, and it resets to 0 on every boot.
-wDebugSeasonOverride:: db
-ENDC
-
 
 SECTION "Battle Animations", WRAMX
 

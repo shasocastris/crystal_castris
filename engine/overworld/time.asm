@@ -4,6 +4,11 @@ _InitializeStartDay:
 GetSeason::
 ; Returns the current season index (0-3) in a, and caches it in wSeason.
 ;
+; Only runs on a day rollover and at new game. Everything else -- CheckSeason,
+; the wild lookup, the palettes -- reads the wSeason cache, so to force a season
+; in BGB poke wSeason itself. It holds an INDEX, not a mask: 0 spring, 1 summer,
+; 2 autumn, 3 winter. It sticks until the next day rollover recomputes it.
+;
 ; The RTC day counter has a period of 140 days: FixDays mods hRTCDayLo by 140,
 ; and FixTime then adds wStartDay without re-modding, so wCurDay runs over
 ; [wStartDay, wStartDay + 139] rather than 0-139. What makes the cycle continuous
@@ -28,18 +33,6 @@ GetSeason::
 	jr c, .got
 	inc b
 .got
-IF DEF(_DEBUG)
-	ld a, [wDebugSeasonOverride]
-	and ANYSEASON ; a stray poke in the high nibble must not run the loop away
-	jr z, .no_override
-	ld c, a
-	ld b, -1
-.find_bit
-	inc b
-	srl c
-	jr nc, .find_bit
-.no_override
-ENDC
 	ld a, b
 	ld [wSeason], a
 	ret
