@@ -10,7 +10,7 @@
 SpringGrassWildMons:
 
 	def_grass_wildmons ROUTE_30
-	db 10 percent, 12 percent, 8 percent ; encounter rates: morn/day/nite
+	db 10 percent ; encounter rate
 	; morn
 	dbw 3, HOPPIP
 	dbw 3, HOPPIP
@@ -38,7 +38,7 @@ SpringGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 15 percent ; encounter rate
 	; morn
 	dbw 31, GEODUDE
 	dbw 32, GEODUDE
@@ -70,7 +70,7 @@ SpringGrassWildMons:
 SummerGrassWildMons:
 
 	def_grass_wildmons ROUTE_30
-	db 12 percent, 14 percent, 10 percent ; encounter rates: morn/day/nite
+	db 12 percent ; encounter rate
 	; morn
 	dbw 4, LEDYBA
 	dbw 4, LEDYBA
@@ -98,7 +98,7 @@ SummerGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
-	db 15 percent, 17 percent, 15 percent ; encounter rates: morn/day/nite
+	db 15 percent ; encounter rate
 	; morn
 	dbw 33, GLIGAR
 	dbw 34, GLIGAR
@@ -132,7 +132,7 @@ AutumnGrassWildMons:
 ; Levels drift up -- a year's growth before winter.
 
 	def_grass_wildmons ROUTE_30
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 10 percent ; encounter rate
 	; morn
 	dbw 5, SENTRET
 	dbw 6, SENTRET
@@ -160,7 +160,7 @@ AutumnGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
-	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	db 15 percent ; encounter rate
 	; morn
 	dbw 35, GRAVELER
 	dbw 36, GRAVELER
@@ -195,7 +195,7 @@ WinterGrassWildMons:
 ; down the mountain on Route 45 well before they are otherwise available.
 
 	def_grass_wildmons ROUTE_30
-	db 6 percent, 6 percent, 5 percent ; encounter rates: morn/day/nite
+	db 6 percent ; encounter rate
 	; morn
 	dbw 4, RATTATA
 	dbw 5, RATTATA
@@ -223,7 +223,7 @@ WinterGrassWildMons:
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_45
-	db 9 percent, 9 percent, 8 percent ; encounter rates: morn/day/nite
+	db 9 percent ; encounter rate
 	; morn
 	dbw 33, SWINUB
 	dbw 34, SWINUB

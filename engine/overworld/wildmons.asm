@@ -1,23 +1,19 @@
 LoadWildMonData:
+; Grass data carries one encounter rate, but GetMapEncounterRate still indexes
+; wMornEncounterRate by wTimeOfDay, so fan the single byte across all four slots
+; and leave the selection logic alone.
 	call _GrassWildmonLookup
-	jr c, .copy
+	ld a, 0 ; no-optimize a = 0
+	jr nc, .got_rate
+	inc hl
+	inc hl
+	ld a, [hl]
+.got_rate
 	ld hl, wMornEncounterRate
-	xor a
 	ld [hli], a
 	ld [hli], a
 	ld [hli], a
 	ld [hl], a
-	jr .done_copy
-
-.copy
-	inc hl
-	inc hl
-	ld de, wMornEncounterRate
-	ld bc, 3
-	rst CopyBytes
-	ld a, [wNiteEncounterRate]
-	ld [wEveEncounterRate], a
-.done_copy
 	call _WaterWildmonLookup
 	ld a, 0 ; no-optimize a = 0
 	jr nc, .no_copy
@@ -76,9 +72,7 @@ FindNest:
 	ldh [hMathBuffer], a
 	ld a, [hli]
 	ldh [hMathBuffer + 1], a
-	inc hl
-	inc hl
-	inc hl
+	inc hl ; skip the encounter rate
 	ld a, NUM_GRASSMON * 3
 	call .SearchMapForMon
 	jr nc, .next_grass
@@ -285,12 +279,10 @@ ChooseWildEncounter:
 
 	inc hl
 	inc hl
-	inc hl
+	inc hl ; skip the map id and the encounter rate -- same width for grass and water now
 	call CheckOnWater
 	ld de, WaterMonProbTable
 	jr z, .watermon
-	inc hl
-	inc hl
 	call GetTimeOfDayNotEve
 	ld bc, NUM_GRASSMON * 3
 	rst AddNTimes
@@ -840,7 +832,7 @@ GetCallerRouteWildGrassMons:
 	call LookUpWildmonsForMapDE
 	ret nc ; no carry = no grass wild mons for that route
 .found
-	ld bc, 5 ; skip the map ID and encounter rates
+	ld bc, 3 ; skip the map ID and the encounter rate
 	add hl, bc
 	call GetTimeOfDayNotEve
 	ld bc, NUM_GRASSMON * 3
