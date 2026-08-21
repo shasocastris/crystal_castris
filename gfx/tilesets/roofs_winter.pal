@@ -1,0 +1,146 @@
+; Winter roofs -- snow.
+;
+; Measured from Pokemon Christmas (bgb00057-61): its winter collapses every
+; outdoor palette onto one icy ramp, so all 27 map groups carry the same values
+; here. That works in Christmas because its tileset is redrawn as snow.
+;
+; The table is per-group anyway, so giving Olivine a different snow tint from
+; Goldenrod is a pure data edit -- no code change. Do that if a flat roof colour
+; reads as wrong on our unmodified tiles.
+;
+; Colours 1 and 2 only; colours 0 and 3 come from bg_tiles.pal.
+
+; group 0 (unused)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 1 (Olivine)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 2 (Mahogany)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 3 (dungeons)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 4 (Ecruteak)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 5 (Blackthorn)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 6 (Cinnabar)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 7 (Cerulean)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 8 (Azalea)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 9 (Lake of Rage)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 10 (Violet)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 11 (Goldenrod)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 12 (Vermilion)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 13 (Pallet)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 14 (Pewter)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 15 (Mount Moon Square)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 16 (Indigo)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 17 (Fuchsia)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 18 (Lavender)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 19 (Silver Cave)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 20 (Cable Club)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 21 (Celadon)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 22 (Cianwood)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 23 (Viridian)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 24 (New Bark)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 25 (Saffron)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve
+
+; group 26 (Cherrygrove)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve

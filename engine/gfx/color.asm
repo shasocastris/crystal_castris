@@ -1042,12 +1042,23 @@ LoadMapPals:
 	cp ROUTE
 	ret nz
 .outside
+; Roofs are seasonal. Only reached for TOWN and ROUTE, which is also why no
+; darkness guard is needed -- no TOWN or ROUTE map sets IN_DARKNESS.
 	ld a, [wMapGroup]
 	add a
 	add a
 	ld e, a
 	ld d, 0
-	ld hl, RoofPals
+	ld a, [wSeason]
+	maskbits NUM_SEASONS ; wSeason is poked by hand when testing
+	add a
+	ld c, a
+	ld b, 0
+	ld hl, SeasonRoofPals
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 	add hl, de
 	add hl, de
 	add hl, de
@@ -1090,9 +1101,23 @@ BillsPC_ItemPalette:
 TilesetBGPalette:
 INCLUDE "gfx/tilesets/bg_tiles.pal"
 
+SeasonRoofPals:
+; entries correspond to SPRING_F, SUMMER_F, AUTUMN_F, WINTER_F.
+; Seasons whose roofs do not differ point at the same table, so adding a
+; distinct autumn later is a new .pal file and one repointed word.
+	dw RoofPals   ; spring
+	dw RoofPals   ; summer -- the base game
+	dw RoofPals   ; autumn
+	dw WinterRoofPals
+
 RoofPals:
 	table_width COLOR_SIZE * 3 * 2
 INCLUDE "gfx/tilesets/roofs.pal"
+	assert_table_length NUM_MAP_GROUPS + 1
+
+WinterRoofPals:
+	table_width COLOR_SIZE * 3 * 2
+INCLUDE "gfx/tilesets/roofs_winter.pal"
 	assert_table_length NUM_MAP_GROUPS + 1
 
 DiplomaPalettes:
