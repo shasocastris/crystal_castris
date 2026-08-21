@@ -99,7 +99,10 @@ OverworldSprites:
 	overworld_sprite BoulderSpriteGFX, 4, STILL_SPRITE, PAL_OW_ROCK
 	overworld_sprite SnesSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
 	overworld_sprite FamicomSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite FruitTreeSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
+; PAL_OW_TREE duplicates the vanilla BG green exactly, so it would strand fruit
+; trees in summer now that PAL_BG_GREEN is seasonal. COPY_BG_GREEN reads
+; wBGPals1 instead and follows the season for free; identical in summer.
+	overworld_sprite FruitTreeSpriteGFX, 4, STILL_SPRITE, PAL_OW_COPY_BG_GREEN
 	overworld_sprite GoldTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite SilverTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_EMOTE_GRAY
 	overworld_sprite KrisSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
