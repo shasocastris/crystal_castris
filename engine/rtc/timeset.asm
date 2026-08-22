@@ -587,20 +587,23 @@ PrintHour:
 	jmp PrintTwoDigitNumberLeftAlign
 
 GetTimeOfDayString:
+; Returns the string for the hour in c in de. Must preserve hl: PrintHour keeps
+; the screen coordinate there across this call.
 ; Shares GetTimeOfDayForHour with the overworld so the clock cannot disagree
 ; with the world about what time of day it is -- the boundaries are seasonal.
+; It lives in another bank, so this must farcall.
+	push hl
 	ld a, c
-	call GetTimeOfDayForHour
+	farcall GetTimeOfDayForHour
 	add a
 	ld e, a
 	ld d, 0
 	ld hl, .strings
 	add hl, de
 	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	ld e, l
-	ld d, h
+	ld d, [hl]
+	ld e, a
+	pop hl
 	ret
 
 .strings:
