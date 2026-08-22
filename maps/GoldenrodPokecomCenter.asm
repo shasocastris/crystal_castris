@@ -122,6 +122,31 @@ BulletinBoardScript:
 	writetext BulletinHeaderText
 	waitbutton
 
+	; === Season ===
+	checkseason SPRING
+	iftrue .SeasonSpring
+	checkseason SUMMER
+	iftrue .SeasonSummer
+	checkseason AUTUMN
+	iftrue .SeasonAutumn
+	writetext BulletinSeasonWinterText
+	waitbutton
+	sjump .SeasonCycle
+.SeasonSpring:
+	writetext BulletinSeasonSpringText
+	waitbutton
+	sjump .SeasonCycle
+.SeasonSummer:
+	writetext BulletinSeasonSummerText
+	waitbutton
+	sjump .SeasonCycle
+.SeasonAutumn:
+	writetext BulletinSeasonAutumnText
+	waitbutton
+.SeasonCycle:
+	writetext BulletinSeasonCycleText
+	waitbutton
+
 	; === Swarms ===
 	checkflag ENGINE_DUNSPARCE_SWARM
 	iftrue .DunsparceSwarm
@@ -381,6 +406,64 @@ BulletinHeaderText:
 	para "Ranger field"
 	line "reports and local"
 	cont "notices follow."
+	done
+
+BulletinSeasonSpringText:
+	text "SEASON ALMANAC:"
+	line "It is SPRING."
+
+	para "New growth on the"
+	line "routes. Grass"
+	cont "#MON are"
+	cont "thriving."
+
+	para "Daylight lasts"
+	line "5 AM to 8 PM."
+	done
+
+BulletinSeasonSummerText:
+	text "SEASON ALMANAC:"
+	line "It is SUMMER."
+
+	para "#MON keep to"
+	line "their usual"
+	cont "haunts."
+
+	para "Daylight lasts"
+	line "4 AM to 9 PM."
+	done
+
+BulletinSeasonAutumnText:
+	text "SEASON ALMANAC:"
+	line "It is AUTUMN."
+
+	para "#MON are"
+	line "foraging before"
+	cont "the cold."
+
+	para "Evening falls"
+	line "by 4 PM."
+	done
+
+BulletinSeasonWinterText:
+	text "SEASON ALMANAC:"
+	line "It is WINTER."
+
+	para "Fewer #MON"
+	line "are out, but"
+	cont "cold-weather"
+	cont "kinds appear."
+
+	para "Dark by 6 PM."
+	done
+
+BulletinSeasonCycleText:
+	text "The season turns"
+	line "each week."
+
+	para "Wild #MON and"
+	line "daylight change"
+	cont "with it."
 	done
 
 BulletinDunsparceText:
