@@ -517,7 +517,7 @@ Pokegear_UpdateClock:
 	maskbits NUM_SEASONS ; wSeason is poked by hand when testing
 	ld hl, .Seasons
 	call .GetNthWord
-	hlcoord 10, 6
+	hlcoord 9, 6
 	rst PlaceString
 
 ; wTimeOfDay is what the overworld runs on, so the clock cannot disagree with it
@@ -532,7 +532,7 @@ Pokegear_UpdateClock:
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 9, 8
+	decoord 8, 8
 	farcall PrintHoursMins
 	ret
 
