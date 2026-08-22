@@ -111,20 +111,24 @@ MACRO object_event
 ;\3: sprite: a SPRITE_* constant
 ;\4: movement function: a SPRITEMOVEDATA_* constant
 ;\5, \6: movement radius: x, y
-;\7, \8: hour limits: h1, h2 (0-23)
-;  * if h1 < h2, the object_event will only appear from h1 to h2
-;  * if h1 > h2, the object_event will not appear from h2 to h1
-;  * if h1 == h2, the object_event will always appear
-;  * if h1 == -1, h2 is treated as a time-of-day value:
-;    a combo of MORN, DAY, and/or NITE, or -1 to always appear
+;\7: dropped -- not emitted. Every caller passes -1
+;\8: time of day: a combo of MORN, DAY, EVE and/or NITE, or -1 for any
 ;\9: palette: a PAL_NPC_* constant, or 0 for sprite default
 ;\<10>: function: a OBJECTTYPE_* constant
 ;\<11>: sight range: applies to OBJECTTYPE_TRAINER
 ;\<12>: script pointer
 ;\<13>: event flag: an EVENT_* constant, or -1 to always appear
+;\<14>: seasons, optional: a combo of SPRING, SUMMER, AUTUMN and/or WINTER.
+;  Packed into the high nibble of \8, which CheckObjectTime reads. Omitting it
+;  means every season -- it must default to ANYSEASON rather than 0, or the
+;  twelve objects that pass a bare time of day would vanish year-round.
 	db \3, \2 + 4, \1 + 4, \4
 	dn \6, \5
-	db \9, \8
+	if _NARG >= 14
+		db \9, (((\<14>) & $f) << 4) | ((\8) & $f)
+	else
+		db \9, (ANYSEASON << 4) | ((\8) & $f)
+	endc
 	db \<10>
 	db \<11>
 	dw \<12>, \<13>

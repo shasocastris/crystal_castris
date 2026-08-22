@@ -212,11 +212,28 @@ CheckObjectVisibility::
 	ret
 
 CheckObjectTime::
+; The mask byte is a season mask in the high nibble and a time-of-day mask in
+; the low nibble. -1 is "always", which is what nearly every object passes.
 	ld hl, MAPOBJECT_TIMEOFDAY
 	add hl, bc
 	ld a, [hl]
 	cp -1
-	jr z, .timeofday_always
+	jr z, .visible
+	ld e, a
+
+	ld hl, .Seasons
+	ld a, [wSeason]
+	maskbits NUM_SEASONS ; wSeason is poked by hand when testing
+	add l
+	ld l, a
+	adc h
+	sub l
+	ld h, a
+	ld a, [hl]
+	swap a
+	and e
+	jr z, .hidden
+
 	ld hl, .TimesOfDay
 	ld a, [wTimeOfDay]
 	add l
@@ -225,15 +242,15 @@ CheckObjectTime::
 	sub l
 	ld h, a
 	ld a, [hl]
-	ld hl, MAPOBJECT_TIMEOFDAY
-	add hl, bc
-	and [hl]
-	jr nz, .timeofday_always
-	scf
+	and e
+	jr z, .hidden
+
+.visible
+	and a
 	ret
 
-.timeofday_always
-	and a
+.hidden
+	scf
 	ret
 
 .TimesOfDay:
@@ -242,6 +259,13 @@ CheckObjectTime::
 	db DAY
 	db NITE
 	db EVE
+
+.Seasons:
+; entries correspond to wSeason values
+	db SPRING
+	db SUMMER
+	db AUTUMN
+	db WINTER
 
 UnmaskCopyMapObjectStruct::
 	ldh [hMapObjectIndex], a

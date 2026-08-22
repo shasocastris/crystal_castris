@@ -195,6 +195,12 @@ Route30CooltrainerFScript:
 Route30SeasonWatcherScript:
 	faceplayer
 	opentext
+	checkflag ENGINE_ROUTE_30_SEASON_WATCHER
+	iftrue .Seasons
+	setflag ENGINE_ROUTE_30_SEASON_WATCHER
+	writetext Route30SeasonWatcherTurnedText
+	waitbutton
+.Seasons:
 	checkseason SPRING
 	iftrue .Spring
 	checkseason SUMMER
@@ -223,6 +229,9 @@ Route30SeasonWatcherScript:
 	waitbutton
 	closetext
 	end
+
+Route30ForagerScript:
+	jumptextfaceplayer Route30ForagerText
 
 Route30Sign:
 	jumptext Route30SignText
@@ -370,6 +379,12 @@ Route30CooltrainerFText:
 	cont "prepare to battle."
 	done
 
+Route30SeasonWatcherTurnedText:
+	text "Season's turned"
+	line "since I last"
+	cont "saw you."
+	done
+
 Route30SeasonWatcherSpringText:
 	text "The berry trees"
 	line "are budding."
@@ -397,6 +412,16 @@ Route30SeasonWatcherWinterText:
 
 	para "Not much out"
 	line "here but wind."
+	done
+
+Route30ForagerText:
+	text "Mild weather"
+	line "brings me out"
+	cont "here to forage."
+
+	para "You won't see me"
+	line "in the heat or"
+	cont "the snow."
 	done
 
 Route30SignText:
@@ -471,6 +496,7 @@ Route30_MapEvents:
 	object_event 11,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event  2, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
 	object_event 12, 43, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route30SeasonWatcherScript, -1
+	object_event 13, 43, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30ForagerScript, -1, SPRING | AUTUMN
 	object_event  8, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Antidote, EVENT_ROUTE_30_ANTIDOTE
 	object_event 23, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30FullHeal, EVENT_ROUTE_30_FULL_HEAL
 	object_event 25, 57, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, 0, 0, 0, -1
