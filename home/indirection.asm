@@ -74,3 +74,22 @@ LoadDoubleIndirectPointer::
 	call nz, GetFarWord
 	ld a, b
 	ret
+
+LoadFarIndirectPointer::
+	; for indirect tables of far pointers: each entry is db bank, dw address
+	; same calling convention as LoadIndirectPointer, but a returns the
+	; pointer's own bank, so an entry may point outside its sub-table's bank
+	call LoadIndirectPointer
+	ret z
+	push de
+	ld d, a ; sub-table bank
+	call GetFarByte
+	ld e, a ; target bank
+	inc hl
+	ld a, d
+	call GetFarWord
+	ld a, h
+	or l ; set z if the pointer is null, as LoadIndirectPointer does
+	ld a, e
+	pop de
+	ret

@@ -209,7 +209,7 @@ StdBattleTextbox::
 GetBattleAnimPointer::
 	ld hl, BattleAnimations
 	ld a, BANK(BattleAnimations)
-	call LoadDoubleIndirectPointer
+	call LoadFarIndirectPointer
 	jr nz, .found
 	ld hl, BattleAnim_Dummy
 .found
