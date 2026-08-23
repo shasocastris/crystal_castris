@@ -7,7 +7,7 @@ LoadWildMonData:
 	jr nc, .got_rate
 	inc hl
 	inc hl
-	ld a, [hl]
+	call GetWildMonByte
 .got_rate
 	ld hl, wMornEncounterRate
 	ld [hli], a
@@ -19,9 +19,22 @@ LoadWildMonData:
 	jr nc, .no_copy
 	inc hl
 	inc hl
-	ld a, [hl]
+	call GetWildMonByte
 .no_copy
 	ld [wWaterEncounterRate], a
+	ret
+
+GetWildMonByte:
+; Read [hl] from the bank the matched wild table lives in.
+	ldh a, [hROMBank]
+	push af
+	ld a, [wWildMonBank]
+	rst Bankswitch
+	ld a, [hl]
+	ld [wWildMonScratch], a
+	pop af
+	rst Bankswitch
+	ld a, [wWildMonScratch]
 	ret
 
 GetTimeOfDayNotEve:
@@ -312,6 +325,12 @@ ChooseWildEncounter:
 	ld b, 0
 	pop hl
 	add hl, bc ; this selects our mon
+; The prob table above lives in this bank; the entry may not. Everything the
+; entry is read for is the three bytes below, so switch only around them.
+	ldh a, [hROMBank]
+	push af
+	ld a, [wWildMonBank]
+	rst Bankswitch
 	ld a, [hli]
 	ld b, a
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
@@ -340,6 +359,8 @@ ChooseWildEncounter:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	pop af
+	rst Bankswitch
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
@@ -413,6 +434,8 @@ LoadWildMonDataPointer:
 
 _GrassWildmonLookup:
 	ld hl, SwarmGrassWildMons
+	ld a, BANK(SwarmGrassWildMons)
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
@@ -420,12 +443,16 @@ _GrassWildmonLookup:
 	ret c
 	ld hl, JohtoGrassWildMons
 	ld de, KantoGrassWildMons
+	ld a, BANK(JohtoGrassWildMons)
+	ld [wWildMonBank], a
 	call _JohtoWildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
 _WaterWildmonLookup:
 	ld hl, SwarmWaterWildMons
+	ld a, BANK(SwarmWaterWildMons)
+	ld [wWildMonBank], a
 	ld bc, WATER_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
@@ -433,6 +460,8 @@ _WaterWildmonLookup:
 	ret c
 	ld hl, JohtoWaterWildMons
 	ld de, KantoWaterWildMons
+	ld a, BANK(JohtoWaterWildMons)
+	ld [wWildMonBank], a
 	call _JohtoWildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
@@ -1028,11 +1057,16 @@ INCLUDE "data/wild/kanto_water.asm"
 ; swarm check was set up with.
 _SeasonGrassWildmonCheck:
 	ld hl, SeasonGrassTables
+	ld a, BANK(SpringGrassWildMons)
 	jr _SeasonWildmonCheck
 
 _SeasonWaterWildmonCheck:
 	ld hl, SeasonWaterTables
+	ld a, BANK(SpringWaterWildMons)
 _SeasonWildmonCheck:
+; a: bank the four seasonal tables share. If a season's table ever moves to its
+; own bank, SeasonGrassTables must carry a bank per entry instead.
+	ld [wWildMonBank], a
 	ld a, [wSeason]
 	maskbits NUM_SEASONS ; wSeason gets poked by hand in testing; never index off the end
 	add a
@@ -1060,5 +1094,12 @@ SeasonWaterTables:
 
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+
+; NOTE: moving these out of bank $0a works -- wWildMonBank makes the lookup
+; bank-independent -- but freeing space in $0a makes rgblink re-pack 32 sections
+; across banks $08-$0e. That coincided with map-load corruption on 2026-08-22 and
+; is unproven either way, so the move is held back. Orange Islands wild data should
+; go in a NEW section in an empty bank, which adds rather than frees and so should
+; not trigger a re-pack.
 INCLUDE "data/wild/season_grass.asm"
 INCLUDE "data/wild/season_water.asm"

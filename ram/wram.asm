@@ -1542,6 +1542,14 @@ wDaysSince:: db
 wUsingHMItem:: db
 wTempLoopCounter:: db
 
+; Bank of the wild table LoadWildMonDataPointer matched. ChooseWildEncounter reads
+; GrassMonProbTable and the matched entry from different banks, so the entry's bank
+; must travel with the pointer. These live in WRAM0 deliberately: WRAMX bank 1 holds
+; the saved block, and adding two bytes there shifted wSeason off $dbf0 -- a silent
+; save-format break.
+wWildMonBank:: db
+wWildMonScratch:: db ; GetWildMonByte needs a byte that survives a bankswitch
+
 
 SECTION "16-bit WRAM home data", WRAM0
 ; align to $20
