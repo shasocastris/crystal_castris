@@ -42,6 +42,35 @@
 	seasonmon  4, HOPPIP,    -, -,   6, NOCTOWL,   6, NOCTOWL    ; 4, ODDISH
 	end_season_grass
 
+	def_season_grass ROUTE_35, ANYSEASON & ~SUMMER
+	;          SPRING          SUMMER  AUTUMN           WINTER           ; SUMMER = base
+	seasonrate 10,             -,      10,              6                ; 10
+	; morn
+	seasonmon  15, HOPPIP,     -, -,   17, SNUBBULL,    16, SNUBBULL     ; 16, SNUBBULL
+	seasonmon  17, LEDYBA,     -, -,   19, MAGNEMITE,   18, MAGNEMITE    ; 18, MAGNEMITE
+	seasonmon  16, SNUBBULL,   -, -,   18, SKIPLOOM,    17, VULPIX       ; 17, VULPIX
+	seasonmon  14, ABRA,       -, -,   16, ABRA,        15, ABRA         ; 14, ABRA
+	seasonmon  15, JIGGLYPUFF, -, -,   17, JIGGLYPUFF,  16, JIGGLYPUFF   ; 16, JIGGLYPUFF
+	seasonmon  13, YANMA,      -, -,   16, YANMA,       15, MAGNEMITE    ; 14, YANMA
+	seasonmon  15, YANMA,      -, -,   18, YANMA,       17, VULPIX       ; 16, YANMA
+	; day
+	seasonmon  15, HOPPIP,     -, -,   17, SNUBBULL,    16, SNUBBULL     ; 16, SNUBBULL
+	seasonmon  17, MAGNEMITE,  -, -,   19, MAGNEMITE,   18, MAGNEMITE    ; 18, MAGNEMITE
+	seasonmon  16, SKIPLOOM,   -, -,   18, GROWLITHE,   17, GROWLITHE    ; 17, GROWLITHE
+	seasonmon  14, ABRA,       -, -,   16, ABRA,        15, ABRA         ; 14, ABRA
+	seasonmon  15, JIGGLYPUFF, -, -,   17, JIGGLYPUFF,  16, JIGGLYPUFF   ; 16, JIGGLYPUFF
+	seasonmon  13, YANMA,      -, -,   16, YANMA,       15, MAGNEMITE    ; 14, YANMA
+	seasonmon  15, YANMA,      -, -,   18, YANMA,       17, GROWLITHE    ; 16, YANMA
+	; nite
+	seasonmon  15, SPINARAK,   -, -,   17, DROWZEE,     16, DROWZEE      ; 16, DROWZEE
+	seasonmon  17, HOOTHOOT,   -, -,   20, NOCTOWL,     18, HOOTHOOT     ; 18, HOOTHOOT
+	seasonmon  16, DROWZEE,    -, -,   18, HOUNDOUR,    17, HOUNDOUR     ; 17, HOUNDOUR
+	seasonmon  14, ABRA,       -, -,   16, ABRA,        15, ABRA         ; 14, ABRA
+	seasonmon  15, JIGGLYPUFF, -, -,   17, JIGGLYPUFF,  16, JIGGLYPUFF   ; 16, JIGGLYPUFF
+	seasonmon  13, YANMA,      -, -,   16, YANMA,       15, HOOTHOOT     ; 14, YANMA
+	seasonmon  15, YANMA,      -, -,   18, YANMA,       17, HOUNDOUR     ; 16, YANMA
+	end_season_grass
+
 	def_season_grass ROUTE_45, ANYSEASON & ~SUMMER
 	;          SPRING         SUMMER  AUTUMN          WINTER          ; SUMMER = base
 	seasonrate 15,            -,      15,             9               ; 15
