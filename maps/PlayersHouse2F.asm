@@ -167,7 +167,7 @@ if DEF(_DEBUG)
 	givepokemove HURRICANE,      wPartyMon1, 0
 	givepokemove RAIN_DANCE,     wPartyMon1, 1
 	givepokemove POISON_JAB,     wPartyMon1, 2
-	givepokemove HAIL,           wPartyMon1, 3
+	givepokemove HYPER_VOICE,    wPartyMon1, 3
 	loadmem wPartyMon1Happiness, $ff
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
