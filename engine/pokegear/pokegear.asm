@@ -2379,13 +2379,12 @@ Pokedex_GetArea:
 	ld hl, vTiles0 tile $78
 	ld c, 4
 	call Request2bpp
-	call LoadTownMapGFX
-	call FillKantoMap
-	call .PlaceString_MonsNest
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
+; Only the starting page is drawn. The old code pre-rendered Johto into vBGMap0
+; and Kanto into vBGMap1 and flipped hWY between them, which is exactly why a
+; third page did not fit; pages are now drawn on demand into whichever buffer is
+; hidden. Also halves the time this screen takes to open.
+	ld e, JOHTO_REGION
+	call PokegearMap
 	call .PlaceString_MonsNest
 	call TownMapPals
 	hlbgcoord 0, 0
@@ -2434,26 +2433,56 @@ Pokedex_GetArea:
 	ret
 
 .left
-	ldh a, [hWY]
-	cp SCREEN_HEIGHT_PX
-	ret z
-	call ClearSprites
-	ld a, SCREEN_HEIGHT_PX
-	ldh [hWY], a
-	xor a ; JOHTO_REGION
-	jr .GetAndPlaceNest
+	ld a, [wTownMapCursorLandmark] ; the region on screen, not a landmark
+	and a
+	ret z ; already on the first page
+	dec a
+	jr .ShowRegionPage
 
 .right
+	ld a, [wTownMapCursorLandmark]
+	cp ORANGE_REGION
+	ret z ; already on the last page
+	inc a
+	cp ORANGE_REGION
+	jr z, .check_orange
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	ret z
+	ld a, KANTO_REGION
+	jr .ShowRegionPage
+
+.check_orange
+	ld c, SPAWN_VALENCIA
+	call HasVisitedSpawn
+	and a
+	ret z ; the islands stay hidden until the player has been there
+	ld a, ORANGE_REGION
+
+.ShowRegionPage:
+; a: region to draw. Renders into whichever BG map is NOT on screen and then
+; flips hWY to it, so the page swap is a single write and never tears.
+	call ClearSprites
+	push af
+	ld e, a
+	call PokegearMap
+	call .PlaceString_MonsNest
+	call TownMapPals
 	ldh a, [hWY]
 	and a
-	ret z
-	call ClearSprites
+	jr nz, .into_bgmap1
+	hlbgcoord 0, 0
+	call TownMapBGUpdate
+	ld a, SCREEN_HEIGHT_PX
+	jr .show_page
+
+.into_bgmap1
+	hlbgcoord 0, 0, vBGMap1
+	call TownMapBGUpdate
 	xor a
+.show_page
 	ldh [hWY], a
-	ld a, KANTO_REGION
+	pop af
 	jr .GetAndPlaceNest
 
 .BlinkNestIcons:
@@ -2586,21 +2615,11 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
-	jr z, .johto
-	cp KANTO_LANDMARK
-	jr c, .johto
-; kanto
-	ld a, [wTownMapCursorLandmark]
-	and a
-	jr z, .clear
-	jr .ok
-
-.johto
-	ld a, [wTownMapCursorLandmark]
-	and a
+	call RegionForLandmark
+	ld b, a
+	ld a, [wTownMapCursorLandmark] ; the region on screen
+	cp b
 	jr nz, .clear
-.ok
 	and a
 	ret
 

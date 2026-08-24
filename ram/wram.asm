@@ -1549,6 +1549,9 @@ wTempLoopCounter:: db
 ; save-format break.
 wWildMonBank:: db
 wWildMonScratch:: db ; GetWildMonByte needs a byte that survives a bankswitch
+wNestScanCount:: db  ; FindNestInTable: mons per map entry
+wNestScanStride:: db ; FindNestInTable: bytes per map entry
+wNestRegion:: db     ; FindNest: the region whose page the dex AREA map is showing
 
 
 SECTION "16-bit WRAM home data", WRAM0

@@ -46,9 +46,7 @@ GetTimeOfDayNotEve:
 
 FindNest:
 ; Parameters:
-; e: JOHTO_REGION or KANTO_REGION. ORANGE_REGION reads as Kanto until the
-;    Orange tables and the third Town Map page exist -- the Town Map cannot
-;    show an Orange page yet, so it cannot ask for one either.
+; e: JOHTO_REGION, KANTO_REGION or ORANGE_REGION
 ; wNamedObjectIndex: species
 	hlcoord 0, 0
 	ld bc, SCREEN_AREA
@@ -58,86 +56,142 @@ FindNest:
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
-	ld a, e
-	and a
-	jr nz, .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
-	call .FindGrass
-	ld hl, JohtoWaterWildMons
-	call .FindWater
+; The Orange tables are not in this bank, so the scan reads every table byte
+; through GetWildMonByte rather than directly. Slower, but this runs once when
+; the AREA screen opens, not per frame.
+	push de
+	push bc
+	ld a, e
+	ld hl, GrassWildmonTables
+	call _NestWildmonTable
+	pop bc
+	pop de
+	call _FindNestGrass
+	push de
+	push bc
+	ld a, [wNestRegion]
+	ld hl, WaterWildmonTables
+	call _NestWildmonTable
+	pop bc
+	pop de
+	call _FindNestWater
+	ld a, [wNestRegion]
+	and a
+	ret nz ; roamers are Johto-only
 	call .RoamMon1
 	jmp .RoamMon2
 
-.kanto
-	decoord 0, 0
-	ld hl, KantoGrassWildMons
-	call .FindGrass
-	ld hl, KantoWaterWildMons
-	jr .FindWater
-
-.FindGrass:
-	ld a, [hl]
-	cp -1
-	ret z
-	push bc
-	push hl
-	; use the math buffers as storage, since we're not doing any math
-	ld a, [hli]
-	ldh [hMathBuffer], a
-	ld a, [hli]
-	ldh [hMathBuffer + 1], a
-	inc hl ; skip the encounter rate
-	ld a, NUM_GRASSMON * 3
-	call .SearchMapForMon
-	jr nc, .next_grass
+.RoamMon1:
+	ld a, [wRoamMon1Species]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	ret nz
+	ld a, [wRoamMon1MapGroup]
+	ld b, a
+	ld a, [wRoamMon1MapNumber]
+	ld c, a
+	call AppendNest
+	ret nc
 	ld [de], a
 	inc de
+	ret
 
-.next_grass
-	pop hl
-	ld bc, GRASS_WILDDATA_LENGTH
-	add hl, bc
-	pop bc
-	jr .FindGrass
+.RoamMon2:
+	ld a, [wRoamMon2Species]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	ret nz
+	ld a, [wRoamMon2MapGroup]
+	ld b, a
+	ld a, [wRoamMon2MapNumber]
+	ld c, a
+	call AppendNest
+	ret nc
+	ld [de], a
+	inc de
+	ret
 
-.FindWater:
-	ld a, [hl]
+_NestWildmonTable:
+; a: region, hl: a NUM_REGIONS-entry table of `db BANK(table) / dw table`.
+; Same rows _RegionWildmonTable uses, but for a region the caller names rather
+; than the one the player is standing in.
+	ld [wNestRegion], a
+	ld e, a
+	ld d, 0
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld [wWildMonBank], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ret
+
+_FindNestGrass:
+; hl: a grass table in the bank named by wWildMonBank; de: output; bc: species
+	ld a, NUM_GRASSMON * 3
+	ld [wNestScanCount], a
+	ld a, GRASS_WILDDATA_LENGTH
+	jr _FindNestInTable
+
+_FindNestWater:
+	ld a, NUM_WATERMON
+	ld [wNestScanCount], a
+	ld a, WATER_WILDDATA_LENGTH
+_FindNestInTable:
+; One loop for both, parameterised by mons-per-entry and entry stride. They were
+; two near-identical copies; merging them pays for the far reads below.
+	ld [wNestScanStride], a
+.loop
+	call GetWildMonByte
 	cp -1
 	ret z
 	push bc
 	push hl
 	; use the math buffers as storage, since we're not doing any math
-	ld a, [hli]
+	call GetWildMonByte
 	ldh [hMathBuffer], a
-	ld a, [hli]
+	inc hl
+	call GetWildMonByte
 	ldh [hMathBuffer + 1], a
 	inc hl
-	ld a, NUM_WATERMON
+	inc hl ; skip the encounter rate
+	ld a, [wNestScanCount]
 	call .SearchMapForMon
-	jr nc, .next_water
+	jr nc, .next
 	ld [de], a
 	inc de
 
-.next_water
+.next
 	pop hl
-	ld bc, WATER_WILDDATA_LENGTH
+	ld a, [wNestScanStride]
+	ld c, a
+	ld b, 0
 	add hl, bc
 	pop bc
-	jr .FindWater
+	jr .loop
 
 .SearchMapForMon:
 	inc hl
 .ScanMapLoop:
+; The original compared the low byte and read the high one before branching,
+; because `ld a, [hli]` leaves flags alone. GetWildMonByte does not, so the
+; low-byte result has to be acted on before the second read.
 	push af
-	ld a, [hli]
+	call GetWildMonByte
+	inc hl
 	cp c
-	ld a, [hli]
 	jr nz, .next_mon
+	call GetWildMonByte
 	cp b
 	jr z, .found
 .next_mon
-	inc hl
+	inc hl ; past the species high byte
+	inc hl ; past the next level byte
 	pop af
 	dec a
 	jr nz, .ScanMapLoop
@@ -151,7 +205,8 @@ FindNest:
 	ldh a, [hMathBuffer + 1]
 	ld c, a
 
-.AppendNest:
+AppendNest:
+; b, c: map group and number. Appends its landmark unless already present.
 	push de
 	call GetWorldMapLocation
 	ld c, a
@@ -173,38 +228,6 @@ FindNest:
 .found_nest
 	pop de
 	and a
-	ret
-
-.RoamMon1:
-	ld a, [wRoamMon1Species]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	ret nz
-	ld a, [wRoamMon1MapGroup]
-	ld b, a
-	ld a, [wRoamMon1MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
-	ret
-
-.RoamMon2:
-	ld a, [wRoamMon2Species]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	ret nz
-	ld a, [wRoamMon2MapGroup]
-	ld b, a
-	ld a, [wRoamMon2MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
 	ret
 
 TryWildEncounter::
