@@ -343,8 +343,8 @@ endc
 DEF VARIANTS_START EQU const_value
 
 	const CORSOLA_KANTO ; Galarian Corsola; Kanto coastal waters
-	const RAICHU_ORANGE ; Alolan Raichu. TEMPORARILY obtained in Johto -- see the
-	                    ; reserved roster below and PikachuEvosAttacks.
+	const RAICHU_ORANGE ; Alolan Raichu; Thunderstone on a Pikachu in the Orange
+	                    ; Islands. See PikachuEvosAttacks.
 	const DRAGONITE_KANTO ; Dragon/Flying; from a Dragonair that levels in Kanto
 
 ; --- RESERVED ROSTER (Bryan's final list) ---
@@ -386,10 +386,10 @@ DEF VARIANTS_START EQU const_value
 ; is limited. Cycling needs a "next variant after this one" helper -- worth
 ; doing when DRAGONITE_ORANGE lands, not before.
 ;
-; ⚠️ RAICHU_ORANGE is implemented but obtained in JOHTO for now: Pikachu's
-; EVOLVE_REGION gate still names JOHTO_REGION, deliberately, so that a gate in
-; front of an EVOLVE_ITEM entry stays exercised by shipping data. Re-gate it to
-; ORANGE_REGION and move its acquisition when M3 lands.
+; RAICHU_ORANGE is obtained where it belongs as of M3: Pikachu's EVOLVE_REGION
+; gate names ORANGE_REGION, and Pikachu is catchable on Shamouti Island. Only
+; that form is gated -- the plain RAICHU entry after it is ungated so it stays
+; the default everywhere else, Johto included.
 
 DEF NUM_VARIANTS EQU const_value - VARIANTS_START
 DEF NUM_POKEMON_AND_VARIANTS EQU const_value - 1
