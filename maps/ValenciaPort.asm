@@ -9,7 +9,6 @@ ValenciaPort_MapScripts:
 	scene_script ValenciaPortLeaveShipScene, SCENE_VALENCIAPORT_LEAVE_SHIP
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, ValenciaPortFlypointCallback
 
 ValenciaPortNoopScene:
 	end
@@ -17,10 +16,6 @@ ValenciaPortNoopScene:
 ValenciaPortLeaveShipScene:
 	sdefer ValenciaPortLeaveShipScript
 	end
-
-ValenciaPortFlypointCallback:
-	setflag ENGINE_FLYPOINT_VALENCIA
-	endcallback
 
 ValenciaPortLeaveShipScript:
 	applymovement PLAYER, ValenciaPortLeaveFastShipMovement
