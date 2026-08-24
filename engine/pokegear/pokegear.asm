@@ -1998,9 +1998,12 @@ LoadStation_PokemonChannel:
 	jmp LoadStation_PlacesAndPeople
 
 PokegearMap:
-; e: which region's page to draw
-	call LoadTownMapGFX
+; e: which region's page to draw.
+; Read e BEFORE LoadTownMapGFX -- it does `ld de, vTiles2` and destroys it.
 	ld a, e
+	push af
+	call LoadTownMapGFX
+	pop af
 	and a
 	jmp z, FillJohtoMap
 	cp KANTO_REGION
