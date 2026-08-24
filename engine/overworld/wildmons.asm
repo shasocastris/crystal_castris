@@ -46,7 +46,9 @@ GetTimeOfDayNotEve:
 
 FindNest:
 ; Parameters:
-; e: 0 = Johto, 1 = Kanto
+; e: JOHTO_REGION or KANTO_REGION. ORANGE_REGION reads as Kanto until the
+;    Orange tables and the third Town Map page exist -- the Town Map cannot
+;    show an Orange page yet, so it cannot ask for one either.
 ; wNamedObjectIndex: species
 	hlcoord 0, 0
 	ld bc, SCREEN_AREA
@@ -467,7 +469,10 @@ _WaterWildmonLookup:
 	jr _NormalWildmonOK
 
 _JohtoWildmonCheck:
-	call IsInJohto
+; hl: the Johto table, de: the Kanto table. Both live in the bank the caller
+; already stored in wWildMonBank. When the Orange tables land they will be in a
+; different bank, so this needs an ORANGE_REGION branch that sets it.
+	call GetRegion
 	and a
 	ret z
 	ld h, d

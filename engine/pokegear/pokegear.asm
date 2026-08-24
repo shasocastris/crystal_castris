@@ -274,7 +274,7 @@ InitPokegearTilemap:
 	ldh [hWY], a
 	; swap region maps
 	ld a, [wPokegearMapRegion]
-	maskbits NUM_REGIONS
+	maskbits NUM_TOWN_MAP_PAGES
 	xor 1
 	ld [wPokegearMapRegion], a
 	ret
@@ -1984,9 +1984,9 @@ PlayRadioStationPointers:
 	assert_table_length NUM_MAP_RADIO_STATIONS
 
 LoadStation_PokemonChannel:
-	call IsInJohto
+	call GetRegion
 	and a
-	jr nz, .kanto
+	jr nz, .kanto ; TODO: the Orange Islands share Kanto's programming for now
 	call UpdateTime
 	ld a, [wTimeOfDay]
 	and a

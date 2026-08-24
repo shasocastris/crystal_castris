@@ -126,4 +126,10 @@ DEF NUM_LANDMARKS EQU const_value
 	const_def
 	const JOHTO_REGION ; 0
 	const KANTO_REGION ; 1
+	const ORANGE_REGION ; 2
 DEF NUM_REGIONS EQU const_value
+
+; The Town Map is two pages, not NUM_REGIONS: it draws one into vBGMap0 and the
+; other into vBGMap1 and flips hWY between them, and there are only two BG maps.
+; A third page needs that scheme reworked, so mask against this, not NUM_REGIONS.
+DEF NUM_TOWN_MAP_PAGES EQU 2
