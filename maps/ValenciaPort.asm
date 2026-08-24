@@ -24,7 +24,8 @@ ValenciaPortLeaveShipScript:
 ; No EVENT_FAST_SHIP_* here: the express never enters the S.S.AQUA, so it must
 ; not advance the ship's own quest state (first trip, cabins, passengers).
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	blackoutmod VALENCIA_PORT
+	blackoutmod VALENCIA_ISLAND ; the island holds SPAWN_VALENCIA; a non-spawn map
+	                            ; here makes GetWhiteoutSpawn fall back to SPAWN_HOME
 	end
 
 ValenciaPortSailorAtGangwayScript:

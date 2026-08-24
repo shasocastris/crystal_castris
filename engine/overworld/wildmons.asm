@@ -48,6 +48,8 @@ FindNest:
 ; Parameters:
 ; e: JOHTO_REGION, KANTO_REGION or ORANGE_REGION
 ; wNamedObjectIndex: species
+	ld a, e
+	ld [wNestRegion], a ; stash it: the decoord below overwrites e
 	hlcoord 0, 0
 	ld bc, SCREEN_AREA
 	xor a
@@ -62,7 +64,7 @@ FindNest:
 ; the AREA screen opens, not per frame.
 	push de
 	push bc
-	ld a, e
+	ld a, [wNestRegion]
 	ld hl, GrassWildmonTables
 	call _WildmonTableForRegion
 	pop bc
