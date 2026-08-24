@@ -75,6 +75,7 @@ MapScenes::
 	scene_var DRAGON_SHRINE,                               wDragonShrineSceneID
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
 	scene_var VERMILION_PORT,                              wVermilionPortSceneID
+	scene_var VALENCIA_PORT,                               wValenciaPortSceneID
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID

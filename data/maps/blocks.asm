@@ -992,4 +992,10 @@ PewterMuseum1F_Blocks:
 PewterMuseum2F_Blocks:
 	INCBIN "maps/PewterMuseum2F.ablk"
 
+ValenciaPort_Blocks:
+	INCBIN "maps/ValenciaPort.ablk"
+
+ValenciaIsland_Blocks:
+	INCBIN "maps/ValenciaIsland.ablk"
+
 ENDSECTION

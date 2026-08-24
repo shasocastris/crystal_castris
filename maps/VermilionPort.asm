@@ -7,6 +7,7 @@ VermilionPort_MapScripts:
 	def_scene_scripts
 	scene_script VermilionPortNoopScene,      SCENE_VERMILIONPORT_ASK_ENTER_SHIP
 	scene_script VermilionPortLeaveShipScene, SCENE_VERMILIONPORT_LEAVE_SHIP
+	scene_script VermilionPortLeaveExpressScene, SCENE_VERMILIONPORT_LEAVE_EXPRESS
 
 	def_callbacks
 	callback MAPCALLBACK_NEWMAP, VermilionPortFlypointCallback
@@ -16,6 +17,10 @@ VermilionPortNoopScene:
 
 VermilionPortLeaveShipScene:
 	sdefer VermilionPortLeaveShipScript
+	end
+
+VermilionPortLeaveExpressScene:
+	sdefer VermilionPortLeaveExpressScript
 	end
 
 VermilionPortFlypointCallback:
@@ -31,6 +36,17 @@ VermilionPortLeaveShipScript:
 	setevent EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
 	clearevent EVENT_OLIVINE_PORT_PASSAGE_POKEFAN_M
 	setevent EVENT_FAST_SHIP_FIRST_TIME
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	blackoutmod VERMILION_CITY
+	end
+
+VermilionPortLeaveExpressScript:
+; The express never enters the S.S.AQUA, so unlike the arrival above it must not
+; set any EVENT_FAST_SHIP_* -- those spawn the first-trip trainers and the
+; post-quest grandpa and granddaughter.
+	applymovement PLAYER, VermilionPortLeaveFastShipMovement
+	appear VERMILIONPORT_SAILOR1
+	setscene SCENE_VERMILIONPORT_ASK_ENTER_SHIP
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	blackoutmod VERMILION_CITY
 	end

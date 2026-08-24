@@ -531,4 +531,9 @@ ENDM
 	map_const CHERRYGROVE_CAFE,                             4,  4 ; 12
 	endgroup
 
-DEF NUM_MAP_GROUPS EQU const_value ; 26
+	newgroup VALENCIA                                             ; 27
+	map_const VALENCIA_PORT,                               10, 18 ;  1
+	map_const VALENCIA_ISLAND,                             10,  9 ;  2
+	endgroup
+
+DEF NUM_MAP_GROUPS EQU const_value ; 27

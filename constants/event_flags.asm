@@ -358,7 +358,7 @@
 	const EVENT_GAVE_KURT_PNK_APRICORN
 ; Phone events
 	const EVENT_JACK_ASKED_FOR_PHONE_NUMBER
-	const_skip ; unused in Crystal
+	const EVENT_VALENCIA_PORT_SAILOR_AT_GANGWAY ; M3; was 'unused in Crystal'
 	const EVENT_BEVERLY_ASKED_FOR_PHONE_NUMBER
 	const_skip ; unused in Crystal
 	const EVENT_HUEY_ASKED_FOR_PHONE_NUMBER

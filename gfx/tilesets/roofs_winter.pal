@@ -144,3 +144,8 @@
 	RGB 01,27,27, 05,17,31 ; morn/day
 	RGB 00,10,22, 00,07,15 ; nite
 	RGB 01,20,20, 04,13,23 ; eve
+
+; group 27 (Valencia)
+	RGB 01,27,27, 05,17,31 ; morn/day
+	RGB 00,10,22, 00,07,15 ; nite
+	RGB 01,20,20, 04,13,23 ; eve

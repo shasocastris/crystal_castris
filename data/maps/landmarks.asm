@@ -106,6 +106,7 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
+	landmark  20,  76, ValenciaIslandName ; TODO: real coords once the Town Map gains an Orange page
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK<BSP>TOWN@"
@@ -200,6 +201,7 @@ DarkCaveName:        db "DARK CAVE@"
 IlexForestName:      db "ILEX<BSP>FOREST@"
 BurnedTowerName:     db "BURNED<BSP>TOWER@"
 FastShipName:        db "FAST SHIP@"
+ValenciaIslandName:  db "VALENCIA@"
 DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"
 BlackthornPassName:  db "BLACKTHORN<BSP>PASS@"
 TohjoFallsName:      db "TOHJO FALLS@"

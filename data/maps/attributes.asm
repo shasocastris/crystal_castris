@@ -728,3 +728,6 @@ ENDM
 	map_attributes PokemonMansion, POKEMON_MANSION, $00, 0
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00, 0
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0
+
+	map_attributes ValenciaPort, VALENCIA_PORT, $0a, 0
+	map_attributes ValenciaIsland, VALENCIA_ISLAND, $05, 0

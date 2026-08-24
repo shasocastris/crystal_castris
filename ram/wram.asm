@@ -2797,7 +2797,7 @@ wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
+wValenciaPortSceneID::                            db ; M3; was wMobileBattleRoomSceneID
 wVioletCitySceneID::                              db
 wGlitterAndGraceSceneID::                         db
 wRoute39SceneID::                                 db

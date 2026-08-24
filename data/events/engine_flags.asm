@@ -218,5 +218,6 @@ EngineFlags:
 	engine_flag wSeasonalFlags, SEASONALFLAGS_UNUSED_FLAG_5
 	engine_flag wSeasonalFlags, SEASONALFLAGS_UNUSED_FLAG_6
 	engine_flag wSeasonalFlags, SEASONALFLAGS_UNUSED_FLAG_7
+	engine_flag wVisitedSpawns, SPAWN_VALENCIA
 
 	assert_table_length NUM_ENGINE_FLAGS
