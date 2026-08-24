@@ -64,7 +64,7 @@ FindNest:
 	push bc
 	ld a, e
 	ld hl, GrassWildmonTables
-	call _NestWildmonTable
+	call _WildmonTableForRegion
 	pop bc
 	pop de
 	call _FindNestGrass
@@ -72,7 +72,7 @@ FindNest:
 	push bc
 	ld a, [wNestRegion]
 	ld hl, WaterWildmonTables
-	call _NestWildmonTable
+	call _WildmonTableForRegion
 	pop bc
 	pop de
 	call _FindNestWater
@@ -80,7 +80,7 @@ FindNest:
 	and a
 	ret nz ; roamers are Johto-only
 	call .RoamMon1
-	jmp .RoamMon2
+	jr .RoamMon2
 
 .RoamMon1:
 	ld a, [wRoamMon1Species]
@@ -112,23 +112,6 @@ FindNest:
 	ret nc
 	ld [de], a
 	inc de
-	ret
-
-_NestWildmonTable:
-; a: region, hl: a NUM_REGIONS-entry table of `db BANK(table) / dw table`.
-; Same rows _RegionWildmonTable uses, but for a region the caller names rather
-; than the one the player is standing in.
-	ld [wNestRegion], a
-	ld e, a
-	ld d, 0
-	add hl, de
-	add hl, de
-	add hl, de
-	ld a, [hli]
-	ld [wWildMonBank], a
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	ret
 
 _FindNestGrass:
@@ -469,7 +452,7 @@ _GrassWildmonLookup:
 	ld hl, GrassWildmonTables
 	call _RegionWildmonTable
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	jmp _NormalWildmonOK ; out of jr reach, as the note by the season includes warns
 
 _WaterWildmonLookup:
 	ld hl, SwarmWaterWildMons
@@ -493,6 +476,10 @@ _RegionWildmonTable:
 ; in $0a with the Johto and Kanto ones -- freeing space there to fit them is the
 ; operation that re-packs half the ROM. See the note by the season includes.
 	call GetRegion
+_WildmonTableForRegion:
+; Same, for a region the caller names rather than the one the player is in.
+; a: region
+	ld [wNestRegion], a
 	ld e, a
 	ld d, 0
 	add hl, de
@@ -577,19 +564,22 @@ CopyCurrMapDE:
 
 LookUpGrassJohtoWildmons::
 	ld hl, JohtoGrassWildMons
+	ld a, BANK(JohtoGrassWildMons)
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 LookUpWildmonsForMapDE:
+; Reads through GetWildMonByte, not directly: the table may be the Orange one in
+; bank $75. Every caller must set wWildMonBank first.
 .loop
 	push hl
-	ld a, [hl]
-	inc a
+	call GetWildMonByte
+	cp -1
 	jr z, .nope
-	ld a, d
-	cp [hl]
+	cp d
 	jr nz, .next
 	inc hl
-	ld a, e
-	cp [hl]
+	call GetWildMonByte
+	cp e
 	jr z, .yup
 
 .next
@@ -905,6 +895,8 @@ GetCallerRouteWildGrassMons:
 	ld d, b
 	ld e, c
 	ld hl, JohtoGrassWildMons
+	ld a, BANK(JohtoGrassWildMons) ; both tables share it
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .found
