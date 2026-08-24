@@ -4,12 +4,14 @@ ValenciaIsland_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
+	callback MAPCALLBACK_NEWMAP, ValenciaIslandFlypointCallback
 
-ValenciaIslandFlypointScript:
-; Scene id -1 so this fires whatever the scene: CheckScenes returns -1 for a map
-; with no entry in MapScenes, and this map has none.
+ValenciaIslandFlypointCallback:
+; On the island, not the port: the player still has to cross from Valencia Port
+; to earn it. A callback rather than a coord event so it cannot be walked past
+; -- where the flypoint sits is where SPAWN_VALENCIA lands you, nothing more.
 	setflag ENGINE_FLYPOINT_VALENCIA
-	end
+	endcallback
 
 ValenciaIsland_MapEvents:
 	db 0, 0 ; filler
@@ -19,7 +21,6 @@ ValenciaIsland_MapEvents:
 	warp_event  9, 13, VALENCIA_PORT, 1
 
 	def_coord_events
-	coord_event  9,  6, -1, ValenciaIslandFlypointScript
 
 	def_bg_events
 
