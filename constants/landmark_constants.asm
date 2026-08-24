@@ -113,6 +113,9 @@ DEF OTHER_LANDMARK EQU const_value
 ; Being the highest block also lets RegionCheck range-check it with one `cp`.
 DEF ORANGE_LANDMARK EQU const_value
 	const LANDMARK_VALENCIA_ISLAND   ; 62
+	const LANDMARK_SHAMOUTI_PASSAGE  ; 63
+	const LANDMARK_SHAMOUTI_ISLAND   ; 64
+	const LANDMARK_SHAMOUTI_CAVE     ; 65
 DEF ORANGE_LANDMARK_LAST EQU const_value - 1
 
 DEF NUM_LANDMARKS EQU const_value

@@ -998,4 +998,13 @@ ValenciaPort_Blocks:
 ValenciaIsland_Blocks:
 	INCBIN "maps/ValenciaIsland.ablk"
 
+ShamoutiPassage_Blocks:
+	INCBIN "maps/ShamoutiPassage.ablk"
+
+ShamoutiIsland_Blocks:
+	INCBIN "maps/ShamoutiIsland.ablk"
+
+ShamoutiCave_Blocks:
+	INCBIN "maps/ShamoutiCave.ablk"
+
 ENDSECTION

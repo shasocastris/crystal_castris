@@ -214,4 +214,5 @@
 ; ENGINE_FLYPOINT_* constants: these index EngineFlags, so inserting mid-list
 ; renumbers everything after it. The data row below must stay in lockstep.
 	const ENGINE_FLYPOINT_VALENCIA
+	const ENGINE_FLYPOINT_SHAMOUTI
 DEF NUM_ENGINE_FLAGS EQU const_value

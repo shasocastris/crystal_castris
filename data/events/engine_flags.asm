@@ -219,5 +219,6 @@ EngineFlags:
 	engine_flag wSeasonalFlags, SEASONALFLAGS_UNUSED_FLAG_6
 	engine_flag wSeasonalFlags, SEASONALFLAGS_UNUSED_FLAG_7
 	engine_flag wVisitedSpawns, SPAWN_VALENCIA
+	engine_flag wVisitedSpawns, SPAWN_SHAMOUTI
 
 	assert_table_length NUM_ENGINE_FLAGS

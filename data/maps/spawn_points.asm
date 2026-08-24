@@ -40,6 +40,7 @@ SpawnPoints:
 	spawn FAST_SHIP_CABINS_SW_SSW_NW,  6,  2
 
 	spawn VALENCIA_PORT,               9, 17
+	spawn SHAMOUTI_ISLAND,            16, 19
 
 	spawn N_A,                        -1, -1
 

@@ -536,5 +536,8 @@ INCLUDE "maps/PewterMuseum2F.asm"
 INCLUDE "maps/SafariZoneMainOffice.asm"
 INCLUDE "maps/ValenciaPort.asm"
 INCLUDE "maps/ValenciaIsland.asm"
+INCLUDE "maps/ShamoutiPassage.asm"
+INCLUDE "maps/ShamoutiIsland.asm"
+INCLUDE "maps/ShamoutiCave.asm"
 
 ENDSECTION

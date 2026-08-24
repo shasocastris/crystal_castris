@@ -106,7 +106,13 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
-	landmark  20,  76, ValenciaIslandName ; TODO: real coords once the Town Map gains an Orange page
+; Orange Islands. Coordinates are screen pixels on the Orange Town Map page:
+; Valencia lower-left, then north-east through the passage to Shamouti, with the
+; cave just above and right of the island. Placeholder art, real coords with it.
+	landmark  20,  76, ValenciaIslandName
+	landmark  60,  68, ShamoutiPassageName
+	landmark 100,  44, ShamoutiIslandName
+	landmark 116,  28, ShamoutiCaveName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK<BSP>TOWN@"
@@ -202,6 +208,9 @@ IlexForestName:      db "ILEX<BSP>FOREST@"
 BurnedTowerName:     db "BURNED<BSP>TOWER@"
 FastShipName:        db "FAST SHIP@"
 ValenciaIslandName:  db "VALENCIA@"
+ShamoutiPassageName: db "SHAMOUTI<BSP>PASSAGE@"
+ShamoutiIslandName:  db "SHAMOUTI<BSP>ISLAND@"
+ShamoutiCaveName:    db "SHAMOUTI<BSP>CAVE@"
 DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"
 BlackthornPassName:  db "BLACKTHORN<BSP>PASS@"
 TohjoFallsName:      db "TOHJO FALLS@"

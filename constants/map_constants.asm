@@ -534,6 +534,9 @@ ENDM
 	newgroup VALENCIA                                             ; 27
 	map_const VALENCIA_PORT,                               10, 18 ;  1
 	map_const VALENCIA_ISLAND,                             10,  9 ;  2
+	map_const SHAMOUTI_PASSAGE,                            10, 18 ;  3
+	map_const SHAMOUTI_ISLAND,                             18, 18 ;  4
+	map_const SHAMOUTI_CAVE,                               10,  9 ;  5
 	endgroup
 
 DEF NUM_MAP_GROUPS EQU const_value ; 27
