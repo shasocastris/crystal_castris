@@ -443,11 +443,8 @@ _GrassWildmonLookup:
 	ret c
 	call _SeasonGrassWildmonCheck
 	ret c
-	ld hl, JohtoGrassWildMons
-	ld de, KantoGrassWildMons
-	ld a, BANK(JohtoGrassWildMons)
-	ld [wWildMonBank], a
-	call _JohtoWildmonCheck
+	ld hl, GrassWildmonTables
+	call _RegionWildmonTable
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
@@ -460,24 +457,50 @@ _WaterWildmonLookup:
 	ret c
 	call _SeasonWaterWildmonCheck
 	ret c
-	ld hl, JohtoWaterWildMons
-	ld de, KantoWaterWildMons
-	ld a, BANK(JohtoWaterWildMons)
-	ld [wWildMonBank], a
-	call _JohtoWildmonCheck
+	ld hl, WaterWildmonTables
+	call _RegionWildmonTable
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
-_JohtoWildmonCheck:
-; hl: the Johto table, de: the Kanto table. Both live in the bank the caller
-; already stored in wWildMonBank. When the Orange tables land they will be in a
-; different bank, so this needs an ORANGE_REGION branch that sets it.
+_RegionWildmonTable:
+; hl: a NUM_REGIONS-entry table of `db BANK(table) / dw table`.
+; Returns the current region's table in hl and stores its bank in wWildMonBank.
+;
+; The bank is per entry rather than shared because the Orange tables do NOT live
+; in $0a with the Johto and Kanto ones -- freeing space there to fit them is the
+; operation that re-packs half the ROM. See the note by the season includes.
 	call GetRegion
-	and a
-	ret z
-	ld h, d
-	ld l, e
+	ld e, a
+	ld d, 0
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld [wWildMonBank], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 	ret
+
+MACRO wildmon_table
+	db BANK(\1)
+	dw \1
+ENDM
+
+GrassWildmonTables:
+; entries correspond to *_REGION constants
+	table_width 3
+	wildmon_table JohtoGrassWildMons
+	wildmon_table KantoGrassWildMons
+	wildmon_table OrangeGrassWildMons
+	assert_table_length NUM_REGIONS
+
+WaterWildmonTables:
+	table_width 3
+	wildmon_table JohtoWaterWildMons
+	wildmon_table KantoWaterWildMons
+	wildmon_table OrangeWaterWildMons
+	assert_table_length NUM_REGIONS
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE

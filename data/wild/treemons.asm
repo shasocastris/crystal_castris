@@ -9,6 +9,7 @@ TreeMons:
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
 	dw TreeMonSet_Rock
+	dw TreeMonSet_Orange
 	assert_table_length NUM_TREEMON_SETS
 	dw TreeMonSet_None ; unused
 
@@ -125,6 +126,18 @@ TreeMonSet_Forest:
 	dbbw 10, 20, FORRETRESS
 	dbbw  5, 20, SCYTHER
 	dbbw  5, 20, PINSIR
+	db -1
+
+TreeMonSet_Orange:
+; common
+	dbbw 50, 25, EXEGGCUTE
+	dbbw 20, 25, PIKACHU
+	dbbw 15, 25, SPEAROW
+	dbbw 10, 25, AIPOM
+	db -1
+; rare
+	dbbw 60, 25, PINECO
+	dbbw 40, 25, HERACROSS
 	db -1
 
 TreeMonSet_Rock:

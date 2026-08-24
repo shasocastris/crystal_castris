@@ -306,6 +306,7 @@ ROMX $74
 	"Pokedex Entries 193-251"
 ROMX $75
 	"16-bit ID stuff"
+	"Orange Wild Data"
 ROMX $77
 	"Unown Font"
 	"Tileset Data 7"

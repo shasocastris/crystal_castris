@@ -709,3 +709,13 @@ INCLUDE "engine/16/table_functions.asm"
 
 ; own section
 INCLUDE "data/trainers/parties.asm"
+
+
+SECTION "Orange Wild Data", ROMX
+
+; Pinned to bank $75 in layout.link, deliberately NOT beside the Johto and Kanto
+; tables in $0a. That bank has 75 bytes free, and freeing room there is the
+; operation that re-packed 32 sections and corrupted map loads on 2026-08-22.
+; Adding a section to a roomy bank consumes space instead, so nothing moves.
+INCLUDE "data/wild/orange_grass.asm"
+INCLUDE "data/wild/orange_water.asm"
