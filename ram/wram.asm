@@ -1266,7 +1266,7 @@ wCreditsLYOverride:: db
 NEXTU
 ; pokegear
 wPokegearCard:: db
-wPokegearMapRegion:: db
+wPokegearBGMapBuffer:: db ; vBGMap0 or vBGMap1 -- not a region, see NUM_POKEGEAR_BGMAP_BUFFERS
 wUnusedPokegearByte:: db
 
 NEXTU

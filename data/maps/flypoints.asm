@@ -1,5 +1,6 @@
 Flypoints:
 ; entries correspond to FLY_* constants
+	table_width 2
 ; Johto
 	; landmark, spawn point
 	db LANDMARK_NEW_BARK_TOWN,    SPAWN_NEW_BARK
@@ -28,4 +29,8 @@ Flypoints:
 	db LANDMARK_FUCHSIA_CITY,     SPAWN_FUCHSIA
 	db LANDMARK_CINNABAR_ISLAND,  SPAWN_CINNABAR
 	db LANDMARK_INDIGO_PLATEAU,   SPAWN_INDIGO
-	db -1 ; end
+; Orange Islands
+	db LANDMARK_VALENCIA_ISLAND,  SPAWN_VALENCIA
+	db LANDMARK_SHAMOUTI_ISLAND,  SPAWN_SHAMOUTI
+	assert_table_length NUM_FLYPOINTS
+	db -1 ; end -- nothing scans for this, every consumer indexes directly

@@ -132,7 +132,9 @@ DEF NUM_LANDMARKS EQU const_value
 	const ORANGE_REGION ; 2
 DEF NUM_REGIONS EQU const_value
 
-; The Town Map is two pages, not NUM_REGIONS: it draws one into vBGMap0 and the
-; other into vBGMap1 and flips hWY between them, and there are only two BG maps.
-; A third page needs that scheme reworked, so mask against this, not NUM_REGIONS.
-DEF NUM_TOWN_MAP_PAGES EQU 2
+; wPokegearBGMapBuffer is a BG map double-buffer index, not a region -- it was
+; called wPokegearMapRegion, which is why this looks like it should be
+; NUM_REGIONS. Every Pokegear card init renders into vBGMap0 or vBGMap1, shows
+; it with hWY, and flips this so the next card lands in the other one. There are
+; exactly two BG maps, so this stays 2 however many regions exist.
+DEF NUM_POKEGEAR_BGMAP_BUFFERS EQU 2

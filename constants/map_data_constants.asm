@@ -148,6 +148,12 @@ DEF KANTO_FLYPOINT EQU const_value
 	const FLY_FUCHSIA
 	const FLY_CINNABAR
 	const FLY_INDIGO
+DEF KANTO_FLYPOINT_LAST EQU const_value - 1
+; orange islands
+DEF ORANGE_FLYPOINT EQU const_value
+	const FLY_VALENCIA
+	const FLY_SHAMOUTI
+DEF ORANGE_FLYPOINT_LAST EQU const_value - 1
 DEF NUM_FLYPOINTS EQU const_value
 
 DEF MAX_OUTDOOR_SPRITES EQU 23 ; see engine/overworld/overworld.asm

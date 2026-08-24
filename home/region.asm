@@ -25,6 +25,9 @@ GetRegion::
 		"the Orange block must be the highest landmark block"
 	call GetPlayerLandmark
 
+RegionForLandmark::
+; Same rule, for a landmark in a that is not necessarily the player's own --
+; the Town Map and Fly map ask about the cursor's landmark.
 	cp ORANGE_LANDMARK
 	jr nc, .orange
 
