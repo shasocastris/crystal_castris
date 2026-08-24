@@ -56,6 +56,11 @@ VermilionPortSailorAtGangwayScript:
 	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue VermilionPortAlreadyRodeScript
+; Both approach paths sjump here after the ticket check, so asking once here
+; covers the sailor, the coord event and talking to the gangway directly.
+	writetext VermilionPortAskExpressText
+	yesorno
+	iftrue VermilionPortValenciaExpressScript
 	writetext VermilionPortDepartingText
 	waitbutton
 	closetext
@@ -84,6 +89,28 @@ VermilionPortSailorAtGangwayScript:
 	appear VERMILIONPORT_SAILOR1
 	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_ENTER_SHIP
 	warp FAST_SHIP_1F, 25, 1
+	end
+
+VermilionPortValenciaExpressScript:
+; The express does not use the S.S.AQUA interior, so none of the FAST_SHIP
+; passenger or trainer events are touched -- it is a straight crossing.
+	writetext VermilionPortExpressDepartingText
+	waitbutton
+	closetext
+	turnobject VERMILIONPORT_SAILOR1, DOWN
+	pause 10
+	playsound SFX_EXIT_BUILDING
+	disappear VERMILIONPORT_SAILOR1
+	waitsfx
+	applymovement PLAYER, VermilionPortEnterFastShipMovement
+	playsound SFX_EXIT_BUILDING
+	special FadeOutToWhite
+	waitsfx
+	pause 40 ; the crossing
+	appear VERMILIONPORT_SAILOR1
+	setevent EVENT_VALENCIA_PORT_SAILOR_AT_GANGWAY
+	setmapscene VALENCIA_PORT, SCENE_VALENCIAPORT_LEAVE_SHIP
+	warp VALENCIA_PORT, 7, 17
 	end
 
 VermilionPortAlreadyRodeScript:
@@ -246,6 +273,25 @@ VermilionPortDepartingText:
 	text "We're departing"
 	line "soon. Please get"
 	cont "on board."
+	done
+
+VermilionPortAskExpressText:
+	text "The S.S.AQUA"
+	line "sails for JOHTO."
+
+	para "We also run an"
+	line "express to the"
+	cont "ORANGE ISLANDS."
+
+	para "Take the express?"
+	done
+
+VermilionPortExpressDepartingText:
+	text "The express is"
+	line "leaving now!"
+
+	para "Next stop:"
+	line "VALENCIA ISLAND!"
 	done
 
 VermilionPortCantBoardText:
