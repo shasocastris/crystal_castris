@@ -2047,7 +2047,14 @@ _FlyMap:
 	jr .exit
 
 .pressedA
-	ld a, [wTownMapPlayerIconLandmark]
+; Refuse a flypoint that has not been visited. The cursor can only sit on one
+; when nothing in the region is unlocked at all, since the starting value is
+; never checked against wVisitedSpawns -- without this, the default entry could
+; be flown to from a region the player has no flypoint in.
+	ld hl, wTownMapPlayerIconLandmark
+	call CheckIfVisitedFlypoint
+	jr z, .pressedB
+	ld a, [hl]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -2083,7 +2090,17 @@ _FlyMap:
 	jr nz, .ScrollPrev
 	ret
 
+; Both scans give up after one full pass rather than retrying forever. With no
+; visited flypoint in [wStartFlypoint, wEndFlypoint] the original spun here with
+; the game still drawing frames, which reads as a freeze -- the hazard the note
+; above .KantoFlyMap describes. Stepping through the whole range returns the
+; cursor to where it started, so bailing out leaves it untouched.
 .ScrollNext:
+	ld a, d
+	sub e
+	inc a
+	ld b, a ; flypoints in range
+.NextLoop:
 	ld hl, wTownMapPlayerIconLandmark
 	ld a, [hl]
 	cp d
@@ -2094,10 +2111,17 @@ _FlyMap:
 .NotAtEndYet:
 	inc [hl]
 	call CheckIfVisitedFlypoint
-	jr z, .ScrollNext
-	jr .Finally
+	jr nz, .Finally
+	dec b
+	jr nz, .NextLoop
+	ret
 
 .ScrollPrev:
+	ld a, d
+	sub e
+	inc a
+	ld b, a ; flypoints in range
+.PrevLoop:
 	ld hl, wTownMapPlayerIconLandmark
 	ld a, [hl]
 	cp e
@@ -2108,7 +2132,11 @@ _FlyMap:
 .NotAtStartYet:
 	dec [hl]
 	call CheckIfVisitedFlypoint
-	jr z, .ScrollPrev
+	jr nz, .Finally
+	dec b
+	jr nz, .PrevLoop
+	ret
+
 .Finally:
 	call TownMapBubble
 	call WaitBGMap
@@ -2260,17 +2288,16 @@ FlyMap:
 	jmp TownMapPlayerIcon
 
 .OrangeFlyMap:
-; Same guard as Kanto below, gated on Valencia Port instead: reaching the
-; islands at all sets ENGINE_FLYPOINT_VALENCIA, so if that bit is clear the
-; player cannot be here legitimately and the scroll loop would hang.
-; Unlike Kanto the default is the FIRST entry, because Valencia is the
-; flypoint the gate guarantees -- defaulting to Shamouti would let the player
-; fly somewhere they have never visited.
+; Standing in the Orange Islands always draws the Orange page, whether or not
+; anything there is unlocked yet -- which page you see and where you may fly are
+; separate questions. Kanto above deliberately keeps its old behaviour of
+; falling back to Johto's map, because that is how the player flies home.
+;
+; A fully locked region is safe here: .ScrollNext and .ScrollPrev give up after
+; one pass instead of spinning, and .pressedA refuses a flypoint that has not
+; been visited. The default cursor is the FIRST entry rather than Kanto's last,
+; so it lands on Valencia, the one the coord event on Valencia Island unlocks.
 	push af
-	ld c, SPAWN_VALENCIA
-	call HasVisitedSpawn
-	and a
-	jr z, .NoKanto
 	ld a, ORANGE_FLYPOINT ; first Orange flypoint
 	ld [wStartFlypoint], a
 	ld [wTownMapPlayerIconLandmark], a ; first one is default (Valencia)
