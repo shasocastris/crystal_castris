@@ -2476,31 +2476,24 @@ Pokedex_GetArea:
 
 .PageAvailable:
 ; b: region. Returns carry if that page can be shown.
+; Only Kanto is gated, and only as it always has been. The Orange page carried a
+; "not until you have been to Valencia" gate for a while; that was invented here
+; rather than asked for, and it hid the page from its own play-test.
 	ld a, b
-	and a
-	scf
-	ret z ; Johto is always available
-	cp ORANGE_REGION
-	jr z, .orange_page
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	jr z, .locked ; Kanto needs the Hall of Fame, as it always has
+	cp KANTO_REGION
+	jr z, .kanto_page
 	scf
 	ret
 
-.orange_page
-	push bc
-	ld c, SPAWN_VALENCIA
-	call HasVisitedSpawn
-	and a
-	pop bc
-	jr z, .locked ; the islands stay hidden until the player has been there
+.kanto_page
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_HALL_OF_FAME_F, a
+	jr z, .locked
 	scf
 	ret
 
 .locked
-; `bit` leaves carry alone and the `cp` above set it, so it has to be cleared
-; deliberately rather than fallen out of.
+; `bit` leaves carry alone and the `cp` above set it, so clear it deliberately.
 	and a
 	ret
 
