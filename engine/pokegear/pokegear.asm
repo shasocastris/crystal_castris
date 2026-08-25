@@ -2432,58 +2432,77 @@ Pokedex_GetArea:
 	jr nz, .right
 	ret
 
+; Pages skip over any that are locked, so the islands do not sit behind Kanto's
+; Hall of Fame gate -- they have nothing to do with each other.
 .left
 	ld a, [wTownMapCursorLandmark] ; the region on screen, not a landmark
+	ld b, a
+.left_loop
+	ld a, b
 	and a
 	ret z ; already on the first page
-	dec a
+	dec b
+	call .PageAvailable
+	jr nc, .left_loop
+	ld a, b
 	jr .ShowRegionPage
 
 .right
 	ld a, [wTownMapCursorLandmark]
-	cp ORANGE_REGION
-	ret z ; already on the last page
-	inc a
-	cp ORANGE_REGION
-	jr z, .check_orange
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	ret z
-	ld a, KANTO_REGION
-	jr .ShowRegionPage
-
-.check_orange
-	ld c, SPAWN_VALENCIA
-	call HasVisitedSpawn
-	and a
-	ret z ; the islands stay hidden until the player has been there
-	ld a, ORANGE_REGION
+	ld b, a
+.right_loop
+	inc b
+	ld a, b
+	cp NUM_REGIONS
+	ret nc ; past the last page
+	call .PageAvailable
+	jr nc, .right_loop
+	ld a, b
 
 .ShowRegionPage:
-; a: region to draw. Renders into whichever BG map is NOT on screen and then
-; flips hWY to it, so the page swap is a single write and never tears.
+; a: region to draw. Renders into vBGMap0, which is the buffer the caller has on
+; screen, and leaves hWY and hBGMapAddress exactly as it found them -- the
+; Pokedex shows vBGMap1 through the window and is particular about both.
 	call ClearSprites
 	push af
 	ld e, a
 	call PokegearMap
 	call .PlaceString_MonsNest
 	call TownMapPals
-	ldh a, [hWY]
-	and a
-	jr nz, .into_bgmap1
 	hlbgcoord 0, 0
 	call TownMapBGUpdate
-	ld a, SCREEN_HEIGHT_PX
-	jr .show_page
-
-.into_bgmap1
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	xor a
-.show_page
-	ldh [hWY], a
 	pop af
 	jr .GetAndPlaceNest
+
+.PageAvailable:
+; b: region. Returns carry if that page can be shown.
+	ld a, b
+	and a
+	scf
+	ret z ; Johto is always available
+	cp ORANGE_REGION
+	jr z, .orange_page
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_HALL_OF_FAME_F, a
+	jr z, .locked ; Kanto needs the Hall of Fame, as it always has
+	scf
+	ret
+
+.orange_page
+	push bc
+	ld c, SPAWN_VALENCIA
+	call HasVisitedSpawn
+	and a
+	pop bc
+	jr z, .locked ; the islands stay hidden until the player has been there
+	scf
+	ret
+
+.locked
+; `bit` leaves carry alone and the `cp` above set it, so it has to be cleared
+; deliberately rather than fallen out of.
+	and a
+	ret
 
 .BlinkNestIcons:
 	ldh a, [hVBlankCounter]
