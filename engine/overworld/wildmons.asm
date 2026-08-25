@@ -24,19 +24,6 @@ LoadWildMonData:
 	ld [wWaterEncounterRate], a
 	ret
 
-GetWildMonByte:
-; Read [hl] from the bank the matched wild table lives in.
-	ldh a, [hROMBank]
-	push af
-	ld a, [wWildMonBank]
-	rst Bankswitch
-	ld a, [hl]
-	ld [wWildMonScratch], a
-	pop af
-	rst Bankswitch
-	ld a, [wWildMonScratch]
-	ret
-
 GetTimeOfDayNotEve:
 	ld a, [wTimeOfDay]
 	cp EVE_F
@@ -296,7 +283,7 @@ ApplyCleanseTagEffectOnEncounterRate::
 
 ChooseWildEncounter:
 	call LoadWildMonDataPointer
-	jr nc, .nowildbattle
+	jmp nc, .nowildbattle ; out of jr reach
 	call CheckEncounterRoamMon
 	jr c, .startwildbattle
 
@@ -337,12 +324,18 @@ ChooseWildEncounter:
 	add hl, bc ; this selects our mon
 ; The prob table above lives in this bank; the entry may not. Everything the
 ; entry is read for is the three bytes below, so switch only around them.
-	ldh a, [hROMBank]
-	push af
-	ld a, [wWildMonBank]
-	rst Bankswitch
-	ld a, [hli]
+; Read all three bytes up front through GetWildMonByte. The old code paged the
+; data bank in and held it across everything below -- which only worked while
+; every table shared this bank, because paging in another one swaps out this
+; very code.
+	call GetWildMonByte
 	ld b, a
+	inc hl
+	call GetWildMonByte
+	ld c, a
+	inc hl
+	call GetWildMonByte
+	push af
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
@@ -366,11 +359,9 @@ ChooseWildEncounter:
 	ld a, b
 	ld [wCurPartyLevel], a
 
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	pop af
-	rst Bankswitch
+	ld h, a ; species index high byte
+	ld l, c
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
