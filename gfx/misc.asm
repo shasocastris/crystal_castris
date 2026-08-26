@@ -44,6 +44,11 @@ INCBIN "gfx/font/unown_font.2bpp"
 
 SECTION "Pokégear GFX", ROMX
 
+; Moved out of bank $3E, which had 83 bytes free -- nowhere near enough for a
+; town map tileset grown from 48 to 80 tiles.
+TownMapGFX::
+INCBIN "gfx/pokegear/town_map.2bpp.lz"
+
 PokegearGFX::
 INCBIN "gfx/pokegear/pokegear.2bpp.lz"
 
