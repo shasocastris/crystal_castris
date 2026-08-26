@@ -2463,9 +2463,12 @@ Pokedex_GetArea:
 ; a: region to draw. Renders into vBGMap0, which is the buffer the caller has on
 ; screen, and leaves hWY and hBGMapAddress exactly as it found them -- the
 ; Pokedex shows vBGMap1 through the window and is particular about both.
-	call ClearSprites
-	push af
+; ClearSprites ends in `xor a` and a ByteFill, so it returns a = 0. The region
+; has to be taken out of a BEFORE that call, not after -- calling it first is
+; what made every page redraw Johto and store 0 as the current region.
 	ld e, a
+	push af
+	call ClearSprites
 	call PokegearMap
 	call .PlaceString_MonsNest
 	call TownMapPals
