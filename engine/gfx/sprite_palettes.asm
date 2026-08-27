@@ -1,3 +1,65 @@
+LoadWeatherPal::
+; Fill OB palette PAL_OW_WEATHER for the current weather.
+	ld a, [wCurWeather]
+	assert OW_WEATHER_NONE == 0
+	and a
+	ret z
+	dec a
+	ld hl, .Jumptable
+	jmp JumpTable
+
+.Jumptable:
+	table_width 2
+	dw .rain
+	dw .snow
+	dw .rain ; thunderstorm shares rain's palette
+	dw .sand
+	dw .cherry
+	assert_table_length NUM_OW_WEATHERS
+
+.rain
+	ld a, PAL_OW_RAIN
+	jr .use_ow_weather_pal
+
+.sand
+	ld a, PAL_OW_SAND
+	jr .use_ow_weather_pal
+
+.cherry
+	ld a, PAL_OW_PINK
+	; fallthrough
+.use_ow_weather_pal
+	ld [wNeededPalIndex], a
+	ld [wLoadedObjPal{d:PAL_OW_WEATHER}], a
+	ld de, wOBPals1 palette PAL_OW_WEATHER
+	jr CopySpritePal
+
+.snow
+; Snow is white rather than a MapObjectPals row, so byte-fill it and mark the
+; slot as holding no palette; the dynamic allocator must not tie it to a sprite.
+; The source marks wLoadedObjPal7 while PAL_OW_WEATHER is 6 (port guide bug #2),
+; which makes DoOverworldSnow re-farcall this every weather frame.
+	ld a, -1
+	ld [wLoadedObjPal{d:PAL_OW_WEATHER}], a ; wLoadedObjPal6 is in BANK(wXCoord)
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wOBPals1)
+	ldh [rSVBK], a
+	ld hl, wOBPals1 palette PAL_OW_WEATHER
+	ld bc, 1 palettes
+	ld a, $ff
+	rst ByteFill
+	ld hl, wPalFlags
+	bit NO_DYN_PAL_APPLY_F, [hl]
+	jr nz, .skip_apply
+	call ApplyOBPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+.skip_apply
+	pop af
+	ldh [rSVBK], a
+	ret
+
 CopyBGGreenToOBPal7:
 ; Some overworld effects (Fly leaves, Cut leaves, Cut trees, Headbutt trees)
 ; have hard-coded OB palette 7 in their OAM data.

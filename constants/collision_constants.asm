@@ -114,6 +114,7 @@ DEF COLL_DOWN_RIGHT_BUOY   EQU $c4 ; unused
 DEF COLL_DOWN_LEFT_BUOY    EQU $c5 ; unused
 DEF COLL_UP_RIGHT_BUOY     EQU $c6 ; unused
 DEF COLL_UP_LEFT_BUOY      EQU $c7 ; unused
+DEF COLL_CHERRY_LEAVES     EQU $d0 ; walkable; SpawnCherryBlossom drops petals from these
 DEF COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles
