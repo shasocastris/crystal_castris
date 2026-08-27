@@ -110,6 +110,14 @@ DEF NUM_MUSIC_SONGS EQU const_value
 DEF MUSIC_MAHOGANY_MART EQU $fc
 DEF MUSIC_RADIO_TOWER   EQU $fd
 
+; Orange Islands battle music. PLACEHOLDERS aliased to existing songs -- the
+; islands have no tracks of their own yet, and adding one means new song data
+; plus a MUSIC_* const, not just a name. Swapping in real music later is a
+; one-line change per entry, with no code changes in PlayBattleMusic.
+DEF MUSIC_ORANGE_WILD_BATTLE       EQU MUSIC_KANTO_WILD_BATTLE
+DEF MUSIC_ORANGE_WILD_BATTLE_NIGHT EQU MUSIC_JOHTO_WILD_BATTLE_NIGHT
+DEF MUSIC_ORANGE_TRAINER_BATTLE    EQU MUSIC_KANTO_TRAINER_BATTLE
+
 ; ExitPokegearRadio_HandleMusic uses these values
 DEF RESTART_MAP_MUSIC EQU $fe
 DEF ENTER_MAP_MUSIC   EQU $ff

@@ -54,14 +54,26 @@ PlayBattleMusic:
 
 	farcall RegionCheck
 	ld a, e
+	cp KANTO_REGION
+	jr z, .kantowild
 	and a
-	jr nz, .kantowild
+	jr nz, .orangewild
 
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr c, .done ; not NITE_F or EVE_F
+	jmp c, .done ; not NITE_F or EVE_F -- out of jr reach now
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
+	jmp .done
+
+.orangewild
+; The islands get a night variant like Johto's. Since M2 made NUM_DAYTIMES 4,
+; `cp NITE_F` covers evening as well as night.
+	ld de, MUSIC_ORANGE_WILD_BATTLE
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr c, .done ; not NITE_F or EVE_F
+	ld de, MUSIC_ORANGE_WILD_BATTLE_NIGHT
 	jr .done
 
 .kantowild
@@ -117,11 +129,17 @@ PlayBattleMusic:
 
 	farcall RegionCheck
 	ld a, e
+	cp KANTO_REGION
+	jr z, .kantotrainer
 	and a
-	jr nz, .kantotrainer
+	jr nz, .orangetrainer
 
 .johtotrainer
 	ld de, MUSIC_JOHTO_TRAINER_BATTLE
+	jr .done
+
+.orangetrainer
+	ld de, MUSIC_ORANGE_TRAINER_BATTLE
 	jr .done
 
 .kantotrainer

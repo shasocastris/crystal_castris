@@ -583,6 +583,7 @@ DexEntryScreen_MenuActionJumptable:
 	ld e, a
 	predef Pokedex_GetArea
 	call Pokedex_BlackOutBG
+	call Pokedex_ReloadDexGFX ; the AREA map overwrote $31-$4f with town map tiles
 	call DelayFrame
 	xor a
 	ldh [hBGMapMode], a
@@ -923,6 +924,13 @@ Pokedex_UpdateUnownMode:
 	ld a, DEXSTATE_OPTION_SCR
 	ld [wJumptableIndex], a
 	call DelayFrame
+	; fallthrough
+
+Pokedex_ReloadDexGFX:
+; Put the Pokedex's own tiles back at vTiles2 $31-$6a. Any screen that borrows
+; that VRAM has to call this on the way out: Unown mode always did, and the AREA
+; map now must too, because the Town Map tileset grew to 80 tiles and reaches
+; $4f -- it used to stop at $2f and miss the Pokedex entirely.
 	call Pokedex_CheckSGB
 	jr nz, .decompress
 	farjp LoadSGBPokedexGFX2

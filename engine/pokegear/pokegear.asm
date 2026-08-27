@@ -17,7 +17,9 @@ DEF PHONE_DISPLAY_HEIGHT EQU 4
 	const POKEGEARSTATE_JOHTOMAPJOYPAD  ; 4
 	const POKEGEARSTATE_KANTOMAPINIT    ; 5
 	const POKEGEARSTATE_KANTOMAPJOYPAD  ; 6
-	const POKEGEARSTATE_PHONEINIT       ; 7
+	const POKEGEARSTATE_ORANGEMAPINIT   ; 7
+	const POKEGEARSTATE_ORANGEMAPJOYPAD ; 8
+	const POKEGEARSTATE_PHONEINIT       ; 9
 	const POKEGEARSTATE_PHONEJOYPAD     ; 8
 	const POKEGEARSTATE_MAKEPHONECALL   ; 9
 	const POKEGEARSTATE_FINISHPHONECALL ; a
@@ -90,7 +92,7 @@ PokeGear:
 	xor a
 	ld [wJumptableIndex], a ; POKEGEARSTATE_CLOCKINIT
 	ld [wPokegearCard], a ; POKEGEARCARD_CLOCK
-	ld [wPokegearMapRegion], a ; JOHTO_REGION
+	ld [wPokegearBGMapBuffer], a ; first card renders into vBGMap0
 	ld [wUnusedPokegearByte], a
 	ld [wPokegearPhoneScrollPosition], a
 	ld [wPokegearPhoneCursorPosition], a
@@ -116,7 +118,7 @@ Pokegear_LoadGFX:
 	ld a, BANK(TownMapGFX)
 	call FarDecompress
 	ld hl, PokegearGFX
-	ld de, vTiles2 tile $30
+	ld de, vTiles2 tile $50
 	ld a, BANK(PokegearGFX)
 	call FarDecompress
 	ld hl, PokegearSpritesGFX
@@ -237,7 +239,7 @@ InitPokegearTilemap:
 	ldh [hBGMapMode], a
 	hlcoord 0, 0
 	ld bc, SCREEN_AREA
-	ld a, $4f
+	ld a, $6f
 	rst ByteFill
 	ld a, [wPokegearCard]
 	maskbits NUM_POKEGEAR_CARDS
@@ -252,9 +254,9 @@ InitPokegearTilemap:
 	call _hl_
 	call Pokegear_FinishTilemap
 	call TownMapPals
-	ld a, [wPokegearMapRegion]
+	ld a, [wPokegearBGMapBuffer]
 	and a
-	jr nz, .kanto_0
+	jr nz, .buffer1
 	xor a ; LOW(vBGMap0)
 	ldh [hBGMapAddress], a
 	ld a, HIGH(vBGMap0)
@@ -263,7 +265,7 @@ InitPokegearTilemap:
 	ld a, SCREEN_HEIGHT_PX
 	jr .finish
 
-.kanto_0
+.buffer1
 	xor a ; LOW(vBGMap1)
 	ldh [hBGMapAddress], a
 	ld a, HIGH(vBGMap1)
@@ -272,11 +274,11 @@ InitPokegearTilemap:
 	xor a
 .finish
 	ldh [hWY], a
-	; swap region maps
-	ld a, [wPokegearMapRegion]
-	maskbits NUM_REGIONS
+	; flip to the other BG map buffer for the next card
+	ld a, [wPokegearBGMapBuffer]
+	maskbits NUM_POKEGEAR_BGMAP_BUFFERS
 	xor 1
-	ld [wPokegearMapRegion], a
+	ld [wPokegearBGMapBuffer], a
 	ret
 
 .UpdateBGMap:
@@ -313,17 +315,8 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
-	jr z, .johto
-	cp KANTO_LANDMARK
-	jr nc, .kanto
-.johto
-	ld e, 0
-	jr .ok
-
-.kanto
-	ld e, 1
-.ok
+	call RegionForLandmark
+	ld e, a
 	call PokegearMap
 	ld a, $07
 	ld bc, SCREEN_WIDTH - 2
@@ -354,7 +347,7 @@ InitPokegearTilemap:
 
 .PlacePhoneBars:
 	hlcoord 17, 1
-	ld a, $3c
+	ld a, $5c
 	ld [hli], a
 	inc a
 	ld [hl], a
@@ -365,17 +358,17 @@ InitPokegearTilemap:
 	and a
 	ret nz
 	hlcoord 18, 2
-	ld [hl], $3f
+	ld [hl], $5f
 	ret
 
 Pokegear_FinishTilemap:
 	hlcoord 0, 0
 	ld bc, $8
-	ld a, $4f
+	ld a, $6f
 	rst ByteFill
 	hlcoord 0, 1
 	ld bc, $8
-	ld a, $4f
+	ld a, $6f
 	rst ByteFill
 	ld de, wPokegearFlags
 	ld a, [de]
@@ -388,22 +381,22 @@ Pokegear_FinishTilemap:
 	bit POKEGEAR_RADIO_CARD_F, a
 	call nz, .PlaceRadioIcon
 	hlcoord 0, 0
-	ld a, $46
+	ld a, $66
 	jr .PlacePokegearCardIcon
 
 .PlaceMapIcon:
 	hlcoord 2, 0
-	ld a, $40
+	ld a, $60
 	jr .PlacePokegearCardIcon
 
 .PlacePhoneIcon:
 	hlcoord 4, 0
-	ld a, $44
+	ld a, $64
 	jr .PlacePokegearCardIcon
 
 .PlaceRadioIcon:
 	hlcoord 6, 0
-	ld a, $42
+	ld a, $62
 .PlacePokegearCardIcon:
 	ld [hli], a
 	inc a
@@ -428,6 +421,8 @@ PokegearJumptable:
 	dw PokegearMap_JohtoMap
 	dw PokegearMap_Init
 	dw PokegearMap_KantoMap
+	dw PokegearMap_Init
+	dw PokegearMap_OrangeMap
 	dw PokegearPhone_Init
 	dw PokegearPhone_Joypad
 	dw PokegearPhone_MakePhoneCall
@@ -577,19 +572,16 @@ Pokegear_UpdateClock:
 .Eve:  db "EVE@"
 
 PokegearMap_CheckRegion:
+; The three map INIT states run in region order, two apart -- each is followed
+; by its JOYPAD state, which PokegearMap_Init reaches with inc [hl].
+	assert POKEGEARSTATE_KANTOMAPINIT == POKEGEARSTATE_JOHTOMAPINIT + 2, \
+		"the map states must stay two apart, in region order"
+	assert POKEGEARSTATE_ORANGEMAPINIT == POKEGEARSTATE_JOHTOMAPINIT + 4, \
+		"the map states must stay two apart, in region order"
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
-	jr z, .johto
-	cp KANTO_LANDMARK
-	jr nc, .kanto
-.johto
-	ld a, POKEGEARSTATE_JOHTOMAPINIT
-	jr .done
-	ret
-
-.kanto
-	ld a, POKEGEARSTATE_KANTOMAPINIT
-.done
+	call RegionForLandmark
+	add a
+	add POKEGEARSTATE_JOHTOMAPINIT
 	ld [wJumptableIndex], a
 	jmp ExitPokegearRadio_HandleMusic
 
@@ -606,6 +598,10 @@ PokegearMap_Init:
 	ld hl, wJumptableIndex
 	inc [hl]
 	ret
+
+PokegearMap_OrangeMap:
+	lb de, ORANGE_LANDMARK_LAST, ORANGE_LANDMARK
+	jr PokegearMap_ContinueMap
 
 PokegearMap_KantoMap:
 	call TownMap_GetKantoLandmarkLimits
@@ -748,7 +744,7 @@ PokegearMap_UpdateLandmarkName:
 	pop de
 	farcall TownMap_ConvertLineBreakCharacters
 	hlcoord 8, 0
-	ld [hl], $34
+	ld [hl], $54
 	ret
 
 PokegearMap_UpdateCursorPosition:
@@ -1806,9 +1802,17 @@ _TownMap:
 
 .dmg
 	ld a, [wTownMapPlayerIconLandmark]
-	cp KANTO_LANDMARK
-	jr nc, .kanto
-	lb de, KANTO_LANDMARK - 1, 1
+	call RegionForLandmark
+	cp ORANGE_REGION
+	jr z, .orange
+	and a
+	jr nz, .kanto
+	lb de, JOHTO_LANDMARK_LAST, JOHTO_LANDMARK
+	call .loop
+	jr .resume
+
+.orange
+	lb de, ORANGE_LANDMARK_LAST, ORANGE_LANDMARK
 	call .loop
 	jr .resume
 
@@ -1887,11 +1891,8 @@ _TownMap:
 
 .InitTilemap:
 	ld a, [wTownMapPlayerIconLandmark]
-	cp KANTO_LANDMARK
-	ld e, JOHTO_REGION
-	jr c, .okay_tilemap
-	ld e, KANTO_REGION
-.okay_tilemap
+	call RegionForLandmark
+	ld e, a
 	call PokegearMap
 	ld a, $07
 	ld bc, 6
@@ -1984,9 +1985,9 @@ PlayRadioStationPointers:
 	assert_table_length NUM_MAP_RADIO_STATIONS
 
 LoadStation_PokemonChannel:
-	call IsInJohto
+	call GetRegion
 	and a
-	jr nz, .kanto
+	jr nz, .kanto ; TODO: the Orange Islands share Kanto's programming for now
 	call UpdateTime
 	ld a, [wTimeOfDay]
 	and a
@@ -1997,15 +1998,17 @@ LoadStation_PokemonChannel:
 	jmp LoadStation_PlacesAndPeople
 
 PokegearMap:
+; e: which region's page to draw.
+; Read e BEFORE LoadTownMapGFX -- it does `ld de, vTiles2` and destroys it.
 	ld a, e
+	push af
+	call LoadTownMapGFX
+	pop af
 	and a
-	jr nz, .kanto
-	call LoadTownMapGFX
-	jmp FillJohtoMap
-
-.kanto
-	call LoadTownMapGFX
-	jmp FillKantoMap
+	jmp z, FillJohtoMap
+	cp KANTO_REGION
+	jmp z, FillKantoMap
+	jmp FillOrangeMap
 
 _FlyMap:
 	call ClearBGPalettes
@@ -2020,7 +2023,7 @@ _FlyMap:
 	farcall ClearSpriteAnims
 	call LoadTownMapGFX
 	ld de, FlyMapLabelBorderGFX
-	ld hl, vTiles2 tile $30
+	ld hl, vTiles2 tile $50
 	lb bc, BANK(FlyMapLabelBorderGFX), 6
 	call Request1bpp
 	call FlyMap
@@ -2047,7 +2050,14 @@ _FlyMap:
 	jr .exit
 
 .pressedA
-	ld a, [wTownMapPlayerIconLandmark]
+; Refuse a flypoint that has not been visited. The cursor can only sit on one
+; when nothing in the region is unlocked at all, since the starting value is
+; never checked against wVisitedSpawns -- without this, the default entry could
+; be flown to from a region the player has no flypoint in.
+	ld hl, wTownMapPlayerIconLandmark
+	call CheckIfVisitedFlypoint
+	jr z, .pressedB
+	ld a, [hl]
 	ld l, a
 	ld h, 0
 	add hl, hl
@@ -2083,7 +2093,17 @@ _FlyMap:
 	jr nz, .ScrollPrev
 	ret
 
+; Both scans give up after one full pass rather than retrying forever. With no
+; visited flypoint in [wStartFlypoint, wEndFlypoint] the original spun here with
+; the game still drawing frames, which reads as a freeze -- the hazard the note
+; above .KantoFlyMap describes. Stepping through the whole range returns the
+; cursor to where it started, so bailing out leaves it untouched.
 .ScrollNext:
+	ld a, d
+	sub e
+	inc a
+	ld b, a ; flypoints in range
+.NextLoop:
 	ld hl, wTownMapPlayerIconLandmark
 	ld a, [hl]
 	cp d
@@ -2094,10 +2114,17 @@ _FlyMap:
 .NotAtEndYet:
 	inc [hl]
 	call CheckIfVisitedFlypoint
-	jr z, .ScrollNext
-	jr .Finally
+	jr nz, .Finally
+	dec b
+	jr nz, .NextLoop
+	ret
 
 .ScrollPrev:
+	ld a, d
+	sub e
+	inc a
+	ld b, a ; flypoints in range
+.PrevLoop:
 	ld hl, wTownMapPlayerIconLandmark
 	ld a, [hl]
 	cp e
@@ -2108,7 +2135,11 @@ _FlyMap:
 .NotAtStartYet:
 	dec [hl]
 	call CheckIfVisitedFlypoint
-	jr z, .ScrollPrev
+	jr nz, .Finally
+	dec b
+	jr nz, .PrevLoop
+	ret
+
 .Finally:
 	call TownMapBubble
 	call WaitBGMap
@@ -2121,14 +2152,14 @@ TownMapBubble:
 
 ; Top-left corner
 	hlcoord 1, 0
-	ld a, $30
+	ld a, $50
 	ld [hli], a
 ; Top row
 	ld bc, 16
 	ld a, ' '
 	rst ByteFill
 ; Top-right corner
-	ld [hl], $31
+	ld [hl], $51
 	hlcoord 1, 1
 
 ; Middle row
@@ -2138,14 +2169,14 @@ TownMapBubble:
 
 ; Bottom-left corner
 	hlcoord 1, 2
-	ld a, $32
+	ld a, $52
 	ld [hli], a
 ; Bottom row
 	ld bc, 16
 	ld a, ' '
 	rst ByteFill
 ; Bottom-right corner
-	ld [hl], $33
+	ld [hl], $53
 
 ; Print "Where?"
 	hlcoord 2, 0
@@ -2155,7 +2186,7 @@ TownMapBubble:
 	call .Name
 ; Up/down arrows
 	hlcoord 18, 1
-	ld [hl], $34
+	ld [hl], $54
 	ret
 
 .Where:
@@ -2241,7 +2272,8 @@ FlyMap:
 	ld c, a
 	call GetWorldMapLocation
 .CheckRegion:
-; The first 46 locations are part of Johto. The rest are in Kanto.
+	cp ORANGE_LANDMARK
+	jr nc, .OrangeFlyMap
 	cp KANTO_LANDMARK
 	jr nc, .KantoFlyMap
 ; Johto fly map
@@ -2254,6 +2286,27 @@ FlyMap:
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap
+	call .MapHud
+	pop af
+	jmp TownMapPlayerIcon
+
+.OrangeFlyMap:
+; Standing in the Orange Islands always draws the Orange page, whether or not
+; anything there is unlocked yet -- which page you see and where you may fly are
+; separate questions. Kanto above deliberately keeps its old behaviour of
+; falling back to Johto's map, because that is how the player flies home.
+;
+; A fully locked region is safe here: .ScrollNext and .ScrollPrev give up after
+; one pass instead of spinning, and .pressedA refuses a flypoint that has not
+; been visited. The default cursor is the FIRST entry rather than Kanto's last,
+; so it lands on Valencia, the one the coord event on Valencia Island unlocks.
+	push af
+	ld a, ORANGE_FLYPOINT ; first Orange flypoint
+	ld [wStartFlypoint], a
+	ld [wTownMapPlayerIconLandmark], a ; first one is default (Valencia)
+	ld a, ORANGE_FLYPOINT_LAST ; last Orange flypoint
+	ld [wEndFlypoint], a
+	call FillOrangeMap
 	call .MapHud
 	pop af
 	jmp TownMapPlayerIcon
@@ -2275,7 +2328,7 @@ FlyMap:
 ; Kanto's map is only loaded if we've visited Indigo Plateau
 	ld a, KANTO_FLYPOINT ; first Kanto flypoint
 	ld [wStartFlypoint], a
-	ld a, NUM_FLYPOINTS - 1 ; last Kanto flypoint
+	ld a, KANTO_FLYPOINT_LAST ; last Kanto flypoint
 	ld [wEndFlypoint], a
 	ld [wTownMapPlayerIconLandmark], a ; last one is default (Indigo Plateau)
 ; Fill out the map
@@ -2326,13 +2379,12 @@ Pokedex_GetArea:
 	ld hl, vTiles0 tile $78
 	ld c, 4
 	call Request2bpp
-	call LoadTownMapGFX
-	call FillKantoMap
-	call .PlaceString_MonsNest
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
+; Only the starting page is drawn. The old code pre-rendered Johto into vBGMap0
+; and Kanto into vBGMap1 and flipped hWY between them, which is exactly why a
+; third page did not fit; pages are now drawn on demand into whichever buffer is
+; hidden. Also halves the time this screen takes to open.
+	ld e, JOHTO_REGION
+	call PokegearMap
 	call .PlaceString_MonsNest
 	call TownMapPals
 	hlbgcoord 0, 0
@@ -2380,28 +2432,73 @@ Pokedex_GetArea:
 	jr nz, .right
 	ret
 
+; Pages skip over any that are locked, so the islands do not sit behind Kanto's
+; Hall of Fame gate -- they have nothing to do with each other.
 .left
-	ldh a, [hWY]
-	cp SCREEN_HEIGHT_PX
-	ret z
-	call ClearSprites
-	ld a, SCREEN_HEIGHT_PX
-	ldh [hWY], a
-	xor a ; JOHTO_REGION
-	jr .GetAndPlaceNest
+	ld a, [wTownMapCursorLandmark] ; the region on screen, not a landmark
+	ld b, a
+.left_loop
+	ld a, b
+	and a
+	ret z ; already on the first page
+	dec b
+	call .PageAvailable
+	jr nc, .left_loop
+	ld a, b
+	jr .ShowRegionPage
 
 .right
+	ld a, [wTownMapCursorLandmark]
+	ld b, a
+.right_loop
+	inc b
+	ld a, b
+	cp NUM_REGIONS
+	ret nc ; past the last page
+	call .PageAvailable
+	jr nc, .right_loop
+	ld a, b
+
+.ShowRegionPage:
+; a: region to draw. Renders into vBGMap0, which is the buffer the caller has on
+; screen, and leaves hWY and hBGMapAddress exactly as it found them -- the
+; Pokedex shows vBGMap1 through the window and is particular about both.
+; ClearSprites ends in `xor a` and a ByteFill, so it returns a = 0. The region
+; has to be taken out of a BEFORE that call, not after -- calling it first is
+; what made every page redraw Johto and store 0 as the current region.
+	ld e, a
+	push af
+	call ClearSprites
+	call PokegearMap
+	call .PlaceString_MonsNest
+	call TownMapPals
+	hlbgcoord 0, 0
+	call TownMapBGUpdate
+	pop af
+	jr .GetAndPlaceNest
+
+.PageAvailable:
+; b: region. Returns carry if that page can be shown.
+; Only Kanto is gated, and only as it always has been. The Orange page carried a
+; "not until you have been to Valencia" gate for a while; that was invented here
+; rather than asked for, and it hid the page from its own play-test.
+	ld a, b
+	cp KANTO_REGION
+	jr z, .kanto_page
+	scf
+	ret
+
+.kanto_page
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	ret z
-	ldh a, [hWY]
+	jr z, .locked
+	scf
+	ret
+
+.locked
+; `bit` leaves carry alone and the `cp` above set it, so clear it deliberately.
 	and a
-	ret z
-	call ClearSprites
-	xor a
-	ldh [hWY], a
-	ld a, KANTO_REGION
-	jr .GetAndPlaceNest
+	ret
 
 .BlinkNestIcons:
 	ldh a, [hVBlankCounter]
@@ -2533,21 +2630,11 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp LANDMARK_FAST_SHIP
-	jr z, .johto
-	cp KANTO_LANDMARK
-	jr c, .johto
-; kanto
-	ld a, [wTownMapCursorLandmark]
-	and a
-	jr z, .clear
-	jr .ok
-
-.johto
-	ld a, [wTownMapCursorLandmark]
-	and a
+	call RegionForLandmark
+	ld b, a
+	ld a, [wTownMapCursorLandmark] ; the region on screen
+	cp b
 	jr nz, .clear
-.ok
 	and a
 	ret
 
@@ -2604,6 +2691,10 @@ FillJohtoMap:
 
 FillKantoMap:
 	ld de, KantoMap
+	jr FillTownMap
+
+FillOrangeMap:
+	ld de, OrangeMap
 FillTownMap:
 	hlcoord 0, 0
 .loop
@@ -2624,8 +2715,8 @@ TownMapPals:
 ; Current tile
 	ld a, [hli]
 	push hl
-; The palette map covers tiles $00 to $5f; $60 and above use palette 0
-	cp $60
+; The palette map covers tiles $00 to $7f; $80 and above use palette 0
+	cp $80
 	jr nc, .pal0
 
 ; The palette data is condensed to nybbles, least-significant first.
@@ -2741,7 +2832,7 @@ TownMapPlayerIcon:
 LoadTownMapGFX:
 	ld hl, TownMapGFX
 	ld de, vTiles2
-	lb bc, BANK(TownMapGFX), 48
+	lb bc, BANK(TownMapGFX), 80
 	jmp DecompressRequest2bpp
 
 JohtoMap:
@@ -2749,6 +2840,11 @@ INCBIN "gfx/pokegear/johto.bin"
 
 KantoMap:
 INCBIN "gfx/pokegear/kanto.bin"
+
+OrangeMap:
+; Placeholder art built from the existing 48 shared tiles -- see
+; docs/townmap/make_orange_placeholder.py and orange_town_map_art_spec.md.
+INCBIN "gfx/pokegear/orange.bin"
 
 PokedexNestIconGFX:
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"

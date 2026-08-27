@@ -2243,3 +2243,18 @@ LoadMapTileset::
 	pop bc
 	pop hl
 	ret
+
+GetWildMonByte::
+; Read [hl] from the bank the matched wild table lives in.
+; MUST live in home: it pages that bank into $4000-$7fff, so a copy in ROMX
+; would swap out its own code the moment the table is not in its own bank.
+	ldh a, [hROMBank]
+	push af
+	ld a, [wWildMonBank]
+	rst Bankswitch
+	ld a, [hl]
+	ld [wWildMonScratch], a
+	pop af
+	rst Bankswitch
+	ld a, [wWildMonScratch]
+	ret

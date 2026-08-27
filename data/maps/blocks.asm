@@ -992,4 +992,19 @@ PewterMuseum1F_Blocks:
 PewterMuseum2F_Blocks:
 	INCBIN "maps/PewterMuseum2F.ablk"
 
+ValenciaPort_Blocks:
+	INCBIN "maps/ValenciaPort.ablk"
+
+ValenciaIsland_Blocks:
+	INCBIN "maps/ValenciaIsland.ablk"
+
+ShamoutiPassage_Blocks:
+	INCBIN "maps/ShamoutiPassage.ablk"
+
+ShamoutiIsland_Blocks:
+	INCBIN "maps/ShamoutiIsland.ablk"
+
+ShamoutiCave_Blocks:
+	INCBIN "maps/ShamoutiCave.ablk"
+
 ENDSECTION

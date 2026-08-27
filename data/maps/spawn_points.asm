@@ -39,6 +39,9 @@ SpawnPoints:
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
 	spawn FAST_SHIP_CABINS_SW_SSW_NW,  6,  2
 
+	spawn VALENCIA_ISLAND,             9,  6
+	spawn SHAMOUTI_ISLAND,            16, 19
+
 	spawn N_A,                        -1, -1
 
 	assert_table_length NUM_SPAWNS + 1

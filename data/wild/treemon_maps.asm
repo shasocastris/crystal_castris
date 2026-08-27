@@ -38,6 +38,7 @@ TreeMonMaps:
 	treemon_map BLACKTHORN_CITY,           TREEMON_SET_NONE
 	treemon_map SILVER_CAVE_OUTSIDE,       TREEMON_SET_NONE
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
+	treemon_map SHAMOUTI_ISLAND,           TREEMON_SET_ORANGE
 	db -1
 
 RockMonMaps:
@@ -46,4 +47,5 @@ RockMonMaps:
 	treemon_map ROUTE_40,                  TREEMON_SET_ROCK
 	treemon_map DARK_CAVE_VIOLET_ENTRANCE, TREEMON_SET_ROCK
 	treemon_map SLOWPOKE_WELL_B1F,         TREEMON_SET_ROCK
+	treemon_map SHAMOUTI_CAVE,             TREEMON_SET_ROCK
 	db -1

@@ -43,37 +43,37 @@ GetLandmarkName::
 INCLUDE "data/maps/landmarks.asm"
 
 RegionCheck::
-; Checks if the player is in Kanto or Johto.
-; If in Johto, returns 0 in e.
-; If in Kanto, returns 1 in e.
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	cp LANDMARK_FAST_SHIP ; S.S. Aqua
-	jr z, .johto
-	cp LANDMARK_SPECIAL
-	jr nz, .checkagain
+; Return the region the player is in, in e:
+; JOHTO_REGION, KANTO_REGION or ORANGE_REGION.
+;
+; This is NOT the same rule as GetRegion, and the difference is deliberate. The
+; Johto League and the border routes -- LANDMARK_VICTORY_ROAD upward -- sit
+; inside the Kanto landmark block but belong to Johto for battle music and for
+; regional evolutions. GetRegion cannot say the same, because those maps' wild
+; data lives in KantoGrassWildMons, so the two answers must stay different.
+	assert LANDMARK_FAST_SHIP >= LANDMARK_VICTORY_ROAD, \
+		"the S.S.AQUA must sit in the Johto range for the Victory Road check to cover it"
+	assert ORANGE_LANDMARK > LANDMARK_FAST_SHIP, \
+		"the Orange block must be the highest landmark block"
+	call GetPlayerLandmark
 
-; In a special map, get the backup map group / map id
-	ld a, [wBackupMapGroup]
-	ld b, a
-	ld a, [wBackupMapNumber]
-	ld c, a
-	call GetWorldMapLocation
+	cp ORANGE_LANDMARK
+	jr nc, .orange
 
-.checkagain
 	cp KANTO_LANDMARK
 	jr c, .johto
 
-; Victory Road area is considered to be Johto.
 	cp LANDMARK_VICTORY_ROAD
 	jr c, .kanto
 
 .johto
 	ld e, JOHTO_REGION
 	ret
+
 .kanto
 	ld e, KANTO_REGION
+	ret
+
+.orange
+	ld e, ORANGE_REGION
 	ret

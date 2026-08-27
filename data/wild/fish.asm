@@ -22,6 +22,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup 50 percent + 1, .Orange_Old,           .Orange_Good,           .Orange_Super
 	assert_table_length NUM_FISHGROUPS
 
 .Shore_Old:
@@ -206,6 +207,21 @@ FishGroups:
 	dbbw  70 percent,     7, TIME_GROUP
 	dbbw  90 percent + 1, 40, GYARADOS
 	dbbw 100 percent,     40, REMORAID
+
+.Orange_Old:
+	dbbw  70 percent + 1, 15, MAGIKARP
+	dbbw  85 percent + 1, 15, TENTACOOL
+	dbbw 100 percent,     15, KRABBY
+.Orange_Good:
+	dbbw  35 percent,     25, TENTACOOL
+	dbbw  70 percent,     25, KRABBY
+	dbbw  90 percent + 1, 25, HORSEA
+	dbbw 100 percent,     0, TIME_GROUP
+.Orange_Super:
+	dbbw  40 percent,     40, TENTACRUEL
+	dbbw  70 percent,     1, TIME_GROUP
+	dbbw  90 percent + 1, 40, KINGLER
+	dbbw 100 percent,     40, LANTURN
 
 TimeFishGroups:
 	;     day             nite

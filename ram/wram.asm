@@ -1266,7 +1266,7 @@ wCreditsLYOverride:: db
 NEXTU
 ; pokegear
 wPokegearCard:: db
-wPokegearMapRegion:: db
+wPokegearBGMapBuffer:: db ; vBGMap0 or vBGMap1 -- not a region, see NUM_POKEGEAR_BGMAP_BUFFERS
 wUnusedPokegearByte:: db
 
 NEXTU
@@ -1541,6 +1541,17 @@ wDaysSince:: db
 
 wUsingHMItem:: db
 wTempLoopCounter:: db
+
+; Bank of the wild table LoadWildMonDataPointer matched. ChooseWildEncounter reads
+; GrassMonProbTable and the matched entry from different banks, so the entry's bank
+; must travel with the pointer. These live in WRAM0 deliberately: WRAMX bank 1 holds
+; the saved block, and adding two bytes there shifted wSeason off $dbf0 -- a silent
+; save-format break.
+wWildMonBank:: db
+wWildMonScratch:: db ; GetWildMonByte needs a byte that survives a bankswitch
+wNestScanCount:: db  ; FindNestInTable: mons per map entry
+wNestScanStride:: db ; FindNestInTable: bytes per map entry
+wNestRegion:: db     ; FindNest: the region whose page the dex AREA map is showing
 
 
 SECTION "16-bit WRAM home data", WRAM0
@@ -2789,7 +2800,7 @@ wFastShip1FSceneID::                              db
 wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
-wMobileBattleRoomSceneID::                        db
+wValenciaPortSceneID::                            db ; M3; was wMobileBattleRoomSceneID
 wVioletCitySceneID::                              db
 wGlitterAndGraceSceneID::                         db
 wRoute39SceneID::                                 db

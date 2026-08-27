@@ -59,53 +59,64 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_PEWTER_CITY       ; 33
 	const LANDMARK_ROUTE_3           ; 34
 	const LANDMARK_MT_MOON           ; 35
-	const LANDMARK_CERULEAN_CAVE     ; 35
-	const LANDMARK_ROUTE_4           ; 36
-	const LANDMARK_CERULEAN_CITY     ; 37
-	const LANDMARK_ROUTE_24          ; 38
-	const LANDMARK_ROUTE_25          ; 39
-	const LANDMARK_ROUTE_5           ; 3a
-	const LANDMARK_UNDERGROUND_PATH  ; 3b
-	const LANDMARK_ROUTE_6           ; 3c
-	const LANDMARK_VERMILION_CITY    ; 3d
-	const LANDMARK_DIGLETTS_CAVE     ; 3e
-	const LANDMARK_ROUTE_7           ; 3f
-	const LANDMARK_ROUTE_8           ; 40
-	const LANDMARK_ROUTE_9           ; 41
-	const LANDMARK_ROCK_TUNNEL       ; 42
-	const LANDMARK_ROUTE_10          ; 43
-	const LANDMARK_POWER_PLANT       ; 44
-	const LANDMARK_LAVENDER_TOWN     ; 45
-	const LANDMARK_LAV_RADIO_TOWER   ; 46
-	const LANDMARK_CELADON_CITY      ; 47
-	const LANDMARK_SAFFRON_CITY      ; 48
-	const LANDMARK_ROUTE_11          ; 49
-	const LANDMARK_ROUTE_12          ; 4a
-	const LANDMARK_ROUTE_13          ; 4b
-	const LANDMARK_ROUTE_14          ; 4c
-	const LANDMARK_ROUTE_15          ; 4d
-	const LANDMARK_ROUTE_16          ; 4e
-	const LANDMARK_ROUTE_17          ; 4f
-	const LANDMARK_ROUTE_18          ; 50
-	const LANDMARK_FUCHSIA_CITY      ; 51
-	const LANDMARK_ROUTE_19          ; 52
-	const LANDMARK_ROUTE_20          ; 53
-	const LANDMARK_SEAFOAM_ISLANDS   ; 54
-	const LANDMARK_CINNABAR_ISLAND   ; 55
-	const LANDMARK_ROUTE_21          ; 56
-	const LANDMARK_ROUTE_22          ; 57
-	const LANDMARK_VICTORY_ROAD      ; 58
-	const LANDMARK_ROUTE_23          ; 59
-	const LANDMARK_INDIGO_PLATEAU    ; 5a
-	const LANDMARK_ROUTE_26          ; 5b
-	const LANDMARK_ROUTE_27          ; 5c
-	const LANDMARK_BLACKTHORN_PASS   ; 5d
-	const LANDMARK_TOHJO_FALLS       ; 5e
-	const LANDMARK_ROUTE_28          ; 5f
+	const LANDMARK_CERULEAN_CAVE     ; 36
+	const LANDMARK_ROUTE_4           ; 37
+	const LANDMARK_CERULEAN_CITY     ; 38
+	const LANDMARK_ROUTE_24          ; 39
+	const LANDMARK_ROUTE_25          ; 3a
+	const LANDMARK_ROUTE_5           ; 3b
+	const LANDMARK_UNDERGROUND_PATH  ; 3c
+	const LANDMARK_ROUTE_6           ; 3d
+	const LANDMARK_VERMILION_CITY    ; 3e
+	const LANDMARK_DIGLETTS_CAVE     ; 3f
+	const LANDMARK_ROUTE_7           ; 40
+	const LANDMARK_ROUTE_8           ; 41
+	const LANDMARK_ROUTE_9           ; 42
+	const LANDMARK_ROCK_TUNNEL       ; 43
+	const LANDMARK_ROUTE_10          ; 44
+	const LANDMARK_POWER_PLANT       ; 45
+	const LANDMARK_LAVENDER_TOWN     ; 46
+	const LANDMARK_LAV_RADIO_TOWER   ; 47
+	const LANDMARK_CELADON_CITY      ; 48
+	const LANDMARK_SAFFRON_CITY      ; 49
+	const LANDMARK_ROUTE_11          ; 4a
+	const LANDMARK_ROUTE_12          ; 4b
+	const LANDMARK_ROUTE_13          ; 4c
+	const LANDMARK_ROUTE_14          ; 4d
+	const LANDMARK_ROUTE_15          ; 4e
+	const LANDMARK_ROUTE_16          ; 4f
+	const LANDMARK_ROUTE_17          ; 50
+	const LANDMARK_ROUTE_18          ; 51
+	const LANDMARK_FUCHSIA_CITY      ; 52
+	const LANDMARK_ROUTE_19          ; 53
+	const LANDMARK_ROUTE_20          ; 54
+	const LANDMARK_SEAFOAM_ISLANDS   ; 55
+	const LANDMARK_CINNABAR_ISLAND   ; 56
+	const LANDMARK_ROUTE_21          ; 57
+	const LANDMARK_ROUTE_22          ; 58
+	const LANDMARK_VICTORY_ROAD      ; 59
+	const LANDMARK_ROUTE_23          ; 5a
+	const LANDMARK_INDIGO_PLATEAU    ; 5b
+	const LANDMARK_ROUTE_26          ; 5c
+	const LANDMARK_ROUTE_27          ; 5d
+	const LANDMARK_BLACKTHORN_PASS   ; 5e
+	const LANDMARK_TOHJO_FALLS       ; 5f
+	const LANDMARK_ROUTE_28          ; 60
 DEF KANTO_LANDMARK_LAST EQU const_value - 1
 
 DEF OTHER_LANDMARK EQU const_value
-	const LANDMARK_FAST_SHIP         ; 60
+	const LANDMARK_FAST_SHIP         ; 61
+
+; Orange Islands (M3). Deliberately placed AFTER LANDMARK_FAST_SHIP rather than
+; after KANTO_LANDMARK_LAST: inserting there would shift FAST_SHIP from $60, and
+; landmark ids are stored in CaughtData, which is saved. Appending shifts nothing.
+; Being the highest block also lets RegionCheck range-check it with one `cp`.
+DEF ORANGE_LANDMARK EQU const_value
+	const LANDMARK_VALENCIA_ISLAND   ; 62
+	const LANDMARK_SHAMOUTI_PASSAGE  ; 63
+	const LANDMARK_SHAMOUTI_ISLAND   ; 64
+	const LANDMARK_SHAMOUTI_CAVE     ; 65
+DEF ORANGE_LANDMARK_LAST EQU const_value - 1
 
 DEF NUM_LANDMARKS EQU const_value
 
@@ -118,4 +129,12 @@ DEF NUM_LANDMARKS EQU const_value
 	const_def
 	const JOHTO_REGION ; 0
 	const KANTO_REGION ; 1
+	const ORANGE_REGION ; 2
 DEF NUM_REGIONS EQU const_value
+
+; wPokegearBGMapBuffer is a BG map double-buffer index, not a region -- it was
+; called wPokegearMapRegion, which is why this looks like it should be
+; NUM_REGIONS. Every Pokegear card init renders into vBGMap0 or vBGMap1, shows
+; it with hWY, and flips this so the next card lands in the other one. There are
+; exactly two BG maps, so this stays 2 however many regions exist.
+DEF NUM_POKEGEAR_BGMAP_BUFFERS EQU 2

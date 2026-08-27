@@ -728,3 +728,17 @@ ENDM
 	map_attributes PokemonMansion, POKEMON_MANSION, $00, 0
 	map_attributes PewterMuseum1F, PEWTER_MUSEUM_1F, $00, 0
 	map_attributes PewterMuseum2F, PEWTER_MUSEUM_2F, $00, 0
+
+	map_attributes ValenciaPort, VALENCIA_PORT, $0a, 0
+
+	map_attributes ValenciaIsland, VALENCIA_ISLAND, $05, EAST
+	connection east, ShamoutiPassage, SHAMOUTI_PASSAGE, -12
+
+	map_attributes ShamoutiPassage, SHAMOUTI_PASSAGE, $05, NORTH | WEST
+	connection north, ShamoutiIsland, SHAMOUTI_ISLAND, -4
+	connection west, ValenciaIsland, VALENCIA_ISLAND, 12
+
+	map_attributes ShamoutiIsland, SHAMOUTI_ISLAND, $35, SOUTH
+	connection south, ShamoutiPassage, SHAMOUTI_PASSAGE, 4
+
+	map_attributes ShamoutiCave, SHAMOUTI_CAVE, $09, 0

@@ -7,7 +7,7 @@ LoadWildMonData:
 	jr nc, .got_rate
 	inc hl
 	inc hl
-	ld a, [hl]
+	call GetWildMonByte
 .got_rate
 	ld hl, wMornEncounterRate
 	ld [hli], a
@@ -19,7 +19,7 @@ LoadWildMonData:
 	jr nc, .no_copy
 	inc hl
 	inc hl
-	ld a, [hl]
+	call GetWildMonByte
 .no_copy
 	ld [wWaterEncounterRate], a
 	ret
@@ -33,8 +33,10 @@ GetTimeOfDayNotEve:
 
 FindNest:
 ; Parameters:
-; e: 0 = Johto, 1 = Kanto
+; e: JOHTO_REGION, KANTO_REGION or ORANGE_REGION
 ; wNamedObjectIndex: species
+	ld a, e
+	ld [wNestRegion], a ; stash it: the decoord below overwrites e
 	hlcoord 0, 0
 	ld bc, SCREEN_AREA
 	xor a
@@ -43,86 +45,125 @@ FindNest:
 	call GetPokemonIndexFromID
 	ld b, h
 	ld c, l
-	ld a, e
-	and a
-	jr nz, .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
-	call .FindGrass
-	ld hl, JohtoWaterWildMons
-	call .FindWater
-	call .RoamMon1
-	jmp .RoamMon2
-
-.kanto
-	decoord 0, 0
-	ld hl, KantoGrassWildMons
-	call .FindGrass
-	ld hl, KantoWaterWildMons
-	jr .FindWater
-
-.FindGrass:
-	ld a, [hl]
-	cp -1
-	ret z
+; The Orange tables are not in this bank, so the scan reads every table byte
+; through GetWildMonByte rather than directly. Slower, but this runs once when
+; the AREA screen opens, not per frame.
+	push de
 	push bc
-	push hl
-	; use the math buffers as storage, since we're not doing any math
-	ld a, [hli]
-	ldh [hMathBuffer], a
-	ld a, [hli]
-	ldh [hMathBuffer + 1], a
-	inc hl ; skip the encounter rate
-	ld a, NUM_GRASSMON * 3
-	call .SearchMapForMon
-	jr nc, .next_grass
+	ld a, [wNestRegion]
+	ld hl, GrassWildmonTables
+	call _WildmonTableForRegion
+	pop bc
+	pop de
+	call _FindNestGrass
+	push de
+	push bc
+	ld a, [wNestRegion]
+	ld hl, WaterWildmonTables
+	call _WildmonTableForRegion
+	pop bc
+	pop de
+	call _FindNestWater
+	ld a, [wNestRegion]
+	and a
+	ret nz ; roamers are Johto-only
+	call .RoamMon1
+	jr .RoamMon2
+
+.RoamMon1:
+	ld a, [wRoamMon1Species]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	ret nz
+	ld a, [wRoamMon1MapGroup]
+	ld b, a
+	ld a, [wRoamMon1MapNumber]
+	ld c, a
+	call AppendNest
+	ret nc
 	ld [de], a
 	inc de
+	ret
 
-.next_grass
-	pop hl
-	ld bc, GRASS_WILDDATA_LENGTH
-	add hl, bc
-	pop bc
-	jr .FindGrass
+.RoamMon2:
+	ld a, [wRoamMon2Species]
+	ld b, a
+	ld a, [wNamedObjectIndex]
+	cp b
+	ret nz
+	ld a, [wRoamMon2MapGroup]
+	ld b, a
+	ld a, [wRoamMon2MapNumber]
+	ld c, a
+	call AppendNest
+	ret nc
+	ld [de], a
+	inc de
+	ret
 
-.FindWater:
-	ld a, [hl]
+_FindNestGrass:
+; hl: a grass table in the bank named by wWildMonBank; de: output; bc: species
+	ld a, NUM_GRASSMON * 3
+	ld [wNestScanCount], a
+	ld a, GRASS_WILDDATA_LENGTH
+	jr _FindNestInTable
+
+_FindNestWater:
+	ld a, NUM_WATERMON
+	ld [wNestScanCount], a
+	ld a, WATER_WILDDATA_LENGTH
+_FindNestInTable:
+; One loop for both, parameterised by mons-per-entry and entry stride. They were
+; two near-identical copies; merging them pays for the far reads below.
+	ld [wNestScanStride], a
+.loop
+	call GetWildMonByte
 	cp -1
 	ret z
 	push bc
 	push hl
 	; use the math buffers as storage, since we're not doing any math
-	ld a, [hli]
+	call GetWildMonByte
 	ldh [hMathBuffer], a
-	ld a, [hli]
+	inc hl
+	call GetWildMonByte
 	ldh [hMathBuffer + 1], a
 	inc hl
-	ld a, NUM_WATERMON
+	inc hl ; skip the encounter rate
+	ld a, [wNestScanCount]
 	call .SearchMapForMon
-	jr nc, .next_water
+	jr nc, .next
 	ld [de], a
 	inc de
 
-.next_water
+.next
 	pop hl
-	ld bc, WATER_WILDDATA_LENGTH
+	ld a, [wNestScanStride]
+	ld c, a
+	ld b, 0
 	add hl, bc
 	pop bc
-	jr .FindWater
+	jr .loop
 
 .SearchMapForMon:
 	inc hl
 .ScanMapLoop:
+; The original compared the low byte and read the high one before branching,
+; because `ld a, [hli]` leaves flags alone. GetWildMonByte does not, so the
+; low-byte result has to be acted on before the second read.
 	push af
-	ld a, [hli]
+	call GetWildMonByte
+	inc hl
 	cp c
-	ld a, [hli]
 	jr nz, .next_mon
+	call GetWildMonByte
 	cp b
 	jr z, .found
 .next_mon
-	inc hl
+	inc hl ; past the species high byte
+	inc hl ; past the next level byte
 	pop af
 	dec a
 	jr nz, .ScanMapLoop
@@ -136,7 +177,8 @@ FindNest:
 	ldh a, [hMathBuffer + 1]
 	ld c, a
 
-.AppendNest:
+AppendNest:
+; b, c: map group and number. Appends its landmark unless already present.
 	push de
 	call GetWorldMapLocation
 	ld c, a
@@ -158,38 +200,6 @@ FindNest:
 .found_nest
 	pop de
 	and a
-	ret
-
-.RoamMon1:
-	ld a, [wRoamMon1Species]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	ret nz
-	ld a, [wRoamMon1MapGroup]
-	ld b, a
-	ld a, [wRoamMon1MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
-	ret
-
-.RoamMon2:
-	ld a, [wRoamMon2Species]
-	ld b, a
-	ld a, [wNamedObjectIndex]
-	cp b
-	ret nz
-	ld a, [wRoamMon2MapGroup]
-	ld b, a
-	ld a, [wRoamMon2MapNumber]
-	ld c, a
-	call .AppendNest
-	ret nc
-	ld [de], a
-	inc de
 	ret
 
 TryWildEncounter::
@@ -273,7 +283,7 @@ ApplyCleanseTagEffectOnEncounterRate::
 
 ChooseWildEncounter:
 	call LoadWildMonDataPointer
-	jr nc, .nowildbattle
+	jmp nc, .nowildbattle ; out of jr reach
 	call CheckEncounterRoamMon
 	jr c, .startwildbattle
 
@@ -312,8 +322,20 @@ ChooseWildEncounter:
 	ld b, 0
 	pop hl
 	add hl, bc ; this selects our mon
-	ld a, [hli]
+; The prob table above lives in this bank; the entry may not. Everything the
+; entry is read for is the three bytes below, so switch only around them.
+; Read all three bytes up front through GetWildMonByte. The old code paged the
+; data bank in and held it across everything below -- which only worked while
+; every table shared this bank, because paging in another one swaps out this
+; very code.
+	call GetWildMonByte
 	ld b, a
+	inc hl
+	call GetWildMonByte
+	ld c, a
+	inc hl
+	call GetWildMonByte
+	push af
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
 	ld a, [wBattleType]
 	cp BATTLETYPE_SUICUNE
@@ -337,9 +359,9 @@ ChooseWildEncounter:
 	ld a, b
 	ld [wCurPartyLevel], a
 
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
+	pop af
+	ld h, a ; species index high byte
+	ld l, c
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
@@ -413,37 +435,75 @@ LoadWildMonDataPointer:
 
 _GrassWildmonLookup:
 	ld hl, SwarmGrassWildMons
+	ld a, BANK(SwarmGrassWildMons)
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
 	call _SeasonGrassWildmonCheck
 	ret c
-	ld hl, JohtoGrassWildMons
-	ld de, KantoGrassWildMons
-	call _JohtoWildmonCheck
+	ld hl, GrassWildmonTables
+	call _RegionWildmonTable
 	ld bc, GRASS_WILDDATA_LENGTH
-	jr _NormalWildmonOK
+	jmp _NormalWildmonOK ; out of jr reach, as the note by the season includes warns
 
 _WaterWildmonLookup:
 	ld hl, SwarmWaterWildMons
+	ld a, BANK(SwarmWaterWildMons)
+	ld [wWildMonBank], a
 	ld bc, WATER_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
 	call _SeasonWaterWildmonCheck
 	ret c
-	ld hl, JohtoWaterWildMons
-	ld de, KantoWaterWildMons
-	call _JohtoWildmonCheck
+	ld hl, WaterWildmonTables
+	call _RegionWildmonTable
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
-_JohtoWildmonCheck:
-	call IsInJohto
-	and a
-	ret z
-	ld h, d
-	ld l, e
+_RegionWildmonTable:
+; hl: a NUM_REGIONS-entry table of `db BANK(table) / dw table`.
+; Returns the current region's table in hl and stores its bank in wWildMonBank.
+;
+; The bank is per entry rather than shared because the Orange tables do NOT live
+; in $0a with the Johto and Kanto ones -- freeing space there to fit them is the
+; operation that re-packs half the ROM. See the note by the season includes.
+	call GetRegion
+_WildmonTableForRegion:
+; Same, for a region the caller names rather than the one the player is in.
+; a: region
+	ld [wNestRegion], a
+	ld e, a
+	ld d, 0
+	add hl, de
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld [wWildMonBank], a
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 	ret
+
+MACRO wildmon_table
+	db BANK(\1)
+	dw \1
+ENDM
+
+GrassWildmonTables:
+; entries correspond to *_REGION constants
+	table_width 3
+	wildmon_table JohtoGrassWildMons
+	wildmon_table KantoGrassWildMons
+	wildmon_table OrangeGrassWildMons
+	assert_table_length NUM_REGIONS
+
+WaterWildmonTables:
+	table_width 3
+	wildmon_table JohtoWaterWildMons
+	wildmon_table KantoWaterWildMons
+	wildmon_table OrangeWaterWildMons
+	assert_table_length NUM_REGIONS
 
 _SwarmWildmonCheck:
 	call CopyCurrMapDE
@@ -497,19 +557,22 @@ CopyCurrMapDE:
 
 LookUpGrassJohtoWildmons::
 	ld hl, JohtoGrassWildMons
+	ld a, BANK(JohtoGrassWildMons)
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 LookUpWildmonsForMapDE:
+; Reads through GetWildMonByte, not directly: the table may be the Orange one in
+; bank $75. Every caller must set wWildMonBank first.
 .loop
 	push hl
-	ld a, [hl]
-	inc a
+	call GetWildMonByte
+	cp -1
 	jr z, .nope
-	ld a, d
-	cp [hl]
+	cp d
 	jr nz, .next
 	inc hl
-	ld a, e
-	cp [hl]
+	call GetWildMonByte
+	cp e
 	jr z, .yup
 
 .next
@@ -825,6 +888,8 @@ GetCallerRouteWildGrassMons:
 	ld d, b
 	ld e, c
 	ld hl, JohtoGrassWildMons
+	ld a, BANK(JohtoGrassWildMons) ; both tables share it
+	ld [wWildMonBank], a
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .found
@@ -1028,11 +1093,16 @@ INCLUDE "data/wild/kanto_water.asm"
 ; swarm check was set up with.
 _SeasonGrassWildmonCheck:
 	ld hl, SeasonGrassTables
+	ld a, BANK(SpringGrassWildMons)
 	jr _SeasonWildmonCheck
 
 _SeasonWaterWildmonCheck:
 	ld hl, SeasonWaterTables
+	ld a, BANK(SpringWaterWildMons)
 _SeasonWildmonCheck:
+; a: bank the four seasonal tables share. If a season's table ever moves to its
+; own bank, SeasonGrassTables must carry a bank per entry instead.
+	ld [wWildMonBank], a
 	ld a, [wSeason]
 	maskbits NUM_SEASONS ; wSeason gets poked by hand in testing; never index off the end
 	add a
@@ -1060,5 +1130,12 @@ SeasonWaterTables:
 
 INCLUDE "data/wild/swarm_grass.asm"
 INCLUDE "data/wild/swarm_water.asm"
+
+; NOTE: moving these out of bank $0a works -- wWildMonBank makes the lookup
+; bank-independent -- but freeing space in $0a makes rgblink re-pack 32 sections
+; across banks $08-$0e. That coincided with map-load corruption on 2026-08-22 and
+; is unproven either way, so the move is held back. Orange Islands wild data should
+; go in a NEW section in an empty bank, which adds rather than frees and so should
+; not trigger a re-pack.
 INCLUDE "data/wild/season_grass.asm"
 INCLUDE "data/wild/season_water.asm"
