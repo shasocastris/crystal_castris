@@ -219,15 +219,3 @@ SetGiftMonCaughtData:
 	ld [hl], a
 	ret
 
-SetEggMonCaughtData:
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1CaughtLevel
-	call GetPartyLocation
-	ld a, [wCurPartyLevel]
-	push af
-	ld a, CAUGHT_EGG_LEVEL
-	ld [wCurPartyLevel], a
-	call SetBoxmonOrEggmonCaughtData
-	pop af
-	ld [wCurPartyLevel], a
-	ret

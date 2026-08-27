@@ -1,22 +1,3 @@
-HDMATransferAttrmapAndTilemapToWRAMBank3::
-	ld hl, .Function
-	jmp CallInSafeGFXMode
-
-.Function:
-	decoord 0, 0, wAttrmap
-	ld hl, wScratchAttrmap
-	call PadAttrmapForHDMATransfer
-	decoord 0, 0
-	ld hl, wScratchTilemap
-	call PadTilemapForHDMATransfer
-	xor a
-	ldh [rVBK], a
-	ld hl, wScratchTilemap
-	call HDMATransferToWRAMBank3
-	ld a, $1
-	ldh [rVBK], a
-	ld hl, wScratchAttrmap
-	jmp HDMATransferToWRAMBank3
 
 HDMATransferTilemapToWRAMBank3::
 	ld hl, .Function
@@ -167,66 +148,7 @@ HDMATransfer_WaitForScanline124_toBGMap:
 	ldh a, [hBGMapAddress]
 	ld e, a
 	ld c, 2 * SCREEN_HEIGHT
-	jr HDMATransfer_WaitForScanline124
 
-HDMATransfer_NoDI:
-; HDMA transfer from hl to [hBGMapAddress]
-; [hBGMapAddress] --> de
-; 2 * SCREEN_HEIGHT --> c
-	ldh a, [hBGMapAddress + 1]
-	ld d, a
-	ldh a, [hBGMapAddress]
-	ld e, a
-	ld c, 2 * SCREEN_HEIGHT
-
-	; [rVDMA_SRC_HIGH, rVDMA_SRC_LOW] = hl & $fff0
-	ld a, h
-	ldh [rVDMA_SRC_HIGH], a
-	ld a, l
-	and $f0
-	ldh [rVDMA_SRC_LOW], a
-	; [rVDMA_DEST_HIGH, rVDMA_DEST_LOW] = de & $1ff0
-	ld a, d
-	and $1f
-	ldh [rVDMA_DEST_HIGH], a
-	ld a, e
-	and $f0
-	ldh [rVDMA_DEST_LOW], a
-	; b = c | %10000000
-	ld a, c
-	dec c
-	or $80
-	ld b, a
-	; d = $7f - c + 1
-	ld a, $7f
-	sub c
-	ld d, a
-	; while [rLY] >= d: pass
-.loop1
-	ldh a, [rLY]
-	cp d
-	jr nc, .loop1
-	; while not [rSTAT] & 3: pass
-.loop2
-	ldh a, [rSTAT]
-	and STAT_MODE
-	jr z, .loop2
-	; load the 5th byte of HDMA
-	ld a, b
-	ldh [rVDMA_LEN], a
-	; wait until rLY advances (c + 1) times
-	ldh a, [rLY]
-	inc c
-	ld hl, rLY
-.loop3
-	cp [hl]
-	jr z, .loop3
-	ld a, [hl]
-	dec c
-	jr nz, .loop3
-	ld hl, rVDMA_LEN
-	res 7, [hl]
-	ret
 
 HDMATransfer_WaitForScanline124:
 	ld b, $7b

@@ -2097,8 +2097,6 @@ Script_warpcheck:
 	ret nc
 	jmp EnableEvents
 
-Script_enableevents: ; unreferenced
-	jmp EnableEvents
 
 Script_newloadmap:
 	rst GetScriptByte

@@ -24,18 +24,6 @@ SetMenuMonIconColor:
 	ld hl, wShadowOAMSprite00Attributes
 	jr _ApplyMenuMonIconColor
 
-SetMenuMonIconColor_NoShiny:
-	push hl
-	push de
-	push bc
-	push af
-
-	ld a, [wTempIconSpecies]
-	ld [wCurPartySpecies], a
-	and a
-	call GetMenuMonIconPalette_PredeterminedShininess
-	ld hl, wShadowOAMSprite00Attributes
-	jr _ApplyMenuMonIconColor
 
 LoadPartyMenuMonIconColors:
 	push hl

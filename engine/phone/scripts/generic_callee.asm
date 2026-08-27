@@ -14,9 +14,6 @@ PhoneScript_Random5:
 	random 5
 	end
 
-PhoneScript_Random11:
-	random 11
-	end
 
 PhoneScript_AnswerPhone_Male:
 	checktime DAY

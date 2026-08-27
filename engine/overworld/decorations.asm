@@ -897,14 +897,6 @@ DecorationFlagAction_c:
 	ld a, c
 	jmp DecorationFlagAction
 
-GetDecorationName_c:
-	ld a, c
-	call GetDecorationID
-	ld hl, wStringBuffer1
-	push hl
-	call GetDecorationName
-	pop de
-	ret
 
 SetSpecificDecorationFlag:
 	ld a, c

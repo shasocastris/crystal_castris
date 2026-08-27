@@ -278,64 +278,7 @@ _GetSpritePalette::
 	ld c, a
 	ret
 
-AddSpriteGFX:
-; Add any new sprite ids to a list of graphics to be loaded.
-; Return carry if the list is full.
 
-	push hl
-	push bc
-	ld b, a
-	ld hl, wUsedSprites + 2
-	ld c, SPRITE_GFX_LIST_CAPACITY - 1
-.loop
-	ld a, [hl]
-	cp b
-	jr z, .exists
-	and a
-	jr z, .new
-	inc hl
-	inc hl
-	dec c
-	jr nz, .loop
-
-	pop bc
-	pop hl
-	scf
-	ret
-
-.exists
-	pop bc
-	pop hl
-	and a
-	ret
-
-.new
-	ld [hl], b
-	pop bc
-	pop hl
-	and a
-	ret
-
-GetSpriteLength:
-; Return the length of sprite type a in tiles.
-
-	cp WALKING_SPRITE
-	jr z, .AnyDirection
-	cp STANDING_SPRITE
-	jr z, .AnyDirection
-	cp STILL_SPRITE
-	jr z, .OneDirection
-
-	ld a, 12
-	ret
-
-.AnyDirection:
-	ld a, 12
-	ret
-
-.OneDirection:
-	ld a, 4
-	ret
 
 GetUsedSprites:
 	ld hl, wUsedSprites

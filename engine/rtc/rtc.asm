@@ -1,14 +1,3 @@
-StopRTC: ; unreferenced
-	ld a, RAMG_SRAM_ENABLE
-	ld [rRAMG], a
-	call LatchClock
-	ld a, RAMB_RTC_DH
-	ldh [hSRAMBank], a
-	ld [rRAMB], a
-	ld a, [rRTCREG]
-	set B_RAMB_RTC_DH_HALT, a
-	ld [rRTCREG], a
-	jmp CloseSRAM
 
 StartRTC:
 	ld a, RAMG_SRAM_ENABLE

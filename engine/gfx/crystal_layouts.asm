@@ -1,25 +1,3 @@
-GetCrystalCGBLayout:
-	ld a, b
-	cp SCGB_DEFAULT
-	jr nz, .not_default
-	ld a, [wDefaultSGBLayout]
-.not_default
-	push af
-	farcall ResetBGPals
-	pop af
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, .Jumptable
-	add hl, de
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	jp hl
-
-.Jumptable:
-	dw _CrystalCGB_MobileLayout0
-	dw _CrystalCGB_MobileLayout1
 
 Crystal_FillBoxCGB:
 ; This is a copy of FillBoxCGB.
