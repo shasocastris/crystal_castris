@@ -2862,10 +2862,18 @@ InitSprites:
 	ldh a, [hUsedSpriteIndex]
 	ld c, a
 	ld b, HIGH(wShadowOAM)
+	; Overworld weather owns the last 12 structs while it is running, so stop
+	; short of them; .fill honours the same reservation when hiding slots.
+	ld a, [wStateFlags]
+	bit LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
+	ld e, LOW(wShadowOAMEnd)
+	jr z, .got_oam_limit
+	ld e, (OAM_COUNT - 12) * OBJ_SIZE
+.got_oam_limit
 	ld a, [hli]
 	ldh [hUsedSpriteTile], a
 	add c
-	cp LOW(wShadowOAMEnd)
+	cp e
 	jr nc, .full
 .addsprite
 	ldh a, [hCurSpriteYPixel]
