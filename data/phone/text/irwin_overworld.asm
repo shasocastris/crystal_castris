@@ -1,22 +1,4 @@
-IrwinGiftText:
-	text "You came! You"
-	line "came!"
 
-	para "I dropped these"
-	line "PP UPs out of my"
-	cont "bag for you!"
-
-	para "Please take them!"
-	done
-
-IrwinPackFullText:
-	text "Oops! Your BAG"
-	line "is full!"
-
-	para "Make some room and"
-	line "come back for"
-	cont "them!"
-	done
 
 IrwinAskNumber1Text:
 	text "You're the best"
