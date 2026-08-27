@@ -375,16 +375,27 @@ SpawnSnowFlake:
 	jr .finish
 
 ScanForEmptyOAM:
-; return empty OAM slot in de or carry set if none
+; return a free weather OAM slot in de (and hl), or carry set if none
+;
+; A slot is free when it is hidden, or when it is not one of ours. The second
+; test is what makes this survive a map load: ClearSprites zeroes the whole of
+; shadow OAM, so the window comes back with y = 0 rather than OAM_YCOORD_HIDDEN,
+; and _UpdateSprites.fill cannot put it right while the reservation is held.
 	ld de, wShadowOAM + WEATHER_OAM_START
-	ld h, d
-	ld l, e
 	ld b, WEATHER_OAM_STRUCTS
 .loop
-	; if the sprite is hidden, return the slot
+	ld h, d
+	ld l, e
 	ld a, [hl]
 	cp OAM_YCOORD_HIDDEN
-	ret z
+	ret nc ; hidden
+
+	ld hl, OAMA_FLAGS
+	add hl, de
+	ld a, [hl]
+	cp PAL_OW_WEATHER
+	jr nz, .not_ours
+
 	; next slot
 	ld hl, OBJ_SIZE
 	add hl, de
@@ -392,8 +403,14 @@ ScanForEmptyOAM:
 	ld e, l
 	dec b
 	jr nz, .loop
-	; no empty slots
+	; no free slots
 	scf
+	ret
+
+.not_ours
+	ld h, d
+	ld l, e
+	or a ; clear carry; cp may have set it
 	ret
 
 SpawnRainDrop:
