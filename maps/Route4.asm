@@ -39,8 +39,6 @@ TrainerPicnickerSharon:
 	closetext
 	end
 
-Route4UnusedGuyScript:
-	jumptextfaceplayer Route4UnusedGuyText
 
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText

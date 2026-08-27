@@ -89,8 +89,6 @@ EarlsPokemonAcademySign:
 VioletCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-VioletCityMartSign:
-	jumpstd MartSignScript
 
 VioletCityPPUp:
 	itemball PP_UP

@@ -356,13 +356,6 @@ MrPokemonText_Disappointed:
 	cont "to be very rare."
 	done
 
-MrPokemonsHouse_ForeignMagazinesText:
-	text "It's packed with"
-	line "foreign magazines."
-
-	para "Can't even read"
-	line "their titles…"
-	done
 
 MrPokemonsJournal1_Text:
 	text "A journal of Mr."

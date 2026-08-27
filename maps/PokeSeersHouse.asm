@@ -18,8 +18,6 @@ SeerScript:
 	closetext
 	end
 
-GrannyConfuseGuard:
-GrannySleepGuard:
 GrannyScript:
 	jumptextfaceplayer GrannyScriptText
 

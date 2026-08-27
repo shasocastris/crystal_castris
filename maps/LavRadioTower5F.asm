@@ -228,19 +228,6 @@ FirstRangerLeavesMovement:
 	step RIGHT
 	step_end
 
-ProtonFollowsFirstRangerMovement:
-	step LEFT
-	step UP
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step_end
 
 ProtonDisguiseText:
 	text "Hmm?"

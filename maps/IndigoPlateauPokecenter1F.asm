@@ -354,20 +354,6 @@ IndigoPlateauPokecenterInfoSignScript:
 	cont "case of emergency."
 	done
 
-IndigoPlateauPokecenterInfoSignText:
-	text "#MON LEAGUE"
-	line "INDIGO PLATEAU"
-
-	para "LEFT:"
-	line "RANGER COMMAND"
-
-	para "Center:"
-	line "#MON CENTER"
-	cont "& #MART"
-
-	para "Right:"
-	line "ELITE FOUR"
-	done
 
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler

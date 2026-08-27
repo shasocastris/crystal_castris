@@ -65,15 +65,6 @@ TrainerSwimmermTucker:
 	closetext
 	end
 
-TrainerSwimmermWalter:
-	trainer SWIMMERM, WALTER, EVENT_BEAT_SWIMMERM_WALTER, SwimmermWalterSeenText, SwimmermWalterBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SwimmermWalterAfterBattleText
-	waitbutton
-	closetext
-	end
 
 Route19Fisher1Script:
 	faceplayer

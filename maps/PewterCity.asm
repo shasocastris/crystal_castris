@@ -90,8 +90,6 @@ PewterCityGrampsText_GotSilverWing:
 PewterCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-PewterCityMartSign:
-	jumpstd MartSignScript
 
 PewterCityFruitTree1:
 	fruittree FRUITTREE_PEWTER_CITY_1

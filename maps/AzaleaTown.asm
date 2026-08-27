@@ -199,8 +199,6 @@ AzaleaTownIlextForestSign:
 AzaleaTownPokecenterSign:
 	jumpstd PokecenterSignScript
 
-AzaleaTownMartSign:
-	jumpstd MartSignScript
 
 WhiteApricornTree:
 	fruittree FRUITTREE_AZALEA_TOWN

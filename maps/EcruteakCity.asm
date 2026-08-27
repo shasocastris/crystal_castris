@@ -82,8 +82,6 @@ BurnedTowerSign:
 EcruteakCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-EcruteakCityMartSign:
-	jumpstd MartSignScript
 
 EcruteakCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ECRUTEAK_CITY_HIDDEN_HYPER_POTION

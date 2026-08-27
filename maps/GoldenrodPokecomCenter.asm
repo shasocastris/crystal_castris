@@ -257,37 +257,9 @@ GoldenrodPokecomCenterTeacherScript:
 GoldenrodPokecomCenterInfoSign:
 	jumptext GoldenrodPokecomCenterInfoSignText
 
-GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtLeftDoorwayTileMovement:
-	step UP
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head DOWN
-	step_end
 
-GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromLeftDoorwayTileMovement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step DOWN
-	step_end
 
-GoldenrodPokecomCenterLinkReceptionistApproachPlayerAtRightDoorwayTileMovement:
-	step UP
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head DOWN
-	step_end
 
-GoldenrodPokecomCenterLinkReceptionistWalkToStairsFromRightDoorwayTileMovement:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step DOWN
-	step_end
 
 GoldenrodPokecomCenterGameboyKidText:
 	text "This place is way"
@@ -317,10 +289,6 @@ GoldenrodPokecomCenterLassText:
 	line "the toughest."
 	done
 
-GoldenrodPokecomCenterLinkReceptionistPleaseDoComeAgainText:
-	text "Please do come"
-	line "again!"
-	done
 
 GoldenrodPokecomCenterPokefanFDoYouHaveEonMailText:
 	text "Oh my, your pack"

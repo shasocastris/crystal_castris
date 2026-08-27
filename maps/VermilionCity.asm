@@ -99,8 +99,6 @@ VermilionCityPortSign:
 VermilionCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-VermilionCityMartSign:
-	jumpstd MartSignScript
 
 VermilionCityHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_VERMILION_CITY_HIDDEN_FULL_HEAL

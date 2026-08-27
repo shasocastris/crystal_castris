@@ -420,12 +420,6 @@ RadioTower2FBuenaThanksForComingText:
 	line "I'll be waiting!"
 	done
 
-RadioTower2FBuenaPasswordIsHelpText:
-	text "BUENA: Huh?"
-	line "Today's password?"
-
-	para "HELP, of course!"
-	done
 
 RadioTower2FBuenaCardIsFullText:
 	text "BUENA: Your BLUE"

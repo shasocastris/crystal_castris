@@ -171,10 +171,6 @@ ScientistErwinAfterBattleText:
 	cont "shrine!"
 	done
 
-RuinsOfAlphKabutoChamberWallHoleText:
-	text "There's a big hole"
-	line "in the wall!"
-	done
 
 RuinsOfAlphKabutoChamberAncientReplicaText:
 	text "It's a replica of"
