@@ -97,6 +97,7 @@ if DEF(_DEBUG)
 	giveitem COIN_CASE
 	giveitem METAL_POWDER
 	giveitem BRICK_PIECE, 5
+	giveitem S_S_TICKET
 	givecoins 9999
 	; all badges
 	setflag ENGINE_ZEPHYRBADGE
@@ -167,7 +168,7 @@ if DEF(_DEBUG)
 	givepokemove HURRICANE,      wPartyMon1, 0
 	givepokemove RAIN_DANCE,     wPartyMon1, 1
 	givepokemove POISON_JAB,     wPartyMon1, 2
-	givepokemove HAIL,           wPartyMon1, 3
+	givepokemove HYPER_VOICE,    wPartyMon1, 3
 	loadmem wPartyMon1Happiness, $ff
 	; hm slaves
 	givepoke MEW, 100, LEFTOVERS
@@ -184,10 +185,10 @@ if DEF(_DEBUG)
 	givepoke DUDUNSPARC, 50, EXP_SHARE
 	givepokemove HIDDEN_POWER,    wPartyMon4, 3
 	givepoke URSALUNA, 50, MIRACLE_SEED
-;	givepokemove PSYWAVE,      wPartyMon5, 0
-;	givepokemove SUNNY_DAY,    wPartyMon5, 1
-;	givepokemove SOLARBEAM,    wPartyMon5, 2
-;	givepokemove SUDDEN_CHILL, wPartyMon5, 3
+	givepokemove CONVERSION,      wPartyMon5, 0
+	givepokemove HIDDEN_POWER,    wPartyMon5, 1
+	givepokemove BATON_PASS,    wPartyMon5, 2
+	givepokemove BARRIER, wPartyMon5, 3
 	givepoke FARIGIRAF, 50, METAL_POWDER
 	givepokemove TELEPORT,  wPartyMon6, 1
 	givepoke PICHU, 5
@@ -200,6 +201,8 @@ if DEF(_DEBUG)
 	setmapscene PLAYERS_HOUSE_1F, $1
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
+    setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME
 	closetext
 	end
 else
