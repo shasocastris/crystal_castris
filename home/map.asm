@@ -314,6 +314,11 @@ CopyMapAttributes::
 	inc de
 	dec c
 	jr nz, .loop
+; The weather byte follows the struct in ROM but is cached outside it, so
+; wMapAttributes keeps its size and the saved block does not move. hl still ends
+; up past it, which is what GetMapConnections expects.
+	ld a, [hli]
+	ld [wMapWeather], a
 	ret
 
 GetMapConnections::

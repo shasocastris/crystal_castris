@@ -3,6 +3,7 @@ MACRO map_attributes
 ;\2: map id
 ;\3: border block
 ;\4: connections: combo of NORTH, SOUTH, WEST, and/or EAST, or 0 for none
+;\5: overworld weather: an OW_WEATHER_* constant. Optional; omit for none.
 	DEF CURRENT_MAP_WIDTH = \2_WIDTH
 	DEF CURRENT_MAP_HEIGHT = \2_HEIGHT
 \1_MapAttributes::
@@ -14,6 +15,14 @@ MACRO map_attributes
 	dw \1_MapScripts
 	dw \1_MapEvents
 	db \4
+; Pulled forward from M4 so maps carry weather from the moment they are authored
+; (roadmap 6.2a). Optional rather than a fifth argument on all 423 rows: a map
+; that wants weather says so, and the rest stay as they were.
+	if _NARG > 4
+		db \5
+	else
+		db OW_WEATHER_NONE
+	endc
 ENDM
 
 ; Connections go in order: north, south, west, east

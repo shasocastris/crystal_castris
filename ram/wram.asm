@@ -1552,6 +1552,10 @@ wWildMonScratch:: db ; GetWildMonByte needs a byte that survives a bankswitch
 wNestScanCount:: db  ; FindNestInTable: mons per map entry
 wNestScanStride:: db ; FindNestInTable: bytes per map entry
 wNestRegion:: db     ; FindNest: the region whose page the dex AREA map is showing
+; The map's OW_WEATHER_* value, cached by CopyMapAttributes. In WRAM0 on purpose:
+; wMapAttributes sits below the saved block, so growing that struct would shift
+; wEventFlags and every save offset after it.
+wMapWeather:: db
 
 
 SECTION "16-bit WRAM home data", WRAM0
