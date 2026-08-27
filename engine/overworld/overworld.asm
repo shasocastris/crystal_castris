@@ -134,7 +134,9 @@ LoadMiscTiles:
 	jr z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
 .outdoor
-	jmp LoadEmote
+	call LoadEmote
+	; Same bank, so no farcall. Returns immediately unless wCurWeather is set.
+	jmp LoadWeatherGraphics
 
 SafeGetSprite:
 	push hl

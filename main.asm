@@ -75,6 +75,7 @@ SECTION "bank5", ROMX
 
 INCLUDE "engine/rtc/rtc.asm"
 INCLUDE "engine/overworld/overworld.asm"
+INCLUDE "engine/overworld/weather.asm"
 INCLUDE "engine/overworld/tile_events.asm"
 INCLUDE "engine/menus/save.asm"
 INCLUDE "engine/overworld/spawn_points.asm"

@@ -3216,6 +3216,30 @@ wPokeDB2UsedEntries:: flag_array MONDB_ENTRIES
 wPokeDBUsedEntriesEnd::
 
 
+; Pinned to bank 1 on purpose: DoOverworldWeather runs in the overworld frame
+; with BANK(wXCoord) already selected, so keeping this state in the same bank
+; means the per-particle loop never touches rWBK. It sits after wGameDataEnd,
+; so it is outside the save block and cannot shift saved data.
+SECTION "Overworld Weather State", WRAMX, BANK[1]
+
+wCurWeather:: db               ; active OW_WEATHER_*
+wPrevWeather:: db              ; weather being drained during a transition
+wWeatherFlags:: db             ; OW_WEATHER_*_F bits
+wOverworldWeatherTimer:: db    ; free-running; drives the 30 Hz gate and splash lifetime
+wOverworldWeatherCooldown:: db ; frames left draining the old weather
+wSpriteOverlapCount:: db       ; working count inside SpriteLimitExceeded
+; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
+wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
+
+
+; 144 bytes, double-purposed: a per-scanline sprite counter in the sprite-limit
+; check, and the cherry-leaf candidate buffer in SpawnCherryBlossom. The two
+; never run in the same call. Unpinned, so every use must save and restore rWBK.
+SECTION "Overworld Weather Scratch", WRAMX
+
+wWeatherScratch:: ds SCREEN_HEIGHT_PX
+
+
 SECTION "Battle Animations", WRAMX
 
 wBattleAnimTileDict::

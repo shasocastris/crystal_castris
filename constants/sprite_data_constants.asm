@@ -41,6 +41,8 @@ ENDM
 	ow_npc_pal_const DECO_ITEM         ; 0e (blue)
 	ow_npc_pal_const KEY_ITEM          ; 0f (green)
 	ow_npc_pal_const TREE              ; 10
+	ow_npc_pal_const RAIN              ; 11 (M4 weather: rain, thunderstorm)
+	ow_npc_pal_const SAND              ; 12 (M4 weather: sandstorm)
 DEF NUM_OW_TIME_OF_DAY_PALS EQU const_value
 	ow_npc_pal_const EMOTE_GRAY        ; 11
 	ow_npc_pal_const EMOTE_BLACK       ; 12
@@ -61,6 +63,15 @@ DEF FIRST_COPY_BG_PAL EQU const_value
 	ow_npc_pal_const COPY_BG_TEXT      ; 1f
 DEF NUM_OW_BG_COPY_PALS EQU const_value - NUM_OW_INDIVIDUAL_PALS
 DEF NUM_OW_PALS EQU const_value
+
+; ⚠️ Hardware OB palette slot (0-7), NOT a MapObjectPals index like the PAL_OW_*
+; constants above. The two numbering spaces are unrelated -- PAL_OW_PINK also
+; happens to be 6, and means something completely different.
+; Overworld weather draws every sprite with this slot in its OAM attribute byte,
+; and uses it as the tag that tells its own sprites from map objects.
+; The dynamic allocator in engine/gfx/dynamic_pals.asm can hand this slot to an
+; NPC; each weather frame re-checks wLoadedObjPal6 and reclaims it if so.
+DEF PAL_OW_WEATHER EQU 6
 
 DEF PAL_OW_ROCK EQU PAL_OW_BROWN
 DEF PAL_NPC_ROCK EQU PAL_NPC_BROWN
