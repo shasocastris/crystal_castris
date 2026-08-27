@@ -283,19 +283,6 @@ GetDexEntryPointer:
 	pop hl
 	ret
 
-GetDexEntryPagePointer:
-	call GetDexEntryPointer
-	push hl
-	ld h, d
-	ld l, e
-; skip species name
-.loop1
-	ld a, b
-	call GetFarByte
-	inc hl
-	cp '@'
-	jr nz, .loop1
-; skip height and weight
 rept 4
 	inc hl
 endr

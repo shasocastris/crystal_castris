@@ -713,9 +713,6 @@ _CardFlipDarnText::
 	text "Darn…"
 	done
 
-_GearTodayText::
-	text_today
-	text_end
 
 _GearEllipseText::
 	text "<……>"
@@ -1032,10 +1029,6 @@ _ItemLooksBitterText::
 	text "It looks bitter…"
 	prompt
 
-_ItemCantUseOnEggText::
-	text "That can't be used"
-	line "on an EGG."
-	prompt
 
 _ItemOakWarningText::
 	text "OAK: <PLAYER>!"
@@ -1069,14 +1062,6 @@ _StorageFullText::
 	cont "can't be used now."
 	prompt
 
-_DatabaseFullText::
-	; too technical? needs improvement
-	text "The STORAGE SYSTEM"
-	line "is overtaxed."
-
-	para "You need to save"
-	line "the game."
-	prompt
 
 _ItemUsedText::
 	text "<PLAYER> used the@"

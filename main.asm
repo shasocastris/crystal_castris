@@ -69,7 +69,6 @@ INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-INCLUDE "engine/math/get_square_root.asm"
 
 
 SECTION "bank5", ROMX
@@ -528,7 +527,6 @@ SECTION "bank5B", ROMX
 
 INCLUDE "engine/link/link_trade.asm"
 INCLUDE "engine/link/link.asm"
-INCLUDE "engine/battle/link_result.asm"
 
 
 SECTION "mobile5C", ROMX
@@ -656,11 +654,6 @@ INCLUDE "data/battle_tower/unknown.asm"
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
-
-
-SECTION "Custom GFX", ROMX
-
-INCLUDE "gfx/rangi_gfx.asm"
 
 
 SECTION "Newbox", ROMX

@@ -129,8 +129,6 @@ CeruleanCityYoungsterScript:
 	closetext
 	end
 
-CeruleanCityUnusedGuyScript:
-	jumptextfaceplayer CeruleanCityUnusedGuyText
 
 CeruleanCitySign:
 	jumptext CeruleanCitySignText
@@ -144,8 +142,6 @@ CeruleanBikeShopSign:
 CeruleanPoliceSign:
 	jumptext CeruleanPoliceSignText
 
-CeruleanCaveSign:
-	jumptext CeruleanCaveWarningText
 
 CeruleanCapeSign:
 	jumptext CeruleanCapeSignText
@@ -156,8 +152,6 @@ CeruleanLockedDoor:
 CeruleanCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-CeruleanCityMartSign:
-	jumpstd MartSignScript
 
 CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY

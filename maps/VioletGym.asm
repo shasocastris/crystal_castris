@@ -372,14 +372,7 @@ VioletGymGuideWinText:
 	line "time at all!"
 	done
 
-FalknerRematch1Text:
-	text "Rematch 1 Text"
-	done
 
-FalknerRematch1DoneText:
-	text "Rematch 1 Text"
-	line "REMATCH DONE"
-	done
 
 VioletGym_MapEvents:
 	db 0, 0 ; filler

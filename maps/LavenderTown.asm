@@ -41,8 +41,6 @@ SoulHouseSign:
 LavenderPokecenterSignText:
 	jumpstd PokecenterSignScript
 
-LavenderMartSignText:
-	jumpstd MartSignScript
 
 LavenderTownPokefanMText:
 	text "Strange men took"

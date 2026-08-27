@@ -28,9 +28,6 @@ CherrygroveCityFlypointCallback:
 	setflag ENGINE_FLYPOINT_CHERRYGROVE
 	endcallback
 
-CherrygroveGuideGentTrigger:
-	applymovement PLAYER, GuideGentPlayerMovement
-	setlasttalked CHERRYGROVECITY_GRAMPS
 CherrygroveCityGuideGent:
 	faceplayer
 	opentext
@@ -235,8 +232,6 @@ GuideGentsHouseSign:
 CherrygroveCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-CherrygroveCityMartSign:
-	jumpstd MartSignScript
 
 CherrygroveCityFruitTree1:
 	fruittree FRUITTREE_CHERRYGROVE_CITY_1

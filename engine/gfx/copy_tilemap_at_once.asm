@@ -70,27 +70,6 @@ _SafeCopyTilemapAtOnce::
 	ldh [hBGMapMode], a
 	ret
 
-_CopyTilemapAtOnce::
-	ldh a, [hBGMapMode]
-	push af
-	ldh a, [hMapAnims]
-	push af
-	xor a
-	ldh [hBGMapMode], a
-	ldh [hMapAnims], a
-	di
-	hlcoord 0, 0, wAttrmap
-	ld a, 1 ; VRAM1
-	call CopyFullTilemapInHBlank
-	hlcoord 0, 0
-	xor a ; VRAM0
-	call CopyFullTilemapInHBlank
-	ei ; in case we've passed vblank
-	pop af
-	ldh [hMapAnims], a
-	pop af
-	ldh [hBGMapMode], a
-	ret
 
 DEF HALF_HEIGHT EQU SCREEN_HEIGHT / 2
 

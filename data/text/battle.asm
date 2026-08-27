@@ -1104,12 +1104,6 @@ IgnoredOrders2Text:
 	line "ignored orders!"
 	prompt
 
-BattleText_LinkErrorBattleCanceled:
-	text "Link error…"
-
-	para "The battle has"
-	line "been canceled…"
-	prompt
 
 ItStartedToHailText:
 	text "It started"

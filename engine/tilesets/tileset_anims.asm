@@ -275,31 +275,6 @@ endr
 	jr nz, .loop
 	ret
 
-ScrollTileUp:
-	ld h, d
-	ld l, e
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	ld bc, TILE_SIZE - 2
-	add hl, bc
-	ld a, TILE_SIZE / 4
-.loop
-	ld c, [hl]
-	ld [hl], e ; no-optimize *hl++|*hl-- = b|c|d|e (a is the .loop counter)
-	dec hl
-	ld b, [hl]
-	ld [hl], d ; no-optimize *hl++|*hl-- = b|c|d|e (a is the .loop counter)
-	dec hl
-	ld e, [hl]
-	ld [hl], c ; no-optimize *hl++|*hl-- = b|c|d|e (a is the .loop counter)
-	dec hl
-	ld d, [hl]
-	ld [hl], b ; no-optimize *hl++|*hl-- = b|c|d|e (a is the .loop counter)
-	dec hl
-	dec a
-	jr nz, .loop
-	ret
 
 ScrollTileDown:
 	ld h, d

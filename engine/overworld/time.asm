@@ -286,27 +286,8 @@ CheckUnusedTwoDayTimer:
 	call CalcDaysSince
 	call GetDaysSince
 	ld hl, wUnusedTwoDayTimer
-	jr UpdateTimeRemaining
 
-RestartLuckyNumberCountdown:
-	call .GetDaysUntilNextFriday
-	ld hl, wLuckyNumberDayTimer
-	jmp InitNDaysCountdown
 
-.GetDaysUntilNextFriday:
-	call GetWeekday
-	cpl
-	add FRIDAY + 1
-	jr z, .friday_saturday
-	ret nc
-
-.friday_saturday
-	add 7
-	ret
-
-_CheckLuckyNumberShowFlag:
-	ld hl, wLuckyNumberDayTimer
-	jmp CheckDayDependentEventHL
 
 UpdateTimeRemaining:
 ; If the amount of time elapsed exceeds the capacity of its

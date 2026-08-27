@@ -611,19 +611,6 @@ EvoFlagAction:
 	pop de
 	ret
 
-GetLowestEvolutionStage:
-; Return the first mon to evolve into wCurPartySpecies.
-; Instead of looking it up, we just load it from a table. This is a lot more efficient.
-	ld a, [wCurPartySpecies]
-	call GetPokemonIndexFromID
-	ld bc, FirstEvoStages - 2
-	add hl, hl
-	add hl, bc
-	ld a, BANK(FirstEvoStages)
-	call GetFarWord
-	call GetPokemonIDFromIndex
-	ld [wCurPartySpecies], a
-	ret
 
 SkipEvolutions::
 ; Receives a pointer to the evos and attacks for a mon in b:hl, and skips to the attacks.

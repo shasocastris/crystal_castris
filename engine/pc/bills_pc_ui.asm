@@ -656,39 +656,7 @@ PCIconLoop:
 	jr nz, PCIconLoop
 	ret
 
-BillsPC_GetMonIconAddr:
-	push de
-	push bc
-	inc b
-	dec b
-	ld hl, wBillsPC_PartyList
-	jr z, .got_tile_base
-	ld hl, wBillsPC_BoxList
-.got_tile_base
-	ld a, 1
-	ld b, 0
-	dec c
-	rst AddNTimes
-	pop bc
-	pop de
-	ret
 
-BillsPC_GetMonTileAddr:
-	push de
-	push bc
-	inc b
-	dec b
-	ld hl, vTiles4 tile $00
-	jr z, .got_tile_base
-	ld hl, vTiles4 tile $18
-.got_tile_base
-	ld a, 4 tiles
-	ld b, 0
-	dec c
-	rst AddNTimes
-	pop bc
-	pop de
-	ret
 
 BillsPC_GetMonPalAddr:
 ; Gets mon pal in hl for box b slot c.

@@ -237,10 +237,6 @@ StubbedTrainerRankings_StepCount:
 	ld hl, sTrainerRankingStepCount
 	jmp StubbedTrainerRankings_Increment4Byte
 
-StubbedTrainerRankings_BattleTowerWins: ; unreferenced
-	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld hl, sTrainerRankingBattleTowerWins
-	jmp StubbedTrainerRankings_Increment2Byte
 
 StubbedTrainerRankings_TMsHMsTaught:
 	ret ; no-optimize Stub function (Plans for functions in the future)
@@ -277,10 +273,6 @@ StubbedTrainerRankings_HookedEncounters:
 	ld hl, sTrainerRankingHookedEncounters
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_EggsHatched:
-	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld hl, sTrainerRankingEggsHatched
-	jr StubbedTrainerRankings_Increment3Byte
 
 StubbedTrainerRankings_MonsEvolved:
 	ret ; no-optimize Stub function (Plans for functions in the future)
@@ -322,10 +314,6 @@ StubbedTrainerRankings_WhiteOuts:
 	ld hl, sTrainerRankingWhiteOuts
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_LuckyNumberShow:
-	ret ; no-optimize Stub function (Plans for functions in the future)
-	ld hl, sTrainerRankingLuckyNumberShow
-	jr StubbedTrainerRankings_Increment2Byte
 
 StubbedTrainerRankings_PhoneCalls:
 	ret ; no-optimize Stub function (Plans for functions in the future)
@@ -389,13 +377,7 @@ StubbedTrainerRankings_Increment3Byte:
 StubbedTrainerRankings_Increment2Byte:
 	push bc
 	ld bc, 1
-	jr StubbedTrainerRankings_Increment
 
-StubbedTrainerRankings_Increment1Byte: ; unreferenced
-	push bc
-	ld bc, 0
-
-; Increments a big-endian value of bc + 1 bytes at hl
 StubbedTrainerRankings_Increment:
 	ld a, BANK(sTrainerRankings)
 	call OpenSRAM
@@ -493,16 +475,6 @@ RestoreGSBallFlag:
 	ld [sGSBallFlag], a
 	jmp CloseSRAM
 
-VerifyTrainerRankingsChecksum: ; unreferenced
-	call CalculateTrainerRankingsChecksum
-	ld hl, sTrainerRankingsChecksum
-	ld a, d
-	cp [hl]
-	ret nz
-	inc hl
-	ld a, e
-	cp [hl]
-	ret
 
 ClearGSBallFlag:
 	ld a, BANK(sGSBallFlag)
@@ -511,26 +483,6 @@ ClearGSBallFlag:
 	ld [sGSBallFlag], a
 	jmp CloseSRAM
 
-InitializeTrainerRankings: ; unreferenced
-; Initializes Trainer Rankings data for a new save file in JP Crystal.
-	ld hl, sTrainerRankings
-	ld bc, sTrainerRankingsEnd - sTrainerRankings
-	xor a
-	rst ByteFill
-
-	; Initialize the shortest Magikarp to 100.0 cm
-	ld hl, sTrainerRankingShortestMagikarp
-	ld a, $3
-	ld [hli], a
-	ld [hl], $e8
-
-	call UpdateTrainerRankingsChecksum
-	ld hl, sTrainerRankings
-	ld de, sTrainerRankingsBackup
-	ld bc, sTrainerRankingsEnd - sTrainerRankings
-	jmp CopyBytes
-
-; functions related to the cable club and various NPC scripts referencing communications
 
 Function106464::
 	ld de, MobileDialingFrameGFX

@@ -1035,7 +1035,6 @@ AI_Smart_TrapTarget:
 	dec [hl]
 	ret
 
-AI_Smart_RazorWind:
 AI_Smart_Unused2B:
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a

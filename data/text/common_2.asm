@@ -1,12 +1,4 @@
-_NoPhotoText::
-	text "Oh, no picture?"
-	line "Come again, OK?"
-	done
 
-_EggPhotoText::
-	text "An EGG? My talent"
-	line "is worth more…"
-	done
 
 _NameRaterHelloText::
 	text "Hello, hello! I'm"
@@ -496,10 +488,6 @@ _UseSacredAshText::
 	line "were all healed!"
 	done
 
-_AnEggCantHoldAnItemText::
-	text "An EGG can't hold"
-	line "an item."
-	prompt
 
 _AskThrowAwayText::
 	text "Throw away how"
@@ -637,30 +625,9 @@ _MoveNameText::
 	text "!"
 	done
 
-Text_BreedHuh::
-	text "Huh?"
 
-	para "@"
-	text_end
 
-_BreedClearboxText::
-	text_start
-	done
 
-_BreedEggHatchText::
-	text_ram wStringBuffer1
-	text " came"
-	line "out of its EGG!@"
-	sound_caught_mon
-	text_promptbutton
-	text_end
-
-_BreedAskNicknameText::
-	text "Give a nickname to"
-	line "@"
-	text_ram wStringBuffer1
-	text "?"
-	done
 
 _LeftWithDayCareLadyText::
 	text "It's @"
@@ -722,10 +689,6 @@ _MailAlreadyHoldingItemText::
 	line "ing an item."
 	prompt
 
-_MailEggText::
-	text "An EGG can't hold"
-	line "any MAIL."
-	prompt
 
 _MailMovedFromBoxText::
 	text "The MAIL was moved"

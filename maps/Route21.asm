@@ -39,15 +39,6 @@ TrainerFisherArnold:
 	closetext
 	end
 
-TrainerSwimmermRick:
-	trainer SWIMMERM, RICK, EVENT_BEAT_SWIMMERM_RICK, SwimmermRickSeenText, SwimmermRickBeatenText, 0, .Script
-
-.Script:
-	opentext
-	writetext SwimmermRickAfterBattleText
-	waitbutton
-	closetext
-	end
 
 SwimmermSethSeenText:
 	text "Land ho! Gotta"

@@ -44,8 +44,6 @@ NoLitteringSign:
 FuchsiaCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-FuchsiaCityMartSign:
-	jumpstd MartSignScript
 
 FuchsiaCityFruitTree:
 	fruittree FRUITTREE_FUCHSIA_CITY

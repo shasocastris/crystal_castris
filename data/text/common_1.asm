@@ -1041,15 +1041,6 @@ _SavingRecordText::
 	line "DON'T TURN OFF!"
 	done
 
-_ReceiveItemText::
-	text_ram wPlayerName
-	text " received"
-	line "@"
-	text_ram wStringBuffer1
-	text "!@"
-	sound_item
-	text_promptbutton
-	text_end
 
 _NoCoinsText::
 	text "You have no coins."
@@ -1512,65 +1503,14 @@ _ComeAgainText::
 	text "Come again."
 	done
 
-_NotYetText::
-	text "Not yet…"
-	done
 
-_FoundAnEggText::
-	text "Ah, it's you!"
 
-	para "We were raising"
-	line "your #MON, and"
 
-	para "my goodness, were"
-	line "we surprised!"
 
-	para "Your #MON had"
-	line "an EGG!"
 
-	para "We don't know how"
-	line "it got there, but"
 
-	para "your #MON had"
-	line "it. You want it?"
-	done
 
-_ReceivedEggText::
-	text "<PLAYER> received"
-	line "the EGG!"
-	done
 
-_TakeGoodCareOfEggText::
-	text "Take good care of"
-	line "it."
-	done
-
-_IllKeepItThanksText::
-	text "Well then, I'll"
-	line "keep it. Thanks!"
-	done
-
-_NoRoomForEggText::
-	text "You have no room"
-	line "in your party."
-	cont "Come back later."
-	done
-
-_WhichMonPhotoText::
-	text "Which #MON"
-	line "should I photo-"
-	cont "graph?"
-	prompt
-
-_HoldStillText::
-	text "All righty. Hold"
-	line "still for a bit."
-	prompt
-
-_PrestoAllDoneText::
-	text "Presto! All done."
-	line "Come again, OK?"
-	done
 
 _NPCTradeIntroTextWonder::
 	text "A pen pal from"

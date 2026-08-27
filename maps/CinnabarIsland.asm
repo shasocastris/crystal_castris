@@ -29,8 +29,6 @@ CinnabarIslandGymSign:
 CinnabarIslandSign:
 	jumptext CinnabarIslandSignText
 
-CinnabarIslandPokecenterSign:
-	jumpstd PokecenterSignScript
 
 CinnabarIslandHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_CINNABAR_ISLAND_HIDDEN_RARE_CANDY
@@ -125,8 +123,6 @@ CinnabarIslandSignText:
 	line "Burning Desire"
 	done
 
-CinnabarIslandRock:
-	jumpstd SmashRockScript
 
 CinnabarIsland_MapEvents:
 	db 0, 0 ; filler

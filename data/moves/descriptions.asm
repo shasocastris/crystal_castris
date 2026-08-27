@@ -277,17 +277,11 @@ MoveDescriptionsGen2:
 InvalidMoveDescription:
 	db "?@"
 
-PoundDescription:
-	db   "Pounds with fore-"
-	line "legs or tail.@"
 
 KarateChopDescription:
 	db   "Has a high criti-"
 	line "cal hit ratio.@"
 
-DoubleslapDescription:
-	db   "Repeatedly slaps"
-	line "2-5 times.@"
 
 CometPunchDescription:
 	db   "Repeatedly punches"
@@ -317,13 +311,7 @@ ScratchDescription:
 	db   "Scratches with"
 	line "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	line "ful pincers.@"
 
-GuillotineDescription:
-	db   "A one-hit KO,"
-	line "pincer attack.@"
 
 RazorWindDescription:
 	db   "Traps the foe for"
@@ -345,9 +333,6 @@ WingAttackDescription:
 	db   "Strikes the target"
 	line "with wings.@"
 
-WhirlwindDescription:
-	db   "Blows away the foe"
-	line "& ends battle.@"
 
 FlyDescription:
 	db   "1st turn: Fly"
@@ -377,17 +362,11 @@ MegaKickDescription:
 	db   "A powerful kicking"
 	line "attack.@"
 
-JumpKickDescription:
-	db   "May miss, damaging"
-	line "the user.@"
 
 RollingKickDescription:
 	db   "A fast, spinning"
 	line "kick.@"
 
-SandAttackDescription:
-	db   "Reduces accuracy"
-	line "by throwing sand.@"
 
 HeadbuttDescription:
 	db   "An attack that may"
@@ -397,17 +376,8 @@ HornAttackDescription:
 	db   "An attack using a"
 	line "horn to jab.@"
 
-FuryAttackDescription:
-	db   "Jabs the target"
-	line "2-5 times.@"
 
-HornDrillDescription:
-	db   "A one-hit KO,"
-	line "drill attack.@"
 
-TackleDescription:
-	db   "A full-body charge"
-	line "attack.@"
 
 BodySlamDescription:
 	db   "An attack that may"
@@ -429,9 +399,6 @@ DoubleEdgeDescription:
 	db   "A tackle that also"
 	line "hurts the user.@"
 
-TailWhipDescription:
-	db   "Lowers the foe's"
-	line "DEFENSE.@"
 
 PoisonStingDescription:
 	db   "An attack that may"
@@ -541,9 +508,6 @@ SubmissionDescription:
 	db   "An attack that al-"
 	line "so hurts the user.@"
 
-LowKickDescription:
-	db   "An attack that may"
-	line "cause flinching.@"
 
 CounterDescription:
 	db   "Returns a physical"
@@ -633,9 +597,6 @@ EarthquakeDescription:
 	db   "Tough but useless"
 	line "vs. flying foes.@"
 
-FissureDescription:
-	db   "A ground-type,"
-	line "one-hit KO attack.@"
 
 DigDescription:
 	db   "1st turn: Burrow"
@@ -713,9 +674,6 @@ ConfuseRayDescription:
 	db   "A move that causes"
 	line "confusion.@"
 
-WithdrawDescription:
-	db   "Heightens the"
-	line "user's DEFENSE.@"
 
 DefenseCurlDescription:
 	db   "Heightens the"
@@ -741,9 +699,6 @@ FocusEnergyDescription:
 	db   "Raises the criti-"
 	line "cal hit ratio.@"
 
-BideDescription:
-	db   "Waits 2-3 turns &"
-	line "hits back double.@"
 
 MetronomeDescription:
 	db   "Randomly uses any"
@@ -757,17 +712,11 @@ SelfdestructDescription:
 	db   "Powerful but makes"
 	line "the user faint.@"
 
-EggBombDescription:
-	db   "Eggs are hurled at"
-	line "the foe.@"
 
 LickDescription:
 	db   "An attack that may"
 	line "cause paralysis.@"
 
-SmogDescription:
-	db   "An attack that may"
-	line "poison the foe.@"
 
 SludgeDescription:
 	db   "An attack that may"
@@ -809,9 +758,6 @@ AmnesiaDescription:
 	db   "Sharply raises the"
 	line "user's SPCL.DEF.@"
 
-KinesisDescription:
-	db   "Reduces the foe's"
-	line "accuracy.@"
 
 SoftboiledDescription:
 	db   "Restores HP by 1/2"
@@ -829,13 +775,7 @@ DreamEaterDescription:
 	db   "Steals HP from a"
 	line "sleeping victim.@"
 
-PoisonGasDescription:
-	db   "A move that may"
-	line "poison the foe.@"
 
-BarrageDescription:
-	db   "Throws orbs to hit"
-	line "2-5 times.@"
 
 LeechLifeDescription:
 	db   "Steals 1/2 of the"
@@ -857,9 +797,6 @@ BubbleDescription:
 	db   "An attack that may"
 	line "reduce SPEED.@"
 
-DizzyPunchDescription:
-	db   "An attack that may"
-	line "cause confusion.@"
 
 SporeDescription:
 	db   "A move that"
@@ -877,17 +814,11 @@ SplashDescription:
 	db   "Has no effect"
 	line "whatsoever.@"
 
-AcidArmorDescription:
-	db   "Sharply raises the"
-	line "user's DEFENSE.@"
 
 CrabhammerDescription:
 	db   "Has a high criti-"
 	line "cal hit ratio.@"
 
-ExplosionDescription:
-	db   "Very powerful but"
-	line "makes user faint.@"
 
 FurySwipesDescription:
 	db   "Quickly scratches"
@@ -909,9 +840,6 @@ HyperFangDescription:
 	db   "An attack that may"
 	line "cause flinching.@"
 
-SharpenDescription:
-	db   "A move that raises"
-	line "the user's ATTACK.@"
 
 ConversionDescription:
 	db   "Change user's type"
@@ -941,21 +869,12 @@ SketchDescription:
 	db   "Copies the foe's"
 	line "move permanently.@"
 
-TripleKickDescription:
-	db   "Hits three times"
-	line "with rising power.@"
 
 ThiefDescription:
 	db   "An attack that may"
 	line "steal a held item.@"
 
-SpiderWebDescription:
-	db   "Prevents fleeing"
-	line "or switching.@"
 
-MindReaderDescription:
-	db   "Ensures the line"
-	line "attack will hit.@"
 
 NightmareDescription:
 	db   "A sleeper loses"
@@ -965,9 +884,6 @@ FlameWheelDescription:
 	db   "An attack that may"
 	line "cause a burn.@"
 
-SnoreDescription:
-	db   "An attack useable"
-	line "only while asleep.@"
 
 CurseDescription:
 	db   "Works differently"
@@ -985,9 +901,6 @@ AeroblastDescription:
 	db   "Has a high criti-"
 	line "cal hit ratio.@"
 
-CottonSporeDescription:
-	db   "Sharply reduces"
-	line "the foe's SPEED.@"
 
 ReversalDescription:
 	db   "Stronger if the"
@@ -1065,9 +978,6 @@ DetectDescription:
 	db   "Evades attack that"
 	line "turn. It may fail.@"
 
-BoneRushDescription:
-	db   "An attack that"
-	line "hits 2-5 times.@"
 
 LockOnDescription:
 	db   "Ensures the line"
@@ -1105,9 +1015,6 @@ SwaggerDescription:
 	db   "Causes confusion"
 	line "and raises ATTACK.@"
 
-MilkDrinkDescription:
-	db   "Restores HP by 1/2"
-	line "the max HP.@"
 
 SparkDescription:
 	db   "An attack that may"
@@ -1145,9 +1052,6 @@ PresentDescription:
 	db   "A bomb that may"
 	line "restore HP.@"
 
-FrustrationDescription:
-	db   "An attack based on"
-	line "lack of loyalty.@"
 
 SafeguardDescription:
 	db   "Prevents all"
@@ -1277,9 +1181,6 @@ WhirlpoolDescription:
 	db   "Traps the foe for"
 	line "2-5 turns.@"
 
-BeatUpDescription:
-	db   "Party #MON join"
-	line "in the attack.@"
 
 MoonblastDescription:
 	db   "An attack that may"

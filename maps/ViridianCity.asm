@@ -82,8 +82,6 @@ TrainerHouseSign:
 ViridianCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-ViridianCityMartSign:
-	jumpstd MartSignScript
 
 ViridianCityCoffeeGrampsQuestionText:
 	text "Hey, kid! I just"

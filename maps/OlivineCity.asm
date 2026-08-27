@@ -110,8 +110,6 @@ OlivineCityBattleTowerSign:
 OlivineCityPokecenterSign:
 	jumpstd PokecenterSignScript
 
-OlivineCityMartSign:
-	jumpstd MartSignScript
 
 OlivineCityRivalApproachesTopMovement:
 	step DOWN

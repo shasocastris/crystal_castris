@@ -638,8 +638,6 @@ ElmsLabTrashcan:
 ElmsLabPC:
 	jumptext ElmsLabPCText
 
-ElmsLabBookshelf:
-	jumpstd DifficultBookshelfScript
 
 ElmsLab_WalkUpToElmMovement:
 	step UP
