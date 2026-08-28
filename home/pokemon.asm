@@ -210,13 +210,7 @@ _PrintLevel::
 ; 3-digit numbers overwrite the :L.
 	dec hl
 	inc c
-	jr Print8BitNumLeftAlign
-
-PrintLevel_Force3Digits::
-; Print :L and all 3 digits
-	ld [hl], '<LV>' ; no-optimize *hl++|*hl-- = N (a is used)
-	inc hl
-	ld c, 3
+	; fallthrough
 
 Print8BitNumLeftAlign::
 	ld [wTextDecimalByte], a

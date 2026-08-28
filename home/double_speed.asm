@@ -8,13 +8,8 @@
 DoubleSpeed::
 	ld hl, rSPD
 	bit B_SPD_DOUBLE, [hl]
-	jr z, SwitchSpeed
-	ret
-
-NormalSpeed::
-	ld hl, rSPD
-	bit B_SPD_DOUBLE, [hl]
-	ret z
+	ret nz ; already double speed
+	; fallthrough
 
 SwitchSpeed::
 	set B_SPD_PREPARE, [hl]

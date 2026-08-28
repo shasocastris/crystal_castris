@@ -1,8 +1,3 @@
-InitString::
-; Init a string of length c.
-	push hl
-	jr _InitString
-
 InitName::
 ; Intended for names, so this function is limited to ten characters.
 	push hl

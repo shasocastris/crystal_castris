@@ -86,11 +86,6 @@ GetMoveIDFromIndex::
 LockMoveID::
 	___conversion_table_homecall lock, _LockMoveID
 
-; in: a = position
-; out: a = 8-bit index; everything else preserved
-GetLockedMoveID::
-	___conversion_table_homecall_readlocked wMoveIndexTable
-
 ; in: a = 8-bit index
 ; out: hl = 16-bit index; a clobbered
 GetItemIndexFromID::
@@ -105,11 +100,6 @@ GetItemIDFromIndex::
 ; out: a = unchanged, hl = clobbered
 LockItemID::
 	___conversion_table_homecall lock, _LockItemID
-
-; in: a = position
-; out: a = 8-bit index; everything else preserved
-GetLockedItemID::
-	___conversion_table_homecall_readlocked wItemIndexTable
 
 GetItemIDFromHL::
 ; in:

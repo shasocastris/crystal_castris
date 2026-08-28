@@ -959,14 +959,6 @@ ObjectEventText::
 	text_far _ObjectEventText
 	text_end
 
-BGEventText::
-	text_far _BGEventText
-	text_end
-
-CoordinatesEventText::
-	text_far _CoordinatesEventText
-	text_end
-
 CheckObjectMask::
 	ldh a, [hMapObjectIndex]
 	ld e, a
