@@ -8280,9 +8280,14 @@ StartBattle:
 
 	ld a, [wTimeOfDayPal]
 	push af
+	; The battle reuses the weather tiles and OB palette slot, so drop the
+	; particles going in and reload both coming out.
+	farcall ClearWeather
 	call BattleIntro
 	call DoBattle
 	call ExitBattle
+	farcall LoadWeatherGraphics
+	farcall LoadWeatherPal
 	pop af
 	ld [wTimeOfDayPal], a
 	scf

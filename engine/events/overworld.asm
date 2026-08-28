@@ -717,6 +717,7 @@ FlyFunction:
 	callasm ClearSavedObjPals
 	callasm CopyBGGreenToOBPal7
 	special UpdateTimePals
+	callasm .SetWeatherFlyFlag
 	callasm FlyFromAnim
 	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
@@ -725,9 +726,23 @@ FlyFunction:
 	newloadmap MAPSETUP_FLY
 	callasm CopyBGGreenToOBPal7
 	callasm FlyToAnim
+	callasm .ClearWeatherFlyFlag
 	special WaitSFX
 	callasm .ReturnFromFly
 	end
+
+; Held across the whole Fly. SetCurrentWeather skips its transition drain while
+; it is set, since the screen has already been whited out, and Lightning bails
+; rather than flashing over the animation.
+.SetWeatherFlyFlag:
+	ld hl, wWeatherFlags
+	set OW_WEATHER_DO_FLY_F, [hl]
+	ret
+
+.ClearWeatherFlyFlag:
+	ld hl, wWeatherFlags
+	res OW_WEATHER_DO_FLY_F, [hl]
+	ret
 
 .ReturnFromFly:
 	farcall RespawnPlayer

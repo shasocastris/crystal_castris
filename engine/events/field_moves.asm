@@ -381,7 +381,13 @@ endr
 	ld hl, wShadowOAMSprite04
 	ld bc, wShadowOAMEnd - wShadowOAMSprite04
 	xor a
-	jmp ByteFill
+	rst ByteFill
+	; The animation just scrubbed shadow OAM, weather's window included. Fill the
+	; destination screen rather than making the player watch it drift in from
+	; the edges for a second.
+	farcall LoadWeatherGraphics
+	farcall LoadWeatherPal
+	farjp SpawnRandomWeatherFullScreen
 
 FlyFunction_InitGFX:
 	call ClearSpriteAnims
