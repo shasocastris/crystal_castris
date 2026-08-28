@@ -22,6 +22,12 @@ DEF NUM_OW_WEATHERS EQU const_value - 1
 ; Frames SetCurrentWeather spends draining the previous weather on a change.
 DEF WEATHER_TRANSITION_LENGTH EQU 32
 
+; Lightning is rolled once per weather frame and then halved by a second roll,
+; so the real rate is half this. Weather runs at 30 frames a second, which makes
+; 1 percent a strike about every seven seconds, and 5 percent one about every
+; second and a half. The source uses 1 percent.
+DEF LIGHTNING_CHANCE EQU 5 percent
+
 ; wWeatherFlags
 	const_def
 	const OW_WEATHER_DO_FLY_F             ; 0 -- a Fly animation is in progress

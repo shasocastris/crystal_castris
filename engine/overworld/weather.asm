@@ -725,9 +725,9 @@ DoOverworldRain:
 	cp OW_WEATHER_THUNDERSTORM
 	jr nz, .no_lightning
 
-	; 1% * 50% chance of lightning
+	; LIGHTNING_CHANCE, halved by the second roll
 	call Random
-	cp 1 percent
+	cp LIGHTNING_CHANCE
 	jr nc, .no_lightning
 	call Random
 	cp 50 percent
