@@ -56,6 +56,12 @@ DoOverworldWeather::
 	ld a, BANK(wCurWeather)
 	ldh [rSVBK], a
 
+	; Lightning waits a frame, and waiting a frame is what calls this, so refuse
+	; to reenter rather than recursing.
+	ld a, [wWeatherRunning]
+	and a
+	jr nz, .done_no_tick
+
 	; PrintLetterDelay busy-spins on wTextDelayFrames rather than sleeping, so it
 	; reaches here many times a frame. Move the particles only on the first call
 	; after each VBlank, or they would race while text is printing.
@@ -64,6 +70,9 @@ DoOverworldWeather::
 	cp [hl]
 	jr z, .done_no_tick
 	ld [hl], a
+
+	ld a, TRUE
+	ld [wWeatherRunning], a
 
 	call SetWeatherOAMReservation
 
@@ -100,6 +109,8 @@ DoOverworldWeather::
 	ld hl, wOverworldWeatherTimer
 	inc [hl]
 	call ClipWeatherSprites
+	xor a
+	ld [wWeatherRunning], a
 .done_no_tick
 	pop af
 	ldh [rSVBK], a
@@ -710,7 +721,18 @@ DoOverworldRain:
 	jr z, .continue
 	farcall LoadWeatherPal
 .continue
-	; the thunderstorm flash is phase 3; until then it renders as plain rain
+	ld a, [wCurWeather]
+	cp OW_WEATHER_THUNDERSTORM
+	jr nz, .no_lightning
+
+	; 1% * 50% chance of lightning
+	call Random
+	cp 1 percent
+	jr nc, .no_lightning
+	call Random
+	cp 50 percent
+	call c, Lightning
+.no_lightning
 rept 3
 	; spawn three raindrops
 	call ScanForEmptyOAM
@@ -1360,6 +1382,31 @@ SpawnCherryBlossom:
 	ldh [rSVBK], a
 	pop hl
 	ret
+
+Lightning:
+; Flash the screen white for a frame, then put the map's palettes back.
+;
+; The source fades back in through OWFadePalettesInit and marks wPalWhiteState
+; and NO_DYN_PAL_APPLY_UNTIL_RESET_F, none of which exist here. Reapplying the
+; map palettes directly gives a hard flash, which is what lightning looks like.
+	ld hl, wWeatherFlags
+	bit OW_WEATHER_DO_FLY_F, [hl]
+	ret nz ; the screen is already white
+	bit OW_WEATHER_LIGHTNING_DISABLED_F, [hl]
+	ret nz ; something else is managing the palettes
+
+	call SetWhitePals
+	farcall ApplyPals
+	ld de, SFX_THUNDER
+	call PlaySFX
+	; Safe only because DoOverworldWeather refuses to reenter; this frame's wait
+	; runs the very hook that called us.
+	call DelayFrame
+
+	farcall LoadMapPals
+	farcall ClearSavedObjPals
+	farcall CheckForUsedObjPals
+	farjp ApplyPals
 
 IsEvenSpriteIndex:
 ; input: e = sprite index

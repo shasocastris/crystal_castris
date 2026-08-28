@@ -175,9 +175,15 @@ PlaceMapNameSign::
 	ld hl, rIE
 	res B_IE_STAT, [hl]
 	ldh [hLCDCPointer], a
+	ld hl, wWeatherFlags
+	res OW_WEATHER_LIGHTNING_DISABLED_F, [hl]
 	ret
 
 LoadMapNameSignGFX:
+	; The sign drives its own palettes through an LCD interrupt, so a lightning
+	; flash over it would fight for them.
+	ld hl, wWeatherFlags
+	set OW_WEATHER_LIGHTNING_DISABLED_F, [hl]
 	; load opaque space
 	ld hl, vTiles0 tile POPUP_MAP_FRAME_SPACE
 	call GetOpaque1bppSpaceTile

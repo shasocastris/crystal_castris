@@ -3229,6 +3229,9 @@ wWeatherFlags:: db             ; OW_WEATHER_*_F bits
 wOverworldWeatherTimer:: db    ; free-running; drives the 30 Hz gate and splash lifetime
 wOverworldWeatherCooldown:: db ; frames left draining the old weather
 wLastWeatherVBlank:: db        ; hVBlankCounter when the particles last moved
+; Set while DoOverworldWeather is running. Lightning calls DelayFrame, and
+; DelayFrame calls DoOverworldWeather, so without this the two recurse.
+wWeatherRunning:: db
 ; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
 wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
 
