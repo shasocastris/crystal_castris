@@ -10,34 +10,12 @@ FarCall_de::
 	call _de_
 	jr ReturnFarCall
 
-AnonBankPush::
-	ldh [hFarCallSavedA], a
-	ld a, h
-	ldh [hFarCallSavedH], a
-	ld a, l
-	ldh [hFarCallSavedL], a
-	pop hl
-	ldh a, [hROMBank]
-	push af
-	ld a, [hli]
-	jr _DoFarCall_BankInA
-
 FarCall_hl::
 ; Call a:hl.
 ; Preserves other registers.
 	ldh [hTempBank], a
 	ldh a, [hROMBank]
 	push af
-	jr _DoFarCall
-
-FarPointerCall::
-	ldh a, [hROMBank]
-	push af
-	ld a, [hli]
-	ldh [hTempBank], a
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	jr _DoFarCall
 
 StackCallInBankB:
@@ -99,8 +77,6 @@ ReturnFarCall::
 	ldh a, [hFarCallSavedA]
 	ret
 
-RunFunctionInWRA6::
-	ld a, BANK(wDecompressScratch)
 StackCallInWRAMBankA::
 	ldh [hTempBank], a
 	ld a, h
