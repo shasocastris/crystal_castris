@@ -56,6 +56,15 @@ DoOverworldWeather::
 	ld a, BANK(wCurWeather)
 	ldh [rSVBK], a
 
+	; PrintLetterDelay busy-spins on wTextDelayFrames rather than sleeping, so it
+	; reaches here many times a frame. Move the particles only on the first call
+	; after each VBlank, or they would race while text is printing.
+	ldh a, [hVBlankCounter]
+	ld hl, wLastWeatherVBlank
+	cp [hl]
+	jr z, .done_no_tick
+	ld [hl], a
+
 	call SetWeatherOAMReservation
 
 	; if weather is disabled, we are done
@@ -90,6 +99,7 @@ DoOverworldWeather::
 	; we are done, increment the weather delay rolling counter (0->255->0)
 	ld hl, wOverworldWeatherTimer
 	inc [hl]
+.done_no_tick
 	pop af
 	ldh [rSVBK], a
 	jmp PopBCDEHL

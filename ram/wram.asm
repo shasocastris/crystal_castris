@@ -3216,10 +3216,11 @@ wPokeDB2UsedEntries:: flag_array MONDB_ENTRIES
 wPokeDBUsedEntriesEnd::
 
 
-; Pinned to bank 1 on purpose: DoOverworldWeather runs in the overworld frame
-; with BANK(wXCoord) already selected, so keeping this state in the same bank
-; means the per-particle loop never touches rWBK. It sits after wGameDataEnd,
-; so it is outside the save block and cannot shift saved data.
+; Pinned to bank 1 on purpose. DoOverworldWeather is called from DelayFrame and
+; from PrintLetterDelay's spin, so it cannot assume a WRAM bank the way it could
+; when it hung off the overworld frame -- it selects this one itself. Sitting
+; after wGameDataEnd keeps it outside the save block, so it cannot shift saved
+; data.
 SECTION "Overworld Weather State", WRAMX, BANK[1]
 
 wCurWeather:: db               ; active OW_WEATHER_*
@@ -3227,7 +3228,7 @@ wPrevWeather:: db              ; weather being drained during a transition
 wWeatherFlags:: db             ; OW_WEATHER_*_F bits
 wOverworldWeatherTimer:: db    ; free-running; drives the 30 Hz gate and splash lifetime
 wOverworldWeatherCooldown:: db ; frames left draining the old weather
-wSpriteOverlapCount:: db       ; working count inside SpriteLimitExceeded
+wLastWeatherVBlank:: db        ; hVBlankCounter when the particles last moved
 ; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
 wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
 

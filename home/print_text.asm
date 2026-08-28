@@ -60,7 +60,12 @@ PrintLetterDelay::
 .wait
 	ld a, [wTextDelayFrames]
 	and a
-	jr nz, .checkjoypad
+	jr z, .end
+; This spins on wTextDelayFrames rather than sleeping, so DelayFrame's weather
+; hook is never reached while text prints. Drive it from here too; it only moves
+; the particles once per VBlank, so spinning cannot run it fast.
+	farcall DoOverworldWeather
+	jr .checkjoypad
 
 .end
 	jmp PopBCDEHL
