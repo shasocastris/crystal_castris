@@ -2631,7 +2631,13 @@ _UpdateSprites::
 	ld a, [wStateFlags]
 	bit SPRITE_UPDATES_DISABLED_F, a
 	ret z
+	; Start above the structs overworld weather holds, so its particles keep the
+	; low OAM indexes and draw over map objects rather than behind them.
+	bit FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
+	ld a, NUM_WEATHER_OAM_STRUCTS * OBJ_SIZE
+	jr nz, .got_oam_start
 	xor a
+.got_oam_start
 	ldh [hUsedSpriteIndex], a
 	ldh a, [hOAMUpdate]
 	push af
@@ -2862,18 +2868,10 @@ InitSprites:
 	ldh a, [hUsedSpriteIndex]
 	ld c, a
 	ld b, HIGH(wShadowOAM)
-	; Overworld weather owns the last 12 structs while it is running, so stop
-	; short of them; .fill honours the same reservation when hiding slots.
-	ld a, [wStateFlags]
-	bit LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, a
-	ld e, LOW(wShadowOAMEnd)
-	jr z, .got_oam_limit
-	ld e, (OAM_COUNT - 12) * OBJ_SIZE
-.got_oam_limit
 	ld a, [hli]
 	ldh [hUsedSpriteTile], a
 	add c
-	cp e
+	cp LOW(wShadowOAMEnd)
 	jr nc, .full
 .addsprite
 	ldh a, [hCurSpriteYPixel]

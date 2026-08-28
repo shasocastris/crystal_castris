@@ -24,11 +24,16 @@ DEF CHERRYLEAF_TILE EQU WEATHER_TILE_1
 	assert WEATHER_TILE_2 < $80, \
 		"the weather tiles must fit in the vTiles0 object arena"
 
-; Weather owns the last 12 shadow OAM structs. Map objects grow *upward* from
-; wShadowOAM here, the opposite of the source, so the tail is what is free;
-; LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F keeps them out of it.
-DEF WEATHER_OAM_STRUCTS EQU 12
-DEF WEATHER_OAM_START EQU (OAM_COUNT - WEATHER_OAM_STRUCTS) * OBJ_SIZE
+; Weather owns the first 12 shadow OAM structs, as in the source. OAM index is
+; OBJ-to-OBJ draw priority on CGB, so the front is what puts particles over the
+; player and NPCs; _UpdateSprites starts map objects above the window while
+; FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F is set.
+;
+; Unlike the source, weather is capped at these 12 structs rather than spreading
+; across all 40, so ten particles sharing a scanline -- the case its software
+; sprite limiter exists to handle -- is rare enough to leave to the hardware.
+DEF WEATHER_OAM_STRUCTS EQU NUM_WEATHER_OAM_STRUCTS
+DEF WEATHER_OAM_START EQU 0
 
 DoOverworldWeather::
 	push hl
@@ -104,18 +109,18 @@ DoOverworldWeather::
 	assert_table_length NUM_OW_WEATHERS + 1
 
 SetWeatherOAMReservation:
-; Hold the last 12 shadow OAM structs for as long as particles can exist.
-; Without this _UpdateSprites.fill hides them again every frame.
+; Hold the first 12 shadow OAM structs for as long as particles can exist.
+; Without this _UpdateSprites would start at struct 0 and overwrite them.
 	ld a, [wCurWeather]
 	ld hl, wOverworldWeatherCooldown
 	or [hl]
 	ld hl, wStateFlags
 	jr z, .release
-	set LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
+	set FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
 	ret
 
 .release
-	res LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
+	res FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
 	ret
 
 SpawnRandomWeatherFullScreen::
@@ -464,10 +469,11 @@ ClearWeather::
 
 .HideWeatherSprites
 ; hide all visible weather-owned OAM entries
-	ld a, [wUsedWeatherSpriteIndex]
-	cp WEATHER_OAM_START
-	ret c ; nothing has spawned yet
-	ld c, a
+;
+; The window is a fixed 12 structs, so sweep all of it. The source stops at a
+; high-water mark because its window is bounded by however much of OAM the map
+; objects left free, which varies frame to frame; ours does not.
+	ld c, WEATHER_OAM_START + (WEATHER_OAM_STRUCTS - 1) * OBJ_SIZE
 	ld de, wShadowOAM + WEATHER_OAM_START
 .loop
 	ld h, d

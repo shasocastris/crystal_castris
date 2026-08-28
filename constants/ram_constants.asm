@@ -104,10 +104,16 @@ DEF RIGHT_MASK EQU 1 << RIGHT
 DEF FACE_CURRENT EQU 0
 
 ; wStateFlags
-DEF SPRITE_UPDATES_DISABLED_F             EQU 0
-DEF LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F EQU 1
-DEF TEXT_STATE_F                          EQU 6
-DEF SCRIPTED_MOVEMENT_STATE_F             EQU 7
+DEF SPRITE_UPDATES_DISABLED_F              EQU 0
+DEF LAST_12_SPRITE_OAM_STRUCTS_RESERVED_F  EQU 1
+DEF FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F EQU 2
+DEF TEXT_STATE_F                           EQU 6
+DEF SCRIPTED_MOVEMENT_STATE_F              EQU 7
+
+; Overworld weather holds this many shadow OAM structs from the front while
+; FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F is set. OAM index is OBJ-to-OBJ draw
+; priority on CGB, so owning the front is what puts particles over map objects.
+DEF NUM_WEATHER_OAM_STRUCTS EQU 12
 
 ; wSpriteFlags::
 DEF SPRITES_VRAM_BANK_0_F       EQU 5
