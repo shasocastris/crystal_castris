@@ -35,6 +35,8 @@ MapSetupScript_Warp:
 	mapsetup InitSound
 	mapsetup EnterMapSpawnPoint
 	mapsetup LoadMapAttributes
+	mapsetup ClearWeather
+	mapsetup SetCurrentWeather
 	mapsetup HandleNewMap
 	mapsetup SpawnPlayer
 	mapsetup RefreshPlayerCoords
@@ -60,6 +62,8 @@ MapSetupScript_Warp:
 MapSetupScript_BadWarp:
 	mapsetup EnterMapSpawnPoint
 	mapsetup LoadMapAttributes
+	mapsetup ClearWeather
+	mapsetup SetCurrentWeather
 	mapsetup HandleNewMap
 	mapsetup SpawnPlayer
 	mapsetup RefreshPlayerCoords
@@ -88,6 +92,7 @@ MapSetupScript_Connection:
 	mapsetup SuspendMapAnims
 	mapsetup EnterMapConnection
 	mapsetup LoadMapAttributes
+	mapsetup SetCurrentWeather
 	mapsetup HandleNewMap
 	mapsetup RefreshPlayerCoords
 	mapsetup LoadBlockData
@@ -113,6 +118,8 @@ MapSetupScript_Door:
 MapSetupScript_Train:
 	mapsetup EnterMapWarp
 	mapsetup LoadMapAttributes
+	mapsetup ClearWeather
+	mapsetup SetCurrentWeather
 	mapsetup GetWarpDestCoords
 	mapsetup HandleNewMap
 	mapsetup RefreshPlayerCoords

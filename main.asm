@@ -91,6 +91,7 @@ INCLUDE "engine/pokemon/daycaremons.asm"
 SECTION "Overworld Weather", ROMX
 
 INCLUDE "engine/overworld/weather.asm"
+INCLUDE "engine/events/weather.asm"
 
 
 SECTION "Roofs", ROMX

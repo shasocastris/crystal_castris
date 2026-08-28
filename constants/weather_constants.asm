@@ -19,6 +19,9 @@ DEF NUM_OW_WEATHERS EQU const_value - 1
 ; The engine tests this with `and a`, so nothing may be inserted before it.
 	assert OW_WEATHER_NONE == 0, "OW_WEATHER_NONE must be zero"
 
+; Frames SetCurrentWeather spends draining the previous weather on a change.
+DEF WEATHER_TRANSITION_LENGTH EQU 32
+
 ; wWeatherFlags
 	const_def
 	const OW_WEATHER_DO_FLY_F             ; 0 -- a Fly animation is in progress

@@ -234,7 +234,7 @@ ENDM
 	connection west, MahoganyTown, MAHOGANY_TOWN, 0
 	connection east, BlackthornCity, BLACKTHORN_CITY, -9
 
-	map_attributes Route45, ROUTE_45, $71, NORTH | WEST
+	map_attributes Route45, ROUTE_45, $71, NORTH | WEST, OW_WEATHER_SANDSTORM
 	connection north, BlackthornCity, BLACKTHORN_CITY, 2
 	connection west, Route46, ROUTE_46, 36
 
@@ -465,7 +465,7 @@ ENDM
 	map_attributes WhirlIslandLugiaChamber, WHIRL_ISLAND_LUGIA_CHAMBER, $0f, 0
 	map_attributes SilverCaveRoom1, SILVER_CAVE_ROOM_1, $09, 0
 	map_attributes SilverCaveRoom2, SILVER_CAVE_ROOM_2, $09, 0
-	map_attributes SilverCaveRoom3, SILVER_CAVE_ROOM_3, $09, 0
+	map_attributes SilverCaveRoom3, SILVER_CAVE_ROOM_3, $09, 0, OW_WEATHER_SNOW
 	map_attributes SilverCaveItemRooms, SILVER_CAVE_ITEM_ROOMS, $09, 0
 	map_attributes DarkCaveVioletEntrance, DARK_CAVE_VIOLET_ENTRANCE, $09, 0
 	map_attributes DarkCaveBlackthornEntrance, DARK_CAVE_BLACKTHORN_ENTRANCE, $09, 0
