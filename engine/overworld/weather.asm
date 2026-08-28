@@ -36,9 +36,25 @@ DEF WEATHER_OAM_STRUCTS EQU NUM_WEATHER_OAM_STRUCTS
 DEF WEATHER_OAM_START EQU 0
 
 DoOverworldWeather::
+	; DelayFrame runs this every frame from every loop in the game. hMapAnims is
+	; "the map is live": textboxes and the start menu keep it set, while battles,
+	; Hall of Fame, whiteout and faded-out menus clear it. The gate lives here
+	; rather than at the call site because ROM0 has no room for it.
+	ldh a, [hMapAnims]
+	and a
+	ret z
+
 	push hl
 	push de
 	push bc
+	; DelayFrame calls this from every loop in the game, so unlike the overworld
+	; frame it makes no promise about the WRAM bank. Every byte below -- the
+	; weather state, wStateFlags, wLoadedObjPal6, the player's step vectors -- is
+	; in BANK(wCurWeather); only wShadowOAM is bank-independent.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wCurWeather)
+	ldh [rSVBK], a
 
 	call SetWeatherOAMReservation
 
@@ -74,6 +90,8 @@ DoOverworldWeather::
 	; we are done, increment the weather delay rolling counter (0->255->0)
 	ld hl, wOverworldWeatherTimer
 	inc [hl]
+	pop af
+	ldh [rSVBK], a
 	jmp PopBCDEHL
 
 .DoOverworldWeather_Jumptable:

@@ -10,7 +10,14 @@ DelayFrame::
 	ld a, [wVBlankOccurred]
 	and a
 	jr nz, .halt
-	ret
+
+; Overworld weather runs from here rather than from the overworld frame, so it
+; keeps animating under textboxes, menus and scripted pauses. It gates itself on
+; hMapAnims -- the same gate AnimateTileset uses from VBlank -- because ROM0 has
+; no room for the check here. Running after the wait rather than before it
+; leaves a full frame before the next hTransferShadowOAM, so a particle is never
+; half-moved when OAM is transferred.
+	farjp DoOverworldWeather
 
 ApplyTilemapInVBlank::
 ; Tell VBlank to update BG Map
