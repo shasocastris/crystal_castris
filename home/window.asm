@@ -25,7 +25,7 @@ CloseText::
 	ldh [hOAMUpdate], a
 	ld hl, wStateFlags
 	res TEXT_STATE_F, [hl]
-	farjp ClearWeatherClip
+	farjp ClearWeatherTextboxClip
 
 .CloseText:
 	call ClearWindowData
@@ -59,9 +59,7 @@ OpenText::
 	rst Bankswitch
 
 	; keep overworld weather off the textbox
-	lb bc, TEXTBOX_X, TEXTBOX_Y
-	lb de, TEXTBOX_X + TEXTBOX_WIDTH - 1, TEXTBOX_Y + TEXTBOX_HEIGHT - 1
-	farjp SetWeatherClip
+	farjp SetWeatherTextboxClip
 
 HDMATransferTilemapAndAttrmap_Menu::
 	ldh a, [hOAMUpdate]

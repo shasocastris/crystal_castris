@@ -144,7 +144,62 @@ SetWeatherClip::
 	push af
 	ld a, BANK(wWeatherClipLeft)
 	ldh [rSVBK], a
+	call _SetWeatherClipRect
+	jr _RestoreWeatherClipBank
 
+SetWeatherTextboxClip::
+; A textbox has opened. Remember that, so a menu closing over it restores the
+; textbox's rectangle instead of leaving the box to be rained on.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherClipLeft)
+	ldh [rSVBK], a
+	ld a, TRUE
+	ld [wWeatherTextboxClip], a
+	call _TextboxClip
+	jr _RestoreWeatherClipBank
+
+ClearWeatherTextboxClip::
+; The textbox has closed, so there is nothing left to clip.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherClipLeft)
+	ldh [rSVBK], a
+	xor a
+	ld [wWeatherTextboxClip], a
+	ld [wWeatherClipBottom], a
+	jr _RestoreWeatherClipBank
+
+ClearWeatherClip::
+; A menu box has gone. If a textbox is still underneath it, fall back to that
+; rather than dropping the clip entirely.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherClipLeft)
+	ldh [rSVBK], a
+	ld a, [wWeatherTextboxClip]
+	and a
+	jr z, .no_textbox
+	call _TextboxClip
+	jr _RestoreWeatherClipBank
+
+.no_textbox
+	ld [wWeatherClipBottom], a ; a is 0
+	; fallthrough
+
+_RestoreWeatherClipBank:
+	pop af
+	ldh [rSVBK], a
+	ret
+
+_TextboxClip:
+	lb bc, TEXTBOX_X, TEXTBOX_Y
+	lb de, TEXTBOX_X + TEXTBOX_WIDTH - 1, TEXTBOX_Y + TEXTBOX_HEIGHT - 1
+	; fallthrough
+
+_SetWeatherClipRect:
+; bc = top-left tile, de = bottom-right tile, inclusive. Assumes the weather
+; WRAM bank is already selected.
 	ld a, b
 	call .TileToX
 	ld [wWeatherClipLeft], a
@@ -159,9 +214,6 @@ SetWeatherClip::
 	inc a ; exclusive
 	call .TileToY
 	ld [wWeatherClipBottom], a
-
-	pop af
-	ldh [rSVBK], a
 	ret
 
 .TileToY
@@ -176,17 +228,6 @@ SetWeatherClip::
 	add a
 	add a
 	add TILE_WIDTH ; OAM x is offset by one tile
-	ret
-
-ClearWeatherClip::
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wWeatherClipBottom)
-	ldh [rSVBK], a
-	xor a
-	ld [wWeatherClipBottom], a
-	pop af
-	ldh [rSVBK], a
 	ret
 
 ClipWeatherSprites:

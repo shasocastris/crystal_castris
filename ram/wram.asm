@@ -3239,6 +3239,10 @@ wWeatherClipLeft:: db
 wWeatherClipTop:: db
 wWeatherClipRight:: db
 wWeatherClipBottom:: db
+; Set while a textbox is open. A menu drawn over one -- a yes/no box, usually --
+; calls ExitMenu on its way out, which must fall back to the textbox's rectangle
+; rather than dropping the clip while the textbox is still on screen.
+wWeatherTextboxClip:: db
 
 
 ; 144 bytes, double-purposed: a per-scanline sprite counter in the sprite-limit
