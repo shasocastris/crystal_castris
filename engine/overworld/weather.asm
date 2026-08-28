@@ -135,6 +135,14 @@ SetWeatherOAMReservation:
 	ld hl, wStateFlags
 	jr z, .release
 	set FIRST_12_SPRITE_OAM_STRUCTS_RESERVED_F, [hl]
+
+	; Textbox and menu waits park hOAMUpdate at 1 to buy VBlank time for BG
+	; work, which stops hTransferShadowOAM. Left alone that leaves particles
+	; computed every frame but never transferred -- moving for as long as the
+	; text is still printing, then frozen. While weather is live the transfer
+	; has to keep running; the waits restore their own saved value on exit.
+	xor a
+	ldh [hOAMUpdate], a
 	ret
 
 .release
