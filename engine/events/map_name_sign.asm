@@ -133,7 +133,7 @@ PlaceMapNameSign::
 	ld hl, wLandmarkSignTimer
 	ld a, [hl]
 	and a
-	jr z, .stage_5_sliding_out
+	jr z, .no_sign
 	dec [hl]
 	sub MAPSIGNSTAGE_2_LOADGFX
 	jr nc, .stage_5_sliding_out
@@ -162,6 +162,15 @@ PlaceMapNameSign::
 	add a
 	add SCREEN_HEIGHT_PX - 3 * TILE_WIDTH
 	jr .got_value
+
+.no_sign
+	; No sign is on screen, so lightning is free again. The clear further down
+	; needs one exact timer value to land on, which anything interrupting a sign
+	; mid-slide would skip -- and the flag would then suppress lightning forever.
+	ld hl, wWeatherFlags
+	res OW_WEATHER_LIGHTNING_DISABLED_F, [hl]
+	xor a ; the timer, which .stage_5_sliding_out expects in a
+	; fallthrough
 
 .stage_5_sliding_out
 	add a
