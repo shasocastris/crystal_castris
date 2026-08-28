@@ -144,7 +144,7 @@ ENDM
 	connection west, Route42, ROUTE_42, 0
 	connection east, Route44, ROUTE_44, 0
 
-	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, SOUTH
+	map_attributes LakeOfRage, LAKE_OF_RAGE, $05, SOUTH, OW_WEATHER_THUNDERSTORM
 	connection south, Route43, ROUTE_43, 5
 
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, SOUTH | WEST
