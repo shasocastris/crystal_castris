@@ -3232,17 +3232,23 @@ wLastWeatherVBlank:: db        ; hVBlankCounter when the particles last moved
 ; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
 wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
 
-; Screen rectangle, in OAM coordinates, that particles are kept out of, so a
+; Screen rectangles, in OAM coordinates, that particles are kept out of so a
 ; textbox or menu is not rained on. Right and bottom are exclusive; a zero
-; bottom disables the clip, since a real box always ends below its top.
+; bottom means no box, since a real one always ends below its top.
+;
+; The menu box and the textbox are tracked separately because both can be on
+; screen at once -- a yes/no box sits over the dialogue that asked the question.
+wWeatherMenuClipLeft:: db
+wWeatherMenuClipTop:: db
+wWeatherMenuClipRight:: db
+wWeatherMenuClipBottom:: db
+wWeatherTextboxClip:: db ; nonzero while a textbox is open
+
+; The rectangle ClipWeatherSprites is currently sweeping; scratch, not state.
 wWeatherClipLeft:: db
 wWeatherClipTop:: db
 wWeatherClipRight:: db
 wWeatherClipBottom:: db
-; Set while a textbox is open. A menu drawn over one -- a yes/no box, usually --
-; calls ExitMenu on its way out, which must fall back to the textbox's rectangle
-; rather than dropping the clip while the textbox is still on screen.
-wWeatherTextboxClip:: db
 
 
 ; 144 bytes, double-purposed: a per-scanline sprite counter in the sprite-limit

@@ -137,54 +137,59 @@ DoOverworldWeather::
 	dw DoCherryBlossomFall
 	assert_table_length NUM_OW_WEATHERS + 1
 
-SetWeatherClip::
-; Keep particles out of a UI box. bc = top-left, de = bottom-right, both
-; inclusive tile coordinates, as a menu header or textbox states them.
+SetWeatherMenuClip::
+; Keep particles off the menu box that was just drawn. Read back from
+; wMenuBorder* rather than from a menu header, because DrawVariableLengthMenuBox
+; sizes the box to its item count. Those live in WRAM0, so the bank we select
+; here for the clip state does not affect them.
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wWeatherClipLeft)
+	ld a, BANK(wWeatherMenuClipLeft)
 	ldh [rSVBK], a
-	call _SetWeatherClipRect
-	jr _RestoreWeatherClipBank
 
-SetWeatherTextboxClip::
-; A textbox has opened. Remember that, so a menu closing over it restores the
-; textbox's rectangle instead of leaving the box to be rained on.
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wWeatherClipLeft)
-	ldh [rSVBK], a
-	ld a, TRUE
-	ld [wWeatherTextboxClip], a
-	call _TextboxClip
-	jr _RestoreWeatherClipBank
-
-ClearWeatherTextboxClip::
-; The textbox has closed, so there is nothing left to clip.
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wWeatherClipLeft)
-	ldh [rSVBK], a
-	xor a
-	ld [wWeatherTextboxClip], a
-	ld [wWeatherClipBottom], a
+	ld a, [wMenuBorderLeftCoord]
+	call _TileToWeatherClipX
+	ld [wWeatherMenuClipLeft], a
+	ld a, [wMenuBorderTopCoord]
+	call _TileToWeatherClipY
+	ld [wWeatherMenuClipTop], a
+	ld a, [wMenuBorderRightCoord]
+	inc a ; exclusive
+	call _TileToWeatherClipX
+	ld [wWeatherMenuClipRight], a
+	ld a, [wMenuBorderBottomCoord]
+	inc a ; exclusive
+	call _TileToWeatherClipY
+	ld [wWeatherMenuClipBottom], a
 	jr _RestoreWeatherClipBank
 
 ClearWeatherClip::
-; A menu box has gone. If a textbox is still underneath it, fall back to that
-; rather than dropping the clip entirely.
+; The menu box has gone. The textbox is tracked separately, so a yes/no box
+; closing over one leaves the dialogue underneath it still clipped.
 	ldh a, [rSVBK]
 	push af
-	ld a, BANK(wWeatherClipLeft)
+	ld a, BANK(wWeatherMenuClipBottom)
 	ldh [rSVBK], a
-	ld a, [wWeatherTextboxClip]
-	and a
-	jr z, .no_textbox
-	call _TextboxClip
+	xor a
+	ld [wWeatherMenuClipBottom], a
 	jr _RestoreWeatherClipBank
 
-.no_textbox
-	ld [wWeatherClipBottom], a ; a is 0
+SetWeatherTextboxClip::
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherTextboxClip)
+	ldh [rSVBK], a
+	ld a, TRUE
+	ld [wWeatherTextboxClip], a
+	jr _RestoreWeatherClipBank
+
+ClearWeatherTextboxClip::
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherTextboxClip)
+	ldh [rSVBK], a
+	xor a
+	ld [wWeatherTextboxClip], a
 	; fallthrough
 
 _RestoreWeatherClipBank:
@@ -192,38 +197,14 @@ _RestoreWeatherClipBank:
 	ldh [rSVBK], a
 	ret
 
-_TextboxClip:
-	lb bc, TEXTBOX_X, TEXTBOX_Y
-	lb de, TEXTBOX_X + TEXTBOX_WIDTH - 1, TEXTBOX_Y + TEXTBOX_HEIGHT - 1
-	; fallthrough
-
-_SetWeatherClipRect:
-; bc = top-left tile, de = bottom-right tile, inclusive. Assumes the weather
-; WRAM bank is already selected.
-	ld a, b
-	call .TileToX
-	ld [wWeatherClipLeft], a
-	ld a, c
-	call .TileToY
-	ld [wWeatherClipTop], a
-	ld a, d
-	inc a ; exclusive
-	call .TileToX
-	ld [wWeatherClipRight], a
-	ld a, e
-	inc a ; exclusive
-	call .TileToY
-	ld [wWeatherClipBottom], a
-	ret
-
-.TileToY
+_TileToWeatherClipY:
 	add a
 	add a
 	add a
 	add TILE_WIDTH * 2 ; OAM y is offset by two tiles
 	ret
 
-.TileToX
+_TileToWeatherClipX:
 	add a
 	add a
 	add a
@@ -231,12 +212,33 @@ _SetWeatherClipRect:
 	ret
 
 ClipWeatherSprites:
-; Hide any weather-owned sprite inside the clip rectangle. Done as a sweep after
-; the particles move, rather than a test inside each of the four fall loops, so
-; that it also catches whatever was already on screen when the box opened.
-	ld a, [wWeatherClipBottom]
+; Hide weather-owned sprites sitting on a UI box. Done as a sweep after the
+; particles move, rather than a test inside each of the four fall loops, so it
+; also catches whatever was already on screen when the box opened.
+	ld a, [wWeatherMenuClipBottom]
 	and a
-	ret z ; no box on screen
+	jr z, .no_menu_box
+	ld hl, wWeatherMenuClipLeft
+	call .Sweep
+
+.no_menu_box
+	ld a, [wWeatherTextboxClip]
+	and a
+	ret z
+	ld hl, .TextboxRect
+	; fallthrough
+
+.Sweep
+; hl = the four rectangle bytes, in WRAM or ROM. Copied to a fixed place so the
+; inner loop can keep hl for addressing OAM.
+	ld de, wWeatherClipLeft
+	ld c, 4
+.copy_rect
+	ld a, [hli]
+	ld [de], a
+	inc de
+	dec c
+	jr nz, .copy_rect
 
 	ld de, wShadowOAM + WEATHER_OAM_START
 	ld b, WEATHER_OAM_STRUCTS
@@ -283,6 +285,12 @@ ClipWeatherSprites:
 	dec b
 	jr nz, .loop
 	ret
+
+.TextboxRect
+	db TEXTBOX_X * TILE_WIDTH + TILE_WIDTH
+	db TEXTBOX_Y * TILE_WIDTH + TILE_WIDTH * 2
+	db (TEXTBOX_X + TEXTBOX_WIDTH) * TILE_WIDTH + TILE_WIDTH
+	db (TEXTBOX_Y + TEXTBOX_HEIGHT) * TILE_WIDTH + TILE_WIDTH * 2
 
 SetWeatherOAMReservation:
 ; Hold the first 12 shadow OAM structs for as long as particles can exist.

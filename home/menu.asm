@@ -201,7 +201,10 @@ MenuBox::
 	call GetMenuBoxDims
 	dec b
 	dec c
-	jmp Textbox
+	call Textbox
+	; every menu box is drawn through here, so this covers yes/no boxes and the
+	; start menu alike; the box's own coords are still in wMenuBorder*
+	farjp SetWeatherMenuClip
 
 GetMenuTextStartCoord::
 	ld a, [wMenuBorderTopCoord]

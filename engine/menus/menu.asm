@@ -286,6 +286,12 @@ MenuJoypadLoop:
 Do2DMenuRTCJoypad:
 .loopRTC
 	call UpdateTimeAndPals
+; This waits for input by spinning rather than sleeping, unless the menu enabled
+; sprite animations, so DelayFrame's weather hook is never reached while a
+; yes/no box is up. Drive it from here too; the frame guard in
+; DoOverworldWeather keeps the particles to one move per VBlank however fast we
+; spin.
+	farcall DoOverworldWeather
 	call Menu_WasButtonPressed
 	ret c
 	ld a, [w2DMenuFlags1]
