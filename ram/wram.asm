@@ -3232,6 +3232,14 @@ wLastWeatherVBlank:: db        ; hVBlankCounter when the particles last moved
 ; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
 wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
 
+; Screen rectangle, in OAM coordinates, that particles are kept out of, so a
+; textbox or menu is not rained on. Right and bottom are exclusive; a zero
+; bottom disables the clip, since a real box always ends below its top.
+wWeatherClipLeft:: db
+wWeatherClipTop:: db
+wWeatherClipRight:: db
+wWeatherClipBottom:: db
+
 
 ; 144 bytes, double-purposed: a per-scanline sprite counter in the sprite-limit
 ; check, and the cherry-leaf candidate buffer in SpawnCherryBlossom. The two

@@ -99,6 +99,7 @@ DoOverworldWeather::
 	; we are done, increment the weather delay rolling counter (0->255->0)
 	ld hl, wOverworldWeatherTimer
 	inc [hl]
+	call ClipWeatherSprites
 .done_no_tick
 	pop af
 	ldh [rSVBK], a
@@ -135,6 +136,112 @@ DoOverworldWeather::
 	dw DoSandFall
 	dw DoCherryBlossomFall
 	assert_table_length NUM_OW_WEATHERS + 1
+
+SetWeatherClip::
+; Keep particles out of a UI box. bc = top-left, de = bottom-right, both
+; inclusive tile coordinates, as a menu header or textbox states them.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherClipLeft)
+	ldh [rSVBK], a
+
+	ld a, b
+	call .TileToX
+	ld [wWeatherClipLeft], a
+	ld a, c
+	call .TileToY
+	ld [wWeatherClipTop], a
+	ld a, d
+	inc a ; exclusive
+	call .TileToX
+	ld [wWeatherClipRight], a
+	ld a, e
+	inc a ; exclusive
+	call .TileToY
+	ld [wWeatherClipBottom], a
+
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.TileToY
+	add a
+	add a
+	add a
+	add TILE_WIDTH * 2 ; OAM y is offset by two tiles
+	ret
+
+.TileToX
+	add a
+	add a
+	add a
+	add TILE_WIDTH ; OAM x is offset by one tile
+	ret
+
+ClearWeatherClip::
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wWeatherClipBottom)
+	ldh [rSVBK], a
+	xor a
+	ld [wWeatherClipBottom], a
+	pop af
+	ldh [rSVBK], a
+	ret
+
+ClipWeatherSprites:
+; Hide any weather-owned sprite inside the clip rectangle. Done as a sweep after
+; the particles move, rather than a test inside each of the four fall loops, so
+; that it also catches whatever was already on screen when the box opened.
+	ld a, [wWeatherClipBottom]
+	and a
+	ret z ; no box on screen
+
+	ld de, wShadowOAM + WEATHER_OAM_START
+	ld b, WEATHER_OAM_STRUCTS
+.loop
+	ld hl, OAMA_FLAGS
+	add hl, de
+	ld a, [hl]
+	cp PAL_OW_WEATHER
+	jr nz, .next ; not ours
+
+	ld h, d
+	ld l, e
+	ld a, [hli] ; y
+	ld c, [hl] ; x
+
+	ld hl, wWeatherClipTop
+	cp [hl]
+	jr c, .next
+	ld hl, wWeatherClipBottom
+	cp [hl]
+	jr nc, .next
+
+	ld a, c
+	ld hl, wWeatherClipLeft
+	cp [hl]
+	jr c, .next
+	ld hl, wWeatherClipRight
+	cp [hl]
+	jr nc, .next
+
+	ld h, d
+	ld l, e
+	ld a, OAM_YCOORD_HIDDEN
+	ld [hli], a
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+.next
+	ld hl, OBJ_SIZE
+	add hl, de
+	ld d, h
+	ld e, l
+	dec b
+	jr nz, .loop
+	ret
 
 SetWeatherOAMReservation:
 ; Hold the first 12 shadow OAM structs for as long as particles can exist.

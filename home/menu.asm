@@ -67,6 +67,8 @@ PushWindow::
 ExitMenu::
 	push af
 	farcall _ExitMenu
+	; the box is gone, so weather may use its area again
+	farcall ClearWeatherClip
 	pop af
 	ret
 

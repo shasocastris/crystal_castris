@@ -47,6 +47,19 @@ StartMenu::
 	ld [wMenuCursorPosition], a
 
 .Select:
+	; Keep weather off the menu box. Read back from the border coords rather
+	; than the header, since DrawVariableLengthMenuBox sizes it to the item
+	; count, and set it here so it survives a submenu's ExitMenu on .Reopen.
+	ld a, [wMenuBorderLeftCoord]
+	ld b, a
+	ld a, [wMenuBorderTopCoord]
+	ld c, a
+	ld a, [wMenuBorderRightCoord]
+	ld d, a
+	ld a, [wMenuBorderBottomCoord]
+	ld e, a
+	farcall SetWeatherClip
+
 	call .GetInput
 	jr c, .Exit
 	call .DrawMenuAccount
