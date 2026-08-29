@@ -191,6 +191,10 @@ MapSetupScript_Continue:
 	mapsetup DisableDynPalUpdates
 	mapsetup InitSound
 	mapsetup LoadMapAttributes_SkipObjects
+; wCurWeather sits past wPlayerDataEnd and is not saved, so without this a loaded
+; game has no weather at all until the first warp or connection.
+	mapsetup ClearWeather
+	mapsetup SetCurrentWeather
 	mapsetup GetMapScreenCoords
 	mapsetup HandleContinueMap
 	mapsetup LoadBlockData

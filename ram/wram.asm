@@ -2928,7 +2928,10 @@ wSeason:: db             ; M2 seasons. Season index 0-3, not a bitmask. Saved so
 wSeasonalFlags:: db      ; M2 seasons. Once-per-season event bits, cleared on change.
 wCurRegion:: db          ; M3 third region. Cached RegionCheck result.
 wOvercastRandomDay:: db  ; M4 weather. Day the weekly overcast roll was made.
-wOvercastRandomMaps:: db ; M4 weather. Which maps that roll selected.
+; Reserved by M0 as wOvercastRandomMaps, for the source's list of chosen maps.
+; That list needs twelve bytes and there are six here, so we store a seed and
+; hash it per map instead -- see engine/events/overcast.asm.
+wOvercastSeed:: db       ; M4 weather. Seed for the day named above.
 wOvercastReserved:: ds 4 ; M4 weather. Per-map / story-gated overcast state.
 
 ; M1 regional variants. Which *form* of a species the player has caught: a

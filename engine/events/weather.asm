@@ -1,13 +1,21 @@
 SetCurrentWeather::
 ; Pick the weather for the map that was just loaded.
 ;
-; The map attributes byte is the whole of the selection here. The source instead
-; hardcodes map ids and consults GetOvercastIndex, which is roadmap phase 5 and
-; not written yet; when it is, it belongs in front of this read.
+; A map that names its own weather always gets it, in every season and whatever
+; the day rolled: Route 45's sandstorm, Silver Cave's snow and Lake of Rage's
+; storm are authored set pieces, not weather. Only maps that ask for nothing are
+; left to the season and the daily roll -- which is also why an indoor map with
+; an authored weather still gets it, while GetOvercastWeather refuses indoors.
 ;
-; Everything after the read is the transition, which drains the previous weather
+; The reverse precedence would read more like the roadmap's sketch of "snow
+; across outdoor Johto in winter", but it would bury three deliberate set pieces
+; under it for a quarter of the year.
+;
+; Everything after this is the transition, which drains the previous weather
 ; over WEATHER_TRANSITION_LENGTH frames instead of letting it pop.
 	ld a, [wMapWeather]
+	and a
+	call z, GetOvercastWeather
 	ld b, a
 
 	ld a, [wWeatherFlags]

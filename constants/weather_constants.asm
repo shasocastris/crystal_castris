@@ -19,6 +19,11 @@ DEF NUM_OW_WEATHERS EQU const_value - 1
 ; The engine tests this with `and a`, so nothing may be inserted before it.
 	assert OW_WEATHER_NONE == 0, "OW_WEATHER_NONE must be zero"
 
+; Overcast: how much of a map's daily hash counts as wet, per season, lives in
+; GetOvercastWeather.SeasonWetness. This is the slice of that range which is
+; stormy rather than merely rainy, so it must stay below the smallest of them.
+DEF OVERCAST_THUNDER_LEVEL EQU 3 percent
+
 ; Frames SetCurrentWeather spends draining the previous weather on a change.
 DEF WEATHER_TRANSITION_LENGTH EQU 32
 

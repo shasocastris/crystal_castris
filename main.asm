@@ -92,6 +92,7 @@ SECTION "Overworld Weather", ROMX
 
 INCLUDE "engine/overworld/weather.asm"
 INCLUDE "engine/events/weather.asm"
+INCLUDE "engine/events/overcast.asm"
 
 
 SECTION "Roofs", ROMX
