@@ -3232,8 +3232,6 @@ wLastWeatherVBlank:: db        ; hVBlankCounter when the particles last moved
 ; Set while DoOverworldWeather is running. Lightning calls DelayFrame, and
 ; DelayFrame calls DoOverworldWeather, so without this the two recurse.
 wWeatherRunning:: db
-; The port guide puts this in HRAM, but HRAM is full (127/127), so it lives here.
-wUsedWeatherSpriteIndex:: db   ; byte offset of the last weather-owned shadow OAM slot
 
 ; Screen rectangles, in OAM coordinates, that particles are kept out of so a
 ; textbox or menu is not rained on. Right and bottom are exclusive; a zero

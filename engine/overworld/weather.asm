@@ -353,15 +353,7 @@ SpawnRandomWeatherCoords::
 	ret c
 	ld a, SANDSTORM_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	jr nc, .sand
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	jr .sand
 
 .snow
@@ -369,15 +361,7 @@ SpawnRandomWeatherCoords::
 	ret c
 	ld a, SNOWFLAKE_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	jr nc, .snow
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	jr .snow
 
 .rain
@@ -391,15 +375,7 @@ SpawnRandomWeatherCoords::
 	sbc a
 	add RAINSPLASH_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	jr nc, .rain
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	jr .rain
 
 .find_oam_and_randomize
@@ -562,15 +538,7 @@ SpawnSnowFlake:
 .finish
 	ld a, SNOWFLAKE_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	ret nc
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	ret
 
 .spawn_on_right
@@ -638,15 +606,7 @@ SpawnRainDrop:
 .finish
 	ld a, RAINDROP_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	ret nc
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	ret
 
 .spawn_on_right
@@ -663,8 +623,6 @@ ClearWeather::
 	push de
 	push bc
 	call .HideWeatherSprites
-	xor a
-	ld [wUsedWeatherSpriteIndex], a
 	pop bc
 	pop de
 	pop hl
@@ -1062,15 +1020,7 @@ SpawnSandDrop:
 .finish
 	ld a, SANDSTORM_TILE
 	ld [hli], a
-	ld a, PAL_OW_WEATHER
-	ld [hld], a
-	dec hl
-	dec hl
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	ret nc
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
+	ld [hl], PAL_OW_WEATHER
 	ret
 
 .spawn_on_right
@@ -1326,14 +1276,7 @@ SpawnCherryBlossom:
 	ld [hli], a ; X coord
 	ld a, CHERRYLEAF_TILE
 	ld [hli], a ; Tile ID
-	ld a, PAL_OW_WEATHER
-	ld [hli], a ; attributes
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	jr nc, .restore_bank
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
-.restore_bank
+	ld [hl], PAL_OW_WEATHER ; attributes
 	ld a, b
 	ldh [rSVBK], a
 	ret
@@ -1364,14 +1307,7 @@ SpawnCherryBlossom:
 .edge_finish
 	ld a, CHERRYLEAF_TILE
 	ld [hli], a ; Tile ID
-	ld a, PAL_OW_WEATHER
-	ld [hli], a ; attributes
-	ld a, [wUsedWeatherSpriteIndex]
-	cp l
-	jr nc, .edge_restore_bank
-	ld a, l
-	ld [wUsedWeatherSpriteIndex], a
-.edge_restore_bank
+	ld [hl], PAL_OW_WEATHER ; attributes
 	pop af
 	ldh [rSVBK], a
 	pop hl
