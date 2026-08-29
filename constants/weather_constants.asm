@@ -28,6 +28,14 @@ DEF WEATHER_TRANSITION_LENGTH EQU 32
 ; and a half, which is what play-testing it wants.
 DEF LIGHTNING_CHANCE EQU 1 percent
 
+; How far the flash ramps toward white, and how long it takes getting there.
+; FadePalettes moves every colour one step per frame, so this is both the
+; duration in frames of each half of the flash and how bright it gets: 6 is a
+; brief swell, not the whiteout a single-frame strobe gave. Raising it makes the
+; flash longer *and* brighter, and the fade blocks the overworld while it runs,
+; so twice this many frames of input are dropped per strike.
+DEF LIGHTNING_FLASH_STEPS EQU 6
+
 ; wWeatherFlags
 	const_def
 	const OW_WEATHER_DO_FLY_F             ; 0 -- a Fly animation is in progress

@@ -1395,21 +1395,24 @@ Lightning:
 	bit OW_WEATHER_LIGHTNING_DISABLED_F, [hl]
 	ret nz ; something else is managing the palettes
 
+	; Ramp toward white and back rather than strobing to it for a frame. The
+	; fades block, and each frame they wait calls the very hook we are inside --
+	; safe only because DoOverworldWeather refuses to reenter.
 	call SetWhitePals
-	call .ApplyAndUpload
+	ld c, LIGHTNING_FLASH_STEPS
+	call FadePalettes
+
 	ld de, SFX_THUNDER
 	call PlaySFX
-	; Safe only because DoOverworldWeather refuses to reenter; this frame's wait
-	; runs the very hook that called us. It is also what gives VBlank a chance to
-	; upload the white palettes, so the flash is actually seen.
-	call DelayFrame
 
 	farcall LoadMapPals
+	ld c, LIGHTNING_FLASH_STEPS
+	call FadePalettes
+
+	; The fade leaves the map's own palettes staged but the sprites reassigned,
+	; so put the dynamic allocations back and snap to the exact target.
 	farcall ClearSavedObjPals
 	farcall CheckForUsedObjPals
-	; fallthrough
-
-.ApplyAndUpload
 ; ApplyPals only stages wBGPals1 into wBGPals2. Without hCGBPalUpdate, VBlank
 ; never pushes it to the hardware registers and nothing changes on screen.
 	farcall ApplyPals
