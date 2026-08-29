@@ -1396,17 +1396,26 @@ Lightning:
 	ret nz ; something else is managing the palettes
 
 	call SetWhitePals
-	farcall ApplyPals
+	call .ApplyAndUpload
 	ld de, SFX_THUNDER
 	call PlaySFX
 	; Safe only because DoOverworldWeather refuses to reenter; this frame's wait
-	; runs the very hook that called us.
+	; runs the very hook that called us. It is also what gives VBlank a chance to
+	; upload the white palettes, so the flash is actually seen.
 	call DelayFrame
 
 	farcall LoadMapPals
 	farcall ClearSavedObjPals
 	farcall CheckForUsedObjPals
-	farjp ApplyPals
+	; fallthrough
+
+.ApplyAndUpload
+; ApplyPals only stages wBGPals1 into wBGPals2. Without hCGBPalUpdate, VBlank
+; never pushes it to the hardware registers and nothing changes on screen.
+	farcall ApplyPals
+	ld a, TRUE
+	ldh [hCGBPalUpdate], a
+	ret
 
 IsEvenSpriteIndex:
 ; input: e = sprite index
