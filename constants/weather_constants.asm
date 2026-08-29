@@ -24,9 +24,9 @@ DEF WEATHER_TRANSITION_LENGTH EQU 32
 
 ; Lightning is rolled once per weather frame and then halved by a second roll,
 ; so the real rate is half this. Weather runs at 30 frames a second, which makes
-; 1 percent a strike about every seven seconds, and 5 percent one about every
-; second and a half. The source uses 1 percent.
-DEF LIGHTNING_CHANCE EQU 5 percent
+; this a strike about every seven seconds; 5 percent gives one about every second
+; and a half, which is what play-testing it wants.
+DEF LIGHTNING_CHANCE EQU 1 percent
 
 ; wWeatherFlags
 	const_def
