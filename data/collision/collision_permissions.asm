@@ -209,7 +209,7 @@ CollisionPermissionTable::
 	db WATER_TILE        ; cd
 	db WATER_TILE        ; ce
 	db WATER_TILE        ; cf
-	db LAND_TILE         ; d0
+	db WALL_TILE         ; COLL_CHERRY_LEAVES
 	db LAND_TILE         ; d1
 	db LAND_TILE         ; d2
 	db LAND_TILE         ; d3

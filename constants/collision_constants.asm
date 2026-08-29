@@ -114,7 +114,11 @@ DEF COLL_DOWN_RIGHT_BUOY   EQU $c4 ; unused
 DEF COLL_DOWN_LEFT_BUOY    EQU $c5 ; unused
 DEF COLL_UP_RIGHT_BUOY     EQU $c6 ; unused
 DEF COLL_UP_LEFT_BUOY      EQU $c7 ; unused
-DEF COLL_CHERRY_LEAVES     EQU $d0 ; walkable; SpawnCherryBlossom drops petals from these
+; Solid, so it can go straight on tree tiles: petals should fall from the canopy,
+; and the canopy is a wall. The collision value is only a tag to SpawnCherryBlossom
+; -- the permission beside it in CollisionPermissionTable is what decides passage,
+; so a walkable variant could take $d1 if ground-level petals are ever wanted.
+DEF COLL_CHERRY_LEAVES     EQU $d0 ; SpawnCherryBlossom drops petals from these
 DEF COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles
