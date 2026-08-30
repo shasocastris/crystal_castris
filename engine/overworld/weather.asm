@@ -1601,7 +1601,7 @@ WeatherDimming:
 	weather_dim 5, 11, 12, 15 ; OW_WEATHER_RAIN
 	weather_dim 6, 17, 18, 21 ; OW_WEATHER_SNOW, bright but flat
 	weather_dim 4,  9, 10, 14 ; OW_WEATHER_THUNDERSTORM, the darkest and coolest
-	weather_dim 6, 20, 17, 12 ; OW_WEATHER_SANDSTORM, a warm haze rather than cool
+	weather_dim 4, 23, 19, 13 ; OW_WEATHER_SANDSTORM, a warm haze rather than cool
 	weather_dim 8,  0,  0,  0 ; OW_WEATHER_CHERRY_BLOSSOMS, a clear spring day
 	assert_table_length NUM_OW_WEATHERS + 1
 
