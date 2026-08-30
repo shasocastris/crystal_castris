@@ -1379,6 +1379,7 @@ MACRO weather_dim
 ENDM
 
 DEF WEATHER_DIM_ENTRY_SIZE EQU 6
+DEF COLORS_PER_PALETTE EQU 4
 
 DimWeatherPals::
 ; Pull wBGPals1 toward the current weather's overcast colour, so rain does not
@@ -1388,19 +1389,68 @@ DimWeatherPals::
 ; channel by the same factor preserves their ratios exactly, so hue and
 ; saturation come out untouched and the map just reads as the same sunny scene
 ; with the brightness down. Overcast light is diffuse -- it desaturates, cools,
-; and lifts the blacks. Interpolating toward a grey-blue does all three; the
-; multiply on its own did none of them.
+; and lifts the blacks. Interpolating toward a grey-blue does all three.
 ;
 ; The source gets this from a parallel set of hand-tuned overcast palettes and a
-; whole overcast tileset. This needs no new data at all: it transforms whatever
+; whole overcast tileset. This needs no new data: it transforms whatever
 ; LoadMapPals just produced, so it follows the season, the time of day and any
 ; special map palette for free.
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wCurWeather)
 	ldh [rSVBK], a
+	call _GetWeatherDimRow
+	jr nc, .done ; this weather leaves the palettes alone
 
-	; bc = .Dimming + wCurWeather * WEATHER_DIM_ENTRY_SIZE
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld de, wBGPals1
+	ld a, 8 * COLORS_PER_PALETTE
+	call _DimColors
+
+.done
+	pop af
+	ldh [rSVBK], a
+	ret
+
+DimSpritePal::
+; de -> the palette CopySpritePal has just written into wOBPals1. Dim it the
+; same way the map's own palettes are dimmed.
+;
+; Without this the world desaturates by half in a storm and the player does not
+; move at all, so he reads as pasted onto it. The weather's own slot is exempt:
+; rain catches light, and the particles have to stay legible against the ground
+; they are falling on.
+	ld a, e
+	cp LOW(wOBPals1 palette PAL_OW_WEATHER)
+	jr nz, .not_weather
+	ld a, d
+	cp HIGH(wOBPals1 palette PAL_OW_WEATHER)
+	ret z
+
+.not_weather
+	ldh a, [rSVBK]
+	push af
+	push de
+	ld a, BANK(wCurWeather)
+	ldh [rSVBK], a
+	call _GetWeatherDimRow
+	pop de
+	jr nc, .done
+
+	ld a, BANK(wOBPals1)
+	ldh [rSVBK], a
+	ld a, COLORS_PER_PALETTE
+	call _DimColors
+
+.done
+	pop af
+	ldh [rSVBK], a
+	ret
+
+_GetWeatherDimRow:
+; bc -> the current weather's row of WeatherDimming, with carry set if that row
+; asks for any dimming at all. Needs BANK(wCurWeather) selected; clobbers de, hl.
 	ld a, [wCurWeather]
 	ld l, a
 	ld h, 0
@@ -1409,35 +1459,27 @@ DimWeatherPals::
 	ld e, l
 	add hl, hl ; * 4
 	add hl, de ; * 6
-	ld de, .Dimming
+	ld de, WeatherDimming
 	add hl, de
 	ld b, h
 	ld c, l
-
 	ld a, [bc]
-	cp 8
-	jr nc, .done ; this weather leaves the palettes alone
-
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-	ld de, wBGPals1
-.loop
-	push bc ; the row, which .DimColor walks off the end of
-	call .DimColor
-	pop bc
-	ld a, e
-	cp LOW(wBGPals1 + 8 palettes)
-	jr nz, .loop
-	ld a, d
-	cp HIGH(wBGPals1 + 8 palettes)
-	jr nz, .loop
-
-.done
-	pop af
-	ldh [rSVBK], a
+	cp 8 ; carry means this weather dims
 	ret
 
-.DimColor
+_DimColors:
+; de -> the first colour, a = how many of them, bc -> the weather's row.
+.loop
+	push af
+	push bc ; the row, which _DimColor walks off the end of
+	call _DimColor
+	pop bc
+	pop af
+	dec a
+	jr nz, .loop
+	ret
+
+_DimColor:
 ; de -> a colour, bc -> the weather's six dimming bytes. Advances de past the
 ; colour and bc past the row. A colour is two bytes, little-endian:
 ; %gggrrrrr %-bbbbbgg.
@@ -1453,7 +1495,7 @@ DimWeatherPals::
 	; red
 	ld a, l
 	and %00011111
-	call .Scale
+	call _ScaleComponent
 	push af
 
 	; green, which straddles the two bytes
@@ -1469,7 +1511,7 @@ DimWeatherPals::
 	rlca
 	rlca
 	or l
-	call .Scale
+	call _ScaleComponent
 	push af
 
 	; blue
@@ -1477,7 +1519,7 @@ DimWeatherPals::
 	rrca
 	rrca
 	and %00011111
-	call .Scale
+	call _ScaleComponent
 
 	; and back into two bytes
 	rlca
@@ -1507,9 +1549,9 @@ DimWeatherPals::
 	inc de
 	ret
 
-.Scale
+_ScaleComponent:
 ; a = a * brightness / 8 + lift, for one five-bit component. bc -> that
-; channel's two bytes and is advanced past them. Preserves de and hl.
+; channel's two bytes, and is advanced past them. Preserves de and hl.
 	push hl
 	ld h, a
 	ld a, [bc]
@@ -1535,7 +1577,7 @@ DimWeatherPals::
 	pop hl
 	ret
 
-.Dimming
+WeatherDimming:
 ; Per weather: how much of the map's own palette survives, and the colour the
 ; rest of it is made of. Both are dials -- brightness for how dark, target for
 ; how grey and how cool.

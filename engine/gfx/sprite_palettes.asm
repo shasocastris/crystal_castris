@@ -132,8 +132,12 @@ CopySpritePal::
 	rst AddNTimes
 .got_pal
 	pop de
+	push de ; where the palette is going, for the dim below
 	ld bc, 1 palettes
 	call FarCopyColorWRAM
+	pop de
+	; Map objects have to darken with the map, or they stand out against it.
+	farcall DimSpritePal
 	ld hl, wPalFlags
 	bit NO_DYN_PAL_APPLY_F, [hl]
 	jr nz, .skip_apply
