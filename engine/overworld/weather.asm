@@ -13,13 +13,20 @@ DEF WEATHER_TILE_2 EQU WEATHER_TILE_1 + 1
 DEF RAINDROP_TILE   EQU WEATHER_TILE_1
 DEF RAINSPLASH_TILE EQU WEATHER_TILE_2
 DEF SNOWFLAKE_TILE  EQU WEATHER_TILE_1
-DEF SANDSTORM_TILE  EQU WEATHER_TILE_1
+; Sand is the one weather with two distinct frames. The source draws both but
+; loads a count of 1, so its second scatter has never reached VRAM -- port guide
+; bug #1. Spawners pick between them, which is why they must stay adjacent.
+DEF SANDSTORM_TILE   EQU WEATHER_TILE_1
+DEF SANDSTORM_TILE_2 EQU WEATHER_TILE_2
 DEF CHERRYLEAF_TILE EQU WEATHER_TILE_1
 
 ; SpawnRandomWeatherCoords.rain derives the tile id branchlessly from this
 ; adjacency, so the two must stay consecutive.
 	assert RAINDROP_TILE + 1 == RAINSPLASH_TILE, \
 		"the raindrop and splash tiles must be adjacent"
+; SpawnSandDrop picks its frame by adding a random bit to the first.
+	assert SANDSTORM_TILE + 1 == SANDSTORM_TILE_2, \
+		"the two sandstorm tiles must be adjacent"
 ; The arena above is only free because the object structs stop short of it.
 	assert WEATHER_TILE_2 < $80, \
 		"the weather tiles must fit in the vTiles0 object arena"
@@ -351,7 +358,7 @@ SpawnRandomWeatherCoords::
 .sand
 	call .find_oam_and_randomize
 	ret c
-	ld a, SANDSTORM_TILE
+	call _RandomSandTile
 	ld [hli], a
 	ld [hl], PAL_OW_WEATHER
 	jr .sand
@@ -906,12 +913,13 @@ DoSandFall:
 	cp OAM_YCOORD_HIDDEN
 	jr z, .next
 
-	; if the sprite is not a sand drop, skip it
+	; if the sprite is neither sand frame, skip it
 	ld hl, OAMA_TILEID
 	add hl, de
 	ld a, [hli]
-	cp SANDSTORM_TILE
-	jr nz, .next
+	sub SANDSTORM_TILE
+	cp SANDSTORM_TILE_2 - SANDSTORM_TILE + 1
+	jr nc, .next
 
 	; if the sprite doesn't use the weather palette, skip it
 	ld a, [hl]
@@ -1018,7 +1026,7 @@ SpawnSandDrop:
 	add TILE_WIDTH
 	ld [hli], a
 .finish
-	ld a, SANDSTORM_TILE
+	call _RandomSandTile
 	ld [hli], a
 	ld [hl], PAL_OW_WEATHER
 	ret
@@ -1358,6 +1366,13 @@ Lightning:
 	farcall ApplyPals
 	ld a, TRUE
 	ldh [hCGBPalUpdate], a
+	ret
+
+_RandomSandTile:
+; One of the two sand frames, so a sandstorm is not one stamp repeated.
+	call Random
+	and 1
+	add SANDSTORM_TILE
 	ret
 
 IsEvenSpriteIndex:
