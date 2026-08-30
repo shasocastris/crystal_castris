@@ -1369,38 +1369,67 @@ IsEvenSpriteIndex:
 	and 1
 	ret
 
+MACRO weather_dim
+; brightness in eighths, then the colour the palette is pulled toward.
+; rgbasm folds the target into a per-channel lift, so the inner loop stays a
+; multiply and an add: out = component * brightness / 8 + target * (8 - brightness) / 8.
+	db \1, \2 * (8 - \1) / 8
+	db \1, \3 * (8 - \1) / 8
+	db \1, \4 * (8 - \1) / 8
+ENDM
+
+DEF WEATHER_DIM_ENTRY_SIZE EQU 6
+
 DimWeatherPals::
-; Scale wBGPals1 toward black by the current weather's share of eight, so rain
-; does not fall through a bright noon sky.
+; Pull wBGPals1 toward the current weather's overcast colour, so rain does not
+; fall through a bright noon sky.
 ;
-; The source does this with a parallel set of hand-tuned overcast palettes and a
-; whole overcast tileset. None of that data exists here, and this needs none: it
-; scales whatever LoadMapPals just produced, so it follows the season, the time
-; of day and any special map palette for free. The trade is uniformity -- one
-; dim across every colour, rather than a colder winter overcast and a warmer
-; autumn one. If that is ever wanted, this is the thing it replaces.
+; Scaling alone was the first attempt and it was not enough: multiplying every
+; channel by the same factor preserves their ratios exactly, so hue and
+; saturation come out untouched and the map just reads as the same sunny scene
+; with the brightness down. Overcast light is diffuse -- it desaturates, cools,
+; and lifts the blacks. Interpolating toward a grey-blue does all three; the
+; multiply on its own did none of them.
+;
+; The source gets this from a parallel set of hand-tuned overcast palettes and a
+; whole overcast tileset. This needs no new data at all: it transforms whatever
+; LoadMapPals just produced, so it follows the season, the time of day and any
+; special map palette for free.
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wCurWeather)
 	ldh [rSVBK], a
 
+	; bc = .Dimming + wCurWeather * WEATHER_DIM_ENTRY_SIZE
 	ld a, [wCurWeather]
-	ld e, a
-	ld d, 0
-	ld hl, .Brightness
+	ld l, a
+	ld h, 0
+	add hl, hl ; * 2
+	ld d, h
+	ld e, l
+	add hl, hl ; * 4
+	add hl, de ; * 6
+	ld de, .Dimming
 	add hl, de
-	ld a, [hl]
+	ld b, h
+	ld c, l
+
+	ld a, [bc]
 	cp 8
 	jr nc, .done ; this weather leaves the palettes alone
-	ld c, a
 
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
-	ld hl, wBGPals1
-	ld b, 8 * 4 ; every colour of all eight background palettes
+	ld de, wBGPals1
 .loop
+	push bc ; the row, which .DimColor walks off the end of
 	call .DimColor
-	dec b
+	pop bc
+	ld a, e
+	cp LOW(wBGPals1 + 8 palettes)
+	jr nz, .loop
+	ld a, d
+	cp HIGH(wBGPals1 + 8 palettes)
 	jr nz, .loop
 
 .done
@@ -1409,40 +1438,42 @@ DimWeatherPals::
 	ret
 
 .DimColor
-; Scale the colour at hl in place, and leave hl past it. A colour is two bytes,
-; little-endian: %gggrrrrr %-bbbbbgg.
-	ld a, [hli]
-	ld e, a ; low byte
-	ld a, [hl]
-	ld d, a ; high byte
-	dec hl
+; de -> a colour, bc -> the weather's six dimming bytes. Advances de past the
+; colour and bc past the row. A colour is two bytes, little-endian:
+; %gggrrrrr %-bbbbbgg.
+;
+; de rather than hl for the palette, so hl is free to hold both bytes at once.
+	ld a, [de]
+	ld l, a ; low byte
+	inc de
+	ld a, [de]
+	ld h, a ; high byte
+	dec de
 
 	; red
-	ld a, e
+	ld a, l
 	and %00011111
 	call .Scale
 	push af
 
 	; green, which straddles the two bytes
-	ld a, e
+	ld a, l
 	rlca
 	rlca
 	rlca
 	and %00000111
-	push de
-	ld e, a
-	ld a, d
+	ld l, a
+	ld a, h
 	and %00000011
 	rlca
 	rlca
 	rlca
-	or e
-	pop de
+	or l
 	call .Scale
 	push af
 
 	; blue
-	ld a, d
+	ld a, h
 	rrca
 	rrca
 	and %00011111
@@ -1452,55 +1483,69 @@ DimWeatherPals::
 	rlca
 	rlca
 	and %01111100
-	ld d, a
+	ld h, a
 	pop af ; green
-	ld e, a
+	ld l, a
 	rrca
 	rrca
 	rrca
 	and %00000011
-	or d
-	ld d, a
-	ld a, e
+	or h
+	ld h, a
+	ld a, l
 	and %00000111
 	rrca
 	rrca
 	rrca
-	ld e, a
+	ld l, a
 	pop af ; red
-	or e
-	ld [hli], a
-	ld a, d
-	ld [hli], a
+	or l
+	ld [de], a
+	inc de
+	ld a, h
+	ld [de], a
+	inc de
 	ret
 
 .Scale
-; a = a * c / 8, for a five-bit component. Preserves bc, de and hl.
-	push de
-	ld d, a
-	ld e, c
+; a = a * brightness / 8 + lift, for one five-bit component. bc -> that
+; channel's two bytes and is advanced past them. Preserves de and hl.
+	push hl
+	ld h, a
+	ld a, [bc]
+	inc bc
+	ld l, a ; brightness
 	xor a
 .multiply
-	add d
-	dec e
+	add h
+	dec l
 	jr nz, .multiply
 	rrca
 	rrca
 	rrca
 	and %00011111
-	pop de
+	ld h, a
+	ld a, [bc]
+	inc bc
+	add h ; lift
+	cp 1 << 5
+	jr c, .no_clamp
+	ld a, (1 << 5) - 1
+.no_clamp
+	pop hl
 	ret
 
-.Brightness
-; Eighths of the map's own palette kept while each weather runs; 8 leaves it
-; alone. This is the dial -- lower is darker.
-	table_width 1
-	db 8 ; OW_WEATHER_NONE
-	db 6 ; OW_WEATHER_RAIN
-	db 7 ; OW_WEATHER_SNOW
-	db 5 ; OW_WEATHER_THUNDERSTORM -- the darkest
-	db 7 ; OW_WEATHER_SANDSTORM
-	db 8 ; OW_WEATHER_CHERRY_BLOSSOMS -- a clear spring day
+.Dimming
+; Per weather: how much of the map's own palette survives, and the colour the
+; rest of it is made of. Both are dials -- brightness for how dark, target for
+; how grey and how cool.
+	table_width WEATHER_DIM_ENTRY_SIZE
+	weather_dim 8,  0,  0,  0 ; OW_WEATHER_NONE, untouched
+	weather_dim 5, 11, 12, 15 ; OW_WEATHER_RAIN
+	weather_dim 6, 17, 18, 21 ; OW_WEATHER_SNOW, bright but flat
+	weather_dim 4,  9, 10, 14 ; OW_WEATHER_THUNDERSTORM, the darkest and coolest
+	weather_dim 6, 20, 17, 12 ; OW_WEATHER_SANDSTORM, a warm haze rather than cool
+	weather_dim 8,  0,  0,  0 ; OW_WEATHER_CHERRY_BLOSSOMS, a clear spring day
 	assert_table_length NUM_OW_WEATHERS + 1
 
 LoadWeatherGraphics::
