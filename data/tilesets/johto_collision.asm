@@ -170,3 +170,7 @@
 	tilecoll WALL, WALL, WALL, WATER ; a9
 	tilecoll WALL, WALL, WATER, WALL ; aa
 	tilecoll WATER, WATER, DOWN_BUOY, DOWN_BUOY ; ab
+	tilecoll CHERRY_LEAVES, CHERRY_LEAVES, WALL, WALL ; ac
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ad
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ae
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; af
