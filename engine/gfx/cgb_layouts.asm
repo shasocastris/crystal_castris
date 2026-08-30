@@ -595,7 +595,9 @@ _CGB_MapPals:
 	call LoadMapPals
 	ld a, SCGB_MAPPALS
 	ld [wDefaultSGBLayout], a
-	ret
+	; Hooked here rather than inside LoadMapPals so it covers both of that
+	; routine's exits, and lands after the roof palettes it copies last.
+	farjp DimWeatherPals
 
 _CGB_PartyMenu:
 	ld hl, PalPacket_PartyMenu + 1

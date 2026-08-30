@@ -1342,6 +1342,10 @@ Lightning:
 	call PlaySFX
 
 	farcall LoadMapPals
+	; LoadMapPals restores the map's palettes at full brightness, and the fade
+	; below aims at them -- so without re-dimming here every strike would leave
+	; the storm bright until the next map load.
+	call DimWeatherPals
 	ld c, LIGHTNING_FLASH_STEPS
 	call FadePalettes
 
@@ -1364,6 +1368,140 @@ IsEvenSpriteIndex:
 	rra ; / 4
 	and 1
 	ret
+
+DimWeatherPals::
+; Scale wBGPals1 toward black by the current weather's share of eight, so rain
+; does not fall through a bright noon sky.
+;
+; The source does this with a parallel set of hand-tuned overcast palettes and a
+; whole overcast tileset. None of that data exists here, and this needs none: it
+; scales whatever LoadMapPals just produced, so it follows the season, the time
+; of day and any special map palette for free. The trade is uniformity -- one
+; dim across every colour, rather than a colder winter overcast and a warmer
+; autumn one. If that is ever wanted, this is the thing it replaces.
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wCurWeather)
+	ldh [rSVBK], a
+
+	ld a, [wCurWeather]
+	ld e, a
+	ld d, 0
+	ld hl, .Brightness
+	add hl, de
+	ld a, [hl]
+	cp 8
+	jr nc, .done ; this weather leaves the palettes alone
+	ld c, a
+
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, wBGPals1
+	ld b, 8 * 4 ; every colour of all eight background palettes
+.loop
+	call .DimColor
+	dec b
+	jr nz, .loop
+
+.done
+	pop af
+	ldh [rSVBK], a
+	ret
+
+.DimColor
+; Scale the colour at hl in place, and leave hl past it. A colour is two bytes,
+; little-endian: %gggrrrrr %-bbbbbgg.
+	ld a, [hli]
+	ld e, a ; low byte
+	ld a, [hl]
+	ld d, a ; high byte
+	dec hl
+
+	; red
+	ld a, e
+	and %00011111
+	call .Scale
+	push af
+
+	; green, which straddles the two bytes
+	ld a, e
+	rlca
+	rlca
+	rlca
+	and %00000111
+	push de
+	ld e, a
+	ld a, d
+	and %00000011
+	rlca
+	rlca
+	rlca
+	or e
+	pop de
+	call .Scale
+	push af
+
+	; blue
+	ld a, d
+	rrca
+	rrca
+	and %00011111
+	call .Scale
+
+	; and back into two bytes
+	rlca
+	rlca
+	and %01111100
+	ld d, a
+	pop af ; green
+	ld e, a
+	rrca
+	rrca
+	rrca
+	and %00000011
+	or d
+	ld d, a
+	ld a, e
+	and %00000111
+	rrca
+	rrca
+	rrca
+	ld e, a
+	pop af ; red
+	or e
+	ld [hli], a
+	ld a, d
+	ld [hli], a
+	ret
+
+.Scale
+; a = a * c / 8, for a five-bit component. Preserves bc, de and hl.
+	push de
+	ld d, a
+	ld e, c
+	xor a
+.multiply
+	add d
+	dec e
+	jr nz, .multiply
+	rrca
+	rrca
+	rrca
+	and %00011111
+	pop de
+	ret
+
+.Brightness
+; Eighths of the map's own palette kept while each weather runs; 8 leaves it
+; alone. This is the dial -- lower is darker.
+	table_width 1
+	db 8 ; OW_WEATHER_NONE
+	db 6 ; OW_WEATHER_RAIN
+	db 7 ; OW_WEATHER_SNOW
+	db 5 ; OW_WEATHER_THUNDERSTORM -- the darkest
+	db 7 ; OW_WEATHER_SANDSTORM
+	db 8 ; OW_WEATHER_CHERRY_BLOSSOMS -- a clear spring day
+	assert_table_length NUM_OW_WEATHERS + 1
 
 LoadWeatherGraphics::
 	ld a, [wCurWeather]
