@@ -75,22 +75,37 @@ GetOvercastWeather::
 	ret
 
 .HashForThisMap
-; Mix the day's seed with the map's identity. The group is tripled so that a
-; group and map number swapping places do not land on the same answer, and the
-; swap-and-xor gives the low bits -- all the comparisons look at -- some
-; avalanche, so neighbouring maps do not come out alike.
-	ld a, [wMapGroup]
+; Mix the day's seed with the map's identity.
+;
+; The group and the map number are streamed in at separate stages rather than
+; folded into one byte first: folding makes distinct maps collide outright, and
+; two maps that collide then share their weather permanently.
+;
+; Rotations are by 3 and 5 rather than 4, and the last two rounds add rather
+; than xor. A nibble-symmetric mix is the trap here -- `v xor swap v` writes
+; high-xor-low into *both* nibbles, so it can only ever produce $00, $11 ... $ff,
+; and it carries just four bits of the seed. That collapses the range to sixteen
+; outcomes and locks maps together, while leaving the average wet rate looking
+; about right, which is what made it survive review.
+	ld a, [wOvercastSeed]
+	rlca
+	rlca
+	rlca ; rotate right 5
+	ld hl, wMapGroup
+	add [hl]
 	ld b, a
-	add a
-	add b ; group * 3
+	rrca
+	rrca
+	rrca ; rotate right 3
+	xor b
+	rlca
+	rlca
+	rlca ; rotate right 5
 	ld hl, wMapNumber
 	add [hl]
 	ld b, a
-	ld a, [wOvercastSeed]
-	xor b
-	ld b, a
-	swap a
-	xor b
+	rrca ; rotate right 1
+	add b
 	ret
 
 .SeasonWetness
