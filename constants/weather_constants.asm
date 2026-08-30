@@ -19,6 +19,26 @@ DEF NUM_OW_WEATHERS EQU const_value - 1
 ; The engine tests this with `and a`, so nothing may be inserted before it.
 	assert OW_WEATHER_NONE == 0, "OW_WEATHER_NONE must be zero"
 
+; A map's attributes byte carries the weather in its low nibble and, optionally,
+; the seasons that weather happens in in its high nibble. No season bits means
+; every season, so a byte that names only a weather behaves as it always has --
+; which is what keeps the other maps' bytes working untouched.
+;
+; Out of season the map falls through to the daily roll, so a town whose blossoms
+; are gated to spring still gets ordinary rain in summer and snow in winter
+; rather than a pointedly clear sky.
+DEF OW_WEATHER_MASK        EQU %00001111
+DEF OW_WEATHER_SEASON_MASK EQU %11110000
+	assert NUM_OW_WEATHERS <= OW_WEATHER_MASK, \
+		"the weather ids must fit in the low nibble, beside the season mask"
+
+DEF OW_WEATHER_SPRING EQU SPRING << 4
+DEF OW_WEATHER_SUMMER EQU SUMMER << 4
+DEF OW_WEATHER_AUTUMN EQU AUTUMN << 4
+DEF OW_WEATHER_WINTER EQU WINTER << 4
+	assert ANYSEASON << 4 == OW_WEATHER_SEASON_MASK, \
+		"every season bit must land inside the season mask"
+
 ; Overcast: how much of a map's daily hash counts as wet, per season, lives in
 ; GetOvercastWeather.SeasonWetness. This is the slice of that range which is
 ; stormy rather than merely rainy, so it must stay below the smallest of them.

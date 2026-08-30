@@ -11,11 +11,41 @@ SetCurrentWeather::
 ; across outdoor Johto in winter", but it would bury three deliberate set pieces
 ; under it for a quarter of the year.
 ;
+; A map may also name the seasons its weather happens in, in the byte's high
+; nibble. Out of season it falls through to the roll like any unmarked map, so
+; Cherrygrove's blossoms give way to ordinary rain and to winter's snow rather
+; than to a pointedly clear sky.
+;
 ; Everything after this is the transition, which drains the previous weather
 ; over WEATHER_TRANSITION_LENGTH frames instead of letting it pop.
 	ld a, [wMapWeather]
 	and a
-	call z, GetOvercastWeather
+	jr z, .roll ; the map names nothing
+
+	ld c, a
+	and OW_WEATHER_SEASON_MASK
+	jr z, .authored ; no season named, so every season
+
+	ld b, a
+	ld a, [wSeason]
+	maskbits NUM_SEASONS
+	ld e, a
+	ld d, 0
+	ld hl, .SeasonBits
+	add hl, de
+	ld a, [hl]
+	and b
+	jr z, .roll ; this map's weather is out of season
+
+.authored
+	ld a, c
+	and OW_WEATHER_MASK
+	jr .got_weather
+
+.roll
+	call GetOvercastWeather
+
+.got_weather
 	ld b, a
 
 	ld a, [wWeatherFlags]
@@ -63,3 +93,13 @@ SetCurrentWeather::
 	ld a, WEATHER_TRANSITION_LENGTH
 	ld [wOverworldWeatherCooldown], a
 	ret
+
+.SeasonBits
+; wSeason is an index; the mask is built from bits. shift_const gives both, so
+; this is only here to get from one to the other, already shifted into place.
+	table_width 1
+	db OW_WEATHER_SPRING
+	db OW_WEATHER_SUMMER
+	db OW_WEATHER_AUTUMN
+	db OW_WEATHER_WINTER
+	assert_table_length NUM_SEASONS

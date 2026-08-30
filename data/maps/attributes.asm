@@ -110,7 +110,7 @@ ENDM
 	connection west, Route29, ROUTE_29, 0
 	connection east, Route27, ROUTE_27, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, NORTH | EAST, OW_WEATHER_CHERRY_BLOSSOMS
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, NORTH | EAST, OW_WEATHER_CHERRY_BLOSSOMS | OW_WEATHER_SPRING
 	connection north, Route30, ROUTE_30, 5
 	connection east, Route29, ROUTE_29, 0
 
